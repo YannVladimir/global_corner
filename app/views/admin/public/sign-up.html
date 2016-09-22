@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Global corner</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/modern-business.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<script type ="text/javascript" src="js/jquery-1.js"></script>
+	<script type="text/javascript">
+	function checkEmail(elem)
+	{
+		vl = elem.value;
+		if(vl == "")
+		{
+			$("#valid").html("#");
+		}else{
+			if(validateEmail(vl))
+			{
+				$("#valid").html("yes");
+			}else{
+				$("#valid").html("no");
+			}
+		}
+	}
+	function validateEmail(em)
+	{
+		atpos = em.indexOf('@');
+		dotpos = em.lastIndexOf('.');
+
+		if(atpos < 1 || atpos+2 > dotpos || dotpos+3 > vl.length) 
+			return false;
+		else
+			return true;
+	}
+	</script>
+	<script type ="text/javascript" src="js/jquery-1.js"></script>
+<script type="text/javascript">
+	   $(function()
+	   {
+	 
+
+    $("#sign_up").validate(
+      {
+        rules: 
+        {
+          firstname: 
+          {
+            required: true,
+          },
+          lastname: 
+          {
+		  required:true;
+          },
+          password
+          {
+            required: true,
+            minlength:6;
+          },
+		  
+        }
+      });	
+});
+	   </script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Global corner</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="sign-up.html">Sign Up</a>
+                    </li>
+                    <li>
+                        <a href="#">Login</a>
+                    </li>
+                    <li class="active">
+                        <a href="contact.html">Contact</a>
+                    </li>
+                   
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">category<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="full-width.html">1 Electronic device</a>
+                            </li>
+                            <li>
+                                <a href="sidebar.html">2 cars and bikes</a>
+                            </li>
+                            <li>
+                                <a href="faq.html">3 Books</a>
+                            </li>
+                            <li>
+                                <a href="404.html">4 Furnitures</a>
+                            </li>
+                            <li>
+                                <a href="pricing.html">5 others</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Sign Up
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Content Row -->
+            <!-- sign-up Details Column -->
+                    
+               
+        <!-- /.row -->
+
+        <!-- Contact Form -->
+		<div id="sign_up">
+					  <input type="text" class="app" name="firstname" placeholder="First name">
+					  <input type="text" class="app"  name="lastname" placeholder="Last name"><br><br>
+					  <input type="text" class="asp" name="email" onkeyup="checkEmail(this)" placeholder="Email"><span id="valid"></span><br><br>
+					  <input type="text" class="asp" name="re_enter" placeholder="RE-enter email"><br><br>
+					  <input type="password" class="asp" name="pass"  placeholder="password"><br><br>
+									<select class="select">
+										<option value="0">Month</option>
+										<option value="1">Jan</option>
+										<option value="2">Feb</option>
+										<option value="3">Mar</option>
+										<option value="4">Apr</option>
+										<option value="5">May</option>
+										<option value="6">Jun</option>
+										<option value="7">Jul</option>
+										<option value="8">Aug</option>
+										<option value="9">Sep</option>
+										<option value="10">Oct</option>
+										<option value="11">Nov</option>
+										<option value="12">Dec</option>
+									 </select> &nbsp;
+									 <select class="select">
+										<option value="0">Day</option>
+										<option value="1">1</option>
+										<option value="1">2</option>
+										<option value="1">3</option>
+										<option value="1">4</option>
+										<option value="1">5</option>
+										<option value="1">6</option>
+										<option value="1">7</option>
+										<option value="1">8</option>
+										<option value="1">9</option>
+										<option value="1">10</option>
+										<option value="1">11</option>
+										<option value="1">12</option>
+										<option value="1">13</option>
+										<option value="1">14</option>
+										<option value="1">15</option>
+										<option value="1">16</option>
+										<option value="1">17</option>
+										<option value="1">18</option>
+										<option value="1">19</option>
+										<option value="1">20</option>
+										<option value="1">21</option>
+										<option value="1">22</option>
+										<option value="1">23</option>
+										<option value="1">24</option>
+										<option value="1">25</option>
+										<option value="1">26</option>
+										<option value="1">27</option>
+										<option value="1">28</option>
+										<option value="1">29</option>
+										<option value="1">30</option>
+										<option value="1">31</option>
+									 </select>
+									 &nbsp;
+									 <select class="select">
+										<option value="0">Year</option>
+										<option value="1">2010</option>
+										<option value="1">2011</option>
+										<option value="1">2012</option>
+										<option value="1">2013</option>
+									 </select><br><br>
+									  <input type="radio"name="sex"  class="sexy" value="male">Male &nbsp;
+									 <input type="radio"name="sex" class="sexy" value="female">Female <br><br>
+									 <input type="submit" value="SIGN-UP" id="button" name="submit">
+					  </div>
+        <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+       
+      
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+</body>
+
+</html>
