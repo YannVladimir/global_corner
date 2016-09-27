@@ -6,13 +6,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Home | Get It</title>
-    <link href="<?php echo BASEURL."/../assets/font-awesome/css/font-awesome.min.css"; ?>" rel="stylesheet" type="text/css">
-    <link href="<?php echo BASEURL."/../assets/css/yann.min.css"; ?>" rel="stylesheet">
-    <link href="<?php echo BASEURL."/../assets/css/prettyPhoto.css"; ?>" rel="stylesheet">
-    <link href="<?php echo BASEURL."/../assets/css/price-range.css"; ?>" rel="stylesheet">
-    <link href="<?php echo BASEURL."/../assets/css/animate.css"; ?>" rel="stylesheet">
-	<link href="<?php echo BASEURL."/../assets/css/main.css"; ?>" rel="stylesheet">
-	<link href="<?php echo BASEURL."/../assets/css/responsive.css"; ?>" rel="stylesheet">
+    <link href="<?php echo BASEURL."assets/font-awesome/css/font-awesome.min.css"; ?>" rel="stylesheet" type="text/css">
+    <link href="<?php echo BASEURL."assets/css/yann.min.css"; ?>" rel="stylesheet">
+    <link href="<?php echo BASEURL."assets/css/prettyPhoto.css"; ?>" rel="stylesheet">
+    <link href="<?php echo BASEURL."assets/css/price-range.css"; ?>" rel="stylesheet">
+    <link href="<?php echo BASEURL."assets/css/animate.css"; ?>" rel="stylesheet">
+	<link href="<?php echo BASEURL."assets/css/main.css"; ?>" rel="stylesheet">
+	<link href="<?php echo BASEURL."assets/css/responsive.css"; ?>" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
