@@ -11,9 +11,8 @@
     <title>Global Conner | Admin panel</title>
 
     
-    <link href="<?php echo BASEURL."../assets/css/bootstrap.min.css"; ?>" rel="stylesheet">
-    <link href="<?php echo BASEURL."../assets/css/bootstrap.min.css"; ?>" rel="stylesheet">
-
+    <link href="<?php echo BASEURL."../assets/css/yann.min.css"; ?>" rel="stylesheet">
+    
     <link href="<?php echo BASEURL."../assets/css/sb-admin.css"; ?>" rel="stylesheet">
 
     <link href="<?php echo BASEURL."../assets/css/plugins/morris.css"; ?>" rel="stylesheet">
@@ -21,7 +20,7 @@
     <link href="<?php echo BASEURL."../assets/font-awesome/css/font-awesome.min.css"; ?>" rel="stylesheet" type="text/css">
     
     <script src="<?php echo BASEURL."../assets/js/jquery.js"; ?>"></script>
-    <script src="<?php echo BASEURL."../assets/js/bootstrap.min.js"; ?>"></script>
+    <script src="<?php echo BASEURL."../assets/js/yann.min.js"; ?>"></script>
     <script src="<?php echo BASEURL."../assets/js/plugins/morris/raphael.min.js"; ?>"></script>
     <script src="<?php echo BASEURL."../assets/js/plugins/morris/morris.min.js"; ?>"></script>
     <script src="<?php echo BASEURL."../assets/js/plugins/morris/morris-data.js"; ?>"></script>

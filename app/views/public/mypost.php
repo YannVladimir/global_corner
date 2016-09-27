@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <title>My posts | Get It</title>
     <link href="<?php echo BASEURL."../assets/font-awesome/css/font-awesome.min.css"; ?>" rel="stylesheet" type="text/css">
-    <link href="<?php echo BASEURL."../assets/css/bootstrap.min.css"; ?>" rel="stylesheet">
+    <link href="<?php echo BASEURL."../assets/css/yann.min.css"; ?>" rel="stylesheet">
     <link href="<?php echo BASEURL."../assets/css/prettyPhoto.css"; ?>" rel="stylesheet">
     <link href="<?php echo BASEURL."../assets/css/price-range.css"; ?>" rel="stylesheet">
     <link href="<?php echo BASEURL."../assets/css/animate.css"; ?>" rel="stylesheet">
@@ -47,7 +47,7 @@
 								<li><a></a></li>
 								<li><a href="<?php echo BASEURL; ?>home">Home</a></li>
 								<li><a></a></li><li><a></a></li><li><a></a></li>
-								<li><a href="<?php echo BASEURL; ?>upload">Sell</a></li>
+								<li><a href="<?php echo BASEURL; ?>upload_electronics">Sell</a></li>
 								<li><a></a></li><li><a></a></li><li><a></a></li>
 								<li><a href="<?php echo BASEURL; ?>categories">Buy</a></li>
 								<li><a></a></li><li><a></a></li><li><a></a></li>
@@ -87,7 +87,7 @@
 						<?php 
                             $id = $_GET['id'];
                             $b = new Items();
-                            $res = $b->selectItem($id);
+                            $res = $b->selectMyItem($id);
                             while($row = mysqli_fetch_assoc($res))
                             {
                             	$sub_id = $row['subcat_id']; 
@@ -128,7 +128,7 @@
       require(BASEPATH.'app/views/public/footer.php');    
     ?>
   <script src="<?php echo BASEURL."../assets/js/jquery.js"; ?>"></script>
-  <script src="<?php echo BASEURL."../assets/js/bootstrap.min.js"; ?>"></script>
+  <script src="<?php echo BASEURL."../assets/js/yann.min.js"; ?>"></script>
   <script src="<?php echo BASEURL."../assets/js/jquery.scrollUp.min.js"; ?>"></script>
   <script src="<?php echo BASEURL."../assets/js/jquery.prettyPhoto.js"; ?>"></script>
   <script src="<?php echo BASEURL."../assets/js/price-range.js"; ?>"></script>

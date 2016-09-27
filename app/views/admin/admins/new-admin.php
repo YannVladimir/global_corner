@@ -3,7 +3,7 @@
   require(BASEPATH.'app/views/admin/includes/header.php');
 ?>
            
-
+ 
         <div id="page-wrapper">
 
             <div class="container-fluid">
@@ -26,7 +26,7 @@
                         <label>Firstname: </label><input type="text" name="firstname" placeholder="Enter firstname"/><br><br>
                         <label>Lastname: </label><input type="text" name="lastname" placeholder="Enter lastname"/><br><br>
                         <label>Email: </label><input type="text" name="email" placeholder="Enter email"/><br><br>
-                        <label>Contact No: </label><input type="text" name="number" placeholder="Enter contact number"/><br><br>
+                        <label>Contact No: </label><input type="text" name="contact" placeholder="Enter contact number"/><br><br>
                         
                         <input type="submit" value= "Create"/>
                        </form>

@@ -12,8 +12,7 @@
     <title>Global Conner | Admin panel</title> 
     
     
-   <link href="<?php echo BASEURL."../assets/css/bootstrap.min.css"; ?>" rel="stylesheet">
-    <link href="<?php echo BASEURL."../assets/css/bootstrap.min.css"; ?>" rel="stylesheet">
+   <link href="<?php echo BASEURL."../assets/css/yann.min.css"; ?>" rel="stylesheet">
 
     <link href="<?php echo BASEURL."../assets/css/sb-admin.css"; ?>" rel="stylesheet">
 
@@ -25,7 +24,7 @@
     <script src="<?php echo BASEURL."../assets/js/jquery.js"; ?>"></script>
     <script type="text/javascript" src="<?php echo BASEURL."../assets/js/jquery.validate.js"; ?>"></script>
     <script type="text/javascript" src="<?php echo BASEURL."../assets/js/validating.js"; ?>"></script>
-    <script src="<?php echo BASEURL."../assets/js/bootstrap.min.js"; ?>"></script>
+    <script src="<?php echo BASEURL."../assets/js/yann.min.js"; ?>"></script>
     <script src="<?php echo BASEURL."../assets/js/plugins/morris/raphael.min.js"; ?>"></script>
     <script src="<?php echo BASEURL."../assets/js/plugins/morris/morris.min.js"; ?>"></script>
     <script src="<?php echo BASEURL."../assets/js/plugins/morris/morris-data.js"; ?>"></script>
@@ -101,7 +100,7 @@
                         if($_SESSION['priority']=='1')
                         {
                             echo "<li>
-                        <a href='/global/public/newadmin'><i class='fa fa-fw fa-wrench'></i> New Admin</a>
+                        <a href='/eshopper/public/newadmin'><i class='fa fa-fw fa-wrench'></i> New Admin</a>
                     </li>";
                         }
                     ?>

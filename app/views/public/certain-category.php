@@ -3,11 +3,11 @@
 <head> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content=""> 
     <meta name="author" content="">
     <title>Items | Get It</title>
     <link href="<?php echo BASEURL."../assets/font-awesome/css/font-awesome.min.css"; ?>" rel="stylesheet" type="text/css">
-    <link href="<?php echo BASEURL."../assets/css/bootstrap.min.css"; ?>" rel="stylesheet">
+    <link href="<?php echo BASEURL."../assets/css/yann.min.css"; ?>" rel="stylesheet">
     <link href="<?php echo BASEURL."../assets/css/prettyPhoto.css"; ?>" rel="stylesheet">
     <link href="<?php echo BASEURL."../assets/css/price-range.css"; ?>" rel="stylesheet">
     <link href="<?php echo BASEURL."../assets/css/animate.css"; ?>" rel="stylesheet">
@@ -54,7 +54,7 @@
 								<li><a></a></li>
 								<li><a href="<?php echo BASEURL; ?>home">Home</a></li>
 								<li><a></a></li><li><a></a></li><li><a></a></li>
-								<li><a href="<?php echo BASEURL; ?>upload">Sell</a></li>
+								<li><a href="<?php echo BASEURL; ?>upload_electronics">Sell</a></li>
 								<li><a></a></li><li><a></a></li><li><a></a></li>
 								<li><a href="<?php echo BASEURL; ?>categories" class="active">Buy</a></li>
 								<li><a></a></li><li><a></a></li><li><a></a></li>
@@ -91,326 +91,44 @@
 					<div class="left-sidebar">
 						<h2>Categories</h2>
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<?php 
+							<?php 
                                             $cat = new Maincategory();
+                                            $cats = new Amacategory();
+                                            $c = 3;
                                             $res = $cat->selectAllCat();
                                             while($row = mysqli_fetch_assoc($res))
                                             {
-                                	          if($row['cat_id']==3)
-                                	          {
-                                               echo "<a data-toggle='collapse' data-parent='#accordian' href='#{$row['cat_id']}'>
-											<span class='badge pull-right'><i class='fa fa-plus'></i></span>
-											{$row['cat_name']}
-										     </a>";
-                                	          }
-                                            } 
-                                        ?>
-										
-									</h4>
-								</div>
-								<div id="3" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<?php 
-                                              $cats = new Amacategory();
-                                              $res = $cats->selectAmaCat();
-                                              while($row = mysqli_fetch_assoc($res))
-                                              {
-                                	            if($row['refcat_id']==3)
-                                	            {
-                                                   echo "<li><a href='certain?id={$row['subcat_id']}'>*   {$row['subcat_name']} </a></li>";
-                                                   $a = $row['cat_name'];
-                                	            }
-                                              }
-                                              echo "<li><a href='certain?id=0'>*   All in {$a} </a></li>"; 
-                                            ?>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<?php 
-                                            $cat = new Maincategory();
-                                            $res = $cat->selectAllCat();
-                                            while($row = mysqli_fetch_assoc($res))
+                                            if($row['cat_id']==$c)
                                             {
-                                	          if($row['cat_id']==4)
-                                	          {
-                                               echo "<a data-toggle='collapse' data-parent='#accordian' href='#{$row['cat_id']}'>
-											<span class='badge pull-right'><i class='fa fa-plus'></i></span>
-											{$row['cat_name']}
-										     </a>";
-                                	          }
+                                               echo "<div class='panel panel-default'>
+                <div class='panel-heading'>
+                  <h4 class='panel-title'>
+                  <a data-toggle='collapse' data-parent='#accordian' href='#{$row['cat_id']}'>
+                      <span class='badge pull-right'><i class='fa fa-plus'></i></span>
+                      {$row['cat_name']}
+                         </a></h4>
+                </div><div id='$c' class='panel-collapse collapse'>
+                  <div class='panel-body'>
+                    <ul>";$a = $row['cat_name'];
+                    $re = $cats->selectAmaCat();
+                    while($ro = mysqli_fetch_assoc($re))
+                                              {
+                                              if($ro['refcat_id']==$c)
+                                              {
+                                                   echo "<li><a href='certain?id={$ro['subcat_id']}'>*   {$ro['subcat_name']} </a></li>";
+                                                   
+                                              }
+                                              }
+                                              
+                                            }
+                                            $c = $c+1;
+                                            echo "<li><a href='certain?id=0'>*   All in {$a} </a></li></ul>
+                  </div>
+                </div>
+              </div>";
+                                            
                                             } 
                                         ?>
-										
-									</h4>
-								</div>
-								<div id="4" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<?php 
-                                              $cats = new Amacategory();
-                                              $res = $cats->selectAmaCat();
-                                              while($row = mysqli_fetch_assoc($res))
-                                              {
-                                	            if($row['refcat_id']==4)
-                                	            {
-                                                   echo "<li><a href='certain?id={$row['subcat_id']}'>*   {$row['subcat_name']} </a></li>";
-                                                   $a = $row['cat_name'];
-                                	            }
-                                              }
-                                              echo "<li><a href='certain?id=0'>*   All in {$a} </a></li>"; 
-                                            ?>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<?php 
-                                            $cat = new Maincategory();
-                                            $res = $cat->selectAllCat();
-                                            while($row = mysqli_fetch_assoc($res))
-                                            {
-                                	          if($row['cat_id']==5)
-                                	          {
-                                               echo "<a data-toggle='collapse' data-parent='#accordian' href='#{$row['cat_id']}'>
-											<span class='badge pull-right'><i class='fa fa-plus'></i></span>
-											{$row['cat_name']}
-										     </a>";
-                                	          }
-                                            } 
-                                        ?>
-										
-									</h4>
-								</div>
-								<div id="5" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<?php 
-                                              $cats = new Amacategory();
-                                              $res = $cats->selectAmaCat();
-                                              while($row = mysqli_fetch_assoc($res))
-                                              {
-                                	            if($row['refcat_id']==5)
-                                	            {
-                                                   echo "<li><a href='certain?id={$row['subcat_id']}'>*   {$row['subcat_name']} </a></li>";
-                                                   $a = $row['cat_name'];
-                                	            }
-                                              }
-                                              echo "<li><a href='certain?id=0'>*   All in {$a} </a></li>"; 
-                                            ?>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<?php 
-                                            $cat = new Maincategory();
-                                            $res = $cat->selectAllCat();
-                                            while($row = mysqli_fetch_assoc($res))
-                                            {
-                                	          if($row['cat_id']==6)
-                                	          {
-                                               echo "<a data-toggle='collapse' data-parent='#accordian' href='#{$row['cat_id']}'>
-											<span class='badge pull-right'><i class='fa fa-plus'></i></span>
-											{$row['cat_name']}
-										     </a>";
-                                	          }
-                                            } 
-                                        ?>
-										
-									</h4>
-								</div>
-								<div id="6" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<?php 
-                                              $cats = new Amacategory();
-                                              $res = $cats->selectAmaCat();
-                                              while($row = mysqli_fetch_assoc($res))
-                                              {
-                                	            if($row['refcat_id']==6)
-                                	            {
-                                                   echo "<li><a href='certain?id={$row['subcat_id']}'>*   {$row['subcat_name']} </a></li>";
-                                                   $a = $row['cat_name'];
-                                	            }
-                                              }
-                                              echo "<li><a href='certain?id=0'>*   All in {$a} </a></li>"; 
-                                            ?>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<?php 
-                                            $cat = new Maincategory();
-                                            $res = $cat->selectAllCat();
-                                            while($row = mysqli_fetch_assoc($res))
-                                            {
-                                	          if($row['cat_id']==7)
-                                	          {
-                                               echo "<a data-toggle='collapse' data-parent='#accordian' href='#{$row['cat_id']}'>
-											<span class='badge pull-right'><i class='fa fa-plus'></i></span>
-											{$row['cat_name']}
-										     </a>";
-                                	          }
-                                            } 
-                                        ?>
-										
-									</h4>
-								</div>
-								<div id="7" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<?php 
-                                              $cats = new Amacategory();
-                                              $res = $cats->selectAmaCat();
-                                              while($row = mysqli_fetch_assoc($res))
-                                              {
-                                	            if($row['refcat_id']==7)
-                                	            {
-                                                   echo "<li><a href='certain?id={$row['subcat_id']}'>*   {$row['subcat_name']} </a></li>";
-                                                   $a = $row['cat_name'];
-                                	            }
-                                              }
-                                              echo "<li><a href='certain?id=0'>*   All in {$a} </a></li>"; 
-                                            ?>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<?php 
-                                            $cat = new Maincategory();
-                                            $res = $cat->selectAllCat();
-                                            while($row = mysqli_fetch_assoc($res))
-                                            {
-                                	          if($row['cat_id']==8)
-                                	          {
-                                               echo "<a data-toggle='collapse' data-parent='#accordian' href='#{$row['cat_id']}'>
-											<span class='badge pull-right'><i class='fa fa-plus'></i></span>
-											{$row['cat_name']}
-										     </a>";
-                                	          }
-                                            } 
-                                        ?>
-										
-									</h4>
-								</div>
-								<div id="8" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<?php 
-                                              $cats = new Amacategory();
-                                              $res = $cats->selectAmaCat();
-                                              while($row = mysqli_fetch_assoc($res))
-                                              {
-                                	            if($row['refcat_id']==8)
-                                	            {
-                                                   echo "<li><a href='certain?id={$row['subcat_id']}'>*   {$row['subcat_name']} </a></li>";
-                                                   $a = $row['cat_name'];
-                                	            }
-                                              }
-                                              echo "<li><a href='certain?id=0'>*   All in {$a} </a></li>"; 
-                                            ?>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<?php 
-                                            $cat = new Maincategory();
-                                            $res = $cat->selectAllCat();
-                                            while($row = mysqli_fetch_assoc($res))
-                                            {
-                                	          if($row['cat_id']==9)
-                                	          {
-                                               echo "<a data-toggle='collapse' data-parent='#accordian' href='#{$row['cat_id']}'>
-											<span class='badge pull-right'><i class='fa fa-plus'></i></span>
-											{$row['cat_name']}
-										     </a>";
-                                	          }
-                                            } 
-                                        ?>
-										
-									</h4>
-								</div>
-								<div id="9" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<?php 
-                                              $cats = new Amacategory();
-                                              $res = $cats->selectAmaCat();
-                                              while($row = mysqli_fetch_assoc($res))
-                                              {
-                                	            if($row['refcat_id']==9)
-                                	            {
-                                                   echo "<li><a href='certain?id={$row['subcat_id']}'>*   {$row['subcat_name']} </a></li>";
-                                                   $a = $row['cat_name'];
-                                	            }
-                                              }
-                                              echo "<li><a href='certain?id=0'>*   All in {$a} </a></li>"; 
-                                            ?>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<?php 
-                                            $cat = new Maincategory();
-                                            $res = $cat->selectAllCat();
-                                            while($row = mysqli_fetch_assoc($res))
-                                            {
-                                	          if($row['cat_id']==10)
-                                	          {
-                                               echo "<a data-toggle='collapse' data-parent='#accordian' href='#{$row['cat_id']}'>
-											<span class='badge pull-right'><i class='fa fa-plus'></i></span>
-											{$row['cat_name']}
-										     </a>";
-                                	          }
-                                            } 
-                                        ?>
-										
-									</h4>
-								</div>
-								<div id="10" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<?php 
-                                              $cats = new Amacategory();
-                                              $res = $cats->selectAmaCat();
-                                              while($row = mysqli_fetch_assoc($res))
-                                              {
-                                	            if($row['refcat_id']==10)
-                                	            {
-                                                   echo "<li><a href='certain?id={$row['subcat_id']}'>*   {$row['subcat_name']} </a></li>";
-                                                   $a = $row['cat_name'];
-                                	            }
-                                              }
-                                              echo "<li><a href='certain?id=0'>*   All in {$a} </a></li>"; 
-                                            ?>
-										</ul>
-									</div>
-								</div>
-							</div>
 							
 						</div><!--/category-productsr-->
 
@@ -474,7 +192,7 @@
 					</div>
 
 						
-						</div>
+						
 						</div>
 						<ul class="pagination col-sm-12">
 							<li class="active"><a href="">1</a></li>
@@ -493,7 +211,7 @@
       require(BASEPATH.'app/views/public/footer.php');    
     ?>
   <script src="<?php echo BASEURL."../assets/js/jquery.js"; ?>"></script>
-  <script src="<?php echo BASEURL."../assets/js/bootstrap.min.js"; ?>"></script>
+  <script src="<?php echo BASEURL."../assets/js/yann.min.js"; ?>"></script>
   <script src="<?php echo BASEURL."../assets/js/jquery.scrollUp.min.js"; ?>"></script>
   <script src="<?php echo BASEURL."../assets/js/jquery.prettyPhoto.js"; ?>"></script>
   <script src="<?php echo BASEURL."../assets/js/price-range.js"; ?>"></script>

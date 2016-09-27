@@ -1,6 +1,6 @@
 <?php 
 	require_once'root.php'; 
-	class User extends Root 
+	class User extends Root  
 	{
 		
 		function __construct()
@@ -19,7 +19,11 @@
 			$query = "SELECT user_id,firstname,lastname,email,phone FROM users ";
 			return $this->runQuery($query);
 		}
-
+        function insertNewAdmin($firstname,$lastname,$email,$number,$password,$date)
+		{
+			$query = "INSERT INTO users (firstname,lastname,email,phone,password,joined,is_admin,accepted) values ('{$firstname}','{$lastname}','{$email}','{$number}','{$password}','{$date}',1,1)";
+			return $this->runQuery($query);
+		}
 		function insertUser($firstname,$lastname,$email,$number,$password,$date)
 		{
 			$query = "INSERT INTO users (firstname,lastname,email,phone,password,joined) values ('{$firstname}','{$lastname}','{$email}','{$number}','{$password}','{$date}')";

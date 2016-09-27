@@ -21,10 +21,8 @@ $().ready(function(){
                     required:true,
                     email:true
                   },
-                  number:{
-                    minlength:9,
+                  contact:{
                     required:true,
-                    maxlength:9,
                     digits:true
                   },
                   priority:"required"
@@ -51,11 +49,9 @@ $().ready(function(){
                     required:"*Required",
                     email:"*Invalid"
                   },
-                  number:{
+                  contact:{
                     required:"*Required",
-                    minlength:"*Invalid(ex: 788888888)",
-                    maxlength:"*Invalid(ex: 788888888)",
-                    digits:"*Invalid(ex: 788888888)"
+                    digits:"*Invalid(ex: 0788888888)"
                   },
                   priority: "*Required"
            

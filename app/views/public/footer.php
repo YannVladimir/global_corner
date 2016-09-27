@@ -13,7 +13,7 @@
 					</div>
 					<div class="col-sm-3">
 
-						
+						 
 					</div>
 				</div>
 			</div>
@@ -26,11 +26,11 @@
 						<div class="single-widget">
 							<h2>Top Categories</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="<?php echo BASEURL; ?>categories">Electronics</a></li>
-								<li><a href="<?php echo BASEURL; ?>categories">Mobiles</a></li>
-								<li><a href="<?php echo BASEURL; ?>categories">Jobs</a></li>
-								<li><a href="<?php echo BASEURL; ?>categories">Real Estates</a></li>
-								<li><a href="<?php echo BASEURL; ?>categories">Cars $ Bikes</a></li>
+								<li><a href="<?php echo BASEURL; ?>products?category=3">Electronics</a></li>
+								<li><a href="<?php echo BASEURL; ?>products?category=4">Mobiles</a></li>
+								<li><a href="<?php echo BASEURL; ?>products?category=10">Jobs</a></li>
+								<li><a href="<?php echo BASEURL; ?>products?category=9">Real Estates</a></li>
+								<li><a href="<?php echo BASEURL; ?>products?category=8">Cars $ Bikes</a></li>
 							</ul>
 						</div>
 					</div>

@@ -15,13 +15,27 @@
 		}
 		function selectAccepted()
 		{
-			$query = "SELECT * FROM items order by post_id";
+			$query = "SELECT * FROM items where is_accepted = 1 order by post_id";
 			return $this->runQuery($query);
 		}
-
+		function selectUnAccepted()
+		{
+			$query = "SELECT * FROM items where is_accepted = 0 order by post_id";
+			return $this->runQuery($query);
+		}
+        function selectAcceptedSlider()
+		{
+			$query = "SELECT * FROM items where is_accepted = 1 order by post_id desc limit 5";
+			return $this->runQuery($query);
+		}
 		function selectItems($id)
 		{
 			$query = "SELECT * FROM items where subcat_id = '{$id}' order by uploaded_date desc";
+			return $this->runQuery($query);
+		}
+		function selectMyItem($id)
+		{
+			$query = "SELECT * FROM items where post_id = '{$id}' ";
 			return $this->runQuery($query);
 		}
 		function selectItem($id)

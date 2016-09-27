@@ -1,0 +1,102 @@
+
+#form
+{
+	width:570px;
+	height:800px;
+	background:#654;
+	color:#000;
+	margin-left:300px;
+	display:none;
+}
+
+p{
+	margin-left:60px;
+
+}
+.select{
+
+	width:200px;
+	height:30px;
+	margin-left:50px;
+	color:#000;
+	border-radius:5px;
+	border-color:#E1E1E1;
+}
+.same{
+	width:200px;
+	height:30px;
+	color:#000;
+	margin-left:50px;
+	border-radius:5px;
+	border-color:#E1E1E1;
+}
+#text{
+	margin-left: 5px;
+}
+#date{
+	width:200px;
+	height:30px;
+	color:#000;
+	margin-left: 50px;
+	border-radius:5px;
+	border-color:#E1E1E1;
+}
+#upload{
+ margin-left: 50px;
+}
+#sub{
+	width:150px;
+	height:40px;
+	margin-left:72px;
+	background:#678;
+	border-radius:5px;
+	font-family:time new roman,vardana;
+	}
+	#sub:hover{
+	background:green;
+	transition:ease in 1s;
+	}
+#sign_up
+{
+      width:45%;
+	  height:500px;
+	  background:#E1E1E1;
+	  float:right;
+	  margin-right:250px;
+}
+.app
+{
+      width:200px;
+	  height:30px;
+	  margin-left:20px;
+	  margin-top:40px;
+	  border-radius:5px;
+	  padding:10px;
+}
+.asp
+{
+     width:423px;
+	 height:30px;
+	 margin-left:20px;
+	 border-radius:5px;
+	 padding:10px;
+}
+.select
+{
+margin-left:20px;
+}
+.sexy
+{
+ margin-left:20px;
+}
+#button
+{
+width:130px;
+height:30px;
+margin-left:30px;
+font-family:Times new roman;
+background:green;
+color:#fff;
+
+}
+

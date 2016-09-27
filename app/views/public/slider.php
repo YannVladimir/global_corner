@@ -9,37 +9,36 @@
 							<li data-target="#slider-carousel" data-slide-to="2"></li>
 							<li data-target="#slider-carousel" data-slide-to="3"></li>
 							<li data-target="#slider-carousel" data-slide-to="4"></li>
-							<li data-target="#slider-carousel" data-slide-to="5"></li>
-							<li data-target="#slider-carousel" data-slide-to="6"></li>
-							<li data-target="#slider-carousel" data-slide-to="7"></li>
-						</ol>
+						</ol> 
 						 
 						<div class="carousel-inner">
 							<?php 
-                               $c = new Maincategory();
-                               $res = $c->selectAllCat();
+                               $c = new Items();
+                               $v = 1;
+                               $res = $c->selectAcceptedSlider();
                                while($row = mysqli_fetch_assoc($res))
                                {
-                                   if($row['cat_id']==3){
+                                   if($v==1){
                                      echo "<div class='item active'>
-                                     <div class='col-sm-1'></div>
-								     <div class='col-sm-5'> 
+                                     <div class='col-sm-2'></div>
+								     <div class='col-sm-4'> 
 									<h1><span>Get</span> It</h1>
-									<h2>{$row['cat_name']} </h2>";
+									<h2>{$row['name']} </h2>";
+									$v = 2;
                                     }
                                     else{
                                 	    echo "<div class='item'>
-                                	    <div class='col-sm-1'></div>
-								       <div class='col-sm-5'> 
+                                	    <div class='col-sm-2'></div>
+								       <div class='col-sm-4'> 
 									   <h1><span>Get</span> It</h1>
-									   <h2>{$row['cat_name']} </h2>";
+									   <h2>{$row['name']} </h2>";
                                     }
                                     
-                                    echo "<a href='products?category={$row['cat_id']}'>
-									<button type='button' class='btn btn-default get'>Visit category</button></a>
+                                    echo "<a href='product?id={$row['post_id']}'>
+									<button type='button' class='btn btn-default get'>View Details</button></a>
 								</div>
 								<div class='col-sm-4 slidersizing'><br><br><br>
-									<img src='/eshopper/assets/images/categories/{$row['cat_image']}' class='girl img-responsive' alt='' />
+									<img src='/eshopper/assets/images/posts/{$row['main']}' class='girl img-responsive' alt='' />
 				
 								</div>
 							</div>";

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <title>Categories | Get It</title>
     <link href="<?php echo BASEURL."../assets/font-awesome/css/font-awesome.min.css"; ?>" rel="stylesheet" type="text/css">
-    <link href="<?php echo BASEURL."../assets/css/bootstrap.min.css"; ?>" rel="stylesheet">
+    <link href="<?php echo BASEURL."../assets/css/yann.min.css"; ?>" rel="stylesheet">
     <link href="<?php echo BASEURL."../assets/css/prettyPhoto.css"; ?>" rel="stylesheet">
     <link href="<?php echo BASEURL."../assets/css/price-range.css"; ?>" rel="stylesheet">
     <link href="<?php echo BASEURL."../assets/css/animate.css"; ?>" rel="stylesheet">
@@ -51,7 +51,7 @@
 								<li><a></a></li>
 								<li><a href="<?php echo BASEURL; ?>home">Home</a></li>
 								<li><a></a></li><li><a></a></li><li><a></a></li>
-								<li><a href="<?php echo BASEURL; ?>upload">Sell</a></li>
+								<li><a href="<?php echo BASEURL; ?>upload_electronics">Sell</a></li>
 								<li><a></a></li><li><a></a></li><li><a></a></li>
 								<li><a href="<?php echo BASEURL; ?>categories" class="active">Buy</a></li>
 								<li><a></a></li><li><a></a></li><li><a></a></li>
@@ -97,12 +97,13 @@
             <div class="col-sm-12">
               <ul class="nav nav-tabs">
                 <?php 
-                                $cat = new Maincategory();
-
+                                $cat = new Maincategory(); 
+                                $cats = new Amacategory();
                                 $res = $cat->selectAllCat();
+                                $c = 3;
                                 while($row = mysqli_fetch_assoc($res))
                                 {
-                                  if($row['cat_id']==3)
+                                  if($row['cat_id']==$c)
                                   {
                                          echo "<li class='active'><a href='#{$row['cat_id']}' data-toggle='tab'>{$row['cat_name']}</a></li>";
                                   }
@@ -115,219 +116,46 @@
                                 echo "</ul>
                                         </div>
                                         <div class='tab-content'> ";
-                                $res1 = $cat->selectAllCat();
-                                while($row = mysqli_fetch_assoc($res1))
-                                {
-                                  if($row['cat_id']==3)
+                                $res = $cat->selectAllCat();
+                                while($r = mysqli_fetch_assoc($res))
+                                { 
+                                  if($r['cat_id']==$c)
                                   {
-                                         echo "<div class='tab-pane fade active in' id='{$row['cat_id']}' >";
-                                  }
-                                }
-                                $cats = new Amacategory();
-                                $res = $cats->selectAmaCat();
-                                while($row = mysqli_fetch_assoc($res))
-                                {
-                                  if($row['refcat_id']==3)
-                                  {
-                                         echo "<div class='col-sm-3'>
-                  <div class='product-image-wrapper'>
-                    <div class='single-products'>
-                      <div class='productinfo text-center'>
-                        <img class='sizingimagesmax' src='/eshopper/assets/images/subcategories/{$row['subcat_image']}' alt='' />
-                        <h4>{$row['subcat_name']}</h4>
-                        <a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
-                      </div>  
-                    </div>
-                  </div>
-                </div>";
-                                  }
-                                } 
-                                echo "</div>";
-                                $res2 = $cat->selectAllCat();
-                                while($row = mysqli_fetch_assoc($res2))
-                                {
-                                  if($row['cat_id']==4)
-                                  {
-                                         echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
-                                  }
-                                } 
-                                $res3 = $cats->selectAmaCat();
-                                while($row = mysqli_fetch_assoc($res3))
-                                {
-                                  if($row['refcat_id']==4)
-                                  {
-                                         echo "<div class='col-sm-3'>
-                  <div class='product-image-wrapper'>
-                    <div class='single-products'>
-                      <div class='productinfo text-center'>
-                        <img class='sizingimagesmax' src='/eshopper/assets/images/subcategories/{$row['subcat_image']}' alt='' />
-                        <h4>{$row['subcat_name']}</h4>
-                        <a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
-                      </div>  
-                    </div>
-                  </div>
-                </div>";
-                                  }
-                                } 
-                                echo "</div>";
-                                $res4 = $cat->selectAllCat();
-                                while($row = mysqli_fetch_assoc($res4))
-                                {
-                                  if($row['cat_id']==5)
-                                  {
-                                         echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
-                                  }
-                                } 
-                            
-                                $res5 = $cats->selectAmaCat();
-                                while($row = mysqli_fetch_assoc($res5))
-                                {
-                                  if($row['refcat_id']==5)
-                                  {
-                                         echo "<div class='col-sm-3'>
-                  <div class='product-image-wrapper'>
-                    <div class='single-products'>
-                      <div class='productinfo text-center'>
-                        <img class='sizingimagesmax' src='/eshopper/assets/images/subcategories/{$row['subcat_image']}' alt='' />
-                        <h4>{$row['subcat_name']}</h4>
-                        <a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
-                      </div>  
-                    </div>
-                  </div>
-                </div>";
-                                  }
-                                } 
-                              echo "</div>";
-                                $res6 = $cat->selectAllCat();
-                                while($row = mysqli_fetch_assoc($res6))
-                                {
-                                  if($row['cat_id']==6)
-                                  {
-                                         echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
-                                  }
-                                } 
-                            
-                                $res7 = $cats->selectAmaCat();
-                                while($row = mysqli_fetch_assoc($res7))
-                                {
-                                  if($row['refcat_id']==6)
-                                  {
-                                         echo "<div class='col-sm-3'>
-                  <div class='product-image-wrapper'>
-                    <div class='single-products'>
-                      <div class='productinfo text-center'>
-                        <img class='sizingimagesmax' src='/eshopper/assets/images/subcategories/{$row['subcat_image']}' alt='' />
-                        <h4>{$row['subcat_name']}</h4>
-                        <a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
-                      </div>  
-                    </div>
-                  </div>
-                </div>";
-                                  }
-                                } 
-                              echo "</div>";
-                                $res8 = $cat->selectAllCat();
-                                while($row = mysqli_fetch_assoc($res8))
-                                {
-                                  if($row['cat_id']==7)
-                                  {
-                                         echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
-                                  }
-                                }
-                                $res9 = $cats->selectAmaCat();
-                                while($row = mysqli_fetch_assoc($res9))
-                                {
-                                  if($row['refcat_id']==7)
-                                  {
-                                         echo "<div class='col-sm-3'>
-                  <div class='product-image-wrapper'>
-                    <div class='single-products'>
-                      <div class='productinfo text-center'>
-                        <img class='sizingimagesmax' src='/eshopper/assets/images/subcategories/{$row['subcat_image']}' alt='' />
-                        <h4>{$row['subcat_name']}</h4>
-                        <a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
-                      </div>  
-                    </div>
-                  </div>
-                </div>";
-                                  }
-                                } 
-                              echo "</div>";
-                                $res10 = $cat->selectAllCat();
-                                while($row = mysqli_fetch_assoc($res10))
-                                {
-                                  if($row['cat_id']==8)
-                                  {
-                                         echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
-                                  }
-                                } 
-                              
-                                $res11 = $cats->selectAmaCat();
-                                while($row = mysqli_fetch_assoc($res11))
-                                {
-                                  if($row['refcat_id']==8)
-                                  {
-                                         echo "<div class='col-sm-3'>
-                  <div class='product-image-wrapper'>
-                    <div class='single-products'>
-                      <div class='productinfo text-center'>
-                        <img class='sizingimagesmax' src='/eshopper/assets/images/subcategories/{$row['subcat_image']}' alt='' />
-                        <h4>{$row['subcat_name']}</h4>
-                        <a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
-                      </div>  
-                    </div>
-                  </div>
-                </div>";
-                                  }
-                                } 
-                              echo "</div>";
-                                $res12 = $cat->selectAllCat();
-                                while($row = mysqli_fetch_assoc($res12))
-                                {
-                                  if($row['cat_id']==9)
-                                  {
-                                         echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
-                                  }
-                                } 
-                            
-                                $res13 = $cats->selectAmaCat();
-                                while($row = mysqli_fetch_assoc($res13))
-                                {
-                                  if($row['refcat_id']==9)
-                                  {
-                                         echo "<div class='col-sm-3'>
-                  <div class='product-image-wrapper'>
-                    <div class='single-products'>
-                      <div class='productinfo text-center'>
-                        <img class='sizingimagesmax' src='/eshopper/assets/images/subcategories/{$row['subcat_image']}' alt='' />
-                        <h4>{$row['subcat_name']}</h4>
-                        <a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
-                      </div>  
-                    </div>
-                  </div>
-                </div>";
-                                  }
-                                } 
-                              echo "</div>";
-                                $res14 = $cat->selectAllCat();
-                                while($row = mysqli_fetch_assoc($res14))
-                                {
-                                  if($row['cat_id']==10)
-                                  {
-                                         echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
-                                  }
-                                } 
-                              
-                                $res15 = $cats->selectAmaCat();
-                                while($row = mysqli_fetch_assoc($res15))
-                                {
-                                  if($row['refcat_id']==10)
-                                  {
-                                         echo "<div class='col-sm-3'>
-                  <div class='product-image-wrapper'>
-                    <div class='single-products'>
-                      <div class='productinfo text-center'>
+                                         echo "<div class='tab-pane fade active in' id='{$r['cat_id']}' >";
+                                         $ress = $cats->selectAmaCat();
+                                         while($row = mysqli_fetch_assoc($ress))
+                                         {
+                                            if($row['refcat_id']==$c)
+                                            {
+                                               echo "<div class='col-sm-3'>
+                                                <div class='product-image-wrapper'>
+                                                  <div class='single-products'>
+                                                     <div class='productinfo text-center'>
+                                                        <img class='sizingimagesmax' src='/eshopper/assets/images/subcategories/{$row['subcat_image']}' alt='' />
+                                                        <h4>{$row['subcat_name']}</h4>
+                                                        <a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
+                                                      </div>  
+                                                  </div>
+                                                </div>
+                                                     </div>";
+                                             }
+                                          }
+                                          echo "</div>";
+                                          $c = $c+1;
 
+                                  }
+                                  else
+                                  {
+                                         echo "<div class='tab-pane fade in' id='{$r['cat_id']}' >";
+                                         $ress = $cats->selectAmaCat();
+                                         while($row = mysqli_fetch_assoc($ress))
+                                         {
+                                            if($row['refcat_id']==$c)
+                                            {
+                                               echo "<div class='col-sm-3'>
+                  <div class='product-image-wrapper'>
+                    <div class='single-products'>
+                      <div class='productinfo text-center'>
                         <img class='sizingimagesmax' src='/eshopper/assets/images/subcategories/{$row['subcat_image']}' alt='' />
                         <h4>{$row['subcat_name']}</h4>
                         <a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
@@ -335,9 +163,13 @@
                     </div>
                   </div>
                 </div>";
+                                             }
+                                          }
+                                          echo "</div>";
+                                          $c = $c+1;
                                   }
                                 }
-                                echo "</div>"; 
+                                 
                               ?>
               
              </div>
@@ -355,7 +187,7 @@
       require(BASEPATH.'app/views/public/footer.php');    
     ?>
     <script src="<?php echo BASEURL."../assets/js/jquery.js"; ?>"></script>
-    <script src="<?php echo BASEURL."../assets/js/bootstrap.min.js"; ?>"></script>
+    <script src="<?php echo BASEURL."../assets/js/yann.min.js"; ?>"></script>
 	<script src="<?php echo BASEURL."../assets/js/jquery.scrollUp.min.js"; ?>"></script>
 	<script src="<?php echo BASEURL."../assets/js/price-range.js"; ?>"></script>
     <script src="<?php echo BASEURL."../assets/js/jquery.prettyPhoto.js"; ?>"></script>

@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <title>Login | Get It</title>
     <link href="<?php echo BASEURL."../assets/font-awesome/css/font-awesome.min.css"; ?>" rel="stylesheet" type="text/css">
-    <link href="<?php echo BASEURL."../assets/css/bootstrap.min.css"; ?>" rel="stylesheet">
+    <link href="<?php echo BASEURL."../assets/css/yann.min.css"; ?>" rel="stylesheet">
     <link href="<?php echo BASEURL."../assets/css/prettyPhoto.css"; ?>" rel="stylesheet">
     <link href="<?php echo BASEURL."../assets/css/price-range.css"; ?>" rel="stylesheet">
     <link href="<?php echo BASEURL."../assets/css/animate.css"; ?>" rel="stylesheet">
@@ -47,7 +47,7 @@
 								<li><a></a></li>
 								<li><a href="<?php echo BASEURL; ?>home">Home</a></li>
 								<li><a></a></li><li><a></a></li><li><a></a></li>
-								<li><a href="<?php echo BASEURL; ?>upload">Sell an item</a></li>
+								<li><a href="<?php echo BASEURL; ?>upload_electronics">Sell an item</a></li>
 								<li><a></a></li><li><a></a></li><li><a></a></li>
 								<li><a href="<?php echo BASEURL; ?>categories">Categories</a></li>
 								<li><a></a></li><li><a></a></li><li><a></a></li>
@@ -113,7 +113,7 @@
       require(BASEPATH.'app/views/public/footer.php');    
   ?>
   <script src="<?php echo BASEURL."../assets/js/jquery.js"; ?>"></script>
-  <script src="<?php echo BASEURL."../assets/js/bootstrap.min.js"; ?>"></script>
+  <script src="<?php echo BASEURL."../assets/js/yann.min.js"; ?>"></script>
   <script src="<?php echo BASEURL."../assets/js/jquery.scrollUp.min.js"; ?>"></script>
   <script src="<?php echo BASEURL."../assets/js/jquery.prettyPhoto.js"; ?>"></script>
   <script src="<?php echo BASEURL."../assets/js/main.js"; ?>"></script>
