@@ -54,7 +54,7 @@
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a href='acount'><i class='fa fa-user'></i> My Account</a></li>
-								<li><a href='/Eshopper/public/logout'><i class='fa fa-lock'></i> Logout</a></li>
+								<li><a href='public/logout'><i class='fa fa-lock'></i> Logout</a></li>
 							</ul>
 						</div>
 					</div>";
@@ -65,7 +65,7 @@
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a></a></li>
-								<li><a href='/Eshopper/public/loginpage'><i class='fa fa-lock'></i> Login</a></li>
+								<li><a href='public/loginpage'><i class='fa fa-lock'></i> Login</a></li>
 							</ul>
 						</div>
 					</div>";
