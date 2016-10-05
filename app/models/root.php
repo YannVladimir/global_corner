@@ -13,7 +13,7 @@
 
 		function connect()
 		{
-			self::$con= mysqli_connect("104.131.171.3","root","yann2016!@#$webMaster","eshopper");
+			self::$con= mysqli_connect("104.131.171.3","root","uIk3fDIL9q","eshopper");
 		}
 		public function runQuery($query)
 		{
