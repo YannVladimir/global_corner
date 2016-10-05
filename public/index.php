@@ -37,7 +37,7 @@
 
 <body>
 	<?php  
-      require(BASEPATH.'app/views/public/header.php');   
+      require('header.php');   
     ?>
     <div class="header-bottom"><!--header-bottom-->
 			<div class="container">
@@ -80,7 +80,7 @@
 	
 	
 	<?php  
-      require(BASEPATH.'app/views/public/slider.php');    
+      require('slider.php');    
     ?>
 	
 	<section>
@@ -352,7 +352,7 @@
 	</section>
 	<br><br><br>
 	<?php  
-      require(BASEPATH.'app/views/public/footer.php');    
+      require('footer.php');    
     ?>
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/yann.min.js"></script>
