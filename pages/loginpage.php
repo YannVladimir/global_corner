@@ -6,28 +6,28 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Login | Get It</title>
-    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/yann.min.css" rel="stylesheet">
-    <link href="assets/css/prettyPhoto.css" rel="stylesheet">
-    <link href="assets/css/price-range.css" rel="stylesheet">
-    <link href="assets/css/animate.css" rel="stylesheet">
-    <link href="assets/css/main.css" rel="stylesheet">
-    <link href="assets/css/responsive.css" rel="stylesheet">
+    <link href="../public/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../public/assets/css/yann.min.css" rel="stylesheet">
+    <link href="../public/assets/css/prettyPhoto.css" rel="stylesheet">
+    <link href="../public/assets/css/price-range.css" rel="stylesheet">
+    <link href="../public/assets/css/animate.css" rel="stylesheet">
+    <link href="../public/assets/css/main.css" rel="stylesheet">
+    <link href="../public/assets/css/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="shortcut icon" href="assets/images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../public/assets/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../public/assets/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../public/assets/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../public/assets/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../public/assets/images/ico/apple-touch-icon-57-precomposed.png">
     
 </head><!--/head-->
 
 <body>
 	<?php  
-    require(BASEPATH.'app/views/public/header.php');   
+    require('header.php');   
   ?>
 		
     <div class="header-bottom"><!--header-bottom-->
@@ -45,20 +45,20 @@
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a></a></li>
-								<li><a href="<?php echo BASEURL; ?>home">Home</a></li>
+								<li><a href="../public/index"></a></li>
 								<li><a></a></li><li><a></a></li><li><a></a></li>
-								<li><a href="<?php echo BASEURL; ?>upload_electronics">Sell an item</a></li>
+								<li><a href="upload_electronics">Sell an item</a></li>
 								<li><a></a></li><li><a></a></li><li><a></a></li>
-								<li><a href="<?php echo BASEURL; ?>categories">Categories</a></li>
+								<li><a href="categories">Categories</a></li>
 								<li><a></a></li><li><a></a></li><li><a></a></li>
-								<li><a href="<?php echo BASEURL; ?>contact_us">Contact us</a></li>
+								<li><a href="contact_us">Contact us</a></li>
 								
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-3">
 						<div class="search_box">
-							<form action='/eshopper/public/results' method='GET'>
+							<form action='../public/results' method='GET'>
               <input type="text" name='k' class="searchtext col-sm-10" placeholder="Search"/>
               <button type="submit" class="btn btn-default col-sm-2 bton"><i class="fa fa-search"></i></button>
               </form>
@@ -75,7 +75,7 @@
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<form action="<?php echo BASEURL; ?>loginpage/authenticateUser" method="POST">
+						<form action="loginpage/authenticateUser" method="POST">
 							<input type="email" placeholder="Email Address" required="required" email="email" name="email" />
 							<input type="password" placeholder="password" required="required" name="password" />
 							<!--<span>
@@ -110,13 +110,13 @@
 	
 	<br><br><br><br><br><br><br>
 	<?php  
-      require(BASEPATH.'app/views/public/footer.php');    
+      require('footer.php');    
   ?>
-  <script src="assets/js/jquery.js"></script>
-  <script src="assets/js/yann.min.js"></script>
-  <script src="assets/js/jquery.scrollUp.min.js"></script>
-  <script src="assets/js/jquery.prettyPhoto.js"></script>
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/jquery.validate.js"></script>
+  <script src="../public/assets/js/jquery.js"></script>
+  <script src="../public/assets/js/yann.min.js"></script>
+  <script src="../public/assets/js/jquery.scrollUp.min.js"></script>
+  <script src="../public/assets/js/jquery.prettyPhoto.js"></script>
+  <script src="../public/assets/js/main.js"></script>
+  <script src="../public/assets/js/jquery.validate.js"></script>
 </body>
 </html>

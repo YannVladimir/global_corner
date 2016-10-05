@@ -1,3 +1,6 @@
+<?php 
+    require_once('../includes/main_functions.php');
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head> 
@@ -96,9 +99,9 @@
 						<div class="col-sm-12">
 							<ul class="nav nav-tabs">
 								<?php 
-                                $cat = new Maincategory();
-
-                                $res = $cat->selectAllCat();
+                                $query= "SELECT * FROM categories ";
+                                $query1 = "SELECT * FROM amacategories ";
+                                $res = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
                                 	if($row['cat_id']==3)
@@ -114,7 +117,7 @@
                                 echo "</ul>
                                         </div>
                                         <div class='tab-content'> ";
-                                $res1 = $cat->selectAllCat();
+                                $res1 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res1))
                                 {
                                 	if($row['cat_id']==3)
@@ -122,8 +125,8 @@
                                          echo "<div class='tab-pane fade active in' id='{$row['cat_id']}' >";
                                 	}
                                 }
-                                $cats = new Amacategory();
-                                $res = $cats->selectAmaCat();
+                                
+                                $res = mysqli_query($con,$query1);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
                                 	if($row['refcat_id']==3)
@@ -142,7 +145,7 @@
                                 	}
                                 } 
                                 echo "</div>";
-                                $res2 = $cat->selectAllCat();
+                                $res2 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res2))
                                 {
                                 	if($row['cat_id']==4)
@@ -150,7 +153,7 @@
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                 	}
                                 } 
-                                $res3 = $cats->selectAmaCat();
+                                $res3 = mysqli_query($con,$query1);
                                 while($row = mysqli_fetch_assoc($res3))
                                 {
                                 	if($row['refcat_id']==4)
@@ -169,7 +172,7 @@
                                 	}
                                 } 
                                 echo "</div>";
-                                $res4 = $cat->selectAllCat();
+                                $res4 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res4))
                                 {
                                 	if($row['cat_id']==5)
@@ -178,7 +181,7 @@
                                 	}
                                 } 
                             
-                                $res5 = $cats->selectAmaCat();
+                                $res5 = mysqli_query($con,$query1);
                                 while($row = mysqli_fetch_assoc($res5))
                                 {
                                 	if($row['refcat_id']==5)
@@ -197,7 +200,7 @@
                                 	}
                                 } 
                               echo "</div>";
-                                $res6 = $cat->selectAllCat();
+                                $res6 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res6))
                                 {
                                 	if($row['cat_id']==6)
@@ -206,7 +209,7 @@
                                 	}
                                 } 
                             
-                                $res7 = $cats->selectAmaCat();
+                                $res7 = mysqli_query($con,$query1);
                                 while($row = mysqli_fetch_assoc($res7))
                                 {
                                 	if($row['refcat_id']==6)
@@ -225,7 +228,7 @@
                                 	}
                                 } 
                               echo "</div>";
-                                $res8 = $cat->selectAllCat();
+                                $res8 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res8))
                                 {
                                 	if($row['cat_id']==7)
@@ -233,7 +236,7 @@
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                 	}
                                 }
-                                $res9 = $cats->selectAmaCat();
+                                $res9 = mysqli_query($con,$query1);
                                 while($row = mysqli_fetch_assoc($res9))
                                 {
                                 	if($row['refcat_id']==7)
@@ -252,7 +255,7 @@
                                 	}
                                 } 
                               echo "</div>";
-                                $res10 = $cat->selectAllCat();
+                                $res10 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res10))
                                 {
                                 	if($row['cat_id']==8)
@@ -261,7 +264,7 @@
                                 	}
                                 } 
                               
-                                $res11 = $cats->selectAmaCat();
+                                $res11 = mysqli_query($con,$query1);
                                 while($row = mysqli_fetch_assoc($res11))
                                 {
                                 	if($row['refcat_id']==8)
@@ -280,7 +283,7 @@
                                 	}
                                 } 
                               echo "</div>";
-                                $res12 = $cat->selectAllCat();
+                                $res12 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res12))
                                 {
                                 	if($row['cat_id']==9)
@@ -289,7 +292,7 @@
                                 	}
                                 } 
                             
-                                $res13 = $cats->selectAmaCat();
+                                $res13 = mysqli_query($con,$query1);
                                 while($row = mysqli_fetch_assoc($res13))
                                 {
                                 	if($row['refcat_id']==9)
@@ -308,7 +311,7 @@
                                 	}
                                 } 
                               echo "</div>";
-                                $res14 = $cat->selectAllCat();
+                                $res14 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res14))
                                 {
                                 	if($row['cat_id']==10)
@@ -317,7 +320,7 @@
                                 	}
                                 } 
                               
-                                $res15 = $cats->selectAmaCat();
+                                $res15 = mysqli_query($con,$query1);
                                 while($row = mysqli_fetch_assoc($res15))
                                 {
                                 	if($row['refcat_id']==10)
