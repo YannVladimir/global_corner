@@ -28,7 +28,7 @@
 				<div class="row">
 					<div class="col-sm-7">
 						<div class="logo pull-left">
-							<a href="<?php echo BASEURL; ?>home"><img src="<?php echo BASEURL."../assets/images/home/logos.png"; ?>" alt="" /></a>
+							<a href="index"><img src="assets/images/home/logos.png" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right">
 							
@@ -54,7 +54,7 @@
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a href='acount'><i class='fa fa-user'></i> My Account</a></li>
-								<li><a href='public/logout'><i class='fa fa-lock'></i> Logout</a></li>
+								<li><a href='logout'><i class='fa fa-lock'></i> Logout</a></li>
 							</ul>
 						</div>
 					</div>";
@@ -65,7 +65,7 @@
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a></a></li>
-								<li><a href='loginpage'><i class='fa fa-lock'></i> Login</a></li>
+								<li><a href='../pages/loginpage'><i class='fa fa-lock'></i> Login</a></li>
 							</ul>
 						</div>
 					</div>";
