@@ -65,7 +65,7 @@
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a></a></li>
-								<li><a href='public/loginpage'><i class='fa fa-lock'></i> Login</a></li>
+								<li><a href='loginpage'><i class='fa fa-lock'></i> Login</a></li>
 							</ul>
 						</div>
 					</div>";
