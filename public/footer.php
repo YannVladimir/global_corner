@@ -26,11 +26,11 @@
 						<div class="single-widget">
 							<h2>Top Categories</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="<?php echo BASEURL; ?>products?category=3">Electronics</a></li>
-								<li><a href="<?php echo BASEURL; ?>products?category=4">Mobiles</a></li>
-								<li><a href="<?php echo BASEURL; ?>products?category=10">Jobs</a></li>
-								<li><a href="<?php echo BASEURL; ?>products?category=9">Real Estates</a></li>
-								<li><a href="<?php echo BASEURL; ?>products?category=8">Cars $ Bikes</a></li>
+								<li><a href="products?category=3">Electronics</a></li>
+								<li><a href="products?category=4">Mobiles</a></li>
+								<li><a href="products?category=10">Jobs</a></li>
+								<li><a href="products?category=9">Real Estates</a></li>
+								<li><a href="products?category=8">Cars $ Bikes</a></li>
 							</ul>
 						</div>
 					</div>
@@ -39,7 +39,7 @@
 							<h2>Services</h2>
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="#">Online Help</a></li>
-								<li><a href="<?php echo BASEURL; ?>contact_us">Contact Us</a></li>
+								<li><a href="contact_us">Contact Us</a></li>
 								<li><a href="#">FAQ’s</a></li>
 							</ul>
 						</div>
