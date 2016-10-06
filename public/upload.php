@@ -104,7 +104,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                 <li><a href="index.php" class="fon">Home</a></li>
                 <li><a href="upload.php?" class="active fon">Sell</a></li>
                 <li><a href="categories.php" class="fon">Buy</a></li>
-                <li><a href="index.php?pageName=contact_us" class="fon">Contact us</a></li>
+                <li><a href="contact_us.php" class="fon">Contact us</a></li>
                 
               </ul>
             </div>
