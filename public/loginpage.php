@@ -52,11 +52,11 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a></a></li>
-								<li><a href="index.php"></a></li>
+								<li><a href="index.php"></a>Home</li>
 								<li><a></a></li><li><a></a></li><li><a></a></li>
-								<li><a href="upload_electronics">Sell an item</a></li>
+								<li><a href="upload_electronics">Sell</a></li>
 								<li><a></a></li><li><a></a></li><li><a></a></li>
-								<li><a href="categories">Categories</a></li>
+								<li><a href="categories">Buy</a></li>
 								<li><a></a></li><li><a></a></li><li><a></a></li>
 								<li><a href="contact_us">Contact us</a></li>
 								
