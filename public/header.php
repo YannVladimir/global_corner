@@ -47,7 +47,7 @@
 					</div>
 					
 					<?php
-                   if($_SESSION)
+                   if(isset($_SESSION['id']))
                    {
                        echo "
                        <div class='col-sm-5'>
@@ -65,7 +65,7 @@
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a></a></li>
-								<li><a href='index.php?pageName=loginpage'><i class='fa fa-lock'></i> Login</a></li>
+								<li><a href='loginpage.php'><i class='fa fa-lock'></i> Login</a></li>
 							</ul>
 						</div>
 					</div>";
