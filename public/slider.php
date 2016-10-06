@@ -13,9 +13,9 @@
 						 
 						<div class="carousel-inner">
 							<?php 
-                               $c = new Items();
                                $v = 1;
-                               $res = $c->selectAcceptedSlider();
+                               $query = "SELECT * FROM items where is_accepted = 1 order by post_id desc limit 5";
+                               $res = mysqli_query($con,$query);
                                while($row = mysqli_fetch_assoc($res))
                                {
                                    if($v==1){
@@ -38,7 +38,7 @@
 									<button type='button' class='btn btn-default get'>View Details</button></a>
 								</div>
 								<div class='col-sm-4 slidersizing'><br><br><br>
-									<img src='public/assets/images/posts/{$row['main']}' class='girl img-responsive' alt='' />
+									<img src='assets/images/posts/{$row['main']}' class='girl img-responsive' alt='' />
 				
 								</div> 
 							</div>";

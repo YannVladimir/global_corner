@@ -68,7 +68,7 @@
 					</div>
 					<div class="col-sm-3">
 						<div class="search_box">
-                          <form action='/eshopper/public/results' method='GET'>
+                          <form action='public/results' method='GET'>
 							<input type="text" name='k' class="searchtext col-sm-10" placeholder="Search"/>
 							<button type="submit" class="btn btn-default col-sm-2 bton"><i class="fa fa-search"></i></button>
 						  </form>
@@ -133,7 +133,7 @@
 									<div class='product-image-wrapper'>
 										<div class='single-products'>
 											<div class='productinfo text-center'>
-												<img class='sizingimagesmax' src='/eshopper/assets/images/subcategories/{$row['subcat_image']}' alt='' />
+												<img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
 												<h4>{$row['subcat_name']}</h4>
 												<a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
 											</div>	
@@ -160,7 +160,7 @@
 									<div class='product-image-wrapper'>
 										<div class='single-products'>
 											<div class='productinfo text-center'>
-												<img class='sizingimagesmax' src='/eshopper/assets/images/subcategories/{$row['subcat_image']}' alt='' />
+												<img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
 												<h4>{$row['subcat_name']}</h4>
 												<a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
 											</div>	
@@ -188,7 +188,7 @@
 									<div class='product-image-wrapper'>
 										<div class='single-products'>
 											<div class='productinfo text-center'>
-												<img class='sizingimagesmax' src='/eshopper/assets/images/subcategories/{$row['subcat_image']}' alt='' />
+												<img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
 												<h4>{$row['subcat_name']}</h4>
 												<a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
 											</div>	
@@ -216,7 +216,7 @@
 									<div class='product-image-wrapper'>
 										<div class='single-products'>
 											<div class='productinfo text-center'>
-												<img class='sizingimagesmax' src='/eshopper/assets/images/subcategories/{$row['subcat_image']}' alt='' />
+												<img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
 												<h4>{$row['subcat_name']}</h4>
 												<a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
 											</div>	
@@ -243,7 +243,7 @@
 									<div class='product-image-wrapper'>
 										<div class='single-products'>
 											<div class='productinfo text-center'>
-												<img class='sizingimagesmax' src='/eshopper/assets/images/subcategories/{$row['subcat_image']}' alt='' />
+												<img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
 												<h4>{$row['subcat_name']}</h4>
 												<a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
 											</div>	
@@ -271,7 +271,7 @@
 									<div class='product-image-wrapper'>
 										<div class='single-products'>
 											<div class='productinfo text-center'>
-												<img class='sizingimagesmax' src='/eshopper/assets/images/subcategories/{$row['subcat_image']}' alt='' />
+												<img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
 												<h4>{$row['subcat_name']}</h4>
 												<a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
 											</div>	
@@ -299,7 +299,7 @@
 									<div class='product-image-wrapper'>
 										<div class='single-products'>
 											<div class='productinfo text-center'>
-												<img class='sizingimagesmax' src='/eshopper/assets/images/subcategories/{$row['subcat_image']}' alt='' />
+												<img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
 												<h4>{$row['subcat_name']}</h4>
 												<a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
 											</div>	
@@ -328,7 +328,7 @@
 										<div class='single-products'>
 											<div class='productinfo text-center'>
 
-												<img class='sizingimagesmax' src='/eshopper/assets/images/subcategories/{$row['subcat_image']}' alt='' />
+												<img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
 												<h4>{$row['subcat_name']}</h4>
 												<a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
 											</div>	
