@@ -3,7 +3,7 @@ ini_set('display_startup_errors',1);
 ini_set('display_errors',1);
 error_reporting(E_ALL);
 session_start();
-$con = mysqli_connect("localhost","root","uIk3fDIL9q","eshopper");
+$con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 ?>
 <!DOCTYPE html>
 <html lang="en">
