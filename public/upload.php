@@ -101,10 +101,9 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
             <div class="mainmenu pull-left">
               <ul class="nav navbar-nav ">
                 
-                <li><a href="index.php" class="fon">Home                                    </a></li>
-                <li><a></a></li>
-                <li><a href="upload.php?" class="active fon">Sell                                    </a></li><li><a></a></li>
-                <li><a href="index.php?pageName=categories" class="fon">Buy                                    </a></li><li><a></a></li>
+                <li><a href="index.php" class="fon">Home</a></li>
+                <li><a href="upload.php?" class="active fon">Sell</a></li>
+                <li><a href="categories.php" class="fon">Buy</a></li>
                 <li><a href="index.php?pageName=contact_us" class="fon">Contact us</a></li>
                 
               </ul>
@@ -112,7 +111,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
           </div>
           <div class="col-sm-3">
             <div class="search_box">
-              <form action='/eshopper/public/results' method='GET'>
+              <form action='results.php' method='GET'>
               <input type="text" name='k' class="searchtext col-sm-10" placeholder="Search"/>
               <button type="submit" class="btn btn-default col-sm-2 bton"><i class="fa fa-search"></i></button>
               </form>
