@@ -58,15 +58,12 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 								<span class="icon-bar"></span>
 							</button>
 						</div>
-						<div class="mainmenu pull-left">
-							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a></a></li>
+						<div class="shop-menu pull-left">
+							<ul class="nav navbar-nav ">
+								
 								<li><a href="index.php?pageName=home" class="active">Home</a></li>
-								<li><a></a></li><li><a></a></li><li><a></a></li>
 								<li><a href="index.php?pageName=upload_electronics">Sell</a></li>
-								<li><a></a></li><li><a></a></li><li><a></a></li>
 								<li><a href="index.php?pageName=categories">Buy</a></li>
-								<li><a></a></li><li><a></a></li><li><a></a></li>
 								<li><a href="index.php?pageName=contact_us">Contact us</a></li>
 								
 							</ul>
