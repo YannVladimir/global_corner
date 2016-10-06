@@ -101,11 +101,11 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
             <div class="mainmenu pull-left">
               <ul class="nav navbar-nav ">
                 
-                <li><a href="index.php?pageName=home" class="fon">Home       </a></li>
-                <li><a></a></li><li><a></a></li>
-                <li><a href="index.php?pageName=upload_electronics" class="active fon">    Sell      </a></li><li><a></a></li><li><a></a></li>
-                <li><a href="index.php?pageName=categories" class="fon">     Buy      </a></li><li><a></a></li><li><a></a></li>
-                <li><a href="index.php?pageName=contact_us" class="fon">      Contact us</a></li>
+                <li><a href="index.php" class="fon">Home                                    </a></li>
+                <li><a></a></li>
+                <li><a href="upload.php?" class="active fon">Sell                                    </a></li><li><a></a></li>
+                <li><a href="index.php?pageName=categories" class="fon">Buy                                    </a></li><li><a></a></li>
+                <li><a href="index.php?pageName=contact_us" class="fon">Contact us</a></li>
                 
               </ul>
             </div>
