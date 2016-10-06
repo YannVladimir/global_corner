@@ -1,5 +1,5 @@
 <?php 
-	require_once('global_corner/main_functions.php');
+	require_once('../global_corner/main_functions.php');
 	$url="home.php" ;
 	$pageName = "Home";
 	if(isset($_GET['pageName']) && !empty($_GET['pageName']) && is_string($_GET['pageName']))
