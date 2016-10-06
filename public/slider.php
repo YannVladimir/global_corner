@@ -38,7 +38,7 @@
 									<button type='button' class='btn btn-default get'>View Details</button></a>
 								</div>
 								<div class='col-sm-4 slidersizing'><br>
-									<img src='/eshopper/assets/images/posts/{$row['main']}' class='girl img-responsive' alt='' />
+									<img src='assets/images/posts/{$row['main']}' class='girl img-responsive' alt='' />
 				
 								</div>
 							</div>";
