@@ -17,35 +17,32 @@
                                $query = "SELECT * FROM items where is_accepted = 1 order by post_id desc limit 5";
                                $res = mysqli_query($con,$query);
                                while($row = mysqli_fetch_assoc($res))
-                               {
-                               	  echo"<div class='col-sm-2'></div>
-                               	  <div class='col-sm-4 slidersizing'>
-									<img src='assets/images/posts/{$row['main']}' class='girl img-responsive' alt='' />
-				
-								</div>";
+                               { 
                                    if($v==1){
-
                                      echo "<div class='item active'>
-                                     
-								     <div class='col-sm-4'> 
-									<h1><span>Get</span> It</h1>
-									<h2>{$row['name']} </h2>";
+                                     <div class='col-sm-2'></div>
+								     <div class='col-sm-8 slidersizing'> 
+								     <img src='assets/images/posts/{$row['main']}' class='girl img-responsive' alt='' />
+				                     <h1><span>Get</span> It</h1>
+									<h2>{$row['name']} </h2><a href='product?id={$row['post_id']}'>
+									<button type='button' class='btn btn-default get'>View Details</button></a>
+								    </div> 
+							      </div>
+									";
 									$v = 2;
                                     }
                                     else{
                                 	    echo "<div class='item'>
-                                	    <div class='col-sm-2'></div>
-								       <div class='col-sm-4'> 
-									   <h1><span>Get</span> It</h1>
-									   <h2>{$row['name']} </h2>";
-                                    }
-                                    
-                                    echo "<a href='product?id={$row['post_id']}'>
+                                     <div class='col-sm-2'></div>
+								     <div class='col-sm-8 slidersizing'> 
+								     <img src='assets/images/posts/{$row['main']}' class='girl img-responsive' alt='' />
+				                     <h1><span>Get</span> It</h1>
+									<h2>{$row['name']} </h2><a href='product?id={$row['post_id']}'>
 									<button type='button' class='btn btn-default get'>View Details</button></a>
-								</div>
-								 
-							</div>";
-
+								    </div> 
+							      </div>
+									";
+                                    }
                                 }
                             ?>
 						</div>
