@@ -5,8 +5,8 @@
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> +919056148414</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> getit@gmail.com</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i> +250782767289</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> bajenezayann549@gmail.com</a></li>
 							</ul>
 						</div>
 					</div>
@@ -28,11 +28,11 @@
 				<div class="row">
 					<div class="col-sm-7">
 						<div class="logo pull-left">
-							<a href="index.php?pageName=home"><img src="assets/images/home/logos.png" alt="" /></a>
+							<a href="index.php"><img src="assets/images/home/logos.png" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right">
 							
-							<div class="btn-group">
+							<!--<div class="btn-group">
 								<button type="button" class="btn btn-default dropdown-toggle country" data-toggle="dropdown">
 									Select Your Language
 									<span class="caret"></span>
@@ -42,7 +42,7 @@
 									<li><a href="">Kinyarwanda</a></li>
 									<li><a href="">Kiswahili</a></li>
 								</ul>
-							</div>
+							</div>-->
 						</div>
 					</div>
 					
