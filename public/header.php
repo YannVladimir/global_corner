@@ -30,9 +30,9 @@
 						<div class="logo pull-left">
 							<a href="index.php"><img src="assets/images/home/logos.png" alt="" /></a>
 						</div>
-						<div class="btn-group pull-right">
+						<!--<div class="btn-group pull-right">
 							
-							<!--<div class="btn-group">
+							<div class="btn-group">
 								<button type="button" class="btn btn-default dropdown-toggle country" data-toggle="dropdown">
 									Select Your Language
 									<span class="caret"></span>
@@ -42,8 +42,8 @@
 									<li><a href="">Kinyarwanda</a></li>
 									<li><a href="">Kiswahili</a></li>
 								</ul>
-							</div>-->
-						</div>
+							</div>
+						</div>-->
 					</div>
 					
 					<?php

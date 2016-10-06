@@ -18,9 +18,15 @@
                                $res = mysqli_query($con,$query);
                                while($row = mysqli_fetch_assoc($res))
                                {
+                               	  echo"<div class='col-sm-2'></div>
+                               	  <div class='col-sm-4 slidersizing'>
+									<img src='assets/images/posts/{$row['main']}' class='girl img-responsive' alt='' />
+				
+								</div>";
                                    if($v==1){
+
                                      echo "<div class='item active'>
-                                     <div class='col-sm-2'></div>
+                                     
 								     <div class='col-sm-4'> 
 									<h1><span>Get</span> It</h1>
 									<h2>{$row['name']} </h2>";
@@ -37,10 +43,7 @@
                                     echo "<a href='product?id={$row['post_id']}'>
 									<button type='button' class='btn btn-default get'>View Details</button></a>
 								</div>
-								<div class='col-sm-4 slidersizing'>
-									<img src='assets/images/posts/{$row['main']}' class='girl img-responsive' alt='' />
-				
-								</div> 
+								 
 							</div>";
 
                                 }
