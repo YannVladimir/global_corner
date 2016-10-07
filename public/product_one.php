@@ -92,49 +92,8 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 	<section>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-9 padding-right">
-					
-						<?php 
-                            $id = $_GET['id'];
-                            $query = "SELECT * FROM items where post_id = '{$id}' and is_accepted = 1";
-			
-                            $res = mysqli_query($con,$query);
-                            while($row = mysqli_fetch_assoc($res))
-                            {
-                            	$sub_id = $row['subcat_id']; 
-                              echo "<div class='product-details'><!--product-details-->
-						<div class='col-sm-6'>
-							<div class='view-product'>
-										<div class='' id='photo1'>
-                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt=''/>
-					  </div>
-								<h3>Verified</h3>
-							</div>
-						</div>
-						<div class='col-sm-6'>
-							<div class='product-information'><!--/product-information-->
-								<img src='assets/images/product-details/new.jpg' class='newarrival' alt='' />
-								<span>
-									<span>{$row['name']}</span>
-								</span>
-								<p>{$row['details']}</p>
-								<h2>{$row['price']} Rwf</h2>
-								<p>Seller: <b>{$row['seller']}</b></p>
-								<p>Place:<b> {$row['place_name']}</b></p>
-								<p>Contact number:<b> {$row['contacts']}</b></p>
-								<p>Uploaded Date:<b>{$row['uploaded_date']}</b></p>
-								<a href=''><img src='assets/images/product-details/share.png' class='share img-responsive'  alt='' /></a>
-							</div><!--/product-information-->
-						</div>
-					</div><!--/product-details-->";
-                            } 
-                            
-                               
-                        ?>
-                    </div>
-                
-		<div class="col-sm-3">
-					
+				<div class="col-sm-3">
+					<div class="left-sidebar">
 						<h2>Categories</h2>
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
 							<?php 
@@ -181,8 +140,50 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 
 						<!--/shipping-->
 						
+					</div>
+				</div>
+				<div class="col-sm-9 padding-right">
 					
-				</div>		
+						<?php 
+                            $id = $_GET['id'];
+                            $query = "SELECT * FROM items where post_id = '{$id}' and is_accepted = 1";
+			
+                            $res = mysqli_query($con,$query);
+                            while($row = mysqli_fetch_assoc($res))
+                            {
+                            	$sub_id = $row['subcat_id']; 
+                              echo "<div class='product-details'><!--product-details-->
+						<div class='col-sm-6'>
+							<div class='view-product'>
+										<div class='' id='photo1'>
+                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt=''/>
+					  </div>
+								<h3>Verified</h3>
+							</div>
+						</div>
+						<div class='col-sm-6'>
+							<div class='product-information'><!--/product-information-->
+								<img src='assets/images/product-details/new.jpg' class='newarrival' alt='' />
+								<span>
+									<span>{$row['name']}</span>
+								</span>
+								<p>{$row['details']}</p>
+								<h2>{$row['price']} Rwf</h2>
+								<p>Seller: <b>{$row['seller']}</b></p>
+								<p>Place:<b> {$row['place_name']}</b></p>
+								<p>Contact number:<b> {$row['contacts']}</b></p>
+								<p>Uploaded Date:<b>{$row['uploaded_date']}</b></p>
+								<a href=''><img src='assets/images/product-details/share.png' class='share img-responsive'  alt='' /></a>
+							</div><!--/product-information-->
+						</div>
+					</div><!--/product-details-->";
+                            } 
+                            
+                               
+                        ?>
+                    </div>
+                
+				
 			</div>
 
 		</div>		
