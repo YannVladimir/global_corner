@@ -141,7 +141,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                             <div class='productinfo text-center'>
                                                 <img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
                                                 <h4>{$row['subcat_name']}</h4>
-                                                <a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
+                                                <a href='sub-category.php?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
                                             </div>  
                                         </div>
                                     </div>
@@ -168,7 +168,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                             <div class='productinfo text-center'>
                                                 <img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
                                                 <h4>{$row['subcat_name']}</h4>
-                                                <a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
+                                                <a href='sub-category.php?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
                                             </div>  
                                         </div>
                                     </div>
@@ -196,7 +196,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                             <div class='productinfo text-center'>
                                                 <img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
                                                 <h4>{$row['subcat_name']}</h4>
-                                                <a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
+                                                <a href='sub-category.php?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
                                             </div>  
                                         </div>
                                     </div>
@@ -224,7 +224,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                             <div class='productinfo text-center'>
                                                 <img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
                                                 <h4>{$row['subcat_name']}</h4>
-                                                <a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
+                                                <a href='sub-category.php?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
                                             </div>  
                                         </div>
                                     </div>
@@ -251,7 +251,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                             <div class='productinfo text-center'>
                                                 <img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
                                                 <h4>{$row['subcat_name']}</h4>
-                                                <a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
+                                                <a href='sub-category.php?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
                                             </div>  
                                         </div>
                                     </div>
@@ -279,7 +279,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                             <div class='productinfo text-center'>
                                                 <img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
                                                 <h4>{$row['subcat_name']}</h4>
-                                                <a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
+                                                <a href='sub-category.php?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
                                             </div>  
                                         </div>
                                     </div>
@@ -307,7 +307,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                             <div class='productinfo text-center'>
                                                 <img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
                                                 <h4>{$row['subcat_name']}</h4>
-                                                <a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
+                                                <a href='sub-category.php?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
                                             </div>  
                                         </div>
                                     </div>
@@ -336,7 +336,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 
                                                 <img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
                                                 <h4>{$row['subcat_name']}</h4>
-                                                <a href='certain?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
+                                                <a href='sub-category.php?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Visit Category</a>
                                             </div>  
                                         </div>
                                     </div>
