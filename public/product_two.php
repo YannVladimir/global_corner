@@ -181,10 +181,10 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 						<div class='col-sm-6'>
 							<div class='view-product'>
 										<div class='' id='photo1'>
-                        <img class='sizingimagesmax' src='/eshopper/assets/images/posts/{$row['main']}' alt=''/></div>
+                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt=''/></div>
 					    <div id='photo1next' class='jssora11r' style='top: 123px; right: 0px;'></div>
 					 <div class='displaynone' id='photo2'>
-						<img class='sizingimagesmax' src='/eshopper/assets/images/posts/{$row['photo1']}' alt=''/></div>
+						<img class='sizingimagesmax' src='assets/images/posts/{$row['photo1']}' alt=''/></div>
 						<div id='photo2prev' class='jssora11l' style='top: 123px; display:none; left: 0px;'></div>    
 					
 								<h3>Verified</h3>
@@ -192,7 +192,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 						</div>
 						<div class='col-sm-6'>
 							<div class='product-information'><!--/product-information-->
-								<img src='/eshopper/assets/images/product-details/new.jpg' class='newarrival' alt='' />
+								<img src='assets/images/product-details/new.jpg' class='newarrival' alt='' />
 								<span>
                   <span>{$row['name']}</span>
                 </span>
@@ -202,7 +202,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 								<p>Place:<b> {$row['place_name']}</b></p>
 								<p>Contact number:<b> {$row['contacts']}</b></p>
 								<p>Uploaded Date:<b>{$row['uploaded_date']}</b></p>
-								<a href=''><img src='/eshopper/assets/images/product-details/share.png' class='share img-responsive'  alt='' /></a>
+								<a href=''><img src='assets/images/product-details/share.png' class='share img-responsive'  alt='' /></a>
 							</div><!--/product-information-->
 						</div>
 					</div><!--/product-details-->";
@@ -224,10 +224,10 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 										<div class='product-image-wrapper'>
 											<div class='single-products'>
 												<div class='productinfo text-center'>
-													<img src='/eshopper/assets/images/posts/{$row['main']}' alt='' />
+													<img src='assets/images/posts/{$row['main']}' alt='' />
 													<h2>{$row['price']}</h2>
 													<p>{$row['name']}</p>
-										            <a href='product?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View item</a>
+										            <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View item</a>
 												</div>
 											</div>
 										</div>
