@@ -132,9 +132,9 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                
                         ?>
                     </div>
-                </div>
+                
 		<div class="col-sm-3">
-					<div class="left-sidebar">
+					
 						<h2>Categories</h2>
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
 							<?php 
@@ -181,10 +181,10 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 
 						<!--/shipping-->
 						
-					</div>
+					
 				</div>		
 			</div>
-			
+
 		</div>		
 	</section>
 	
