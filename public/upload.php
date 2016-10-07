@@ -138,13 +138,13 @@ $con = mysqli_connect("127.0.0.1","root","REDACTED_DB_PASSWORD","eshopper");
                                   <span class="caret"></span>
                                </button>
                                <ul class="dropdown-menu">
-                                  <li><a href="upload_mobiles">mobiles</a></li>
-                                  <li><a href="upload_furnitures">Furnitures</a></li>
-                                  <li><a href="upload_fashion">Fashion</a></li>
-                                  <li><a href="upload_sports">Sports & Hobbies</a></li>
-                                  <li><a href="upload_cars">Cars & Bikes</a></li>
-                                  <li><a href="upload_estates">Real Estates</a></li>
-                                  <li><a href="upload_jobs">Jobs</a></li>
+                                  <li><a href="upload_mobiles.php">mobiles</a></li>
+                                  <li><a href="upload_furnitures.php">Furnitures</a></li>
+                                  <li><a href="upload_fashion.php">Fashion</a></li>
+                                  <li><a href="upload_sports.php">Sports & Hobbies</a></li>
+                                  <li><a href="upload_cars.php">Cars & Bikes</a></li>
+                                  <li><a href="upload_estates.php">Real Estates</a></li>
+                                  <li><a href="upload_jobs.php">Jobs</a></li>
                                </ul>
                             </div>
                           </div>
