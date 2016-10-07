@@ -183,13 +183,13 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 										</div>
 										<h2>{$row['price']} Rwf</h2>
 										<p>{$row['name']}</p>
-										<a href='product?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+										<a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
 									</div>
 									<div class='product-overlay'>
 										<div class='overlay-content'>
 											<h2>{$row['price']} Rwf</h2>
 									     	<p>{$row['name']}</p>
-										    <a href='product?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+										    <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
 								        </div>
 									</div>
 								</div>

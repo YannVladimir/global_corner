@@ -34,7 +34,7 @@
 									   <h2>{$row['name']} </h2>";
                                     }
                                     
-                                    echo "<a href='product?id={$row['post_id']}'>
+                                    echo "<a href='product.php?id={$row['post_id']}'>
 									<button type='button' class='btn btn-default get'>View Details</button></a>
 								</div>
 								<div class='col-sm-4 slidersizing'><br>
