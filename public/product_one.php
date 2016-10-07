@@ -162,14 +162,14 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 						<div class='col-sm-6'>
 							<div class='view-product'>
 										<div class='' id='photo1'>
-                        <img class='sizingimagesmax' src='/eshopperassets/images/posts/{$row['main']}' alt=''/>
+                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt=''/>
 					  </div>
 								<h3>Verified</h3>
 							</div>
 						</div>
 						<div class='col-sm-6'>
 							<div class='product-information'><!--/product-information-->
-								<img src='/eshopperassets/images/product-details/new.jpg' class='newarrival' alt='' />
+								<img src='assets/images/product-details/new.jpg' class='newarrival' alt='' />
 								<span>
 									<span>{$row['name']}</span>
 								</span>
@@ -179,7 +179,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 								<p>Place:<b> {$row['place_name']}</b></p>
 								<p>Contact number:<b> {$row['contacts']}</b></p>
 								<p>Uploaded Date:<b>{$row['uploaded_date']}</b></p>
-								<a href=''><img src='/eshopperassets/images/product-details/share.png' class='share img-responsive'  alt='' /></a>
+								<a href=''><img src='assets/images/product-details/share.png' class='share img-responsive'  alt='' /></a>
 							</div><!--/product-information-->
 						</div>
 					</div><!--/product-details-->";
