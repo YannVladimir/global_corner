@@ -1,7 +1,12 @@
 <?php
+ini_set('display_startup_errors',1);
+ini_set('display_errors',1);
+error_reporting(E_ALL);
+session_start();
+$con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 function clearInput($input)
 {
-   return mysqli_real_escape_string(mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper"),htmlentities($input));
+   return mysqli_real_escape_string($con),htmlentities($input));
 }
 $category = clearInput($_POST['subcategory']);
 $seller = clearInput($_POST['name']);
@@ -305,3 +310,4 @@ $select = mysqli_query($con,$queryy);
 	
 	
 }
+?>
