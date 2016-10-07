@@ -134,15 +134,15 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                           <div class="btn-group pull-right">
                             <div class="btn-group">
                                <button type="button" class="btn btn-default dropdown-toggle country" data-toggle="dropdown">
-                                  Electronic materials
+                                 Fashion
                                   <span class="caret"></span>
                                </button>
                                <ul class="dropdown-menu">
+                                  <li><a href="upload.php">Electronic materials</a></li>
                                   <li><a href="upload_mobiles.php">mobiles</a></li>
                                   <li><a href="upload_furnitures.php">Furnitures</a></li>
-                                  <li><a href="upload_fashion.php">Fashion</a></li>
-                                  <li><a href="upload_sports.php">Sports & Hobbies</a></li>
                                   <li><a href="upload_cars.php">Cars & Bikes</a></li>
+                                  <li><a href="upload_sports.php">Sports & Hobbies</a></li>
                                   <li><a href="upload_estates.php">Real Estates</a></li>
                                   <li><a href="upload_jobs.php">Jobs</a></li>
                                </ul>
@@ -163,7 +163,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                     $res = mysqli_query($con,$query);
                                     while($row = mysqli_fetch_assoc($res))
                                     {
-                                       if($row['refcat_id']==3)
+                                       if($row['refcat_id']==6)
                                        echo "<option value='{$row['subcat_id']}'>{$row['subcat_name']}</option>";
                                     } 
                                 ?>
