@@ -93,6 +93,80 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 	<section>
 		<div class="container">
 			<div class="row">
+        <div class="col-sm-9 padding-right">
+          <div class="features_items"><!--features_items-->
+            <h2 class="title text-center">Search Results</h2>
+            <?php 
+                            $k = $_GET['k'];
+                            $terms = explode(" ", $k);
+                            $query = "SELECT * FROM items where is_accepted = 1 and ";
+                            $i=0;
+                            foreach ($terms as $each) {
+                             $i++;
+                             if($i==1)
+                             {
+                               $query.= " name LIKE '%$each%' ";
+                             }
+                             else
+                             {
+                                 $query.= "OR name LIKE '%$each%' ";
+                             }
+                            }
+                            //connect to the database
+                            
+                            $query = mysqli_query($con,$query);
+                            $numrows = mysqli_num_rows($query);
+                            $var=0;
+                            if($numrows>0)
+                            {
+                                while($row = mysqli_fetch_assoc($query))
+                                {
+                              echo "<div class='col-sm-3'>
+              <div class='product-image-wrapper'>
+                <div class='single-products'>
+                  <div class='productinfo text-center'>
+                                       <div class='sizingimages'>
+                    <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                    </div>
+                    <h2>{$row['price']} Rwf</h2>
+                    <p>{$row['name']}</p>
+                    <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                  </div>
+                  <div class='product-overlay'>
+                    <div class='overlay-content'>
+                      <h2>{$row['price']} Rwf</h2>
+                        <p>{$row['name']}</p>
+                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                        </div>
+                  </div>
+                </div>
+                <div class='choose'>
+                  <ul class='nav nav-pills nav-justified'>
+                    <li><a href='#'>{$row['place_name']}</a></li>
+                    <li><a href='#'>{$row['uploaded_date']}</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>";
+                            }
+                         } 
+                         else
+                         {
+                            $var=$var+1;
+                         } 
+                         if($var>1)
+                          {
+                              echo "<div class='col-md-5'></div><div class='col-md-6'><h4>No results found for {$_GET['k']}</h4>
+               
+                               </div>";
+            }    
+                        ?>
+
+            
+          </div>
+
+            
+            </div>
 				<div class="col-sm-3">
 					<div class="left-sidebar">
 						<h2>Categories</h2>
@@ -146,89 +220,15 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 					</div>
 				</div>
 				
-				<div class="col-sm-9 padding-right">
-					<div class="features_items"><!--features_items-->
-						<h2 class="title text-center">Search Results</h2>
-						<?php 
-                            $k = $_GET['k'];
-                            $terms = explode(" ", $k);
-                            $query = "SELECT * FROM items where is_accepted = 1 and ";
-                            $i=0;
-                            foreach ($terms as $each) {
-                             $i++;
-                             if($i==1)
-                             {
-                               $query.= " name LIKE '%$each%' ";
-                             }
-                             else
-                             {
-                                 $query.= "OR name LIKE '%$each%' ";
-                             }
-                            }
-                            //connect to the database
-                            
-                            $query = mysqli_query($con,$query);
-                            $numrows = mysqli_num_rows($query);
-                            $var=0;
-                            if($numrows>0)
-                            {
-                                while($row = mysqli_fetch_assoc($query))
-                                {
-                              echo "<div class='col-sm-3'>
-							<div class='product-image-wrapper'>
-								<div class='single-products'>
-									<div class='productinfo text-center'>
-                                       <div class='sizingimages'>
-										<img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
-										</div>
-										<h2>{$row['price']} Rwf</h2>
-										<p>{$row['name']}</p>
-										<a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-									</div>
-									<div class='product-overlay'>
-										<div class='overlay-content'>
-											<h2>{$row['price']} Rwf</h2>
-									     	<p>{$row['name']}</p>
-										    <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-								        </div>
-									</div>
-								</div>
-								<div class='choose'>
-									<ul class='nav nav-pills nav-justified'>
-										<li><a href='#'>{$row['place_name']}</a></li>
-										<li><a href='#'>{$row['uploaded_date']}</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>";
-                            }
-                         } 
-                         else
-                         {
-                            $var=$var+1;
-                         } 
-                         if($var>1)
-                          {
-                              echo "<div class='col-md-5'></div><div class='col-md-6'><h4>No results found for {$_GET['k']}</h4>
-               
-                               </div>";
-            }    
-                        ?>
-
+				
 						
-					</div>
-
-						
-						</div>
-						</div>
 						<!--<ul class="pagination col-sm-12">
 							<li class="active"><a href="">1</a></li>
 							<li><a href="#first">2</a></li>
 							<li><a href="#second">3</a></li>
 							<li><a href="">&raquo;</a></li>
 						</ul>-->
-					</div><!--features_items-->
-				</div>
+					
 			</div>
 		</div>
 	</section>
