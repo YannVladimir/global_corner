@@ -61,7 +61,7 @@ $con = mysqli_connect("127.0.0.1","root","REDACTED_DB_PASSWORD","eshopper");
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.php" class="fon">Home</a></li>
+								<li><a href="home.php" class="fon">Home</a></li>
                 <li><a href="upload.php" class="fon">Sell</a></li>
                 <li><a href="categories.php" class="active fon">Buy</a></li>
                 <li><a href="contact_us.php" class="fon">Contact us</a></li>
@@ -195,17 +195,18 @@ $con = mysqli_connect("127.0.0.1","root","REDACTED_DB_PASSWORD","eshopper");
                                               {
                                               if($ro['refcat_id']==$c)
                                               {
-                                                   echo "<li><a href='certain?id={$ro['subcat_id']}'>*   {$ro['subcat_name']} </a></li>";
+                                                   echo "<li><a href='sub-category.php?id={$ro['subcat_id']}'>*   {$ro['subcat_name']} </a></li>";
                                                    
                                               }
                                               }
                                               
                                             }
-                                            $c = $c+1;
-                                            echo "<li><a href='certain?id=0'>*   All in {$a} </a></li></ul>
+                                            
+                                            echo "<li><a href='category.php?id={$c}'>*   All in {$a} </a></li></ul>
                   </div>
                 </div>
               </div>";
+              $c = $c+1;
                                             
                                             } 
                                         ?>

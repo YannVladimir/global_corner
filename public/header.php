@@ -28,7 +28,7 @@
 				<div class="row">
 					<div class="col-sm-7">
 						<div class="logo pull-left">
-							<a href="index.php"><img src="assets/images/home/logos.png" alt="" /></a>
+							<a href="home.php"><img src="assets/images/home/logos.png" alt="" /></a>
 						</div>
 						<!--<div class="btn-group pull-right">
 							
