@@ -102,7 +102,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 						<?php 
                             $id = $_GET['id'];
                             $a = 0;
-                            $query = "SELECT * FROM items where cat_id = '{$id}' order by uploaded_date desc";
+                            $query = "SELECT * FROM items where refcat_id = '{$id}' order by uploaded_date desc";
                             $res = mysqli_query($con,$query);
                             while($row = mysqli_fetch_assoc($res))
                             {
