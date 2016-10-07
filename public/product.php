@@ -11,28 +11,29 @@ while($row = mysqli_fetch_assoc($res))
 {
 	if($row['photo1'] == '')
 	{
-		require_once('product_one.php');
+		require('product_one.php');
+		exit;
 	}
 	elseif ($row['photo2'] == '')
 	{
-		require_once('product_two.php');
+		require('product_two.php');
+		exit;
 	}
 	elseif ($row['photo3'] == '')
 	{
-		require_once('product_three.php');
+		require('product_three.php');
+		exit;
 	}
 	elseif ($row['photo4'] == '')
 	{
-		require_once('product_four.php');
+		require('product_four.php');
+		exit;
 	}	
 	elseif ($row['photo5'] == '')
 	{
-		require_once('product_five.php');
+		require('product_five.php');
+		exit;
 	}
 	
-	
-}
-		
-	}
 	
 }
