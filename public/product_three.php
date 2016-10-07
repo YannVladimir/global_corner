@@ -238,7 +238,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
           </div>
         </div>
 						
-				
+				</div>
 			</div>
 		</div>
 	</section>
