@@ -159,17 +159,20 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                             }
                                
                         ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
                     			
 						</div>
-				<div class="col-sm-3">
+		<div class="col-sm-3">
 					<div class="left-sidebar">
 						<h2>Categories</h2>
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
 							<?php 
-                                            
                                             $c = 3;
                                             $query = "SELECT * FROM categories ";
-                                            $queryy = "SELECT * FROM amacategories ";
                                             $res = mysqli_query($con,$query);
                                             while($row = mysqli_fetch_assoc($res))
                                             {
@@ -185,7 +188,8 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                 </div><div id='$c' class='panel-collapse collapse'>
                   <div class='panel-body'>
                     <ul>";$a = $row['cat_name'];
-                    $re =  mysqli_query($con,$queryy);
+                    $queryy = "SELECT * FROM amacategories ";
+                    $re = mysqli_query($con,$queryy);
                     while($ro = mysqli_fetch_assoc($re))
                                               {
                                               if($ro['refcat_id']==$c)
@@ -201,27 +205,19 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                   </div>
                 </div>
               </div>";
-                                            $c = $c+1;
+              $c = $c+1;
+                                            
                                             } 
                                         ?>
 							
 						</div><!--/category-productsr-->
-						
-						
-						<div class="shipping text-center"><!--shipping-->
 
-							<img src="assets/images/home/shipping.jpg" alt="" />
-						</div><!--/shipping-->
+						<!--/shipping-->
 						
 					</div>
-				</div>
-				
-				
-					
-						
-				
+				</div>		
 			</div>
-		</div>
+		</div>		
 	</section>
 	
 	<br><br><br><br>
@@ -238,3 +234,55 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
    
 </body>
 </html>
+<div class="container">
+			<div class="row">
+				<div class="col-sm-9 padding-right">
+					<div class="features_items"><!--features_items-->
+						<h2 class="title text-center">Features Items</h2>
+						<?php 
+                            $id = $_GET['id'];
+                            $a = 0;
+                            $query = "SELECT * FROM items where refcat_id = '{$id}' order by uploaded_date desc";
+                            $res = mysqli_query($con,$query);
+                            while($row = mysqli_fetch_assoc($res))
+                            {
+                              if($row['is_accepted'] == 1){
+                              echo "<div class='col-sm-3'>
+							<div class='product-image-wrapper'>
+								<div class='single-products'>
+									<div class='productinfo text-center'>
+                      <div class='sizingimages'>
+										<img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+										</div>
+										<h2>{$row['price']} Rwf</h2>
+										<p>{$row['name']}</p>
+										<a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+									</div>
+									<div class='product-overlay'>
+										<div class='overlay-content'>
+											<h2>{$row['price']} Rwf</h2>
+									     	<p>{$row['name']}</p>
+										    <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+								        </div>
+									</div>
+								</div>
+								<div class='choose'>
+									<ul class='nav nav-pills nav-justified'>
+										<li><a href='#'>{$row['place_name']}</a></li>
+										<li><a href='#'>{$row['uploaded_date']}</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>";
+                              $a = $a+1;
+                            }}
+                            if($a==0)
+                            {
+                            	echo "<h2>No posts found in this category</h2>";
+                            } 
+                               
+                        ?>
+
+						
+					</div>
+                  </div>

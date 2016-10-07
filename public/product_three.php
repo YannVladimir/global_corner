@@ -230,10 +230,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
             </div><!--/category-productsr-->
             
             
-            <div class="shipping text-center"><!--shipping-->
-
-              <img src="assets/images/home/shipping.jpg" alt="" />
-            </div><!--/shipping-->
+            <!--/shipping-->
             
           </div>
         </div>
