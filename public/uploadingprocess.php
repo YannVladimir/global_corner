@@ -3,10 +3,6 @@ function clearInput($input)
 {
    return mysqli_real_escape_string(mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper"),htmlentities($input));
 }
-require_once BASEPATH.'app/models/photofunction.php';
-require_once BASEPATH.'app/models/postfunction.php';
-$p = new Post();
-$s = new Photos();
 $category = clearInput($_POST['subcategory']);
 $seller = clearInput($_POST['name']);
 $nam = clearInput($_POST['izina']);
