@@ -6,20 +6,20 @@ session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Items | Get It</title>
+    <title>Home | Get It</title>
     <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/yann.min.css" rel="stylesheet">
     <link href="assets/css/prettyPhoto.css" rel="stylesheet">
     <link href="assets/css/price-range.css" rel="stylesheet">
     <link href="assets/css/animate.css" rel="stylesheet">
-  <link href="assets/css/main.css" rel="stylesheet">
-  <link href="assets/css/responsive.css" rel="stylesheet">
+	<link href="assets/css/main.css" rel="stylesheet">
+	<link href="assets/css/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -31,22 +31,24 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
     <link rel="apple-touch-icon-precomposed" href="assets/images/ico/apple-touch-icon-57-precomposed.png">
     <style type="text/css">
       .sizingimages{
-      	height: 200px;
+        height: 200px;
       }
       .sizingimagesmax{
-      	max-height: 190px;
+        height: 190px;
+      }
+      .slidersizing{
+        height:320px;
       }
       .fon{
-        font-size: 20px;
+      	font-size: 20px;
       }
     </style>
 </head><!--/head-->
 
 <body>
-	<?php   
-    require('header.php');   
-  ?>	
-
+	<?php  
+      include('header.php');   
+    ?>
     <div class="header-bottom"><!--header-bottom-->
 			<div class="container">
 				<div class="row">
@@ -60,22 +62,23 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 							</button>
 						</div>
 						<div class="mainmenu pull-left">
-							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="home.php" class="fon">Home</a></li>
+							<ul class="nav navbar-nav ">
+							 
+                <li><a href="home.php" class="fon">Home</a></li>
                 <li><a href="upload.php" class="fon">Sell</a></li>
                 <li><a href="categories.php" class="active fon">Buy</a></li>
                 <li><a href="contact_us.php" class="fon">Contact us</a></li>
                 
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="search_box">
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="search_box">
                           <form action='search_results.php' method='GET'>
-              <input type="text" name='k' class="searchtext col-sm-10" placeholder="Search"/>
-              <button type="submit" class="btn btn-default col-sm-2 bton"><i class="fa fa-search"></i></button>
-              </form>
-            </div>
+							<input type="text" name='k' class="searchtext col-sm-10" placeholder="Search"/>
+							<button type="submit" class="btn btn-default col-sm-2 bton"><i class="fa fa-search"></i></button>
+						  </form>
+                        </div>
 					</div>
 				</div>
 			</div>
@@ -93,80 +96,56 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 	<section>
 		<div class="container">
 			<div class="row">
-        <div class="col-sm-9 padding-right">
-          <div class="features_items"><!--features_items-->
-            <h2 class="title text-center">Search Results</h2>
-            <?php 
-                            $k = $_GET['k'];
-                            $terms = explode(" ", $k);
-                            $query = "SELECT * FROM items where is_accepted = 1 and ";
-                            $i=0;
-                            foreach ($terms as $each) {
-                             $i++;
-                             if($i==1)
-                             {
-                               $query.= " name LIKE '%$each%' ";
-                             }
-                             else
-                             {
-                                 $query.= "OR name LIKE '%$each%' ";
-                             }
-                            }
-                            //connect to the database
-                            
-                            $query = mysqli_query($con,$query);
-                            $numrows = mysqli_num_rows($query);
-                            $var=0;
-                            if($numrows>0)
+				<div class="col-sm-9 padding-right">
+					<div class="features_items"><!--features_items-->
+						<h2 class="title text-center">Features Items</h2>
+						<?php 
+                            $id = $_GET['id'];
+                            $a = 0;
+                            $query = "SELECT * FROM items where cat_id = '{$id}' and is_accepted = 1 order by uploaded_date desc";
+                            $res = mysqli_query($con,$query);
+                            while($row = mysqli_fetch_assoc($res))
                             {
-                                while($row = mysqli_fetch_assoc($query))
-                                {
+                              if($row['is_accepted'] == 1){
                               echo "<div class='col-sm-3'>
-              <div class='product-image-wrapper'>
-                <div class='single-products'>
-                  <div class='productinfo text-center'>
-                                       <div class='sizingimages'>
-                    <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
-                    </div>
-                    <h2>{$row['price']} Rwf</h2>
-                    <p>{$row['name']}</p>
-                    <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                  </div>
-                  <div class='product-overlay'>
-                    <div class='overlay-content'>
-                      <h2>{$row['price']} Rwf</h2>
-                        <p>{$row['name']}</p>
-                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                        </div>
-                  </div>
-                </div>
-                <div class='choose'>
-                  <ul class='nav nav-pills nav-justified'>
-                    <li><a href='#'>{$row['place_name']}</a></li>
-                    <li><a href='#'>{$row['uploaded_date']}</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>";
-                            }
-                         } 
-                         else
-                         {
-                            $var=$var+1;
-                         } 
-                         if($var>1)
-                          {
-                              echo "<div class='col-md-5'></div><div class='col-md-6'><h4>No results found for {$_GET['k']}</h4>
-               
-                               </div>";
-            }    
+							<div class='product-image-wrapper'>
+								<div class='single-products'>
+									<div class='productinfo text-center'>
+                      <div class='sizingimages'>
+										<img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+										</div>
+										<h2>{$row['price']} Rwf</h2>
+										<p>{$row['name']}</p>
+										<a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+									</div>
+									<div class='product-overlay'>
+										<div class='overlay-content'>
+											<h2>{$row['price']} Rwf</h2>
+									     	<p>{$row['name']}</p>
+										    <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+								        </div>
+									</div>
+								</div>
+								<div class='choose'>
+									<ul class='nav nav-pills nav-justified'>
+										<li><a href='#'>{$row['place_name']}</a></li>
+										<li><a href='#'>{$row['uploaded_date']}</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>";
+                              $a = $a+1;
+                            }}
+                            if($a==0)
+                            {
+                            	echo "<h2>No posts found in this category</h2>";
+                            } 
+                               
                         ?>
 
-            
-          </div>
-
-            
-            </div>
+						
+					</div>
+                  </div>
 				<div class="col-sm-3">
 					<div class="left-sidebar">
 						<h2>Categories</h2>
@@ -219,17 +198,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 						</div><!--/shipping-->
 						
 					</div>
-				</div>
-				
-				
-						
-						<!--<ul class="pagination col-sm-12">
-							<li class="active"><a href="">1</a></li>
-							<li><a href="#first">2</a></li>
-							<li><a href="#second">3</a></li>
-							<li><a href="">&raquo;</a></li>
-						</ul>-->
-					
+				</div>		
 			</div>
 		</div>
 	</section>

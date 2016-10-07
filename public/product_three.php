@@ -75,7 +75,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
             </div>
             <div class="mainmenu pull-left">
               <ul class="nav navbar-nav collapse navbar-collapse">
-                <li><a href="index.php" class="fon">Home</a></li>
+                <li><a href="home.php" class="fon">Home</a></li>
                 <li><a href="upload.php" class="fon">Sell</a></li>
                 <li><a href="categories.php" class="active fon">Buy</a></li>
                 <li><a href="contact_us.php" class="fon">Contact us</a></li>
