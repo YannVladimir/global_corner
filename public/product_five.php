@@ -245,10 +245,7 @@ $con = mysqli_connect("127.0.0.1","root","REDACTED_DB_PASSWORD","eshopper");
             </div><!--/category-productsr-->
             
             
-            <div class="shipping text-center"><!--shipping-->
-
-              <img src="assets/images/home/shipping.jpg" alt="" />
-            </div><!--/shipping-->
+            <!--/shipping-->
             
           </div>
         </div>
