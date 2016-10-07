@@ -51,24 +51,20 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a></a></li>
-								<li><a href="index.php"></a>Home</li>
-								<li><a></a></li><li><a></a></li><li><a></a></li>
-								<li><a href="upload_electronics">Sell</a></li>
-								<li><a></a></li><li><a></a></li><li><a></a></li>
-								<li><a href="categories">Buy</a></li>
-								<li><a></a></li><li><a></a></li><li><a></a></li>
-								<li><a href="contact_us">Contact us</a></li>
-								
+								<li><a href="index.php" class="fon">Home</a></li>
+                <li><a href="upload.php" class="fon">Sell</a></li>
+                <li><a href="categories.php" class="fon">Buy</a></li>
+                <li><a href="contact_us.php" class="fon">Contact us</a></li>
+                
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-3">
 						<div class="search_box">
-							<form action='results' method='GET'>
-              <input type="text" name='k' class="searchtext col-sm-10" placeholder="Search"/>
-              <button type="submit" class="btn btn-default col-sm-2 bton"><i class="fa fa-search"></i></button>
-              </form>
+                          <form action='search_results.php' method='GET'>
+							<input type="text" name='k' class="searchtext col-sm-10" placeholder="Search"/>
+							<button type="submit" class="btn btn-default col-sm-2 bton"><i class="fa fa-search"></i></button>
+						  </form>
             </div>
 					</div>
 				</div>

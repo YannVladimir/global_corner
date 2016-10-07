@@ -62,13 +62,13 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                 <li><a href="upload.php" class="fon">Sell</a></li>
                 <li><a href="categories.php" class="active fon">Buy</a></li>
                 <li><a href="contact_us.php" class="fon">Contact us</a></li>
-								
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="search_box">
-              <form action='results.php' method='GET'>
+                
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="search_box">
+                          <form action='search_results.php' method='GET'>
               <input type="text" name='k' class="searchtext col-sm-10" placeholder="Search"/>
               <button type="submit" class="btn btn-default col-sm-2 bton"><i class="fa fa-search"></i></button>
               </form>

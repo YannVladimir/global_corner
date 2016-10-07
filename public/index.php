@@ -74,7 +74,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 					</div>
 					<div class="col-sm-3">
 						<div class="search_box">
-                          <form action='results.php' method='GET'>
+                          <form action='search_results.php' method='GET'>
 							<input type="text" name='k' class="searchtext col-sm-10" placeholder="Search"/>
 							<button type="submit" class="btn btn-default col-sm-2 bton"><i class="fa fa-search"></i></button>
 						  </form>
