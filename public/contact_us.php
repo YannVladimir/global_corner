@@ -164,17 +164,19 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
     			</div>    			
 	    	</div>  
     	</div>	
-    </div><!--/#contact-page-->
+    </div><!--/#contact-pa ge-->
 	
 	<br><br><br>
   <?php  
    require('footer.php');    
   ?>
-  <script src="assets/js/jquery.js"></script>
-  <script src="assets/js/yann.min.js"></script>
-  <script src="assets/js/jquery.scrollUp.min.js"></script>
-  <script src="assets/js/jquery.prettyPhoto.js"></script>
-  <script src="assets/js/main.js"></script><!--
+
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/yann.min.js"></script>
+	<script src="assets/js/jquery.scrollUp.min.js"></script>
+	<script src="assets/js/price-range.js"></script>
+    <script src="assets/js/jquery.prettyPhoto.js"></script>
+	<script src="assets/js/main.js"></script><!--
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
   <script type="text/javascript" src="<akaboroakaborophp echo BASEURL."../assets/js/gmaps.js"></script>  
   <script src="<php echo BASEURL."../assets/js/contact.js"></script>-->
