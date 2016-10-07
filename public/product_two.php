@@ -185,6 +185,9 @@ $con = mysqli_connect("127.0.0.1","root","REDACTED_DB_PASSWORD","eshopper");
                             }
                                
                         ?>
+                      </div>
+                    </div>
+                  </div>
                     			
 						</div>
 					<div class="col-sm-3">
