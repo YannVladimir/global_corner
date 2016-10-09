@@ -150,7 +150,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                           </div>
                   <br><br><br>
                   <div id="electronics">
-                    <form action="uploadingprocess.php" id="" class="upload-form row" name="upload-form" method="post" enctype="multipart/form-data">
+                    <form action="uploadingprocess.php" id="" class="upload-form row" name="upload-form" method="POST" enctype="multipart/form-data">
                         <div class="form-group col-md-12">
                              <input type="text" name="izina" class="form-control" required="required" placeholder="Ad title">
                         </div>

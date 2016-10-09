@@ -1,14 +1,8 @@
 <?php
-ini_set('display_startup_errors',1);
-ini_set('display_errors',1);
-error_reporting(E_ALL);
-session_start();
-$con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
-function clearInput($input)
+include('../includes/main_functions.php');
+if(checkIsStringSetPost('izina'))
 {
-   return mysqli_real_escape_string($con),htmlentities($input));
-}
-$category = clearInput($_POST['subcategory']);
+ $category = clearInput($_POST['subcategory']);
 $seller = clearInput($_POST['name']);
 $nam = clearInput($_POST['izina']);
 $price = clearInput($_POST['price']);
@@ -309,5 +303,9 @@ $select = mysqli_query($con,$queryy);
 }
 	
 	
+}
+else
+{
+    echo "not working fine";
 }
 ?>
