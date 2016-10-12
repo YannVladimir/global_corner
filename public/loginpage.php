@@ -29,7 +29,11 @@ $con = mysqli_connect("127.0.0.1","root","REDACTED_DB_PASSWORD","eshopper");
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/images/ico/apple-touch-icon-57-precomposed.png">
-    
+    <style type="text/css">
+     .fon{
+      	font-size: 20px;
+      }
+    </style>
 </head><!--/head-->
 
 <body>
@@ -78,7 +82,7 @@ $con = mysqli_connect("127.0.0.1","root","REDACTED_DB_PASSWORD","eshopper");
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<form action="loginpage/authenticateUser" method="POST">
+						<form action="login.php" method="POST">
 							<input type="email" placeholder="Email Address" required="required" email="email" name="email" />
 							<input type="password" placeholder="password" required="required" name="password" />
 							<!--<span>
@@ -95,7 +99,7 @@ $con = mysqli_connect("127.0.0.1","root","REDACTED_DB_PASSWORD","eshopper");
 				<div class="col-sm-4">
 					<div class="signup-form"><!--sign up form-->
 						<h2>New User Signup!</h2>
-						<form action="newuser/create" method="post">
+						<form action="sign_up.php" method="post">
 							<input type="text" placeholder="First name" required="required" name="firstname"/>
 							<input type="text" placeholder="Last name" required="required" name="lastname"/>
 							<input type="text" placeholder="Contact number" required="required" digits="true" name="phone"/>
