@@ -7,12 +7,12 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Login | Get It</title>
+    <title>My posts | Get It</title>
     <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/yann.min.css" rel="stylesheet">
     <link href="assets/css/prettyPhoto.css" rel="stylesheet">
@@ -37,10 +37,10 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 </head><!--/head-->
 
 <body>
-	<?php  
+	<?php   
     include('header.php');   
-  ?>
-		
+  ?>	
+
     <div class="header-bottom"><!--header-bottom-->
 			<div class="container">
 				<div class="row">
@@ -76,54 +76,70 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 		</div><!--/header-bottom-->
 	</header><!--/header-->
 	
-	<section id="form"><!--form-->
+	<!--<section id="advertisement">
+		<div class="container">
+			<img src="images/shop/advertisement.jpg" alt="" />
+		</div>
+
+		This section is for advetisement
+	</section>-->
+	
+	<section>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-4 col-sm-offset-1">
-					<div class="login-form"><!--login form-->
-						<h2>Login to your account</h2>
-						<form action="login.php" method="POST">
-							<input type="email" placeholder="Email Address" required="required" email="email" name="email" />
-							<input type="password" placeholder="password" required="required" name="password" />
-							<!--<span>
-								<input type="checkbox" class="checkbox"> 
-								Keep me signed in
-							</span>-->
-							<button type="submit" class="btn btn-default bton">Login</button>
-						</form>
-					</div><!--/login form-->
-				</div>
 				<div class="col-sm-1">
-					<h2 class="or">OR</h2>
 				</div>
-				<div class="col-sm-4">
-					<div class="signup-form"><!--sign up form-->
-						<h2>New User Signup!</h2>
-						<form action="sign_up.php" method="post">
-							<input type="text" placeholder="First name" required="required" name="firstname"/>
-							<input type="text" placeholder="Last name" required="required" name="lastname"/>
-							<input type="text" placeholder="Contact number" required="required" digits="true" name="phone"/>
-							<input type="email" placeholder="Email Address" required="required" email="eamil" name="email"/>
-							<input type="password" placeholder="Password" required="required" name="password"/>
-							<input type="password" placeholder=" Re-type Password" required="required" equalTo="password" name="repassword"/>
-							<button type="submit" class="btn btn-default bton">Signup</button>
-						</form>
-					</div><!--/sign up form-->
+				
+				<div class="col-sm-9 padding-right">
+						<?php 
+                            $id = $_GET['id'];
+                            $query = "SELECT * FROM items where post_id = '{$id}' ";
+			                $res = mysqli_query($con,$query);
+                            while($row = mysqli_fetch_assoc($res))
+                            {
+                            	$sub_id = $row['subcat_id']; 
+                              echo "<div class='product-details'><!--product-details-->
+						<div class='col-sm-5'>
+							<div class='view-product'>
+								<div class='sizingimages'>
+										<img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+										</div>
+							</div>
+						</div>
+						<div class='col-sm-7'>
+							<div class='product-information'><!--/product-information-->
+								<p>Post name: <b>{$row['name']}</b></p>
+								<p>Category:<b> {$row['subcat_name']}</b></p>
+								<p>Details:<b> {$row['details']}</b></p>
+								<p>Price:<b> {$row['price']}</b></p>
+								<p>Seller: <b>{$row['seller']}</b></p>
+								<p>Place:<b> {$row['place_name']}</b></p>
+								<p>Contact number:<b> {$row['contacts']}</b></p>
+								<p>Uploaded Date:<b>{$row['uploaded_date']}</b></p>
+								<a href=''><img src='assets/images/product-details/share.png' class='share img-responsive'  alt='' /></a>
+							</div><!--/product-information-->
+						</div>
+					</div><!--/product-details-->";
+                            } 
+                            
+					?>
 				</div>
+						
+				
 			</div>
 		</div>
-	</section><!--/form-->
+	</section>
 	
-	
-	<br><br><br><br><br><br><br>
+	<br><br><br><br>
 	<?php  
       include('footer.php');    
-  ?>
+    ?>
   <script src="assets/js/jquery.js"></script>
   <script src="assets/js/yann.min.js"></script>
   <script src="assets/js/jquery.scrollUp.min.js"></script>
   <script src="assets/js/jquery.prettyPhoto.js"></script>
+  <script src="assets/js/price-range.js"></script>
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/jquery.validate.js"></script>
+  
 </body>
 </html>
