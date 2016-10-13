@@ -1,7 +1,7 @@
 <?php 
 
   require('header.php');
-?>       
+?>        
 
         <div id="page-wrapper">
 

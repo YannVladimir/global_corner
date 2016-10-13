@@ -1,7 +1,7 @@
 <?php 
 
   require('header.php');
-?>       
+?>        
 
         <div id="page-wrapper">
 
@@ -138,12 +138,12 @@
                         <h1 class="page-header">
                             Create New Sub-Category
                         </h1>
-                       <form action="createsubcategory.php" method="post" enctype="multipart/form-data">
+                       <form action="newsubcategory.php" method="post" enctype="multipart/form-data">
                              <label>Select category : </label>
                            <select name="ref">
                              <option>Select category</option>
                              <?php 
-                                $query = "SELECT * FROM categories ";
+                                $query = "SELECT * FROM categories";
                                 $res = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res))
                                 {

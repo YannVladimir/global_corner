@@ -1,5 +1,5 @@
 <?php
-
+ 
   require('header.php');
 ?>    
         <div id="page-wrapper">
@@ -28,7 +28,7 @@
                                             <th>Lastname</th>
                                             <th>Email</th>
                                             <th>Contact Number</th>
-                                            <th><form action='welcome/all' method='post'><input type='submit' value='Welcome All'/></form></th>
+                                            <th><form action='welcome-all.php' method='post'><input type='submit' value='Welcome All'/></form></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -39,7 +39,7 @@
                                            while($row = mysqli_fetch_assoc($res))
                                            {
                                             if($row['accepted']== 0){
-                                                echo "<tr class='odd gradeX'><td>{$row['user_id']}</td><td>{$row['firstname']}</td><td>{$row['lastname']}</td><td class='center'>{$row['email']}</td><td class='center'>{$row['phone']}</td><td class='center'><form action='welcome/individual' method='post'><input type='text' value='{$row['user_id']}' name='id' class='hidding'/><input type='submit' value='Welcome'/></form></td>";
+                                                echo "<tr class='odd gradeX'><td>{$row['user_id']}</td><td>{$row['firstname']}</td><td>{$row['lastname']}</td><td class='center'>{$row['email']}</td><td class='center'>{$row['phone']}</td><td class='center'><form action='welcome-individual.php' method='post'><input type='text' value='{$row['user_id']}' name='id' class='hidding'/><input type='submit' value='Welcome'/></form></td>";
                                            } 
                                        }?>
                                     </tbody>

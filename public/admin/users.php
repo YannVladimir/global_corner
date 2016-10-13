@@ -1,4 +1,4 @@
-<?php
+<?php 
   require('header.php');
 ?>    
         <div id="page-wrapper">
@@ -43,7 +43,7 @@
                                             if($_SESSION['priority']=='1')
                                               {
                                                 if ($row['priority']!=$_SESSION['priority']) {
-                                                   echo "<tr class='odd gradeX'><td>{$row['user_id']}</td><td>{$row['is_admin']}</td><td>{$row['firstname']}</td><td>{$row['lastname']}</td><td class='center'>{$row['email']}</td><td class='center'>{$row['phone']}</td><td class='center'><form action='users/remove' method='post'><input type='text' name='id' value='{$row['user_id']}' class='hidding'/><input type='submit' value='delete user'/></form></td>";
+                                                   echo "<tr class='odd gradeX'><td>{$row['user_id']}</td><td>{$row['is_admin']}</td><td>{$row['firstname']}</td><td>{$row['lastname']}</td><td class='center'>{$row['email']}</td><td class='center'>{$row['phone']}</td><td class='center'><form action='users-remove.php' method='post'><input type='text' name='id' value='{$row['user_id']}' class='hidding'/><input type='submit' value='delete user'/></form></td>";
                                                 }
                                                 else
                                                 {
@@ -55,7 +55,7 @@
                                             {
                                                 if($row['is_admin']=='0')
                                                 {
-                                                   echo "<tr class='odd gradeX'><td>{$row['user_id']}</td><td>{$row['is_admin']}</td><td>{$row['firstname']}</td><td>{$row['lastname']}</td><td class='center'>{$row['email']}</td><td class='center'>{$row['phone']}</td><td class='center'><form action='users/remove' method='post'><input type='text' name='id' value='{$row['user_id']}' class='hidding'/><input type='submit' value='delete user'/></form></td>";
+                                                   echo "<tr class='odd gradeX'><td>{$row['user_id']}</td><td>{$row['is_admin']}</td><td>{$row['firstname']}</td><td>{$row['lastname']}</td><td class='center'>{$row['email']}</td><td class='center'>{$row['phone']}</td><td class='center'><form action='users-remove.php' method='post'><input type='text' name='id' value='{$row['user_id']}' class='hidding'/><input type='submit' value='delete user'/></form></td>";
                                                 }
                                                 else
                                                 {

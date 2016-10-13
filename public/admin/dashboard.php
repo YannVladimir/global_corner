@@ -1,4 +1,4 @@
-<?php
+<?php 
  
   require('header.php');
 ?>
@@ -105,7 +105,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="feedback">
+                            <a href="#">
                                 <div class="panel-footer">
                                     <span class="pull-left">View Details</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -142,7 +142,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="new_messages.php">
+                            <a href="new-messages.php">
                                 <div class="panel-footer">
                                     <span class="pull-left">View Details</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
