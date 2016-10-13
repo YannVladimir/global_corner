@@ -27,6 +27,6 @@
 	}
 	function clearInput($input)
     {
-        return mysqli_real_escape_string("127.0.0.1","root","uIk3fDIL9q","eshopper"),htmlentities($input));
+        return mysqli_real_escape_string(mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper"),htmlentities($input));
     }
 ?>
