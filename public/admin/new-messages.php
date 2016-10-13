@@ -1,47 +1,45 @@
-<?php
+<?php 
  
   require('header.php');
 ?>    
         <div id="page-wrapper">
- 
+
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                 
-                        <div class="row">
-                
-                            <div class="col-lg-12">
+                   
+                <div class="row">
+                  <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h1 class="page-header">
-                            New Users
+                            Inbox
                         </h1>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <div class="dataTable_wrapper">
+                            <div class="dataTable_wrapper"> 
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>User ID</th>
-                                            <th>Firstname</th>
-                                            <th>Lastname</th>
+                                            <th>Date</th>
+                                            <th>Username</th>
                                             <th>Email</th>
-                                            <th>Contact Number</th>
-                                            <th><form action='welcome-all.php' method='post'><input type='submit' value='Welcome All'/></form></th>
+                                            <th>Contacts</th>
+                                            <th>Subject</th>
+                                            <th>Contents</th>
+                                            <th>Seen</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                        <?php 
-                                           $a = date("Y-m-d");
-                                           $query="SELECT * from users";
-                                           $res = mysqli_query($con,$query);
+                                           $query = "SELECT * FROM contactus ";
+			                               $res = mysqli_query($con,$query);
                                            while($row = mysqli_fetch_assoc($res))
                                            {
-                                            if($row['accepted']== 0){
-                                                echo "<tr class='odd gradeX'><td>{$row['user_id']}</td><td>{$row['firstname']}</td><td>{$row['lastname']}</td><td class='center'>{$row['email']}</td><td class='center'>{$row['phone']}</td><td class='center'><form action='welcome-individual.php' method='post'><input type='text' value='{$row['user_id']}' name='id' class='hidding'/><input type='submit' value='Welcome'/></form></td>";
-                                           } 
-                                       }?>
+                                            if($row['seen']==0)
+                                                   echo "<tr class='odd gradeX'><td>{$row['received_date']}</td><td>{$row['name']}</td><td>{$row['email']}</td><td>{$row['phone']}</td><td>{$row['subject']}</td><td>{$row['message']}</td><td class='center'><form action='new-contact.php' method='post'><input type='text' name='id' value='{$row['id']}' class='hidding'/><input type='submit' value='Mark as read'/></form></td></tr>";
+                                           } ?> 
                                     </tbody>
                                 </table>
                             </div>
@@ -84,6 +82,10 @@
         $('#dataTables-example').DataTable({
                 responsive: true
         });
+        $("#reply").click(function()
+              {
+                  $("#replyback").slideToggle();
+              });
     });
     </script>
 

@@ -1,23 +1,15 @@
-<?php
- 
+<?php 
+
   require('header.php');
-?>       
+?>        
 
         <div id="page-wrapper">
 
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Categories
-                        </h1>
-                        
-                    </div>
-                </div>
+                
                 <!-- /.row -->
-
                 <div class="row">
                     <div class="col-lg-2 col-md-6">
                         <div class="panel panel-primary">
@@ -137,6 +129,40 @@
                             </a>
                         </div>
                     </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        
+                    </div>
+                    <div class="col-lg-5">
+                        <h1 class="page-header">
+                            Delete Category
+                        </h1>
+                        <form action="deletecategory.php" method="post">
+                           <label>Select category : </label>
+                           <select name="id">
+                             <option>Select category</option>
+                             <?php 
+                                $cat = new Maincategory();
+                                $query = "SELECT * FROM categories";
+                                $res = mysqli_query($con,$query);
+                                while($row = mysqli_fetch_assoc($res))
+                                {
+                                 
+                                   echo "<option value='{$row['cat_id']}'>{$row['cat_name']}</option>";
+                                } 
+                              ?>
+                           </select><br>
+                           <input type="submit" value="Delete"/>
+                       </form>
+                       
+                       
+                    </div>
+                    <div class="col-lg-3"></div>
+
+                    
+                    
+                    
                 </div>
                 <!-- /.row -->
 

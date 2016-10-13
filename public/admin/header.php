@@ -7,7 +7,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 ?>
 <!DOCTYPE html> 
 <html lang="en">
-<head>
+<head> 
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,22 +18,22 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
     <title>Global Conner | Admin panel</title> 
     
     
-   <link href="assets/css/yann.min.css" rel="stylesheet">
+   <link href="../assets/css/yann.min.css" rel="stylesheet">
 
-    <link href="assets/css/sb-admin.css" rel="stylesheet">
+    <link href="../assets/css/sb-admin.css" rel="stylesheet">
 
-    <link href="assets/css/plugins/morris.css" rel="stylesheet">
+    <link href="../assets/css/plugins/morris.css" rel="stylesheet">
 
-    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="../assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../assets/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet" type="text/css">
 
-    <script src="assets/js/jquery.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.validate.js"></script>
-    <script type="text/javascript" src="assets/js/validating.js"></script>
-    <script src="assets/js/yann.min.js"></script>
-    <script src="assets/js/plugins/morris/raphael.min.js"></script>
-    <script src="assets/js/plugins/morris/morris.min.js"></script>
-    <script src="assets/js/plugins/morris/morris-data.js"></script>
+    <script src="../assets/js/jquery.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.validate.js"></script>
+    <script type="text/javascript" src="../assets/js/validating.js"></script>
+    <script src="../assets/js/yann.min.js"></script>
+    <script src="../assets/js/plugins/morris/raphael.min.js"></script>
+    <script src="../assets/js/plugins/morris/morris.min.js"></script>
+    <script src="../assets/js/plugins/morris/morris-data.js"></script>
     
     <style type="text/css">
      .hidding{
@@ -84,7 +84,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>
                         <li>
-                            <a href="new_messages.php"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+                            <a href="messages.php"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
@@ -106,7 +106,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                         if($_SESSION['priority']=='1')
                         {
                             echo "<li>
-                        <a href='newadmin.php'><i class='fa fa-fw fa-wrench'></i> New Admin</a>
+                        <a href='new-admin.php'><i class='fa fa-fw fa-wrench'></i> New Admin</a>
                     </li>";
                         }
                     ?>
@@ -118,7 +118,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                         <a href="viewcategory.php"><i class="fa fa-fw fa-tasks"></i> Categories</a>
                     </li>
                     <li>
-                        <a href="all_posts.php"><i class="fa fa-fw fa-tasks"></i> Posts</a>
+                        <a href="posts.php"><i class="fa fa-fw fa-tasks"></i> Posts</a>
                     </li>
                     
                     <li>
