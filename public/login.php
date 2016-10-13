@@ -1,4 +1,4 @@
-<?php 
+<?php   
 //$password = sha1($_POST['password']);
 // $password = md5($_POST['password']);
 require_once('../includes/main_functions.php');
