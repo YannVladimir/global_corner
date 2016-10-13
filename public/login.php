@@ -1,4 +1,7 @@
-<?php   
+<?php  
+ini_set('display_startup_errors',1);
+ini_set('display_errors',1);
+error_reporting(E_ALL); 
 //$password = sha1($_POST['password']);
 // $password = md5($_POST['password']);
 require_once('../includes/main_functions.php');
@@ -24,14 +27,14 @@ if(checkIsStringSetPost('email'))
 	if($row['is_admin']  == 1)
 	{
 		$_SESSION['user']="admin";
-		$loc = admin/dashboard.php;
+		$loc = 'admin/dashboard.php';
 		header('Location:'.$loc);exit;
 		//echo "1";
 	}
 	else
 	{
 		$_SESSION['user']="public";
-		$loc = home.php;
+		$loc = 'home.php';
 		header('Location:'.$loc);exit;
 		//echo "2";
 	}
