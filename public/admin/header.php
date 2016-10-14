@@ -78,7 +78,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
             <ul class="nav navbar-right top-nav">
         
                 <li class="dropdown">   
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><?php echo $_SESSION['firstname']." ".$_SESSION['lastname']; ?>  <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><?php echo {$_SESSION['firstname']}." ".{$_SESSION['lastname']}; ?>  <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -103,7 +103,8 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                         <a href="dashboard.php"><i class="fa fa-fw fa-desktop"></i> Dashboard</a>
                     </li>
                     <?php 
-                        if($_SESSION['priority']=='1')
+                        $a = $_SESSION['priority'];
+                        if($a=='1')
                         {
                             echo "<li>
                         <a href='new-admin.php'><i class='fa fa-fw fa-wrench'></i> New Admin</a>
