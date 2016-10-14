@@ -15,7 +15,11 @@ if(checkIsStringSetPost('email'))
  if($count > 0)
  {
 	$row = mysqli_fetch_assoc($res);
-	$_SESSION['id'] = $row['user_id'];
+	
+	//$_SESSION['user_is_admin']=$row['is_admin'];
+	if($row['is_admin']  == 1)
+	{
+		$_SESSION['id'] = $row['user_id'];
     $_SESSION['firstname'] = $row['firstname'];
     $_SESSION['lastname']=$row['lastname'];
     $_SESSION['phone']=$row['phone'];
@@ -23,9 +27,6 @@ if(checkIsStringSetPost('email'))
     $_SESSION['password']=$row['password'];
     $_SESSION['priority']=$row['priority'];
     $_SESSION['is_admin']=$row['is_admin'];
-	//$_SESSION['user_is_admin']=$row['is_admin'];
-	if($row['is_admin']  == 1)
-	{
 		$_SESSION['user']="admin";
 		$loc = 'admin/dashboard.php';
 		header('Location:'.$loc);exit;
@@ -33,6 +34,14 @@ if(checkIsStringSetPost('email'))
 	}
 	else
 	{
+		$_SESSION['id'] = $row['user_id'];
+        $_SESSION['firstname'] = $row['firstname'];
+    $_SESSION['lastname']=$row['lastname'];
+    $_SESSION['phone']=$row['phone'];
+    $_SESSION['email']=$row['email'];
+    $_SESSION['password']=$row['password'];
+    $_SESSION['priority']=$row['priority'];
+    $_SESSION['is_admin']=$row['is_admin'];
 		$_SESSION['user']="public";
 		$loc = 'home.php';
 		header('Location:'.$loc);exit;
