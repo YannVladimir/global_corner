@@ -1,4 +1,4 @@
-<?php  
+  
     $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 	// for redirecting 
 	function redirectTo($loc)
@@ -93,4 +93,3 @@
             header("location: ../home.php");
     }
     exit();
-?>
