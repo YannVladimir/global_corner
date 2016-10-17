@@ -1,5 +1,5 @@
 
-	// for redirecting 
+	<?php 
 	function redirectTo($loc)
 	{
 		header('location:'.$loc);
@@ -93,3 +93,4 @@
             exit;
     }
     
+?>
