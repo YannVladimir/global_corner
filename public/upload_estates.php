@@ -3,7 +3,7 @@ ini_set('display_startup_errors',1);
 ini_set('display_errors',1);
 error_reporting(E_ALL);
 session_start();
-$con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
+include ('../includes/main_functions.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -150,14 +150,14 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                           </div>
                   <br><br><br>
                   <div id="electronics">
-                    <form action="uploadingprocess.php" id="" class="upload-form row" name="upload-form" method="post" enctype="multipart/form-data">
+                    <form action="" id="" class="upload-form row" name="upload-form" method="post" enctype="multipart/form-data">
                         <div class="form-group col-md-12">
                              <input type="text" name="izina" class="form-control" required="required" placeholder="Ad title">
                         </div>
                         
                         <div class="form-group col-md-6">
                             <select class="form-control" name="subcategory" required="required">
-                                 <option>Select sub-category</option>
+                                 <option value="">Select Real-Esatate category</option>
                                  <?php 
                                     $query = "SELECT * FROM subcategories ";
                                     $res = mysqli_query($con,$query);
@@ -170,10 +170,36 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                             </select>
                         </div>
                         <div class="form-group col-md-6">
+                             <select class="form-control" name="rentalorsell" required="required">
+                                 <option value="">Select rental or sell</option>
+                                 <option value="s">Selling</option>
+                                 <option value="r">Renting</option>
+                            </select>    
+                        </div>
+                         <div class="form-group col-md-6">
+                          <select class="form-control" name="location" required="required">
+                             <option ="">Select District</option>
+                                <?php 
+                                   $query = "SELECT * FROM places";
+                                   $res = mysqli_query($con,$query);
+                                   while($row = mysqli_fetch_assoc($res))
+                                   {
+                                      echo "<option value='{$row['place_id']}'>{$row['place_name']}</option>";
+                                   } 
+                                ?>
+                          </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" name="sector" class="form-control" required="required" placeholder="sector">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" name="road" class="form-control" required="required" placeholder="House number (eg: KK 23 ave 256)">
+                        </div>
+                        <div class="form-group col-md-6">
                             <input type="text" name="price" class="form-control" required="required" placeholder="Price">
                         </div>
                         <div class="form-group col-md-12">
-                            <textarea name="details" id="message" required="required" class="form-control" rows="8" placeholder="Description of the product, Include the brand, model, warranty, guarranty, age and any other included accessories"></textarea>
+                            <textarea name="details" id="message" required="required" class="form-control" rows="8" placeholder="Descriptions, Include number of rooms, and any other usefull informations"></textarea>
                         </div>
                         <div class="form-group col-md-12">
                             <div> 
@@ -196,24 +222,12 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                             </div>
                         </div> 
                         <div class="form-group col-md-6">
-                           <input type="text" name="name" class="form-control" required="required" placeholder="Seller Name">
+                           <input type="text" name="name" class="form-control" required="required" placeholder="Seller name">
                         </div> 
                         <div class="form-group col-md-6">
                            <input type="text" name="contact" class="form-control" required="required" placeholder="Phone Number">
                         </div> 
-                        <div class="form-group col-md-12">
-                          <select class="form-control" name="location" required="required">
-                             <option>Seller location</option>
-                                <?php 
-                                   $query = "SELECT * FROM places";
-                                   $res = mysqli_query($con,$query);
-                                   while($row = mysqli_fetch_assoc($res))
-                                   {
-                                      echo "<option value='{$row['place_id']}'>{$row['place_name']}</option>";
-                                   } 
-                                ?>
-                          </select>
-                        </div>                    
+                                           
                         <div class="form-group col-md-12">
                            <input type="submit" name="submit" class="btn btn-primary pull-right" value="Submit">
                         </div>

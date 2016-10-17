@@ -3,7 +3,7 @@ ini_set('display_startup_errors',1);
 ini_set('display_errors',1);
 error_reporting(E_ALL);
 session_start();
-$con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
+include ('../includes/main_functions.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -128,7 +128,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
         <div class="col-sm-6 padding-right">
             <div class="contact-form align-center">
               <br>
-              <h2 class="title text-center">Enter Ad's Details</h2>
+              <h2 class="title text-center">Fill this form</h2>
               <div class="status alert alert-success" style="display: none"></div>
                   
                           <div class="btn-group pull-right">
@@ -150,14 +150,21 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                           </div>
                   <br><br><br>
                   <div id="electronics">
-                    <form action="uploadingprocess.php" id="" class="upload-form row" name="upload-form" method="post" enctype="multipart/form-data">
+                    <form action="" id="" class="upload-form row" name="upload-form" method="post" enctype="multipart/form-data">
+                      
                         <div class="form-group col-md-12">
-                             <input type="text" name="izina" class="form-control" required="required" placeholder="Ad title">
+                           <input type="text" name="name" class="form-control" required="required" placeholder="Company Name">
+                        </div>  
+                        <div class="form-group col-md-12">
+                           <input type="text" name="email" class="form-control" required="required" placeholder="Email adress">
+                        </div>
+                        <div class="form-group col-md-12">
+                             <input type="text" name="izina" class="form-control" required="required" placeholder="Job position">
                         </div>
                         
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             <select class="form-control" name="subcategory" required="required">
-                                 <option>Select sub-category</option>
+                                 <option value=''>Select Job-category</option>
                                  <?php 
                                     $query = "SELECT * FROM subcategories ";
                                     $res = mysqli_query($con,$query);
@@ -169,50 +176,18 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                 ?>
                             </select>
                         </div>
-                        <div class="form-group col-md-6">
-                            <input type="text" name="price" class="form-control" required="required" placeholder="Price">
+                        <div class="form-group col-md-12">
+                            <input type="text" name="working_place" class="form-control" placeholder="Working Place">
                         </div>
                         <div class="form-group col-md-12">
-                            <textarea name="details" id="message" required="required" class="form-control" rows="8" placeholder="Description of the product, Include the brand, model, warranty, guarranty, age and any other included accessories"></textarea>
+                            <input type="text" name="field" class="form-control" placeholder="Required field">
                         </div>
                         <div class="form-group col-md-12">
-                            <div> 
-                                  <input type="file" name="main" id="inp" class="hide"/>
-                                  <img id="image" class="btn1 starting" />
-                                  <input type="file" name="img1" id="inp2" class="hide"/>
-                                  <img id="image2" class="btn2 btnlocation" />
-                                  <input type="file" name="img2" id="inp3" class="hide"/>
-                                  <img id="image3" class="btn3 btnlocation" />
-                                  <input type="file" name="img3" id="inp4" class="hide"/>
-                                  <img id="image4" class="btn4 btnlocation" />
-                                  <input type="file" name="img4" id="inp5" class="hide"/>
-                                  <img id="image5" class="btn5 starting" />
-                                  <input type="file" name="img5" id="inp6" class="hide"/>
-                                  <img id="image6" class="btn6 btnlocation hide" />
-                                  <input type="file" name="img6" id="inp7" class="hide"/>
-                                  <img id="image7" class="btn7 btnlocation hide" />
-                                  <input type="file" name="img7" id="inp8" class="hide"/>
-                                  <img id="image8" class="btn8 btnlocation hide" />
-                            </div>
-                        </div> 
-                        <div class="form-group col-md-6">
-                           <input type="text" name="name" class="form-control" required="required" placeholder="Seller Name">
-                        </div> 
-                        <div class="form-group col-md-6">
-                           <input type="text" name="contact" class="form-control" required="required" placeholder="Phone Number">
-                        </div> 
+                            <textarea name="details" id="message" required="required" class="form-control" rows="8" placeholder="Description, Include the required experience, process of applying and any other usefull information"></textarea>
+                        </div>
                         <div class="form-group col-md-12">
-                          <select class="form-control" name="location" required="required">
-                             <option>Seller location</option>
-                                <?php 
-                                   $query = "SELECT * FROM places";
-                                   $res = mysqli_query($con,$query);
-                                   while($row = mysqli_fetch_assoc($res))
-                                   {
-                                      echo "<option value='{$row['place_id']}'>{$row['place_name']}</option>";
-                                   } 
-                                ?>
-                          </select>
+                           <p>Upload company logo</p>
+                           <input type="file" name="logo" class="form-control" required="required" placeholder="Phone Number">
                         </div>                    
                         <div class="form-group col-md-12">
                            <input type="submit" name="submit" class="btn btn-primary pull-right" value="Submit">

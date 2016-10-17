@@ -3,7 +3,11 @@ ini_set('display_startup_errors',1);
 ini_set('display_errors',1);
 error_reporting(E_ALL);
 session_start();
-$con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
+include ('../includes/main_functions.php');
+if(isset($_GET['var']) == "logout")
+{
+    log_user_out();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en"> 
@@ -104,7 +108,14 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                             <ul class="nav nav-tabs">
                                 <?php 
                                 $query= "SELECT * FROM categories ";
-                                $query1 = "SELECT * FROM items where is_accepted = 1 order by post_id desc ";
+                                $query1 = "SELECT * FROM items where is_accepted = 1 and cat_id = 3 order by post_id desc limit 3 ";
+                                $query2 = "SELECT * FROM items where is_accepted = 1 and cat_id = 4 order by post_id desc limit 3 ";
+                                $query3 = "SELECT * FROM items where is_accepted = 1 and cat_id = 5 order by post_id desc limit 3 ";
+                                $query4 = "SELECT * FROM items where is_accepted = 1 and cat_id = 6 order by post_id desc limit 3 ";
+                                $query5 = "SELECT * FROM items where is_accepted = 1 and cat_id = 7 order by post_id desc limit 3 ";
+                                $query6 = "SELECT * FROM items where is_accepted = 1 and cat_id = 8 order by post_id desc limit 3 ";
+                                $query7 = "SELECT * FROM items where is_accepted = 1 and cat_id = 9 order by post_id desc limit 3 ";
+                                $query8 = "SELECT * FROM items where is_accepted = 1 and cat_id = 10 order by post_id desc limit 3 ";
                                 $res = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
@@ -129,14 +140,10 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                          echo "<div class='tab-pane fade active in' id='{$row['cat_id']}' >";
                                     }
                                 }
-                                $i = 0;
                                 $res = mysqli_query($con,$query1);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
-                                    if($row['refcat_id']==3 && $i<3)
-                                    {
-
-                                         echo "<div class='col-sm-3'>
+                                   echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
@@ -147,29 +154,25 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                         </div>
                                     </div>
                                 </div>";
-                                $b = $row['refcat_id'];
-                                    }
+                                    
                                 }
-                                $re = mysqli_query($con,$query);
-                                $rowss = mysqli_fetch_assoc($re)
-                                $i = 0;
-                                while ($rowss){
-                                    if ($rowss['cat_id']==$b && $i==0){
-                                     echo "<div class='col-sm-3'>
+                                $c = "SELECT * from categories where cat_id= 3 ";
+                                $r = mysqli_query($con,$c);
+                                while ($b = mysqli_fetch_assoc($r))
+                                    {echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
-                                                <img class='sizingimagesmax' src='assets/images/categories/{$row['main']}' alt='' />
-                                                <h4></h4>
-                                                <a href='category.php?id=3 class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                <img class='sizingimagesmax' src='assets/images/categories/$c' alt='' />
+                                                <h4>All in {$b['cat_name']}</h4>
+                                                <a href='category.php?id={$r['cat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                             </div>  
                                         </div>
                                     </div>
-                                </div> 
+                                </div>";}
+
+                                     echo " 
                                 </div>";
-                                $i=$i+1;
-                            }
-                        }
                                 $res2 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res2))
                                 {
@@ -178,12 +181,10 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                     }
                                 } 
-                                $res3 = mysqli_query($con,$query1);
+                                $res3 = mysqli_query($con,$query2);
                                 while($row = mysqli_fetch_assoc($res3))
                                 {
-                                    if($row['refcat_id']==4)
-                                    {
-                                         echo "<div class='col-sm-3'>
+                                   echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
@@ -194,29 +195,25 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                         </div>
                                     </div>
                                 </div>";
-                                    $b = $row['refcat_id'];
-                                    }
+                                    
                                 }
-                                $re = mysqli_query($con,$query);
-                                $rowss = mysqli_fetch_assoc($re)
-                                $i = 0;
-                                while ($rowss){
-                                    if ($rowss['cat_id']==$b && $i==0){
-                                     echo "<div class='col-sm-3'>
+                                $c = "SELECT * from categories where cat_id= 4 ";
+                                $r = mysqli_query($con,$c);
+                                while ($b = mysqli_fetch_assoc($r))
+                                    {echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
-                                                <img class='sizingimagesmax' src='assets/images/categories/{$row['main']}' alt='' />
-                                                <h4></h4>
-                                                <a href='category.php?id=3 class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                <img class='sizingimagesmax' src='assets/images/categories/$c' alt='' />
+                                                <h4>All in {$b['cat_name']}</h4>
+                                                <a href='category.php?id={$r['cat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                             </div>  
                                         </div>
                                     </div>
-                                </div> 
-                                </div>";
-                                $i=$i+1;
-                            }
-                        }$res4 = mysqli_query($con,$query);
+                                </div>";}
+ 
+                                echo "</div>";
+                                $res4 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res4))
                                 {
                                     if($row['cat_id']==5)
@@ -224,13 +221,10 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                     }
                                 } 
-                            
-                                $res5 = mysqli_query($con,$query1);
+                                $res5 = mysqli_query($con,$query3);
                                 while($row = mysqli_fetch_assoc($res5))
                                 {
-                                    if($row['refcat_id']==5)
-                                    {
-                                         echo "<div class='col-sm-3'>
+                                   echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
@@ -241,30 +235,24 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                         </div>
                                     </div>
                                 </div>";
-                                
-                                        $b = $row['refcat_id'];
-                                    }
+                                    
                                 }
-                                $re = mysqli_query($con,$query);
-                                $rowss = mysqli_fetch_assoc($re)
-                                $i = 0;
-                                while ($rowss){
-                                    if ($rowss['cat_id']==$b && $i==0){
-                                     echo "<div class='col-sm-3'>
+                                $c = "SELECT * from categories where cat_id= 5 ";
+                                $r = mysqli_query($con,$c);
+                                while ($b = mysqli_fetch_assoc($r))
+                                    {echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
-                                                <img class='sizingimagesmax' src='assets/images/categories/{$row['main']}' alt='' />
-                                                <h4></h4>
-                                                <a href='category.php?id=3 class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                <img class='sizingimagesmax' src='assets/images/categories/$c' alt='' />
+                                                <h4>All in {$b['cat_name']}</h4>
+                                                <a href='category.php?id={$r['cat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                             </div>  
                                         </div>
                                     </div>
-                                </div> 
-                                </div>";
-                                $i=$i+1;
-                            }
-                        }
+                                </div>";}
+
+                              echo "</div>";
                                 $res6 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res6))
                                 {
@@ -273,13 +261,10 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                     }
                                 } 
-                            
-                                $res7 = mysqli_query($con,$query1);
+                                $res7 = mysqli_query($con,$query4);
                                 while($row = mysqli_fetch_assoc($res7))
                                 {
-                                    if($row['refcat_id']==6)
-                                    {
-                                         echo "<div class='col-sm-3'>
+                                   echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
@@ -290,29 +275,25 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                         </div>
                                     </div>
                                 </div>";
-                                        $b = $row['refcat_id'];
-                                    }
+                                    
                                 }
-                                $re = mysqli_query($con,$query);
-                                $rowss = mysqli_fetch_assoc($re)
-                                $i = 0;
-                                while ($rowss){
-                                    if ($rowss['cat_id']==$b && $i==0){
-                                     echo "<div class='col-sm-3'>
+                                $c = "SELECT * from categories where cat_id= 6 ";
+                                $r = mysqli_query($con,$c);
+                                while ($b = mysqli_fetch_assoc($r))
+                                    {echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
-                                                <img class='sizingimagesmax' src='assets/images/categories/{$row['main']}' alt='' />
-                                                <h4></h4>
-                                                <a href='category.php?id=3 class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                <img class='sizingimagesmax' src='assets/images/categories/$c' alt='' />
+                                                <h4>All in {$b['cat_name']}</h4>
+                                                <a href='category.php?id={$r['cat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                             </div>  
                                         </div>
                                     </div>
-                                </div> 
-                                </div>";
-                                $i=$i+1;
-                            }
-                        }                                $res8 = mysqli_query($con,$query);
+                                </div>";}
+
+                              echo "</div>";
+                                $res8 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res8))
                                 {
                                     if($row['cat_id']==7)
@@ -320,12 +301,10 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                     }
                                 }
-                                $res9 = mysqli_query($con,$query1);
+                                $res9 = mysqli_query($con,$query5);
                                 while($row = mysqli_fetch_assoc($res9))
                                 {
-                                    if($row['refcat_id']==7)
-                                    {
-                                         echo "<div class='col-sm-3'>
+                                   echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
@@ -336,29 +315,25 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                         </div>
                                     </div>
                                 </div>";
-                                       $b = $row['refcat_id'];
-                                    }
+                                    
                                 }
-                                $re = mysqli_query($con,$query);
-                                $rowss = mysqli_fetch_assoc($re)
-                                $i = 0;
-                                while ($rowss){
-                                    if ($rowss['cat_id']==$b && $i==0){
-                                     echo "<div class='col-sm-3'>
+                                $c = "SELECT * from categories where cat_id= 7 ";
+                                $r = mysqli_query($con,$c);
+                                while ($b = mysqli_fetch_assoc($r))
+                                    {echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
-                                                <img class='sizingimagesmax' src='assets/images/categories/{$row['main']}' alt='' />
-                                                <h4></h4>
-                                                <a href='category.php?id=3 class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                <img class='sizingimagesmax' src='assets/images/categories/$c' alt='' />
+                                                <h4>All in {$b['cat_name']}</h4>
+                                                <a href='category.php?id={$r['cat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                             </div>  
                                         </div>
                                     </div>
-                                </div> 
-                                </div>";
-                                $i=$i+1;
-                            }
-                        }                                $res10 = mysqli_query($con,$query);
+                                </div>";}
+
+                              echo "</div>";
+                                $res10 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res10))
                                 {
                                     if($row['cat_id']==8)
@@ -366,13 +341,10 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                     }
                                 } 
-                              
-                                $res11 = mysqli_query($con,$query1);
+                                $res11 = mysqli_query($con,$query6);
                                 while($row = mysqli_fetch_assoc($res11))
                                 {
-                                    if($row['refcat_id']==8)
-                                    {
-                                         echo "<div class='col-sm-3'>
+                                   echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
@@ -383,29 +355,24 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                         </div>
                                     </div>
                                 </div>";
-                                       $b = $row['refcat_id'];
-                                    }
+                                    
                                 }
-                                $re = mysqli_query($con,$query);
-                                $rowss = mysqli_fetch_assoc($re)
-                                $i = 0;
-                                while ($rowss){
-                                    if ($rowss['cat_id']==$b && $i==0){
-                                     echo "<div class='col-sm-3'>
+                                $c = "SELECT * from categories where cat_id= 8 ";
+                                $r = mysqli_query($con,$c);
+                                while ($b = mysqli_fetch_assoc($r))
+                                    {echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
-                                                <img class='sizingimagesmax' src='assets/images/categories/{$row['main']}' alt='' />
-                                                <h4></h4>
-                                                <a href='category.php?id=3 class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                <img class='sizingimagesmax' src='assets/images/categories/$c' alt='' />
+                                                <h4>All in {$b['cat_name']}</h4>
+                                                <a href='category.php?id={$r['cat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                             </div>  
                                         </div>
                                     </div>
-                                </div> 
-                                </div>";
-                                $i=$i+1;
-                            }
-                        }
+                                </div>";}
+
+                              echo "</div>";
                                 $res12 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res12))
                                 {
@@ -414,13 +381,10 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                     }
                                 } 
-                            
-                                $res13 = mysqli_query($con,$query1);
+                                $res13 = mysqli_query($con,$query7);
                                 while($row = mysqli_fetch_assoc($res13))
                                 {
-                                    if($row['refcat_id']==9)
-                                    {
-                                         echo "<div class='col-sm-3'>
+                                   echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
@@ -431,29 +395,25 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                         </div>
                                     </div>
                                 </div>";
-                                       $b = $row['refcat_id'];
-                                    }
+                                    
                                 }
-                                $re = mysqli_query($con,$query);
-                                $rowss = mysqli_fetch_assoc($re)
-                                $i = 0;
-                                while ($rowss){
-                                    if ($rowss['cat_id']==$b && $i==0){
-                                     echo "<div class='col-sm-3'>
+                                $c = "SELECT * from categories where cat_id= 9 ";
+                                $r = mysqli_query($con,$c);
+                                while ($b = mysqli_fetch_assoc($r))
+                                    {echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
-                                                <img class='sizingimagesmax' src='assets/images/categories/{$row['main']}' alt='' />
-                                                <h4></h4>
-                                                <a href='category.php?id=3 class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                <img class='sizingimagesmax' src='assets/images/categories/$c' alt='' />
+                                                <h4>All in {$b['cat_name']}</h4>
+                                                <a href='category.php?id={$r['cat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                             </div>  
                                         </div>
                                     </div>
-                                </div> 
-                                </div>";
-                                $i=$i+1;
-                            }
-                        }                                $res14 = mysqli_query($con,$query);
+                                </div>";}
+ 
+                              echo "</div>";
+                                $res14 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res14))
                                 {
                                     if($row['cat_id']==10)
@@ -461,13 +421,10 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                     }
                                 } 
-                              
-                                $res15 = mysqli_query($con,$query1);
+                                 $res15 = mysqli_query($con,$query8);
                                 while($row = mysqli_fetch_assoc($res15))
                                 {
-                                    if($row['refcat_id']==10)
-                                    {
-                                         echo "<div class='col-sm-3'>
+                                   echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
@@ -478,29 +435,24 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                                         </div>
                                     </div>
                                 </div>";
-                                       $b = $row['refcat_id'];
-                                    }
+                                    
                                 }
-                                $re = mysqli_query($con,$query);
-                                $rowss = mysqli_fetch_assoc($re)
-                                $i = 0;
-                                while ($rowss){
-                                    if ($rowss['cat_id']==$b && $i==0){
-                                     echo "<div class='col-sm-3'>
+                                $c = "SELECT * from categories where cat_id= 10 ";
+                                $r = mysqli_query($con,$c);
+                                while ($b = mysqli_fetch_assoc($r))
+                                    {echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
-                                                <img class='sizingimagesmax' src='assets/images/categories/{$row['main']}' alt='' />
-                                                <h4></h4>
-                                                <a href='category.php?id=3 class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                <img class='sizingimagesmax' src='assets/images/categories/$c' alt='' />
+                                                <h4>All in {$b['cat_name']}</h4>
+                                                <a href='category.php?id={$r['cat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                             </div>  
                                         </div>
                                     </div>
-                                </div> 
-                                </div>";
-                                $i=$i+1;
-                            }
-                        }
+                                </div>";}
+
+                                echo "</div>"; 
                               ?>
                             
                          </div>

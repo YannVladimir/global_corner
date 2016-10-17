@@ -13,7 +13,7 @@
 							<li data-target="#slider-carousel" data-slide-to="6"></li>
 							<li data-target="#slider-carousel" data-slide-to="7"></li>
 						     
-						</ol> 
+						</ol>  
 						 
 						<div class="carousel-inner">
 							<?php 

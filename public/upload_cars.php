@@ -3,7 +3,7 @@ ini_set('display_startup_errors',1);
 ini_set('display_errors',1);
 error_reporting(E_ALL);
 session_start();
-$con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
+include ('../includes/main_functions.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -157,7 +157,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                         
                         <div class="form-group col-md-6">
                             <select class="form-control" name="subcategory" required="required">
-                                 <option>Select sub-category</option>
+                                 <option value="">Select sub-category</option>
                                  <?php 
                                     $query = "SELECT * FROM subcategories ";
                                     $res = mysqli_query($con,$query);
@@ -203,7 +203,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                         </div> 
                         <div class="form-group col-md-12">
                           <select class="form-control" name="location" required="required">
-                             <option>Seller location</option>
+                             <option value="">Seller location</option>
                                 <?php 
                                    $query = "SELECT * FROM places";
                                    $res = mysqli_query($con,$query);

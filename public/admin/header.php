@@ -3,7 +3,12 @@ ini_set('display_startup_errors',1);
 ini_set('display_errors',1);
 error_reporting(E_ALL);
 session_start();
-$con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
+include ('../includes/main_functions.php');
+checkAdmin();
+if(isset($_GET['var']) == "logout")
+{
+    log_user_out_admin();
+}
 ?>
 <!DOCTYPE html> 
 <html lang="en">
@@ -15,7 +20,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Global Conner | Admin panel</title> 
+    <title>Sell it | Admin panel</title> 
     
     
    <link href="../assets/css/yann.min.css" rel="stylesheet">
@@ -78,7 +83,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
             <ul class="nav navbar-right top-nav">
         
                 <li class="dropdown">   
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>My Account  <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo ''.$_SESSION['username'].'' ?>  <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -102,9 +107,14 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                     <li>
                         <a href="dashboard.php"><i class="fa fa-fw fa-desktop"></i> Dashboard</a>
                     </li>
-                   <li>
-                        <a href='new-admin.php'><i class='fa fa-fw fa-wrench'></i> New Admin</a>
-                    </li>
+                    <?php
+                       if(isset($_SESSION['priority']) == 1)
+                       {
+                        echo '<li>';
+                           echo "<a href='new-admin.php'><i class='fa fa-fw fa-wrench'></i> New Admin</a>";
+                        echo '</li>';
+                       }
+                    ?>
                     <li>
                         <a href="users.php"><i class="fa fa-fw fa-user"></i> Users</a>
                     </li>

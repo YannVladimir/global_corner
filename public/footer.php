@@ -7,7 +7,7 @@
 					</div>
 					<div class="col-sm-4">
 						<div class="companyinfo">
-							<h2><span>get</span> it</h2>
+							<h2><span>Sell</span> It</h2>
 							<p>Rwanda's largest market</p>
 						</div>
 					</div>
@@ -40,7 +40,7 @@
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="#">Online Help</a></li>
 								<li><a href="contact_us.php">Contact Us</a></li>
-								<li><a href="#">FAQ’s</a></li>
+								<!--<li><a href="#">FAQ’s</a></li>-->
 							</ul>
 						</div>
 					</div>
@@ -50,7 +50,7 @@
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="#">Terms of Use</a></li>
 								<li><a href="#">Posting Rules</a></li>
-								<li><a href="#">Privacy $ Policies</a></li>
+								<!--<li><a href="#">Privacy $ Policies</a></li>-->
 							</ul>
 						</div>
 					</div>
@@ -61,7 +61,7 @@
 								<li><a href="#">About Us</a></li>
 								<li><a href="#">Careers</a></li>
 								<li><a href="#">Location</a></li>
-								<li><a href="#">Copyright</a></li>
+								<!--<li><a href="#">Copyright</a></li>-->
 							</ul>
 						</div>
 					</div>
@@ -83,7 +83,7 @@
 			<div class="container">
 				<div class="row">
 					<p class="pull-left">Copyright © 2016 Global Corner Inc. All rights reserved.</p>
-					<p class="pull-right">Developed by <span><a target="_blank" href="http://www.facebook.com/yann">Yann Vladimir</a></span></p>
+					<p class="pull-right">Developed by <span><a target="_blank" href="http://www.facebook.com/yann_vladimir">Yann Vladimir</a></span></p>
 				</div>
 			</div>
 		</div>
