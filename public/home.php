@@ -141,8 +141,8 @@ if(isset($_GET['var']) == "logout")
                                          echo "<div class='tab-pane fade active in' id='{$row['cat_id']}' >";
                                     }
                                 }
-                                $res = mysqli_query($con,$query1);
-                                while($row = mysqli_fetch_assoc($res))
+                                $reso = mysqli_query($con,$query1);
+                                while($row = mysqli_fetch_assoc($reso))
                                 {
                                    echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -157,20 +157,17 @@ if(isset($_GET['var']) == "logout")
                                 </div>";
                                     
                                 }
-                                $c = "SELECT * from categories where cat_id= 3 ";
-                                $r = mysqli_query($con,$c);
-                                while ($b = mysqli_fetch_assoc($r))
-                                    {echo "<div class='col-sm-3'>
+                                echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
                                                 <img class='sizingimagesmax' src='assets/images/categories/$c' alt='' />
                                                 <h4>All in {$b['cat_name']}</h4>
-                                                <a href='category.php?id={$r['cat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                <a href='category.php?id=3' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                             </div>  
                                         </div>
                                     </div>
-                                </div>";}
+                                </div>";
 
                                      echo " 
                                 </div>";
@@ -198,20 +195,17 @@ if(isset($_GET['var']) == "logout")
                                 </div>";
                                     
                                 }
-                                $c = "SELECT * from categories where cat_id= 4 ";
-                                $r = mysqli_query($con,$c);
-                                while ($b = mysqli_fetch_assoc($r))
-                                    {echo "<div class='col-sm-3'>
+                                echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
                                                 <img class='sizingimagesmax' src='assets/images/categories/$c' alt='' />
                                                 <h4>All in {$b['cat_name']}</h4>
-                                                <a href='category.php?id={$r['cat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                <a href='category.php?id=4' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                             </div>  
                                         </div>
                                     </div>
-                                </div>";}
+                                </div>";
  
                                 echo "</div>";
                                 $res4 = mysqli_query($con,$query);
