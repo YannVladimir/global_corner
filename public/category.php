@@ -100,7 +100,7 @@ require_once ('../includes/main_functions.php');
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
-						<?php 
+						<?php $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
                             $id = $_GET['id'];
                             $a = 0;
                             $query = "SELECT * FROM items where refcat_id = '{$id}' order by uploaded_date desc";
