@@ -1,4 +1,4 @@
-  
+ <?php 
     $con = mysqli_connect("127.0.0.1","root","REDACTED_DB_PASSWORD","eshopper");
 	// for redirecting 
 	function redirectTo($loc)
