@@ -109,7 +109,7 @@ if(isset($_GET['var']) == "logout")
                             <ul class="nav nav-tabs">
                                 <?php 
                                 $query= "SELECT * FROM categories ";
-                                $query1 = "SELECT * FROM items where is_accepted = 1 and cat_id = 3 order by post_id desc limit 3 ";
+                               
                                 $query2 = "SELECT * FROM items where is_accepted = 1 and cat_id = 4 order by post_id desc limit 3 ";
                                 $query3 = "SELECT * FROM items where is_accepted = 1 and cat_id = 5 order by post_id desc limit 3 ";
                                 $query4 = "SELECT * FROM items where is_accepted = 1 and cat_id = 6 order by post_id desc limit 3 ";
@@ -141,6 +141,7 @@ if(isset($_GET['var']) == "logout")
                                          echo "<div class='tab-pane fade active in' id='{$row['cat_id']}' >";
                                     }
                                 }
+                                 $query1 = "SELECT * FROM items where is_accepted = 1 and cat_id = 3 order by post_id desc limit 3 ";
                                 $reso = mysqli_query($con,$query1);
                                 while($row = mysqli_fetch_assoc($reso))
                                 {
