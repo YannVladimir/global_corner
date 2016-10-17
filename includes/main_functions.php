@@ -1,5 +1,4 @@
- <?php 
-    $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
+
 	// for redirecting 
 	function redirectTo($loc)
 	{
@@ -46,20 +45,20 @@
             if($row['is_admin']  == 1)
 	        {
                 $_SESSION['admin'] = "01";
-	        	header("location: ../admin/dashboard.php");
+	        	header("location: ../admin/dashboard.php");exit;
 	        }
 	        else
 	        {
                 $_SESSION['admin'] == "00";
-	        	header("location: home.php");
+	        	header("location: home.php");exit;
 	        }
-	        exit(); 
+	         
         }
         else
         {
         	$_SESSION['message'] = "Wrong email/password combination";
-        	header("location: login.php");
-        }exit();    	
+        	header("location: login.php");exit;
+        }    	
     }
 
     function log_user_out()
@@ -80,8 +79,8 @@
         unset($_SESSION['phone']);
         unset($_SESSION['email']);
         unset($_SESSION['priority']);
-        header("location: ../home.php");
-    }exit();
+        header("location: ../home.php");exit;
+    }
 
     function checkAdmin()
     {
@@ -91,5 +90,6 @@
         }
         else
             header("location: ../home.php");
+            exit;
     }
-    exit();
+    
