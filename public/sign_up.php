@@ -1,4 +1,8 @@
-<?php 
+<?php
+ini_set('display_startup_errors',1);
+ini_set('display_errors',1);
+error_reporting(E_ALL);
+session_start(); 
 require_once('../includes/main_functions.php');
 if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
 {
@@ -25,26 +29,17 @@ if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
   $res = mysqli_query($con,$queryy);
   if($res)
   {
-  	$queryyy = "SELECT * from users where email='{$email}' and password='{$password}'";
-	$res2 = mysqli_query($con,$queryyy);
-  	$row = mysqli_fetch_assoc($res2);
-  	$_SESSION['id'] = $row['user_id'];
-  	$_SESSION['firstname'] = $row['firstname'];
-  	$_SESSION['lastname']=$row['lastname'];
-  	$_SESSION['phone']=$row['phone'];
-  	$_SESSION['email']=$row['email'];
-  	$_SESSION['password']=$row['password'];
-  	$_SESSION['priority']=$row['priority'];
-  	$_SESSION['is_admin']=$row['is_admin'];
-  	echo "<script>alert(' Account created successfully, most welcome ');window.location='home.php';</script>";
+    echo "<script>alert(' Account created successfully, You are most welcome ')</script>";
+  	log_user_in($email,$password);
+
   } 
   else
   {
-      echo "<script>alert(' There is an error while creating the account, please try again ');window.location='loginpage.php';</script>";
+      echo "<script>alert(' There is an error while creating the account, please try again ');window.location='login.php';</script>";
   }
 }
 else 
 {
-    echo "<script>alert(' Error, Please fill the form again ');window.location='loginpage.php';</script>";
+    echo "<script>alert(' Error, Please fill the form again ');window.location='login.php';</script>";
 }
 ?>

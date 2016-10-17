@@ -8,7 +8,7 @@
 								<li><a href="#"><i class="fa fa-phone"></i> +250782767289</a></li>
 								<li><a href="#"><i class="fa fa-envelope"></i> bajenezayann549@gmail.com</a></li>
 							</ul>
-						</div>
+						</div> 
 					</div>
 					<div class="col-sm-6">
 						<div class="social-icons pull-right">
@@ -47,14 +47,14 @@
 					</div>
 					
 					<?php
-                   if(isset($_SESSION['id']))
+                   if(isset($_SESSION['email']))
                    {
                        echo "
                        <div class='col-sm-5'>
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
-								<li><a href='acount'><i class='fa fa-user'></i> My Account</a></li>
-								<li><a href='index.php?pageName=logout'><i class='fa fa-lock'></i> Logout</a></li>
+								<li><a href='acount.php'><i class='fa fa-user'></i> My Account</a></li>
+								<li><a href='home.php?var=logout'><i class='fa fa-lock'></i> Logout</a></li>
 							</ul>
 						</div>
 					</div>";
@@ -65,7 +65,7 @@
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a></a></li>
-								<li><a href='loginpage.php'><i class='fa fa-lock'></i> Login</a></li>
+								<li><a href='login.php'><i class='fa fa-lock'></i> Login</a></li>
 							</ul>
 						</div>
 					</div>";
