@@ -176,23 +176,21 @@ require_once ('../includes/main_functions.php');
                         <div class="form-group col-md-12">
                             <textarea name="details" id="message" required="required" class="form-control" rows="8" placeholder="Description of the product, Include the brand, model, warranty, guarranty, age and any other included accessories"></textarea>
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="col-md-6">
                               <input type="file" name="main" id="inp" class="hide"/>
                               <img id="image" class="btn1" />
-                        </div>
-                        <div class="form-group col-md-6">
+                        
                               <input type="file" name="img1" id="inp2" class="hide"/>
                               <img id="image2" class="btn2" />
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="col-md-6">
                               <input type="file" name="img2" id="inp3" class="hide"/>
                               <img id="image3" class="btn3" />
-                        </div>
-                        <div class="form-group col-md-6">
+                        
                               <input type="file" name="img3" id="inp4" class="hide"/>
                               <img id="image4" class="btn4" />
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="col-md-6">
                               <input type="file" name="img4" id="inp5" class="hide"/>
                               <img id="image5" class="btn5" />
                         </div>
