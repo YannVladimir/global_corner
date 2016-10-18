@@ -22,7 +22,7 @@ if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
   {
   	if($email==$row['email'])
   	{
-                echo "<script>alert(' The entered email arleady has an account, please try again with different email or try to login with your previous account');window.location='loginpage.php';</script>";exit;
+                echo "<script>alert(' The entered email arleady has an account, please try again with different email or try to login with your previous account');window.location='login.php';</script>";exit;
   	}
   }
   $date = date("Y-m-d");
@@ -30,8 +30,34 @@ if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
   $res = mysqli_query($con,$queryy);
   if($res)
   {
-    echo "<script>alert(' Account created successfully, You are most welcome ')</script>";
-  	header('location:home.php');
+        $queryo="SELECT * from users where email ='{$email}' and password = '{$password}'}";
+        $reso = mysqli_query($con,$queryo);
+        if(mysqli_num_rows($reso) >0)
+        {
+          $row = mysqli_fetch_assoc($res);
+          $_SESSION['id'] = $row['user_id'];
+            $_SESSION['username'] = $row['firstname'].' '.$row['lastname'];
+            $_SESSION['phone']=$row['phone'];
+            $_SESSION['email']=$email;
+            $_SESSION['priority']=$row['priority'];
+            if($row['is_admin']  == 1)
+          {
+                $_SESSION['admin'] = "01";
+            header("location: ../admin/dashboard.php");
+          }
+          else
+          {
+                $_SESSION['admin'] == "00";
+            header("location: home.php");
+          }exit();
+           
+        }
+        else
+        {
+          $_SESSION['message'] = "Wrong email/password combination";
+          header("location: login.php");
+        }exit();      
+    }
 
   } 
   else
