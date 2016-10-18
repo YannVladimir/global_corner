@@ -13,7 +13,7 @@
 							<li data-target="#slider-carousel" data-slide-to="6"></li>
 							<li data-target="#slider-carousel" data-slide-to="7"></li>
 						     
-						</ol>  
+						</ol>   
 						 
 						<div class="carousel-inner">
 							<?php 
@@ -22,7 +22,7 @@
                                $res = mysqli_query($con,$query);
                                while($row = mysqli_fetch_assoc($res))
                                {
-                                   if($v==1){
+                                   elseif($v==1){
                                      echo "<div class='item active'>
                                      <div class='col-sm-2'></div>
 								     <div class='col-sm-4'> 

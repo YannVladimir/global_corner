@@ -132,11 +132,12 @@ if(isset($_GET['var']) == "logout")
                                          echo "<div class='tab-pane fade active in' id='{$row['cat_id']}' >";
                                     }
                                 }
+                                $a = 0;
                                 $cats = "SELECT * from items where is_accepted=1 order by post_id desc";
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
-                                    if($row['refcat_id']==3)
+                                    if($row['refcat_id']==3 && $a<4)
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -149,6 +150,7 @@ if(isset($_GET['var']) == "logout")
                                         </div>
                                     </div>
                                 </div>";
+                                $a = $a+1;
                                     }
                                 } 
                                 echo "</div>";
