@@ -31,7 +31,7 @@ if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
   if($res)
   {
     echo "<script>alert(' Account created successfully, You are most welcome ')</script>";
-  	log_user_in($email,$password);
+  	header('location:home.php');
 
   } 
   else
