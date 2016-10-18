@@ -4,7 +4,6 @@ ini_set('display_errors',1);
 error_reporting(E_ALL);
 session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
-require_once ('../includes/main_functions.php');
 if(isset($_GET['var']) == "logout")
 {
     log_user_out();
@@ -92,7 +91,7 @@ if(isset($_GET['var']) == "logout")
     
     
     <?php  
-      require('slider.php');    
+      require_once('slider.php');    
     ?>
     
     <section>
@@ -108,7 +107,7 @@ if(isset($_GET['var']) == "logout")
                         <div class="col-sm-12">
                             <ul class="nav nav-tabs">
                                 <?php 
-                                $query = "SELECT * from categories"
+                                $query = "SELECT * from categories";
                                 $res = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res))
                                 {

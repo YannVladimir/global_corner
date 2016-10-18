@@ -2,8 +2,7 @@
 	<?php 
 	function redirectTo($loc)
 	{
-		header('location:'.$loc);
-		exit;
+		header('location:'.$loc);exit;
 	}
 
 	function encodeUrl($url='')
