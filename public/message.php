@@ -5,8 +5,6 @@ error_reporting(E_ALL);
 session_start(); 
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
-if (isset($_POST['submit']))
-{	
 	if(isset($_SESSION['email'])
 	{
 			$username = $_SESSION['username'];
@@ -40,10 +38,6 @@ if (isset($_POST['submit']))
 	{
 			echo "<script>alert(' An error has occured while contacting us, Please try again');window.location='contact_us.php';</script>";
     }
-}
-else 
-{
-	echo "<script>alert(' An error has occured, Please try again');window.location='contact_us.php';</script>";
 }
 
 ?>
