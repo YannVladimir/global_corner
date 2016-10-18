@@ -96,7 +96,7 @@ require_once ('../includes/main_functions.php');
 				    	<?php
                             if(isset($_SESSION['id']))
                             {
-                                echo "<form action='message/create' id='contactform' class='contact-form row' name='contactform' method='post'>
+                                echo "<form action='message.php' id='contactform' class='contact-form row' name='contactform' method='post'>
 				                <div class='form-group col-md-12'>
 				                <input type='text' name='subject' class='form-control'  required='required' placeholder='Subject'>
 				                </div>
@@ -110,7 +110,7 @@ require_once ('../includes/main_functions.php');
                             }
                             else
                             {
-                                 echo "<form action='message/create' id='contactform' class='contact-form row' name='contactform' method='post'>
+                                 echo "<form action='message.php' id='contactform' class='contact-form row' name='contactform' method='post'>
 				                 <div class='form-group col-md-12'>
 				                 <input type='text' name='name' class='form-control' required='required' placeholder='Full Name'>
 				                 </div>
