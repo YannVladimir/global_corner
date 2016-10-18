@@ -32,7 +32,7 @@ require_once ('../includes/main_functions.php');
     <link rel="apple-touch-icon-precomposed" href="assets/images/ico/apple-touch-icon-57-precomposed.png">
     <style type="text/css">
       .this{
-        margin-left: 200px;
+        color: white;
       }
       .hide{
               }
@@ -176,9 +176,9 @@ require_once ('../includes/main_functions.php');
                         <div class="form-group col-md-12">
                             <textarea name="details" id="message" required="required" class="form-control" rows="8" placeholder="Description of the product, Include the brand, model, warranty, guarranty, age and any other included accessories"></textarea>
                         </div>
-                        <div class="form-group col-md-12">
+                        
                             <div class="col-sm-4"> 
-                                  <input type="file" name="main" id="inp" />
+                                  <input type="file" name="main" class="this" id="inp" />
                                   <img id="image" class="btn1 starting" />
                             </div>
                             <div class="col-sm-4">
@@ -186,27 +186,27 @@ require_once ('../includes/main_functions.php');
                                   <img id="image2" class="btn2 btnlocation" />
                             </div>
                             <div class="col-sm-4">
-                                  <input type="file" name="img2" id="inp3" />
+                                  <input type="file" name="img2" class="this" id="inp3" />
                                   <img id="image3" class="btn3 btnlocation" />
-                            </div>
+                            </div><br><br>
                             <div class="col-sm-4">     
-                                  <input type="file" name="img3" id="inp4" />
+                                  <input type="file" name="img3" class="this" id="inp4" />
                                   <img id="image4" class="btn4 btnlocation" />
                             </div>
                             <div class="col-sm-4">      
-                                  <input type="file" name="img4" id="inp5" />
+                                  <input type="file" name="img4" class="this" id="inp5" />
                                   <img id="image5" class="btn5 starting" />
                             </div>
                             <div class="col-sm-4">      
-                                  <input type="file" name="img5" id="inp6" />
+                                  <input type="file" name="img5" class="this" id="inp6" />
                                   <img id="image6" class="btn6 btnlocation" />
                             </div>    
-                                  <input type="file" name="img6" id="inp7" class="hide" />
+                                  <input type="file" name="img6" class="this" id="inp7" class="hide" />
                                   <img id="image7" class="btn7 btnlocation hide" />
-                                  <input type="file" name="img7" id="inp8" class="hide" />
+                                  <input type="file" name="img7" class="this" id="inp8" class="hide" />
                                   <img id="image8" class="btn8 btnlocation hide" />
                             </div>
-                        </div> 
+                         
                         <div class="form-group col-md-6">
                            <input type="text" name="name" class="form-control" required="required" placeholder="Seller Name">
                         </div> 
