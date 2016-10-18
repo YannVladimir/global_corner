@@ -35,7 +35,7 @@ require_once ('../includes/main_functions.php');
         color: white;
       }
       .hide{
-              }
+            display: none;  }
       .starting{
         cursor: pointer;
         background: url("assets/images/upload.jpg")center center no-repeat;
@@ -188,7 +188,7 @@ require_once ('../includes/main_functions.php');
                             <div class="col-sm-4">
                                   <input type="file" name="img2" class="this" id="inp3" />
                                   <img id="image3" class="btn3 btnlocation" />
-                            </div><br><br>
+                            </div>
                             <div class="col-sm-4">     
                                   <input type="file" name="img3" class="this" id="inp4" />
                                   <img id="image4" class="btn4 btnlocation" />
@@ -201,9 +201,9 @@ require_once ('../includes/main_functions.php');
                                   <input type="file" name="img5" class="this" id="inp6" />
                                   <img id="image6" class="btn6 btnlocation" />
                             </div>    
-                                  <input type="file" name="img6" class="this" id="inp7" class="hide" />
+                                  <input type="file" name="img6" id="inp7" class="hide" />
                                   <img id="image7" class="btn7 btnlocation hide" />
-                                  <input type="file" name="img7" class="this" id="inp8" class="hide" />
+                                  <input type="file" name="img7"  id="inp8" class="hide" />
                                   <img id="image8" class="btn8 btnlocation hide" />
                             </div>
                          
