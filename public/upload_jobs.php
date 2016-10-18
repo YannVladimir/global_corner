@@ -186,10 +186,11 @@ require_once ('../includes/main_functions.php');
                         <div class="form-group col-md-12">
                             <textarea name="details" id="message" required="required" class="form-control" rows="8" placeholder="Description, Include the required experience, process of applying and any other usefull information"></textarea>
                         </div>
-                        <div class="form-group col-md-12">
-                           <p>Upload company logo</p>
-                           <input type="file" name="logo" class="form-control" required="required" placeholder="Phone Number">
-                        </div>                    
+                         
+                           <div class="col-sm-4"> <p>Upload company logo</p>
+                                  <input type="file" name="logo" class="this" required="required" id="inp" />
+                                  <img id="image" class="btn1 starting" />
+                            </div>                    
                         <div class="form-group col-md-12">
                            <input type="submit" name="submit" class="btn btn-primary pull-right" value="Submit">
                         </div>
