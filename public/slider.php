@@ -22,7 +22,8 @@
                                $res = mysqli_query($con,$query);
                                while($row = mysqli_fetch_assoc($res))
                                {
-                                   elseif($v==1){
+
+                                   if($v==1){
                                      echo "<div class='item active'>
                                      <div class='col-sm-2'></div>
 								     <div class='col-sm-4'> 
