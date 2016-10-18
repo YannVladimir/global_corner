@@ -29,9 +29,10 @@
     }
     function log_user_in($email, $password)
     {
+
         $email = clearInput($email);
         $password = clearInput($password);
-        $query="SELECT * from users where email =\"$email\" and password = \"$password\"";
+        $query="SELECT * from users where email ='{$email}' and password = '{$password}'}";
         $res = mysqli_query($con,$query);
         if(mysqli_num_rows($res) == 1)
         {
