@@ -32,8 +32,7 @@ require_once ('../includes/main_functions.php');
     <link rel="apple-touch-icon-precomposed" href="assets/images/ico/apple-touch-icon-57-precomposed.png">
     <style type="text/css">
       .hide{
-        display: none;
-      }
+              }
       .starting{
         cursor: pointer;
         background: url("assets/images/upload.jpg")center center no-repeat;
