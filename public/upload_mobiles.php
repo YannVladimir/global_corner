@@ -31,6 +31,9 @@ require_once ('../includes/main_functions.php');
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/images/ico/apple-touch-icon-57-precomposed.png">
     <style type="text/css">
+      .this{
+        margin-left: 200px;
+      }
       .hide{
               }
       .starting{
@@ -39,7 +42,6 @@ require_once ('../includes/main_functions.php');
         width:100px;
         height: 85px;
         border:3px;
-        margin-left: 8px;
       }
       
       .btnlocation{
@@ -47,7 +49,6 @@ require_once ('../includes/main_functions.php');
         background: url("assets/images/upload.jpg")center center no-repeat;
         width:100px;
         height: 85px;
-        margin-left: 5px;
         border-style: none;
       }
       .notshowing{
@@ -179,7 +180,7 @@ require_once ('../includes/main_functions.php');
                             <div> 
                                   <input type="file" name="main" id="inp" />
                                   <img id="image" class="btn1 starting" />
-                                  <input type="file" name="img1" id="inp2" />
+                                  <input type="file" name="img1" class="this" id="inp2" />
                                   <img id="image2" class="btn2 btnlocation" />
                                   <input type="file" name="img2" id="inp3" />
                                   <img id="image3" class="btn3 btnlocation" />
