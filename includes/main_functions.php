@@ -29,12 +29,12 @@
     }
     function log_user_in($email, $password)
     {
-
+        $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
         $email = clearInput($email);
         $password = clearInput($password);
         $query="SELECT * from users where email ='{$email}' and password = '{$password}'}";
         $res = mysqli_query($con,$query);
-        if(mysqli_num_rows($res) == 1)
+        if(mysqli_num_rows($res) >0)
         {
         	$row = mysqli_fetch_assoc($res);
         	$_SESSION['id'] = $row['user_id'];
@@ -45,20 +45,20 @@
             if($row['is_admin']  == 1)
 	        {
                 $_SESSION['admin'] = "01";
-	        	header("location: ../admin/dashboard.php");exit;
+	        	header("location: ../admin/dashboard.php");
 	        }
 	        else
 	        {
                 $_SESSION['admin'] == "00";
-	        	header("location: home.php");exit;
-	        }
+	        	header("location: home.php");
+	        }exit();
 	         
         }
         else
         {
         	$_SESSION['message'] = "Wrong email/password combination";
-        	header("location: login.php");exit;
-        }    	
+        	header("location: login.php");
+        }exit();    	
     }
 
     function log_user_out()
