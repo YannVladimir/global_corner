@@ -177,21 +177,21 @@ require_once ('../includes/main_functions.php');
                         </div>
                         <div class="form-group col-md-12">
                             <div> 
-                                  <input type="file" name="main" id="inp" class="hide"/>
+                                  <input type="file" name="main" id="inp" />
                                   <img id="image" class="btn1 starting" />
-                                  <input type="file" name="img1" id="inp2" class="hide"/>
+                                  <input type="file" name="img1" id="inp2" />
                                   <img id="image2" class="btn2 btnlocation" />
-                                  <input type="file" name="img2" id="inp3" class="hide"/>
+                                  <input type="file" name="img2" id="inp3" />
                                   <img id="image3" class="btn3 btnlocation" />
-                                  <input type="file" name="img3" id="inp4" class="hide"/>
+                                  <input type="file" name="img3" id="inp4" />
                                   <img id="image4" class="btn4 btnlocation" />
-                                  <input type="file" name="img4" id="inp5" class="hide"/>
+                                  <input type="file" name="img4" id="inp5" />
                                   <img id="image5" class="btn5 starting" />
-                                  <input type="file" name="img5" id="inp6" class="hide"/>
+                                  <input type="file" name="img5" id="inp6" />
                                   <img id="image6" class="btn6 btnlocation hide" />
-                                  <input type="file" name="img6" id="inp7" class="hide"/>
+                                  <input type="file" name="img6" id="inp7" />
                                   <img id="image7" class="btn7 btnlocation hide" />
-                                  <input type="file" name="img7" id="inp8" class="hide"/>
+                                  <input type="file" name="img7" id="inp8" />
                                   <img id="image8" class="btn8 btnlocation hide" />
                             </div>
                         </div> 
