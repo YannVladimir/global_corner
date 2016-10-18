@@ -32,7 +32,7 @@
         $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
         $email = clearInput($email);
         $password = clearInput($password);
-        $query="SELECT * from users where email ='{$email}' and password = '{$password}'}";
+        $query="SELECT * from users where email ='{$email}' and password = '{$password}'";
         $res = mysqli_query($con,$query);
         if(mysqli_num_rows($res) >0)
         {

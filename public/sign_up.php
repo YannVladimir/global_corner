@@ -30,34 +30,7 @@ if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
   $res = mysqli_query($con,$queryy);
   if($res)
   {
-        $queryo="SELECT * from users where email ='{$email}' and password = '{$password}'}";
-        $reso = mysqli_query($con,$queryo);
-        if(mysqli_num_rows($reso) >0)
-        {
-          $row = mysqli_fetch_assoc($reso);
-          $_SESSION['id'] = $row['user_id'];
-            $_SESSION['username'] = $row['firstname'].' '.$row['lastname'];
-            $_SESSION['phone']=$row['phone'];
-            $_SESSION['email']=$email;
-            $_SESSION['priority']=$row['priority'];
-            if($row['is_admin']  == 1)
-          {
-                $_SESSION['admin'] = "01";
-            header("location: ../admin/dashboard.php");
-          }
-          else
-          {
-                $_SESSION['admin'] == "00";
-            header("location: home.php");
-          }exit();
-           
-        }
-        else
-        {
-          $_SESSION['message'] = "Wrong email/password combination";
-          header("location: login.php");
-        }exit();      
-    }
+    log_user_in($email, $password);
 
   } 
   else
