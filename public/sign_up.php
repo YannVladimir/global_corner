@@ -34,7 +34,7 @@ if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
         $reso = mysqli_query($con,$queryo);
         if(mysqli_num_rows($reso) >0)
         {
-          $row = mysqli_fetch_assoc($res);
+          $row = mysqli_fetch_assoc($reso);
           $_SESSION['id'] = $row['user_id'];
             $_SESSION['username'] = $row['firstname'].' '.$row['lastname'];
             $_SESSION['phone']=$row['phone'];
