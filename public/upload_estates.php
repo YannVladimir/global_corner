@@ -230,7 +230,7 @@ require_once ('../includes/main_functions.php');
                                   <img id="image7" class="btn7 btnlocation hide" />
                                   <input type="file" name="img7"  id="inp8" class="hide" />
                                   <img id="image8" class="btn8 btnlocation hide" />
-                            </div>
+                            </div><br><br>
                         <div class="form-group col-md-6">
                            <input type="text" name="name" class="form-control" required="required" placeholder="Seller name">
                         </div> 
