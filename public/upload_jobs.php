@@ -31,24 +31,24 @@ require_once ('../includes/main_functions.php');
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/images/ico/apple-touch-icon-57-precomposed.png">
     <style type="text/css">
-      .hide{
-        display: none;
+      .this{
+        color: white;
       }
+      .hide{
+             display:none; }
       .starting{
         cursor: pointer;
         background: url("assets/images/upload.jpg")center center no-repeat;
-        width:100px;
-        height: 85px;
+        width:180px;
+        height: 150px;
         border:3px;
-        margin-left: 8px;
       }
       
       .btnlocation{
         cursor: pointer;
         background: url("assets/images/upload.jpg")center center no-repeat;
-        width:100px;
-        height: 85px;
-        margin-left: 5px;
+        width:180px;
+        height: 150px;
         border-style: none;
       }
       .notshowing{
