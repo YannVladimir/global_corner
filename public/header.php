@@ -53,7 +53,7 @@
                        <div class='col-sm-5'>
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
-								<li><a href='acount.php'><i class='fa fa-user'></i> My Account</a></li>
+								<li><a href='my_acount.php'><i class='fa fa-user'></i> My Account</a></li>
 								<li><a href='home.php?var=logout'><i class='fa fa-lock'></i> Logout</a></li>
 							</ul>
 						</div>

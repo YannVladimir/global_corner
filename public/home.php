@@ -4,6 +4,7 @@ ini_set('display_errors',1);
 error_reporting(E_ALL);
 session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
+require_once ('../includes/main_functions.php');
 if(isset($_GET['var']) == "logout")
 {
     log_user_out();
