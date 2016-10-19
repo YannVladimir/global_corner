@@ -104,12 +104,8 @@ require_once ('../includes/main_functions.php');
       <div class="row">
         <div class="col-sm-4 col-sm-offset-1">
           <div class="login-form"><!--login form-->
-            <h2>Current Details</h2>
+            <h2>Your Current Details</h2>
             <form>
-              <input type="text" value=''  />
-              <input type="text" value=''/>
-              <input type="text" value=''/>
-              <input type="email" value=''/>
               <?php
               echo "<input type='text' value='{$_SESSION['firstname']}'/>";
               echo "<input type='text' value='{$_SESSION['lastname']}'/>";
@@ -129,12 +125,13 @@ require_once ('../includes/main_functions.php');
         </div>
         <div class="col-sm-4">
           <div class="signup-form"><!--sign up form-->
-            <h2>New details</h2>
+            <h2>Enter New details</h2>
             <form action="edit.php" method="post">
               <input type="text" placeholder="First name" required="required" name="firstname"/>
               <input type="text" placeholder="Last name" required="required" name="lastname"/>
               <input type="text" placeholder="Contact number" required="required" digits="true" name="phone"/>
               <input type="email" placeholder="Email Address" required="required" email="eamil" name="email"/>
+              <input type="password" placeholder="Current Password" required="required" name="pass"/>
               <input type="password" placeholder="New Password" required="required" name="password"/>
               <input type="password" placeholder=" Re-enter new Password" required="required" equalTo="password" name="repassword"/>
               <button type="submit" class="btn btn-default bton">Edit</button>

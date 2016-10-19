@@ -16,16 +16,25 @@ if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
   {
   	echo "<script>alert('the entered password and re type password must be match, please try again');window.location='loginpage.php';</script>";exit;
   }
+
   $query="SELECT * from users";
   $check = mysqli_query($con,$query);
   while($row = mysqli_fetch_assoc($check))
   {
-  	if($email==$row['email'])
+  	if($email==$row['email'] && $email<>$_SESSION['email'])
   	{
-                echo "<script>alert(' The entered email arleady has an account, please try again with different email or try to login with your previous account');window.location='login.php';</script>";exit;
+                echo "<script>alert(' The entered email arleady has an account, please try again with different email or try to login with your previous account');window.location='edit_my_acount.php';</script>";exit;
   	}
   }
+
   $id = $_SESSION['id'];
+  $sql = "SELECT * from users where user_id = '{$id}'";
+  $sql1= mysqli_query($con,$sql);
+  $row = mysqli_fetch_assoc($sql1);
+  if($pass<>$row['password'])
+  {
+    echo "<script>alert(' Wrong password, Please try again and enter the correct password');window.location='edit_my_acount.php';</script>";exit;
+  }
   $queryy = "UPDATE users set firstname = '{$firstname}',lastname = '{$lastname}', email = '{$email}', phone = '{$number}', password = '{$password}' where user_id = '{$id}'";  
   $res = mysqli_query($con,$queryy);
   if($res)
@@ -35,11 +44,11 @@ if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
   } 
   else
   {
-      echo "<script>alert(' There is an error while creating the account, please try again ');window.location='login.php';</script>";
+      echo "<script>alert(' There is an error while editing the account, please try again ');window.location='edit_my_acount.php';</script>";
   }
 }
 else 
 {
-    echo "<script>alert(' Error, Please fill the form again ');window.location='login.php';</script>";
+    echo "<script>alert(' Error, Please fill the form again ');window.location='edit_my_acount.php';</script>";
 }
 ?>
