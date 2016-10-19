@@ -11,6 +11,7 @@ if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
   $lastname = clearInput($_POST['lastname']);
   $email = clearInput($_POST['email']);
   $number = clearInput($_POST['phone']);
+  $pass = clearInput($_POST['pass']);
   $password = clearInput($_POST['password']);
   if($_POST['password']!= $_POST['repassword'])
   {
