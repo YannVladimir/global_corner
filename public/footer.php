@@ -56,7 +56,7 @@
 					</div>
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>Global Corner</h2>
+							<h2>Sell it</h2>
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="#">About Us</a></li>
 								<li><a href="#">Careers</a></li>
