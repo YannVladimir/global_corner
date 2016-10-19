@@ -109,103 +109,71 @@ require_once ('../includes/main_functions.php');
 
     This section is for advetisement
   </section>-->
-  
   <section>
     <div class="container">
       <div class="row">
-        
-				<div class="col-sm-9 padding-right">
-					
-						<?php 
+        <div class="col-sm-9 padding-right">
+          
+            <?php 
                             $id = $_GET['id'];
-                           $query = "SELECT * FROM items where post_id = '{$id}' and is_accepted = 1";
+                            $query = "SELECT * FROM items where post_id = '{$id}' and is_accepted = 1";
       
                             $res = mysqli_query($con,$query);
                             while($row = mysqli_fetch_assoc($res))
                             {
-                            	$sub_id = $row['subcat_id']; 
+                              $sub_id = $row['subcat_id']; 
                               echo "<div class='product-details'><!--product-details-->
-						<div class='col-sm-6'>
-							<div class='view-product'>
-										<div class='' id='photo1'>
-                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt=''/></div>
-					    <div id='photo1next' class='jssora11r' style='top: 123px; right: 0px;'></div>
-					 <div class='displaynone' id='photo2'>
-						<img class='sizingimagesmax' src='assets/images/posts/{$row['photo1']}' alt=''/></div>
-						<div id='photo2prev' class='jssora11l' style='top: 123px; display:none; left: 0px;'></div>    
-					  <div id='photo2next' class='jssora11r' style='top: 123px; display:none; right: 0px;'></div>
-            <div class='displaynone' id='photo3'>
-            <img class='sizingimagesmax' src='assets/images/posts/{$row['photo2']}' alt=''/></div>
-            <div id='photo3prev' class='jssora11l' style='top: 123px; display:none; left: 0px;'></div>
-						<div id='photo3next' class='jssora11r' style='top: 123px; display:none; right: 0px;'></div>
-            		<div class='displaynone' id='photo4'>
-            <img class='sizingimagesmax' src='assets/images/posts/{$row['photo3']}' alt=''/></div>
-            <div id='photo4prev' class='jssora11l' style='top: 123px; display:none; left: 0px;'></div>
-                
-                <h3>Verified</h3>
-							</div>
-						</div>
-						<div class='col-sm-6'>
-							<div class='product-information'><!--/product-information-->
-								<img src='assets/images/product-details/new.jpg' class='newarrival' alt='' />
-								<span>
+            <div class='col-sm-6'>
+              <div class='product-information'><!--/product-information-->
+                <!--<img src='assets/images/product-details/new.jpg' class='newarrival' alt='' />-->
+                <span>
                   <span>{$row['name']}</span>
                 </span>
                 <p>{$row['details']}</p>
                 <h2>{$row['price']} Rwf</h2>
-								<p>Seller: <b>{$row['seller']}</b></p>
-								<p>Place:<b> {$row['place_name']}</b></p>
-								<p>Contact number:<b> {$row['contacts']}</b></p>
-								<p>Uploaded Date:<b>{$row['uploaded_date']}</b></p>
-								<a href=''><img src='assets/images/product-details/share.png' class='share img-responsive'  alt='' /></a>
-							</div><!--/product-information-->
-						</div>
-					</div><!--/product-details-->";
+                <p>Seller: <b>{$row['seller']}</b></p>
+                <p>Place:<b> {$row['place_name']}</b></p>
+                <p>Contact number:<b> {$row['contacts']}</b></p>
+                <p>Uploaded Date:<b>{$row['uploaded_date']}</b></p>
+                <a href=''><img src='assets/images/product-details/share.png' class='share img-responsive'  alt='' /></a>
+              </div><!--/product-information-->
+            </div>
+
+            <div class='col-sm-6'>
+              <div class='view-product'>
+                    <div class='' id='photo1'>
+                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt=''/></div>
+              <div id='photo1next' class='jssora11r' style='top: 123px; right: 0px;'></div>
+           <div class='displaynone' id='photo2'>
+            <img class='sizingimagesmax' src='assets/images/posts/{$row['photo1']}' alt=''/></div>
+            <div id='photo2prev' class='jssora11l' style='top: 123px; display:none; left: 0px;'></div>    
+            <div id='photo2next' class='jssora11r' style='top: 123px; display:none; right: 0px;'></div>
+            <div class='displaynone' id='photo3'>
+            <img class='sizingimagesmax' src='assets/images/posts/{$row['photo2']}' alt=''/></div>
+            <div id='photo3prev' class='jssora11l' style='top: 123px; display:none; left: 0px;'></div>
+            <div id='photo3next' class='jssora11r' style='top: 123px; display:none; right: 0px;'></div>
+                <div class='displaynone' id='photo4'>
+            <img class='sizingimagesmax' src='assets/images/posts/{$row['photo3']}' alt=''/></div>
+            <div id='photo4prev' class='jssora11l' style='top: 123px; display:none; left: 0px;'></div>
+                
+                <h3>Verified</h3>
+              </div>
+            </div>
+          </div><!--/product-details-->";
                             } 
-                            echo"<div class='recommended_items'><!--recommended_items-->
-						<h2 class='title text-center'>recommended items</h2>
-						
-						<div id='recommended-item-carousel' class='carousel slide' data-ride='carousel'>
-							<div class='carousel-inner'>
-								<div class='item active'>"; 
-                           $queryyy = "SELECT * FROM items where subcat_id = '{$sub_id}' and post_id !='{$id}' and is_accepted = 1 order by post_id desc limit 4";
-      
-                            $res1 = mysqli_query($con,$queryyy);
-                            while($row = mysqli_fetch_assoc($res1))
-                            {
-                            	{
-                            		echo"
-                            		<div class='col-sm-3'>
-										<div class='product-image-wrapper'>
-											<div class='single-products'>
-												<div class='productinfo text-center'>
-													<img src='assets/images/posts/{$row['main']}' alt='' />
-													<h2>{$row['price']}</h2>
-													<p>{$row['name']}</p>
-										            <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View item</a>
-												</div>
-											</div>
-										</div>
-									</div>";
-                            	}
-               
-								
-                            }
+                            
                                
                         ?>
-                    			
-						</div>
-					<div class="col-sm-3">
+                    </div>
+                
+        <div class="col-sm-3">
           <div class="left-sidebar">
             <h2>Categories</h2>
             <div class="panel-group category-products" id="accordian"><!--category-productsr-->
               <?php 
-                                            
                                             $c = 3;
                                             $query = "SELECT * FROM categories ";
-                                            $queryy = "SELECT * FROM amacategories ";
                                             $res = mysqli_query($con,$query);
-                                            
                                             while($row = mysqli_fetch_assoc($res))
                                             {
                                             if($row['cat_id']==$c)
@@ -220,6 +188,7 @@ require_once ('../includes/main_functions.php');
                 </div><div id='$c' class='panel-collapse collapse'>
                   <div class='panel-body'>
                     <ul>";$a = $row['cat_name'];
+                    $queryy = "SELECT * FROM amacategories ";
                     $re = mysqli_query($con,$queryy);
                     while($ro = mysqli_fetch_assoc($re))
                                               {
@@ -240,20 +209,47 @@ require_once ('../includes/main_functions.php');
                                             
                                             } 
                                         ?>
+              
             </div><!--/category-productsr-->
-            
-            
+
             <!--/shipping-->
             
           </div>
         </div>
-        
-						
-				
-			</div>
-		</div>
-	</section>
-	
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+
+            <div class='recommended_items'><!--recommended_items-->
+            <h2 class='title text-center'>recommended items</h2>
+           <?php 
+ 
+                           $queryyy = "SELECT * FROM items where subcat_id = '{$sub_id}' and post_id !='{$id}' and is_accepted = 1 order by post_id desc limit 4";
+      
+                            $res1 = mysqli_query($con,$queryyy);
+                            while($row = mysqli_fetch_assoc($res1))
+                            {
+                                echo"
+                                <div class='col-sm-3'>
+                    <div class='product-image-wrapper'>
+                      <div class='single-products'>
+                        <div class='productinfo text-center'>
+                          <img src='assets/images/posts/{$row['main']}' alt='' />
+                          <h2>{$row['price']}</h2>
+                          <p>{$row['name']}</p>
+                                <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View item</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>";}
+                  echo "</div>";
+
+            ?>
+        </div>
+      </div>  
+      </div>
+    </div>    
+  </section>
 	<br><br><br><br>
 	<?php  
       require('footer.php');    

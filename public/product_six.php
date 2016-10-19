@@ -159,7 +159,11 @@ require_once ('../includes/main_functions.php');
             <div id='photo4next' class='jssora11r' style='top: 123px; display:none; right: 0px;'></div>
             <div class='displaynone' id='photo5'>
             <img class='sizingimagesmax' src='assets/images/posts/{$row['photo4']}' alt=''/></div>
-            <div id='photo5prev' class='jssora11l' style='top: 123px; display:none; left: 0px;'></div>
+            <div id='photo5prev' class='jssora11l' style='top: 123px; display:none; left: 0px;'></div>  
+            <div id='photo5next' class='jssora11r' style='top: 123px; display:none; right: 0px;'></div>
+            <div class='displaynone' id='photo6'>
+            <img class='sizingimagesmax' src='assets/images/posts/{$row['photo5']}' alt=''/></div>
+            <div id='photo6prev' class='jssora11l' style='top: 123px; display:none; left: 0px;'></div>
                 <h3>Verified</h3>
               </div>
             </div>
@@ -335,6 +339,7 @@ require_once ('../includes/main_functions.php');
                   $("#photo4").fadeOut(1);
                   $("#photo5").slideToggle();
                   $("#photo5prev").fadeIn();
+                  $("#photo5next").fadeIn();
         });
       $("#photo5prev").click(function()
         {
@@ -346,7 +351,25 @@ require_once ('../includes/main_functions.php');
                   $("#photo4next").fadeIn();
                   $("#photo4prev").fadeIn();
         });
-      
+
+      $("#photo5next").click(function()
+        {
+
+                  $("#photo5next").fadeOut(1);
+                  $("#photo5prev").fadeOut(1);
+                  $("#photo5").fadeOut(1);
+                  $("#photo6").slideToggle();
+                  $("#photo6prev").fadeIn();
+        });
+      $("#photo6prev").click(function()
+        {
+             
+                  $("#photo6prev").fadeOut(1);
+                  $("#photo6").fadeOut(1);
+                  $("#photo5").slideToggle();
+                  $("#photo5next").fadeIn();
+                  $("#photo5prev").fadeIn();
+        });      
   });
    </script>
 </body>
