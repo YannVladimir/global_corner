@@ -185,7 +185,9 @@ require_once ('../includes/main_functions.php');
           </div>
         </div>
 			</div>
-        
+      <div class="row">
+        this is for those things  
+      </div>
 		</div>		
 	</section>
 	
