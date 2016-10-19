@@ -186,7 +186,7 @@ require_once ('../includes/main_functions.php');
                         <div class="form-group col-md-12">
                             <input type="text" name="field" class="form-control" placeholder="Required field">
                         </div>
-                        <p>Select Deadline Date Of Applying
+                        <p> Select Deadline Date Of Applying</p>
                         <div class="col-sm-4">
                                 <select class="form-control" name="day" required="required">
                                  <option value=''>Day</option>
@@ -238,13 +238,13 @@ require_once ('../includes/main_functions.php');
                                    }
                                  ?>
                             </select>
-                        </div><br><br>
+                        </div><br><br><br>
                         <div class="form-group col-md-12">
                             <select class="form-control" name="experience" required="required">
                                  <option value=''>Required experience</option>
                                  <?php 
                                     $queryy = "SELECT * FROM experience ";
-                                    $reso = mysqli_query($con,$query);
+                                    $reso = mysqli_query($con,$queryy);
                                     while($row = mysqli_fetch_assoc($reso))
                                     {
                                        echo "<option value='{$row['id']}'>{$row['exp']}</option>";
