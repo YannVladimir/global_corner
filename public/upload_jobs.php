@@ -159,7 +159,7 @@ require_once ('../includes/main_functions.php');
                         <div class="form-group col-md-12">
                            <input type="text" name="email" class="form-control" required="required" placeholder="Email Adress">
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                            <input type="text" name="contact" class="form-control" required="required" placeholder="Phone Number">
                         </div>
                         <div class="form-group col-md-12">
@@ -238,7 +238,7 @@ require_once ('../includes/main_functions.php');
                                    }
                                  ?>
                             </select>
-                        </div>
+                        </div><br><br>
                         <div class="form-group col-md-12">
                             <select class="form-control" name="experience" required="required">
                                  <option value=''>Required experience</option>
