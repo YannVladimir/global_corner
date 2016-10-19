@@ -17,6 +17,7 @@ if(checkIsStringSetPost('izina'))
    $year = clearInput($_POST['year']);
    $uploaded = date("Y-m-d");
    $deadline = $year.'-'.$month.'-'.$day;
+   $place = 1;
    if(isset($_SESSION['id']))
    {
 	$user = $_SESSION['id'];
@@ -76,7 +77,7 @@ if(checkIsStringSetPost('izina'))
   {
     echo "<script>alert(' Please provide all inputs, including the logo ');window.location='upload_jobs.php';</script>";exit;
   }
-  $querry = "INSERT INTO posts (category,user,seller,company_name,job_position,details,sector,contacts,uploaded_date,deadline,logo,experience,required_field) values ('{$category}','{$user}','{$company}','{$email}','{$position}','{$details}','{$place}','{$contacts}','{$uploaded}','{$deadline}','{$photo}','{$exp}','{$field}')";
+  $querry = "INSERT INTO posts (place,category,user,seller,company_name,job_position,details,sector,contacts,uploaded_date,deadline,logo,experience,required_field) values ('{$place}','{$category}','{$user}','{$company}','{$email}','{$position}','{$details}','{$place}','{$contacts}','{$uploaded}','{$deadline}','{$photo}','{$exp}','{$field}')";
  $res = mysqli_query($con,$querry);
  if($res)
  {
