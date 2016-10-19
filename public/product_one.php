@@ -187,10 +187,11 @@ require_once ('../includes/main_functions.php');
 			</div>
       <div class="row">
         <div class="col-sm-12">
+
+            <div class='recommended_items'><!--recommended_items-->
+            <h2 class='title text-center'>recommended items</h2>";
            <?php 
-            echo" <div class='recommended_items'><!--recommended_items-->
-            <h2 class='title text-center'>recommended items</h2>
-    "; 
+ 
                            $queryyy = "SELECT * FROM items where subcat_id = '{$sub_id}' and post_id !='{$id}' and is_accepted = 1 order by post_id desc limit 4";
       
                             $res1 = mysqli_query($con,$queryyy);
@@ -211,6 +212,7 @@ require_once ('../includes/main_functions.php');
                     </div>
                   </div>";
                   echo "</div>";
+
             ?>
         </div>
       </div>  
