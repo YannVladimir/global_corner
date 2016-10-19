@@ -151,16 +151,19 @@ require_once ('../includes/main_functions.php');
                           </div>
                   <br><br><br>
                   <div id="electronics">
-                    <form action="" id="" class="upload-form row" name="upload-form" method="post" enctype="multipart/form-data">
+                    <form action="uploading_jobs.php" id="" class="upload-form row" name="upload-form" method="post" enctype="multipart/form-data">
                       
                         <div class="form-group col-md-12">
                            <input type="text" name="name" class="form-control" required="required" placeholder="Company Name">
                         </div>  
                         <div class="form-group col-md-12">
-                           <input type="text" name="email" class="form-control" required="required" placeholder="Email adress">
+                           <input type="text" name="email" class="form-control" required="required" placeholder="Email Adress">
+                        </div>
+                        <div class="form-group col-md-6">
+                           <input type="text" name="contact" class="form-control" required="required" placeholder="Phone Number">
                         </div>
                         <div class="form-group col-md-12">
-                             <input type="text" name="izina" class="form-control" required="required" placeholder="Job position">
+                             <input type="text" name="izina" class="form-control" required="required" placeholder="Job Position">
                         </div>
                         
                         <div class="form-group col-md-12">
@@ -176,13 +179,79 @@ require_once ('../includes/main_functions.php');
                                     } 
                                 ?>
                             </select>
-                        </div>
+                        </div> 
                         <div class="form-group col-md-12">
                             <input type="text" name="working_place" class="form-control" placeholder="Working Place">
                         </div>
                         <div class="form-group col-md-12">
                             <input type="text" name="field" class="form-control" placeholder="Required field">
                         </div>
+                        <p>Select Deadline Date Of Applying
+                        <div class="col-sm-4">
+                                <select class="form-control" name="day" required="required">
+                                 <option value=''>Day</option>
+                                 <option value='01'>01</option>
+                                 <option value='02'>02</option>
+                                 <option value='03'>03</option>
+                                 <option value='04'>04</option>
+                                 <option value='05'>05</option>
+                                 <option value='06'>06</option>
+                                 <option value='07'>07</option>
+                                 <option value='08'>08</option>
+                                 <option value='09'>09</option>
+                                 <?php
+                                   $i= 10;
+                                   while($i<32)
+                                   {
+                                    echo "<option value='{$i}'>{$i}</option>"
+                                    $i = $i+1;
+                                   }
+                                 ?>
+                            </select>
+                        </div>
+                        <div class="col-sm-4">
+                                <select class="form-control" name="month" required="required">
+                                 <option value=''>Month</option>
+                                 <option value='01'>01</option>
+                                 <option value='02'>02</option>
+                                 <option value='03'>03</option>
+                                 <option value='04'>04</option>
+                                 <option value='05'>05</option>
+                                 <option value='06'>06</option>
+                                 <option value='07'>07</option>
+                                 <option value='08'>08</option>
+                                 <option value='09'>09</option>
+                                 <option value='10'>10</option>
+                                 <option value='11'>11</option>
+                                 <option value='12'>12</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4">
+                                <select class="form-control" name="year" required="required">
+                                 <option value=''>Year</option>
+                                 <?php
+                                   $i= 2016;
+                                   while($i<2018)
+                                   {
+                                    echo "<option value='{$i}'>{$i}</option>"
+                                    $i = $i+1;
+                                   }
+                                 ?>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <select class="form-control" name="experience" required="required">
+                                 <option value=''>Required experience</option>
+                                 <?php 
+                                    $queryy = "SELECT * FROM experience ";
+                                    $reso = mysqli_query($con,$query);
+                                    while($row = mysqli_fetch_assoc($reso))
+                                    {
+                                       echo "<option value='{$row['id']}'>{$row['exp']}</option>";
+                                    } 
+                                ?>
+                            </select>
+                        </div> 
                         <div class="form-group col-md-12">
                             <textarea name="details" id="message" required="required" class="form-control" rows="8" placeholder="Description, Include the required experience, process of applying and any other usefull information"></textarea>
                         </div>
