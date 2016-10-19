@@ -158,7 +158,7 @@ require_once ('../includes/main_functions.php');
                                              $res = mysqli_query($con,$query);
                                              while($row = mysqli_fetch_assoc($res))
                                              {
-                                               echo "<tr class='odd gradeX'><td><img src='assets/images/posts/{$row['main']}'/></td><td><strong>{$row['name']}</strong></td><td><strong>{$row['price']}</strong></td><td><form action='public/mypost' method='GET'><input type='text' name='id' value='{$row['post_id']}' class='hidden'/><input type='submit' value='View Details'/></form></td><td><form action='' method='post'><input type='text' name='id' value='{$row['post_id']}' class='hidden'/><input type='submit' value='Remove'/></form></td></tr> ";
+                                               echo "<tr class='odd gradeX'><td><img src='assets/images/posts/{$row['main']}'/></td><td><strong>{$row['name']}</strong></td><td><strong>{$row['price']}</strong></td><td><form action='my_post.php' method='GET'><input type='text' name='id' value='{$row['post_id']}' class='hidden'/><input type='submit' value='View Details'/></form></td><td><form action='delete.php' method='post'><input type='text' name='id' value='{$row['post_id']}' class='hidden'/><input type='submit' value='Remove'/></form></td></tr> ";
                                              }
                                           }
                                        ?>  
