@@ -39,6 +39,8 @@
         	$row = mysqli_fetch_assoc($res);
         	$_SESSION['id'] = $row['user_id'];
             $_SESSION['username'] = $row['firstname'].' '.$row['lastname'];
+            $_SESSION['firstname'] = $row['firstname'];
+            $_SESSION['lastname'] = $row['lastname'];
             $_SESSION['phone']=$row['phone'];
             $_SESSION['email']=$email;
             $_SESSION['priority']=$row['priority'];

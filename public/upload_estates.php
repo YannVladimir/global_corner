@@ -158,7 +158,7 @@ require_once ('../includes/main_functions.php');
                         
                         <div class="form-group col-md-6">
                             <select class="form-control" name="subcategory" required="required">
-                                 <option value="">Select Real-Esatate category</option>
+                                 <option value="">Select Real-Estate category</option>
                                  <?php 
                                     $query = "SELECT * FROM subcategories ";
                                     $res = mysqli_query($con,$query);

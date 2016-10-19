@@ -120,7 +120,10 @@ require_once ('../includes/main_functions.php');
                         <li class='list-group-item'><strong>Contact Number: </strong><?php
                       echo $_SESSION['phone'];
                         ?></li>
-                        <li class='list-group-item'><button type='submit' class='btn btn-default bton'>Edit Acount</button></li>
+                        <li class='list-group-item'>
+                          <form action="edit_my_acount.php" method="post">
+                             <button type='submit' class='btn btn-default bton'>Edit Acount</button>
+                          </form>
                         </li>
                     </ul>
                 </div>
