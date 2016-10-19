@@ -203,7 +203,7 @@ require_once ('../includes/main_functions.php');
                                    $i= 10;
                                    while($i<32)
                                    {
-                                    echo "<option value='{$i}'>{$i}</option>"
+                                    echo "<option value='{$i}'>{$i}</option>";
                                     $i = $i+1;
                                    }
                                  ?>
@@ -233,7 +233,7 @@ require_once ('../includes/main_functions.php');
                                    $i= 2016;
                                    while($i<2018)
                                    {
-                                    echo "<option value='{$i}'>{$i}</option>"
+                                    echo "<option value='{$i}'>{$i}</option>";
                                     $i = $i+1;
                                    }
                                  ?>
