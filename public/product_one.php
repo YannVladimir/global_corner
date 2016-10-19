@@ -106,7 +106,7 @@ require_once ('../includes/main_functions.php');
                               echo "<div class='product-details'><!--product-details-->
 						<div class='col-sm-6'>
               <div class='product-information'><!--/product-information-->
-                <img src='assets/images/product-details/new.jpg' class='newarrival' alt='' />
+                <!--<img src='assets/images/product-details/new.jpg' class='newarrival' alt='' />-->
                 <span>
                   <span>{$row['name']}</span>
                 </span>
@@ -186,7 +186,35 @@ require_once ('../includes/main_functions.php');
         </div>
 			</div>
       <div class="row">
-        <div class="col-sm-12"></div>
+        <div class="col-sm-12">
+           <?php 
+            echo" <div class='recommended_items'><!--recommended_items-->
+            <h2 class='title text-center'>recommended items</h2>
+            
+            <div id='recommended-item-carousel' class='carousel slide' data-ride='carousel'>
+              <div class='carousel-inner'>
+                <div class='item active'>"; 
+                           $queryyy = "SELECT * FROM items where subcat_id = '{$sub_id}' and post_id !='{$id}' and is_accepted = 1 order by post_id desc limit 4";
+      
+                            $res1 = mysqli_query($con,$queryyy);
+                            while($row = mysqli_fetch_assoc($res1))
+                            {
+                              {
+                                echo"
+                                <div class='col-sm-3'>
+                    <div class='product-image-wrapper'>
+                      <div class='single-products'>
+                        <div class='productinfo text-center'>
+                          <img src='assets/images/posts/{$row['main']}' alt='' />
+                          <h2>{$row['price']}</h2>
+                          <p>{$row['name']}</p>
+                                <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View item</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>";
+            ?>
+        </div>
       </div>
 		</div>		
 	</section>
