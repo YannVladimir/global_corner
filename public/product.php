@@ -2,7 +2,6 @@
 ini_set('display_startup_errors',1);
 ini_set('display_errors',1);
 error_reporting(E_ALL);
-session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
 $id = $_GET['id'];
@@ -35,6 +34,10 @@ while($row = mysqli_fetch_assoc($res))
 		require('product_five.php');
 		exit;
 	}
-	
+	elseif ($row['photo6'] == '')
+	{
+		require('product_six.php');
+		exit;
+	}
 	
 }
