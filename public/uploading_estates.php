@@ -3,13 +3,16 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
 if(checkIsStringSetPost('izina'))
 {
- $category = clearInput($_POST['subcategory']);
+$category = clearInput($_POST['subcategory']);
 $seller = clearInput($_POST['name']);
 $nam = clearInput($_POST['izina']);
 $price = clearInput($_POST['price']);
 $details = clearInput($_POST['details']);
 $place = clearInput($_POST['location']);
 $contacts = clearInput($_POST['contact']);
+$is_rent = clearInput($_POST['rentalorsell']);
+$sector = clearInput($_POST['sector']);
+$road = clearInput($_POST['road']);
 $uploaded = date("Y-m-d");
 if(isset($_SESSION['id']))
 {
@@ -332,7 +335,7 @@ $select = mysqli_query($con,$queryy);
    if($photo==$row['main'])
    {
  $refphoto = $row['photo_id'];
- $querry = "INSERT INTO posts (category,user,seller,name,price,details,place,contacts,uploaded_date,photo) values ('{$category}','{$user}','{$seller}','{$nam}','{$price}','{$details}','{$place}','{$contacts}','{$uploaded}','{$refphoto}')";
+ $querry = "INSERT INTO posts (is_rent,sector,street,category,user,seller,name,price,details,place,contacts,uploaded_date,photo) values ('{$is_rent}','{$sector}','{$road}','{$category}','{$user}','{$seller}','{$nam}','{$price}','{$details}','{$place}','{$contacts}','{$uploaded}','{$refphoto}')";
             
  $res = mysqli_query($con,$querry);
  if($res)

@@ -151,7 +151,7 @@ require_once ('../includes/main_functions.php');
                           </div>
                   <br><br><br>
                   <div id="electronics">
-                    <form action="" id="" class="upload-form row" name="upload-form" method="post" enctype="multipart/form-data">
+                    <form action="uploading_estates.php" id="" class="upload-form row" name="upload-form" method="post" enctype="multipart/form-data">
                         <div class="form-group col-md-12">
                              <input type="text" name="izina" class="form-control" required="required" placeholder="Ad title">
                         </div>
@@ -173,8 +173,8 @@ require_once ('../includes/main_functions.php');
                         <div class="form-group col-md-6">
                              <select class="form-control" name="rentalorsell" required="required">
                                  <option value="">Select rental or sell</option>
-                                 <option value="s">Selling</option>
-                                 <option value="r">Renting</option>
+                                 <option value="0">Selling</option>
+                                 <option value="1">Renting</option>
                             </select>    
                         </div>
                          <div class="form-group col-md-6">
@@ -194,7 +194,7 @@ require_once ('../includes/main_functions.php');
                             <input type="text" name="sector" class="form-control" required="required" placeholder="sector">
                         </div>
                         <div class="form-group col-md-6">
-                            <input type="text" name="road" class="form-control" required="required" placeholder="House number (eg: KK 23 ave 256)">
+                            <input type="text" name="road" class="form-control" required="required" placeholder="Street number (eg: KK 23 ave 256)">
                         </div>
                         <div class="form-group col-md-6">
                             <input type="text" name="price" class="form-control" required="required" placeholder="Price">
