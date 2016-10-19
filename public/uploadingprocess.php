@@ -278,7 +278,50 @@ $img5= '';
     }
 
 }
-$img6 = '';
+
+if(isset($_FILES['img6']))
+{
+    $name= $_FILES['img6']['name'];
+    $size= $_FILES['img6']['size'];
+    $ext1 = explode(".", $name);
+    $ext = end($ext1);
+    $allowed_ext = array("png", "jpeg", "jpg");
+    if(in_array($ext, $allowed_ext))
+    {
+      if($size < (2097152))
+      {
+        $new_image = '';
+        $new_name = md5(rand()) . '.' . $ext;
+        $path ='assets/images/posts/' . $new_name;
+        list($width, $height) = getimagesize($_FILES['img6']['tmp_name']);
+        if($ext == 'png')
+        {
+          $new_image = imagecreatefrompng($_FILES['img6']['tmp_name']);
+        }
+     if($ext == 'jpeg' || $ext == 'jpg')
+     {
+       $new_image = imagecreatefromjpeg($_FILES['img6']['tmp_name']);
+     }
+     $new_width = 300;
+     $new_height = ($height/$width)*300;
+     $tmp_image = imagecreatetruecolor($new_width, $new_height);
+     imagecopyresampled($tmp_image, $new_image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
+     imagejpeg($tmp_image, $path, 100);
+     $img5 = $new_name;
+     imagedestroy($new_image);
+     imagedestroy($tmp_image);
+}
+ else
+{
+    $img6= '';
+ }
+    }
+    else
+    {
+$img6= '';
+    }
+
+}
 $img7 = '';
 $query = "INSERT INTO post_photos (main,photo1,photo2,photo3,photo4,photo5,photo6,photo7) values ('{$photo}','{$img1}','{$img2}','{$img3}','{$img4}','{$img5}','{$img6}','{$img7}')";
 $yan = mysqli_query($con,$query);
