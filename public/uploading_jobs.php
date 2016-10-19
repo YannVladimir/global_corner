@@ -84,6 +84,7 @@ if(checkIsStringSetPost('izina'))
  }
  else
  {
-     echo "<script>alert(' Error while uploading post, please try again ');window.location='upload_jobs.php';</script>";exit;
+    echo mysqli_error($con);
+     //echo "<script>alert(' Error while uploading post, please try again ');window.location='upload_jobs.php';</script>";exit;
  }
 ?>
