@@ -105,27 +105,27 @@ require_once ('../includes/main_functions.php');
                             	$sub_id = $row['subcat_id']; 
                               echo "<div class='product-details'><!--product-details-->
 						<div class='col-sm-6'>
+              <div class='product-information'><!--/product-information-->
+                <img src='assets/images/product-details/new.jpg' class='newarrival' alt='' />
+                <span>
+                  <span>{$row['name']}</span>
+                </span>
+                <p>{$row['details']}</p>
+                <h2>{$row['price']} Rwf</h2>
+                <p>Seller: <b>{$row['seller']}</b></p>
+                <p>Place:<b> {$row['place_name']}</b></p>
+                <p>Contact number:<b> {$row['contacts']}</b></p>
+                <p>Uploaded Date:<b>{$row['uploaded_date']}</b></p>
+                <a href=''><img src='assets/images/product-details/share.png' class='share img-responsive'  alt='' /></a>
+              </div><!--/product-information-->
+            </div>
+            <div class='col-sm-6'>
 							<div class='view-product'>
 										<div class='' id='photo1'>
                         <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt=''/>
 					  </div>
 								<h3>Verified</h3>
 							</div>
-						</div>
-						<div class='col-sm-6'>
-							<div class='product-information'><!--/product-information-->
-								<img src='assets/images/product-details/new.jpg' class='newarrival' alt='' />
-								<span>
-									<span>{$row['name']}</span>
-								</span>
-								<p>{$row['details']}</p>
-								<h2>{$row['price']} Rwf</h2>
-								<p>Seller: <b>{$row['seller']}</b></p>
-								<p>Place:<b> {$row['place_name']}</b></p>
-								<p>Contact number:<b> {$row['contacts']}</b></p>
-								<p>Uploaded Date:<b>{$row['uploaded_date']}</b></p>
-								<a href=''><img src='assets/images/product-details/share.png' class='share img-responsive'  alt='' /></a>
-							</div><!--/product-information-->
 						</div>
 					</div><!--/product-details-->";
                             } 
@@ -185,6 +185,9 @@ require_once ('../includes/main_functions.php');
           </div>
         </div>
 			</div>
+      <div class="row">
+        <div class="col-sm-12"></div>
+      </div>
 		</div>		
 	</section>
 	
