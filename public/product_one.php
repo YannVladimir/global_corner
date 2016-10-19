@@ -106,7 +106,7 @@ require_once ('../includes/main_functions.php');
                               echo "<div class='product-details'><!--product-details-->
 						<div class='col-sm-6'>
               <div class='product-information'><!--/product-information-->
-                <img src='assets/images/product-details/new.jpg' class='newarrival' alt='' />
+                <!--<img src='assets/images/product-details/new.jpg' class='newarrival' alt='' />-->
                 <span>
                   <span>{$row['name']}</span>
                 </span>
