@@ -346,7 +346,7 @@ if(isset($_GET['var']) == "logout")
                                 $res15 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res15))
                                 {
-                                    if($row['refcat_id']==10 && $h<4)
+                                    if($row['job_position'] && $h<4)
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
