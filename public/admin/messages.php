@@ -43,15 +43,23 @@
 			                               $res = mysqli_query($con,$query);
                                            if(isset($_SESSION['priority']) == 1){
                                               while($row = mysqli_fetch_assoc($res))
-                                              {
+                                              { 
+                                                  if($row['seen'] == 0)
                                                    echo "<tr class='odd gradeX'><td>{$row['received_date']}</td><td>{$row['name']}</td><td>{$row['email']}</td><td>{$row['phone']}</td><td>{$row['subject']}</td><td>{$row['message']}</td><td class='center'><form action='new-contact.php' method='post'><input type='text' name='id' value='{$row['id']}' class='hidding'/><input type='submit' value='Mark as read'/></form></td><td class='center'><form action='message-delete.php' method='post'><input type='text' name='id' value='{$row['id']}' class='hidding'/><input type='submit' value='Delete'/></form></td></tr>";
+                                                  else
+                                                    echo "<tr class='odd gradeX'><td>{$row['received_date']}</td><td>{$row['name']}</td><td>{$row['email']}</td><td>{$row['phone']}</td><td>{$row['subject']}</td><td>{$row['message']}</td><td class='center'>Seen</td><td class='center'><form action='message-delete.php' method='post'><input type='text' name='id' value='{$row['id']}' class='hidding'/><input type='submit' value='Delete'/></form></td></tr>";
+                                                  
                                               }
                                            }
                                            else
                                            {
                                               while($row = mysqli_fetch_assoc($res))
                                               {
-                                                   echo "<tr class='odd gradeX'><td>{$row['received_date']}</td><td>{$row['name']}</td><td>{$row['email']}</td><td>{$row['phone']}</td><td>{$row['subject']}</td><td>{$row['message']}</td><td class='center'><form action='new-contact.php' method='post'><input type='text' name='id' value='{$row['id']}' class='hidding'/><input type='submit' value='Mark as read'/></form></td></tr>";
+                                                   if($row['seen'] == 0)
+                                                    echo "<tr class='odd gradeX'><td>{$row['received_date']}</td><td>{$row['name']}</td><td>{$row['email']}</td><td>{$row['phone']}</td><td>{$row['subject']}</td><td>{$row['message']}</td><td class='center'><form action='new-contact.php' method='post'><input type='text' name='id' value='{$row['id']}' class='hidding'/><input type='submit' value='Mark as read'/></form></td></tr>";
+                                                   else
+                                                   echo "<tr class='odd gradeX'><td>{$row['received_date']}</td><td>{$row['name']}</td><td>{$row['email']}</td><td>{$row['phone']}</td><td>{$row['subject']}</td><td>{$row['message']}</td><td class='center'>Seen</td></tr>";
+                                                    
                                               }
                                            }
                                            ?> 
