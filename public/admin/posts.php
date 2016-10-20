@@ -42,10 +42,10 @@
                                            {
                                             if($row['is_accepted']== 0)
                                             {
-                                              echo "<tr class='odd gradeX'><td>{$row['uploaded_date']}</td><td>{$row['name']}</td><td>{$row['subcat_name']}</td><td>{$row['details']}</td><td class='center'>{$row['price']}</td><td class='center'>{$row['place_name']}</td><td class='center'><form action='posts/view' method='GET'><input type='text' name='id' value='{$row['post_id']}' class='hidding'/><input type='submit' value='view'/></form></td><td><form action='posts/accept' method='GET'><input type='text' name='id' value='{$row['post_id']}' class='hidding'/><input type='submit' value='Accept'/></form></td></tr>";
+                                              echo "<tr class='odd gradeX'><td>{$row['uploaded_date']}</td><td>{$row['name']}</td><td>{$row['subcat_name']}</td><td>{$row['details']}</td><td class='center'>{$row['price']}</td><td class='center'>{$row['place_name']}</td><td class='center'><form action='posts-view.php' method='GET'><input type='text' name='id' value='{$row['post_id']}' class='hidding'/><input type='submit' value='view'/></form></td><td><form action='posts-accept.php' method='GET'><input type='text' name='id' value='{$row['post_id']}' class='hidding'/><input type='submit' value='Accept'/></form></td></tr>";
                                             }
                                             else{
-                                               echo "<tr class='odd gradeX'><td>{$row['uploaded_date']}</td><td>{$row['name']}</td><td>{$row['subcat_name']}</td><td>{$row['details']}</td><td class='center'>{$row['price']}</td><td class='center'>{$row['place_name']}</td><td class='center'><form action='posts/view' method='GET'><input type='text' name='id' value='{$row['post_id']}' class='hidding'/><input type='submit' value='view'/></form></td><td>seen</td></tr>";
+                                               echo "<tr class='odd gradeX'><td>{$row['uploaded_date']}</td><td>{$row['name']}</td><td>{$row['subcat_name']}</td><td>{$row['details']}</td><td class='center'>{$row['price']}</td><td class='center'>{$row['place_name']}</td><td class='center'><form action='posts-view.php' method='GET'><input type='text' name='id' value='{$row['post_id']}' class='hidding'/><input type='submit' value='view'/></form></td><td>seen</td></tr>";
                                               }   
                                            }
 
