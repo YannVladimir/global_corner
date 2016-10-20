@@ -87,7 +87,7 @@ if(checkIsStringSetPost('izina'))
     {
       if($row['main']==$photo)
       {
-        $j = $rwo['photo_id'];
+        $j = $row['photo_id'];
         $querry = "INSERT INTO posts (place,category,user,seller,company_name,job_position,details,sector,contacts,uploaded_date,deadline,photo,logo,experience,required_field) values ('{$place}','{$category}','{$user}','{$company}','{$email}','{$position}','{$details}','{$sector}','{$contacts}','{$uploaded}','{$deadline}','{$j}','{$photo}','{$exp}','{$field}')";
         $res = mysqli_query($con,$querry);
         if($res)
