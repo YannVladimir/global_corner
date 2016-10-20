@@ -1,5 +1,9 @@
 <?php 
-include('../../includes/main_functions.php');
+ini_set('display_startup_errors',1);
+ini_set('display_errors',1);
+error_reporting(E_ALL);
+session_start();
+$con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 $id = $_POST['id'];
 $query= "DELETE FROM users where user_id='{$id}'";
 $res = mysqli_query($con,$query);
