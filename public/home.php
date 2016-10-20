@@ -153,7 +153,6 @@ if(isset($_GET['var']) == "logout")
                                     </div>
                                 </div>";
                                 $a = $a+1;
-                                $a = $a+1;
                                     }
                                 } 
                                 echo "</div>";
@@ -346,9 +345,9 @@ if(isset($_GET['var']) == "logout")
                               
                                 $a = 0;
                                 $res15 = mysqli_query($con,$cats);
-                                while($row = mysqli_fetch_assoc($res15))
+                                while($row = mysqli_fetch_assoc($res15)
                                 {
-                                    if($row['refcat_id']==1 && $a<4)0)
+                                    if($row['refcat_id']==1 && $a<4)
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
