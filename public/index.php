@@ -336,9 +336,8 @@ if(isset($_GET['var']) == "logout")
                                     <div class='product-image-wrapper'>
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
-
-                                                <img class='sizingimagesmax' src='assets/images/posts/{$row['logo']}' alt='' />
-                                                <h4>{$row['position']}</h4>
+                                                <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' />
+                                                <h4>{$row['name']}</h4>
                                                 <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                             </div>  
                                         </div>
