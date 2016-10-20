@@ -114,14 +114,15 @@ if(isset($_GET['var']) == "logout")
                         echo '<li>';
                            echo "<a href='new-admin.php'><i class='fa fa-fw fa-wrench'></i> New Admin</a>";
                         echo '</li>';
+                        echo '<li>';
+                           echo "<a href='viewcategory.php'><i class='fa fa-fw fa-tasks'></i> Categories</a>";
+                        echo '</li>';
                        }
                     ?>
                     <li>
                         <a href="users.php"><i class="fa fa-fw fa-user"></i> Users</a>
                     </li>
-                   <li>
-                        <a href="viewcategory.php"><i class="fa fa-fw fa-tasks"></i> Categories</a>
-                    </li>
+                   
                     <li>
                         <a href="posts.php"><i class="fa fa-fw fa-tasks"></i> Posts</a>
                     </li>

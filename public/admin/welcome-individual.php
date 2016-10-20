@@ -1,7 +1,7 @@
 <?php
 include('../../includes/main_functions.php');
 $id = $_POST['id'];
-$query = "UPDATE users set accepted = 1 where user_id ='{$id}'";
+$query = "UPDATE users set is_accepted = 1 where user_id ='{$id}'";
 $res = mysqli_query($con,$query);
 if($res)			
 {	
