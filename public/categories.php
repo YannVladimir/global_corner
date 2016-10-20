@@ -338,9 +338,7 @@ require_once ('../includes/main_functions.php');
                          </div>
                         </div>
                     </div><!--/category-tab-->
-                    
-                   
-                </div>
+                
                
 				<div class="col-sm-2">
 					<div class="left-sidebar">
