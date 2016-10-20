@@ -3,7 +3,7 @@
 ini_set('display_errors',1);
 error_reporting(E_ALL);
 session_start();
-$con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
+$con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper"); 
 include('../../includes/main_functions.php');
 $categoryname = $_POST['name'];
 $id = $_POST['id'];
@@ -50,8 +50,7 @@ if(isset($_FILES['img']))
 		    }
 		
 	    }
-		$queryy = "UPDATE categories set cat_name='{$categoryname}',cat_image='{$photo}' where cat_id ='{$id}'";			return $this->runQuery($query);
-		    
+		$queryy = "UPDATE categories set cat_name='{$categoryname}',cat_image='{$photo}' where cat_id ='{$id}'";
 		$res1 = mysqli_query($con,$queryy);
 		if($res1)
 			{     
