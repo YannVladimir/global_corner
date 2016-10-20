@@ -296,7 +296,7 @@ require_once ('../includes/main_functions.php');
                                             <div class='productinfo text-center'>
                                                 <img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
                                                 <h4>{$row['subcat_name']}</h4>
-                                                <a href='sub_category.php?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                <a href='sub-category.php?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                             </div>  
                                         </div>
                                     </div>
@@ -322,10 +322,9 @@ require_once ('../includes/main_functions.php');
                                     <div class='product-image-wrapper'>
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
-
-                                                <img class='sizingimagesmax' src='assets/images/posts/{$row['logo']}' alt='' />
-                                                <h4>{$row['position']}</h4>
-                                                <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                <img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
+                                                <h4>{$row['subcat_name']}</h4>
+                                                <a href='sub-category.php?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                             </div>  
                                         </div>
                                     </div>
