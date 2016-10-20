@@ -150,8 +150,9 @@ if(isset($_GET['var']) == "logout")
                                         </div>
                                     </div>
                                 </div>";
-                                    }
                                     $a= $a+1;
+                                    }
+                                    
                                 } 
                                 echo "</div>";
                                 $res2 = mysqli_query($con,$query);
@@ -179,8 +180,9 @@ if(isset($_GET['var']) == "logout")
                                         </div>
                                     </div>
                                 </div>";
-                                    }
                                     $b = $b+1;
+                                    }
+                                    
                                 } 
                                 echo "</div>";
                                 $res4 = mysqli_query($con,$query);
@@ -208,8 +210,9 @@ if(isset($_GET['var']) == "logout")
                                         </div>
                                     </div>
                                 </div>";
-                                    }
                                     $c=$c+1;
+                                    }
+                                    
                                 } 
                               echo "</div>";
                                 $res6 = mysqli_query($con,$query);
@@ -237,8 +240,9 @@ if(isset($_GET['var']) == "logout")
                                         </div>
                                     </div>
                                 </div>";
-                                    }
                                     $d=$d+1;
+                                    }
+                                    
                                 } 
                               echo "</div>";
                                 $res8 = mysqli_query($con,$query);
@@ -266,8 +270,9 @@ if(isset($_GET['var']) == "logout")
                                         </div>
                                     </div>
                                 </div>";
-                                    }
                                     $e=$e+1;
+                                    }
+                                    
                                 } 
                               echo "</div>";
                                 $res10 = mysqli_query($con,$query);
@@ -295,8 +300,9 @@ if(isset($_GET['var']) == "logout")
                                         </div>
                                     </div>
                                 </div>";
-                                    }
                                     $f=$f+1;
+                                    }
+                                    
                                 } 
                               echo "</div>";
                                 $res12 = mysqli_query($con,$query);
@@ -353,8 +359,9 @@ if(isset($_GET['var']) == "logout")
                                         </div>
                                     </div>
                                 </div>";
-                                    }
                                     $h=$h+1;
+                                    }
+                                    
                                 }
                                 echo "</div>"; 
          ?>
