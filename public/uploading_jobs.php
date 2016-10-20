@@ -77,15 +77,35 @@ if(checkIsStringSetPost('izina'))
   {
     echo "<script>alert(' Please provide all inputs, including the logo ');window.location='upload_jobs.php';</script>";exit;
   }
-  $querry = "INSERT INTO posts (place,category,user,seller,company_name,job_position,details,sector,contacts,uploaded_date,deadline,logo,experience,required_field) values ('{$place}','{$category}','{$user}','{$company}','{$email}','{$position}','{$details}','{$sector}','{$contacts}','{$uploaded}','{$deadline}','{$photo}','{$exp}','{$field}')";
- $res = mysqli_query($con,$querry);
- if($res)
- {
-     echo "<script>alert(' Your post has been uploaded successfully, we thank you ');window.location='home.php';</script>";exit;
- }
- else
- {
+  $sql = "INSERT INTO post_photos (main) values ('{$photo}')";
+  $r = mysqli_query($con,$sql);
+  if($r)
+  {
+    $q = "SELECT * from post_photos";
+    $r1 = mysqli_query($con,$q);
+    while($row = mysqli_fetch_assoc($r1))
+    {
+      if($row['main']==$photo)
+      {
+        $j = $rwo['photo_id'];
+        $querry = "INSERT INTO posts (place,category,user,seller,company_name,job_position,details,sector,contacts,uploaded_date,deadline,photo,logo,experience,required_field) values ('{$place}','{$category}','{$user}','{$company}','{$email}','{$position}','{$details}','{$sector}','{$contacts}','{$uploaded}','{$deadline}','{$j}','{$photo}','{$exp}','{$field}')";
+        $res = mysqli_query($con,$querry);
+        if($res)
+        {
+         echo "<script>alert(' Your post has been uploaded successfully, we thank you ');window.location='home.php';</script>";exit;
+        }
+        else
+        {
+        echo mysqli_error($con);
+        //echo "<script>alert(' Error while uploading post, please try again ');window.location='upload_jobs.php';</script>";exit;
+        }
+      }
+      else
+        echo mysqli_error($con);
+    }
+    
+  }
+  else 
     echo mysqli_error($con);
-     //echo "<script>alert(' Error while uploading post, please try again ');window.location='upload_jobs.php';</script>";exit;
- }
+  
 ?>
