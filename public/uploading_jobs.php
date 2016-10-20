@@ -8,7 +8,7 @@ if(checkIsStringSetPost('izina'))
    $position = clearInput($_POST['izina']);
    $email = clearInput($_POST['email']);
    $details = clearInput($_POST['details']);
-   $place = clearInput($_POST['working_place']);
+   $sector = clearInput($_POST['working_place']);
    $field = clearInput($_POST['field']);
    $exp = clearInput($_POST['experience']);
    $contacts = clearInput($_POST['contact']);
@@ -77,7 +77,7 @@ if(checkIsStringSetPost('izina'))
   {
     echo "<script>alert(' Please provide all inputs, including the logo ');window.location='upload_jobs.php';</script>";exit;
   }
-  $querry = "INSERT INTO posts (place,category,user,seller,company_name,job_position,details,sector,contacts,uploaded_date,deadline,logo,experience,required_field) values ('{$place}','{$category}','{$user}','{$company}','{$email}','{$position}','{$details}','{$place}','{$contacts}','{$uploaded}','{$deadline}','{$photo}','{$exp}','{$field}')";
+  $querry = "INSERT INTO posts (place,category,user,seller,company_name,job_position,details,sector,contacts,uploaded_date,deadline,logo,experience,required_field) values ('{$place}','{$category}','{$user}','{$company}','{$email}','{$position}','{$details}','{$sector}','{$contacts}','{$uploaded}','{$deadline}','{$photo}','{$exp}','{$field}')";
  $res = mysqli_query($con,$querry);
  if($res)
  {
