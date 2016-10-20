@@ -1,6 +1,6 @@
 <?php 
 include('../../includes/main_functions.php');
-$query = "UPDATE users set accepted = 1 where accepted = 0";
+$query = "UPDATE users set is_accepted = 1 where accepted = 0";
 $res = mysqli_query($con,$query);
 if($res)
 {
