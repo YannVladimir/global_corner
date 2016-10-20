@@ -135,6 +135,7 @@ if(isset($_GET['var']) == "logout")
                                 }
                                 $a = 0;
                                 $cats = "SELECT * from items where is_accepted=1 order by post_id desc";
+                            
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
@@ -152,6 +153,7 @@ if(isset($_GET['var']) == "logout")
                                     </div>
                                 </div>";
                                 $a = $a+1;
+                                $a = $a+1;
                                     }
                                 } 
                                 echo "</div>";
@@ -163,10 +165,11 @@ if(isset($_GET['var']) == "logout")
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                     }
                                 } 
+                                $a = 0;
                                 $res3 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res3))
                                 {
-                                    if($row['refcat_id']==4)
+                                    if($row['refcat_id']==4 && $a<4))
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -179,6 +182,7 @@ if(isset($_GET['var']) == "logout")
                                         </div>
                                     </div>
                                 </div>";
+                                $a = $a+1;
                                     }
                                 } 
                                 echo "</div>";
@@ -191,10 +195,11 @@ if(isset($_GET['var']) == "logout")
                                     }
                                 } 
                             
+                                $a = 0;
                                 $res5 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res5))
                                 {
-                                    if($row['refcat_id']==5)
+                                    if($row['refcat_id']==5 && $a<4))
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -207,6 +212,7 @@ if(isset($_GET['var']) == "logout")
                                         </div>
                                     </div>
                                 </div>";
+                                $a = $a+1;
                                     }
                                 } 
                               echo "</div>";
@@ -219,10 +225,11 @@ if(isset($_GET['var']) == "logout")
                                     }
                                 } 
                             
+                                $a = 0;
                                 $res7 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res7))
                                 {
-                                    if($row['refcat_id']==6)
+                                    if($row['refcat_id']==6 && $a<4))
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -235,6 +242,7 @@ if(isset($_GET['var']) == "logout")
                                         </div>
                                     </div>
                                 </div>";
+                                $a = $a+1;
                                     }
                                 } 
                               echo "</div>";
@@ -246,10 +254,11 @@ if(isset($_GET['var']) == "logout")
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                     }
                                 }
+                                $a = 0;
                                 $res9 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res9))
                                 {
-                                    if($row['refcat_id']==7)
+                                    if($row['refcat_id']==7 && $a<4))
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -262,6 +271,7 @@ if(isset($_GET['var']) == "logout")
                                         </div>
                                     </div>
                                 </div>";
+                                $a = $a+1;
                                     }
                                 } 
                               echo "</div>";
@@ -274,10 +284,11 @@ if(isset($_GET['var']) == "logout")
                                     }
                                 } 
                               
+                                $a = 0;
                                 $res11 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res11))
                                 {
-                                    if($row['refcat_id']==8)
+                                    if($row['refcat_id']==8 && $a<4))
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -290,6 +301,7 @@ if(isset($_GET['var']) == "logout")
                                         </div>
                                     </div>
                                 </div>";
+                                $a = $a+1;
                                     }
                                 } 
                               echo "</div>";
@@ -302,10 +314,11 @@ if(isset($_GET['var']) == "logout")
                                     }
                                 } 
                             
+                                $a = 0;
                                 $res13 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res13))
                                 {
-                                    if($row['refcat_id']==9)
+                                    if($row['refcat_id']==9 && $a<4))
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -318,6 +331,7 @@ if(isset($_GET['var']) == "logout")
                                         </div>
                                     </div>
                                 </div>";
+                                $a = $a+1;
                                     }
                                 } 
                               echo "</div>";
@@ -330,10 +344,11 @@ if(isset($_GET['var']) == "logout")
                                     }
                                 } 
                               
+                                $a = 0;
                                 $res15 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res15))
                                 {
-                                    if($row['refcat_id']==10)
+                                    if($row['refcat_id']==1 && $a<4)0)
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -347,6 +362,7 @@ if(isset($_GET['var']) == "logout")
                                         </div>
                                     </div>
                                 </div>";
+                                $a = $a+1;
                                     }
                                 }
                                 echo "</div>"; 
