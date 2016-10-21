@@ -4,7 +4,7 @@ ini_set('display_errors',1);
 error_reporting(E_ALL);
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
-checkUser();
+//checkUser();
 $id = $_GET['id'];
 $query = "SELECT * FROM items where post_id = '{$id}' and is_accepted = 1";
 $res = mysqli_query($con,$query); 
