@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 session_start(); 
 $con = mysqli_connect("127.0.0.1","root","REDACTED_DB_PASSWORD","eshopper");
 require_once ('../includes/main_functions.php');
-checkUser();
+//checkUser();
 checkToken();
 if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
 {
