@@ -140,8 +140,8 @@ checkToken();
 	    			<div class="contact-info">
 	    				<h2 class="title text-center">Contact Info</h2>
 	    				<address>
-	    					<p>Global Corner</p>
-							<p>Kigali, Kicukiro, Kigarama, house 220</p>
+	    					<p>250trade</p>
+							<p>Kigali, Kicukiro, Kigarama</p>
 							<p>Mobile: +250782767289</p>
 							<p>Email: bajenezayann549@gmail.com</p>
 	    				</address>

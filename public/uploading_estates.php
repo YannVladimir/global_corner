@@ -1,6 +1,7 @@
 <?php
 $con = mysqli_connect("127.0.0.1","root","REDACTED_DB_PASSWORD","eshopper");
 require_once ('../includes/main_functions.php');
+checkToken();
 if(checkIsStringSetPost('izina'))
 {
 $category = clearInput($_POST['subcategory']);
