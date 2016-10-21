@@ -104,7 +104,6 @@ require_once ('../includes/main_functions.php');
 				                <textarea name='message' id='message'  class='form-control' required='required' rows='8' placeholder='Your Message Here'></textarea>
 				                </div>                        
 				                <div class='form-group col-md-12'>
-				                <input type='submit' name='submit' class='btn btn-primary pull-right' value='Submit'>
 				                ";
                             }
                             else
@@ -126,11 +125,12 @@ require_once ('../includes/main_functions.php');
 				                 <textarea name='message' id='message'  class='form-control' required='required' rows='8' placeholder='Your Message Here'></textarea>
 				                 </div>                        
 				                 <div class='form-group col-md-12'>
-				                 <input type='submit' name='submit' class='btn btn-primary pull-right' value='Submit'>
 				                 ";
                             }
                         ?>
-                        <input type="hidden" name="_token" value="<?php echo $_SESSION['_token']; ?>">
+                        <input type="text" class='hidden' name="_token" value="<?php echo $_SESSION['_token']; ?>">
+				    	<input type='submit' name='submit' class='btn btn-primary pull-right' value='Submit'>
+				                 
 				    	</div>
 				                 </form>
 	    			</div>

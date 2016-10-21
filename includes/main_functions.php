@@ -1,10 +1,9 @@
 
 	<?php 
     function checkToken()
-    {   session_start();
-        if ($_SERVER['REQUEST_METHOD'] == 'POST')
+        if ($_SERVER['REQUEST_METHOD'] === 'POST')
         {
-            if (!isset($_POST['_token']) || ($_POST['_token'] != $_SESSION['_token'])){
+            if (!isset($_POST['_token']) || ($_POST['_token'] !== $_SESSION['_token'])){
                 die('You re not smart enough bro, Invalid CSRF token');
             }
         }
