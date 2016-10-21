@@ -1,7 +1,6 @@
 <?php
 $con = mysqli_connect("127.0.0.1","root","REDACTED_DB_PASSWORD","eshopper");
 require_once ('../includes/main_functions.php');
-checkUser();
 checkToken();
 if(checkIsStringSetPost('izina'))
 {
