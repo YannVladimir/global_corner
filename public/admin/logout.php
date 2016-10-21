@@ -9,5 +9,5 @@ unset($_SESSION['username']);
 unset($_SESSION['admin']);
 unset($_SESSION['priority']);
 session_destroy();
-header('location:../home.php');exit;
+header('location:../index.php');exit;
 ?>

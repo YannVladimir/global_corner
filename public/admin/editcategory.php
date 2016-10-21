@@ -1,5 +1,5 @@
 <?php 
- ini_set('display_startup_errors',1);
+ini_set('display_startup_errors',1);
 ini_set('display_errors',1);
 error_reporting(E_ALL);
 session_start();
@@ -50,12 +50,24 @@ if(isset($_FILES['img']))
 		    }
 		
 	    }
+	    $s = "SELECT * from categories where cat_id ='{$id}'";
+	    $re = mysqli_query($con,$s);
+	    $ros = mysqli_fetch_assoc($re);
+	    $pathdelete = '../assets/images/categories/' . $ros['cat_image'];
 		$queryy = "UPDATE categories set cat_name='{$categoryname}',cat_image='{$photo}' where cat_id ='{$id}'";
 		$res1 = mysqli_query($con,$queryy);
 		if($res1)
-			{     
-                echo "<script>alert(' Category edited successfully ');window.location='dashboard.php';</script>";
-			}
+			{   
+				if (file_exists($pathdelete))
+				{
+					unlink($pathdelete);
+				    echo "<script>alert(' Category edited successfully ');window.location='dashboard.php';</script>";
+				}
+				else
+				{
+					echo "<script>alert(' Category edited successfully, but the previous image was not deleted successfully');window.location='dashboard.php';</script>";
+				}
+            }
 		else
 			echo "<script>alert(' Error, please try again ');window.location='edit-category.php';</script>";exit;
 	

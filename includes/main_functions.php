@@ -1,5 +1,23 @@
 
-	<?php 
+	<?php
+    function generateUser()
+    {
+        $_SESSION['u'] = '0';
+    }    
+    function checkAdmin()
+    {
+        if ($_SESSION['u'] !== '1')
+        {
+          header("location: ../home.php");exit;  
+        }
+    }
+    function checkUser()
+    {
+        if ($_SESSION['u'] !== '0')
+        {
+          header("location: admin/dashboard.php");exit;  
+        }
+    } 
     function checkToken()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST')
@@ -56,12 +74,12 @@
             $_SESSION['priority']=$row['priority'];
             if($row['is_admin']  == 1)
 	        {
-                $_SESSION['admin'] = "01";
+                $_SESSION['u'] = '1';
 	        	header("location: ../admin/dashboard.php");
 	        }
 	        else
 	        {
-                $_SESSION['admin'] == "00";
+                $_SESSION['u'] = '0';
 	        	header("location: home.php");
 	        }exit();
 	         
