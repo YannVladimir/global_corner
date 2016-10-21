@@ -105,8 +105,7 @@ require_once ('../includes/main_functions.php');
 				                </div>                        
 				                <div class='form-group col-md-12'>
 				                <input type='submit' name='submit' class='btn btn-primary pull-right' value='Submit'>
-				                </div>
-				                </form>";
+				                ";
                             }
                             else
                             {
@@ -128,11 +127,12 @@ require_once ('../includes/main_functions.php');
 				                 </div>                        
 				                 <div class='form-group col-md-12'>
 				                 <input type='submit' name='submit' class='btn btn-primary pull-right' value='Submit'>
-				                 </div>
-				                 </form>";
+				                 ";
                             }
                         ?>
-				    	
+                        <input type="hidden" name="_token" value="<?php echo $_SESSION['_token']; ?>">
+				    	</div>
+				                 </form>
 	    			</div>
 	    		</div>
 	    		<div class="col-sm-4">
