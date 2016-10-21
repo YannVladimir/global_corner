@@ -112,15 +112,6 @@
         header("location: ../home.php");exit;
     }
 
-    function checkAdmin()
-    {
-        if (isset($_SESSION['admin']) =="01")
-        {
-           return true;
-        }
-        else
-            header("location: ../home.php");
-            exit;
-    }
+  
     
 ?>
