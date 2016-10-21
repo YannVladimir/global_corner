@@ -1,5 +1,15 @@
 
 	<?php 
+    function checkToken()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST')
+        {
+            if (!isset($_POST['_token']) || ($_POST['_token'] != $_SESSION['_token'])){
+                die('You re not smart enough bro, Invalid CSRF token');
+            }
+        }
+        $_SESSIOn['_token'] = bin2hex(openssl_random_pseudo_bytes(16));
+    }
 	function redirectTo($loc)
 	{
 		header('location:'.$loc);exit;
