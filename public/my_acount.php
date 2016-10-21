@@ -5,6 +5,7 @@ error_reporting(E_ALL);
 session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
+checkToken();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -121,7 +122,8 @@ require_once ('../includes/main_functions.php');
                       echo $_SESSION['phone'];
                         ?></li>
                         <li class='list-group-item'>
-                          <form action="edit_my_acount.php" method="post">
+                          <form action="edit_my_acount.php" method="POST">
+                            <input type="text" class='hidden' name="_token" value="<?php echo $_SESSION['_token']; ?>">
                              <button type='submit' class='btn btn-default bton'>Edit Acount</button>
                           </form>
                         </li>
@@ -158,7 +160,7 @@ require_once ('../includes/main_functions.php');
                                              $res = mysqli_query($con,$query);
                                              while($row = mysqli_fetch_assoc($res))
                                              {
-                                               echo "<tr class='odd gradeX'><td><img src='assets/images/posts/{$row['main']}'/></td><td><strong>{$row['name']}</strong></td><td><strong>{$row['price']}</strong></td><td><form action='my_post.php' method='GET'><input type='text' name='id' value='{$row['post_id']}' class='hidden'/><input type='submit' value='View Details'/></form></td><td><form action='delete.php' method='post'><input type='text' name='id' value='{$row['post_id']}' class='hidden'/><input type='submit' value='Remove'/></form></td></tr> ";
+                                               echo "<tr class='odd gradeX'><td><img src='assets/images/posts/{$row['main']}'/></td><td><strong>{$row['name']}</strong></td><td><strong>{$row['price']}</strong></td><td><form action='my_post.php' method='GET'><input type='text' name='id' value='{$row['post_id']}' class='hidden'/><input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'><input type='submit' value='View Details'/></form></td><td><form action='delete.php' method='POST'><input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'><input type='text' name='id' value='{$row['post_id']}' class='hidden'/><input type='submit' value='Remove'/></form></td></tr> ";
                                              }
                                           }
                                        ?>  

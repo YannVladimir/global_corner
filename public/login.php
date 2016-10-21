@@ -5,11 +5,12 @@ error_reporting(E_ALL);
 session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
+
 if (isset($_POST['done']))
 {
 	log_user_in($_POST['email'],$_POST['password']); 
 }
-
+checkToken();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -104,6 +105,7 @@ if (isset($_POST['done']))
 								<input type="checkbox" class="checkbox"> 
 								Keep me signed in
 							</span>-->
+							<input type="text" class='hidden' name="_token" value="<?php echo $_SESSION['_token']; ?>">
 							<button type="submit" name="done" class="btn btn-default bton">Login</button>
 						</form>
 					</div><!--/login form-->
@@ -114,13 +116,14 @@ if (isset($_POST['done']))
 				<div class="col-sm-4">
 					<div class="signup-form"><!--sign up form-->
 						<h2>New User Signup!</h2>
-						<form action="sign_up.php" method="post">
+						<form action="sign_up.php" method="POST">
 							<input type="text" placeholder="First name" required="required" name="firstname"/>
 							<input type="text" placeholder="Last name" required="required" name="lastname"/>
 							<input type="text" placeholder="Contact number" required="required" digits="true" name="phone"/>
 							<input type="email" placeholder="Email Address" required="required" email="eamil" name="email"/>
 							<input type="password" placeholder="Password" required="required" name="password"/>
 							<input type="password" placeholder=" Re-type Password" required="required" equalTo="password" name="repassword"/>
+							<input type="text" class='hidden' name="_token" value="<?php echo $_SESSION['_token']; ?>">
 							<button type="submit" class="btn btn-default bton">Signup</button>
 						</form>
 					</div><!--/sign up form-->

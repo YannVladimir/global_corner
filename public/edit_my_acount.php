@@ -5,6 +5,7 @@ error_reporting(E_ALL);
 session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
+checkToken();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -134,6 +135,7 @@ require_once ('../includes/main_functions.php');
               <input type="password" placeholder="Current Password" required="required" name="pass"/>
               <input type="password" placeholder="New Password" required="required" name="password"/>
               <input type="password" placeholder=" Re-enter new Password" required="required" equalTo="password" name="repassword"/>
+              <input type="text" class='hidden' name="_token" value="<?php echo $_SESSION['_token']; ?>">
               <button type="submit" class="btn btn-default bton">Edit</button>
             </form>
           </div><!--/sign up form-->
