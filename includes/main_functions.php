@@ -115,7 +115,7 @@
             unset($_SESSION['date']);
             $_SESSION['message']= "Please login to your acount to make this order, or create your new acount";
             $user = $_SESSION['id'];
-            $sql = "INSERT INTO orders (tittle,category,details,user,place,up_date) values ('{$izina}','{$category}','{$details}','{$user}','{$location}','{$date}')";
+            $sql = "INSERT INTO orders (name,category,details,user,place,up_date) values ('{$izina}','{$category}','{$details}','{$user}','{$location}','{$date}')";
             $r = mysqli_query($con,$sql);
             if($r)
             {
@@ -123,7 +123,7 @@
                $b = mysqli_query($con,$query);
                $c = mysqli_fetch_assoc($b);
                $id = $row['id'];
-               echo "<script>alert(' Your order has been uploaded successfully');window.location='my_order.php?id='{$izina}'';</script>";exit;
+               echo "<script>alert(' Your order has been uploaded successfully');window.location='my_order.php?id=$id';</script>";exit;
             }
             else
             {
