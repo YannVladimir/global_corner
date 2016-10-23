@@ -114,7 +114,7 @@ checkToken();
                     
                       <?php
                         $id = $_GET['id'];
-                        $query = "SELECT * from vieworders where $id = '{$id}'";
+                        $query = "SELECT * from vieworders where id = '{$id}' and user = '{$_SESSION['id']}'";
                         $res = mysqli_query($con,$query);
                         $row = mysqli_fetch_assoc($res);
                         echo "<ul class='list-group'> 

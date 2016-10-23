@@ -122,7 +122,7 @@
                $query = "SELECT * from orders where tittle = '{$izina}' and details = '{$details}' and user = '{$user}' ";
                $b = mysqli_query($con,$query);
                $c = mysqli_fetch_assoc($b);
-               $id = $row['id'];
+               $id = $c['id'];
                echo "<script>alert(' Your order has been uploaded successfully');window.location='my_order.php?id=$id';</script>";exit;
             }
             else
