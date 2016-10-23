@@ -73,7 +73,8 @@ if(isset($_GET['var']) == "logout")
                 <li><a href="home.php" class="active fon">Home</a></li>
                 <li><a href="upload.php" class="fon">Sell</a></li>
                 <li><a href="categories.php" class="fon">Buy</a></li>
-                <li><a href="categories.php" class="fon">Order now</a></li>
+                <li><a href="orders.php" class="fon">Orders</a></li>
+                <li><a href="order.php" class="fon">Order now</a></li>
                 <li><a href="contact_us.php" class="fon">Contact us</a></li>
                 
                             </ul>
