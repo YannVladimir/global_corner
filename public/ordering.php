@@ -25,7 +25,7 @@ if(checkIsStringSetPost('izina'))
     	$b = mysqli_query($con,$query);
     	$c = mysqli_fetch_assoc($b);
     	$id = $c['id'];
-        echo "<script>alert(' Your order has been uploaded successfully');window.location='my_order.php?id='{$izina}'';</script>";exit;
+        echo "<script>alert(' Your order has been uploaded successfully');window.location='my_order.php?id=$id';</script>";exit;
     }
     else
     {
