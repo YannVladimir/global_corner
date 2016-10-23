@@ -109,7 +109,7 @@ checkToken();
 
             <div class='col-sm-8'>
                 <?php
-                    $query = "SELECT * from vieworders where is_accepted = 0 ";
+                    $query = "SELECT * from vieworders where is_accepted = 0 order by id desc limit 70";
                      $res = mysqli_query($con,$query);
                      while($row = mysqli_fetch_assoc($res))
                      {
@@ -121,7 +121,7 @@ checkToken();
                     echo "<ul class='list-group'>
                         <li class='list-group-item'><strong></strong>{$row['details']}</li>
                         <li class='list-group-item'><strong></strong>{$row['place']}</li>
-                        <li class='list-group-item'><strong>uploaded-date: </strong>{$row['up_date']}</li>
+                        <li class='list-group-item'><strong></strong>{$row['up_date']}</li>
                         <li class='list-group-item'>
                           <form action='contact-dealer.php' method='POST'>
                             <input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'>

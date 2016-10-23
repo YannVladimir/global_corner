@@ -4,8 +4,8 @@ ini_set('display_errors',1);
 error_reporting(E_ALL);
 session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
-require_once('../includes/main_functions.php');
-checkUser();
+require_once ('../includes/main_functions.php');
+generateUser();
 if(isset($_GET['var']) == "logout")
 {
     log_user_out();
@@ -73,6 +73,7 @@ if(isset($_GET['var']) == "logout")
                 <li><a href="home.php" class="active fon">Home</a></li>
                 <li><a href="upload.php" class="fon">Sell</a></li>
                 <li><a href="categories.php" class="fon">Buy</a></li>
+                <li><a href="categories.php" class="fon">Order now</a></li>
                 <li><a href="contact_us.php" class="fon">Contact us</a></li>
                 
                             </ul>
@@ -139,7 +140,7 @@ if(isset($_GET['var']) == "logout")
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
-                                    if($row['refcat_id']==3 && $a<4)
+                                    if($row['refcat_id']==3 && $a<8)
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -169,7 +170,7 @@ if(isset($_GET['var']) == "logout")
                                 $res3 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res3))
                                 {
-                                    if($row['refcat_id']==4 && $b<4)
+                                    if($row['refcat_id']==4 && $b<8)
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -199,7 +200,7 @@ if(isset($_GET['var']) == "logout")
                                 $res5 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res5))
                                 {
-                                    if($row['refcat_id']==5 && $c<4)
+                                    if($row['refcat_id']==5 && $c<8)
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -229,7 +230,7 @@ if(isset($_GET['var']) == "logout")
                                 $res7 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res7))
                                 {
-                                    if($row['refcat_id']==6 && $d<4)
+                                    if($row['refcat_id']==6 && $d<8)
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -259,7 +260,7 @@ if(isset($_GET['var']) == "logout")
                                 $res9 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res9))
                                 {
-                                    if($row['refcat_id']==7 && $e<4)
+                                    if($row['refcat_id']==7 && $e<8)
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -289,7 +290,7 @@ if(isset($_GET['var']) == "logout")
                                 $res11 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res11))
                                 {
-                                    if($row['refcat_id']==8 && $f<4)
+                                    if($row['refcat_id']==8 && $f<8)
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -319,7 +320,7 @@ if(isset($_GET['var']) == "logout")
                                 $res13 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res13))
                                 {
-                                    if($row['refcat_id']==9 && $g<4)
+                                    if($row['refcat_id']==9 && $g<8)
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -348,7 +349,7 @@ if(isset($_GET['var']) == "logout")
                                 $res15 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res15))
                                 {
-                                    if($row['job_position'] && $h<4)
+                                    if($row['job_position'] && $h<8)
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -374,7 +375,35 @@ if(isset($_GET['var']) == "logout")
                     
                    
                 </div>
+                <div class='col-sm-2'></div>
+                <div class='col-sm-8'>
+                <?php
+                    $query = "SELECT * from vieworders where is_accepted = 0 order by id desc limit 10";
+                     $res = mysqli_query($con,$query);
+                     while($row = mysqli_fetch_assoc($res))
+                     {
+                      echo " <div class='col-sm-6'>
+                      <div class='panel panel-default text-center'>
+                    <div class='panel-heading'>
+                        <h2 class='panel-title'><strong>{$row['name']} </strong></h2>
+                    </div>";
+                    echo "<ul class='list-group'>
+                        <li class='list-group-item'><strong></strong>{$row['details']}</li>
+                        <li class='list-group-item'><strong></strong>{$row['place']}</li>
+                        <li class='list-group-item'><strong></strong>{$row['up_date']}</li>
+                        <li class='list-group-item'>
+                          <form action='contact-dealer.php' method='POST'>
+                            <input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'>
+                             <button type='submit' class='btn btn-default bton'>Answer me</button>
+                          </form>
+                        </li>
+                    </ul>
+              </div></div>";
+                     }
+                ?>
                 
+            </div>
+          <div class="col-sm-2"></div>
             </div>
         </div>
     </section>
