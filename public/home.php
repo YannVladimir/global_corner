@@ -82,7 +82,7 @@ if(isset($_GET['var']) == "logout")
                     </div>
                     <div class="col-sm-3">
                         <div class="search_box">
-                          <form action='search_results.php' method='GET'>
+                          <form action='search_results.php' required="required" method='GET'>
                             <input type="text" name='k' class="searchtext col-sm-10" placeholder="Search"/>
                             <button type="submit" class="btn btn-default col-sm-2 bton"><i class="fa fa-search"></i></button>
                           </form>
@@ -396,7 +396,7 @@ if(isset($_GET['var']) == "logout")
                         <li class='list-group-item'><strong></strong>{$row['up_date']}</li>
                         <li class='list-group-item'>
                           <form action='contact-dealer.php' method='POST'>
-                            <input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'>
+                            
                              <button type='submit' class='btn btn-default bton'>Answer me</button>
                           </form>
                         </li>
