@@ -16,7 +16,7 @@ if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
   $password = clearInput($_POST['password']);
   if($_POST['password']!= $_POST['repassword'])
   {
-  	echo "<script>alert('the entered password and re type password must be match, please try again');window.location='loginpage.php';</script>";exit;
+  	echo "<script>alert('the entered password and re type password must be match, please try again');window.location='login.php';</script>";exit;
   }
   $query="SELECT * from users";
   $check = mysqli_query($con,$query);
