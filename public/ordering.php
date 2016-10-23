@@ -40,7 +40,7 @@ if(checkIsStringSetPost('izina'))
       $_SESSION['details'] = clearInput($_POST['details']);
       $_SESSION['location'] = clearInput($_POST['location']);
       $_SESSION['date'] = date("Y-m-d"); 
-   	  echo "<script>alert('To make this order you need an acount with us, click ok to proceed');window.location='order-login.php;</script>";exit;
+   	  echo "<script>alert('To make this order you need an acount with us, click ok to proceed');window.location='order-login.php';</script>";exit;
    }
 }
 else
