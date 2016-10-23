@@ -105,9 +105,12 @@ checkToken();
 	<section>
 		<div class="container">
      <div class='row'>
+
             <div class='col-sm-2'></div>
 
             <div class='col-sm-8'>
+              <br><br>
+                    <h2 class="title text-center">Orders</h2>
                 <?php
                     $query = "SELECT * from vieworders where is_accepted = 0 order by id desc limit 70";
                      $res = mysqli_query($con,$query);
