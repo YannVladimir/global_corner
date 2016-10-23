@@ -117,8 +117,9 @@ checkToken();
                         $query = "SELECT * from vieworders where $id = '{$id}'";
                         $res = mysqli_query($con,$query);
                         $row = mysqli_fetch_assoc($res);
-                        echo "<ul class='list-group'> <li class='list-group-item'><strong>Title: </strong>{$row['tittle']}</li>
-                        <li class='list-group-item'><strong>category: </strong>{$row['cat_name']}></li>
+                        echo "<ul class='list-group'> 
+                        <li class='list-group-item'><strong>Title</strong>{$row['tittle']}</li>
+                        <li class='list-group-item'><strong>category: </strong>{$row['cat_name']}</li>
                         <li class='list-group-item'><strong>Details: </strong>{$row['details']}</li>
                         <li class='list-group-item'><strong>uploaded-date: </strong>{$row['up_date']}</li>
                         <li class='list-group-item'>
