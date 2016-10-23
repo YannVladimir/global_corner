@@ -17,11 +17,11 @@ if(checkIsStringSetPost('izina'))
     $location = clearInput($_POST['location']);
     $date = date("Y-m-d");
     $user = $_SESSION['id'];
-    $sql = "INSERT INTO orders (tittle,category,details,user,place,up_date) values ('{$izina}','{$category}','{$details}','{$user}','{$location}','{$date}')";
+    $sql = "INSERT INTO orders (name,category,details,user,place,up_date) values ('{$izina}','{$category}','{$details}','{$user}','{$location}','{$date}')";
     $r = mysqli_query($con,$sql);
     if($r)
     {
-    	$query = "SELECT * from orders where tittle = '{$izina}' and details = '{$details}' and user = '{$user}' ";
+    	$query = "SELECT * from orders where name = '{$izina}' and details = '{$details}' and user = '{$user}' ";
     	$b = mysqli_query($con,$query);
     	$c = mysqli_fetch_assoc($b);
     	$id = $c['id'];
