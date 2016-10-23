@@ -117,10 +117,10 @@ checkToken();
                         $query = "SELECT * from vieworders where $id = '{$id}'";
                         $res = mysqli_query($con,$query);
                         $row = mysqli_fetch_assoc($res);
-                        echo "<ul class='list-group'> <li class='list-group-item'><strong>Title: </strong>{$_row['tittle']}</li>
-                        <li class='list-group-item'><strong>category: </strong>{$_row['cat_name']}></li>
-                        <li class='list-group-item'><strong>Details: </strong>{$_row['details']}</li>
-                        <li class='list-group-item'><strong>uploaded-date: </strong>{$_row['up_date']}</li>
+                        echo "<ul class='list-group'> <li class='list-group-item'><strong>Title: </strong>{$row['tittle']}</li>
+                        <li class='list-group-item'><strong>category: </strong>{$row['cat_name']}></li>
+                        <li class='list-group-item'><strong>Details: </strong>{$row['details']}</li>
+                        <li class='list-group-item'><strong>uploaded-date: </strong>{$row['up_date']}</li>
                         <li class='list-group-item'>
                           <form action='order-delete.php' method='POST'>
                             <input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'>
