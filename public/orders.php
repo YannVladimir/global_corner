@@ -113,7 +113,7 @@ checkToken();
                      $res = mysqli_query($con,$query);
                      while($row = mysqli_fetch_assoc($res))
                      {
-                      echo " <div class='col-sm-4'>
+                      echo " <div class='col-sm-6'>
                       <div class='panel panel-default text-center'>
                     <div class='panel-heading'>
                         <h2 class='panel-title'><strong>{$row['name']} </strong></h2>
@@ -129,10 +129,10 @@ checkToken();
                           </form>
                         </li>
                     </ul>
-              </div>";
+              </div></div>";
                      }
                 ?>
-                </div>
+                
             </div>
             <div class="col-sm-2"></div>
         </div>
