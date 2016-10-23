@@ -11,7 +11,7 @@ if(checkIsStringSetPost('izina'))
 {
   if(isset($_SESSION['id']))
    {  
-	$title = clearInput($_POST['izina']);
+	$izina = clearInput($_POST['izina']);
     $category = clearInput($_POST['subcategory']);
     $details = clearInput($_POST['details']);
     $location = clearInput($_POST['location']);
@@ -24,7 +24,7 @@ if(checkIsStringSetPost('izina'))
     	$query = "SELECT * from orders where tittle = '{$izina}' and details = '{$details}' and user = '{$user}' ";
     	$b = mysqli_query($con,$query);
     	$c = mysqli_fetch_assoc($b);
-    	$id = $row['id'];
+    	$id = $c['id'];
         echo "<script>alert(' Your order has been uploaded successfully');window.location='my_order.php?id='{$izina}'';</script>";exit;
     }
     else

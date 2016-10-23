@@ -103,7 +103,7 @@
             $_SESSION['email']=$email;
             $_SESSION['priority']=$row['priority'];
             $_SESSION['u'] = '0';
-            $title = $_SESSION['title'];
+            $izina = $_SESSION['title'];
             $category = $_SESSION['category'];
             $details = $_SESSION['details'];
             $location = $_SESSION['location'];
