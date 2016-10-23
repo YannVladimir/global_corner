@@ -6,17 +6,12 @@
     }    
     function checkAdmin()
     {
-        if ($_SESSION['u'] !== '1')
-        {
-          header("location: ../home.php");exit;  
-        }
+        $_SESSION['is_user'] = '0';
     }
     function checkUser()
     {
-        if ($_SESSION['u'] !== '0')
-        {
-          header("location: admin/dashboard.php");exit;  
-        }
+        $_SESSION['is_user'] = '1';
+        
     } 
     function checkToken()
     {
@@ -89,6 +84,57 @@
         	$_SESSION['message'] = "Wrong email/password combination";
         	header("location: login.php");
         }exit();    	
+    }
+    function order_log_user_in($email, $password)
+    {
+        $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
+        $email = clearInput($email);
+        $password = clearInput($password);
+        $query="SELECT * from users where email ='{$email}' and password = '{$password}'";
+        $res = mysqli_query($con,$query);
+        if(mysqli_num_rows($res) >0)
+        {
+            $row = mysqli_fetch_assoc($res);
+            $_SESSION['id'] = $row['user_id'];
+            $_SESSION['username'] = $row['firstname'].' '.$row['lastname'];
+            $_SESSION['firstname'] = $row['firstname'];
+            $_SESSION['lastname'] = $row['lastname'];
+            $_SESSION['phone']=$row['phone'];
+            $_SESSION['email']=$email;
+            $_SESSION['priority']=$row['priority'];
+            $_SESSION['u'] = '0';
+            $title = $_SESSION['title'];
+            $category = $_SESSION['category'];
+            $details = $_SESSION['details'];
+            $location = $_SESSION['location'];
+            $date = $_SESSION['date'];
+            unset($_SESSION['title']);
+            unset($_SESSION['category']);
+            unset($_SESSION['details']);
+            unset($_SESSION['location']);
+            unset($_SESSION['date']);
+            $_SESSION['message']= "Please login to your acount to make this order, or create your new acount";
+            $user = $_SESSION['id'];
+            $sql = "INSERT INTO orders (tittle,category,details,user,place,up_date) values ('{$izina}','{$category}','{$details}','{$user}','{$location}','{$date}')";
+            $r = mysqli_query($con,$sql);
+            if($r)
+            {
+               $query = "SELECT * from orders where tittle = '{$izina}' and details = '{$details}' and user = '{$user}' ";
+               $b = mysqli_query($con,$query);
+               $c = mysqli_fetch_assoc($b);
+               $id = $row['id'];
+               echo "<script>alert(' Your order has been uploaded successfully');window.location='my_order.php?id='{$izina}'';</script>";exit;
+            }
+            else
+            {
+               echo "<script>alert(' Failed to post your order, please try again');window.location='order.php';</script>";exit;
+            }
+        }
+        else
+        {
+            $_SESSION['message'] = "Wrong email/password combination";
+            header("location: order-login.php");
+        }exit();        
     }
 
     function log_user_out()

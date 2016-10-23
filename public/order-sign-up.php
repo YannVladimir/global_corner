@@ -16,7 +16,7 @@ if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
   $password = clearInput($_POST['password']);
   if($_POST['password']!= $_POST['repassword'])
   {
-  	echo "<script>alert('the entered password and re type password must be match, please try again');window.location='login.php';</script>";exit;
+  	echo "<script>alert('the entered password and re type password must be match, please try again');window.location='order-login.php';</script>";exit;
   }
   $query="SELECT * from users";
   $check = mysqli_query($con,$query);
@@ -24,7 +24,7 @@ if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
   {
   	if($email==$row['email'])
   	{
-                echo "<script>alert(' The entered email arleady has an account, please try again with different email or try to login with your previous account');window.location='login.php';</script>";exit;
+                echo "<script>alert(' The entered email arleady has an account, please try again with different email or try to login with your previous account');window.location='order-login.php';</script>";exit;
   	}
   }
   $date = date("Y-m-d");
@@ -32,16 +32,16 @@ if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
   $res = mysqli_query($con,$queryy);
   if($res)
   {
-    log_user_in($email, $password);
+      order_log_user_in($email, $password);
 
   } 
   else
   {
-      echo "<script>alert(' There is an error while creating the account, please try again ');window.location='login.php';</script>";
+      echo "<script>alert(' There is an error while creating the account, please try again ');window.location='order-login.php';</script>";
   }
 }
 else 
 {
-    echo "<script>alert(' Error, Please fill the form again ');window.location='login.php';</script>";
+    echo "<script>alert(' Error, Please fill the form again ');window.location='order-login.php';</script>";
 }
 ?>
