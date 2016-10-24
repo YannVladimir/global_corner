@@ -30,21 +30,7 @@
                            $query = "SELECT * FROM items where post_id = '{$id}'";
                            $res = mysqli_query($con,$query);
                            $row = mysqli_fetch_assoc($res);
-                           if($row['is_accepted']==0)
-                        {
-                            echo "<li class='list-group-item'>
-                          <form action='posts-accept.php' method='GET'>
-                            <input type='text' class='hidden' name='id' value='{$row['post_id']}>
-                             <button type='submit' class='btn btn-default bton'>Accept Post</button>
-                          </form>
-                        </li>";
-                        } 
-                        echo"<li class='list-group-item'>
-                          <form action='post-delete.php' method='GET'>
-                            <input type='text' class='hidden' name='id' value='{$row['post_id']}>
-                             <input type='submit' class='btn btn-default bton' value='Delete Post'/>
-                          </form>
-                        </li>"; 
+
                            echo"<li class='list-group-item'><strong>User: </strong>{$row['user']}</li>
                         <li class='list-group-item'><strong>Ad title: </strong>{$row['name']}</li>
                         <li class='list-group-item'><strong>Details: </strong>{$row['details']}</li>
@@ -90,15 +76,23 @@
                         {
                             echo "<li class='list-group-item'><strong> </strong><img src='../assets/images/posts/{$row['photo5']}/></li>";
                         }
-                              
-                           
-                    ?>  
-
-                        
-                    </ul>
+                        echo "</ul>
                 </div>
             </div>
-                        </div>
+            <div class='col-lg-4'></div>";
+            echo"<div class='col-lg-4'>";    
+              if($row['is_accepted']==0)
+                        { echo"<form action='posts-accept.php' method='GET'>
+                            <input type='text' class='hidden' name='id' value='{$row['post_id']}>
+                             <button type='submit' class='btn btn-default bton'>Accept Post</button>
+                          </form>";}
+                         echo" <form action='post-delete.php' method='GET'>
+                            <input type='text' class='hidden' name='id' value='{$row['post_id']}>
+                             <input type='submit' class='btn btn-default bton' value='Delete Post'/>
+                          </form>";             
+                    ?>  
+                    </div>
+                    </div>
                         <!-- /.panel-heading -->
                         
                         <!-- /.panel-body -->
