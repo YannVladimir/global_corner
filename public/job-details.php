@@ -117,7 +117,7 @@ require_once ('../includes/main_functions.php');
                       $id = $_GET['id'];
                       $sql = "SELECT * from items where is_accepted = 1 and post_id = '{id}'";
                       $res = mysqli_query($con,$sql);
-                      $row = mysqli_fetch_assoc($res);
+                      while($row = mysqli_fetch_assoc($res)){
                       echo"
                         <li class='list-group-item'><strong>Company name: </strong>{$row['company_name']}</li>
                         <li class='list-group-item'><strong>Contacts: </strong>{$row['contacts']}</li>
@@ -126,9 +126,10 @@ require_once ('../includes/main_functions.php');
                         <li class='list-group-item'><strong>Required field: </strong>{$row['required_field']}</li>
                         <li class='list-group-item'><strong>District: </strong>{$row['place_name']}</li>
                         <li class='list-group-item'><strong>Place: </strong>{$row['sector']}</li>
+                        <li class='list-group-item'><strong>Description: </strong>{$row['details']}</li>
                         <li class='list-group-item'><strong>Published on: </strong>{$row['uploaded_date']}</li>
                         <li class='list-group-item'><strong>Apply before: </strong>{$row['deadline']}</li>";
-                         
+                         }
                   ?>
                     </ul>
                 </div>
