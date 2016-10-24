@@ -371,7 +371,7 @@ if(isset($_GET['var']) == "logout")
                         echo"<li class='list-group-item'>
                           <form action='job-details.php' method='GET'>
                             <input type='text' class='hidden' name='id' value='{$row['post_id']}'>
-                             <button type='submit' class='btn btn-default bton'>Delete Post</button>
+                             <button type='submit' class='btn btn-default bton'>View Details</button>
                           </form>
                         </li></ul>";
                         
