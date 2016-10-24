@@ -29,7 +29,7 @@ if(checkIsStringSetPost('izina'))
    {
 	$user = 1;
    }
-   $b = substr(md5(rand()),0,15);
+   $b = mt_rand();
    $q = "INSERT INTO post_photos (main) values ('{$b}')";
    $d = mysqli_query($con,$q);
    if($d)
