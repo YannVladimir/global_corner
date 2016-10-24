@@ -115,7 +115,7 @@ require_once ('../includes/main_functions.php');
                     <ul class='list-group'>
                   <?php 
                       $id = $_GET['id'];
-                      $sql = "SELECT * from items where is accepted = 1 and post_id = '{id}'";
+                      $sql = "SELECT * from items where is_accepted = 1 and post_id = '{id}'";
                       $res = mysqli_query($con,$sql);
                       $row = mysqli_fetch_assoc($res);
                       echo"
