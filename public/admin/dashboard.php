@@ -102,18 +102,24 @@
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">
                                          <?php 
-                                           $query = "SELECT * FROM items where refcat_id = 10 and is_accepted= 0";
+                                           $query = "SELECT * FROM items where refcat_id = 10";
                                            $res = mysqli_query($con,$query);
                                            $count = 0;
+                                           $a = 0;
                                            while($row = mysqli_fetch_assoc($res))
                                            {
-                                            $count++;     
+                                            $count++;
+                                            if($row['is_accepted']==0){
+                                            $a++;}     
                                            }
                                            echo " $count";
-
+                                           echo "</div>";
+                                           echo "<div>";
+                                           echo "$a";
+                                           echo "new posts </div>";
                                           ?>
-                                        </div>
-                                        <div>New Jobs</div>
+                                        
+                                        <div>New</div>
                                     </div>
                                 </div>
                             </div>
