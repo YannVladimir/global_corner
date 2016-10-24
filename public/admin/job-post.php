@@ -18,7 +18,8 @@
                             <h1 class="page-header">
                             Post details
                         </h1>
-                        <div class='col-md-6'>
+                        <div class='col-lg-3'></div>
+                        <div class='col-lg-6'>
                 <div class='panel panel-default text-center'>
                     <div class='panel-heading'>
                         <h2 class='panel-title'><strong>Personal details </strong></h2>
@@ -45,14 +46,14 @@
                             echo "<li class='list-group-item'>
                           <form action='posts-accept.php' method='GET'>
                             <input type='text' class='hidden' name='id' value='{$row['post_id']}'>
-                             <button type='submit' class='btn btn-default bton'>Edit Acount</button>
+                             <button type='submit' class='btn btn-default bton'>Accept Post</button>
                           </form>
                         </li>";
                         } 
                         echo"<li class='list-group-item'>
                           <form action='post-delete.php' method='GET'>
                             <input type='text' class='hidden' name='id' value='{$row['post_id']}'>
-                             <button type='submit' class='btn btn-default bton'>Edit Acount</button>
+                             <button type='submit' class='btn btn-default bton'>Delete Post</button>
                           </form>
                         </li>";      
                            
