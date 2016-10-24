@@ -103,14 +103,15 @@ checkUser();
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
-						<?php $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
-                            $id = $_GET['id'];
+						<?php 
+            $id = $_GET['id'];
                             $a = 0;
                             $query = "SELECT * FROM items where refcat_id = '{$id}' order by uploaded_date desc";
                             $res = mysqli_query($con,$query);
                             while($row = mysqli_fetch_assoc($res))
                             {
                               if($row['is_accepted'] == 1){
+                                if ($row['refcat_id']!=9 && $row['refcat_id']!=10 )
                               echo "<div class='col-sm-3'>
 							<div class='product-image-wrapper'>
 								<div class='single-products'>
@@ -137,9 +138,42 @@ checkUser();
 									</ul>
 								</div>
 							</div>
-						</div>";
+						</div>";}
+            elseif ($row['refcat_id']==10) {
+              echo "<div class='col-sm-3'>
+                                    <div class='product-image-wrapper'>
+                                        <div class='single-products'>
+                                            <div class='productinfo text-center'>
+                                                <div class='panel panel-default text-center'>
+                    <div class='panel-heading'>
+                        <h1 class='panel-title'><strong> Job offer </strong></h1>
+                    </div>
+                    <ul class='list-group'>";
+            
+                           echo"<li class='list-group-item'><strong>Company name: </strong>{$row['company_name']}</li>
+                        <li class='list-group-item'><strong>Job Position: </strong>{$row['job_position']}</li>
+                        <li class='list-group-item'><strong>Category: </strong>{$row['subcat_name']}</li>
+                        <li class='list-group-item'><strong>Published on: </strong>{$row['uploaded_date']}</li>
+                        <li class='list-group-item'><strong>Apply before: </strong>{$row['deadline']}</li>";
+                        echo"<li class='list-group-item'>
+                          <form action='job-details.php' method='GET'>
+                            <input type='text' class='hidden' name='id' value='{$row['post_id']}'>
+                             <button type='submit' class='btn btn-default bton'>View Details</button>
+                          </form>
+                        </li></ul>";
+                        
+                        echo"</div>
+                            </div>  
+                            </div>
+                              </div>
+                                </div>";
+            }
+            else
+            {
+                $a = 0;
+            }
                               $a = $a+1;
-                            }}
+                            }
                             if($a==0)
                             {
                             	echo "<h2>No posts found in this category</h2>";
