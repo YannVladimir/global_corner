@@ -22,7 +22,7 @@
                         <div class='col-lg-6'>
                 <div class='panel panel-default text-center'>
                     <div class='panel-heading'>
-                        <h2 class='panel-title'><strong>Details </strong></h2>
+                        <h1 class='panel-title'><strong>Details </strong></h1>
                     </div>
                     <ul class='list-group'>
                       <?php 
