@@ -30,7 +30,8 @@
                            $query = "SELECT * FROM items where post_id = '{$id}'";
                            $res = mysqli_query($con,$query);
                            $row = mysqli_fetch_assoc($res);
-                           echo"<li class='list-group-item'><strong>User: </strong>{$row['user']}</li>
+                           echo"<li class='list-group-item'><strong>User: </strong>{$row['post_id']}</li>
+                           <li class='list-group-item'><strong>User: </strong>{$row['user']}</li>
                         <li class='list-group-item'><strong>Company name: </strong>{$row['company_name']}</li>
                         <li class='list-group-item'><strong>Contacts: </strong>{$row['contacts']}</li>
                         <li class='list-group-item'><strong>Job Position: </strong>{$row['job_position']}</li>

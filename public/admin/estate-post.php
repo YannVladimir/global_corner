@@ -31,7 +31,9 @@
                            $res = mysqli_query($con,$query);
                            $row = mysqli_fetch_assoc($res);
 
-                           echo"<li class='list-group-item'><strong>User: </strong>{$row['user']}</li>
+                           echo"
+                           <li class='list-group-item'><strong>Id: </strong>{$row['post_id']}</li>
+                           <li class='list-group-item'><strong>User: </strong>{$row['user']}</li>
                         <li class='list-group-item'><strong>Ad title: </strong>{$row['name']}</li>
                         <li class='list-group-item'><strong>Details: </strong>{$row['details']}</li>
                         <li class='list-group-item'><strong>Category: </strong>{$row['subcat_name']}</li>";

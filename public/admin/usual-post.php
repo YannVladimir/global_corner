@@ -16,83 +16,68 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h1 class="page-header">
-                            Post details
+                            Post
                         </h1>
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="dataTable_wrapper">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                    <thead>
-                                        <tr>
-                                            <th>User</th>
-                                            <th>Seller</th>
-                                            <th>Title</th>
-                                            <th>Category</th>
-                                            <th>Details</th>
-                                            <th>Price</th>
-                                            <th>location</th>
-                                            <th>Uploaded date</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                       <?php 
-                                           $id = $_GET['id'];
-                                           $query = "SELECT * FROM items where post_id = '{$id}'";
-                                           $res = mysqli_query($con,$query);
-                                           while($row = mysqli_fetch_assoc($res))
-                                           {
-                                             echo "<tr class='odd gradeX'><td>{$row['user']}</td><td>{$row['seller']}</td><td>{$row['name']}</td><td>{$row['subcat_name']}</td><td>{$row['details']}</td><td class='center'>{$row['price']}</td><td class='center'>{$row['place_name']}</td><td class='center'>{$row['uploaded_date']}</td></tr>";
-                                            
-                                 echo "</tbody>
-                                </table>
-                            </div>
-                            <div class='dataTable_wrapper'>
-                                <table class='table table-striped table-bordered table-hover' id='dataTables-example'>
-                                    <thead>
-                                        <tr>
-                                            <th>Main Photo</th>
-                                            <th>Photo 1</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>";
-                                     echo "<tr class='odd gradeX'><td><img src='../assets/images/posts/{$row['main']}'/></td><td><img src='../assets/images/posts/{$row['photo1']}'/></td></tr>";
-                                      echo "</tbody>
-                                </table>
-                            </div>
-                            <div class='dataTable_wrapper'>
-                                <table class='table table-striped table-bordered table-hover' id='dataTables-example'>
-                                    <thead>
-                                        <tr>
-                                            <th>Photo 2</th>
-                                            <th>Photo 3</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>";
-                                     echo "<tr class='odd gradeX'><td><img src='../assets/images/posts/{$row['photo2']}'/></td><td><img src='../assets/images/posts/{$row['photo3']}'/></td></tr>";
-                                      echo "</tbody>
-                                </table>
-                            </div>
-                            <div class='dataTable_wrapper'>
-                                <table class='table table-striped table-bordered table-hover' id='dataTables-example'>
-                                    <thead>
-                                        <tr>
-                                            <th>Main Photo</th>
-                                            <th>Photo 1</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>";
-                                     echo "<tr class='odd gradeX'><td><img src='../assets/images/posts/{$row['photo4']}'/></td><td><img src='../assets/images/posts/{$row['photo5']}'/></td></tr>";
-                                     echo "</tbody>
-                                </table>
-                            </div>"; 
-                                           }
+                        <div class='col-lg-2'></div>
+                        <div class='col-lg-8'>
+                <div class='panel panel-default text-center'>
+                    <div class='panel-heading'>
+                        <h2 class='panel-title'><strong> Details </strong></h2>
+                    </div>
+                    <ul class='list-group'>
+                      <?php 
+                           $id = $_GET['id'];
+                           $query = "SELECT * FROM items where post_id = '{$id}'";
+                           $res = mysqli_query($con,$query);
+                           $row = mysqli_fetch_assoc($res);
 
-                                            ?> 
-                                    
-                           
-                           
-                        </div>
+                           echo"
+                           <li class='list-group-item'><strong>Id: </strong>{$row['post_id']}</li>
+                           <li class='list-group-item'><strong>User: </strong>{$row['user']}</li>
+                        <li class='list-group-item'><strong>Ad title: </strong>{$row['name']}</li>
+                        <li class='list-group-item'><strong>Details: </strong>{$row['details']}</li>
+                        <li class='list-group-item'><strong>Price: </strong>{$row['price']}</li>
+                        <li class='list-group-item'><strong>Category: </strong>{$row['subcat_name']}</li>";
+                        
+                       echo " 
+                        <li class='list-group-item'><strong>District: </strong>{$row['place_name']}</li>
+                        <li class='list-group-item'><strong>Seller: </strong>{$row['seller']}</li>
+                        <li class='list-group-item'><strong>Contacts: </strong>{$row['contacts']}</li>
+
+                        
+                        <li class='list-group-item'><strong>Uploaded date: </strong>{$row['uploaded_date']}</li>
+
+                        <li class='list-group-item'><strong> </strong><img src='../assets/images/posts/{$row['main']}></li>";
+
+                        if ($row['photo1'])
+                        {
+                            echo "<li class='list-group-item'><strong> </strong><img src='../assets/images/posts/{$row['photo1']}/></li>";
+                        }
+                        if ($row['photo2'])
+                        {
+                            echo "<li class='list-group-item'><strong> </strong><img src='../assets/images/posts/{$row['photo2']}/></li>";
+                        }
+                        if ($row['photo3'])
+                        {
+                            echo "<li class='list-group-item'><strong> </strong><img src='../assets/images/posts/{$row['photo3']}/></li>";
+                        }
+                        if ($row['photo4'])
+                        {
+                            echo "<li class='list-group-item'><strong> </strong><img src='../assets/images/posts/{$row['photo4']}/></li>";
+                        }
+                        if ($row['photo5'])
+                        {
+                            echo "<li class='list-group-item'><strong> </strong><img src='../assets/images/posts/{$row['photo5']}/></li>";
+                        }
+                        echo "</ul>
+                </div>
+            </div>";
+                         
+                    ?>  
+                    </div>
+                    </div>
+                        <!-- /.panel-heading -->
+                        
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
