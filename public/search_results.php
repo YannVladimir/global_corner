@@ -66,17 +66,19 @@ require_once ('../includes/main_functions.php');
 								<li><a href="home.php" class="fon">Home</a></li>
                 <li><a href="upload.php" class="fon">Sell</a></li>
                 <li><a href="categories.php" class="active fon">Buy</a></li>
+                <li><a href="orders.php" class="fon">Orders</a></li>
+                <li><a href="order.php" class="fon">Order now</a></li>
                 <li><a href="contact_us.php" class="fon">Contact us</a></li>
                 
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="search_box">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="search_box">
                           <form action='search_results.php' method='GET'>
-              <input type="text" name='k' class="searchtext col-sm-10" placeholder="Search"/>
-              <button type="submit" class="btn btn-default col-sm-2 bton"><i class="fa fa-search"></i></button>
-              </form>
+                            <input type="text" name='k'  required="required" class="searchtext col-sm-10" placeholder="Search"/>
+                            <button type="submit" class="btn btn-default col-sm-2 bton"><i class="fa fa-search"></i></button>
+                          </form>
             </div>
 					</div>
 				</div>
