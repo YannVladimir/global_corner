@@ -16,13 +16,13 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h1 class="page-header">
-                            Post details
+                            Post
                         </h1>
                         <div class='col-lg-3'></div>
                         <div class='col-lg-6'>
                 <div class='panel panel-default text-center'>
                     <div class='panel-heading'>
-                        <h2 class='panel-title'><strong>Personal details </strong></h2>
+                        <h2 class='panel-title'><strong>Details </strong></h2>
                     </div>
                     <ul class='list-group'>
                       <?php 
@@ -32,27 +32,27 @@
                            $row = mysqli_fetch_assoc($res);
                            echo"<li class='list-group-item'><strong>User: </strong>{$row['user']}</li>
                         <li class='list-group-item'><strong>Company name: </strong>{$row['company_name']}</li>
-                        <li class='list-group-item'><strong>Contacts: </strong>{$row['contacts']}'</li>
-                        <li class='list-group-item'><strong>Job Position: </strong>{$row['job_position']}'</li>
-                        <li class='list-group-item'><strong>Category: </strong>{$row['subcat_name']}'</li>
-                        <li class='list-group-item'><strong>Required field: </strong>{$row['required_field']}'</li>
-                        <li class='list-group-item'><strong>District: </strong>{$row['place_name']}'</li>
-                        <li class='list-group-item'><strong>City: </strong>{$row['sector']}'</li>
-                        <li class='list-group-item'><strong>Uploaded date: </strong>{$row['uploaded_date']}'</li>
-                        <li class='list-group-item'><strong>Deadline: </strong>{$row['deadline']}'</li>
-                        <li class='list-group-item'><strong> </strong><img src='../assets/images/posts/{$row['logo']}'></li>"; 
+                        <li class='list-group-item'><strong>Contacts: </strong>{$row['contacts']}</li>
+                        <li class='list-group-item'><strong>Job Position: </strong>{$row['job_position']}</li>
+                        <li class='list-group-item'><strong>Category: </strong>{$row['subcat_name']}</li>
+                        <li class='list-group-item'><strong>Required field: </strong>{$row['required_field']}</li>
+                        <li class='list-group-item'><strong>District: </strong>{$row['place_name']}</li>
+                        <li class='list-group-item'><strong>City: </strong>{$row['sector']}</li>
+                        <li class='list-group-item'><strong>Uploaded date: </strong>{$row['uploaded_date']}</li>
+                        <li class='list-group-item'><strong>Deadline: </strong>{$row['deadline']}</li>
+                        <li class='list-group-item'><strong> </strong><img src='../assets/images/posts/{$row['logo']}></li>"; 
                         if($row['is_accepted']==0)
                         {
                             echo "<li class='list-group-item'>
                           <form action='posts-accept.php' method='GET'>
-                            <input type='text' class='hidden' name='id' value='{$row['post_id']}'>
+                            <input type='text' class='hidden' name='id' value='{$row['post_id']}>
                              <button type='submit' class='btn btn-default bton'>Accept Post</button>
                           </form>
                         </li>";
                         } 
                         echo"<li class='list-group-item'>
                           <form action='post-delete.php' method='GET'>
-                            <input type='text' class='hidden' name='id' value='{$row['post_id']}'>
+                            <input type='text' class='hidden' name='id' value='{$row['post_id']}>
                              <button type='submit' class='btn btn-default bton'>Delete Post</button>
                           </form>
                         </li>";      
