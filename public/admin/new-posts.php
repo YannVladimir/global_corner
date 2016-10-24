@@ -15,9 +15,35 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h1 class="page-header">
-                            New Posts
+                            Post detsils
                         </h1>
                         </div>
+                        <div class='col-md-6'>
+                <div class='panel panel-default text-center'>
+                    <div class='panel-heading'>
+                        <h2 class='panel-title'><strong>Personal details </strong></h2>
+                    </div>
+                    <ul class='list-group'>
+                      
+                        <li class='list-group-item'><strong>First name: </strong> <?php echo $_SESSION['firstname']; ?></li>
+                        <li class='list-group-item'><strong>Last name: </strong> <?php
+                      echo $_SESSION['lastname'];
+                        ?></li>
+                        <li class='list-group-item'><strong>Email ID: </strong><?php
+                      echo $_SESSION['email'];
+                        ?></li>
+                        <li class='list-group-item'><strong>Contact Number: </strong><?php
+                      echo $_SESSION['phone'];
+                        ?></li>
+                        <li class='list-group-item'>
+                          <form action="edit_my_acount.php" method="POST">
+                            <input type="text" class='hidden' name="_token" value="<?php echo $_SESSION['_token']; ?>">
+                             <button type='submit' class='btn btn-default bton'>Edit Acount</button>
+                          </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="dataTable_wrapper">
