@@ -68,8 +68,8 @@ checkToken();
 					</div>
 					<div class="col-sm-3">
 						<div class="search_box">
-                          <form action='search_results.php' required="required" method='GET'>
-							<input type="text" name='k' class="searchtext col-sm-10" placeholder="Search"/>
+                          <form action='search_results.php' method='GET'>
+							<input type="text" name='k' required="required" class="searchtext col-sm-10" placeholder="Search"/>
 							<button type="submit" class="btn btn-default col-sm-2 bton"><i class="fa fa-search"></i></button>
 						  </form>
             </div>
