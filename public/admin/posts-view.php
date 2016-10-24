@@ -53,22 +53,44 @@
                                         <tr>
                                             <th>Main Photo</th>
                                             <th>Photo 1</th>
-                                            <th>Photo 2</th>
-                                            <th>Photo 3</th>
-                                            <th>Photo 4</th>
-                                            <th>Photo 5</th>
                                         </tr>
                                     </thead>
                                     <tbody>";
-                                     echo "<tr class='odd gradeX'><td><img src='../assets/images/posts/{$row['main']}'/></td><td><img src='../assets/images/posts/{$row['photo1']}'/></td><td><img src='../assets/images/posts/{$row['photo2']}'/></td><td><img src='../assets/images/posts/{$row['photo3']}'/></td><td class='center'><img src='../assets/images/posts/{$row['photo4']}'/></td><td class='center'><img src='../assets/images/posts/{$row['photo5']}'/></td></tr>";
+                                     echo "<tr class='odd gradeX'><td><img src='../assets/images/posts/{$row['main']}'/></td><td><img src='../assets/images/posts/{$row['photo1']}'/></td></tr>";
                                       echo "</tbody>
-                                </table>";
-
+                                </table>
+                            </div>
+                            <div class='dataTable_wrapper'>
+                                <table class='table table-striped table-bordered table-hover' id='dataTables-example'>
+                                    <thead>
+                                        <tr>
+                                            <th>Photo 2</th>
+                                            <th>Photo 3</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>";
+                                     echo "<tr class='odd gradeX'><td><img src='../assets/images/posts/{$row['photo2']}'/></td><td><img src='../assets/images/posts/{$row['photo3']}'/></td></tr>";
+                                      echo "</tbody>
+                                </table>
+                            </div>
+                            <div class='dataTable_wrapper'>
+                                <table class='table table-striped table-bordered table-hover' id='dataTables-example'>
+                                    <thead>
+                                        <tr>
+                                            <th>Main Photo</th>
+                                            <th>Photo 1</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>";
+                                     echo "<tr class='odd gradeX'><td><img src='../assets/images/posts/{$row['photo4']}'/></td><td><img src='../assets/images/posts/{$row['photo5']}'/></td></tr>";
+                                     echo "</tbody>
+                                </table>
+                            </div>"; 
                                            }
 
                                             ?> 
                                     
-                            </div>
+                           
                            
                         </div>
                         <!-- /.panel-body -->
