@@ -36,8 +36,8 @@ if(checkIsStringSetPost('izina'))
    {
     $k = "SELECT * FROM post_photos where main = '{$b}'";
     $g = mysqli_query($con,$k);
-    if($g)
-    {
+    $gow = mysqli_fetch_assoc(g);
+    $j = $gow['photo_id'];
       $querry = "INSERT INTO posts (place,category,user,seller,company_name,job_position,details,sector,contacts,uploaded_date,deadline,logo,experience,required_field,photo) values ('{$place}','{$category}','{$user}','{$company}','{$email}','{$position}','{$details}','{$sector}','{$contacts}','{$uploaded}','{$deadline}','{$photo}','{$exp}','{$field}','{$j}')";
       $res = mysqli_query($con,$querry);
        if($res)
@@ -50,11 +50,7 @@ if(checkIsStringSetPost('izina'))
         //echo "<script>alert(' Error while uploading post, please try again ');window.location='upload_jobs.php';</script>";exit;
         }
     }
-    else
-        {
-        echo mysqli_error($con);
-        //echo "<script>alert(' Error while uploading post, please try again ');window.location='upload_jobs.php';</script>";exit;
-        } 
+     
    }
    else
         {
