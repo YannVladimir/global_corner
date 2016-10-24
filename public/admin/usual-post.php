@@ -48,8 +48,10 @@
                         <li class='list-group-item'><strong>Uploaded date: </strong>{$row['uploaded_date']}</li>
 
                         
-                        </ul>
-                        <img src='../assets/images/posts/{$row['main']}/>";
+                        </ul>";
+                        
+                echo"</div>
+                <img src='../assets/images/posts/{$row['main']}/>";
                         if ($row['photo1'])
                         {
                             echo "<img src='../assets/images/posts/{$row['photo1']}/>";
@@ -70,8 +72,7 @@
                         {
                             echo "<img src='../assets/images/posts/{$row['photo5']}/>";
                         }
-                echo"</div>
-            </div>";
+            echo"</div>";
                          
                     ?>  
                     </div>
