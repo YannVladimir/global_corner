@@ -6,7 +6,7 @@ session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
 //checkUser();
-checkToken();
+//checkToken();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +15,7 @@ checkToken();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>My acount | Get It</title>
+    <title>Job details | Get It</title>
     <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/yann.min.css" rel="stylesheet">
     <link href="assets/css/prettyPhoto.css" rel="stylesheet">
@@ -109,72 +109,31 @@ checkToken();
             <div class='col-md-3'></div>
             <div class='col-md-6'>
                 <div class='panel panel-default text-center'>
-                    <div class='panel-heading'>
-                        <h2 class='panel-title'><strong>Personal details </strong></h2>
+                  <div class='panel-heading'>
+                        <h2 class='panel-title'><strong>Job details </strong></h2>
                     </div>
                     <ul class='list-group'>
-                      
-                        <li class='list-group-item'><strong>First name: </strong> <?php echo $_SESSION['firstname']; ?></li>
-                        <li class='list-group-item'><strong>Last name: </strong> <?php
-                      echo $_SESSION['lastname'];
-                        ?></li>
-                        <li class='list-group-item'><strong>Email ID: </strong><?php
-                      echo $_SESSION['email'];
-                        ?></li>
-                        <li class='list-group-item'><strong>Contact Number: </strong><?php
-                      echo $_SESSION['phone'];
-                        ?></li>
-                        <li class='list-group-item'>
-                          <form action="edit_my_acount.php" method="POST">
-                            <input type="text" class='hidden' name="_token" value="<?php echo $_SESSION['_token']; ?>">
-                             <button type='submit' class='btn btn-default bton'>Edit Acount</button>
-                          </form>
-                        </li>
+                  <?php 
+                      $id = $_GET['id'];
+                      $sql = "SELECT * from items where is accepted = 1 and post_id = '{id}'";
+                      $res = mysqli_query($con,$sql);
+                      $row = mysqli_fetch_assoc($res);
+                      echo"
+                        <li class='list-group-item'><strong>Company name: </strong>{$row['company_name']}</li>
+                        <li class='list-group-item'><strong>Contacts: </strong>{$row['contacts']}</li>
+                        <li class='list-group-item'><strong>Job Position: </strong>{$row['job_position']}</li>
+                        <li class='list-group-item'><strong>Category: </strong>{$row['subcat_name']}</li>
+                        <li class='list-group-item'><strong>Required field: </strong>{$row['required_field']}</li>
+                        <li class='list-group-item'><strong>District: </strong>{$row['place_name']}</li>
+                        <li class='list-group-item'><strong>Place: </strong>{$row['sector']}</li>
+                        <li class='list-group-item'><strong>Published on: </strong>{$row['uploaded_date']}</li>
+                        <li class='list-group-item'><strong>Apply before: </strong>{$row['deadline']}</li>";
+                         
+                  ?>
                     </ul>
                 </div>
             </div>
         </div>
-        <br><br>
-        <div class='row'>
-            <div class='col-md-1'></div>
-            <div class='col-md-10'>
-                <div class='panel panel-default text-center'>
-                    <div class='panel-heading'>
-                        <h2 class='panel-title'><strong>My posts</strong></h2>
-                    </div>
-                    <div class='panel-body'>
-                       <div class="dataTable_wrapper">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                    <thead>
-                                        <tr>
-                                            <th>Post photo</th>
-                                            <th>Post name</th>
-                                            <th>Price</th>
-                                            <th>View & Edit</th>
-                                            <th>Delete post</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                       <?php
-                                          if(isset($_SESSION['id']))
-                                          {
-                                             $id = $_SESSION['id'];
-                                             $query = "SELECT * FROM items where user = '{$id}'";
-                                             $res = mysqli_query($con,$query);
-                                             while($row = mysqli_fetch_assoc($res))
-                                             {
-                                               echo "<tr class='odd gradeX'><td><img src='assets/images/posts/{$row['main']}'/></td><td><strong>{$row['name']}</strong></td><td><strong>{$row['price']}</strong></td><td><form action='my_post.php' method='GET'><input type='text' name='id' value='{$row['post_id']}' class='hidden'/><input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'><input type='submit' value='View Details'/></form></td><td><form action='delete.php' method='POST'><input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'><input type='text' name='id' value='{$row['post_id']}' class='hidden'/><input type='submit' value='Remove'/></form></td></tr> ";
-                                             }
-                                          }
-                                       ?>  
-                                    </tbody>
-                                </table>   
-                       </div>
-  
-                </div>
-            </div>
-        </div>
-    </div>
 	</section>
 	
 	<br><br><br><br>
