@@ -53,7 +53,22 @@
                         
                         <li class='list-group-item'><strong>Uploaded date: </strong>{$row['uploaded_date']}</li>
 
-                        <li class='list-group-item'><strong> </strong><img src='../assets/images/posts/{$row['main']}></li>"; 
+                        <li class='list-group-item'><strong> </strong><img src='../assets/images/posts/{$row['main']}></li>";
+                        if($row['is_accepted']==0)
+                        {
+                            echo "<li class='list-group-item'>
+                          <form action='posts-accept.php' method='GET'>
+                            <input type='text' class='hidden' name='id' value='{$row['post_id']}>
+                             <button type='submit' class='btn btn-default bton'>Accept Post</button>
+                          </form>
+                        </li>";
+                        } 
+                        echo"<li class='list-group-item'>
+                          <form action='post-delete.php' method='GET'>
+                            <input type='text' class='hidden' name='id' value='{$row['post_id']}>
+                             <input type='submit' class='btn btn-default bton' value='Delete Post'/>
+                          </form>
+                        </li>"; 
                         if ($row['photo1'])
                         {
                             echo "<li class='list-group-item'><strong> </strong><img src='../assets/images/posts/{$row['photo1']}/></li>";
@@ -74,21 +89,7 @@
                         {
                             echo "<li class='list-group-item'><strong> </strong><img src='../assets/images/posts/{$row['photo5']}/></li>";
                         }
-                        if($row['is_accepted']==0)
-                        {
-                            echo "<li class='list-group-item'>
-                          <form action='posts-accept.php' method='GET'>
-                            <input type='text' class='hidden' name='id' value='{$row['post_id']}>
-                             <button type='submit' class='btn btn-default bton'>Accept Post</button>
-                          </form>
-                        </li>";
-                        } 
-                        echo"<li class='list-group-item'>
-                          <form action='post-delete.php' method='GET'>
-                            <input type='text' class='hidden' name='id' value='{$row['post_id']}>
-                             <input type='submit' class='btn btn-default bton' value='Delete Post'/>
-                          </form>
-                        </li>";      
+                              
                            
                     ?>  
 
