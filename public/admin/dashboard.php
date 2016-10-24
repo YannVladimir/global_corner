@@ -125,8 +125,8 @@
                             </div>
                             <a href="jobs.php">
                                 <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <span class="pull-left">Jobs</span>
+                                    <span class="pull-right">View Details<i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
                             </a>
