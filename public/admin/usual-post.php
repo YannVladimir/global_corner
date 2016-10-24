@@ -45,10 +45,23 @@
                         <li class='list-group-item'><strong>Contacts: </strong>{$row['contacts']}</li>
 
                         
-                        <li class='list-group-item'><strong>Uploaded date: </strong>{$row['uploaded_date']}</li>
+                        <li class='list-group-item'><strong>Uploaded date: </strong>{$row['uploaded_date']}</li>";
 
-                        
-                        </ul>";
+                        if($row['is_accepted']==0)
+                        {
+                            echo "<li class='list-group-item'>
+                          <form action='posts-accept.php' method='GET'>
+                            <input type='text' class='hidden' name='id' value='{$row['post_id']}'>
+                             <button type='submit' class='btn btn-default bton'>Accept Post</button>
+                          </form>
+                        </li>";
+                        } 
+                        echo"<li class='list-group-item'>
+                          <form action='post-delete.php' method='GET'>
+                            <input type='text' class='hidden' name='id' value='{$row['post_id']}'>
+                             <button type='submit' class='btn btn-default bton'>Delete Post</button>
+                          </form>
+                        </li></ul>";
                         
                 echo"</div>
                 <img src='../assets/images/posts/{$row['main']}'/>";
