@@ -106,12 +106,12 @@ checkUser();
 						<?php 
             $id = $_GET['id'];
                             $a = 0;
-                            $query = "SELECT * FROM items where refcat_id = '{$id}' order by uploaded_date desc";
+                            $query = "SELECT * FROM items where refcat_id = '{$id}' and is_accepted =1 order by uploaded_date desc";
                             $res = mysqli_query($con,$query);
                             while($row = mysqli_fetch_assoc($res))
                             {
-                              if($row['is_accepted'] == 1){
-                                if ($row['refcat_id']!=9 && $row['refcat_id']!=10 )
+                              
+                                if ($row['refcat_id']!=9 && $row['refcat_id']!=10 ){
                               echo "<div class='col-sm-3'>
 							<div class='product-image-wrapper'>
 								<div class='single-products'>
@@ -139,7 +139,7 @@ checkUser();
 								</div>
 							</div>
 						</div>";}
-            elseif ($row['refcat_id']==10 && $row['is_accepted'] == 1) {
+            elseif ($row['refcat_id']==10) {
               echo "<div class='col-sm-4'>
                                     <div class='product-image-wrapper'>
                                         <div class='single-products'>
