@@ -160,7 +160,7 @@ checkToken();
                         <div class="form-group col-md-12">
                            <input type="text" name="name" class="form-control" required="required" placeholder="Company Name">
                         </div>
-                        <div class="col-md-12">
+                        <div class="form-group col-md-12">
                                 <select class="form-control" name="logo" required="required">
                                  <option value=''>Select the organization type</option>
                                  <option value='go'>Government Organization</option>
@@ -175,7 +175,7 @@ checkToken();
                         </div>
                         <div class="form-group col-md-12">
                              <input type="text" name="izina" class="form-control" required="required" placeholder="Job Position">
-                        </div>
+                        </div> 
                         
                         <div class="form-group col-md-12">
                             <select class="form-control" name="subcategory" required="required">

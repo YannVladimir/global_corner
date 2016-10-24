@@ -29,9 +29,18 @@ if(checkIsStringSetPost('izina'))
    {
 	$user = 1;
    }
-   $querry = "INSERT INTO posts (place,category,user,seller,company_name,job_position,details,sector,contacts,uploaded_date,deadline,logo,experience,required_field) values ('{$place}','{$category}','{$user}','{$company}','{$email}','{$position}','{$details}','{$sector}','{$contacts}','{$uploaded}','{$deadline}','{$photo}','{$exp}','{$field}')";
-   $res = mysqli_query($con,$querry);
-    if($res)
+   $b = substr(md5(rand()),0,15);
+   $q = "INSERT INTO post_photos (main) values ('{$b}')";
+   $d = mysqli_query($con,$q);
+   if($d)
+   {
+    $k = "SELECT * FROM post_photos where main = '{$b}'";
+    $g = mysqli_query($con,$k);
+    if($g)
+    {
+      $querry = "INSERT INTO posts (place,category,user,seller,company_name,job_position,details,sector,contacts,uploaded_date,deadline,logo,experience,required_field,photo) values ('{$place}','{$category}','{$user}','{$company}','{$email}','{$position}','{$details}','{$sector}','{$contacts}','{$uploaded}','{$deadline}','{$photo}','{$exp}','{$field}','{$j}')";
+      $res = mysqli_query($con,$querry);
+       if($res)
         {
          echo "<script>alert(' Your post has been uploaded successfully, we thank you ');window.location='home.php';</script>";exit;
         }
@@ -40,6 +49,19 @@ if(checkIsStringSetPost('izina'))
         echo mysqli_error($con);
         //echo "<script>alert(' Error while uploading post, please try again ');window.location='upload_jobs.php';</script>";exit;
         }
+    }
+    else
+        {
+        echo mysqli_error($con);
+        //echo "<script>alert(' Error while uploading post, please try again ');window.location='upload_jobs.php';</script>";exit;
+        } 
+   }
+   else
+        {
+        echo mysqli_error($con);
+        //echo "<script>alert(' Error while uploading post, please try again ');window.location='upload_jobs.php';</script>";exit;
+        }
+   
 }
   else
   {
