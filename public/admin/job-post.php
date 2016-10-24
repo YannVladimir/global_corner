@@ -40,8 +40,8 @@
                         <li class='list-group-item'><strong>District: </strong>{$row['place_name']}</li>
                         <li class='list-group-item'><strong>City: </strong>{$row['sector']}</li>
                         <li class='list-group-item'><strong>Uploaded date: </strong>{$row['uploaded_date']}</li>
-                        <li class='list-group-item'><strong>Deadline: </strong>{$row['deadline']}</li>
-                        <li class='list-group-item'><strong> </strong><img src='../assets/images/posts/{$row['logo']}'/></li>"; 
+                        <li class='list-group-item'><strong>Deadline: </strong>{$row['deadline']}</li>";
+                         
                         if($row['is_accepted']==0)
                         {
                             echo "<li class='list-group-item'>
@@ -56,15 +56,16 @@
                             <input type='text' class='hidden' name='id' value='{$row['post_id']}'>
                              <button type='submit' class='btn btn-default bton'>Delete Post</button>
                           </form>
-                        </li>";      
-                           
-                    ?>  
-
+                        </li></ul>";
                         
-                    </ul>
-                </div>
-            </div>
-                        </div>
+                echo"</div>
+                <img src='../assets/images/posts/{$row['logo']}'/>";
+                       
+            echo"</div>";
+                         
+                    ?>  
+                    </div>
+                    </div>
                         <!-- /.panel-heading -->
                         
                         <!-- /.panel-body -->
