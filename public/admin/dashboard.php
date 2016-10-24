@@ -115,11 +115,11 @@
                                            echo " $count";
                                            echo "</div>";
                                            echo "<div>";
-                                           echo "$a";
-                                           echo "new posts </div>";
+                                           echo "$a ";
+                                           echo " New</div>"
                                           ?>
                                         
-                                        <div>New</div>
+                                       
                                     </div>
                                 </div>
                             </div>
