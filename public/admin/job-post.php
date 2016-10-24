@@ -30,7 +30,7 @@
                            $query = "SELECT * FROM items where post_id = '{$id}'";
                            $res = mysqli_query($con,$query);
                            $row = mysqli_fetch_assoc($res);
-                           echo"<li class='list-group-item'><strong>User: </strong>{$row['post_id']}</li>
+                           echo"<li class='list-group-item'><strong>Post Id: </strong>{$row['post_id']}</li>
                            <li class='list-group-item'><strong>User: </strong>{$row['user']}</li>
                         <li class='list-group-item'><strong>Company name: </strong>{$row['company_name']}</li>
                         <li class='list-group-item'><strong>Contacts: </strong>{$row['contacts']}</li>
@@ -41,7 +41,7 @@
                         <li class='list-group-item'><strong>City: </strong>{$row['sector']}</li>
                         <li class='list-group-item'><strong>Uploaded date: </strong>{$row['uploaded_date']}</li>
                         <li class='list-group-item'><strong>Deadline: </strong>{$row['deadline']}</li>
-                        <li class='list-group-item'><strong> </strong><img src='../assets/images/posts/{$row['logo']}></li>"; 
+                        <li class='list-group-item'><strong> </strong><img src='../assets/images/posts/{$row['logo']}'></li>"; 
                         if($row['is_accepted']==0)
                         {
                             echo "<li class='list-group-item'>
