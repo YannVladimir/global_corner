@@ -111,7 +111,7 @@ checkUser();
                             while($row = mysqli_fetch_assoc($res))
                             {
                               
-                                if ($row['refcat_id']!=9 && $row['refcat_id']!=10 ){
+                                if ($row['refcat_id']!=10 ){
                               echo "<div class='col-sm-3'>
 							<div class='product-image-wrapper'>
 								<div class='single-products'>
@@ -150,7 +150,7 @@ checkUser();
                     </div>
                     <ul class='list-group'>";
             
-                           echo"<li class='list-group-item'><strong>Company name: </strong>{$row['company_name']}</li>
+                           echo"<li class='list-group-item'><strong>Company name: </strong>{$row['seller']}</li>
                         <li class='list-group-item'><strong>Job Position: </strong>{$row['job_position']}</li>
                         <li class='list-group-item'><strong>Category: </strong>{$row['subcat_name']}</li>
                         <li class='list-group-item'><strong>Published on: </strong>{$row['uploaded_date']}</li>
@@ -168,11 +168,7 @@ checkUser();
                               </div>
                                 </div>";
             }
-            else
-            {
-                $a = 0;
-            }
-                              $a = $a+1;
+                            $a = $a+1;
                             }
                             if($a==0)
                             {
