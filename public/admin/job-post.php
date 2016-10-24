@@ -34,7 +34,7 @@
                         <li class='list-group-item'><strong>Contacts: </strong>{$row['contacts']}'</li>
                         <li class='list-group-item'><strong>Job Position: </strong>{$row['job_position']}'</li>
                         <li class='list-group-item'><strong>Category: </strong>{$row['subcat_name']}'</li>
-                        <li class='list-group-item'><strong>Required field: </strong>{$row['field']}'</li>
+                        <li class='list-group-item'><strong>Required field: </strong>{$row['required_field']}'</li>
                         <li class='list-group-item'><strong>District: </strong>{$row['place_name']}'</li>
                         <li class='list-group-item'><strong>City: </strong>{$row['sector']}'</li>
                         <li class='list-group-item'><strong>Uploaded date: </strong>{$row['uploaded_date']}'</li>
