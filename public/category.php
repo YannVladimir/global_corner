@@ -139,8 +139,8 @@ checkUser();
 								</div>
 							</div>
 						</div>";}
-            elseif ($row['refcat_id']==10) {
-              echo "<div class='col-sm-3'>
+            elseif ($row['refcat_id']==10 && $row['is_accepted'] == 1) {
+              echo "<div class='col-sm-4'>
                                     <div class='product-image-wrapper'>
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
