@@ -51,26 +51,26 @@
                         </ul>";
                         
                 echo"</div>
-                <img src='../assets/images/posts/{$row['main']}/>";
+                <img src='../assets/images/posts/{$row['main']}'/>";
                         if ($row['photo1'])
                         {
-                            echo "<img src='../assets/images/posts/{$row['photo1']}/>";
+                            echo "<img src='../assets/images/posts/{$row['photo1']}'/>";
                         }
                         if ($row['photo2'])
                         {
-                            echo "<img src='../assets/images/posts/{$row['photo2']}/>";
+                            echo "<img src='../assets/images/posts/{$row['photo2']}'/>";
                         }
                         if ($row['photo3'])
                         {
-                            echo "<img src='../assets/images/posts/{$row['photo3']}/>";
+                            echo "<img src='../assets/images/posts/{$row['photo3']}'/>";
                         }
                         if ($row['photo4'])
                         {
-                            echo "<img src='../assets/images/posts/{$row['photo4']}/>";
+                            echo "<img src='../assets/images/posts/{$row['photo4']}'/>";
                         }
                         if ($row['photo5'])
                         {
-                            echo "<img src='../assets/images/posts/{$row['photo5']}/>";
+                            echo "<img src='../assets/images/posts/{$row['photo5']}'/>";
                         }
             echo"</div>";
                          
