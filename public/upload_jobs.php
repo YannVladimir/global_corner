@@ -159,7 +159,14 @@ checkToken();
                       
                         <div class="form-group col-md-12">
                            <input type="text" name="name" class="form-control" required="required" placeholder="Company Name">
-                        </div>  
+                        </div>
+                        <div class="col-md-12">
+                                <select class="form-control" name="logo" required="required">
+                                 <option value=''>Select the organization type</option>
+                                 <option value='go'>Government Organization</option>
+                                 <option value='ngo'>Non-Gorvernment Organization</option>
+                                 
+                            </select></div>  
                         <div class="form-group col-md-12">
                            <input type="text" name="email" class="form-control" required="required" placeholder="Email Adress">
                         </div>
@@ -258,12 +265,7 @@ checkToken();
                         </div> 
                         <div class="form-group col-md-12">
                             <textarea name="details" id="message" required="required" class="form-control" rows="8" placeholder="Description, Include the required experience, process of applying and any other usefull information"></textarea>
-                        </div>
-                         
-                           <div class="col-sm-4"> <p>Upload company logo</p>
-                                  <input type="file" name="logo" class="this" required="required" id="inp" />
-                                  <img id="image" class="btn1 starting" />
-                            </div>                    
+                        </div>                    
                         <div class="form-group col-md-12">
                            <input type="text" class='hidden' name="_token" value="<?php echo $_SESSION['_token']; ?>">
                            <input type="submit" name="submit" class="btn btn-primary pull-right" value="Submit">
