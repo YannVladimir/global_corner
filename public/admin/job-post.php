@@ -41,19 +41,19 @@
                         <li class='list-group-item'><strong>City: </strong>{$row['sector']}</li>
                         <li class='list-group-item'><strong>Uploaded date: </strong>{$row['uploaded_date']}</li>
                         <li class='list-group-item'><strong>Deadline: </strong>{$row['deadline']}</li>
-                        <li class='list-group-item'><strong> </strong><img src='../assets/images/posts/{$row['logo']}'></li>"; 
+                        <li class='list-group-item'><strong> </strong><img src='../assets/images/posts/{$row['logo']}'/></li>"; 
                         if($row['is_accepted']==0)
                         {
                             echo "<li class='list-group-item'>
                           <form action='posts-accept.php' method='GET'>
-                            <input type='text' class='hidden' name='id' value='{$row['post_id']}>
+                            <input type='text' class='hidden' name='id' value='{$row['post_id']}'>
                              <button type='submit' class='btn btn-default bton'>Accept Post</button>
                           </form>
                         </li>";
                         } 
                         echo"<li class='list-group-item'>
                           <form action='post-delete.php' method='GET'>
-                            <input type='text' class='hidden' name='id' value='{$row['post_id']}>
+                            <input type='text' class='hidden' name='id' value='{$row['post_id']}'>
                              <button type='submit' class='btn btn-default bton'>Delete Post</button>
                           </form>
                         </li>";      

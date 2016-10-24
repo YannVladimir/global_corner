@@ -60,14 +60,14 @@
                         {
                             echo "<li class='list-group-item'>
                           <form action='posts-accept.php' method='GET'>
-                            <input type='text' class='hidden' name='id' value='{$row['post_id']}>
+                            <input type='text' class='hidden' name='id' value='{$row['post_id']}'>
                              <button type='submit' class='btn btn-default bton'>Accept Post</button>
                           </form>
                         </li>";
                         } 
                         echo"<li class='list-group-item'>
                           <form action='post-delete.php' method='GET'>
-                            <input type='text' class='hidden' name='id' value='{$row['post_id']}>
+                            <input type='text' class='hidden' name='id' value='{$row['post_id']}'>
                              <button type='submit' class='btn btn-default bton'>Delete Post</button>
                           </form>
                         </li></ul>";
