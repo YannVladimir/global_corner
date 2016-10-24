@@ -346,22 +346,39 @@ if(isset($_GET['var']) == "logout")
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                     }
                                 } 
-                                $h=0;
+                                $h=0; 
                                 $res15 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res15))
                                 {
                                     if($row['job_position'] && $h<8)
                                     {
+
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
-                                                <img class='sizingimagesmax' src='assets/images/posts/{$row['logo']}' alt='' />
-                                                <h4>{$row['name']}</h4>
-                                                <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                            </div>  
-                                        </div>
-                                    </div>
+                                                <div class='panel panel-default text-center'>
+                    <div class='panel-heading'>
+                        <h1 class='panel-title'><strong> Job offer </strong></h1>
+                    </div>
+                    <ul class='list-group'>";
+            
+                           echo"<li class='list-group-item'><strong>Company name: </strong>{$row['company_name']}</li>
+                        <li class='list-group-item'><strong>Job Position: </strong>{$row['job_position']}</li>
+                        <li class='list-group-item'><strong>Category: </strong>{$row['subcat_name']}</li>
+                        <li class='list-group-item'><strong>Published on: </strong>{$row['uploaded_date']}</li>
+                        <li class='list-group-item'><strong>Apply before: </strong>{$row['deadline']}</li>";
+                        echo"<li class='list-group-item'>
+                          <form action='job-details.php' method='GET'>
+                            <input type='text' class='hidden' name='id' value='{$row['post_id']}'>
+                             <button type='submit' class='btn btn-default bton'>Delete Post</button>
+                          </form>
+                        </li></ul>";
+                        
+                        echo"</div>
+                            </div>  
+                            </div>
+                              </div>
                                 </div>";
                                     $h=$h+1;
                                     }
@@ -422,4 +439,3 @@ if(isset($_GET['var']) == "logout")
     <script src="assets/js/main.js"></script>
 </body>
 </html>
-    
