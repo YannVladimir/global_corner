@@ -120,14 +120,15 @@ require_once ('../includes/main_functions.php');
                       while($row = mysqli_fetch_assoc($res)){
                         if($row['post_id']==$id && $row['is_accepted']==1){
                       echo"
-                        <li class='list-group-item'><strong>Company name: </strong>{$row['company_name']}</li>
-                        <li class='list-group-item'><strong>Contacts: </strong>{$row['contacts']}</li>
+                        <li class='list-group-item'><strong>Company name: </strong>{$row['seller']}</li>
                         <li class='list-group-item'><strong>Job Position: </strong>{$row['job_position']}</li>
                         <li class='list-group-item'><strong>Category: </strong>{$row['subcat_name']}</li>
                         <li class='list-group-item'><strong>Required field: </strong>{$row['required_field']}</li>
                         <li class='list-group-item'><strong>District: </strong>{$row['place_name']}</li>
                         <li class='list-group-item'><strong>Place: </strong>{$row['sector']}</li>
                         <li class='list-group-item'><strong>Description: </strong>{$row['details']}</li>
+                        <li class='list-group-item'><strong>Email: </strong>{$row['company_name']}</li>
+                        <li class='list-group-item'><strong>Contacts: </strong>{$row['contacts']}</li>
                         <li class='list-group-item'><strong>Published on: </strong>{$row['uploaded_date']}</li>
                         <li class='list-group-item'><strong>Apply before: </strong>{$row['deadline']}</li>";
                          }}
