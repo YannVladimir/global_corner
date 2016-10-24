@@ -78,18 +78,8 @@
                         }
                         echo "</ul>
                 </div>
-            </div>
-            <div class='col-lg-4'></div>";
-            echo"<div class='col-lg-4'>";    
-              if($row['is_accepted']==0)
-                        { echo"<form action='posts-accept.php' method='GET'>
-                            <input type='text' class='hidden' name='id' value='{$row['post_id']}>
-                             <button type='submit' class='btn btn-default bton'>Accept Post</button>
-                          </form>";}
-                         echo" <form action='post-delete.php' method='GET'>
-                            <input type='text' class='hidden' name='id' value='{$row['post_id']}>
-                             <input type='submit' class='btn btn-default bton' value='Delete Post'/>
-                          </form>";             
+            </div>";
+                         
                     ?>  
                     </div>
                     </div>
