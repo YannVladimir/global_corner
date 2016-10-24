@@ -1,8 +1,4 @@
-<?php
-if get id ari job. will do different with others
 
-else echo "have to work on this";
-?>
 <?php
 
   require('header.php');
@@ -64,10 +60,10 @@ else echo "have to work on this";
                                         </tr>
                                     </thead>
                                     <tbody>";
-                                     echo "<tr class='odd gradeX'><td>{$row['main']}</td><td>{$row['photo1']}</td><td>{$row['photo2']}</td><td>{$row['photo3']}</td><td class='center'>{$row['photo4']}</td><td class='center'>{$row['photo5']}</td></tr>";
+                                     echo "<tr class='odd gradeX'><td><img src='../assets/images/posts/{$row['main']}'/></td><td><img src='../assets/images/posts/{$row['photo1']}'/></td><td><img src='../assets/images/posts/{$row['photo2']}'/></td><td><img src='../assets/images/posts/{$row['photo3']}'/></td><td class='center'><img src='../assets/images/posts/{$row['photo4']}'/></td><td class='center'><img src='../assets/images/posts/{$row['photo5']}'/></td></tr>";
                                       echo "</tbody>
                                 </table>";
-                            
+
                                            }
 
                                             ?> 
