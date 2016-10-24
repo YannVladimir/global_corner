@@ -56,27 +56,27 @@
                         
                         <li class='list-group-item'><strong>Uploaded date: </strong>{$row['uploaded_date']}</li>
 
-                        <li class='list-group-item'><strong> </strong><img src='../assets/images/posts/{$row['main']}'></li>";
+                        <li class='list-group-item'><strong> </strong><img src='../assets/images/posts/'{$row['main']}''></li>";
 
                         if ($row['photo1'])
                         {
-                            echo "<li class='list-group-item'><strong> </strong><img src='../assets/images/posts/{$row['photo1']}'/></li>";
+                            echo "<li class='list-group-item'><strong> </strong><img src='../assets/images/posts/'{$row['photo1']}''/></li>";
                         }
                         if ($row['photo2'])
                         {
-                            echo "<li class='list-group-item'><strong> </strong><img src='../assets/images/posts/{$row['photo2']}'/></li>";
+                            echo "<li class='list-group-item'><strong> </strong><img src='../assets/images/posts/'{$row['photo2']}''/></li>";
                         }
                         if ($row['photo3'])
                         {
-                            echo "<li class='list-group-item'><strong> </strong><img src='../assets/images/posts/{$row['photo3']}'/></li>";
+                            echo "<li class='list-group-item'><strong> </strong><img src='../assets/images/posts/'{$row['photo3']}''/></li>";
                         }
                         if ($row['photo4'])
                         {
-                            echo "<li class='list-group-item'><strong> </strong><img src='../assets/images/posts/{$row['photo4']}'/></li>";
+                            echo "<li class='list-group-item'><strong> </strong><img src='../assets/images/posts/'{$row['photo4']}''/></li>";
                         }
                         if ($row['photo5'])
                         {
-                            echo "<li class='list-group-item'><strong> </strong><img src='../assets/images/posts/{$row['photo5']}'/></li>";
+                            echo "<li class='list-group-item'><strong> </strong><img src='../assets/images/posts/'{$row['photo5']}''/></li>";
                         }
                         if($row['is_accepted']==0)
                         {
