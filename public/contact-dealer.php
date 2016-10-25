@@ -18,7 +18,7 @@ if (isset($_SESSION['id']))
 }
 else
 {
-  $_SESSION['answer']="{$_GET['POST']}";
+  $_SESSION['answer']="{$_POST['id']}";
   echo "<script>alert('To answer this order you need an acount with us, click ok to proceed');window.location='answer-login.php';</script>";exit;
 }
 ?>
