@@ -155,7 +155,7 @@
             $_SESSION['priority']=$row['priority'];
             $_SESSION['u'] = '0';
             $user = $_SESSION['id'];
-            echo "<script>alert(' Your acount has been created successfully, click ok to proceed');window.location='contact-dealer.php';</script>";exit;
+            echo "<script>alert(' Done, click ok to proceed');window.location='contact-dealer.php';</script>";exit;
         }
         else
         {
