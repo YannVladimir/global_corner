@@ -63,7 +63,7 @@
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <i class="fa fa-tasks fa-5x"></i>
+                                        <i class="fa fa-eye fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">
@@ -89,9 +89,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="jobs.php">
+                            <a href="#">
                                 <div class="panel-footer">
-                                    <span class="pull-left">Messages</span>
+                                    <span class="pull-left">Emails in touch</span>
                                     <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
@@ -108,7 +108,7 @@
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">
                                          <?php 
-                                           $query = "SELECT * FROM items where refcat_id = 10";
+                                           $query = "SELECT * FROM orders";
                                            $res = mysqli_query($con,$query);
                                            $count = 0;
                                            $a = 0;
@@ -129,9 +129,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="jobs.php">
+                            <a href="orders.php">
                                 <div class="panel-footer">
-                                    <span class="pull-left">Jobs</span>
+                                    <span class="pull-left">Orders</span>
                                     <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
@@ -143,19 +143,19 @@
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <i class="fa fa-tasks fa-5x"></i>
+                                        <i class="fa fa-envelope fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">
                                          <?php 
-                                           $query = "SELECT * FROM items where refcat_id = 10";
+                                           $query = "SELECT * FROM contactus";
                                            $res = mysqli_query($con,$query);
                                            $count = 0;
                                            $a = 0;
                                            while($row = mysqli_fetch_assoc($res))
                                            {
                                             $count++;
-                                            if($row['is_accepted']==0){
+                                            if($row['seen']==0){
                                             $a++;}     
                                            }
                                            echo " $a";
@@ -169,9 +169,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="jobs.php">
+                            <a href="new-messages.php">
                                 <div class="panel-footer">
-                                    <span class="pull-left">Jobs</span>
+                                    <span class="pull-left">Messages</span>
                                     <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
@@ -209,7 +209,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="jobs.php">
+                            <a href="electronics.php">
                                 <div class="panel-footer">
                                     <span class="pull-left">Electronics</span>
                                     <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
@@ -249,7 +249,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="jobs.php">
+                            <a href="mobiles.php">
                                 <div class="panel-footer">
                                     <span class="pull-left">Mobiles</span>
                                     <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
@@ -289,7 +289,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="jobs.php">
+                            <a href="furnitures.php">
                                 <div class="panel-footer">
                                     <span class="pull-left">Furnitures</span>
                                     <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
@@ -329,7 +329,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="jobs.php">
+                            <a href="fashion.php">
                                 <div class="panel-footer">
                                     <span class="pull-left">Fashion</span>
                                     <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
@@ -369,7 +369,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="jobs.php">
+                            <a href="sports.php">
                                 <div class="panel-footer">
                                     <span class="pull-left">Sports & Hobbies</span>
                                     <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
@@ -409,7 +409,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="jobs.php">
+                            <a href="cars.php">
                                 <div class="panel-footer">
                                     <span class="pull-left">Cars & Bikes</span>
                                     <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
@@ -449,7 +449,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="jobs.php">
+                            <a href="estate.php">
                                 <div class="panel-footer">
                                     <span class="pull-left">Real Estates</span>
                                     <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
