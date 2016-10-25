@@ -127,9 +127,9 @@ checkToken();
                         <li class='list-group-item'><strong></strong>{$row['place']}</li>
                         <li class='list-group-item'><strong></strong>{$row['up_date']}</li>
                         <li class='list-group-item'>
-                          <form action='contact-dealer.php' method='POST'>
+                          <form action='contact-dealer.php' method='GET'>
                             <input type='text' value='{$row['id']}' class='hidden'>
-                             <button type='submit' class='btn btn-default bton'>Answer me</button>
+                             <input type='submit' class='btn btn-default bton' value='Answer me'>
                           </form>
                         </li>
                     </ul>
