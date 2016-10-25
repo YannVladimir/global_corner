@@ -20,7 +20,7 @@ elseif ($id ==5)
   }
 else
   {
-    require('upload_cars.php');
+    require('upload_fashion.php');
     exit;
   } 
 }
@@ -168,7 +168,7 @@ else
                                        $r = mysqli_query($con,$sql);
                                        while($gow = mysqli_fetch_assoc($r))
                                        {
-                                        echo "<li><a href='upload.php?id=$id'>{$row['cat_name']}</a></li>";
+                                        echo "<li><a href='upload.php?id=$id'>{$gow['cat_name']}</a></li>";
                                        }
                                   ?>
                               
