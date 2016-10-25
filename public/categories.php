@@ -337,7 +337,6 @@ checkUser();
                                 echo "</div>"; 
          ?>
                           
-                        </div>
                     </div><!--/category-tab-->
                 
                
