@@ -59,7 +59,7 @@
                     </div>
 
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-yellow">
+                        <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
@@ -98,39 +98,41 @@
                             </a>
                         </div>
                     </div>
-
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-green">
+                        <div class="panel panel-yellow">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
                                         <i class="fa fa-tasks fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">   
-                                          <?php 
-                                           $query = "SELECT * FROM posts";
-                                        $res = mysqli_query($con,$query);
+                                        <div class="huge">
+                                         <?php 
+                                           $query = "SELECT * FROM items where refcat_id = 10";
+                                           $res = mysqli_query($con,$query);
                                            $count = 0;
+                                           $a = 0;
                                            while($row = mysqli_fetch_assoc($res))
                                            {
-                                            if($row['is_accepted']== 0)
-                                              {
-                                                $count++;
-                                               }    
-                                            }
-                                            echo " $count";
-
-                                            ?>
-                                        </div>
-                                        <div>New Posts</div>
+                                            $count++;
+                                            if($row['is_accepted']==0){
+                                            $a++;}     
+                                           }
+                                           echo " $a";
+                                           echo "</div>";
+                                           echo "<div>";
+                                           echo "$count ";
+                                           echo " Total</div>"
+                                          ?>
+                                        
+                                       
                                     </div>
                                 </div>
                             </div>
-                            <a href="new-posts.php">
+                            <a href="jobs.php">
                                 <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <span class="pull-left">Jobs</span>
+                                    <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
                             </a>
@@ -217,7 +219,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-yellow">
+                        <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
@@ -377,7 +379,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-yellow">
+                        <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
@@ -457,7 +459,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-yellow">
+                        <div class="panel panel-green">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
@@ -496,40 +498,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-yellow">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-comments fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">
-                                         <?php 
-                                           $query = "SELECT * FROM items where refcat_id = 9 and is_accepted= 0";
-                                           $res = mysqli_query($con,$query);
-                                           $count = 0;
-                                           while($row = mysqli_fetch_assoc($res))
-                                           {
-                                            $count++;     
-                                           }
-                                           echo " $count";
 
-                                          ?>
-                                        </div>
-                                        <div>New Estates</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="jobs.php">
-                                <div class="panel-footer">
-                                    <span class="pull-left">View Details</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
                 </div>
                 <!-- /.row -->
 
