@@ -340,18 +340,7 @@ checkUser();
                     </div><!--/category-tab-->
                 
                
-				<div class="col-sm-2">
-					<div class="left-sidebar">
-						
-						<div class="shipping text-center"><!--shipping-->
-							<br><br><br><br><br>
-							<h1></h1><br><br><br><br><br><br>
-						</div><!--/shipping-->
-
-                        <!--anything after shipping can be here-->
-
-					</div>
-				</div>
+				
 				
 			
 			</div>
