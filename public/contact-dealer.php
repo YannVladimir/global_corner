@@ -131,13 +131,7 @@ else
                                  echo '<p>'.$_SESSION['info'].'</p>';
                                  unset($_SESSION['info']);                         
                           echo "</div>";
-                        }?>
-                <div class='panel panel-default text-center'>
-                  <div class='panel-heading'>
-                        <h2 class='panel-title'><strong>Order Details </strong></h2>
-                    </div>
-                    <ul class='list-group'>
-                  <?php 
+                        }
                       $id = $_SESSION['answer']; 
                       $sql = "SELECT * from vieworders where id ='{$id}'";
                       $res = mysqli_query($con,$sql);
