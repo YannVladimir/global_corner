@@ -111,7 +111,7 @@ checkUser();
                             while($row = mysqli_fetch_assoc($res))
                             {
                               
-                                if ($row['refcat_id']!=10 ){
+                                if ($row['refcat_id']!=7 ){
                               echo "<div class='col-sm-3'>
 							<div class='product-image-wrapper'>
 								<div class='single-products'>
@@ -139,7 +139,7 @@ checkUser();
 								</div>
 							</div>
 						</div>";}
-            elseif ($row['refcat_id']==10) {
+            elseif ($row['refcat_id']==7) {
               echo "<div class='col-sm-4'>
                                     <div class='product-image-wrapper'>
                                         <div class='single-products'>
@@ -185,7 +185,7 @@ checkUser();
 						<h2>Categories</h2>
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
 							<?php 
-                                            $c = 3;
+                                            $c = 1;
                                             $query = "SELECT * FROM categories ";
                                             $res = mysqli_query($con,$query);
                                             while($row = mysqli_fetch_assoc($res))

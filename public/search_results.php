@@ -176,7 +176,7 @@ require_once ('../includes/main_functions.php');
 						<h2>Categories</h2>
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
 							<?php 
-                                            $c = 3;
+                                            $c = 1;
                                             $query = "SELECT * FROM categories ";
                                             $res = mysqli_query($con,$query);
                                             while($row = mysqli_fetch_assoc($res))

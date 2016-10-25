@@ -11,14 +11,13 @@
 							<li data-target="#slider-carousel" data-slide-to="4"></li>
 						    <li data-target="#slider-carousel" data-slide-to="5"></li>
 							<li data-target="#slider-carousel" data-slide-to="6"></li>
-							<li data-target="#slider-carousel" data-slide-to="7"></li>
-						     
+							 
 						</ol>   
 						 
 						<div class="carousel-inner">
 							<?php 
                                $v = 1;
-                               $query = "SELECT * FROM categories";
+                               $query = "SELECT * FROM categories where cat_id!=8";
                                $res = mysqli_query($con,$query);
                                while($row = mysqli_fetch_assoc($res))
                                {

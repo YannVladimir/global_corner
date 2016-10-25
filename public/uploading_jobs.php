@@ -50,20 +50,17 @@ if(checkIsStringSetPost('izina'))
         }
         else
         {
-        echo mysqli_error($con);
-        //echo "<script>alert(' Error while uploading post, please try again ');window.location='upload_jobs.php';</script>";exit;
+        echo "<script>alert(' Error while uploading post, please try again ');window.location='upload_jobs.php';</script>";exit;
         }
     }
       else
         {
-        echo mysqli_error($con);
-        //echo "<script>alert(' Error while uploading post, please try again ');window.location='upload_jobs.php';</script>";exit;
+        echo "<script>alert(' Error while uploading post, please try again ');window.location='upload_jobs.php';</script>";exit;
         }
    }
    else
         {
-        echo mysqli_error($con);
-        //echo "<script>alert(' Error while uploading post, please try again ');window.location='upload_jobs.php';</script>";exit;
+        echo "<script>alert(' Error while uploading post, please try again ');window.location='upload_jobs.php';</script>";exit;
         }
    
 ?>

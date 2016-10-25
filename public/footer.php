@@ -7,7 +7,7 @@
 					</div>
 					<div class="col-sm-4">
 						<div class="companyinfo">
-							<h2><span>250</span> Trade</h2>
+							<h2><span> 250</span> Trade</h2>
 							<p>Rwanda's largest market</p>
 						</div>
 					</div>
@@ -26,11 +26,11 @@
 						<div class="single-widget">
 							<h2>Top Categories</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="category.php?id=3">Electronics</a></li>
-								<li><a href="category.php?id=4">Mobiles</a></li>
-								<li><a href="category.php?id=10">Jobs</a></li>
-								<li><a href="category.php?id=9">Real Estates</a></li>
-								<li><a href="category.php?id=8">Cars $ Bikes</a></li>
+								<li><a href="category.php?id=1">Computer/Laptops</a></li>
+								<li><a href="category.php?id=2">Mobiles</a></li>
+								<li><a href="category.php?id=3">Electronic materials</a></li>
+								<li><a href="category.php?id=5">Real estates</a></li>
+								<li><a href="category.php?id=6">Cars/Bikes</a></li>
 							</ul>
 						</div>
 					</div>
@@ -42,6 +42,7 @@
 								<li><a href="upload.php">Sell</a></li>
 								<li><a href="categories.php">Buy</a></li>
                                 <li><a href="order.php">Order now</a></li>
+                                <li><a href="orders.php">Orders</a></li>
                                <!-- <li><a href="#">Free shipping</a></li>-->
 								<li><a href="contact_us.php">Contact Us</a></li>
 								<!--<li><a href="#">FAQ’s</a></li>-->
@@ -87,8 +88,8 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
-					<p class="pull-left">Copyright © 2016 Global Corner Inc. All rights reserved.</p>
-					<p class="pull-right">Developed by <span><a target="_blank" href="http://www.facebook.com/yann_vladimir">Yann Vladimir</a></span></p>
+					<p class="pull-left">Copyright © 250 Trade Inc. All rights reserved.</p>
+					<p class="pull-right">Developed by <span><a target="_blank" href="#">Yann Vladimir</a></span></p>
 				</div>
 			</div>
 		</div>

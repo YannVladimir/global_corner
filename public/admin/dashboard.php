@@ -68,7 +68,7 @@
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">
                                          <?php 
-                                           $query = "SELECT * FROM items where refcat_id = 10";
+                                           $query = "SELECT * FROM items";
                                            $res = mysqli_query($con,$query);
                                            $count = 0;
                                            $a = 0;
@@ -188,7 +188,7 @@
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">
                                          <?php 
-                                           $query = "SELECT * FROM items where refcat_id = 3";
+                                           $query = "SELECT * FROM items where refcat_id = 1";
                                            $res = mysqli_query($con,$query);
                                            $count = 0;
                                            $a = 0;
@@ -209,9 +209,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="electronics.php">
+                            <a href="computer.php">
                                 <div class="panel-footer">
-                                    <span class="pull-left">Electronics</span>
+                                    <span class="pull-left">Computer/Laptops</span>
                                     <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
@@ -228,7 +228,7 @@
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">
                                          <?php 
-                                           $query = "SELECT * FROM items where refcat_id = 4";
+                                           $query = "SELECT * FROM items where refcat_id = 2";
                                            $res = mysqli_query($con,$query);
                                            $count = 0;
                                            $a = 0;
@@ -268,7 +268,47 @@
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">
                                          <?php 
-                                           $query = "SELECT * FROM items where refcat_id = 5";
+                                           $query = "SELECT * FROM items where refcat_id = 3";
+                                           $res = mysqli_query($con,$query);
+                                           $count = 0;
+                                           $a = 0;
+                                           while($row = mysqli_fetch_assoc($res))
+                                           {
+                                            $count++;
+                                            if($row['is_accepted']==0){
+                                            $a++;}     
+                                           }
+                                           echo " $a";
+                                           echo "</div>";
+                                           echo "<div>";
+                                           echo "$count ";
+                                           echo " Total</div>"
+                                          ?>
+                                        
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="electronics.php">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Electronic materials</span>
+                                    <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-tasks fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">
+                                         <?php 
+                                           $query = "SELECT * FROM items where refcat_id = 4";
                                            $res = mysqli_query($con,$query);
                                            $count = 0;
                                            $a = 0;
@@ -299,7 +339,47 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-green">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-tasks fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">
+                                         <?php 
+                                           $query = "SELECT * FROM items where refcat_id = 5";
+                                           $res = mysqli_query($con,$query);
+                                           $count = 0;
+                                           $a = 0;
+                                           while($row = mysqli_fetch_assoc($res))
+                                           {
+                                            $count++;
+                                            if($row['is_accepted']==0){
+                                            $a++;}     
+                                           }
+                                           echo " $a";
+                                           echo "</div>";
+                                           echo "<div>";
+                                           echo "$count ";
+                                           echo " Total</div>"
+                                          ?>
+                                        
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="estates.php">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Real Estates</span>
+                                    <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
@@ -329,9 +409,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="fashion.php">
+                            <a href="cars.php">
                                 <div class="panel-footer">
-                                    <span class="pull-left">Fashion</span>
+                                    <span class="pull-left">Cars/Bikes</span>
                                     <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
@@ -339,7 +419,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-red">
+                        <div class="panel panel-yellow">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
@@ -369,9 +449,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="sports.php">
+                            <a href="jobs.php">
                                 <div class="panel-footer">
-                                    <span class="pull-left">Sports & Hobbies</span>
+                                    <span class="pull-left">Jobs</span>
                                     <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
@@ -379,7 +459,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-primary">
+                        <div class="panel panel-green">
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
@@ -409,89 +489,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="cars.php">
+                            <a href="others.php">
                                 <div class="panel-footer">
-                                    <span class="pull-left">Cars & Bikes</span>
-                                    <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-yellow">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-tasks fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">
-                                         <?php 
-                                           $query = "SELECT * FROM items where refcat_id = 9";
-                                           $res = mysqli_query($con,$query);
-                                           $count = 0;
-                                           $a = 0;
-                                           while($row = mysqli_fetch_assoc($res))
-                                           {
-                                            $count++;
-                                            if($row['is_accepted']==0){
-                                            $a++;}     
-                                           }
-                                           echo " $a";
-                                           echo "</div>";
-                                           echo "<div>";
-                                           echo "$count ";
-                                           echo " Total</div>"
-                                          ?>
-                                        
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="estate.php">
-                                <div class="panel-footer">
-                                    <span class="pull-left">Real Estates</span>
-                                    <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-green">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-tasks fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">
-                                         <?php 
-                                           $query = "SELECT * FROM items where refcat_id = 10";
-                                           $res = mysqli_query($con,$query);
-                                           $count = 0;
-                                           $a = 0;
-                                           while($row = mysqli_fetch_assoc($res))
-                                           {
-                                            $count++;
-                                            if($row['is_accepted']==0){
-                                            $a++;}     
-                                           }
-                                           echo " $a";
-                                           echo "</div>";
-                                           echo "<div>";
-                                           echo "$count ";
-                                           echo " Total</div>"
-                                          ?>
-                                        
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="jobs.php">
-                                <div class="panel-footer">
-                                    <span class="pull-left">Jobs</span>
+                                    <span class="pull-left">Others</span>
                                     <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>

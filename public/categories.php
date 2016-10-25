@@ -99,7 +99,7 @@ checkUser();
                                 $res = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
-                                    if($row['cat_id']==3)
+                                    if($row['cat_id']==1)
                                     {
                                          echo "<li class='active'><a href='#{$row['cat_id']}' data-toggle='tab'>{$row['cat_name']}</a></li>";
                                     }
@@ -115,7 +115,7 @@ checkUser();
                                 $res1 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res1))
                                 {
-                                    if($row['cat_id']==3)
+                                    if($row['cat_id']==1)
                                     {
                                          echo "<div class='tab-pane fade active in' id='{$row['cat_id']}' >";
                                     }
@@ -124,7 +124,7 @@ checkUser();
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
-                                    if($row['refcat_id']==3)
+                                    if($row['refcat_id']==1)
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -144,7 +144,7 @@ checkUser();
                                 $res2 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res2))
                                 {
-                                    if($row['cat_id']==4)
+                                    if($row['cat_id']==2)
                                     {
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                     }
@@ -152,7 +152,7 @@ checkUser();
                                 $res3 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res3))
                                 {
-                                    if($row['refcat_id']==4)
+                                    if($row['refcat_id']==2)
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -171,7 +171,7 @@ checkUser();
                                 $res4 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res4))
                                 {
-                                    if($row['cat_id']==5)
+                                    if($row['cat_id']==3)
                                     {
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                     }
@@ -180,7 +180,7 @@ checkUser();
                                 $res5 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res5))
                                 {
-                                    if($row['refcat_id']==5)
+                                    if($row['refcat_id']==3)
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -199,7 +199,7 @@ checkUser();
                                 $res6 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res6))
                                 {
-                                    if($row['cat_id']==6)
+                                    if($row['cat_id']==4)
                                     {
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                     }
@@ -208,7 +208,7 @@ checkUser();
                                 $res7 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res7))
                                 {
-                                    if($row['refcat_id']==6)
+                                    if($row['refcat_id']==4)
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -227,7 +227,7 @@ checkUser();
                                 $res8 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res8))
                                 {
-                                    if($row['cat_id']==7)
+                                    if($row['cat_id']==5)
                                     {
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                     }
@@ -235,7 +235,7 @@ checkUser();
                                 $res9 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res9))
                                 {
-                                    if($row['refcat_id']==7)
+                                    if($row['refcat_id']==5)
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -254,7 +254,7 @@ checkUser();
                                 $res10 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res10))
                                 {
-                                    if($row['cat_id']==8)
+                                    if($row['cat_id']==6)
                                     {
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                     }
@@ -263,7 +263,7 @@ checkUser();
                                 $res11 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res11))
                                 {
-                                    if($row['refcat_id']==8)
+                                    if($row['refcat_id']==6)
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -282,7 +282,7 @@ checkUser();
                                 $res12 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res12))
                                 {
-                                    if($row['cat_id']==9)
+                                    if($row['cat_id']==7)
                                     {
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                     }
@@ -291,7 +291,7 @@ checkUser();
                                 $res13 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res13))
                                 {
-                                    if($row['refcat_id']==9)
+                                    if($row['refcat_id']==7)
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -310,7 +310,7 @@ checkUser();
                                 $res14 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res14))
                                 {
-                                    if($row['cat_id']==10)
+                                    if($row['cat_id']==8)
                                     {
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                     }
@@ -319,7 +319,7 @@ checkUser();
                                 $res15 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res15))
                                 {
-                                    if($row['refcat_id']==10)
+                                    if($row['refcat_id']==8)
                                     {
                                          echo "<div class='col-sm-3'>
                                     <div class='product-image-wrapper'>
@@ -336,8 +336,7 @@ checkUser();
                                 }
                                 echo "</div>"; 
          ?>
-                            
-                         </div>
+                          
                         </div>
                     </div><!--/category-tab-->
                 
@@ -347,7 +346,7 @@ checkUser();
 						
 						<div class="shipping text-center"><!--shipping-->
 							<br><br><br><br><br>
-							<h1>place for advertisement</h1><br><br><br><br><br><br>
+							<h1></h1><br><br><br><br><br><br>
 						</div><!--/shipping-->
 
                         <!--anything after shipping can be here-->
