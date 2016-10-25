@@ -15,7 +15,7 @@ checkToken();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>My order | 250 Trade</title>
+    <title>250 Trade | Orders</title>
     <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/yann.min.css" rel="stylesheet">
     <link href="assets/css/prettyPhoto.css" rel="stylesheet">

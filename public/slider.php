@@ -27,7 +27,7 @@
                                      echo "<div class='item active'>
                                      <div class='col-sm-2'></div>
 								     <div class='col-sm-4'> 
-									<h1><span>Get</span> It</h1>
+									<h1><span>250</span> Trade</h1>
 									<h2>{$row['cat_name']} category </h2>";
 									$v = 2;
                                     }
@@ -35,7 +35,7 @@
                                 	    echo "<div class='item'>
                                 	    <div class='col-sm-2'></div>
 								       <div class='col-sm-4'> 
-									   <h1><span>Get</span> It</h1>
+									   <h1><span>250</span> Trade</h1>
 									   <h2>{$row['cat_name']} category</h2>";
                                     }
                                     
@@ -43,8 +43,9 @@
 									<button type='button' class='btn btn-default get'>Visit Category</button></a>
 								</div>
 								<div class='col-sm-4 slidersizing'><br>
+								<a href='category.php?id={$row['cat_id']}'>
 									<img src='assets/images/categories/{$row['cat_image']}' class='girl img-responsive' alt='' />
-				
+				                </a>
 								</div>
 							</div>";
 

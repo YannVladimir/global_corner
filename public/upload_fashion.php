@@ -15,7 +15,7 @@ checkToken();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Upload Item | Get It</title>
+    <title>250 Trade | Upload item</title>
     <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/yann.min.css" rel="stylesheet">
     <link href="assets/css/prettyPhoto.css" rel="stylesheet">
@@ -175,7 +175,7 @@ checkToken();
                             </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <input type="text" name="price" class="form-control" required="required" placeholder="Price">
+                            <input type="text" name="price" class="form-control"  placeholder="Price">
                         </div>
                         <div class="form-group col-md-12">
                             <textarea name="details" id="message" required="required" class="form-control" rows="8" placeholder="Description of the product, Include the brand, model, warranty, guarranty, age and any other included accessories"></textarea>
