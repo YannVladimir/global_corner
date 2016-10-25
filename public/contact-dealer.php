@@ -166,7 +166,7 @@ else
             <h2 class='title text-center'>recommended orders</h2>
            <?php 
  
-                           $queryyy = "SELECT * FROM vieworders where cat_name = '{$cat}' and id !='{$id}' and is_accepted = 1 order by post_id desc limit 4";
+                           $queryyy = "SELECT * FROM vieworders where cat_name = '{$cat}' and id !='{$id}' and is_accepted = 1 order by id desc limit 4";
       
                             $res1 = mysqli_query($con,$queryyy);
                             while($row = mysqli_fetch_assoc($res1))
