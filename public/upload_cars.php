@@ -139,19 +139,16 @@ checkToken();
                             <div class="btn-group">
                                <button type="button" class="btn btn-default dropdown-toggle country" data-toggle="dropdown">
                                   <?php
-                                       $id = $_GET['id'];
-                                       $query = "SELECT * from categories where cat_id='{$id}'";
-                                       $res = mysqli_query($con,$query);
-                                       $row = mysqli_fetch_assoc($res);
-                                       echo $row['cat_name'];
+                                       
+                                       echo "Computer/Laptops";
                                       echo "<span class='caret'></span>
                                </button>
                                <ul class='dropdown-menu'>";
-                                       $sql = "SELECT * from categories where cat_id!='{$id}'";
+                                       $sql = "SELECT * from categories where cat_id!=1";
                                        $r = mysqli_query($con,$sql);
                                        while($gow = mysqli_fetch_assoc($r))
                                        {
-                                        echo "<li><a href='upload.php?id=$id'>{$row['cat_name']}</a></li>";
+                                        echo "<li><a href='upload.php?id={$gow['cat_id']}'>{$gow['cat_name']}</a></li>";
                                        }
                                   ?>
                               
@@ -173,7 +170,7 @@ checkToken();
                                     $res = mysqli_query($con,$query);
                                     while($row = mysqli_fetch_assoc($res))
                                     {
-                                       if($row['refcat_id']==$id)
+                                       if($row['refcat_id']==1)
                                        echo "<option value='{$row['subcat_id']}'>{$row['subcat_name']}</option>";
                                     } 
                                 ?>
@@ -266,4 +263,3 @@ checkToken();
   <script src="assets/js/image.upload.js"></script>
 </body>
 </html>
-                                            
