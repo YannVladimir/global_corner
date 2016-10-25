@@ -11,7 +11,7 @@ if(checkIsStringSetPost('izina'))
 {
   if(isset($_SESSION['id']))
    {  
-	$izina = clearInput($_POST['izina']);
+	  $izina = clearInput($_POST['izina']);
     $category = clearInput($_POST['subcategory']);
     $details = clearInput($_POST['details']);
     $location = clearInput($_POST['location']);
