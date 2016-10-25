@@ -15,7 +15,7 @@ checkToken();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Upload Item | Get It</title>
+    <title>250 Trade | Upload item</title>
     <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/yann.min.css" rel="stylesheet">
     <link href="assets/css/prettyPhoto.css" rel="stylesheet">
@@ -201,7 +201,7 @@ checkToken();
                             <input type="text" name="road" class="form-control" required="required" placeholder="Street number (eg: KK 23 ave 256)">
                         </div>
                         <div class="form-group col-md-6">
-                            <input type="text" name="price" class="form-control" required="required" placeholder="Price">
+                            <input type="text" name="price" class="form-control"  placeholder="Price">
                         </div>
                         <div class="form-group col-md-12">
                             <textarea name="details" id="message" required="required" class="form-control" rows="8" placeholder="Descriptions, Include number of rooms, and any other usefull informations"></textarea>
