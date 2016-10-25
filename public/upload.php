@@ -168,7 +168,7 @@ else
                                        $r = mysqli_query($con,$sql);
                                        while($gow = mysqli_fetch_assoc($r))
                                        {
-                                        echo "<li><a href='upload.php?id=$id'>{$gow['cat_name']}</a></li>";
+                                        echo "<li><a href='upload.php?id={$gow['cat_id']}'>{$gow['cat_name']}</a></li>";
                                        }
                                   ?>
                               
