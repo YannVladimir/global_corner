@@ -475,7 +475,7 @@ if(isset($_GET['var']) == "logout")
                     <br><br>
                     <h2 class="title text-center">Orders</h2>
                 <?php
-                    $query = "SELECT * from vieworders where is_accepted = 0 order by id desc limit 10";
+                    $query = "SELECT * from vieworders where is_accepted = 1 order by id desc limit 10";
                      $res = mysqli_query($con,$query);
                      while($row = mysqli_fetch_assoc($res))
                      {
