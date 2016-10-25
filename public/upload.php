@@ -1,12 +1,29 @@
-<?php
+<?php 
 ini_set('display_startup_errors',1);
 ini_set('display_errors',1);
 error_reporting(E_ALL);
 session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
-checkUser();
-checkToken();
+//checkUser();
+if(isset($_GET['id'])){
+$id = $_GET['id'];
+if($id==7)
+  {
+    require('upload_jobs.php');
+    exit;
+  }
+elseif ($id ==5)
+  {
+    require('upload_estates.php');
+    exit;
+  }
+else
+  {
+    require('upload_cars.php');
+    exit;
+  } 
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -138,17 +155,23 @@ checkToken();
                           <div class="btn-group pull-right">
                             <div class="btn-group">
                                <button type="button" class="btn btn-default dropdown-toggle country" data-toggle="dropdown">
-                                  Electronic materials
-                                  <span class="caret"></span>
+                                  <?php
+                                       $id = 1;
+                                       $query = "SELECT * from categories where cat_id='{$id}'";
+                                       $res = mysqli_query($con,$query);
+                                       $row = mysqli_fetch_assoc($res);
+                                       echo $row['cat_name'];
+                                      echo "<span class='caret'></span>
                                </button>
-                               <ul class="dropdown-menu">
-                                  <li><a href="upload_mobiles.php">mobiles</a></li>
-                                  <li><a href="upload_furnitures.php">Furnitures</a></li>
-                                  <li><a href="upload_fashion.php">Fashion</a></li>
-                                  <li><a href="upload_sports.php">Sports & Hobbies</a></li>
-                                  <li><a href="upload_cars.php">Cars & Bikes</a></li>
-                                  <li><a href="upload_estates.php">Real Estates</a></li>
-                                  <li><a href="upload_jobs.php">Jobs</a></li>
+                               <ul class='dropdown-menu'>";
+                                       $sql = "SELECT * from categories where cat_id!='{$id}'";
+                                       $r = mysqli_query($con,$sql);
+                                       while($gow = mysqli_fetch_assoc($r))
+                                       {
+                                        echo "<li><a href='upload.php?id=$id'>{$row['cat_name']}</a></li>";
+                                       }
+                                  ?>
+                              
                                </ul>
                             </div>
                           </div>
@@ -167,7 +190,7 @@ checkToken();
                                     $res = mysqli_query($con,$query);
                                     while($row = mysqli_fetch_assoc($res))
                                     {
-                                       if($row['refcat_id']==3)
+                                       if($row['refcat_id']==1)
                                        echo "<option value='{$row['subcat_id']}'>{$row['subcat_name']}</option>";
                                     } 
                                 ?>
@@ -260,4 +283,3 @@ checkToken();
   <script src="assets/js/image.upload.js"></script>
 </body>
 </html>
-                                            

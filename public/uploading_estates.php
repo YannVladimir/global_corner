@@ -363,6 +363,6 @@ $select = mysqli_query($con,$queryy);
 }
 else
 {
-    echo "not working fine";
+    
 }
 ?>

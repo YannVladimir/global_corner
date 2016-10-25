@@ -10,12 +10,12 @@ $query = "SELECT * FROM items where post_id = '{$id}'";
 $res = mysqli_query($con,$query); 
 while($row = mysqli_fetch_assoc($res))
 {
-	if($row['refcat_id'] == 9)
+	if($row['refcat_id'] == 5)
 	{
 		require('estate-post.php');
 		exit;
 	}
-	elseif ($row['refcat_id'] == 10)
+	elseif ($row['refcat_id'] == 8)
 	{
 		require('job-post.php');
 		exit;

@@ -115,7 +115,7 @@ if(isset($_GET['var']) == "logout")
                                 $res = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
-                                    if($row['cat_id']==3)
+                                    if($row['cat_id']==1)
                                     {
                                          echo "<li class='active'><a href='#{$row['cat_id']}' data-toggle='tab'>{$row['cat_name']}</a></li>";
                                     }
@@ -131,7 +131,7 @@ if(isset($_GET['var']) == "logout")
                                 $res1 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res1))
                                 {
-                                    if($row['cat_id']==3)
+                                    if($row['cat_id']==1)
                                     {
                                          echo "<div class='tab-pane fade active in' id='{$row['cat_id']}' >";
                                     }
@@ -141,7 +141,7 @@ if(isset($_GET['var']) == "logout")
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
-                                    if($row['refcat_id']==3 && $a<8)
+                                    if($row['refcat_id']==1 && $a<8)
                                     {
                                          echo "<div class='col-sm-3'>
                             <div class='product-image-wrapper'>
@@ -173,7 +173,7 @@ if(isset($_GET['var']) == "logout")
                                 $res2 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res2))
                                 {
-                                    if($row['cat_id']==4)
+                                    if($row['cat_id']==2)
                                     {
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                     }
@@ -182,7 +182,7 @@ if(isset($_GET['var']) == "logout")
                                 $res3 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res3))
                                 {
-                                    if($row['refcat_id']==4 && $b<8)
+                                    if($row['refcat_id']==2 && $b<8)
                                     {
                                          echo "<div class='col-sm-3'>
                             <div class='product-image-wrapper'>
@@ -214,7 +214,7 @@ if(isset($_GET['var']) == "logout")
                                 $res4 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res4))
                                 {
-                                    if($row['cat_id']==5)
+                                    if($row['cat_id']==3)
                                     {
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                     }
@@ -223,7 +223,7 @@ if(isset($_GET['var']) == "logout")
                                 $res5 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res5))
                                 {
-                                    if($row['refcat_id']==5 && $c<8)
+                                    if($row['refcat_id']==3 && $c<8)
                                     {
                                          echo "<div class='col-sm-3'>
                             <div class='product-image-wrapper'>
@@ -255,7 +255,7 @@ if(isset($_GET['var']) == "logout")
                                 $res6 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res6))
                                 {
-                                    if($row['cat_id']==6)
+                                    if($row['cat_id']==4)
                                     {
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                     }
@@ -264,7 +264,7 @@ if(isset($_GET['var']) == "logout")
                                 $res7 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res7))
                                 {
-                                    if($row['refcat_id']==6 && $d<8)
+                                    if($row['refcat_id']==4 && $d<8)
                                     {
                                          echo "<div class='col-sm-3'>
                             <div class='product-image-wrapper'>
@@ -296,7 +296,7 @@ if(isset($_GET['var']) == "logout")
                                 $res8 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res8))
                                 {
-                                    if($row['cat_id']==7)
+                                    if($row['cat_id']==5)
                                     {
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                     }
@@ -305,7 +305,7 @@ if(isset($_GET['var']) == "logout")
                                 $res9 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res9))
                                 {
-                                    if($row['refcat_id']==7 && $e<8)
+                                    if($row['refcat_id']==5 && $e<8)
                                     {
                                          echo "<div class='col-sm-3'>
                             <div class='product-image-wrapper'>
@@ -337,7 +337,7 @@ if(isset($_GET['var']) == "logout")
                                 $res10 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res10))
                                 {
-                                    if($row['cat_id']==8)
+                                    if($row['cat_id']==6)
                                     {
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                     }
@@ -346,7 +346,7 @@ if(isset($_GET['var']) == "logout")
                                 $res11 = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res11))
                                 {
-                                    if($row['refcat_id']==8 && $f<8)
+                                    if($row['refcat_id']==6 && $f<8)
                                     {
                                          echo "<div class='col-sm-3'>
                             <div class='product-image-wrapper'>
@@ -375,50 +375,10 @@ if(isset($_GET['var']) == "logout")
                                     
                                 } 
                               echo "</div>";
-                                $res12 = mysqli_query($con,$query);
-                                while($row = mysqli_fetch_assoc($res12))
-                                {
-                                    if($row['cat_id']==9)
-                                    {
-                                         echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
-                                    }
-                                } 
-                                $g=0;
-                                $res13 = mysqli_query($con,$cats);
-                                while($row = mysqli_fetch_assoc($res13))
-                                {
-                                    if($row['refcat_id']==9 && $g<8)
-                                    {
-                                         echo "<div class='col-sm-3'>
-                            <div class='product-image-wrapper'>
-                                <div class='single-products'>
-                                    <div class='productinfo text-center'>
-                      <div class='sizingimages'>
-                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
-                                        </div>
-                                        <h2>{$row['price']} Rwf</h2>
-                                        <p>{$row['name']}</p>
-                                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                    </div>
-                                    <div class='product-overlay'>
-                                        <div class='overlay-content'>
-                                            <h2>{$row['place_name']} District</h2>
-                                            <p>{$row['uploaded_date']}</p>
-                                            <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>";
-                                $g=$g+1;
-                                    }
-                                } 
-                              echo "</div>";
-                                $res14 = mysqli_query($con,$query);
+                              $res14 = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res14))
                                 {
-                                    if($row['cat_id']==10)
+                                    if($row['cat_id']==7)
                                     {
                                          echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
                                     }
@@ -461,7 +421,48 @@ if(isset($_GET['var']) == "logout")
                                     }
                                     
                                 }
-                                echo "</div>"; 
+                                echo "</div>";
+                                $res12 = mysqli_query($con,$query);
+                                while($row = mysqli_fetch_assoc($res12))
+                                {
+                                    if($row['cat_id']==8)
+                                    {
+                                         echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
+                                    }
+                                } 
+                                $g=0;
+                                $res13 = mysqli_query($con,$cats);
+                                while($row = mysqli_fetch_assoc($res13))
+                                {
+                                    if($row['refcat_id']==8 && $g<8)
+                                    {
+                                         echo "<div class='col-sm-3'>
+                            <div class='product-image-wrapper'>
+                                <div class='single-products'>
+                                    <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                        </div>
+                                        <h2>{$row['price']} Rwf</h2>
+                                        <p>{$row['name']}</p>
+                                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                    </div>
+                                    <div class='product-overlay'>
+                                        <div class='overlay-content'>
+                                            <h2>{$row['place_name']} District</h2>
+                                            <p>{$row['uploaded_date']}</p>
+                                            <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>";
+                                $g=$g+1;
+                                    }
+                                } 
+                              echo "</div>";
+                                 
          ?>
                             
                          </div>

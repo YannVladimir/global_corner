@@ -139,18 +139,23 @@ checkToken();
                           <div class="btn-group pull-right">
                             <div class="btn-group">
                                <button type="button" class="btn btn-default dropdown-toggle country" data-toggle="dropdown">
-                                 Jobs
-                                  <span class="caret"></span>
+                                <?php
+                                       $id = $_GET['id'];
+                                       $query = "SELECT * from categories where cat_id='{$id}'";
+                                       $res = mysqli_query($con,$query);
+                                       $row = mysqli_fetch_assoc($res);
+                                       echo $row['cat_name'];
+                                      echo "<span class='caret'></span>
                                </button>
-                               <ul class="dropdown-menu">
-                                  <li><a href="upload.php">Electronic materials</a></li>
-                                  <li><a href="upload_mobiles.php">mobiles</a></li>
-                                  <li><a href="upload_furnitures.php">Furnitures</a></li>
-                                  <li><a href="upload_fashion.php">Fashion</a></li>
-                                  <li><a href="upload_cars.php">Cars & Bikes</a></li>
-                                  <li><a href="upload_sports.php">Sports & Hobbies</a></li>
-                                  <li><a href="upload_estates.php">Real Estates</a></li>
-                               </ul>
+                               <ul class='dropdown-menu'>";
+                                       $sql = "SELECT * from categories where cat_id!='{$id}'";
+                                       $r = mysqli_query($con,$sql);
+                                       while($gow = mysqli_fetch_assoc($r))
+                                       {
+                                        echo "<li><a href='upload.php?id=$id'>{$row['cat_name']}</a></li>";
+                                       }
+                                  ?>
+                                </ul>
                             </div>
                           </div>
                   <br><br><br>
@@ -185,7 +190,7 @@ checkToken();
                                     $res = mysqli_query($con,$query);
                                     while($row = mysqli_fetch_assoc($res))
                                     {
-                                       if($row['refcat_id']==10)
+                                       if($row['refcat_id']==$id)
                                        echo "<option value='{$row['subcat_id']}'>{$row['subcat_name']}</option>";
                                     } 
                                 ?>

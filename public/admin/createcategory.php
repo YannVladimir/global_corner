@@ -60,5 +60,6 @@ if($res1)
                 echo "<script>alert(' Category created successfully ');window.location='dashboard.php';</script>";
 			}
 		else
-			echo "<script>alert(' Error, please try again ');window.location='new-category.php';</script>";exit;
+			echo mysqli_error($con);
+			//echo "<script>alert(' Error, please try again ');window.location='new-category.php';</script>";exit;
 ?>

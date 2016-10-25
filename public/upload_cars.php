@@ -119,7 +119,6 @@ checkToken();
                             <input type="text" name='k'  required="required" class="searchtext col-sm-10" placeholder="Search"/>
                             <button type="submit" class="btn btn-default col-sm-2 bton"><i class="fa fa-search"></i></button>
                           </form>
-            </div>
           </div>
         </div>
       </div>
@@ -139,17 +138,23 @@ checkToken();
                           <div class="btn-group pull-right">
                             <div class="btn-group">
                                <button type="button" class="btn btn-default dropdown-toggle country" data-toggle="dropdown">
-                                 Cars & Bikes
-                                  <span class="caret"></span>
+                                  <?php
+                                       $id = $_GET['id'];
+                                       $query = "SELECT * from categories where cat_id='{$id}'";
+                                       $res = mysqli_query($con,$query);
+                                       $row = mysqli_fetch_assoc($res);
+                                       echo $row['cat_name'];
+                                      echo "<span class='caret'></span>
                                </button>
-                               <ul class="dropdown-menu">
-                                  <li><a href="upload.php">Electronic materials</a></li>
-                                  <li><a href="upload_mobiles.php">mobiles</a></li>
-                                  <li><a href="upload_furnitures.php">Furnitures</a></li>
-                                  <li><a href="upload_fashion.php">Fashion</a></li>
-                                  <li><a href="upload_sports.php">Sports & Hobbies</a></li>
-                                  <li><a href="upload_estates.php">Real Estates</a></li>
-                                  <li><a href="upload_jobs.php">Jobs</a></li>
+                               <ul class='dropdown-menu'>";
+                                       $sql = "SELECT * from categories where cat_id!='{$id}'";
+                                       $r = mysqli_query($con,$sql);
+                                       while($gow = mysqli_fetch_assoc($r))
+                                       {
+                                        echo "<li><a href='upload.php?id=$id'>{$row['cat_name']}</a></li>";
+                                       }
+                                  ?>
+                              
                                </ul>
                             </div>
                           </div>
@@ -168,7 +173,7 @@ checkToken();
                                     $res = mysqli_query($con,$query);
                                     while($row = mysqli_fetch_assoc($res))
                                     {
-                                       if($row['refcat_id']==8)
+                                       if($row['refcat_id']==$id)
                                        echo "<option value='{$row['subcat_id']}'>{$row['subcat_name']}</option>";
                                     } 
                                 ?>
@@ -208,7 +213,7 @@ checkToken();
                                   <img id="image7" class="btn7 btnlocation hide" />
                                   <input type="file" name="img7"  id="inp8" class="hide" />
                                   <img id="image8" class="btn8 btnlocation hide" />
-                            </div> <br><br>
+                            </div><br><br>
                         <div class="form-group col-md-6">
                            <input type="text" name="name" class="form-control" required="required" placeholder="Seller Name">
                         </div> 
