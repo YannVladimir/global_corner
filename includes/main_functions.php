@@ -136,7 +136,33 @@
             header("location: order-login.php");
         }exit();        
     }
-
+    function answer_log_user_in($email, $password)
+    {
+        $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
+        $email = clearInput($email);
+        $password = clearInput($password);
+        $query="SELECT * from users where email ='{$email}' and password = '{$password}'";
+        $res = mysqli_query($con,$query);
+        if(mysqli_num_rows($res) >0)
+        {
+            $row = mysqli_fetch_assoc($res);
+            $_SESSION['id'] = $row['user_id'];
+            $_SESSION['username'] = $row['firstname'].' '.$row['lastname'];
+            $_SESSION['firstname'] = $row['firstname'];
+            $_SESSION['lastname'] = $row['lastname'];
+            $_SESSION['phone']=$row['phone'];
+            $_SESSION['email']=$email;
+            $_SESSION['priority']=$row['priority'];
+            $_SESSION['u'] = '0';
+            $user = $_SESSION['id'];
+            echo "<script>alert(' Your acount has been created successfully, click ok to proceed');window.location='contact-dealer.php';</script>";exit;
+        }
+        else
+        {
+            $_SESSION['message'] = "Wrong email/password combination";
+            header("location: answer-login.php");
+        }exit();        
+    }
     function log_user_out()
     {
     	session_destroy();
