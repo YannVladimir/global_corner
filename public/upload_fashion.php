@@ -139,7 +139,7 @@ checkToken();
                             <div class="btn-group">
                                <button type="button" class="btn btn-default dropdown-toggle country" data-toggle="dropdown">
                                   <?php
-                                       $id = 1;
+                                       $id = $_GET['id'];
                                        $query = "SELECT * from categories where cat_id='{$id}'";
                                        $res = mysqli_query($con,$query);
                                        $row = mysqli_fetch_assoc($res);
