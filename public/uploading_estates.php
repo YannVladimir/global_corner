@@ -9,6 +9,14 @@ $category = clearInput($_POST['subcategory']);
 $seller = clearInput($_POST['name']);
 $nam = clearInput($_POST['izina']);
 $price = clearInput($_POST['price']);
+if($price ==0)
+{
+    $price = "Negotiatable";
+}
+if(!$price)
+{
+  $price = "Negotiatable";
+}
 $details = clearInput($_POST['details']);
 $place = clearInput($_POST['location']);
 $contacts = clearInput($_POST['contact']);
