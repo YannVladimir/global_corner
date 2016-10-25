@@ -130,7 +130,7 @@ else
                           echo "<div class='msg'>";
                                  echo '<p>'.$_SESSION['info'].'</p>';
                                  unset($_SESSION['info']);                         
-                          echo "</div>";
+                          echo "</div><br><br>";
                         }
                       $id = $_SESSION['answer']; 
                       $sql = "SELECT * from vieworders where id ='{$id}'";
@@ -150,6 +150,8 @@ else
                         <li class='list-group-item'><strong>Seller contact number:</strong>{$row['phone']}</li>
                     </ul>
               </div></div>";
+              $cat = $row['cat_name'];
+              $id = $row['id'];
                      }
                    }
                    unset($_SESSION['answer']);
@@ -157,6 +159,43 @@ else
           ?>
                 </div>
         </div>
+        <div class="row">
+        <div class="col-sm-12">
+
+            <div class='recommended_items'><!--recommended_items-->
+            <h2 class='title text-center'>recommended orders</h2>
+           <?php 
+ 
+                           $queryyy = "SELECT * FROM vieworders where cat_name = '{$cat}' and id !='{$id}' and is_accepted = 1 order by post_id desc limit 4";
+      
+                            $res1 = mysqli_query($con,$queryyy);
+                            while($row = mysqli_fetch_assoc($res1))
+                            {
+                                echo " <div class='col-sm-3'>
+                      <div class='panel panel-default text-center'>
+                    <div class='panel-heading'>
+                        <h2 class='panel-title'><strong>{$row['name']} </strong></h2>
+                    </div>";
+                    echo "<ul class='list-group'>
+                        <li class='list-group-item'><strong></strong>{$row['details']}</li>
+                        <li class='list-group-item'><strong></strong>{$row['place']}</li>
+                        <li class='list-group-item'><strong></strong>{$row['up_date']}</li>
+                        <li class='list-group-item'>
+                          <form action='contact-dealer.php' method='GET'>
+                            <input type='text' name='id' value='{$row['id']}' class='hidden'>
+                             <button type='submit' class='btn btn-default bton'>Answer me</button>
+                          </form>
+                        </li>
+                    </ul>
+              </div></div>";}
+                  echo "</div>";
+
+            ?>
+        </div>
+      </div>  
+      </div>
+
+      </div>
   </section>
   
   <br><br><br><br>
