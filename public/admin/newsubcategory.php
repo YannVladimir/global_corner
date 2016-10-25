@@ -1,10 +1,10 @@
- <?php 
- ini_set('display_startup_errors',1);
+<?php 
+ini_set('display_startup_errors',1);
 ini_set('display_errors',1);
 error_reporting(E_ALL);
 session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
-include('../includes/main_functions.php');
+include('../../includes/main_functions.php');
 		$categoryname = $_POST['name'];
 		$ref = $_POST['ref'];
 		$query = "SELECT * FROM subcategories ";
@@ -59,8 +59,8 @@ include('../includes/main_functions.php');
 		    }
 		
 	    }
-		
-		$res = $cat->insertsubCat($ref,$categoryname,$photo);
+		$quer = "INSERT INTO subcategories (refcat_id,subcat_name,subcat_image) values ('{$ref}','{$categoryname}','{$photo}')";
+		$res = mysqli_query($con,$quer);
 		if($res)
 			{
                 echo "<script>alert(' Sub_Category created successfully ');window.location='dashboard.php';</script>";

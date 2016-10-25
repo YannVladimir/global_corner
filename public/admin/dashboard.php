@@ -291,7 +291,7 @@
                             </div>
                             <a href="electronics.php">
                                 <div class="panel-footer">
-                                    <span class="pull-left">Electronic materials</span>
+                                    <span class="pull-left">Electronics</span>
                                     <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
