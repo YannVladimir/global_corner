@@ -143,7 +143,7 @@ else
                       $res = mysqli_query($con,$sql);
                       while($row = mysqli_fetch_assoc($res)){
                         if($row['is_accepted']==1){
-                      echo " <div class='col-sm-6'>
+                      echo " <div>
                       <div class='panel panel-default text-center'>
                     <div class='panel-heading'>
                         <h2 class='panel-title'><strong>{$row['name']} </strong></h2>
@@ -153,7 +153,7 @@ else
                         <li class='list-group-item'><strong>Location:</strong>{$row['place']}</li>
                         <li class='list-group-item'><strong>Published on:</strong>{$row['up_date']}</li>
                         <li class='list-group-item'><strong>Seller email:</strong>{$row['email']}</li>
-                        <li class='list-group-item'><strong>Seller contact number:</strong>{$row['contacs']}</li>
+                        <li class='list-group-item'><strong>Seller contact number:</strong>{$row['phone']}</li>
                     </ul>
               </div></div>";
                      }
