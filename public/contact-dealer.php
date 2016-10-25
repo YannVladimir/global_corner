@@ -12,13 +12,13 @@ if (isset($_SESSION['id']))
 {
     if(!isset($_SESSION['answer']))
     {
-      $_SESSION['answer']=$_GET['id'];
+      $_SESSION['answer']="{$_GET['id']}";
     }
     $_SESSION['info']="View the order details bellow, and you can contact the seller through email or phone call";
 }
 else
 {
-  $_SESSION['answer']=$_GET['id'];
+  $_SESSION['answer']="{$_GET['id']}";
   echo "<script>alert('To answer this order you need an acount with us, click ok to proceed');window.location='answer-login.php';</script>";exit;
 }
 ?>
