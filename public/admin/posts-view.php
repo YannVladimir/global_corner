@@ -15,7 +15,7 @@ while($row = mysqli_fetch_assoc($res))
 		require('estate-post.php');
 		exit;
 	}
-	elseif ($row['refcat_id'] == 8)
+	elseif ($row['refcat_id'] == 7)
 	{
 		require('job-post.php');
 		exit;

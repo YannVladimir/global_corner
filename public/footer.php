@@ -74,8 +74,8 @@
 					<div class="col-sm-3 col-sm-offset-1">
 						<div class="single-widget">
 							<h2>Stay In TOuch</h2>
-							<form action="#" method="POST" class="searchform">
-								<input type="text" placeholder="Your email address" />
+							<form action="save-email.php" method="POST" class="searchform">
+								<input type="email" required="required" email="email" placeholder="Your email address" name='email'/>
 								<button type="submit" name="subimting" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
 								<p>Get the most recent updates from <br />our site and be updated your self...</p>
 							</form>
