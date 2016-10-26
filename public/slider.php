@@ -1,7 +1,8 @@
 <section id="slider"><!--slider-->
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-12">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-6">
 					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
 						<ol class="carousel-indicators">
 							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
@@ -24,16 +25,14 @@
 
                                    if($v==1){
                                      echo "<div class='item active'>
-                                     <div class='col-sm-2'></div>
-								     <div class='col-sm-4'> 
+								     <div class='col-sm-6'> 
 									<h1><span>250</span> Trade</h1>
 									<h2>{$row['cat_name']} category </h2>";
 									$v = 2;
                                     }
                                     else{
                                 	    echo "<div class='item'>
-                                	    <div class='col-sm-2'></div>
-								       <div class='col-sm-4'> 
+								       <div class='col-sm-6'> 
 									   <h1><span>250</span> Trade</h1>
 									   <h2>{$row['cat_name']} category</h2>";
                                     }
@@ -61,6 +60,7 @@
 					</div>
 					
 				</div>
+				
 			</div>
 		</div>
 	</section><!--/slider-->
