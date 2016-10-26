@@ -1,8 +1,8 @@
 <section id="slider"><!--slider-->
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-2">
-                  <div class="left-sidebar">
+				<div class="col-sm-3">
+                  <div class="right-sidebar">
 						<h2>Categories</h2>
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
 							<?php 
@@ -49,7 +49,7 @@
 						
 					</div>
 				</div>
-				<div class="col-sm-8">
+				<div class="col-sm-7">
 					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
 						<ol class="carousel-indicators">
 							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
@@ -72,14 +72,14 @@
 
                                    if($v==1){
                                      echo "<div class='item active'>
-								     <div class='col-sm-6'> 
+								     <div class='col-sm-5'> 
 									<h1><span>250</span> Trade</h1>
 									<h2>{$row['cat_name']} category </h2>";
 									$v = 2;
                                     }
                                     else{
                                 	    echo "<div class='item'>
-								       <div class='col-sm-6'> 
+								       <div class='col-sm-5'> 
 									   <h1><span>250</span> Trade</h1>
 									   <h2>{$row['cat_name']} category</h2>";
                                     }
@@ -87,7 +87,7 @@
                                     echo "<a href='category.php?id={$row['cat_id']}'>
 									<button type='button' class='btn btn-default get'>Visit Category</button></a>
 								</div>
-								<div class='col-sm-6 slidersizing'><br>
+								<div class='col-sm-7 slidersizing'><br>
 								<a href='category.php?id={$row['cat_id']}'>
 									<img src='assets/images/categories/{$row['cat_image']}' class='girl img-responsive' alt='' />
 				                </a>
