@@ -68,14 +68,14 @@
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">
                                          <?php 
-                                           $query = "SELECT * FROM items";
+                                           $query = "SELECT * FROM saved_emails";
                                            $res = mysqli_query($con,$query);
                                            $count = 0;
                                            $a = 0;
                                            while($row = mysqli_fetch_assoc($res))
                                            {
                                             $count++;
-                                            if($row['is_accepted']==0){
+                                            if($row['seen']==0){
                                             $a++;}     
                                            }
                                            echo " $a";
@@ -89,9 +89,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="saved_emails.php">
                                 <div class="panel-footer">
-                                    <span class="pull-left">Emails in touch</span>
+                                    <span class="pull-left">People in touch</span>
                                     <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
@@ -141,7 +141,7 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="panel panel-green">
                             <div class="panel-heading">
-                                <div class="row">
+                                <div class="row"> 
                                     <div class="col-xs-3">
                                         <i class="fa fa-envelope fa-5x"></i>
                                     </div>

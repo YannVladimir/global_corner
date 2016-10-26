@@ -15,7 +15,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h1 class="page-header">
-                            Orders
+                            Real Estates
                         </h1>
                         </div>
                         <!-- /.panel-heading -->
@@ -28,23 +28,24 @@
                                             <th>Title</th>
                                             <th>Category</th>
                                             <th>Details</th>
-                                            <th>User</th>
+                                            <th>Price</th>
+                                            <th>location</th>
                                             <th>View Details</th>
                                             <th>Accept Post</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                        <?php 
-                                           $query = "SELECT * FROM vieworders order by id desc";
+                                           $query = "SELECT * FROM items where refcat_id = 5 order by post_id desc";
                                            $res = mysqli_query($con,$query);
                                            while($row = mysqli_fetch_assoc($res))
                                            {
                                             if($row['is_accepted']== 0)
                                             {
-                                              echo "<tr class='odd gradeX'><td>{$row['up_date']}</td><td>{$row['name']}</td><td>{$row['cat_name']}</td><td>{$row['details']}</td><td class='center'>{$row['user']}</td><td class='center'><form action='order-view.php' method='GET'><input type='text' name='id' value='{$row['id']}' class='hidding'/><input type='submit' value='view'/></form></td><td><form action='order-accept.php' method='GET'><input type='text' name='id' value='{$row['id']}' class='hidding'/><input type='submit' value='Accept'/></form></td></tr>";
+                                              echo "<tr class='odd gradeX'><td>{$row['uploaded_date']}</td><td>{$row['name']}</td><td>{$row['subcat_name']}</td><td>{$row['details']}</td><td class='center'>{$row['price']}</td><td class='center'>{$row['place_name']}</td><td class='center'><form action='posts-view.php' method='GET'><input type='text' name='id' value='{$row['post_id']}' class='hidding'/><input type='submit' value='view'/></form></td><td><form action='posts-accept.php' method='GET'><input type='text' name='id' value='{$row['post_id']}' class='hidding'/><input type='submit' value='Accept'/></form></td></tr>";
                                             }
                                             else{
-                                               echo "<tr class='odd gradeX'><td>{$row['up_date']}</td><td>{$row['name']}</td><td>{$row['cat_name']}</td><td>{$row['details']}</td><td class='center'>{$row['user']}</td><td class='center'><form action='order-view.php' method='GET'><input type='text' name='id' value='{$row['id']}' class='hidding'/><input type='submit' value='view'/></form></td><td>Done</td></tr>";
+                                               echo "<tr class='odd gradeX'><td>{$row['uploaded_date']}</td><td>{$row['name']}</td><td>{$row['subcat_name']}</td><td>{$row['details']}</td><td class='center'>{$row['price']}</td><td class='center'>{$row['place_name']}</td><td class='center'><form action='posts-view.php' method='GET'><input type='text' name='id' value='{$row['post_id']}' class='hidding'/><input type='submit' value='view'/></form></td><td>seen</td></tr>";
                                               }   
                                            }
 

@@ -63,7 +63,7 @@ include('../../includes/main_functions.php');
 		$res = mysqli_query($con,$quer);
 		if($res)
 			{
-                echo "<script>alert(' Sub_Category created successfully ');window.location='dashboard.php';</script>";
+                echo "<script>alert(' Sub_Category created successfully ');window.location='new-subcategory.php';</script>";
 			}
 		else
 			echo "<script>alert(' Error, please try again ');window.location='new-subcategory.php';</script>";exit;

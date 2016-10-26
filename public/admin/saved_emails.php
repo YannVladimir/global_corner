@@ -15,7 +15,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h1 class="page-header">
-                            Orders
+                            People in touch
                         </h1>
                         </div>
                         <!-- /.panel-heading -->
@@ -24,27 +24,23 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Uploaded date</th>
-                                            <th>Title</th>
-                                            <th>Category</th>
-                                            <th>Details</th>
-                                            <th>User</th>
-                                            <th>View Details</th>
-                                            <th>Accept Post</th>
+                                            <th>Date</th>
+                                            <th>Email</th>
+                                            <th>Checked</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                        <?php 
-                                           $query = "SELECT * FROM vieworders order by id desc";
+                                           $query = "SELECT * FROM saved_emails order by id desc";
                                            $res = mysqli_query($con,$query);
                                            while($row = mysqli_fetch_assoc($res))
                                            {
-                                            if($row['is_accepted']== 0)
+                                            if($row['seen']== 0)
                                             {
-                                              echo "<tr class='odd gradeX'><td>{$row['up_date']}</td><td>{$row['name']}</td><td>{$row['cat_name']}</td><td>{$row['details']}</td><td class='center'>{$row['user']}</td><td class='center'><form action='order-view.php' method='GET'><input type='text' name='id' value='{$row['id']}' class='hidding'/><input type='submit' value='view'/></form></td><td><form action='order-accept.php' method='GET'><input type='text' name='id' value='{$row['id']}' class='hidding'/><input type='submit' value='Accept'/></form></td></tr>";
+                                              echo "<tr class='odd gradeX'><td>{$row['up_date']}</td><td>{$row['email']}</td><td><form action='email-accept.php' method='GET'><input type='text' name='id' value='{$row['id']}' class='hidding'/><input type='submit' value='Accept'/></form></td></tr>";
                                             }
                                             else{
-                                               echo "<tr class='odd gradeX'><td>{$row['up_date']}</td><td>{$row['name']}</td><td>{$row['cat_name']}</td><td>{$row['details']}</td><td class='center'>{$row['user']}</td><td class='center'><form action='order-view.php' method='GET'><input type='text' name='id' value='{$row['id']}' class='hidding'/><input type='submit' value='view'/></form></td><td>Done</td></tr>";
+                                               echo "<tr class='odd gradeX'><td>{$row['up_date']}</td><td>{$row['email']}</td><td>Checked</td></tr>";
                                               }   
                                            }
 
