@@ -119,7 +119,7 @@
             $r = mysqli_query($con,$sql);
             if($r)
             {
-               $query = "SELECT * from orders where tittle = '{$izina}' and details = '{$details}' and user = '{$user}' ";
+               $query = "SELECT * from orders where name = '{$izina}' and details = '{$details}' and user = '{$user}' ";
                $b = mysqli_query($con,$query);
                $c = mysqli_fetch_assoc($b);
                $id = $c['id'];
