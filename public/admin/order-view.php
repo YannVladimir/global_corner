@@ -33,7 +33,7 @@
                            echo"<li class='list-group-item'><strong>Order Id: </strong> {$row['id']}</li>
                            <li class='list-group-item'><strong>Title: </strong> {$row['name']}</li>
                         <li class='list-group-item'><strong>Category: </strong> {$row['cat_name']}</li>
-                        <li class='list-group-item'><strong>Details: </strong> {$row['Details']}</li>
+                        <li class='list-group-item'><strong>Details: </strong> {$row['details']}</li>
                         <li class='list-group-item'><strong> Locaton: </strong> {$row['place']}</li>
                            <li class='list-group-item'><strong>User: </strong> {$row['user']}</li>
                         <li class='list-group-item'><strong> Name: </strong> {$row['firstname']} {$row['lastname']}</li>
