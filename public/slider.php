@@ -1,7 +1,54 @@
 <section id="slider"><!--slider-->
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-2"></div>
+				<div class="col-sm-2">
+                  <div class="left-sidebar">
+						<h2>Categories</h2>
+						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
+							<?php 
+                                            $c = 1;
+                                            $query = "SELECT * FROM categories ";
+                                            $res = mysqli_query($con,$query);
+                                            while($row = mysqli_fetch_assoc($res))
+                                            {
+                                            if($row['cat_id']==$c)
+                                            {
+                                               echo "<div class='panel panel-default'>
+                <div class='panel-heading'>
+                  <h4 class='panel-title'>
+                  <a data-toggle='collapse' data-parent='#accordian' href='#{$row['cat_id']}'>
+                      <span class='badge pull-right'><i class='fa fa-plus'></i></span>
+                      {$row['cat_name']}
+                         </a></h4>
+                </div><div id='$c' class='panel-collapse collapse'>
+                  <div class='panel-body'>
+                    <ul>";$a = $row['cat_name'];
+                    $queryy = "SELECT * FROM amacategories ";
+                    $re = mysqli_query($con,$queryy);
+                    while($ro = mysqli_fetch_assoc($re))
+                                              {
+                                              if($ro['refcat_id']==$c)
+                                              {
+                                                   echo "<li><a href='sub-category.php?id={$ro['subcat_id']}'>*   {$ro['subcat_name']} </a></li>";
+                                                   
+                                              }
+                                              }
+                                              
+                                            }
+                                            
+                                            echo "<li><a href='category.php?id={$c}'>*   All in {$a} </a></li></ul>
+                  </div>
+                </div>
+              </div>";
+              $c = $c+1;
+                                            
+                                            } 
+                                        ?>
+							
+						</div><!--/category-productsr-->
+						
+					</div>
+				</div>
 				<div class="col-sm-8">
 					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
 						<ol class="carousel-indicators">
