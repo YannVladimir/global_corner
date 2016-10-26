@@ -21,7 +21,7 @@ if(isset($_GET['var']) == "logout")
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sell it | Admin panel</title> 
+    <title>250 Trade | Admin panel</title> 
     
     
    <link href="../assets/css/yann.min.css" rel="stylesheet">
