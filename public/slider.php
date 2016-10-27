@@ -74,17 +74,17 @@
                                      echo "<div class='item active'>
 								     <div class='col-sm-5'> 
 									<h1><span>250</span> Trade</h1>
-									<h2>{$row['cat_name']}</h2>";
+									<h2>{$row['cat_name']} </div> </h2>";
 									$v = 2;
                                     }
                                     else{
                                 	    echo "<div class='item'>
 								       <div class='col-sm-5'> 
 									   <h1><span>250</span> Trade</h1>
-									   <h2>{$row['cat_name']}</h2></div>";
+									   <h2>{$row['cat_name']} </div></h2>";
                                     }
                                     
-                                    echo "
+                                    echo"
 								<div class='col-sm-7 slidersizing'><br>
 								<a href='category.php?id={$row['cat_id']}'>
 									<img src='assets/images/categories/{$row['cat_image']}' class='girl img-responsive' alt='' />
