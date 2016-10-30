@@ -93,7 +93,7 @@ if(isset($_GET['var']) == "logout")
                               <?php
                                 $query = "SELECT * from categories";
                                 $res = mysqli_query($con,$query);
-                                while($row = maysqli_fetch_assoc($res))
+                                while($row = mysqli_fetch_assoc($res))
                                 {
                                     echo "<option value='{$row['cat_id']}'> {$row['cat_name']}</option>";
                                 }
