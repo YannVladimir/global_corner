@@ -28,11 +28,17 @@ if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
   	}
   }
   $date = date("Y-m-d");
-  $queryy = "INSERT INTO users (firstname,lastname,email,phone,password,joined) values ('{$firstname}','{$lastname}','{$email}','{$number}','{$password}','{$date}')";
+  $confirm = rand();
+  $queryy = "INSERT INTO users (firstname,lastname,email,phone,password,joined,confirm_code) values ('{$firstname}','{$lastname}','{$email}','{$number}','{$password}','{$date}','{$confirm}')";
   $res = mysqli_query($con,$queryy);
   if($res)
   {
-    log_user_in($email, $password);
+    $_SESSION['e'] = $email;
+    $_SESSION['p'] = $password;
+    $_SESSION['c'] = $confirm;
+    require('confirm.php');
+    exit;
+    //log_user_in($email, $password);
 
   } 
   else
