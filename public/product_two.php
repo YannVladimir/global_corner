@@ -41,8 +41,8 @@ require_once ('../includes/main_functions.php');
         
         .sizingimagesmax{
            display: block;
-           max-height: 100%;
-           max-width: 100%;
+           max-height: 300px;
+           max-width: 300px;
            width:auto;
            height:auto;
 
