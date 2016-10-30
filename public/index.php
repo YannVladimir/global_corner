@@ -87,7 +87,10 @@ if(isset($_GET['var']) == "logout")
                     <div class="col-sm-4">
                         <div class="search_box">
                           <form action='search_results.php' method='GET'>
-                            <input type="text" name='k'  required="required" class="col-sm-10" placeholder="Search"/>
+                            <select class="col-sm-3">
+                              <option>All categories</option>
+                            </select>
+                            <input type="text" name='k'  required="required" class="col-sm-7" placeholder="Search"/>
                             <button type="submit" class="btn btn-default col-sm-2 bton"><i class="fa fa-search"></i></button>
                           </form>
                         </div>
