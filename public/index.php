@@ -88,7 +88,7 @@ if(isset($_GET['var']) == "logout")
                         <div class="search_box">
                           <form action='search_results.php' method='GET'>
                             <div class="col-sm-1"></div>
-                            <select class="col-sm-4" style="max-height:15px;">
+                            <select class="col-sm-4" style="height:15px;">
                               <option>All categories</option>
                               <?php
                                 $q = "SELECT * from categories";
