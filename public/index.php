@@ -58,7 +58,7 @@ if(isset($_GET['var']) == "logout")
     <div class="header-bottom"><!--header-bottom-->
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-8">
+                    <div class="col-sm-7">
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                                 <span class="sr-only">Toggle navigation</span>
@@ -84,13 +84,13 @@ if(isset($_GET['var']) == "logout")
                             </ul>
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-5">
                         <div class="search_box">
                           <form action='search_results.php' method='GET'>
-                            <select class="col-sm-3">
+                            <select class="col-sm-4">
                               <option>All categories</option>
                             </select>
-                            <input type="text" name='k'  required="required" class="col-sm-7" placeholder="Search"/>
+                            <input type="text" name='k'  required="required" class="col-sm-6" placeholder="Search"/>
                             <button type="submit" class="btn btn-default col-sm-2 bton"><i class="fa fa-search"></i></button>
                           </form>
                         </div>
