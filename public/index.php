@@ -95,7 +95,7 @@ if(isset($_GET['var']) == "logout")
                                 $res = mysqli_query($con,$query);
                                 while($row = maysqli_fetch_assoc($res))
                                 {
-                                    echo "<option value='{$row[cat_id]}'> {$row[cat_name]}</option>";
+                                    echo "<option value='{$row['cat_id']}'> {$row['cat_name']}</option>";
                                 }
                               ?>
                             </select>
