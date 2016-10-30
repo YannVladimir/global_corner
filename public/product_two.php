@@ -38,10 +38,13 @@ require_once ('../includes/main_functions.php');
       	font-size: 20px;
       }
     
-        
+        .imagediv{
+          width:100%;
+          height:100%;
+        }
         .sizingimagesmax{
             max-width: 100%;
-            max-height:100%;
+            max-height:100% auto;
             display: inline-block; /* Instead of display: block; */
             margin: 0 auto;
             vertical-align: middle;
@@ -150,11 +153,11 @@ require_once ('../includes/main_functions.php');
 
             <div class='col-sm-6'>
               <div class='view-product'>
-                    <div class='' id='photo1'>
+                    <div class='imagediv' id='photo1'>
                         <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt=''/></div>
               <div id='photo1next' class='jssora11r' style='top: 123px; right: 0px;'></div>
            <div class='displaynone' id='photo2'>
-            <img class='sizingimagesmax' src='assets/images/posts/{$row['photo1']}' alt=''/></div>
+            <img class='sizingimagesmax imagediv' src='assets/images/posts/{$row['photo1']}' alt=''/></div>
             <div id='photo2prev' class='jssora11l' style='top: 123px; display:none; left: 0px;'></div>    
           
                 <h3>Verified</h3>
