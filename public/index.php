@@ -47,6 +47,9 @@ if(isset($_GET['var']) == "logout")
       }
       .fon{
         font-size: 20px;
+        border-right-style: solid;
+        border-right-width:1px;
+        border-right-color:black;
       }
     </style>
 </head><!--/head-->
@@ -88,7 +91,7 @@ if(isset($_GET['var']) == "logout")
                         <div class="search_box">
                           <form action='search_results.php' method='GET'>
                             <div class="col-sm-1"></div>
-                            <select class="col-sm-4" style="height:35px;">
+                            <select class="col-sm-4" style="max-height:36px;">
                               <option>All categories</option>
                               <?php
                                 $q = "SELECT * from categories";
