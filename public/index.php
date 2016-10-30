@@ -90,6 +90,14 @@ if(isset($_GET['var']) == "logout")
                             <div class="col-sm-1"></div>
                             <select class="col-sm-4">
                               <option>All categories</option>
+                              <?php
+                                $query = "SELECT * form categories";
+                                $res = mysqli_query($con,$query);
+                                while($row = maysqli_fetch_assoc($res))
+                                {
+                                    echo "<option value='{$row[cat_id]}'> {$row[cat_name]}</option>";
+                                }
+                              ?>
                             </select>
                             <input type="text" name='k'  required="required" class="col-sm-6" placeholder="Search"/>
                             <button type="submit" class="btn btn-default col-sm-1 bton"><i class="fa fa-search"></i></button>
