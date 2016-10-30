@@ -91,7 +91,7 @@ if(isset($_GET['var']) == "logout")
                             <select class="col-sm-4">
                               <option>All categories</option>
                               <?php
-                                $query = "SELECT * form categories";
+                                $query = "SELECT * from categories";
                                 $res = mysqli_query($con,$query);
                                 while($row = maysqli_fetch_assoc($res))
                                 {
