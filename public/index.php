@@ -88,14 +88,14 @@ if(isset($_GET['var']) == "logout")
                         <div class="search_box">
                           <form action='search_results.php' method='GET'>
                             <div class="col-sm-1"></div>
-                            <select class="col-sm-4">
+                            <select class="col-sm-4" style="max-height:15px;">
                               <option>All categories</option>
                               <?php
-                                $query = "SELECT * from categories";
-                                $res = mysqli_query($con,$query);
+                                $q = "SELECT * from categories";
+                                $res = mysqli_query($con,$q);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
-                                    echo "<option value='{$row['cat_id']}'> {$row['cat_name']}</option>";
+                                    echo "<option value='{$row['cat_id']}'>{$row['cat_name']}</option>";
                                 }
                               ?>
                             </select>
