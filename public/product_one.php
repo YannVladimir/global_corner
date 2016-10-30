@@ -33,7 +33,11 @@ require_once ('../includes/main_functions.php');
     <link rel="apple-touch-icon-precomposed" href="assets/images/ico/apple-touch-icon-57-precomposed.png">
     <style type="text/css">
         .sizingimagesmax{
-        	padding: 37px;
+           display: block;
+           max-height: 100%;
+           max-width: 100%;
+           width:auto;
+           height:auto;
 
         }
         .fon{
@@ -109,7 +113,7 @@ require_once ('../includes/main_functions.php');
                               echo "<div class='product-details'><!--product-details-->
 						<div class='col-sm-6'>
               <div class='product-information'><!--/product-information-->
-                <!--<img src='assets/images/product-details/new.jpg' class='newarrival' alt='' />-->
+                <!--<img src='assets/images/product-details/new.jpg' class='newarrival sizing' alt='' />-->
                 <span>
                   <span>{$row['name']}</span>
                 </span>

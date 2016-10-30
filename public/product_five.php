@@ -37,8 +37,13 @@ require_once ('../includes/main_functions.php');
         font-size: 20px;
       }
     
+       
         .sizingimagesmax{
-          padding: 37px;
+           display: block;
+           max-height: 100%;
+           max-width: 100%;
+           width:auto;
+           height:auto;
 
         }
         .displaynone{
