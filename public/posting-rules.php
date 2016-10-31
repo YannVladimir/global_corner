@@ -128,14 +128,14 @@ checkToken();
 
   <section id="cart_items">
     <div class="container">
-          <div class="col-sm-3"></div>
+          <div class="col-sm-2"></div>
         <div class="col-sm-8 padding-right">
             <div class="contact-form align-center">
               <br>
               <h2 class="title text-center">Posting rules</h2>
               <div class="status alert alert-success" style="display: none"></div>
                   <p>
-                  	<h3 class="title">250trade'S AD LISTING POLICIES ARE INTENDED TO:</h3>
+                  	<h3 class="title">250TRADE'S AD LISTING POLICIES ARE INTENDED TO:</h3>
                   	<ol>
                   		<li>Support government laws and regulations</li>
                         <li>Minimize risks to both traders</li>
@@ -143,10 +143,10 @@ checkToken();
                         <li>Protect intellectual property rights</li>
                         <li>Provide an easy and enjoyable trade experience</li>
                         <li>Support the values of the 250trade Community</li>
-                    </ol><br><br>
+                    </ol><br>
                   <p>
-                  	<h3 class="title">It' s a must for every seller to know and follow:</h3>
-                    <ol>
+                  	<h2 class="title text-center">It' s a must for every seller to know and follow:</h2>
+                    <ol><br>
                   		<li><h3 class="title">Rules about prohibited and restricted items</h3>
                            <ol>
                              <li>Alcohol</li>
