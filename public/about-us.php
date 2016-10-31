@@ -104,7 +104,7 @@ checkToken();
             <div class="mainmenu pull-left">
               <ul class="nav navbar-nav ">
                 <li><a href="home.php" class="fon">Home</a></li>
-                <li><a href="upload.php" class="active fon">Sell</a></li>
+                <li><a href="upload.php" class="fon">Sell</a></li>
                 <li><a href="categories.php" class="fon">Buy</a></li>
                 <li class="dropdown"><a href="#">Odering<i class="fa fa-angle-down"></i></a>
                     <ul role="menu" class="sub-menu"> 
