@@ -133,7 +133,11 @@ checkToken();
 							<input type="password" placeholder=" Re-type Password" required="required" equalTo="password" name="repassword"/>
 							<input type="text" class='hidden' name="_token" value="<?php echo $_SESSION['_token']; ?>">
 							<button type="submit" class="btn btn-default bton">Signup</button>
-						</form>
+						  <br>
+              By signing-up you agree with our <a href='terms-of-use.php' target='blank' style='color=#3AACEB'>Terms of use </a>
+                    
+            </form>
+
 					</div><!--/sign up form-->
 				</div>
 			</div>
