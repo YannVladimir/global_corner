@@ -142,7 +142,7 @@ checkToken();
                       he or she will contact you through your mobile or your email address.
                   </p>
                   <br><br>
-                  <p class="text-center">If you want to buy something - here you will find interesting items cheaper than in the store, <br> If you want to sell something - here you will find many interesting customers than anywhere else<br><br>Start buying and selling in the most easy way on 250trade.com.
+                  <p class="text-center">If you want to buy something - here you will find interesting items cheaper than in the store, <br><br><br> If you want to sell something - here you will find many interesting customers than anywhere else.<br><br><br>Start buying and selling in the most easy way on 250trade.com.
                   </p>
             </div>
           </div>
