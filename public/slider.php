@@ -1,5 +1,5 @@
 <section id="slider"><!--slider-->
-		<div class="container">
+		<div class="container"><br><br>
 			<div class="row">
 				<div class="col-sm-3">
                   <div class="right-sidebar">
@@ -108,4 +108,4 @@
 
 			</div>
 		</div>
-	</section><!--/slider--><br><br><br>
+	</section><!--/slider--><br>
