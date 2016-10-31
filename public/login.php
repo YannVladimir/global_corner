@@ -7,7 +7,7 @@ require_once ('../includes/main_functions.php');
 //checkUser();
 if (isset($_POST['done']))
 {
-	answer_log_user_in($_POST['email'],$_POST['password']); 
+	log_user_in($_POST['email'],$_POST['password']); 
 }
 checkToken();
 ?>
