@@ -42,7 +42,7 @@ checkToken();
 .message{
       background-color: #90DC23;
       color:white;
-      font-size: 20px;
+      font-size: 18px;
       border-bottom-right-radius: 50%;
       border-bottom-left-radius: 50%;
       border-top-left-radius: 50%;

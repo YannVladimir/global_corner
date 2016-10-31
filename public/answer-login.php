@@ -40,9 +40,13 @@ checkToken();
       	font-size: 20px;
       }
     .message{
-      background-color: #90DC23;
+      background-color: #3AACEB;
       color:white;
-      font-size: 20px;
+      font-size: 18px;
+      border-bottom-right-radius: 50%;
+      border-bottom-left-radius: 50%;
+      border-top-left-radius: 50%;
+      border-top-right-radius: 50%;
     }
     </style>
 </head><!--/head-->
