@@ -10,7 +10,7 @@ require_once ('../includes/main_functions.php');
 if(checkIsStringSetPost('email'))
 {
 $email = clearInput($_POST['email']);
-$date = new date("Y-m-d");
+$date =  date("Y-m-d");
 $query = "INSERT INTO saved_emails (email,up_date) values ('{$email}','{$date}')";
 	$res = mysqli_query($con,$query);
 	if($res)

@@ -41,7 +41,7 @@
 								<!--<li><a href="#">Online Help</a></li>-->
 								<li><a href="upload.php">Sell</a></li>
 								<li><a href="categories.php">Buy</a></li>
-                                <li><a href="order.php">Order now</a></li>
+                                <li><a href="order.php">Make order</a></li>
                                 <li><a href="orders.php">Orders</a></li>
                                <!-- <li><a href="#">Free shipping</a></li>-->
 								<li><a href="contact_us.php">Contact Us</a></li>
