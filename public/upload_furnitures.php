@@ -230,6 +230,9 @@ checkToken();
                            <input type="text" class='hidden' name="_token" value="<?php echo $_SESSION['_token']; ?>">
                            <input type="submit" name="submit" class="btn btn-primary pull-right" value="Submit">
                         </div>
+                        <font class="pull-right">
+                         By posting your post you agree with our <a href='terms-of-use.php' target='blank' style='color=#3AACEB'>Terms of use </a> and <a href='posting-rules.php' target='blank' style='color=#3AACEB'>Posting rules </a>
+                        </font>
                     </form>
                   </div>
                   <div id="jobbs" class="notshowing">
