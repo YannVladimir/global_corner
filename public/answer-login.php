@@ -87,16 +87,20 @@ checkToken();
 	<section id="form"><!--form-->
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-4 col-sm-offset-1">
-					<?php
+        <div class="col-sm-12">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6"><?php
                         if(isset($_SESSION['message']))
                         {
-                        	echo "<div class='msg'>";
+                          echo "<div class='msg'>";
                                  echo '<p>'.$_SESSION['message'].'</p>';
-                                 unset($_SESSION['message']);                       	
-                         	echo "</div>";
+                                 unset($_SESSION['message']);                         
+                          echo "</div>";
                         }
-					?>
+          ?></div>
+        </div>
+				<div class="col-sm-4 col-sm-offset-1">
+					
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
 						<form action="answer-login.php" method="POST">
