@@ -146,7 +146,7 @@ checkToken();
                     </ol><br>
                   <p>
                   	<h2 class="title text-center">It' s a must for every seller to know and follow:</h2>
-                    <ol><br>
+                    <ol>
                   		<li><h3 class="title">Rules about prohibited and restricted items</h3>
                            <ol>
                              <li>Alcohol</li>

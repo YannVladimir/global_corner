@@ -53,7 +53,7 @@
 						<div class="single-widget">
 							<h2>Policies</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">Terms of Use</a></li>
+								<li><a href="terms-of-use.php">Terms of Use</a></li>
 								<li><a href="posting-rules.php">Posting Rules</a></li>
 								<!--<li><a href="#">Privacy $ Policies</a></li>-->
 							</ul>
