@@ -3,7 +3,7 @@
 			<div class="row">
 				<div class="col-sm-3">
                   <div class="right-sidebar">
-						<h2 class="title text-center">Categories</h2>
+						<h2 class="title text-center"></h2>
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
 							<?php 
                                             $c = 1;
