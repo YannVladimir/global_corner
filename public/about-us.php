@@ -134,14 +134,15 @@ checkToken();
               <br>
               <h2 class="title text-center">About Us</h2>
               <div class="status alert alert-success" style="display: none"></div>
-                  <p>
+                  <p class="text-center">
                      250trade.com is a free Rwandan classifieds site. Sell anything from used cars to mobiles, furniture, laptops, houses and more.Submit ads for free and without creating an account.</p>
-                  <p>
+                  <br><br>
+                  <p class="text-center">
                       Make an order of something you want to buy or to rent, then the seller will come to know you as a buyer through the website and
                       he or she will contact you through your mobile or your email address.
                   </p>
-
-                  <p>  If you want to buy something - here you will find interesting items cheaper than in the store, <br> If you want to sell something - here you will find many interesting customers,<br><br>. Start buying and selling in the most easy way on 250trade.com.
+                  <br><br>
+                  <p class="text-center">If you want to buy something - here you will find interesting items cheaper than in the store, <br> If you want to sell something - here you will find many interesting customers than anywhere else<br><br>Start buying and selling in the most easy way on 250trade.com.
                   </p>
             </div>
           </div>
