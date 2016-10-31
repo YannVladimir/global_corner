@@ -129,13 +129,13 @@ checkToken();
   <section id="cart_items">
     <div class="container">
           <div class="col-sm-3"></div>
-        <div class="col-sm-6 padding-right">
+        <div class="col-sm-8 padding-right">
             <div class="contact-form align-center">
               <br>
               <h2 class="title text-center">Posting rules</h2>
               <div class="status alert alert-success" style="display: none"></div>
                   <p>
-                  	<h3>250trade'S AD LISTING POLICIES ARE INTENDED TO:</h3>
+                  	<h3 class="title">250trade'S AD LISTING POLICIES ARE INTENDED TO:</h3>
                   	<ol>
                   		<li>Support government laws and regulations</li>
                         <li>Minimize risks to both traders</li>
@@ -145,9 +145,9 @@ checkToken();
                         <li>Support the values of the 250trade Community</li>
                     </ol><br><br>
                   <p>
-                  	<h3>It' s a must for every seller to know and follow:</h3>
+                  	<h3 class="title">It' s a must for every seller to know and follow:</h3>
                     <ol>
-                  		<li><h3>Rules about prohibited and restricted items</h3>
+                  		<li><h3 class="title">Rules about prohibited and restricted items</h3>
                            <ol>
                              <li>Alcohol</li>
                              <li>Adoption of Children & Babies</li>
@@ -177,7 +177,7 @@ checkToken();
                              <li>Wholesale/Bulk selling of Branded Products (Electronic Items/Mobiles)</li>
                            </ol>
                   		</li>
-                        <li><h3>Rules about intellectual property</h3>
+                        <li><h3 class="title">Rules about intellectual property</h3>
                               The following items are restricted or prohibited because they would potentially infringe on intellectual property rights:
                            <ol>
                              <li>Counterfeit items</li>
@@ -188,7 +188,7 @@ checkToken();
                              
                            </ol>
                         </li>
-                        <li><h3>Actions that are not allowed in listing product for sale</h3>
+                        <li><h3 class="title">Actions that are not allowed in listing product for sale</h3>
                            To promote a safe, fair and enjoyable experience, 250trade has established a set of rules and policies for item listings. You are requested, not to:
                            <ol>
                              <li>Post Duplicate Ad listings</li>
@@ -200,7 +200,7 @@ checkToken();
                              <li>Quote Unrealistic Price</li>
                            </ol>
                         </li>
-                        <li><h3>Miscellaneous info - Your listing, information, Advertisement</h3>
+                        <li><h3 class="title">Miscellaneous info - Your listing, information, Advertisement</h3>
                            <ol>
                              <li>Shall not be defamatory, trade libelous, unlawfully threatening or unlawfully harassing. Further shall not be fraudulent, misrepresenting, misleading or pertain to the sale of any illegal, stolen goods and or services which do not belong to you or you do not have the authority for.</li>
                              <li>Shall not contain any viruses, Trojan horses, worms or other computer programmes that may damage, detrimentally interfere with, surreptitiously intercept or expropriate any system, data or personal information.</li>
@@ -208,7 +208,7 @@ checkToken();
                              
                            </ol>
                         </li>
-                        <li><h3>Consequences of Breach of Listing Policy</h3>
+                        <li><h3 class="title">Consequences of Breach of Listing Policy</h3>
                             Users who violate the prohibited items policy and or the restricted items policy may be subject to the following actions
                             <ol>
                              <li>Permanent blacklisting from 250trade community</li>
