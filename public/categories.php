@@ -63,25 +63,24 @@ checkUser();
 								<li><a href="home.php" class="fon">Home</a></li>
                 <li><a href="upload.php" class="fon">Sell</a></li>
                 <li><a href="categories.php" class="active fon">Buy</a></li>
-                <li><a href="orders.php" class="fon">Orders</a></li>
-                <li><a href="order.php" class="fon">Order now</a></li>
+                <li class="dropdown"><a href="#">Odering<i class="fa fa-angle-down"></i></a>
+                    <ul role="menu" class="sub-menu"> 
+                        <li><a href="order.php" class="fon">Make order</a></li>
+                        <li><a href="orders.php" class="fon">View orders</a></li> 
+                    </ul>
+                </li>
                 <li><a href="contact_us.php" class="fon">Contact us</a></li>
                 
                             </ul>
                         </div>
                     </div>
-                    <div class="col-sm-3">
-                        <div class="search_box">
-                          <form action='search_results.php' method='GET'>
-                            <input type="text" name='k'  required="required" class="searchtext col-sm-10" placeholder="Search"/>
-                            <button type="submit" class="btn btn-default col-sm-2 bton"><i class="fa fa-search"></i></button>
-                          </form>
+                    <?php
+                      include('search.php');
+                    ?>
+                </div>
             </div>
-					</div>
-				</div>
-			</div>
-		</div><!--/header-bottom-->
-	</header><!--/header-->
+        </div><!--/header-bottom-->
+    </header><!--/header-->
 	
 	
 	<section>
