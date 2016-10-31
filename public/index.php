@@ -9,7 +9,7 @@ generateUser();
 if(isset($_GET['var']) == "logout")
 {
     log_user_out();
-}
+} 
 ?>
 <!DOCTYPE html>
 <html lang="en"> 
@@ -416,7 +416,7 @@ if(isset($_GET['var']) == "logout")
                             </div>  
                             </div>
                               </div>
-                                </div>";
+                                </div></div>";
                                     $h=$h+1;
                                     }
                                     
