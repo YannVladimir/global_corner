@@ -21,7 +21,7 @@ else
 {
   $f = $_GET['id'];
   $_SESSION['answer']=$f;
-  $_SESSION['message']="Please log in to your acount to view the post deatils, or you can create new acount if you don't have one ";
+  $_SESSION['message']="Please log in to your acount to view the post details, or you can create a new acount if you don't have one ";
   require('answer-login.php');
   exit;
 }
