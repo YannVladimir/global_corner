@@ -2,13 +2,12 @@
 ini_set('display_startup_errors',1);
 ini_set('display_errors',1);
 error_reporting(E_ALL);
-session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
-checkUser();
+//checkUser();
 if (isset($_POST['done']))
 {
-	log_user_in($_POST['email'],$_POST['password']); 
+	answer_log_user_in($_POST['email'],$_POST['password']); 
 }
 checkToken();
 ?>
@@ -19,7 +18,7 @@ checkToken();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>250 Trade | Login</title>
+    <title>250 Trade/Login</title>
     <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/yann.min.css" rel="stylesheet">
     <link href="assets/css/prettyPhoto.css" rel="stylesheet">
@@ -40,6 +39,15 @@ checkToken();
      .fon{
       	font-size: 20px;
       }
+.message{
+      background-color: #90DC23;
+      color:white;
+      font-size: 20px;
+      border-bottom-right-radius: 50%;
+      border-bottom-left-radius: 50%;
+      border-top-left-radius: 50%;
+      border-top-right-radius: 50%;
+    }
     </style>
 </head><!--/head-->
 
@@ -87,16 +95,20 @@ checkToken();
 	<section id="form"><!--form-->
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-4 col-sm-offset-1">
-					<?php
+        <div class="col-sm-12">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 message"><?php
                         if(isset($_SESSION['message']))
                         {
-                        	echo "<div class='msg'>";
+                          echo "<div class='msg'>";
                                  echo '<p>'.$_SESSION['message'].'</p>';
-                                 unset($_SESSION['message']);                       	
-                         	echo "</div>";
+                                 unset($_SESSION['message']);                         
+                          echo "</div>";
                         }
-					?>
+          ?></div>
+        </div>
+				<div class="col-sm-4 col-sm-offset-1">
+					
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
 						<form action="login.php" method="POST">
