@@ -39,6 +39,10 @@ checkToken();
      .fon{
       	font-size: 20px;
       }
+    .message{
+      background-color: #90DC23;
+      color:white;
+    }
     </style>
 </head><!--/head-->
 
@@ -88,7 +92,7 @@ checkToken();
 			<div class="row">
         <div class="col-sm-12">
         <div class="col-sm-3"></div>
-        <div class="col-sm-6"><?php
+        <div class="col-sm-6 message"><?php
                         if(isset($_SESSION['message']))
                         {
                           echo "<div class='msg'>";
