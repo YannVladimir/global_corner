@@ -63,7 +63,7 @@
 						<div class="single-widget">
 							<h2>250 Trade</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">About Us</a></li>
+								<li><a href="about-us.php">About Us</a></li>
 								<li><a href="contact_us.php">Contact Us</a></li>
 								<!--<li><a href="#">Careers</a></li>-->
 								<!--<li><a href="#">Location</a></li>-->
