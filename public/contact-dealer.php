@@ -21,7 +21,9 @@ else
 {
   $f = $_GET['id'];
   $_SESSION['answer']=$f;
-  echo "<script>alert('To answer this order you need an acount with us, click ok to proceed');window.location='answer-login.php';</script>";exit;
+  $_SESSION['message']="Please log in to your acount to view the post deatils, or you can create new acount if you don't have one ";
+  require('answer-login.php');
+  exit;
 }
 ?>
 <!DOCTYPE html>
