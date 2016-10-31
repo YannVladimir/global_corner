@@ -128,15 +128,15 @@ checkToken();
 
   <section id="cart_items">
     <div class="container">
-          <div class="col-sm-2"></div>
-        <div class="col-sm-8 padding-right">
+          <div class="col-sm-1"></div>
+        <div class="col-sm-10 padding-right">
             <div class="contact-form align-center">
               <br>
               <h2 class="title text-center">Terms of use</h2>
               <div class="status alert alert-success" style="display: none"></div>
-                  <h3 class="title">Description of service and content policy</h3>
-                           <ol>
-                             <li>250Trade is the next generation of online classifieds. 
+                  <h3 class="title text-center">Description of service and content policy</h3>
+                           
+                             <p>1. 250Trade is the next generation of online classifieds. 
                              	We act as a venue to allow our users who comply with these Terms to offer, 
                              	sell, and buy products and services listed on the Platform. 
                              	As a result, and as discussed in more detail in these Terms, 
@@ -144,9 +144,9 @@ checkToken();
                              	has no control over any element or any transaction, 
                              	and shall have no liability to any party in connection with such transactions. 
                              	You use the Platform at your own risk.
-                             </li>
+                             </p>
 
-                             <li>You understand that 250Trade does not control, 
+                             <p>2. You understand that 250Trade does not control, 
                              	and is not responsible for ads, directory information,
                                  business listings/information, messages between users,
                              	including without limitation e-mails sent from outside 250trade’s 
@@ -178,8 +178,8 @@ checkToken();
                              	         or authenticity of the information contained in any such Third Party Website,
                              	          and your linking to any other websites is completely at your own risk and 250Trade
                              	           disclaims all liability thereto.
-                             </li>
-                             <li>You acknowledge and agree that you are solely responsible for your own 
+                             </p>
+                             <p>3. You acknowledge and agree that you are solely responsible for your own 
                              	Content posted on, transmitted through, or linked from the Service and 
                              	the consequences of posting, transmitting, linking or publishing it. 
                              	More specifically, you are solely responsible for all Content that you 
@@ -225,8 +225,7 @@ checkToken();
                              	the Platform. Further, you grant 250Trade the right to make available 
                              	your Content to any third party in connection with the transaction 
                              	contemplated in your classified advertisement.
-                             </li>
-                            </ol>
+                             </p>
                   		
             </div>
           </div>
