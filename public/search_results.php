@@ -101,9 +101,17 @@ require_once ('../includes/main_functions.php');
           <div class="features_items"><!--features_items-->
             <h2 class="title text-center">Search Results</h2>
             <?php 
-                            $k = $_GET['k'];
-                            $terms = explode(" ", $k);
-                            $query = "SELECT * FROM items where is_accepted = 1 and ";
+                        $k = $_GET['k'];
+                        $cat = $_GET['category'];
+                        $terms = explode(" ", $k);
+                        if($cat==0)
+                        {
+                          $query = "SELECT * FROM items where is_accepted = 1 and ";
+                        }
+                        else
+                        {
+                          $query = "SELECT * FROM items where refcat_id = '{$cat}' and is_accepted = 1 and";
+                        }
                             $i=0;
                             foreach ($terms as $each) {
                              $i++;
@@ -232,6 +240,43 @@ require_once ('../includes/main_functions.php');
 						</ul>-->
 					
 			</div>
+      <div class="row">
+        <div class="col-sm-9">
+
+            <div class='recommended_items'><!--recommended_items-->
+            <h2 class='title text-center'>recommended items</h2>
+           <?php 
+              if($cat==0)
+              {
+                $queryyy = "SELECT * FROM items where is_accepted = 1 order by post_id desc limit 4";
+              }
+              else
+              {
+                  $queryyy = "SELECT * FROM items where refcat_id = '{$cat}' and is_accepted = 1 order by post_id desc limit 4";
+              }
+              $res1 = mysqli_query($con,$queryyy);
+                            while($row = mysqli_fetch_assoc($res1))
+                            {
+                                echo"
+                                <div class='col-sm-3'>
+                    <div class='product-image-wrapper'>
+                      <div class='single-products'>
+                        <div class='productinfo text-center'>
+                          <img src='assets/images/posts/{$row['main']}' alt='' />
+                          <h2>{$row['price']}</h2>
+                          <p>{$row['name']}</p>
+                                <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View item</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>";}
+                  echo "</div>";
+
+            ?>
+        </div>
+      </div>  
+      </div>
+
 		</div>
 	</section>
 	
