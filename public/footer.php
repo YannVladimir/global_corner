@@ -8,7 +8,7 @@
 					<div class="col-sm-4">
 						<div class="companyinfo">
 							<h2><span> 250</span> Trade</h2>
-							<p>Rwanda's largest market</p>
+							<p></p>
 						</div>
 					</div>
 					<div class="col-sm-3">
