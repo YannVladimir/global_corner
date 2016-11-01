@@ -165,7 +165,7 @@ checkToken();
                           </div>
                   <br><br><br>
                   <div id="electronics">
-                    <form action="uploading_estates.php" id="validation" class="upload-form row" method="post" enctype="multipart/form-data">
+                    <form action="uploading_estates.php" id="validation" novalidate="novalidate" class="upload-form row" method="post" enctype="multipart/form-data">
                         <div class="form-group col-md-12">
                              <input type="text" name="izina" class="form-control" placeholder="Ad title">
                         </div>
