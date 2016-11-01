@@ -1,24 +1,28 @@
 $().ready(function(){
            $("#contactform").validate({
                 rules: {
-                 subject:{
+                 firstname:{
                     required:true,
                     minlength:2,
                     maxlength:100
                   },
-                  message{
+                  lastname{
                     required:true,
-                    minlength:3
+                    minlength:2,
+                    maxlength:100
                   },
-                  name:{ 
+                  password:{ 
                     required:true, 
-                    minlength:2,
+                    minlength:6,
                     maxlength:100
+                  },
+                  repassword:{
+                    equalTo:"#password"
                   },
                   email:{
                     email:true
                   },
-                  number:{
+                  phone:{
                     minlength:10,
                     maxlength:10,
                     digits:true
@@ -30,24 +34,28 @@ $().ready(function(){
 
           messages: 
            {     
-                  subject:{
+                  firstname:{
                     required:"*Required field",
-                    minlength:"*your subject is very short",
-                    maxlength:"*your subject is too long"
+                    minlength:"*Too short",
+                    maxlength:"*Too long"
                   },
-                  name:{
+                  lastname:{
                     required:"*Required field",
-                    minlength:"*too short",
-                    maxlength:"*too long"
+                    minlength:"*Too short",
+                    maxlength:"*Too long"
                   },
-                  message{
+                  password:{
                     required:"*Required field",
-                    minlength:"*Your message is too short"
+                    minlength:"*Too short ( minimum 6 characters are required",
+                    maxlength:"*Too long"
+                  },
+                  repassword{
+                    equalTo:"*Has to be same with password"
                   },
                   email: {
                     email:"*Invalid email adress"
                   },
-                  number:{
+                  phone:{
                     minlength:"*Invalid number ( Eg: 07-------- )",
                     maxlength:"*Invalid number ( Eg: 07-------- )",
                     digits:"*Invalid number ( Eg: 07-------- )"

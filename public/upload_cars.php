@@ -10,7 +10,7 @@ checkToken();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>  
+<head>   
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -157,7 +157,7 @@ checkToken();
                           </div>
                   <br><br><br>
                   <div id="electronics">
-                    <form action="uploadingprocess.php" id="" class="upload-form row" name="upload-form" method="post" enctype="multipart/form-data">
+                    <form action="uploadingprocess.php" id="validation" class="upload-form row" name="upload-form" method="post" enctype="multipart/form-data">
                         <div class="form-group col-md-12">
                              <input type="text" name="izina" class="form-control" required="required" placeholder="Ad title">
                         </div>

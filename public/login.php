@@ -126,13 +126,13 @@ checkToken();
 				<div class="col-sm-4">
 					<div class="signup-form"><!--sign up form-->
 						<h2>New User Signup!</h2>
-						<form action="sign_up.php" method="POST">
+						<form action="sign_up.php" id="signup" name="signup" method="POST">
 							<input type="text" placeholder="First name" required="required" name="firstname"/>
 							<input type="text" placeholder="Last name" required="required" name="lastname"/>
-							<input type="text" placeholder="Contact number" required="required" digits="true" name="phone"/>
-							<input type="email" placeholder="Email Address" required="required" email="eamil" name="email"/>
+							<input type="text" placeholder="Contact number" required="required" name="phone"/>
+							<input type="email" placeholder="Email Address" required="required" email="email" name="email"/>
 							<input type="password" placeholder="Password" required="required" name="password"/>
-							<input type="password" placeholder=" Re-type Password" required="required" equalTo="password" name="repassword"/>
+							<input type="password" placeholder=" Re-type Password" required="required" name="repassword"/>
 							<input type="text" class='hidden' name="_token" value="<?php echo $_SESSION['_token']; ?>">
 							<button type="submit" class="btn btn-default bton">Signup</button>
 						    <br>
@@ -156,5 +156,6 @@ checkToken();
   <script src="assets/js/jquery.prettyPhoto.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/jquery.validate.js"></script>
+  <script src="assets/js/signup.js"></script>
 </body>
 </html>
