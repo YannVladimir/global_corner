@@ -217,7 +217,7 @@ checkToken();
                           <select class="form-control" name="location" required="required">
                              <option value="">Seller location</option>
                                 <?php 
-                                   $query = "SELECT * FROM places";
+                                   $query = "SELECT * FROM places order by place_name";
                                    $res = mysqli_query($con,$query);
                                    while($row = mysqli_fetch_assoc($res))
                                    {
