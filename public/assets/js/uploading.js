@@ -32,7 +32,7 @@ $().ready(function(){
                   izina:{
                     minlength:"*Below the minimum length of characters",
                     maxlength:"*Above the maximum length of characters",
-                    required:"*This field is required"
+                    required:"*this field is required..."
                   },
                   name:{
                     minlength:"*Below the minimum length of characters",
