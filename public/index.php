@@ -118,7 +118,7 @@ if(isset($_GET['var']) == "logout")
                                     if($row['cat_id']==1)
                                     {
                                          echo "<li class='active pull-left'><a href='#{$row['cat_id']}' data-toggle='tab'>{$row['cat_name']}</a></li>";
-                                         echo "<li class='pull-right'><a href='category.php?id='{$row['cat_id']}'' data-toggle='tab'>Visit Category</a></li>";
+                                         echo "<li class='pull-right'><a href='category.php?id='{$row['cat_id']}'' >Visit Category</a></li>";
                                     }
                                    // else
                                     //{
