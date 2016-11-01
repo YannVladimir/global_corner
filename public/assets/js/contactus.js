@@ -40,7 +40,7 @@ $().ready(function(){
                     minlength:"*too short",
                     maxlength:"*too long"
                   },
-                  message{
+                  message:{
                     required:"*Required field",
                     minlength:"*Your message is too short"
                   },
