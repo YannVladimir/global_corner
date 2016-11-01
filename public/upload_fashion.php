@@ -183,7 +183,7 @@ checkToken();
                           </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <select class="form-control" name="subcategory" required="required">
+                            <select class="form-control" name="subcategory">
                                  <option value="">Select sub-category</option>
                                  <?php 
                                     $query = "SELECT * FROM subcategories ";
