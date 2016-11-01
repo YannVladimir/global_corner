@@ -6,7 +6,7 @@ session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
 //checkUser();
-checkToken();
+checkToken(); 
 if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
 {
   $firstname = clearInput($_POST['firstname']);
@@ -33,12 +33,13 @@ if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
   $res = mysqli_query($con,$queryy);
   if($res)
   {
-    $_SESSION['e'] = $email;
-    $_SESSION['p'] = $password;
-    $_SESSION['c'] = $confirm;
-    require('confirm.php');
+   // $_SESSION['e'] = $email;
+   // $_SESSION['p'] = $password;
+    //$_SESSION['c'] = $confirm;
+    //require('confirm.php');
+    log_user_in($email, $password);
     exit;
-    //log_user_in($email, $password);
+    
 
   } 
   else
