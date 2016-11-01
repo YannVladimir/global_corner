@@ -163,7 +163,7 @@ checkToken();
                           </div>
                   <br><br><br>
                   <div id="electronics">
-                    <form action="uploadingprocess.php" id="validation" class="upload-form row" method="post" enctype="multipart/form-data">
+                    <form action="uploadingprocess.php" id="validation" novalidate="novalidate" class="upload-form row" method="post" enctype="multipart/form-data">
                         <div class="form-group col-md-12">
                              <input type="text" name="izina" class="form-control" placeholder="Ad title">
                         </div>
@@ -238,7 +238,7 @@ checkToken();
                         <div class="form-group col-md-12">
                           <input type="text" class='hidden' name="_token" value="<?php echo $_SESSION['_token']; ?>">
               
-                           <input type="submit" name="submit" id="validation" class="btn btn-primary pull-right" value="Submit">
+                           <input type="submit" name="submit" class="btn btn-primary pull-right" value="Submit">
                         </div>
                         <font>
                          By posting your post you agree with our <a href='terms-of-use.php' target='blank' style='color=#3AACEB'>Terms of use </a> and <a href='posting-rules.php' target='blank' style='color=#3AACEB'>Posting rules </a>
