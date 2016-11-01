@@ -159,11 +159,29 @@ checkToken();
                           </div>
                   <br><br><br>
                   <div id="electronics">
-                    <form action="uploadingprocess.php" id="validation" class="upload-form row" name="upload-form" method="post" enctype="multipart/form-data">
+                    <form action="uploadingprocess.php" id="validation" class="upload-form row" method="post" enctype="multipart/form-data">
                         <div class="form-group col-md-12">
                              <input type="text" name="izina" class="form-control" required="required" placeholder="Ad title">
                         </div>
-                        
+                        <div class="form-group col-md-6">
+                           <input type="text" name="name" class="form-control" placeholder="Seller Name">
+                        </div> 
+                        <div class="form-group col-md-6">
+                           <input type="text" name="contact" class="form-control" placeholder="Phone Number">
+                        </div> 
+                        <div class="form-group col-md-12">
+                          <select class="form-control" name="location">
+                             <option value="">Seller location</option>
+                                <?php 
+                                   $query = "SELECT * FROM places order by place_name";
+                                   $res = mysqli_query($con,$query);
+                                   while($row = mysqli_fetch_assoc($res))
+                                   {
+                                      echo "<option value='{$row['place_id']}'>{$row['place_name']}</option>";
+                                   } 
+                                ?>
+                          </select>
+                        </div>
                         <div class="form-group col-md-6">
                             <select class="form-control" name="subcategory" required="required">
                                  <option value="">Select sub-category</option>
@@ -212,26 +230,7 @@ checkToken();
                                   <img id="image7" class="btn7 btnlocation hide" />
                                   <input type="file" name="img7"  id="inp8" class="hide" />
                                   <img id="image8" class="btn8 btnlocation hide" />
-                            </div><br><br>
-                        <div class="form-group col-md-6">
-                           <input type="text" name="name" class="form-control" required="required" placeholder="Seller Name">
-                        </div> 
-                        <div class="form-group col-md-6">
-                           <input type="text" name="contact" class="form-control" required="required" placeholder="Phone Number">
-                        </div> 
-                        <div class="form-group col-md-12">
-                          <select class="form-control" name="location" required="required">
-                             <option value="">Seller location</option>
-                                <?php 
-                                   $query = "SELECT * FROM places order by place_name";
-                                   $res = mysqli_query($con,$query);
-                                   while($row = mysqli_fetch_assoc($res))
-                                   {
-                                      echo "<option value='{$row['place_id']}'>{$row['place_name']}</option>";
-                                   } 
-                                ?>
-                          </select>
-                        </div>                    
+                            </div><br>                    
                         <div class="form-group col-md-12">
                           <input type="text" class='hidden' name="_token" value="<?php echo $_SESSION['_token']; ?>">
               

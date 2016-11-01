@@ -3,16 +3,24 @@ $().ready(function(){
                 rules: {
                  izina:{
                     minlength:2,
-                    maxlength:200
+                    maxlength:200,
+                    required:true
                   },
                   name:{ 
                     minlength:2,
-                    maxlength:100
+                    maxlength:100,
+                    required:true
                   },
                   contact:{
                     minlength:10,
                     maxlength:10,
-                    digits:true
+                    required:true
+                  },
+                  location:{
+                    required:true
+                  },
+                  subcategory:{
+                    required:true
                   }
             
             },
@@ -23,16 +31,25 @@ $().ready(function(){
                        
                   izina:{
                     minlength:"*Below the minimum length of characters",
-                    maxlength:"*Above the maximum length of characters"
+                    maxlength:"*Above the maximum length of characters",
+                    required:"*This field is required"
                   },
                   name:{
                     minlength:"*Below the minimum length of characters",
-                    maxlength:"*Above the maximum length of characters"
+                    maxlength:"*Above the maximum length of characters",
+                    required:"*This field is required"
                   },
                   contact:{
                     minlength:"*Invalid number ( Eg: 07-------- )",
                     maxlength:"*Invalid number ( Eg: 07-------- )",
-                    digits:"*Invalid number ( Eg: 07-------- )"
+                    digits:"*Invalid number ( Eg: 07-------- )",
+                    required:"*This field is required"
+                  },
+                  location:{
+                    required:"*This field is required"
+                  },
+                  subcategory:{
+                    required:"*This field is required"
                   }
            
             }

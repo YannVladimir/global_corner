@@ -99,7 +99,7 @@ checkToken();
 				    	<?php
                             if(isset($_SESSION['id']))
                             {
-                                echo "<form action='message.php' id='contactform' class='contact-form row' name='contactform' method='POST'>
+                                echo "<form action='message.php' id='contactform' class='contact-form row' method='POST'>
 				                <div class='form-group col-md-12'>
 				                <input type='text' name='subject' class='form-control'  placeholder='Subject'>
 				                </div>

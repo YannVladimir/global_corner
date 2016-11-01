@@ -159,13 +159,18 @@ checkToken();
                           </div>
                   <br><br><br>
                   <div id="electronics">
-                    <form action="uploading_estates.php" id="validation" class="upload-form row" name="upload-form" method="post" enctype="multipart/form-data">
+                    <form action="uploading_estates.php" id="validation" class="upload-form row" method="post" enctype="multipart/form-data">
                         <div class="form-group col-md-12">
-                             <input type="text" name="izina" class="form-control" required="required" placeholder="Ad title">
+                             <input type="text" name="izina" class="form-control" placeholder="Ad title">
                         </div>
-                        
                         <div class="form-group col-md-6">
-                            <select class="form-control" name="subcategory" required="required">
+                           <input type="text" name="name" class="form-control" placeholder="Seller Name">
+                        </div> 
+                        <div class="form-group col-md-6">
+                           <input type="text" name="contact" class="form-control" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <select class="form-control" name="subcategory">
                                  <option value="">Select Real-Estate category</option>
                                  <?php 
                                     $query = "SELECT * FROM subcategories ";
@@ -179,14 +184,14 @@ checkToken();
                             </select>
                         </div>
                         <div class="form-group col-md-6">
-                             <select class="form-control" name="rentalorsell" required="required">
+                             <select class="form-control" name="rentalorsell">
                                  <option value="">Select if renting or selling</option>
                                  <option value="0">Selling</option>
                                  <option value="1">Renting</option>
                             </select>    
                         </div>
                          <div class="form-group col-md-6">
-                          <select class="form-control" name="location" required="required">
+                          <select class="form-control" name="location">
                              <option ="">Select District</option>
                                 <?php 
                                    $query = "SELECT * FROM places order by place_name";
@@ -199,16 +204,16 @@ checkToken();
                           </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <input type="text" name="sector" class="form-control" required="required" placeholder="sector">
+                            <input type="text" name="sector" class="form-control" placeholder="sector">
                         </div>
                         <div class="form-group col-md-6">
-                            <input type="text" name="road" class="form-control" required="required" placeholder="Street number (eg: KK 23 ave 256)">
+                            <input type="text" name="road" class="form-control" placeholder="Street number (eg: KK 23 ave 256)">
                         </div>
                         <div class="form-group col-md-6">
                             <input type="text" name="price" class="form-control"  placeholder="Price">
                         </div>
                         <div class="form-group col-md-12">
-                            <textarea name="details" id="message" required="required" class="form-control" rows="8" placeholder="Descriptions, Include number of rooms, and any other usefull informations"></textarea>
+                            <textarea name="details" id="message" class="form-control" rows="8" placeholder="Descriptions, Include number of rooms, and any other usefull informations"></textarea>
                         </div>
                         <div class="col-sm-4"> 
                                   <input type="file" name="main" class="this" id="inp" />
@@ -238,13 +243,7 @@ checkToken();
                                   <img id="image7" class="btn7 btnlocation hide" />
                                   <input type="file" name="img7"  id="inp8" class="hide" />
                                   <img id="image8" class="btn8 btnlocation hide" />
-                            </div><br><br>
-                        <div class="form-group col-md-6">
-                           <input type="text" name="name" class="form-control" required="required" placeholder="Seller name">
-                        </div> 
-                        <div class="form-group col-md-6">
-                           <input type="text" name="contact" class="form-control" required="required" placeholder="Phone Number">
-                        </div> 
+                            </div><br> 
                                            
                         <div class="form-group col-md-12">
                            <input type="text" class='hidden' name="_token" value="<?php echo $_SESSION['_token']; ?>">
