@@ -161,7 +161,7 @@ checkToken();
                   <div id="electronics">
                     <form action="uploadingprocess.php" id="validation" class="upload-form row" method="post" enctype="multipart/form-data">
                         <div class="form-group col-md-12">
-                             <input type="text" name="izina" class="form-control" required="required" placeholder="Ad title">
+                             <input type="text" name="izina" class="form-control" placeholder="Ad title">
                         </div>
                         <div class="form-group col-md-6">
                            <input type="text" name="name" class="form-control" placeholder="Seller Name">
@@ -200,7 +200,7 @@ checkToken();
                             <input type="text" name="price" class="form-control"  placeholder="Price">
                         </div>
                         <div class="form-group col-md-12">
-                            <textarea name="details" id="message" required="required" class="form-control" rows="8" placeholder="Description of the product, Include the brand, model, warranty, guarranty, age and any other included accessories"></textarea>
+                            <textarea name="details" id="message" class="form-control" rows="8" placeholder="Description of the product, Include the brand, model, warranty, guarranty, age and any other included accessories"></textarea>
                         </div>
                         <div class="col-sm-4"> 
                                   <input type="file" name="main" class="this" id="inp" />
@@ -261,10 +261,8 @@ checkToken();
   <script src="assets/js/yann.min.js"></script>
   <script src="assets/js/jquery.scrollUp.min.js"></script>
   <script src="assets/js/jquery.prettyPhoto.js"></script>
-  <script src="assets/js/main.js"></script>
   <script src="assets/js/jquery.validate.js"></script>
   <script src="assets/js/uploading.js"></script>
-  <script src="assets/js/image.upload.js"></script>
 </body>
 </html>
                                             

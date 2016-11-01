@@ -6,7 +6,7 @@ $().ready(function(){
                     minlength:2,
                     maxlength:100
                   },
-                  lastname{
+                  lastname:{
                     required:true,
                     minlength:2,
                     maxlength:100
