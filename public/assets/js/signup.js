@@ -49,7 +49,7 @@ $().ready(function(){
                     minlength:"*Too short ( minimum 6 characters are required",
                     maxlength:"*Too long"
                   },
-                  repassword{
+                  repassword:{
                     equalTo:"*Has to be same with password"
                   },
                   email: {
