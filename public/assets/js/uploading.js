@@ -1,22 +1,11 @@
 $().ready(function(){
-           jQuery.validator.addMethod("lettersonly", function(value, element) 
-           {
-              return this.optional(element) || /^[a-z ]+$/i.test(value);
-           }, "Letters and spaces only please");
            $("#validation").validate({
                 rules: {
                  izina:{
                     minlength:2,
                     maxlength:200
                   },
-                  price:{
-                    digits:true
-                  },
-                  details:{
-                    maxlength:2000
-                  },
-                  name:{
-                    lettersonly:true,
+                  name:{ 
                     minlength:2,
                     maxlength:100
                   },
@@ -31,26 +20,19 @@ $().ready(function(){
             validClass: "my-valid-class",*/
 
             messages: {
-                         
-                  price:{
-                    digits:"*Invalid, digits omly please"
-                  },
+                       
                   izina:{
-                    minlength:"*Invalid",
-                    maxlength:"*Invalid"
-                  },
-                  details: {
-                    maxlength:"*max length"
+                    minlength:"*Below the minimum length of characters",
+                    maxlength:"*Above the maximum length of characters"
                   },
                   name:{
-                    lettersonly:"*Invalid, letters only",
-                    minlength:"*Invalid",
-                    maxlength:"*max length"
+                    minlength:"*Below the minimum length of characters",
+                    maxlength:"*Above the maximum length of characters"
                   },
                   contact:{
-                    minlength:"*Invalid number",
-                    maxlength:"*Invalid number",
-                    digits:"*Invalid (numbers only)"
+                    minlength:"*Invalid number ( Eg: 07-------- )",
+                    maxlength:"*Invalid number ( Eg: 07-------- )",
+                    digits:"*Invalid number ( Eg: 07-------- )"
                   }
            
             }
