@@ -6,7 +6,7 @@ $().ready(function(){
                     minlength:2,
                     maxlength:100
                   },
-                  message{
+                  message:{
                     required:true,
                     minlength:3
                   },
