@@ -9,7 +9,7 @@ generateUser();
 if(isset($_GET['var']) == "logout")
 {
     log_user_out();
-} 
+}
 ?>
 <!DOCTYPE html>
 <html lang="en"> 
@@ -70,16 +70,18 @@ if(isset($_GET['var']) == "logout")
                         </div>
                         <div class="mainmenu pull-left">
                             <ul class="nav navbar-nav ">
-                                <li><a href="home.php" class="active fon">Home</a></li>
-                                <li><a href="upload.php" class="fon">Sell</a></li>
-                                <li><a href="categories.php" class="fon">Buy</a></li>
-                                <li class="dropdown"><a href="#">Odering<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu"> 
-                                        <li><a href="order.php" class="fon">Make order</a></li>
-                                        <li><a href="orders.php" class="fon">View orders</a></li> 
-                                    </ul>
-                                </li>
-                                <li><a href="contact_us.php" class="fon">Contact us</a></li>
+                             
+                <li><a href="home.php" class="active fon">Home</a></li>
+                <li><a href="upload.php" class="fon">Sell</a></li>
+                <li><a href="categories.php" class="fon">Buy</a></li>
+                <li class="dropdown"><a href="#">Odering<i class="fa fa-angle-down"></i></a>
+                    <ul role="menu" class="sub-menu"> 
+                        <li><a href="order.php" class="fon">Make order</a></li>
+                        <li><a href="orders.php" class="fon">View orders</a></li> 
+                    </ul>
+                </li>
+                <li><a href="contact_us.php" class="fon">Contact us</a></li>
+                
                             </ul>
                         </div>
                     </div>
@@ -104,258 +106,352 @@ if(isset($_GET['var']) == "logout")
             <div class="row">
                 <div class="col-sm-12 padding-right">
                     <br><br>
+                    
                     <div class="category-tab"><!--category-tab-->
                         <div class="col-sm-12">
                             <ul class="nav nav-tabs">
                                 <?php 
                                 $query = "SELECT * from categories";
-                                $cats = "SELECT * from subcategories";
                                 $res = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
                                     if($row['cat_id']==1)
                                     {
-                                         echo "<li class='active'><a href='#{$row['cat_id']}' data-toggle='tab'>{$row['cat_name']}</a></li>";
+                                         echo "<li class='active pull-left'><a href='#{$row['cat_id']}' data-toggle='tab'>{$row['cat_name']}</a></li>";
+                                         echo "<li class='active pull-left'><a href='category.php?id='{$row['cat_id']}'' data-toggle='tab'>Visit Category</a></li>";
                                     }
-                                    else
-                                    {
-                                         echo"<li><a href='#{$row['cat_id']}' data-toggle='tab'>{$row['cat_name']}</a></li>";
-                                    }
+                                   // else
+                                    //{
+                                    //     echo"<li><a href='#{$row['cat_id']}' data-toggle='tab'>{$row['cat_name']}</a></li>";
+                                    //}
                                    
                                 } 
                                 echo "</ul>
-                                        </div>
-                                        <div class='tab-content'> ";
-                                $res1 = mysqli_query($con,$query);
-                                while($row = mysqli_fetch_assoc($res1))
-                                {
-                                    if($row['cat_id']==1)
-                                    {
-                                         echo "<div class='tab-pane fade active in' id='{$row['cat_id']}' >";
-                                    }
-                                }
-                                
+                        </div>
+                        <div class='tab-content'> ";
+                               
+                             echo "<div class='tab-pane fade active in' id='1' >";
+                                $cats = "SELECT * from items where refcat_id=1 and is_accepted=1 order by post_id desc limit 4";
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
-                                    if($row['refcat_id']==1)
-                                    {
-                                         echo "<div class='col-sm-3'>
-                                    <div class='product-image-wrapper'>
-                                        <div class='single-products'>
-                                            <div class='productinfo text-center'>
-                                                <img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
-                                                <h4>{$row['subcat_name']}</h4>
-                                                <a href='sub-category.php?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                            </div>  
-                                        </div>
-                                    </div>
-                                </div>";
+                                 echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']} District</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
                                 
-                                    }
+                                         </div>
+                                       </div>";
+                                   
                                 } 
                                 echo "</div>";
-                                $res2 = mysqli_query($con,$query);
-                                while($row = mysqli_fetch_assoc($res2))
+
+                                
+//for laptops
+?>
+<div class="col-sm-12">
+                            <ul class="nav nav-tabs">
+                                <?php 
+                                $query = "SELECT * from categories";
+                                $res = mysqli_query($con,$query);
+                                while($row = mysqli_fetch_assoc($res))
                                 {
                                     if($row['cat_id']==2)
                                     {
-                                         echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
+                                         echo "<li class='active pull-left'><a href='#{$row['cat_id']}' data-toggle='tab'>{$row['cat_name']}</a></li>";
+                                         echo "<li class='active pull-left'><a href='category.php?id='{$row['cat_id']}'' data-toggle='tab'>Visit Category</a></li>";
                                     }
+                                   // else
+                                    //{
+                                    //     echo"<li><a href='#{$row['cat_id']}' data-toggle='tab'>{$row['cat_name']}</a></li>";
+                                    //}
+                                   
                                 } 
-                                $res3 = mysqli_query($con,$cats);
-                                while($row = mysqli_fetch_assoc($res3))
+                                echo "</ul>
+                        </div>
+                        <div class='tab-content'> ";
+                               
+                             echo "<div class='tab-pane fade active in' id='1' >";
+                                $cats = "SELECT * from items where refcat_id=2 and is_accepted=1 order by post_id desc limit 4";
+                                $res = mysqli_query($con,$cats);
+                                while($row = mysqli_fetch_assoc($res))
                                 {
-                                    if($row['refcat_id']==2)
-                                    {
-                                         echo "<div class='col-sm-3'>
-                                    <div class='product-image-wrapper'>
-                                        <div class='single-products'>
-                                            <div class='productinfo text-center'>
-                                                <img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
-                                                <h4>{$row['subcat_name']}</h4>
-                                                <a href='sub-category.php?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                            </div>  
-                                        </div>
-                                    </div>
-                                </div>";
-                                    }
+                                 echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']} District</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                
+                                         </div>
+                                       </div>";
+                                   
                                 } 
                                 echo "</div>";
-                                $res4 = mysqli_query($con,$query);
-                                while($row = mysqli_fetch_assoc($res4))
+
+                                
+//for mobiles
+?>
+<div class="col-sm-12">
+                            <ul class="nav nav-tabs">
+                                <?php 
+                                $query = "SELECT * from categories";
+                                $res = mysqli_query($con,$query);
+                                while($row = mysqli_fetch_assoc($res))
                                 {
                                     if($row['cat_id']==3)
                                     {
-                                         echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
+                                         echo "<li class='active pull-left'><a href='#{$row['cat_id']}' data-toggle='tab'>{$row['cat_name']}</a></li>";
+                                         echo "<li class='active pull-left'><a href='category.php?id='{$row['cat_id']}'' data-toggle='tab'>Visit Category</a></li>";
                                     }
+                                   // else
+                                    //{
+                                    //     echo"<li><a href='#{$row['cat_id']}' data-toggle='tab'>{$row['cat_name']}</a></li>";
+                                    //}
+                                   
                                 } 
-                            
-                                $res5 = mysqli_query($con,$cats);
-                                while($row = mysqli_fetch_assoc($res5))
+                                echo "</ul>
+                        </div>
+                        <div class='tab-content'> ";
+                               
+                             echo "<div class='tab-pane fade active in' id='1' >";
+                                $cats = "SELECT * from items where refcat_id=3 and is_accepted=1 order by post_id desc limit 4";
+                                $res = mysqli_query($con,$cats);
+                                while($row = mysqli_fetch_assoc($res))
                                 {
-                                    if($row['refcat_id']==3)
-                                    {
-                                         echo "<div class='col-sm-3'>
-                                    <div class='product-image-wrapper'>
-                                        <div class='single-products'>
-                                            <div class='productinfo text-center'>
-                                                <img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
-                                                <h4>{$row['subcat_name']}</h4>
-                                                <a href='sub-category.php?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                            </div>  
-                                        </div>
-                                    </div>
-                                </div>";
-                                    }
+                                 echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']} District</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                
+                                         </div>
+                                       </div>";
+                                   
                                 } 
-                              echo "</div>";
-                                $res6 = mysqli_query($con,$query);
-                                while($row = mysqli_fetch_assoc($res6))
-                                {
-                                    if($row['cat_id']==4)
-                                    {
-                                         echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
-                                    }
-                                } 
-                            
-                                $res7 = mysqli_query($con,$cats);
-                                while($row = mysqli_fetch_assoc($res7))
-                                {
-                                    if($row['refcat_id']==4)
-                                    {
-                                         echo "<div class='col-sm-3'>
-                                    <div class='product-image-wrapper'>
-                                        <div class='single-products'>
-                                            <div class='productinfo text-center'>
-                                                <img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
-                                                <h4>{$row['subcat_name']}</h4>
-                                                <a href='sub-category.php?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                            </div>  
-                                        </div>
-                                    </div>
-                                </div>";
-                                    }
-                                } 
-                              echo "</div>";
-                                $res8 = mysqli_query($con,$query);
-                                while($row = mysqli_fetch_assoc($res8))
-                                {
-                                    if($row['cat_id']==5)
-                                    {
-                                         echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
-                                    }
-                                }
-                                $res9 = mysqli_query($con,$cats);
-                                while($row = mysqli_fetch_assoc($res9))
-                                {
-                                    if($row['refcat_id']==5)
-                                    {
-                                         echo "<div class='col-sm-3'>
-                                    <div class='product-image-wrapper'>
-                                        <div class='single-products'>
-                                            <div class='productinfo text-center'>
-                                                <img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
-                                                <h4>{$row['subcat_name']}</h4>
-                                                <a href='sub-category.php?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                            </div>  
-                                        </div>
-                                    </div>
-                                </div>";
-                                    }
-                                } 
-                              echo "</div>";
-                                $res10 = mysqli_query($con,$query);
-                                while($row = mysqli_fetch_assoc($res10))
+                                echo "</div>";
+
+                                
+//for lelectronics
+?>
+
+<div class="col-sm-12">
+                            <ul class="nav nav-tabs">
+                                <?php 
+                                $query = "SELECT * from categories";
+                                $res = mysqli_query($con,$query);
+                                while($row = mysqli_fetch_assoc($res))
                                 {
                                     if($row['cat_id']==6)
                                     {
-                                         echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
+                                         echo "<li class='active pull-left'><a href='#{$row['cat_id']}' data-toggle='tab'>{$row['cat_name']}</a></li>";
+                                         echo "<li class='active pull-left'><a href='category.php?id='{$row['cat_id']}'' data-toggle='tab'>Visit Category</a></li>";
                                     }
+                                   // else
+                                    //{
+                                    //     echo"<li><a href='#{$row['cat_id']}' data-toggle='tab'>{$row['cat_name']}</a></li>";
+                                    //}
+                                   
                                 } 
-                              
-                                $res11 = mysqli_query($con,$cats);
-                                while($row = mysqli_fetch_assoc($res11))
+                                echo "</ul>
+                        </div>
+                        <div class='tab-content'> ";
+                               
+                             echo "<div class='tab-pane fade active in' id='1' >";
+                                $cats = "SELECT * from items where refcat_id=6 and is_accepted=1 order by post_id desc limit 4";
+                                $res = mysqli_query($con,$cats);
+                                while($row = mysqli_fetch_assoc($res))
                                 {
-                                    if($row['refcat_id']==6)
-                                    {
-                                         echo "<div class='col-sm-3'>
-                                    <div class='product-image-wrapper'>
-                                        <div class='single-products'>
-                                            <div class='productinfo text-center'>
-                                                <img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
-                                                <h4>{$row['subcat_name']}</h4>
-                                                <a href='sub-category.php?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                            </div>  
-                                        </div>
-                                    </div>
-                                </div>";
-                                    }
+                                 echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']} District</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                
+                                         </div>
+                                       </div>";
+                                   
                                 } 
-                              echo "</div>";
-                                $res12 = mysqli_query($con,$query);
-                                while($row = mysqli_fetch_assoc($res12))
+                                echo "</div>";
+
+                                
+//for cars and bikes
+?>
+
+<div class="col-sm-12">
+                            <ul class="nav nav-tabs">
+                                <?php 
+                                $query = "SELECT * from categories";
+                                $res = mysqli_query($con,$query);
+                                while($row = mysqli_fetch_assoc($res))
                                 {
-                                    if($row['cat_id']==7)
+                                    if($row['cat_id']==5)
                                     {
-                                         echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
+                                         echo "<li class='active pull-left'><a href='#{$row['cat_id']}' data-toggle='tab'>{$row['cat_name']}</a></li>";
+                                         echo "<li class='active pull-left'><a href='category.php?id='{$row['cat_id']}'' data-toggle='tab'>Visit Category</a></li>";
                                     }
+                                   // else
+                                    //{
+                                    //     echo"<li><a href='#{$row['cat_id']}' data-toggle='tab'>{$row['cat_name']}</a></li>";
+                                    //}
+                                   
                                 } 
-                            
-                                $res13 = mysqli_query($con,$cats);
-                                while($row = mysqli_fetch_assoc($res13))
+                                echo "</ul>
+                        </div>
+                        <div class='tab-content'> ";
+                               
+                             echo "<div class='tab-pane fade active in' id='1' >";
+                                $cats = "SELECT * from items where refcat_id=5 and is_accepted=1 order by post_id desc limit 4";
+                                $res = mysqli_query($con,$cats);
+                                while($row = mysqli_fetch_assoc($res))
                                 {
-                                    if($row['refcat_id']==7)
-                                    {
-                                         echo "<div class='col-sm-3'>
-                                    <div class='product-image-wrapper'>
-                                        <div class='single-products'>
-                                            <div class='productinfo text-center'>
-                                                <img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
-                                                <h4>{$row['subcat_name']}</h4>
-                                                <a href='sub-category.php?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                            </div>  
-                                        </div>
-                                    </div>
-                                </div>";
-                                    }
+                                 echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']} District</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                
+                                         </div>
+                                       </div>";
+                                   
                                 } 
-                              echo "</div>";
-                                $res14 = mysqli_query($con,$query);
-                                while($row = mysqli_fetch_assoc($res14))
+                                echo "</div>";
+
+                                
+//for real estates
+?>
+
+<div class="col-sm-12">
+                            <ul class="nav nav-tabs">
+                                <?php 
+                                $query = "SELECT * from categories";
+                                $res = mysqli_query($con,$query);
+                                while($row = mysqli_fetch_assoc($res))
                                 {
-                                    if($row['cat_id']==8)
+                                    if($row['cat_id']==4)
                                     {
-                                         echo "<div class='tab-pane fade' id='{$row['cat_id']}' >";
+                                         echo "<li class='active pull-left'><a href='#{$row['cat_id']}' data-toggle='tab'>{$row['cat_name']}</a></li>";
+                                         echo "<li class='active pull-left'><a href='category.php?id='{$row['cat_id']}'' data-toggle='tab'>Visit Category</a></li>";
                                     }
+                                   // else
+                                    //{
+                                    //     echo"<li><a href='#{$row['cat_id']}' data-toggle='tab'>{$row['cat_name']}</a></li>";
+                                    //}
+                                   
                                 } 
-                              
-                                $res15 = mysqli_query($con,$cats);
-                                while($row = mysqli_fetch_assoc($res15))
+                                echo "</ul>
+                        </div>
+                        <div class='tab-content'> ";
+                               
+                             echo "<div class='tab-pane fade active in' id='1' >";
+                                $cats = "SELECT * from items where refcat_id=4 and is_accepted=1 order by post_id desc limit 4";
+                                $res = mysqli_query($con,$cats);
+                                while($row = mysqli_fetch_assoc($res))
                                 {
-                                    if($row['refcat_id']==8)
-                                    {
-                                         echo "<div class='col-sm-3'>
-                                    <div class='product-image-wrapper'>
-                                        <div class='single-products'>
-                                            <div class='productinfo text-center'>
-                                                <img class='sizingimagesmax' src='assets/images/subcategories/{$row['subcat_image']}' alt='' />
-                                                <h4>{$row['subcat_name']}</h4>
-                                                <a href='sub-category.php?id={$row['subcat_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                            </div>  
-                                        </div>
-                                    </div>
-                                </div>";
-                                    }
-                                }
-                                echo "</div>"; 
-         ?>
-                          
-                    </div><!--/category-tab-->
-                    
-                   
-                </div>
-                <div class='col-sm-2'></div>
+                                 echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']} District</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                
+                                         </div>
+                                       </div>";
+                                   
+                                } 
+                                echo "</div>";
+
+                                
+//for furnitures
+?>
+</div><!--/category-tab-->
+</div> 
+</di><!--/row-->
+<div class="row">
+  <div class='col-sm-2'></div>
                 <div class='col-sm-8'>
                     <br><br>
                     <h2 class="title text-center">Orders</h2>
@@ -385,14 +481,28 @@ if(isset($_GET['var']) == "logout")
                 ?>
                 
             </div>
-            <div class="col-sm-2"></div>
-          </div>
-        </div>
+          <div class="col-sm-2"></div>
+</div><!--row-->
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
     </section>
     <br><br><br>
     <?php  
       include('footer.php');    
-    ?> 
+    ?>
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/yann.min.js"></script>
     <script src="assets/js/jquery.scrollUp.min.js"></script>
