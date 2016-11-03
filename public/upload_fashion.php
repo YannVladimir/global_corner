@@ -167,16 +167,16 @@ checkToken();
                   <div id="electronics">
                     <form action="uploadingprocess.php" id="validation" novalidate="novalidate" class="upload-form row" method="post" enctype="multipart/form-data">
                         <div class="form-group col-md-12">
-                             <input type="text" name="izina" class="form-control" placeholder="Ad title">
+                             <input type="text" name="izina" required="required" class="form-control" placeholder="Ad title">
                         </div>
                         <div class="form-group col-md-6">
-                           <input type="text" name="name" class="form-control" placeholder="Seller Name">
+                           <input type="text" name="name" class="form-control" required="required" placeholder="Seller Name">
                         </div> 
                         <div class="form-group col-md-6">
-                           <input type="text" name="contact" class="form-control" placeholder="Phone Number">
+                           <input type="text" name="contact" class="form-control" required="required" placeholder="Phone Number">
                         </div> 
                         <div class="form-group col-md-12">
-                          <select class="form-control" name="location">
+                          <select class="form-control" name="location" required="required">
                              <option value="">Seller location</option>
                                 <?php 
                                    $query = "SELECT * FROM places order by place_name";
@@ -189,7 +189,7 @@ checkToken();
                           </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <select class="form-control" name="subcategory">
+                            <select class="form-control" required="required" name="subcategory">
                                  <option value="">Select sub-category</option>
                                  <?php 
                                     $query = "SELECT * FROM subcategories ";
@@ -250,7 +250,6 @@ checkToken();
                   <div id="jobbs" class="notshowing">
                     job
                   </div>
-                </form>
             </div>
           </div>
                 <div class="col-sm-3 padding-right"><!--for advertisement--></div> 

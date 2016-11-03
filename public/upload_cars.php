@@ -165,16 +165,16 @@ checkToken();
                   <div id="electronics">
                     <form action="uploadingprocess.php" id="validation" novalidate="novalidate" class="upload-form row" method="post" enctype="multipart/form-data">
                         <div class="form-group col-md-12">
-                             <input type="text" name="izina" class="form-control" placeholder="Ad title">
+                             <input type="text" name="izina" class="form-control" required="required" placeholder="Ad title">
                         </div>
                         <div class="form-group col-md-6">
                            <input type="text" name="name" class="form-control" placeholder="Seller Name">
                         </div> 
                         <div class="form-group col-md-6">
-                           <input type="text" name="contact" class="form-control" placeholder="Phone Number">
+                           <input type="text" name="contact" class="form-control" required="required" placeholder="Phone Number">
                         </div> 
                         <div class="form-group col-md-12">
-                          <select class="form-control" name="location">
+                          <select class="form-control" required="required" name="location">
                              <option value="">Seller location</option>
                                 <?php 
                                    $query = "SELECT * FROM places order by place_name";
@@ -187,7 +187,7 @@ checkToken();
                           </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <select class="form-control" name="subcategory">
+                            <select class="form-control" required="required" name="subcategory">
                                  <option value="">Select sub-category</option>
                                  <?php 
                                     $query = "SELECT * FROM subcategories ";
@@ -248,7 +248,6 @@ checkToken();
                   <div id="jobbs" class="notshowing">
                     job
                   </div>
-                </form>
             </div>
           </div>
                 <div class="col-sm-3 padding-right"><!--for advertisement--></div> 
@@ -261,159 +260,5 @@ checkToken();
    <?php  
       require('footer.php');    
   ?>
-  <scrip type="text/javascript">
-function formValidation()  
-{  
-  
-var uid = document.registration.name;  
-var passid = document.registration.password;  
-var uname = document.registration.username;  
-var uadd = document.registration.address;  
-var ucountry = document.registration.country;  
-var uzip = document.registration.number;  
-var uemail = document.registration.email;  
-var umsex = document.registration.msex;  
-var ufsex = document.registration.fsex; 
-if(userid_validation(uid,5,12))  
-{  
-if(passid_validation(passid,7,12))  
-{  
-if(allLetter(uname))  
-{  
-if(alphanumeric(uadd))  
-{   
-if(countryselect(ucountry))  
-{  
-if(allnumeric(uzip))  
-{  
-if(ValidateEmail(uemail))  
-{  
-if(validsex(umsex,ufsex))  
-{  
-}  
-}   
-}  
-}   
-}  
-}  
-}  
-}  
-return false;  
-  
-} function userid_validation(uid,mx,my)  
-{  
-var uid_len = uid.value.length;  
-if (uid_len == 0 || uid_len >= my || uid_len < mx)  
-{  
-alert("User Id should not be empty / length be between "+mx+" to "+my);  
-uid.focus();  
-return false;  
-}  
-return true;  
-}  
-function passid_validation(passid,mx,my)  
-{  
-var passid_len = passid.value.length;  
-if (passid_len == 0 ||passid_len >= my || passid_len < mx)  
-{  
-alert("Password should not be empty / length be between "+mx+" to "+my);  
-passid.focus();  
-return false;  
-}  
-return true;  
-}  
-function allLetter(uname)  
-{   
-var letters = /^[A-Za-z]+$/;  
-if(uname.value.match(letters))  
-{  
-return true;  
-}  
-else  
-{  
-alert('Username must have alphabet characters only');  
-uname.focus();  
-return false;  
-}  
-}  
-function alphanumeric(uadd)  
-{   
-var letters = /^[0-9a-zA-Z]+$/;  
-if(uadd.value.match(letters))  
-{  
-return true;  
-}  
-else  
-{  
-alert('User address must have alphanumeric characters only');  
-uadd.focus();  
-return false;  
-}  
-}  
-function countryselect(ucountry)  
-{  
-if(ucountry.value == "Default")  
-{  
-alert('Select your country from the list');  
-ucountry.focus();  
-return false;  
-}  
-else  
-{  
-return true;  
-}  
-}  
-function allnumeric(uzip)  
-{   
-var numbers = /^[0-9]+$/;  
-if(uzip.value.match(numbers))  
-{  
-return true;  
-}  
-else  
-{  
-alert('ZIP code must have numeric characters only');  
-uzip.focus();  
-return false;  
-}  
-}  
-function ValidateEmail(uemail)  
-{  
-var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
-if(uemail.value.match(mailformat))  
-{  
-return true;  
-}  
-else  
-{  
-alert("You have entered an invalid email address!");  
-uemail.focus();  
-return false;  
-}  
-} function validsex(umsex,ufsex)  
-{  
-x=0;  
-  
-if(umsex.checked)   
-{  
-x++;  
-} if(ufsex.checked)  
-{  
-x++;   
-}  
-if(x==0)  
-{  
-alert('Select Male/Female');  
-umsex.focus();  
-return false;  
-}  
-else  
-{  
-alert('Form Succesfully Submitted');  
-window.location.reload()  
-return true;  
-}  
-} 
-   </script>
 </body>
 </html>

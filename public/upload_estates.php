@@ -167,16 +167,16 @@ checkToken();
                   <div id="electronics">
                     <form action="uploading_estates.php" id="validation" novalidate="novalidate" class="upload-form row" method="post" enctype="multipart/form-data">
                         <div class="form-group col-md-12">
-                             <input type="text" name="izina" class="form-control" placeholder="Ad title">
+                             <input type="text" name="izina" required="required" class="form-control" placeholder="Ad title">
                         </div>
                         <div class="form-group col-md-6">
-                           <input type="text" name="name" class="form-control" placeholder="Seller Name">
+                           <input type="text" name="name" required="required" class="form-control" placeholder="Seller Name">
                         </div> 
                         <div class="form-group col-md-6">
-                           <input type="text" name="contact" class="form-control" placeholder="Phone Number">
+                           <input type="text" name="contact" required="required" class="form-control" placeholder="Phone Number">
                         </div>
                         <div class="form-group col-md-6">
-                            <select class="form-control" name="subcategory">
+                            <select class="form-control" required="required" name="subcategory">
                                  <option value="">Select Real-Estate category</option>
                                  <?php 
                                     $query = "SELECT * FROM subcategories ";
@@ -190,14 +190,14 @@ checkToken();
                             </select>
                         </div>
                         <div class="form-group col-md-6">
-                             <select class="form-control" name="rentalorsell">
+                             <select class="form-control" required="required" name="rentalorsell">
                                  <option value="">Select if renting or selling</option>
                                  <option value="0">Selling</option>
                                  <option value="1">Renting</option>
                             </select>    
                         </div>
                          <div class="form-group col-md-6">
-                          <select class="form-control" name="location">
+                          <select class="form-control" required="required" name="location">
                              <option ="">Select District</option>
                                 <?php 
                                    $query = "SELECT * FROM places order by place_name";
@@ -210,7 +210,7 @@ checkToken();
                           </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <input type="text" name="sector" class="form-control" placeholder="sector">
+                            <input type="text" name="sector" class="form-control" required="required" placeholder="sector">
                         </div>
                         <div class="form-group col-md-6">
                             <input type="text" name="road" class="form-control" placeholder="Street number (eg: KK 23 ave 256)">
@@ -219,7 +219,7 @@ checkToken();
                             <input type="text" name="price" class="form-control"  placeholder="Price">
                         </div>
                         <div class="form-group col-md-12">
-                            <textarea name="details" id="message" class="form-control" rows="8" placeholder="Descriptions, Include number of rooms, and any other usefull informations"></textarea>
+                            <textarea name="details" id="message" required="required" class="form-control" rows="8" placeholder="Descriptions, Include number of rooms, and any other usefull informations"></textarea>
                         </div>
                         <div class="col-sm-4"> 
                                   <input type="file" name="main" class="this" id="inp" />
@@ -263,7 +263,7 @@ checkToken();
                   <div id="jobbs" class="notshowing">
                     job
                   </div>
-                </form>
+                
             </div>
           </div>
                 <div class="col-sm-3 padding-right"><!--for advertisement--></div> 
