@@ -117,10 +117,13 @@ checkToken();
 				                 <input type='text' name='name' class='validate[required,custom[onlyLetterSp]] form-control' placeholder='Full Name'>
 				                 </div>
 				                 <div class='form-group col-md-6'>
-				                 <input type='text' name='number' class='validate[required,custom[integer]] form-control' placeholder='Contact number'>
+				                 <input type='text' name='number' class='validate[required,custom[integer]]' placeholder='Contact number'>
 				                 </div>
 				                 <div class='form-group col-md-6'>
-				                 <input type='email' name='email' class='validate[required,custom[email]] form-control' placeholder='Email'>
+				                 <input type='email' name='email' class='form-control' data-validation-engine='validate[required,custom[email]]'
+    data-errormessage-value-missing='Email is required!'
+    data-errormessage-custom-error='Let me give you a hint: someone@nowhere.com'
+    data-errormessage='This is the fall-back error message.' placeholder='Email'>
 				                 </div>
 				                 <div class='form-group col-md-12'>
 				                 <input type='text' name='subject' class='form-control' placeholder='Subject'>
