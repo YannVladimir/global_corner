@@ -114,22 +114,19 @@ checkToken();
                             {
                                  echo "<form action='message.php' id='contactform' class='contact-form row' name='contactform' method='POST'>
 				                 <div class='form-group col-md-12'>
-				                 <input type='text' name='name' class='validate[required,custom[onlyLetterSp]] form-control' placeholder='Full Name'>
+				                 <input type='text' name='name' class='form-control' required='required' onlyLetterSp='onlyLetterSp' placeholder='Full Name'>
 				                 </div>
 				                 <div class='form-group col-md-6'>
-				                 <input type='text' name='number' class='validate[required,custom[integer]]' placeholder='Contact number'>
+				                 <input type='text' name='number' class='form-control' required='required' integer='integer' placeholder='Contact number'>
 				                 </div>
 				                 <div class='form-group col-md-6'>
-				                 <input type='email' name='email' class='form-control' data-validation-engine='validate[required,custom[email]]'
-    data-errormessage-value-missing='Email is required!'
-    data-errormessage-custom-error='Let me give you a hint: someone@nowhere.com'
-    data-errormessage='This is the fall-back error message.' placeholder='Email'>
+				                 <input type='email' name='email' class='form-control' required='required' email='email' placeholder='Email address'>
 				                 </div>
 				                 <div class='form-group col-md-12'>
 				                 <input type='text' name='subject' class='form-control' placeholder='Subject'>
 				                 </div>
 				                 <div class='form-group col-md-12'>
-				                 <textarea name='message' id='message'  class='validate[required] form-control' rows='8' placeholder='Your Message Here'></textarea>
+				                 <textarea name='message' id='message'  class='form-control'  required='required' rows='8' placeholder='Your Message Here'></textarea>
 				                 </div>                        
 				                 <div class='form-group col-md-12'>
 				                 ";
