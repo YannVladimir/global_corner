@@ -23,6 +23,7 @@ checkToken();
     <link href="assets/css/animate.css" rel="stylesheet">
 	<link href="assets/css/main.css" rel="stylesheet">
 	<link href="assets/css/responsive.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/jQuery-Validation-Engine-master/css/validationEngine.jquery.css" type="text/css"/>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -104,7 +105,7 @@ checkToken();
 				                <input type='text' name='subject' class='form-control'  placeholder='Subject'>
 				                </div>
 				                <div class='form-group col-md-12'>
-				                <textarea name='message' id='message'  class='form-control' rows='8' placeholder='Your Message Here'></textarea>
+				                <textarea name='message' id='message'  class='validate[required] form-control' rows='8' placeholder='Your Message Here'></textarea>
 				                </div>                        
 				                <div class='form-group col-md-12'>
 				                ";
@@ -113,19 +114,19 @@ checkToken();
                             {
                                  echo "<form action='message.php' id='contactform' class='contact-form row' name='contactform' method='POST'>
 				                 <div class='form-group col-md-12'>
-				                 <input type='text' name='name' class='form-control' placeholder='Full Name'>
+				                 <input type='text' name='name' class='validate[required,custom[onlyLetterSp]] form-control' placeholder='Full Name'>
 				                 </div>
 				                 <div class='form-group col-md-6'>
-				                 <input type='text' name='number' class='form-control' placeholder='Contact number'>
+				                 <input type='text' name='number' class='validate[required,custom[integer]] form-control' placeholder='Contact number'>
 				                 </div>
 				                 <div class='form-group col-md-6'>
-				                 <input type='email' name='email' class='form-control'  email='email' placeholder='Email'>
+				                 <input type='email' name='email' class='validate[required,custom[email]] form-control' placeholder='Email'>
 				                 </div>
 				                 <div class='form-group col-md-12'>
 				                 <input type='text' name='subject' class='form-control' placeholder='Subject'>
 				                 </div>
 				                 <div class='form-group col-md-12'>
-				                 <textarea name='message' id='message'  class='form-control' rows='8' placeholder='Your Message Here'></textarea>
+				                 <textarea name='message' id='message'  class='validate[required] form-control' rows='8' placeholder='Your Message Here'></textarea>
 				                 </div>                        
 				                 <div class='form-group col-md-12'>
 				                 ";
@@ -175,15 +176,18 @@ checkToken();
    require('footer.php');    
   ?>
 
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/yann.min.js"></script>
-	<script src="assets/js/jquery.scrollUp.min.js"></script>
-	<script src="assets/js/price-range.js"></script>
-    <script src="assets/js/jquery.prettyPhoto.js"></script><!--
+    <script src="assets/js/jquery.js" type="text/javascript"></script>
+    <script src="assets/js/yann.min.js" type="text/javascript"></script>
+	<script src="assets/js/jquery.scrollUp.min.js" type="text/javascript"></script>
+	<script src="assets/js/price-range.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.prettyPhoto.js" type="text/javascript"></script><!--
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
   <script type="text/javascript" src="<akaboroakaborophp echo BASEURL."../assets/js/gmaps.js"></script>  
-  <script src="<php echo BASEURL."../assets/js/contact.js"></script>-->
+  <script src="<php echo BASEURL."../assets/js/contact.js"></script>
   <script src="assets/js/jquery.validate.js"></script>
-  <script src="assets/js/contactus.js"></script>
+  <script src="assets/js/contactus.js"></script>-->
+    <script src="assets/jQuery-Validation-Engine-master/js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
+<script src="assets/jQuery-Validation-Engine-master/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+  
 </body>
 </html>
