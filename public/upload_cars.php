@@ -186,7 +186,7 @@ checkToken();
                                 ?>
                           </select>
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             <select class="form-control" required="required" name="subcategory">
                                  <option value="">Select sub-category</option>
                                  <?php 
@@ -198,6 +198,13 @@ checkToken();
                                        echo "<option value='{$row['subcat_id']}'>{$row['subcat_name']}</option>";
                                     } 
                                 ?>
+                            </select>
+                        </div>
+                         <div class="form-group col-md-6">
+                          <select class="form-control" required="required" name="newsecond">
+                                 <option value="">Select product type</option>
+                                 <option value="0">New</option>
+                                 <option value="1">Second hand</option> 
                             </select>
                         </div>
                         <div class="form-group col-md-6">

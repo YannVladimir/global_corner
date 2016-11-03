@@ -17,6 +17,7 @@ if(!$price)
   $price = "Negotiatable";
 }
 $details = clearInput($_POST['details']);
+$new_second = clearInput($_POST['newsecond']);
 $place = clearInput($_POST['location']);
 $contacts = clearInput($_POST['contact']);
 $uploaded = date("Y-m-d");
@@ -68,7 +69,7 @@ if(isset($_FILES['main']))
     }
     else
     {
-      echo "<script>alert(' invalid image file 1');window.location='upload.php';</script>";exit;
+      $photo = "noimage.jpg";
     }
 
 }
@@ -103,6 +104,10 @@ if($size < (2097152))
      $img1 = $new_name;
      imagedestroy($new_image);
      imagedestroy($tmp_image);
+     if ($photo=="noimage.jpg") {
+         $photo = $img1;
+         $img1 = '';
+     }
 }
  else
 {
@@ -146,6 +151,10 @@ if($size < (2097152))
      $img2 = $new_name;
      imagedestroy($new_image);
      imagedestroy($tmp_image);
+     if ($photo=="noimage.jpg" && $img1=='') {
+         $photo = $img2;
+         $img2 = '';
+     }
 }
  else
 {
@@ -189,6 +198,10 @@ if($size < (2097152))
      $img3 = $new_name;
      imagedestroy($new_image);
      imagedestroy($tmp_image);
+     if ($photo=="noimage.jpg" && $img1=='' && $img2=='') {
+         $photo = $img3;
+         $img3 = '';
+     }
 }
  else
 {
@@ -341,7 +354,7 @@ $select = mysqli_query($con,$queryy);
    if($photo==$row['main'])
    {
  $refphoto = $row['photo_id'];
- $querry = "INSERT INTO posts (category,user,seller,name,price,details,place,contacts,uploaded_date,photo) values ('{$category}','{$user}','{$seller}','{$nam}','{$price}','{$details}','{$place}','{$contacts}','{$uploaded}','{$refphoto}')";
+ $querry = "INSERT INTO posts (is_rent,category,user,seller,name,price,details,place,contacts,uploaded_date,photo) values ('{$new_second}','{$category}','{$user}','{$seller}','{$nam}','{$price}','{$details}','{$place}','{$contacts}','{$uploaded}','{$refphoto}')";
             
  $res = mysqli_query($con,$querry);
  if($res)
