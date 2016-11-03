@@ -8,7 +8,7 @@ if(isset($_GET['id'])){
 $id = $_GET['id'];
 if($id==7)
   {
-    require('upload_jobs.php');
+    require('upload_services.php');
     exit;
   }
 elseif ($id ==5)
