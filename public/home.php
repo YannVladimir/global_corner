@@ -109,7 +109,7 @@ if(isset($_GET['var']) == "logout")
                     
                     <div class="category-tab"><!--category-tab-->
                         <div class="col-sm-12">
-                            <h2 class="title text-center">Recomended products</h2>
+                            <h2 class="title text-center">Recomended products</h2><br>
                             <ul class="nav nav-tabs">
                                 <?php 
                                 $query = "SELECT * from categories";
@@ -510,20 +510,21 @@ if(isset($_GET['var']) == "logout")
 </div> 
 </di><!--/row-->
 <div class="row">
-    <div class="col-sm-12"><br><br><h2 class="title text-center">Recomended orders</h2></div>
+    <div class="col-sm-12"><br><br><br><h2 class="title text-center">Recomended orders</h2><br>
+     <ul class="nav nav-tabs">
+  <?php
+  echo "<li class='pull-left'><a href='orders.php'>Orders</a></li>";
+  echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='orders.php'>View All</a></li>";
+  echo "</ul>";
+  ?>
+</div>
   <div class='col-sm-2'></div>
                 <div class='col-sm-8'>
-                    
-                    
-<div class="col-sm-12">
-                            <ul class="nav nav-tabs">
+                           
                                 <?php 
-                                echo "<li class='pull-left'><a href='orders.php'>Orders</a></li>";
-                                echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='orders.php'>View All</a></li>";
-                                  
-                                echo "</ul>
-                        </div>
-                        <div class='tab-content'> ";
+                              
+                
+                        echo "<div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
                                $query = "SELECT * from vieworders where is_accepted = 1 order by id desc limit 10";
@@ -555,31 +556,6 @@ if(isset($_GET['var']) == "logout")
                                 
 //for orders
 ?>
-                <?php
-                    $query = "SELECT * from vieworders where is_accepted = 1 order by id desc limit 10";
-                     $res = mysqli_query($con,$query);
-                     while($row = mysqli_fetch_assoc($res))
-                     {
-            echo " <div class='col-sm-6'>
-                        <div class='panel panel-default text-center'>
-                            <div class='panel-heading'>
-                                <h2 class='panel-title'><strong>{$row['name']} </strong></h2>
-                            </div>";
-                      echo "<ul class='list-group'>
-                               <li class='list-group-item'><strong></strong>{$row['details']}</li>
-                               <li class='list-group-item'><strong></strong>{$row['place']}</li>
-                               <li class='list-group-item'><strong></strong>{$row['up_date']}</li>
-                               <li class='list-group-item'>
-                                 <form action='contact-dealer.php' method='GET'>
-                                  <input type='text' name='id' value='{$row['id']}' class='hidden'>
-                                  <button type='submit' class='btn btn-default bton'>Answer me</button>
-                                 </form>
-                               </li>
-                            </ul>
-                        </div>
-                   </div>";
-                     }
-                ?>
                 
             </div>
           <div class="col-sm-2"></div>
