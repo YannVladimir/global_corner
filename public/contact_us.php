@@ -102,17 +102,17 @@ checkToken();
                             {
                                 echo "<form action='message.php' id='contactform' class='contact-form row' method='POST'>
 				                <div class='form-group col-md-12'>
-				                <input type='text' name='subject' class='form-control'  placeholder='Subject'>
+				                <input type='text' name='subject' class='form-control' required='required' placeholder='Subject'>
 				                </div>
 				                <div class='form-group col-md-12'>
-				                <textarea name='message' id='message'  class='validate[required] form-control' rows='8' placeholder='Your Message Here'></textarea>
+				                <textarea name='message' id='message'  class='form-control' required='required' rows='8' placeholder='Your Message Here'></textarea>
 				                </div>                        
 				                <div class='form-group col-md-12'>
 				                ";
                             }
                             else 
                             {
-                                 echo "<form action='message.php' id='contactform' class='contact-form row' name='contactform' method='POST'>
+                                 echo "<form action='message.php' id='contactform' class='contact-form row' name='contactform' method='POST' onSubmit='return formValidation();'>
 				                 <div class='form-group col-md-12'>
 				                 <input type='text' name='name' class='form-control' required='required' onlyLetterSp='onlyLetterSp' placeholder='Full Name'>
 				                 </div>
@@ -123,7 +123,7 @@ checkToken();
 				                 <input type='email' name='email' class='form-control' required='required' email='email' placeholder='Email address'>
 				                 </div>
 				                 <div class='form-group col-md-12'>
-				                 <input type='text' name='subject' class='form-control' placeholder='Subject'>
+				                 <input type='text' name='subject' class='form-control' required='required' placeholder='Subject'>
 				                 </div>
 				                 <div class='form-group col-md-12'>
 				                 <textarea name='message' id='message'  class='form-control'  required='required' rows='8' placeholder='Your Message Here'></textarea>
@@ -188,6 +188,66 @@ checkToken();
   <script src="assets/js/contactus.js"></script>
     <script src="assets/jQuery-Validation-Engine-master/js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
 --><script src="assets/jQuery-Validation-Engine-master/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+   <scrip type="text/javascript">
+function formValidation()  
+{  
+
+    var uname = document.registration.name;  
+    var unum = document.registration.number; 
+    if(userid_validation(unum,10,15))  
+    {  
+       if(alphanumeric(uname))  
+       {  
+          if(allnumeric(unum))  
+          {  
+          }  
+        }   
+    }  
+    return false;  
   
+} 
+
+function userid_validation(uid,mx,my)  
+{  
+    var uid_len = uid.value.length;  
+    if (uid_len == 0 || uid_len >= my || uid_len < mx)  
+    {  
+      alert("Invalid phone number");  
+      uid.focus();  
+      return false;  
+    }  
+    return true;  
+} 
+ 
+function alphanumeric(uadd)  
+{   
+   var letters = /^[0-9a-zA-Z]+$/;  
+   if(uadd.value.match(letters))  
+   {  
+     return true;  
+   }  
+   else  
+   {  
+     alert('User address must have alphanumeric characters only');  
+     uadd.focus();  
+     return false;  
+   }  
+}  
+
+function allnumeric(uzip)  
+{   
+  var numbers = /^[0-9]+$/;  
+  if(uzip.value.match(numbers))  
+  {  
+     return true;  
+  }  
+  else  
+  {  
+     alert('Invalid phone number');  
+     uzip.focus();  
+     return false;  
+  }  
+} 
+   </script>
 </body>
 </html>
