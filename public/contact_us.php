@@ -185,9 +185,9 @@ checkToken();
   <script type="text/javascript" src="<akaboroakaborophp echo BASEURL."../assets/js/gmaps.js"></script>  
   <script src="<php echo BASEURL."../assets/js/contact.js"></script>
   <script src="assets/js/jquery.validate.js"></script>
-  <script src="assets/js/contactus.js"></script>-->
+  <script src="assets/js/contactus.js"></script>
     <script src="assets/jQuery-Validation-Engine-master/js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
-<script src="assets/jQuery-Validation-Engine-master/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+--><script src="assets/jQuery-Validation-Engine-master/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
   
 </body>
 </html>
