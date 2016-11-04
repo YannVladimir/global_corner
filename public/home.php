@@ -49,6 +49,9 @@ if(isset($_GET['var']) == "logout")
         font-size: 20px;
 
       }
+      .sizing{
+        width:30px;
+      }
       .left-image{
        position: absolute;
       }
@@ -148,7 +151,7 @@ if(isset($_GET['var']) == "logout")
                                              <div class='single-products'>
                                                 <div class='productinfo text-center'>
                                                    <div class='sizingimages'>
-                                                        <img src='assets/images/product-details/new.jpg' class='newarrival' alt='' />
+                                                        <img src='assets/images/product-details/new.jpg' class='newarrival sizing' alt='' />
                                                         <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
                                                    </div>
                                                    <h2>{$row['price']} Rwf</h2>
