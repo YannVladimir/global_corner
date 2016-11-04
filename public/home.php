@@ -49,6 +49,13 @@ if(isset($_GET['var']) == "logout")
         font-size: 20px;
 
       }
+      .left-image{
+       position: absolute;
+      }
+      .right-image{
+       position: absolute;
+       z-index: 5;
+}
     </style>
 </head><!--/head-->
 
@@ -141,9 +148,9 @@ if(isset($_GET['var']) == "logout")
                                              <div class='single-products'>
                                                 <div class='productinfo text-center'>
                                                    <div class='sizingimages'>
+                                                        <img src='assets/images/product-details/new.jpg' class='newarrival' alt='' />
                                                         <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
                                                    </div>
-                                                   <h3>Verified</h3>
                                                    <h2>{$row['price']} Rwf</h2>
                                                    <p>{$row['name']}</p>
                                                    <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
