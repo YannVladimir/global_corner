@@ -110,6 +110,7 @@ require_once ('../includes/main_functions.php');
                             while($row = mysqli_fetch_assoc($res))
                             {
                               if($row['is_accepted'] == 1){
+                                if($row['is_auction']==0)
                               echo "<div class='col-sm-3'>
 							<div class='product-image-wrapper'>
 								<div class='single-products'>
@@ -137,6 +138,35 @@ require_once ('../includes/main_functions.php');
 								</div>
 							</div>
 						</div>";
+            else
+              echo "<div class='col-sm-3'>
+              <div class='product-image-wrapper'>
+                <div class='single-products'>
+                  <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                   <img src='assets/images/shop/logo.png' style='width:60px' class='newarrival sizing' alt='' />
+                      <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                    </div>
+                    <h2>{$row['price']} Rwf</h2>
+                    <p>{$row['name']}</p>
+                    <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                  </div>
+                  <div class='product-overlay' style='opacity:0.9'>
+                    <div class='overlay-content'>
+                      <h2>{$row['price']} Rwf</h2>
+                        <p>{$row['name']}</p>
+                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                        </div>
+                  </div>
+                </div>
+                <div class='choose'>
+                  <ul class='nav nav-pills nav-justified'>
+                    <li><a href='#'>{$row['place_name']}</a></li>
+                    <li><a href='#'>{$row['uploaded_date']}</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>";
                               $a = $a+1;
                             }}
                             if($a==0)
