@@ -354,7 +354,7 @@ $select = mysqli_query($con,$queryy);
    if($photo==$row['main'])
    {
  $refphoto = $row['photo_id'];
- $querry = "INSERT INTO posts (is_rent,category,user,seller,name,price,details,place,contacts,uploaded_date,photo) values ('{$new_second}','{$category}','{$user}','{$seller}','{$nam}','{$price}','{$details}','{$place}','{$contacts}','{$uploaded}','{$refphoto}')";
+ $querry = "INSERT INTO posts (is_auction,category,user,seller,name,price,details,place,contacts,uploaded_date,photo) values ('{$new_second}','{$category}','{$user}','{$seller}','{$nam}','{$price}','{$details}','{$place}','{$contacts}','{$uploaded}','{$refphoto}')";
             
  $res = mysqli_query($con,$querry);
  if($res)
