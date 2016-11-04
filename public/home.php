@@ -151,7 +151,7 @@ if(isset($_GET['var']) == "logout")
                                              <div class='single-products'>
                                                 <div class='productinfo text-center'>
                                                    <div class='sizingimages'>
-                                                        <img src='assets/images/product-details/new.jpg' style='width:30px' class='newarrival sizing' alt='' />
+                                                        <img src='assets/images/product-details/new.jpg' style='width:50px' class='newarrival sizing' alt='' />
                                                         <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
                                                    </div>
                                                    <h2>{$row['price']} Rwf</h2>
