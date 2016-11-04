@@ -110,7 +110,7 @@ checkUser();
                             while($row = mysqli_fetch_assoc($res))
                             {
                               
-                                if ($row['refcat_id']!=7 ){
+                                if ($row['is_auction']==0 ){
                               echo "<div class='col-sm-3'>
 							<div class='product-image-wrapper'>
 								<div class='single-products'>
@@ -137,36 +137,39 @@ checkUser();
 									</ul>
 								</div>
 							</div>
-						</div>";}
-            elseif ($row['refcat_id']==7) {
-              echo "<div class='col-sm-4'>
-                                    <div class='product-image-wrapper'>
-                                        <div class='single-products'>
-                                            <div class='productinfo text-center'>
-                                                <div class='panel panel-default text-center'>
-                    <div class='panel-heading'>
-                        <h1 class='panel-title'><strong> Job offer </strong></h1>
+						</div>";
+          }
+          else
+          {
+             echo "<div class='col-sm-3'>
+              <div class='product-image-wrapper'>
+                <div class='single-products'>
+                  <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                    <img src='assets/images/shop/logo.png' style='width:60px' class='newarrival sizing' alt='' />
+                     <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
                     </div>
-                    <ul class='list-group'>";
-            
-                           echo"<li class='list-group-item'><strong>Company name: </strong>{$row['seller']}</li>
-                        <li class='list-group-item'><strong>Job Position: </strong>{$row['job_position']}</li>
-                        <li class='list-group-item'><strong>Category: </strong>{$row['subcat_name']}</li>
-                        <li class='list-group-item'><strong>Published on: </strong>{$row['uploaded_date']}</li>
-                        <li class='list-group-item'><strong>Apply before: </strong>{$row['deadline']}</li>";
-                        echo"<li class='list-group-item'>
-                          <form action='job-details.php' method='GET'>
-                            <input type='text' class='hidden' name='id' value='{$row['post_id']}'>
-                             <button type='submit' class='btn btn-default bton'>View Details</button>
-                          </form>
-                        </li></ul>";
-                        
-                        echo"</div>
-                            </div>  
-                            </div>
-                              </div>
-                                </div>";
-            }
+                    <h2>{$row['price']} Rwf</h2>
+                    <p>{$row['name']}</p>
+                    <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                  </div>
+                  <div class='product-overlay' style='opacity:0.9'>
+                    <div class='overlay-content'>
+                      <h2>{$row['price']} Rwf</h2>
+                        <p>{$row['name']}</p>
+                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                        </div>
+                  </div>
+                </div>
+                <div class='choose'>
+                  <ul class='nav nav-pills nav-justified'>
+                    <li><a href='#'>{$row['place_name']}</a></li>
+                    <li><a href='#'>{$row['uploaded_date']}</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>";
+          }
                             $a = $a+1;
                             }
                             if($a==0)

@@ -343,6 +343,46 @@ checkUser();
 				
 			  
 			</div>
+                  <div class="col-sm-3"></div>
+        <div class="col-sm-6 padding-right">
+            <div class="contact-form align-center">
+              <br><br>
+              <h2 class="title text-center">Or make your order</h2>
+              <div class="status alert alert-success" style="display: none"></div>
+                  <br>
+                  <div id="electronics">
+                    <form action="ordering.php" id="" class="upload-form row" name="upload-form" method="post" enctype="multipart/form-data">
+                        <div class="form-group col-md-12">
+                             <input type="text" name="izina" class="form-control" required="required" placeholder="Oreder Title">
+                        </div>
+                        
+                        <div class="form-group col-md-12">
+                            <select class="form-control" name="subcategory" required="required">
+                                 <option value="">Select order-category</option>
+                                 <?php 
+                                    $query = "SELECT * FROM categories ";
+                                    $res = mysqli_query($con,$query);
+                                    while($row = mysqli_fetch_assoc($res))
+                                    {
+                                       echo "<option value='{$row['cat_id']}'>{$row['cat_name']}</option>";
+                                    } 
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <textarea name="details" id="message" required="required" class="form-control" rows="8" placeholder="Description of your order, less than 1500 characters"></textarea>
+                        </div>
+                        <div class="form-group col-md-12">
+                           <input type="text" name="location" class="form-control" required="required" placeholder="Location">
+                        </div>
+                           <input type="submit" name="submit" class="btn btn-primary pull-right" value="Submit">
+                        </div>
+                    </form>
+                  </div>
+            </div>
+          </div>
+                <div class="col-sm-3 padding-right"><!--for advertisement--></div> 
+    </div>
 		</div>
 	</section>
 	<br><br><br><br><br><br>
