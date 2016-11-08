@@ -42,7 +42,7 @@ if(isset($_FILES['main']))
     $allowed_ext = array("png", "jpeg", "jpg");
     if(in_array($ext, $allowed_ext))
     {
-      if($size < (2097152))
+      if($size < (4194304))
       {
         $new_image = '';
         $new_name = md5(rand()) . '.' . $ext;
@@ -85,7 +85,7 @@ if(isset($_FILES['img1']))
     $allowed_ext = array("png", "jpeg", "jpg");
     if(in_array($ext, $allowed_ext))
     {
-if($size < (2097152))
+if($size < (4194304))
 {
      $new_image = '';
      $new_name = md5(rand()) . '.' . $ext;
@@ -128,7 +128,7 @@ if(isset($_FILES['img2']))
     $allowed_ext = array("png", "jpeg", "jpg");
     if(in_array($ext, $allowed_ext))
     {
-if($size < (2097152))
+if($size < (4194304))
 {
      $new_image = '';
      $new_name = md5(rand()) . '.' . $ext;
@@ -171,7 +171,7 @@ if(isset($_FILES['img3']))
     $allowed_ext = array("png", "jpeg", "jpg");
     if(in_array($ext, $allowed_ext))
     {
-if($size < (2097152))
+if($size < (4194304))
 {
      $new_image = '';
      $new_name = md5(rand()) . '.' . $ext;
@@ -214,7 +214,7 @@ if(isset($_FILES['img4']))
     $allowed_ext = array("png", "jpeg", "jpg");
     if(in_array($ext, $allowed_ext))
     {
-if($size < (2097152))
+if($size < (4194304))
 {
      $new_image = '';
      $new_name = md5(rand()) . '.' . $ext;
@@ -257,7 +257,7 @@ if(isset($_FILES['img5']))
     $allowed_ext = array("png", "jpeg", "jpg");
     if(in_array($ext, $allowed_ext))
     {
-      if($size < (2097152))
+      if($size < (4194304))
       {
         $new_image = '';
         $new_name = md5(rand()) . '.' . $ext;
@@ -301,7 +301,7 @@ if(isset($_FILES['img6']))
     $allowed_ext = array("png", "jpeg", "jpg");
     if(in_array($ext, $allowed_ext))
     {
-      if($size < (2097152))
+      if($size < (4194304))
       {
         $new_image = '';
         $new_name = md5(rand()) . '.' . $ext;
