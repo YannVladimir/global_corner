@@ -129,7 +129,7 @@ require_once ('../includes/main_functions.php');
 							<div class='view-product'>
 										<div class='' id='photo1'>
                         <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt=''/>
-					  </div>
+					         </div>
 								<h3>Verified</h3>
 							</div>
 						</div>

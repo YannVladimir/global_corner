@@ -17,7 +17,7 @@ $().ready(function(){
                     minlength:2,
                     maxlength:80
                   },
-                  email:{
+                  email:{ 
                     required:true,
                     email:true
                   },

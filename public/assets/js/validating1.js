@@ -19,7 +19,7 @@ $().ready(function(){
                   image:{
                     required:true
                   },
-                  name:{
+                  name:{ 
                     required:true,
                     lettersonly:true,
                     minlength:2
