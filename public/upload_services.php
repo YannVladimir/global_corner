@@ -143,7 +143,7 @@ checkToken();
                                        $res = mysqli_query($con,$query);
                                        $row = mysqli_fetch_assoc($res);
                                        echo $row['cat_name'];
-                                      echo "<span class='caret'></span>
+                                      echo "  <span class='caret'></span>
                                </button>
                                <ul class='dropdown-menu'>";
                                        $sql = "SELECT * from categories where cat_id!='{$id}'";
