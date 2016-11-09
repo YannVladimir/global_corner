@@ -268,7 +268,8 @@ checkToken();
   <script src="assets/js/yann.min.js"></script>
   <script src="assets/js/jquery.scrollUp.min.js"></script>
   <script src="assets/js/jquery.prettyPhoto.js"></script>
-  <!--<script src="assets/js/main.js"></script>-->
+  <script src="assets/js/price-range.js"></script>
+  <script src="assets/js/main.js"></script>
   <script src="assets/js/jquery.validate.js"></script>
   <script src="assets/js/uploading.js"></script><script>
           $(document).ready(function()
