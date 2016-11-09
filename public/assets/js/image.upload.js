@@ -113,13 +113,13 @@ $(".btn8").bind("click" , function(){
 
     reader.onload = function (e) {
         // get loaded data and render thumbnail.
-        document.getElementById("image8").src = e.target.result;
+        document.getElementById("image8").src = e.target.result; 
     };
 
     // read the image file as a data URL.
     reader.readAsDataURL(this.files[0]);
 };
-$(".cat1").bind("click" , function(){
+/*$(".cat1").bind("click" , function(){
         $("#selecting").click();
        });
        document.getElementById("selecting").onchange = function () {
@@ -132,5 +132,5 @@ $(".cat1").bind("click" , function(){
 
     // read the image file as a data URL.
     reader.readAsDataURL(this.files[0]);
-};
+};*/
    
