@@ -200,8 +200,8 @@ checkToken();
                         <div class="form-group col-md-6">
                           <select class="form-control" required="required" name="newsecond">
                                  <option value="">Select product type</option>
-                                 <option value="0">New</option>
-                                 <option value="1">Second hand</option> 
+                                 <option value="1">New</option>
+                                 <option value="0">Second hand</option> 
                             </select>
                         </div>
                         <div class="form-group col-md-6">
