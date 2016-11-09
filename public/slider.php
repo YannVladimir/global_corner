@@ -73,24 +73,25 @@
 
                                    if($v==1){
                                      echo "<div class='item active'>
-								     <div class='col-sm-6'> 
-									<h1><span>250</span> Trade</h1>
-									<h2>{$row['cat_name']} </div> </h2>";
+								               <div class='col-sm-6'> 
+									             <img src='assets/images/categories/phone.jpg' class='girl img-responsive' alt='' />
+				                               </div> ";
 									$v = 2;
                                     }
                                     else{
-                                	    echo "<div class='item'>
-								       <div class='col-sm-6'> 
+                                	     echo "<div class='item'>
+								                 <div class='col-sm-6'> 
 									   <h1><span>250</span> Trade</h1>
-									   <h2>{$row['cat_name']} </div></h2>";
-                                    }
-                                    
-                                    echo"
-								<div class='col-sm-6 slidersizing'><br>
+									   <h2>{$row['cat_name']} </div></h2>
+									   <div class='col-sm-6 slidersizing'><br>
 								<a href='category.php?id={$row['cat_id']}'>
 									<img src='assets/images/categories/{$row['cat_image']}' class='girl img-responsive' alt='' />
 				                </a>
-								</div>
+								</div>";
+                                    }
+                                    
+                                    echo"
+								
 							</div>";
 
                                 }
