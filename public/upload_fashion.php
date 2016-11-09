@@ -137,7 +137,7 @@ checkToken();
                   
                           <div class="btn-group pull-right">
                             <div class="btn-group">
-                               <button type="button" class="btn btn-default dropdown-toggle country" data-toggle="dropdown">
+                               <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
                                   <?php
                                        $id = $_GET['id'];
                                        $query = "SELECT * from categories where cat_id='{$id}'";
@@ -157,7 +157,7 @@ checkToken();
                               
                                </ul>
                             </div>
-                          </div>
+                        </div>
                   <br><br><br>
                   <div id="electronics">
                     <form action="uploadingprocess.php" id="validation" novalidate="novalidate" class="upload-form row" method="post" enctype="multipart/form-data">
