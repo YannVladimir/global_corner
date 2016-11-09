@@ -138,7 +138,7 @@ checkToken();
                   
                           <div class="btn-group pull-right">
                             <div class="btn-group">
-                               <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:17px" data-toggle="dropdown">
+                               <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:14px" data-toggle="dropdown">
                                   <?php
                                        
                                        echo "Computer/Laptops";
