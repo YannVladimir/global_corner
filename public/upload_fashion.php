@@ -137,14 +137,14 @@ checkToken();
                   
                           <div class="btn-group pull-right">
                             <div class="btn-group">
-                               <button type="button" class="btn btn-default dropdown-toggle usa" style="height:37px" data-toggle="dropdown">
+                               <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px" data-toggle="dropdown">
                                   <?php
                                        $id = $_GET['id'];
                                        $query = "SELECT * from categories where cat_id='{$id}'";
                                        $res = mysqli_query($con,$query);
                                        $row = mysqli_fetch_assoc($res);
                                        echo $row['cat_name'];
-                                      echo "<span class='caret'></span>
+                                      echo "  <span class='caret'></span>
                                </button>
                                <ul class='dropdown-menu'>";
                                        $sql = "SELECT * from categories where cat_id!='{$id}'";
