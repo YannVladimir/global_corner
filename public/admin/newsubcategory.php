@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 include('../../includes/main_functions.php');
-		$categoryname = $_POST['name'];
+		$categoryname = clearInput($_POST['name']);
 		$ref = $_POST['ref'];
 		$query = "SELECT * FROM subcategories ";
 		$check = mysqli_query($con,$query);
