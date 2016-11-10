@@ -73,7 +73,7 @@ if(isset($_FILES['main']))
     }
     else
     {
-      $photo = "noimage.jpg";
+      $photo = '';
     }
 
 }
@@ -338,7 +338,7 @@ $img6= '';
 
 }
 $img7 = '';
-$i = 7;
+
 $cart = array();
 $cart[0] = $photo;
 $cart[1] = $img1;
@@ -351,9 +351,10 @@ $cart[7] = $img7;
 for ($i = 7; $i >0 ; $i--) {
  if($cart[$i]!='')
  {
-    if($cart[$i-1]=='')
+    $b=$i-1;
+    if($cart[$b]=='')
     {
-        $cart[$i-1]=$cart[$i];
+        $cart[$b]=$cart[$i];
     }
  }
 }
