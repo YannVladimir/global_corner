@@ -83,8 +83,8 @@ if(isset($_FILES['img1']))
     $allowed_ext = array("png", "jpeg", "jpg");
     if(in_array($ext, $allowed_ext))
     {
-if($size < (4194304))
-{
+    if($size < (4194304))
+    {
      $new_image = '';
      $new_name = md5(rand()) . '.' . $ext;
      $path ='assets/images/posts/' . $new_name;
@@ -105,19 +105,16 @@ if($size < (4194304))
      $img1 = $new_name;
      imagedestroy($new_image);
      imagedestroy($tmp_image);
-     if ($photo=="noimage.jpg") {
-         $photo = $img1;
-         $img1 = '';
-     }
-}
+    }
+   }
  else
-{
+ {
     $img1= '';
-}
+ }
     }
     else
     {
-$img1= '';
+  $img1= '';
     }
 
 }
@@ -152,10 +149,6 @@ if($size < (4194304))
      $img2 = $new_name;
      imagedestroy($new_image);
      imagedestroy($tmp_image);
-     if ($photo=="noimage.jpg" && $img1=='') {
-         $photo = $img2;
-         $img2 = '';
-     }
 }
  else
 {
@@ -199,10 +192,6 @@ if($size < (4194304))
      $img3 = $new_name;
      imagedestroy($new_image);
      imagedestroy($tmp_image);
-     if ($photo=="noimage.jpg" && $img1=='' && $img2=='') {
-         $photo = $img3;
-         $img3 = '';
-     }
 }
  else
 {
@@ -346,6 +335,33 @@ $img6= '';
 
 }
 $img7 = '';
+$i = 0;
+$cart = array();
+$cart[] = $photo;
+$cart[] = $img1;
+$cart[] = $img2;
+$cart[] = $img3;
+$cart[] = $img4;
+$cart[] = $img5;
+$cart[] = $img6;
+$cart[] = $img7;
+for ($i = 7; $i >0 ; $i++) {
+ if($cart[$i]!='')
+ {
+    if($cart[$i-1]=='')
+    {
+        $cart[$i-1]=$cart[$i];
+    }
+ }
+}
+$photo = $cart[0];
+$img1 = $cart[1];
+$img2 = $cart[2];
+$img3 = $cart[3];
+$img4 = $cart[4];
+$img5 = $cart[5];
+$img6 = $cart[6];
+$img7 = $cart[7];
 $query = "INSERT INTO post_photos (main,photo1,photo2,photo3,photo4,photo5,photo6,photo7) values ('{$photo}','{$img1}','{$img2}','{$img3}','{$img4}','{$img5}','{$img6}','{$img7}')";
 $yan = mysqli_query($con,$query);
 $queryy = "SELECT * FROM post_photos ";
