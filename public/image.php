@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_FILES['main']))
+if(isset($_FILES['image-upload']))
 {
     $name= $_FILES['image-upload']['name'];
     $size= $_FILES['image-upload']['size'];
