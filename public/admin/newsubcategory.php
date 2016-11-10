@@ -65,6 +65,8 @@ include('../../includes/main_functions.php');
 			{
                 echo "<script>alert(' Sub_Category created successfully ');window.location='new-subcategory.php';</script>";
 			}
-		else
-			echo "<script>alert(' Error, please try again ');window.location='new-subcategory.php';</script>";exit;
+		else{
+			echo mysqli_error();
+			//echo "<script>alert(' Error, please try again ');window.location='new-subcategory.php';</script>";exit;
+	       }
 	?>
