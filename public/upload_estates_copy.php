@@ -146,7 +146,7 @@ checkToken();
               <div id="upload_image_1" style="background:blue;">
                   <form action="image.php" id="upload-image" method="post" enctype="multipart/form-data">
                     <input type="file" name="image-upload" id="iamge-upload"/>
-                    
+                    <input type="submit">
                   </form>
               </div>
               <div class="status alert alert-success" style="display: none"></div>
