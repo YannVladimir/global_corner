@@ -85,10 +85,10 @@ checkToken();
     z-index: 100;
     position: fixed;
     background: black;
-    width:70%;
+    width:50%;
     height:120px;
     top:47%;
-    left:25%;
+    left:30%;
     display: none;
 }
   </style>
@@ -229,11 +229,32 @@ checkToken();
                             <input type="text" name="price" class="form-control"  placeholder="Price">
                         </div>
                         <div class="form-group col-md-12">
-                            <textarea name="details" id="message" required="required" class="form-control" rows="8" placeholder="Descriptions, Include number of rooms, and any other usefull informations"></textarea>
+                            
+                            <?php
+                                      if(isset($_SESSION['details']))
+                                      {
+                                        echo '<textarea name="details" id="message" required="required" class="form-control" rows="8" value="{$_SESSION["img-message"]}"></textarea>';
+                                      }
+                                      else
+                                      {
+                                        echo '<textarea name="details" id="message" required="required" class="form-control" rows="8" placeholder="Descriptions, Include number of rooms, and any other usefull informations"></textarea>';
+                                      }
+
+                                    ?>
                         </div>
                         <div class="col-sm-4"> 
-                                  <div id='preview'>
-                                    <img id="image1" class="starting btn1"/>
+                                  <div id='preview' class="starting btn1">
+                                    <?php
+                                      if(isset($_SESSION['path']))
+                                      {
+                                        echo $_SESSION['path'];
+                                      }
+                                      elseif(isset($_SESSION['img-message']))
+                                      {
+                                        echo $_SESSION['img-message'];
+                                      }
+
+                                    ?>
                                   </div>
                         </div>
                             <div class="col-sm-4">
@@ -303,13 +324,7 @@ checkToken();
               {
                   $("#upload_image_1").slideToggle();
               });
-       $("#image-upload").change(function(){
-        $("#preview").html('<label>Image uploading...</label>');
-        $("#upload-image").ajaxForm({
-          target: '#preview'
-        }).submit;
-        $("#upload_image_1").fadeout(1000);
-       });
+      
   });
 
   </script>
