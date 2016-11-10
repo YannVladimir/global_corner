@@ -1,4 +1,5 @@
 <?php
+
 if(isset($_FILES['main']))
 {
     $name= $_FILES['image-upload']['name'];
@@ -43,5 +44,8 @@ if(isset($_FILES['main']))
     }
 
 }
+else
+{
 echo "please select some file";
+}
 ?>
