@@ -25,7 +25,7 @@ include('../../includes/main_functions.php');
 		    $allowed_ext = array("png", "jpeg", "jpg");
 		    if(in_array($ext, $allowed_ext))
 		    {
-			    if($size < (1024*1024))
+			    if($size < (4194304))
 			    {
                     $new_image = '';
                     $new_name = md5(rand()) . '.' . $ext;

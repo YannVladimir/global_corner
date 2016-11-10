@@ -13,7 +13,7 @@ if($id==7)
   }
 elseif ($id ==5)
   {
-    require('upload_estates.php');
+    require('upload_estates_copy.php');
     exit;
   }
 else
