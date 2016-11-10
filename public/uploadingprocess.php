@@ -338,7 +338,7 @@ $img6= '';
 
 }
 $img7 = '';
-$i = 0;
+$i = 7;
 $cart = array();
 $cart[] = $photo;
 $cart[] = $img1;
@@ -348,7 +348,7 @@ $cart[] = $img4;
 $cart[] = $img5;
 $cart[] = $img6;
 $cart[] = $img7;
-for ($i = 7; $i >0 ; $i++) {
+for ($i = 7; $i >0 ; $i--) {
  if($cart[$i]!='')
  {
     if($cart[$i-1]=='')
