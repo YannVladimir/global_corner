@@ -2,7 +2,9 @@
 ini_set('display_startup_errors',1);
 ini_set('display_errors',1);
 error_reporting(E_ALL);
+session_start();
 require_once ('../includes/main_functions.php');
+$_SESSION['details']=$_POST['details'];
 if(isset($_FILES['image-upload']))
 {
     $name= $_FILES['image-upload']['name'];
