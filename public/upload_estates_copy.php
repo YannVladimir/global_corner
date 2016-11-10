@@ -83,10 +83,12 @@ checkToken();
       }
       #upload_image_1{
     z-index: 100;
-    position: absolute;
+    position: fixed;
     background: black;
     width:70%;
-    height:450px;
+    height:120px;
+    top:47%;
+    left:25%;
     display: none;
 }
   </style>
@@ -144,6 +146,7 @@ checkToken();
               <div id="upload_image_1" style="background:blue;">
                   <form action="image.php" id="upload-image" method="post" enctype="multipart/form-data">
                     <input type="file" name="image-upload" id="iamge-upload"/>
+                    <input type="submit">
                   </form>
               </div>
               <div class="status alert alert-success" style="display: none"></div>
