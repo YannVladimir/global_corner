@@ -336,7 +336,7 @@ $img6= '';
 
 }
 $img7 = '';
-
+/*
 $cart = array();
 $cart[0] = $img1;
 $cart[1] = $img2;
@@ -361,7 +361,7 @@ $img3 = $cart[2];
 $img4 = $cart[3];
 $img5 = $cart[4];
 $img6 = $cart[5];
-$img7 = $cart[6];
+$img7 = $cart[6];*/
 $query = "INSERT INTO post_photos (main,photo1,photo2,photo3,photo4,photo5,photo6,photo7) values ('{$photo}','{$img1}','{$img2}','{$img3}','{$img4}','{$img5}','{$img6}','{$img7}')";
 $yan = mysqli_query($con,$query);
 $queryy = "SELECT * FROM post_photos ";
