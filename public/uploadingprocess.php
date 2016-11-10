@@ -5,23 +5,22 @@ error_reporting(E_ALL);
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
 //checkToken();
-echo "Uploading, Please wait...";
 if(checkIsStringSetPost('izina'))
 {
- $category = clearInput($_POST['subcategory']);
-$seller = clearInput($_POST['name']);
-$nam = clearInput($_POST['izina']);
-$price = clearInput($_POST['price']);
-if($price ==0)
-{
+   $category = clearInput($_POST['subcategory']);
+   $seller = clearInput($_POST['name']);
+   $nam = clearInput($_POST['izina']);
+   $price = clearInput($_POST['price']);
+   if($price ==0)
+   {
     $price = "Negotiatable";
-}
-if(!$price)
-{
-  $price = "Negotiatable";
-}
-$details = clearInput($_POST['details']);
-$new_second = clearInput($_POST['newsecond']);
+   }
+   if(!$price)
+   {
+    $price = "Negotiatable";
+   }
+    $details = clearInput($_POST['details']);
+    $new_second = clearInput($_POST['newsecond']);
 $place = clearInput($_POST['location']);
 $contacts = clearInput($_POST['contact']);
 $uploaded = date("Y-m-d");
@@ -51,11 +50,11 @@ if(isset($_FILES['main']))
         list($width, $height) = getimagesize($_FILES['main']['tmp_name']);
         if($ext == 'png')
         {
- 	      $new_image = imagecreatefrompng($_FILES['main']['tmp_name']);
+          $new_image = imagecreatefrompng($_FILES['main']['tmp_name']);
         }
         if($ext == 'jpeg' || $ext == 'jpg')
         {
- 	      $new_image = imagecreatefromjpeg($_FILES['main']['tmp_name']);
+          $new_image = imagecreatefromjpeg($_FILES['main']['tmp_name']);
         }
         $new_height = 300;
         $new_width = ($width/$height)*300;
@@ -73,7 +72,7 @@ if(isset($_FILES['main']))
     }
     else
     {
-      $photo = '';
+      echo "<script>alert(' invalid image file 1');window.location='upload.php';</script>";exit;
     }
 
 }
@@ -86,19 +85,19 @@ if(isset($_FILES['img1']))
     $allowed_ext = array("png", "jpeg", "jpg");
     if(in_array($ext, $allowed_ext))
     {
-    if($size < (4194304))
-    {
+if($size < (4194304))
+{
      $new_image = '';
      $new_name = md5(rand()) . '.' . $ext;
      $path ='assets/images/posts/' . $new_name;
      list($width, $height) = getimagesize($_FILES['img1']['tmp_name']);
      if($ext == 'png')
      {
- 	   $new_image = imagecreatefrompng($_FILES['img1']['tmp_name']);
+       $new_image = imagecreatefrompng($_FILES['img1']['tmp_name']);
      }
      if($ext == 'jpeg' || $ext == 'jpg')
      {
- 	   $new_image = imagecreatefromjpeg($_FILES['img1']['tmp_name']);
+       $new_image = imagecreatefromjpeg($_FILES['img1']['tmp_name']);
      }
      $new_height = 300;
      $new_width = ($height/$width)*300;
@@ -108,16 +107,15 @@ if(isset($_FILES['img1']))
      $img1 = $new_name;
      imagedestroy($new_image);
      imagedestroy($tmp_image);
-    }
-   }
+}
  else
- {
+{
     $img1= '';
- }
+}
     }
     else
     {
-  $img1= '';
+$img1= '';
     }
 
 }
@@ -138,11 +136,11 @@ if($size < (4194304))
      list($width, $height) = getimagesize($_FILES['img2']['tmp_name']);
      if($ext == 'png')
      {
- 	   $new_image = imagecreatefrompng($_FILES['img2']['tmp_name']);
+       $new_image = imagecreatefrompng($_FILES['img2']['tmp_name']);
      }
      if($ext == 'jpeg' || $ext == 'jpg')
      {
- 	   $new_image = imagecreatefromjpeg($_FILES['img2']['tmp_name']);
+       $new_image = imagecreatefromjpeg($_FILES['img2']['tmp_name']);
      }
      $new_width = 300;
      $new_height = ($height/$width)*300;
@@ -181,11 +179,11 @@ if($size < (4194304))
      list($width, $height) = getimagesize($_FILES['img3']['tmp_name']);
      if($ext == 'png')
      {
- 	   $new_image = imagecreatefrompng($_FILES['img3']['tmp_name']);
+       $new_image = imagecreatefrompng($_FILES['img3']['tmp_name']);
      }
      if($ext == 'jpeg' || $ext == 'jpg')
      {
- 	   $new_image = imagecreatefromjpeg($_FILES['img3']['tmp_name']);
+       $new_image = imagecreatefromjpeg($_FILES['img3']['tmp_name']);
      }
      $new_width = 300;
      $new_height = ($height/$width)*300;
@@ -224,11 +222,11 @@ if($size < (4194304))
      list($width, $height) = getimagesize($_FILES['img4']['tmp_name']);
      if($ext == 'png')
      {
- 	   $new_image = imagecreatefrompng($_FILES['img4']['tmp_name']);
+       $new_image = imagecreatefrompng($_FILES['img4']['tmp_name']);
      }
      if($ext == 'jpeg' || $ext == 'jpg')
      {
- 	   $new_image = imagecreatefromjpeg($_FILES['img4']['tmp_name']);
+       $new_image = imagecreatefromjpeg($_FILES['img4']['tmp_name']);
      }
      $new_width = 300;
      $new_height = ($height/$width)*300;
@@ -267,11 +265,11 @@ if(isset($_FILES['img5']))
         list($width, $height) = getimagesize($_FILES['img5']['tmp_name']);
         if($ext == 'png')
         {
- 	      $new_image = imagecreatefrompng($_FILES['img5']['tmp_name']);
+          $new_image = imagecreatefrompng($_FILES['img5']['tmp_name']);
         }
      if($ext == 'jpeg' || $ext == 'jpg')
      {
- 	   $new_image = imagecreatefromjpeg($_FILES['img5']['tmp_name']);
+       $new_image = imagecreatefromjpeg($_FILES['img5']['tmp_name']);
      }
      $new_width = 300;
      $new_height = ($height/$width)*300;
