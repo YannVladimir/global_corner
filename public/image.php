@@ -1,4 +1,4 @@
-<?
+<?php
 if(isset($_FILES['main']))
 {
     $name= $_FILES['image-upload']['name'];
