@@ -3,7 +3,7 @@ $con = mysqli_connect("127.0.0.1","root","REDACTED_DB_PASSWORD","eshopper");
 require_once ('../includes/main_functions.php');
 //checkUser();
 //checkToken();
-echo "Loading, Please wait...";
+echo "Uploading, Please wait...";
 if(checkIsStringSetPost('izina'))
 {
 $category = clearInput($_POST['subcategory']);
