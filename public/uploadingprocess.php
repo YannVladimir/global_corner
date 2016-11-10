@@ -345,7 +345,7 @@ $cart[3] = $img4;
 $cart[4] = $img5;
 $cart[5] = $img6;
 $cart[6] = $img7;
-for ($i = 7; $i >1 ; $i--) {
+for ($i = 6; $i >1 ; $i--) {
  if($cart[$i]!='')
  {
     $b=$i-1;
