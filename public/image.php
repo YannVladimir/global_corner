@@ -1,5 +1,8 @@
 <?php
-
+ini_set('display_startup_errors',1);
+ini_set('display_errors',1);
+error_reporting(E_ALL);
+require_once ('../includes/main_functions.php');
 if(isset($_FILES['image-upload']))
 {
     $name= $_FILES['image-upload']['name'];
@@ -28,24 +31,29 @@ if(isset($_FILES['image-upload']))
         $tmp_image = imagecreatetruecolor($new_width, $new_height);
         imagecopyresampled($tmp_image, $new_image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
         imagejpeg($tmp_image, $path, 100);
-        $photo = $new_name;
         imagedestroy($new_image);
         imagedestroy($tmp_image);
-        echo '<img src="'.$path.'"/>';
+        $_SESSION['file']=$new_name;
+        $_SESSION['path']='<img id="image1" src="'.$path.'"/>';
+        require('upload_estates_copy.php');
       }
       else
       {
-       echo " image size must be less than 4MB ";
+        $_SESSION['img-message']="image size must be less than 4MB";
+        require('upload_estates_copy.php');
       }
     }
     else
     {
-      echo"invalid image file";
+      $_SESSION['img-message']="invalid image file";
+        require('upload_estates_copy.php');
+      
     }
 
 }
 else
 {
-echo "please select some file";
+  $_SESSION['img-message']="please select some file";
+        require('upload_estates_copy.php');
 }
 ?>
