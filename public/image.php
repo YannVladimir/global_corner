@@ -14,14 +14,14 @@ if(isset($_FILES['image-upload']))
         $new_image = '';
         $new_name = md5(rand()) . '.' . $ext;
         $path ='assets/images/posts/' . $new_name;
-        list($width, $height) = getimagesize($_FILES['main']['tmp_name']);
+        list($width, $height) = getimagesize($_FILES['image-upload']['tmp_name']);
         if($ext == 'png')
         {
- 	      $new_image = imagecreatefrompng($_FILES['main']['tmp_name']);
+ 	      $new_image = imagecreatefrompng($_FILES['image-upload']['tmp_name']);
         }
         if($ext == 'jpeg' || $ext == 'jpg')
         {
- 	      $new_image = imagecreatefromjpeg($_FILES['main']['tmp_name']);
+ 	      $new_image = imagecreatefromjpeg($_FILES['image-upload']['tmp_name']);
         }
         $new_height = 300;
         $new_width = ($width/$height)*300;
