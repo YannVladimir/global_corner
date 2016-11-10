@@ -233,7 +233,7 @@ checkToken();
                             <?php
                                       if(isset($_SESSION['details']))
                                       {
-                                        echo '<textarea name="details" id="message" required="required" class="form-control" rows="8" value="{$_SESSION["img-message"]}"></textarea>';
+                                        echo '<textarea name="details" id="message" required="required" class="form-control" rows="8" value="{$_SESSION["details"]}"></textarea>';
                                       }
                                       else
                                       {
