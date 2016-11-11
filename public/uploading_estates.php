@@ -65,15 +65,18 @@ if(isset($_FILES['main']))
         $photo = $new_name;
         imagedestroy($new_image);
         imagedestroy($tmp_image);
+        echo "uploaded";
       }
       else
       {
-       echo "<script>alert(' image size must be less than 2MB ');window.location='upload.php';</script>";exit;
+        echo "image size must be less than 4MB";
+       //echo "<script>alert(' image size must be less than 2MB ');window.location='upload.php';</script>";exit;
       }
     }
     else
     {
-      echo "<script>alert(' invalid image file 1');window.location='upload.php';</script>";exit;
+        echo "invalid image file";
+     // echo "<script>alert(' invalid image file 1');window.location='upload.php';</script>";exit;
     }
 
 }
