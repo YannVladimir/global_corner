@@ -292,7 +292,6 @@ checkToken();
     {
        $("#validation").on('submit',function(e)
        {
-          e.preventDefault();
           $(this).ajaxSubmit(
           {
              beforeSend:function()
