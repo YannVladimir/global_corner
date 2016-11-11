@@ -5,6 +5,8 @@ error_reporting(E_ALL);
 session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
+checkUser();
+checkToken();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -79,16 +81,6 @@ require_once ('../includes/main_functions.php');
       .fon{
         font-size: 20px;
       }
-      #upload_image_1{
-    z-index: 100;
-    position: fixed;
-    background: black;
-    width:50%;
-    height:120px;
-    top:47%;
-    left:30%;
-    display: none;
-}
   </style>
 </head><!--/head-->
 
@@ -141,12 +133,6 @@ require_once ('../includes/main_functions.php');
             <div class="contact-form align-center">
               <br>
               <h2 class="title text-center">Enter Ad's Details</h2>
-              <div id="upload_image_1" style="background:blue;">
-                  <form action="image.php" id="upload-image" method="post" enctype="multipart/form-data">
-                    <input type="file" name="image-upload" id="iamge-upload"/>
-                    <input type="submit">
-                  </form>
-              </div>
               <div class="status alert alert-success" style="display: none"></div>
                   
                           <div class="btn-group pull-right">
@@ -173,7 +159,7 @@ require_once ('../includes/main_functions.php');
                           </div>
                   <br><br><br>
                   <div id="electronics">
-                    <form action="uploading_estates_copy.php" id="validation" novalidate="novalidate" class="upload-form row" method="post" enctype="multipart/form-data">
+                    <form action="uploading_estates.php" id="validation" novalidate="novalidate" class="upload-form row" method="post" enctype="multipart/form-data">
                         <div class="form-group col-md-12">
                              <input type="text" name="izina" required="required" class="form-control" placeholder="Ad title">
                         </div>
@@ -227,34 +213,15 @@ require_once ('../includes/main_functions.php');
                             <input type="text" name="price" class="form-control"  placeholder="Price">
                         </div>
                         <div class="form-group col-md-12">
-                            
-                            <?php
-                                      if(isset($_SESSION['details']))
-                                      {
-                                        echo '<textarea name="details" id="message" required="required" class="form-control" rows="8" value="{$_SESSION["details"]}"></textarea>';
-                                      }
-                                      else
-                                      {
-                                        echo '<textarea name="details" id="message" required="required" class="form-control" rows="8" placeholder="Descriptions, Include number of rooms, and any other usefull informations"></textarea>';
-                                      }
-
-                                    ?>
+                            <textarea name="details" id="message" required="required" class="form-control" rows="8" placeholder="Descriptions, Include number of rooms, and any other usefull informations"></textarea>
                         </div>
                         <div class="col-sm-4"> 
-                                  <div id='preview' class="starting btn1">
-                                    <?php
-                                      if(isset($_SESSION['path']))
-                                      {
-                                        echo $_SESSION['path'];
-                                      }
-                                      elseif(isset($_SESSION['img-message']))
-                                      {
-                                        echo $_SESSION['img-message'];
-                                      }
-
-                                    ?>
-                                  </div>
-                        </div>
+                                  <input type="file" name="main" class="this" id="inp" />
+                                  <img id="image" class="btn1 starting" />
+                                  <progress id="prog" max="100" value="0" style="display:none;"></progress>
+                                  <div id="percent"><div>
+                                  <div id="here"></div>
+                            </div>
                             <div class="col-sm-4">
                                   <input type="file" name="img1" class="this" id="inp2" />
                                   <img id="image2" class="btn2 btnlocation" />
@@ -310,23 +277,179 @@ require_once ('../includes/main_functions.php');
   <script src="assets/js/yann.min.js"></script>
   <script src="assets/js/jquery.scrollUp.min.js"></script>
   <script src="assets/js/jquery.prettyPhoto.js"></script>
-  <script src="assets/js/jquery.form.js"></script>
   <script src="assets/js/price-range.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/jquery.form.min.js"></script>
   <script src="assets/js/jquery.validate.js"></script>
   <script src="assets/js/uploading.js"></script>
- <script>
-  $(document).ready(function()
-  {
-        $("#preview").click(function()
-              {
-                  $("#upload_image_1").slideToggle();
-              });
-      
-  });
+  <script>
+    var main = function()
+    {
+       $("#validation").on('submit',function(e)
+       {
+          e.preventDefault();
+          $(this).ajaxSubmit(
+          {
+             beforeSend:function()
+             {
+               $("#prog").show();
+               $("#prog").attr('value','0');
+
+             },
+             uploadProgress:function(event,position,total,percentComplete)
+             {
+               $("#prog").attr('value',percentComplete);
+                $("#percent").html(percentComplete+'%');
+             },
+             success:function(data)
+             {
+              $("#here").html(data);
+             }
+          });
+       });
+    };
+    
+    $(document).ready(main);
 
   </script>
+  <script>
+          $(document).ready(function()
+  {
+     
+        $("#selecting").click(function(){
+          $("#optionss").slideToggle();
+        });
+       
+  });
+       
+       $(".btn1").bind("click" , function(){
+        $("#inp").click();
+       });
+       document.getElementById("inp").onchange = function () {
+    var reader = new FileReader();
 
+    reader.onload = function (e) {
+        // get loaded data and render thumbnail.
+        document.getElementById("image").src = e.target.result;
+    };
+
+    // read the image file as a data URL.
+    reader.readAsDataURL(this.files[0]);
+};
+$(".btn2").bind("click" , function(){
+        $("#inp2").click();
+       });
+       document.getElementById("inp2").onchange = function () {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+        // get loaded data and render thumbnail.
+        document.getElementById("image2").src = e.target.result;
+    };
+
+    // read the image file as a data URL.
+    reader.readAsDataURL(this.files[0]);
+};
+$(".btn3").bind("click" , function(){
+        $("#inp3").click();
+       });
+       document.getElementById("inp3").onchange = function () {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+        // get loaded data and render thumbnail.
+        document.getElementById("image3").src = e.target.result;
+    };
+
+    // read the image file as a data URL.
+    reader.readAsDataURL(this.files[0]);
+};
+$(".btn4").bind("click" , function(){
+        $("#inp4").click();
+       });
+       document.getElementById("inp4").onchange = function () {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+        // get loaded data and render thumbnail.
+        document.getElementById("image4").src = e.target.result;
+    };
+
+    // read the image file as a data URL.
+    reader.readAsDataURL(this.files[0]);
+};
+$(".btn5").bind("click" , function(){
+        $("#inp5").click();
+       });
+       document.getElementById("inp5").onchange = function () {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+        // get loaded data and render thumbnail.
+        document.getElementById("image5").src = e.target.result;
+    };
+
+    // read the image file as a data URL.
+    reader.readAsDataURL(this.files[0]);
+};
+$(".btn6").bind("click" , function(){
+        $("#inp6").click();
+       });
+       document.getElementById("inp6").onchange = function () {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+        // get loaded data and render thumbnail.
+        document.getElementById("image6").src = e.target.result;
+    };
+
+    // read the image file as a data URL.
+    reader.readAsDataURL(this.files[0]);
+};
+$(".btn7").bind("click" , function(){
+        $("#inp7").click();
+       });
+       document.getElementById("inp7").onchange = function () {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+        // get loaded data and render thumbnail.
+        document.getElementById("image7").src = e.target.result;
+    };
+
+    // read the image file as a data URL.
+    reader.readAsDataURL(this.files[0]);
+};
+$(".btn8").bind("click" , function(){
+        $("#inp8").click();
+       });
+       document.getElementById("inp8").onchange = function () {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+        // get loaded data and render thumbnail.
+        document.getElementById("image8").src = e.target.result; 
+    };
+
+    // read the image file as a data URL.
+    reader.readAsDataURL(this.files[0]);
+};
+/*$(".cat1").bind("click" , function(){
+        $("#selecting").click();
+       });
+       document.getElementById("selecting").onchange = function () {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+        // get loaded data and render thumbnail.
+        document.getElementById("cat").src = e.target.result;
+    };
+
+    // read the image file as a data URL.
+    reader.readAsDataURL(this.files[0]);
+};*/
+   
+  </script>
 </body>
 </html>
                                             
