@@ -217,7 +217,7 @@ checkToken();
                         </div>
                         <div class="col-sm-4"> 
                                   <input type="file" name="main" class="this" id="inp" />
-                                  <progress id="prog" max="100" value="0" style="display:none;"></progress>
+                                  <progress id="prog" max="100" value="0"></progress>
                                   <div id="percent"><div>
                                   <div id="here"></div>
                                   <img id="image" class="btn1 starting" />
