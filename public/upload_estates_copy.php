@@ -218,29 +218,33 @@ checkToken();
                         <div class="col-sm-4"> 
                                   <input type="file" name="main" class="this" id="inp" />
                                   <progress id="prog" max="100" value="0"></progress>
-                                  <div id="percent"><div>
-                                  <div id="here"></div>
+                                  
                                   <img id="image" class="btn1 starting" />
                                   
                             </div>
                             <div class="col-sm-4">
                                   <input type="file" name="img1" class="this" id="inp2" />
+                                  <progress id="prog" max="100" value="0"></progress>
                                   <img id="image2" class="btn2 btnlocation" />
                             </div>
                             <div class="col-sm-4">
                                   <input type="file" name="img2" class="this" id="inp3" />
+                                  <progress id="prog" max="100" value="0"></progress>
                                   <img id="image3" class="btn3 btnlocation" />
                             </div>
                             <div class="col-sm-4">     
                                   <input type="file" name="img3" class="this" id="inp4" />
+                                  <progress id="prog" max="100" value="0"></progress>
                                   <img id="image4" class="btn4 btnlocation" />
                             </div>
                             <div class="col-sm-4">      
                                   <input type="file" name="img4" class="this" id="inp5" />
+                                  <progress id="prog" max="100" value="0"></progress>
                                   <img id="image5" class="btn5 starting" />
                             </div>
                             <div class="col-sm-4">      
                                   <input type="file" name="img5" class="this" id="inp6" />
+                                  <progress id="prog" max="100" value="0"></progress>
                                   <img id="image6" class="btn6 btnlocation" />
                             </div>    
                                   <input type="file" name="img6" id="inp7" class="hide" />
