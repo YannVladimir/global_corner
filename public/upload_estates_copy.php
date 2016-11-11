@@ -215,13 +215,7 @@ checkToken();
                         <div class="form-group col-md-12">
                             <textarea name="details" id="message" required="required" class="form-control" rows="8" placeholder="Descriptions, Include number of rooms, and any other usefull informations"></textarea>
                         </div>
-                        <div class="col-sm-4"> 
-                                  <input type="file" name="main" class="this" id="inp" />
-                                  <progress id="prog" max="100" value="0"></progress>
-                                  
-                                  <img id="image" class="btn1 starting" />
-                                  
-                            </div>
+                        
                             <div class="col-sm-4">
                                   <input type="file" name="img1" class="this" id="inp2" />
                                   <progress id="prog" max="100" value="0"></progress>
@@ -261,6 +255,18 @@ checkToken();
                          By posting your post you agree with our <a href='terms-of-use.php' target='blank' style='color=#3AACEB'>Terms of use </a> and <a href='posting-rules.php' target='blank' style='color=#3AACEB'>Posting rules </a>
                         </font>
                     </form>
+                    <form action="uploading_esta.php" id="validation1" novalidate="novalidate" class="upload-form row" method="post" enctype="multipart/form-data">
+                    <div class="col-sm-4"> 
+                                  <input type="file" name="main" class="this" id="inp" />
+                                  <progress id="prog" max="100" value="0"></progress>
+                                  
+                                  <img id="image" class="btn1 starting" />
+                                  
+                            </div>
+                             <div class="form-group col-md-12">
+                           <input type="submit" name="submit" class="btn btn-primary pull-right" value="Check">
+                        </div>
+                      </form>
                   </div>
                   <div id="jobbs" class="notshowing">
                     job
@@ -290,8 +296,9 @@ checkToken();
   <script>
     var main = function()
     {
-       $("#validation").on('submit',function(e)
+       $("#validation1").on('submit',function(e)
        {
+          e.preventDefault();
           $(this).ajaxSubmit(
           {
              beforeSend:function()
