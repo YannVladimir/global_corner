@@ -6,7 +6,7 @@
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
 								<li><a href="#"><i class="fa fa-phone"></i> +250782767289</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> bajenezayann549@gmail.com</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> 250trade.com@gmail.com</a></li>
 							</ul>
 						</div> 
 					</div>
@@ -28,9 +28,9 @@
 				<div class="row">
 					<div class="col-sm-7">
 						<div class="logo pull-left">
-							<a href="home.php"><img src="assets/images/home/logo1.png" alt="" /></a>
+							<a href="home.php"><img src="assets/images/home/trade.png" alt="" /></a>
 						</div>
-						<div class="btn-group pull-right">
+						<!--<div class="btn-group pull-right">
 							
 							<div class="btn-group">
 								<button type="button" class="btn btn-group dropdown-toggle country" data-toggle="dropdown">
@@ -43,7 +43,7 @@
 									<li><a href="">Kiswahili</a></li>
 								</ul>
 							</div>
-						</div>
+						</div>-->
 					</div>
 					
 					<?php
