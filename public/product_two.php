@@ -42,12 +42,10 @@ require_once ('../includes/main_functions.php');
           width:100%;
           height:100%;
         }
-        .sizingimagesmax{
-            max-width: 100%;
-            max-height:100% auto;
-            display: inline-block; /* Instead of display: block; */
-            margin: 0 auto;
-            vertical-align: middle;
+         .sizingimagesmax{
+           display: block;
+           width:100%;
+           height:auto;
 
         }
         .displaynone{
