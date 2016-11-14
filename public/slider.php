@@ -97,6 +97,7 @@
                                 }
                             ?>
 						
+						</div>
 						<a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
 							<i class="fa fa-angle-left"></i>
 						</a>
@@ -104,7 +105,6 @@
 							<i class="fa fa-angle-right"></i>
 						</a>
 						
-						</div>
 					</div>
 					
 				</div>
