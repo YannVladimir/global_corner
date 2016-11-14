@@ -1,4 +1,4 @@
-<?php
+<?php 
 ini_set('display_startup_errors',1);
 ini_set('display_errors',1);
 error_reporting(E_ALL);
@@ -39,7 +39,7 @@ if(isset($_FILES['main']))
     $size= $_FILES['main']['size'];
     $ext1 = explode(".", $name);
     $ext = end($ext1);
-    $allowed_ext = array("png", "jpeg", "jpg");
+    $allowed_ext = array("png", "PNG", "jpeg", "JPEG", "JPG", "jpg");
     if(in_array($ext, $allowed_ext))
     {
       if($size < (4194304))
@@ -48,11 +48,11 @@ if(isset($_FILES['main']))
         $new_name = md5(rand()) . '.' . $ext;
         $path ='assets/images/posts/' . $new_name;
         list($width, $height) = getimagesize($_FILES['main']['tmp_name']);
-        if($ext == 'png')
+        if($ext == 'png' || $ext == 'PNG')
         {
           $new_image = imagecreatefrompng($_FILES['main']['tmp_name']);
         }
-        if($ext == 'jpeg' || $ext == 'jpg')
+        if($ext == 'jpeg' || $ext == 'jpg' || $ext == 'JPEG' || $ext == 'JPG')
         {
           $new_image = imagecreatefromjpeg($_FILES['main']['tmp_name']);
         }
