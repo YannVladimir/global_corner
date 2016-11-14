@@ -5,8 +5,7 @@ error_reporting(E_ALL);
 session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
-checkUser();
-checkToken();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -180,7 +179,9 @@ checkToken();
     <script src="assets/js/yann.min.js" type="text/javascript"></script>
 	<script src="assets/js/jquery.scrollUp.min.js" type="text/javascript"></script>
 	<script src="assets/js/price-range.js" type="text/javascript"></script>
-    <script src="assets/js/jquery.prettyPhoto.js" type="text/javascript"></script><!--
+    <script src="assets/js/jquery.prettyPhoto.js" type="text/javascript"></script>
+  <script src="assets/js/jquery.validate.js"></script>
+  <script src="assets/js/contactus.js"></script><!--
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
   <script type="text/javascript" src="<akaboroakaborophp echo BASEURL."../assets/js/gmaps.js"></script>  
   <script src="<php echo BASEURL."../assets/js/contact.js"></script>
@@ -188,7 +189,7 @@ checkToken();
   <script src="assets/js/contactus.js"></script>
     <script src="assets/jQuery-Validation-Engine-master/js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
 --><script src="assets/jQuery-Validation-Engine-master/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
-   <scrip type="text/javascript">
+ <!--  <scrip type="text/javascript">
 function formValidation()  
 {  
 
@@ -248,6 +249,6 @@ function allnumeric(uzip)
      return false;  
   }  
 } 
-   </script>
+   </script>-->
 </body>
 </html>
