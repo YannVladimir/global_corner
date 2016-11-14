@@ -40,9 +40,7 @@ require_once ('../includes/main_functions.php');
         
         .sizingimagesmax{
            display: block;
-           max-height: 100%;
-           max-width: 100%;
-           width:auto;
+           width:100%;
            height:auto;
 
         }
