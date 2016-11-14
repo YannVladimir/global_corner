@@ -2,18 +2,11 @@
 		<div class="footer-top">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-5">
-						
-					</div>
-					<div class="col-sm-4">
-						<div class="companyinfo">
+					<div class="col-sm-12">
+						<div class="companyinfo" style="text-align:center">
 							<h2><span> 250</span> Trade</h2>
 							<p>Make Rwanda Know what you trade</p>
 						</div>
-					</div>
-					<div class="col-sm-3">
-
-						 
 					</div>
 				</div>
 			</div>
