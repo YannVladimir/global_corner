@@ -73,8 +73,8 @@
 
                                    if($v==1){
                                      echo "<div class='item active'>
-								               <div class='col-sm-12 slidersizing'> 
-									             <img src='assets/images/categories/phone.jpg' class='girl img-responsive' alt='' />
+								               <div class='col-sm-12'> 
+									             <img src='assets/images/categories/phone.jpg' style='width:100%;' class='girl img-responsive' alt='' />
 				                               </div> ";
 									$v = 2;
                                     }

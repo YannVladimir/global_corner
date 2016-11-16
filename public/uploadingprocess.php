@@ -48,7 +48,7 @@ if(isset($_FILES['main']))
         $new_name = md5(rand()) . '.' . $ext;
         $path ='assets/images/posts/' . $new_name;
         list($width, $height) = getimagesize($_FILES['main']['tmp_name']);
-        if($ext == 'png' || $ext == 'PNG')
+        if($ext == 'png' || $ext =='PNG')
         {
           $new_image = imagecreatefrompng($_FILES['main']['tmp_name']);
         }
@@ -82,7 +82,7 @@ if(isset($_FILES['img1']))
     $size= $_FILES['img1']['size'];
     $ext1 = explode(".", $name);
     $ext = end($ext1);
-    $allowed_ext = array("png", "jpeg", "jpg");
+    $allowed_ext = array("png", "PNG", "jpeg", "JPEG", "JPG", "jpg");
     if(in_array($ext, $allowed_ext))
     {
 if($size < (4194304))
@@ -91,16 +91,16 @@ if($size < (4194304))
      $new_name = md5(rand()) . '.' . $ext;
      $path ='assets/images/posts/' . $new_name;
      list($width, $height) = getimagesize($_FILES['img1']['tmp_name']);
-     if($ext == 'png')
+     if($ext == 'png' || $ext =='PNG')
      {
        $new_image = imagecreatefrompng($_FILES['img1']['tmp_name']);
      }
-     if($ext == 'jpeg' || $ext == 'jpg')
+     if($ext == 'jpeg' || $ext == 'jpg' || $ext == 'JPEG' || $ext == 'JPG')
      {
        $new_image = imagecreatefromjpeg($_FILES['img1']['tmp_name']);
      }
-     $new_height = 300;
-     $new_width = ($height/$width)*300;
+     $new_width = 300;
+     $new_height = ($width/$height)*300;
      $tmp_image = imagecreatetruecolor($new_width, $new_height);
      imagecopyresampled($tmp_image, $new_image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
      imagejpeg($tmp_image, $path, 100);
@@ -125,7 +125,7 @@ if(isset($_FILES['img2']))
     $size= $_FILES['img2']['size'];
     $ext1 = explode(".", $name);
     $ext = end($ext1);
-    $allowed_ext = array("png", "jpeg", "jpg");
+    $allowed_ext = array("png", "PNG", "jpeg", "JPEG", "JPG", "jpg");
     if(in_array($ext, $allowed_ext))
     {
 if($size < (4194304))
@@ -134,11 +134,11 @@ if($size < (4194304))
      $new_name = md5(rand()) . '.' . $ext;
      $path ='assets/images/posts/' . $new_name;
      list($width, $height) = getimagesize($_FILES['img2']['tmp_name']);
-     if($ext == 'png')
+     if($ext == 'png' || $ext =='PNG')
      {
        $new_image = imagecreatefrompng($_FILES['img2']['tmp_name']);
      }
-     if($ext == 'jpeg' || $ext == 'jpg')
+     if($ext == 'jpeg' || $ext == 'jpg' || $ext == 'JPEG' || $ext == 'JPG')
      {
        $new_image = imagecreatefromjpeg($_FILES['img2']['tmp_name']);
      }
@@ -168,7 +168,7 @@ if(isset($_FILES['img3']))
     $size= $_FILES['img3']['size'];
     $ext1 = explode(".", $name);
     $ext = end($ext1);
-    $allowed_ext = array("png", "jpeg", "jpg");
+    $allowed_ext = array("png", "PNG", "jpeg", "JPEG", "JPG", "jpg");
     if(in_array($ext, $allowed_ext))
     {
 if($size < (4194304))
@@ -177,11 +177,11 @@ if($size < (4194304))
      $new_name = md5(rand()) . '.' . $ext;
      $path ='assets/images/posts/' . $new_name;
      list($width, $height) = getimagesize($_FILES['img3']['tmp_name']);
-     if($ext == 'png')
+     if($ext == 'png' || $ext =='PNG')
      {
        $new_image = imagecreatefrompng($_FILES['img3']['tmp_name']);
      }
-     if($ext == 'jpeg' || $ext == 'jpg')
+     if($ext == 'jpeg' || $ext == 'jpg' || $ext == 'JPEG' || $ext == 'JPG')
      {
        $new_image = imagecreatefromjpeg($_FILES['img3']['tmp_name']);
      }
@@ -211,7 +211,7 @@ if(isset($_FILES['img4']))
     $size= $_FILES['img4']['size'];
     $ext1 = explode(".", $name);
     $ext = end($ext1);
-    $allowed_ext = array("png", "jpeg", "jpg");
+    $allowed_ext = array("png", "PNG", "jpeg", "JPEG", "JPG", "jpg");
     if(in_array($ext, $allowed_ext))
     {
 if($size < (4194304))
@@ -220,11 +220,11 @@ if($size < (4194304))
      $new_name = md5(rand()) . '.' . $ext;
      $path ='assets/images/posts/' . $new_name;
      list($width, $height) = getimagesize($_FILES['img4']['tmp_name']);
-     if($ext == 'png')
+     if($ext == 'png' || $ext =='PNG')
      {
        $new_image = imagecreatefrompng($_FILES['img4']['tmp_name']);
      }
-     if($ext == 'jpeg' || $ext == 'jpg')
+     if($ext == 'jpeg' || $ext == 'jpg' || $ext == 'JPEG' || $ext == 'JPG')
      {
        $new_image = imagecreatefromjpeg($_FILES['img4']['tmp_name']);
      }
@@ -254,7 +254,7 @@ if(isset($_FILES['img5']))
     $size= $_FILES['img5']['size'];
     $ext1 = explode(".", $name);
     $ext = end($ext1);
-    $allowed_ext = array("png", "jpeg", "jpg");
+    $allowed_ext = array("png", "PNG", "jpeg", "JPEG", "JPG", "jpg");
     if(in_array($ext, $allowed_ext))
     {
       if($size < (4194304))
@@ -263,11 +263,11 @@ if(isset($_FILES['img5']))
         $new_name = md5(rand()) . '.' . $ext;
         $path ='assets/images/posts/' . $new_name;
         list($width, $height) = getimagesize($_FILES['img5']['tmp_name']);
-        if($ext == 'png')
+        if($ext == 'png' || $ext =='PNG')
         {
           $new_image = imagecreatefrompng($_FILES['img5']['tmp_name']);
         }
-     if($ext == 'jpeg' || $ext == 'jpg')
+     if($ext == 'jpeg' || $ext == 'jpg' || $ext == 'JPEG' || $ext == 'JPG')
      {
        $new_image = imagecreatefromjpeg($_FILES['img5']['tmp_name']);
      }
@@ -298,7 +298,7 @@ if(isset($_FILES['img6']))
     $size= $_FILES['img6']['size'];
     $ext1 = explode(".", $name);
     $ext = end($ext1);
-    $allowed_ext = array("png", "jpeg", "jpg");
+    $allowed_ext = array("png", "PNG", "jpeg", "JPEG", "JPG", "jpg");
     if(in_array($ext, $allowed_ext))
     {
       if($size < (4194304))
@@ -307,11 +307,11 @@ if(isset($_FILES['img6']))
         $new_name = md5(rand()) . '.' . $ext;
         $path ='assets/images/posts/' . $new_name;
         list($width, $height) = getimagesize($_FILES['img6']['tmp_name']);
-        if($ext == 'png')
+        if($ext == 'png' || $ext =='PNG')
         {
           $new_image = imagecreatefrompng($_FILES['img6']['tmp_name']);
         }
-     if($ext == 'jpeg' || $ext == 'jpg')
+     if($ext == 'jpeg' || $ext == 'jpg' || $ext == 'JPEG' || $ext == 'JPG')
      {
        $new_image = imagecreatefromjpeg($_FILES['img6']['tmp_name']);
      }
