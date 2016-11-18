@@ -117,6 +117,7 @@ require_once ('../includes/main_functions.php');
   <section>
     <div class="container">
       <div class="row">
+
         <div class="col-sm-9 padding-right">
           
             <?php 
@@ -145,24 +146,30 @@ require_once ('../includes/main_functions.php');
             </div>
 
             <div class='col-sm-6'>
-              <div class='view-product'>
-                    <div class='' id='photo1'>
-                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt=''/></div>
-              <div id='photo1next' class='jssora11r' style='top: 123px; right: 0px;'></div>
-           <div class='displaynone' id='photo2'>
-            <img class='sizingimagesmax' src='assets/images/posts/{$row['photo1']}' alt=''/></div>
-            <div id='photo2prev' class='jssora11l' style='top: 123px; display:none; left: 0px;'></div>    
-            <div id='photo2next' class='jssora11r' style='top: 123px; display:none; right: 0px;'></div>
-            <div class='displaynone' id='photo3'>
-            <img class='sizingimagesmax' src='assets/images/posts/{$row['photo2']}' alt=''/></div>
-            <div id='photo3prev' class='jssora11l' style='top: 123px; display:none; left: 0px;'></div>
-            <div id='photo3next' class='jssora11r' style='top: 123px; display:none; right: 0px;'></div>
-                <div class='displaynone' id='photo4'>
-            <img class='sizingimagesmax' src='assets/images/posts/{$row['photo3']}' alt=''/></div>
-            <div id='photo4prev' class='jssora11l' style='top: 123px; display:none; left: 0px;'></div>
-                
-                <h3>Verified</h3>
+              <div class='category-tab'><!--photo-tab-->
+            <div class='col-sm-12'>
+              <ul class='nav nav-tabs'>
+                <li class='active'><a href='#tshirt' data-toggle='tab'>1st</a></li>
+                <li><a href='#blazers' data-toggle='tab'>2nd</a></li>
+                <li><a href='#sunglass' data-toggle='tab'>3rd</a></li>
+                <li><a href='#kids' data-toggle='tab'>4th</a></li>
+              </ul>
+            </div>
+            <div class='tab-content'>
+              <div class='tab-pane fade active in' id='tshirt' >
+                <img class='sizingimagesmax' style='max-width:300px;' src='assets/images/posts/{$row['main']}' alt=''/>
               </div>
+                            <div class='tab-pane fade active in' id='blazers' >
+                <img class='sizingimagesmax' style='max-width:300px;' src='assets/images/posts/{$row['photo1']}' alt=''/>
+              </div>
+              <div class='tab-pane fade active in' id='sunglass' >
+                <img class='sizingimagesmax' style='max-width:300px;' src='assets/images/posts/{$row['photo2']}' alt=''/>
+              </div>
+              <div class='tab-pane fade active in' id='kids' >
+                <img class='sizingimagesmax' style='max-width:300px;' src='assets/images/posts/{$row['photo3']}' alt=''/>
+              </div>
+            </div>
+          </div><!--/photo-tab-->
             </div>
           </div><!--/product-details-->";
                             } 
