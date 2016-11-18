@@ -168,6 +168,7 @@ require_once ('../includes/main_functions.php');
                                     }
 
                                 echo "</div>";
+                                }
                                 } 
          ?>
                           
