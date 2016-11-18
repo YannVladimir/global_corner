@@ -99,40 +99,40 @@ require_once ('../includes/main_functions.php');
 			<div class="row">
         <div class="col-sm-3">
           <div class="left-sidebar">
-            <h2>Categories</h2>
+            <h2>Services categories</h2>
             <div class="panel-group category-products" id="accordian"><!--category-productsr-->
               <?php 
                                             $c = 1;
-                                            $query = "SELECT * FROM categories ";
+                                            $query = "SELECT * FROM subcategories where refcat_id= 7 ";
                                             $res = mysqli_query($con,$query);
                                             while($row = mysqli_fetch_assoc($res))
                                             {
-                                            if($row['cat_id']==$c)
+                                            if($row['subcat_id']==$c)
                                             {
                                                echo "<div class='panel panel-default'>
                 <div class='panel-heading'>
                   <h4 class='panel-title'>
-                  <a data-toggle='collapse' data-parent='#accordian' href='#{$row['cat_id']}'>
+                  <a data-toggle='collapse' data-parent='#accordian' href='#{$row['subcat_id']}'>
                       <span class='badge pull-right'><i class='fa fa-plus'></i></span>
-                      {$row['cat_name']}
+                      {$row['subcat_name']}
                          </a></h4>
                 </div><div id='$c' class='panel-collapse collapse'>
                   <div class='panel-body'>
-                    <ul>";$a = $row['cat_name'];
+                    <ul>";$a = $row['subcat_name'];
                     $queryy = "SELECT * FROM amacategories ";
                     $re = mysqli_query($con,$queryy);
                     while($ro = mysqli_fetch_assoc($re))
                                               {
-                                              if($ro['refcat_id']==$c)
+                                              if($ro['subcat_id']==$c)
                                               {
-                                                   echo "<li><a href='sub-category.php?id={$ro['subcat_id']}'>*   {$ro['subcat_name']} </a></li>";
+                                                   echo "<li><a href='sub-sub-category.php?id={$ro['subsubcat_id']}'>*   {$ro['subsubcat_name']} </a></li>";
                                                    
                                               }
                                               }
                                               
                                             }
                                             
-                                            echo "<li><a href='category.php?id={$c}'>*   All in {$a} </a></li></ul>
+                                            echo "<li><a href='sub-category.php?id={$c}'>*   All in {$a} </a></li></ul>
                   </div>
                 </div>
               </div>";
@@ -149,140 +149,40 @@ require_once ('../includes/main_functions.php');
         </div>
         <div class="col-sm-9 padding-right">
           <div class="features_items"><!--features_items-->
-            <h2 class="title text-center">Search results</h2>
-            <?php 
-                        $k = $_GET['k'];
-                        $cat = $_GET['category'];
-                        $terms = explode(" ", $k);
-                        if($cat==0)
-                        {
-                          $query = "SELECT * FROM items where is_accepted = 1 and ";
-                        }
-                        else
-                        {
-                          $query = "SELECT * FROM items where refcat_id = '{$cat}' and is_accepted = 1 and";
-                        }
-                            $i=0;
-                            foreach ($terms as $each) {
-                             $i++;
-                             if($i==1)
-                             {
-                               $query.= " name LIKE '%$each%' ";
-                             }
-                             else
-                             {
-                                 $query.= "OR name LIKE '%$each%' ";
-                             }
-                            }
-                            //connect to the database
-                            
-                            $query = mysqli_query($con,$query);
-                            $numrows = mysqli_num_rows($query);
-                            $var=0;
-                            if($numrows>0)
-                            {
-                                while($row = mysqli_fetch_assoc($query))
-                                { 
-                              echo "<div class='col-sm-3'>
-              <div class='product-image-wrapper'>
-                <div class='single-products'>
-                  <div class='productinfo text-center'>
-                                       <div class='sizingimages'>
-                    <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
-                    </div>
-                    <h2>{$row['contacts']} </h2>
-                    <p>{$row['name']}</p>
-                    <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                  </div>
-                  <div class='product-overlay' style='opacity:0.9'>
-                    <div class='overlay-content'>
-                      <h2>{$row['contacts']}</h2>
-                      <p>{$row['place_name']} District</p>
-                      <p>{$row['uploaded_date']}</p>
-                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                        </div>
-                  </div>
-                </div>
-                <div class='choose'>
-                  <ul class='nav nav-pills nav-justified'>
-                    <li><a href='#'>{$row['place_name']}</a></li>
-                    <li><a href='#'>{$row['uploaded_date']}</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>";
-                            }
-                         } 
-                         else
-                         {
-                            $var=$var+1;
-                         } 
-                         if($var>1)
-                          {
-                              echo "<div class='col-md-5'></div><div class='col-md-6'><h4>No results found for {$_GET['k']}</h4>
-               
-                               </div>";
-            }    
-                        ?>
-
-            
-          </div>
-
-            
-            </div>
-				
-				
-				
-						
-						<!--<ul class="pagination col-sm-12">
-							<li class="active"><a href="">1</a></li>
-							<li><a href="#first">2</a></li>
-							<li><a href="#second">3</a></li>
-							<li><a href="">&raquo;</a></li>
-						</ul>-->
-					
-			</div>
-      <div class="row">
-        <div class="col-sm-9">
-
-            <div class='recommended_items'><!--recommended_items-->
-            <h2 class='title text-center'>recommended items</h2>
-           <?php 
-              if($cat==0)
-              {
-                $queryyy = "SELECT * FROM items where is_accepted = 1 and refcat_id= 7 order by post_id desc limit 4";
-              }
-              else
-              {
-                  $queryyy = "SELECT * FROM items where refcat_id = '{$cat}' and is_accepted = 1 order by post_id desc limit 4";
-              }
-              $res1 = mysqli_query($con,$queryyy);
-                            while($row = mysqli_fetch_assoc($res1))
-                            {
-                                echo"
-                                <div class='col-sm-3'>
-                    <div class='product-image-wrapper'>
-                      <div class='single-products'>
-                        <div class='productinfo text-center'>
-                          <img src='assets/images/posts/{$row['main']}' alt='' />
-                          <h2>{$row['contacts']}</h2>
-                          <p>{$row['name']}</p>
-                                <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View item</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>";}
-                  echo "</div>";
-
+            <h2 class="title text-center">Services</h2>
+            <?php
+                $cats = "SELECT * from items where refcat_id=7 and is_accepted=1 order by post_id desc limit 100";
+                                $res = mysqli_query($con,$cats);
+                                while($row = mysqli_fetch_assoc($res))
+                                {
+                                 echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['contacts']}</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']}</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                
+                                         </div>
+                                       </div>";
             ?>
-        </div>
-      </div>  
-      </div>
-
+			</div>
 		</div>
 	</section>
 	
-	<br><br><br><br>
+	<br><br><br>
 	<?php  
       require('footer.php');    
     ?>
