@@ -160,7 +160,7 @@ require_once ('../includes/main_functions.php');
             <div class='tab-content'>
               <div class='tab-pane fade active in' id='tshirt' >
                 <img class='sizingimagesmax' style='width:100%;' src='assets/images/posts/{$row['main']}' alt=''/>
-              </div></div>
+              </div>
                             <div class='tab-pane fade active in' id='blazers' >
                 <img class='sizingimagesmax' style='width:100%;' src='assets/images/posts/{$row['photo1']}' alt=''/>
               </div>
@@ -175,7 +175,7 @@ require_once ('../includes/main_functions.php');
               </div>
               <div class='tab-pane fade active in' id='kidsss' >
                 <img class='sizingimagesmax' style='width:100%;' src='assets/images/posts/{$row['photo5']}' alt=''/>
-              </div>
+              </div></div>
           </div><!--/photo-tab-->
             </div>
           </div><!--/product-details-->";
