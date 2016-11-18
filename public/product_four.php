@@ -158,7 +158,7 @@ require_once ('../includes/main_functions.php');
             <div class='tab-content'>
               <div class='tab-pane fade active in' id='tshirt' >
                 <img class='sizingimagesmax' style='width:100%;' src='assets/images/posts/{$row['main']}' alt=''/>
-              </div>
+              </div></div>
                             <div class='tab-pane fade active in' id='blazers' >
                 <img class='sizingimagesmax' style='width:100%;' src='assets/images/posts/{$row['photo1']}' alt=''/>
               </div>
@@ -168,7 +168,6 @@ require_once ('../includes/main_functions.php');
               <div class='tab-pane fade active in' id='kids' >
                 <img class='sizingimagesmax' style='width:100%;' src='assets/images/posts/{$row['photo3']}' alt=''/>
               </div>
-            </div>
           </div><!--/photo-tab-->
             </div>
           </div><!--/product-details-->";
@@ -273,68 +272,5 @@ require_once ('../includes/main_functions.php');
   <script src="assets/js/price-range.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/jquery-1.9.1.min.js"></script>
- 
-    <script type="text/javascript">
-  $(document).ready(function()
-  {
-      $("#photo1next").click(function()
-			  {
-
-                  $("#photo1next").fadeOut(1);
-                  $("#photo1").fadeOut(1);
-			      $("#photo2").slideToggle();
-                  $("#photo2prev").fadeIn();
-                  $("#photo2next").fadeIn();
-			  });
-      $("#photo2prev").click(function()
-			  {
-			  	   
-                  $("#photo2prev").fadeOut(1);
-                  $("#photo2next").fadeOut(1);
-                  $("#photo2").fadeOut(1);
-			      $("#photo1").slideToggle();
-                  $("#photo1next").fadeIn();
-			  });
-      $("#photo2next").click(function()
-        {
-
-                  $("#photo2next").fadeOut(1);
-                  $("#photo2prev").fadeOut(1);
-                  $("#photo2").fadeOut(1);
-            $("#photo3").slideToggle();
-                  $("#photo3prev").fadeIn();
-                  $("#photo3next").fadeIn();
-        });
-      $("#photo3prev").click(function()
-        {
-             
-                  $("#photo3prev").fadeOut(1);
-                  $("#photo3next").fadeOut(1);
-                  $("#photo3").fadeOut(1);
-                  $("#photo2").slideToggle();
-                  $("#photo2next").fadeIn();
-                  $("#photo2prev").fadeIn();
-        });
-      $("#photo3next").click(function()
-        {
-
-                  $("#photo3next").fadeOut(1);
-                  $("#photo3prev").fadeOut(1);
-                  $("#photo3").fadeOut(1);
-                  $("#photo4").slideToggle();
-                  $("#photo4prev").fadeIn();
-        });
-      $("#photo4prev").click(function()
-        {
-             
-                  $("#photo4prev").fadeOut(1);
-                  $("#photo4").fadeOut(1);
-                  $("#photo3").slideToggle();
-                  $("#photo3next").fadeIn();
-                  $("#photo3prev").fadeIn();
-        });
-      
-  });
-   </script>
 </body>
 </html>
