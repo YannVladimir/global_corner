@@ -1,7 +1,6 @@
 <?php
 ini_set('display_startup_errors',1);
 ini_set('display_errors',1);
-error_reporting(E_ALL);
 session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
@@ -35,13 +34,10 @@ require_once ('../includes/main_functions.php');
     <style type="text/css">
         
         .fon{
-      	font-size: 20px;
+        font-size: 20px;
       }
     
-        .imagediv{
-          width:100%;
-          height:100%;
-        }
+        
          .sizingimagesmax{
            display: block;
            width:100%;
@@ -49,7 +45,7 @@ require_once ('../includes/main_functions.php');
 
         }
         .displaynone{
-        	display: none;
+          display: none;
         }
        .jssora11l, .jssora11r {
                     display: block;
@@ -71,25 +67,25 @@ require_once ('../includes/main_functions.php');
 </head><!--/head-->
 
 <body>
-	<?php   
+  <?php   
     require('header.php');   
-  ?>	
+  ?>  
 
     <div class="header-bottom"><!--header-bottom-->
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-7">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-						</div>
-						<div class="mainmenu pull-left">
-							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="home.php" class="fon">Home</a></li>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-7">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="mainmenu pull-left">
+              <ul class="nav navbar-nav collapse navbar-collapse">
+                <li><a href="home.php" class="fon">Home</a></li>
                 <li><a href="upload.php" class="fon">Sell</a></li>
                 <li><a href="categories.php" class="active fon">Buy</a></li>
                 <li class="dropdown"><a href="#">Odering<i class="fa fa-angle-down"></i></a>
@@ -110,17 +106,18 @@ require_once ('../includes/main_functions.php');
             </div>
         </div><!--/header-bottom-->
     </header><!--/header-->
-	
-	<!--<section id="advertisement">
-		<div class="container">
-			<img src="images/shop/advertisement.jpg" alt="" />
-		</div>
+  
+  <!--<section id="advertisement">
+    <div class="container">
+      <img src="images/shop/advertisement.jpg" alt="" />
+    </div>
 
-		This section is for advetisement
-	</section>-->
-	<section>
+    This section is for advetisement
+  </section>-->
+  <section>
     <div class="container">
       <div class="row">
+
         <div class="col-sm-9 padding-right">
           
             <?php 
@@ -149,16 +146,21 @@ require_once ('../includes/main_functions.php');
             </div>
 
             <div class='col-sm-6'>
-              <div class='view-product'>
-                    <div class='imagediv' id='photo1'>
-                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt=''/></div>
-              <div id='photo1next' class='jssora11r' style='top: 123px; right: 0px;'></div>
-           <div class='displaynone' id='photo2'>
-            <img class='sizingimagesmax imagediv' src='assets/images/posts/{$row['photo1']}' alt=''/></div>
-            <div id='photo2prev' class='jssora11l' style='top: 123px; display:none; left: 0px;'></div>    
-          
-                <h3>Verified</h3>
+              <div class='category-tab'><!--photo-tab-->
+            <div class='col-sm-12'>
+              <ul class='nav nav-tabs'>
+                <li class='active'><a href='#tshirt' data-toggle='tab'>1st</a></li>
+                <li><a href='#blazers' data-toggle='tab'>2nd</a></li>
+              </ul>
+            </div>
+            <div class='tab-content'>
+              <div class='tab-pane fade active in' id='tshirt' >
+                <img class='sizingimagesmax' style='width:100%;' src='assets/images/posts/{$row['main']}' alt=''/>
+              </div></div>
+                            <div class='tab-pane fade active in' id='blazers' >
+                <img class='sizingimagesmax' style='width:100%;' src='assets/images/posts/{$row['photo1']}' alt=''/>
               </div>
+          </div><!--/photo-tab-->
             </div>
           </div><!--/product-details-->";
                             } 
@@ -250,9 +252,9 @@ require_once ('../includes/main_functions.php');
       </div>  
       </div>
     </div>    
-  </section>	
-	<br><br><br><br>
-	<?php  
+  </section>
+  <br><br><br><br>
+  <?php  
       require('footer.php');    
     ?>
   <script src="assets/js/jquery.js"></script>
@@ -262,28 +264,5 @@ require_once ('../includes/main_functions.php');
   <script src="assets/js/price-range.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/jquery-1.9.1.min.js"></script>
- 
-    <script type="text/javascript">
-  $(document).ready(function()
-  {
-      $("#photo1next").click(function()
-			  {
-
-                  $("#photo1next").fadeOut(1);
-                  $("#photo1").fadeOut(1);
-			      $("#photo2").slideToggle();
-                  $("#photo2prev").fadeIn();
-			  });
-      $("#photo2prev").click(function()
-			  {
-			  	   
-                  $("#photo2prev").fadeOut(1);
-                  $("#photo2").fadeOut(1);
-			      $("#photo1").slideToggle();
-                  $("#photo1next").fadeIn();
-			  });
-      
-  });
-   </script>
 </body>
 </html>

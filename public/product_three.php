@@ -33,14 +33,19 @@ require_once ('../includes/main_functions.php');
     <link rel="apple-touch-icon-precomposed" href="assets/images/ico/apple-touch-icon-57-precomposed.png">
     <style type="text/css">
         
-        .sizingimagesmax{
+        .fon{
+        font-size: 20px;
+      }
+    
+        
+         .sizingimagesmax{
            display: block;
            width:100%;
            height:auto;
 
         }
         .displaynone{
-        	display: none;
+          display: none;
         }
        .jssora11l, .jssora11r {
                     display: block;
@@ -101,6 +106,7 @@ require_once ('../includes/main_functions.php');
             </div>
         </div><!--/header-bottom-->
     </header><!--/header-->
+  
   <!--<section id="advertisement">
     <div class="container">
       <img src="images/shop/advertisement.jpg" alt="" />
@@ -108,9 +114,10 @@ require_once ('../includes/main_functions.php');
 
     This section is for advetisement
   </section>-->
-	<section>
+  <section>
     <div class="container">
       <div class="row">
+
         <div class="col-sm-9 padding-right">
           
             <?php 
@@ -139,19 +146,25 @@ require_once ('../includes/main_functions.php');
             </div>
 
             <div class='col-sm-6'>
-              <div class='view-product'>
-                    <div class='' id='photo1'>
-                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt=''/></div>
-              <div id='photo1next' class='jssora11r' style='top: 123px; right: 0px;'></div>
-           <div class='displaynone' id='photo2'>
-            <img class='sizingimagesmax' src='assets/images/posts/{$row['photo1']}' alt=''/></div>
-            <div id='photo2prev' class='jssora11l' style='top: 123px; display:none; left: 0px;'></div>    
-            <div id='photo2next' class='jssora11r' style='top: 123px; display:none; right: 0px;'></div>
-            <div class='displaynone' id='photo3'>
-            <img class='sizingimagesmax' src='assets/images/posts/{$row['photo2']}' alt=''/></div>
-            <div id='photo3prev' class='jssora11l' style='top: 123px; display:none; left: 0px;'></div>
-                <h3>Verified</h3>
+              <div class='category-tab'><!--photo-tab-->
+            <div class='col-sm-12'>
+              <ul class='nav nav-tabs'>
+                <li class='active'><a href='#tshirt' data-toggle='tab'>1st</a></li>
+                <li><a href='#blazers' data-toggle='tab'>2nd</a></li>
+                <li><a href='#sunglass' data-toggle='tab'>3rd</a></li>
+              </ul>
+            </div>
+            <div class='tab-content'>
+              <div class='tab-pane fade active in' id='tshirt' >
+                <img class='sizingimagesmax' style='width:100%;' src='assets/images/posts/{$row['main']}' alt=''/>
+              </div></div>
+                            <div class='tab-pane fade active in' id='blazers' >
+                <img class='sizingimagesmax' style='width:100%;' src='assets/images/posts/{$row['photo1']}' alt=''/>
               </div>
+              <div class='tab-pane fade active in' id='sunglass' >
+                <img class='sizingimagesmax' style='width:100%;' src='assets/images/posts/{$row['photo2']}' alt=''/>
+              </div>
+          </div><!--/photo-tab-->
             </div>
           </div><!--/product-details-->";
                             } 
@@ -244,8 +257,8 @@ require_once ('../includes/main_functions.php');
       </div>
     </div>    
   </section>
-	<br><br><br><br>
-	<?php  
+  <br><br><br><br>
+  <?php  
       require('footer.php');    
     ?>
   <script src="assets/js/jquery.js"></script>
@@ -255,48 +268,5 @@ require_once ('../includes/main_functions.php');
   <script src="assets/js/price-range.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/jquery-1.9.1.min.js"></script>
- 
-    <script type="text/javascript">
-  $(document).ready(function()
-  {
-      $("#photo1next").click(function()
-			  {
-
-                  $("#photo1next").fadeOut(1);
-                  $("#photo1").fadeOut(1);
-			      $("#photo2").slideToggle();
-                  $("#photo2prev").fadeIn();
-                  $("#photo2next").fadeIn();
-			  });
-      $("#photo2prev").click(function()
-			  {
-			  	   
-                  $("#photo2prev").fadeOut(1);
-                  $("#photo2next").fadeOut(1);
-                  $("#photo2").fadeOut(1);
-			      $("#photo1").slideToggle();
-                  $("#photo1next").fadeIn();
-			  });
-      $("#photo2next").click(function()
-        {
-
-                  $("#photo2next").fadeOut(1);
-                  $("#photo2prev").fadeOut(1);
-                  $("#photo2").fadeOut(1);
-            $("#photo3").slideToggle();
-                  $("#photo3prev").fadeIn();
-        });
-      $("#photo3prev").click(function()
-        {
-             
-                  $("#photo3prev").fadeOut(1);
-                  $("#photo3").fadeOut(1);
-            $("#photo2").slideToggle();
-                  $("#photo2next").fadeIn();
-                  $("#photo2prev").fadeIn();
-        });
-      
-  });
-   </script>
 </body>
 </html>

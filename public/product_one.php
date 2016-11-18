@@ -32,39 +32,60 @@ require_once ('../includes/main_functions.php');
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/images/ico/apple-touch-icon-57-precomposed.png">
     <style type="text/css">
-        .sizingimagesmax{
+        
+        .fon{
+        font-size: 20px;
+      }
+    
+        
+         .sizingimagesmax{
            display: block;
            width:100%;
            height:auto;
 
         }
-        .fon{
-      	font-size: 20px;
-      }
-       
+        .displaynone{
+          display: none;
+        }
+       .jssora11l, .jssora11r {
+                    display: block;
+                    position: absolute;
+                    /* size of arrow element */
+                    width: 37px;
+                    height: 37px;
+                    cursor: pointer;
+                    background: url(assets/images/slider/a11.png) no-repeat;
+                    overflow: hidden;
+                }
+                .jssora11l { background-position: -11px -41px; }
+                .jssora11r { background-position: -71px -41px; }
+                .jssora11l:hover { background-position: -131px -41px; }
+                .jssora11r:hover { background-position: -191px -41px; }
+                .jssora11l.jssora11ldn { background-position: -251px -41px; }
+                .jssora11r.jssora11rdn { background-position: -311px -41px; }
     </style>
 </head><!--/head-->
 
 <body>
-	<?php   
+  <?php   
     require('header.php');   
-  ?>	
+  ?>  
 
     <div class="header-bottom"><!--header-bottom-->
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-7">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-						</div>
-						<div class="mainmenu pull-left">
-							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="home.php" class="fon">Home</a></li>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-7">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="mainmenu pull-left">
+              <ul class="nav navbar-nav collapse navbar-collapse">
+                <li><a href="home.php" class="fon">Home</a></li>
                 <li><a href="upload.php" class="fon">Sell</a></li>
                 <li><a href="categories.php" class="active fon">Buy</a></li>
                 <li class="dropdown"><a href="#">Odering<i class="fa fa-angle-down"></i></a>
@@ -85,32 +106,32 @@ require_once ('../includes/main_functions.php');
             </div>
         </div><!--/header-bottom-->
     </header><!--/header-->
-	
-	<!--<section id="advertisement">
-		<div class="container">
-			<img src="images/shop/advertisement.jpg" alt="" />
-		</div>
+  
+  <!--<section id="advertisement">
+    <div class="container">
+      <img src="images/shop/advertisement.jpg" alt="" />
+    </div>
 
-		This section is for advetisement
-	</section>-->
-	
-	<section>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-9 padding-right">
-					
-						<?php 
+    This section is for advetisement
+  </section>-->
+  <section>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-sm-9 padding-right">
+          
+            <?php 
                             $id = $_GET['id'];
                             $query = "SELECT * FROM items where post_id = '{$id}' and is_accepted = 1";
-			
+      
                             $res = mysqli_query($con,$query);
                             while($row = mysqli_fetch_assoc($res))
                             {
-                            	$sub_id = $row['subcat_id']; 
+                              $sub_id = $row['subcat_id']; 
                               echo "<div class='product-details'><!--product-details-->
-						<div class='col-sm-6'>
+            <div class='col-sm-6'>
               <div class='product-information'><!--/product-information-->
-                <!--<img src='assets/images/product-details/new.jpg' class='newarrival sizing' alt='' />-->
+                <!--<img src='assets/images/product-details/new.jpg' class='newarrival' alt='' />-->
                 <span>
                   <span>{$row['name']}</span>
                 </span>
@@ -123,22 +144,24 @@ require_once ('../includes/main_functions.php');
                 <a href=''><img src='assets/images/product-details/share.png' class='share img-responsive'  alt='' /></a>
               </div><!--/product-information-->
             </div>
+
             <div class='col-sm-6'>
-							<div class='view-product'>
-										<div class='' id='photo1'>
-                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt=''/>
-					         </div>
-								<h3>Verified</h3>
-							</div>
-						</div>
-					</div><!--/product-details-->";
+              <div class='category-tab'><!--photo-tab-->
+            
+            <div class='tab-content'>
+              <div class='tab-pane fade active in' id='tshirt' >
+                <img class='sizingimagesmax' style='width:100%;' src='assets/images/posts/{$row['main']}' alt=''/>
+              </div></div>
+          </div><!--/photo-tab-->
+            </div>
+          </div><!--/product-details-->";
                             } 
                             
                                
                         ?>
                     </div>
                 
-				<div class="col-sm-3">
+        <div class="col-sm-3">
           <div class="left-sidebar">
             <h2>Categories</h2>
             <div class="panel-group category-products" id="accordian"><!--category-productsr-->
@@ -188,7 +211,7 @@ require_once ('../includes/main_functions.php');
             
           </div>
         </div>
-			</div>
+      </div>
       <div class="row">
         <div class="col-sm-12">
 
@@ -220,11 +243,10 @@ require_once ('../includes/main_functions.php');
         </div>
       </div>  
       </div>
-		</div>		
-	</section>
-	
-	<br><br><br><br>
-	<?php  
+    </div>    
+  </section>
+  <br><br><br><br>
+  <?php  
       require('footer.php');    
     ?>
   <script src="assets/js/jquery.js"></script>
@@ -234,6 +256,5 @@ require_once ('../includes/main_functions.php');
   <script src="assets/js/price-range.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/jquery-1.9.1.min.js"></script>
-   
 </body>
 </html>
