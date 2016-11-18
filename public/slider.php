@@ -50,7 +50,7 @@
 						
 					</div>
 				</div>
-				<div class="col-sm-9">
+				<div class="col-sm-7">
 					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
 						<!--<ol class="carousel-indicators">
 							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
@@ -64,39 +64,21 @@
 						</ol>  --> 
 						 
 						<div class="carousel-inner">
-							<?php 
-                               $v = 1;
-                               $query = "SELECT * FROM categories where cat_id!=8";
-                               $res = mysqli_query($con,$query);
-                               while($row = mysqli_fetch_assoc($res))
-                               {
-
-                                   if($v==1){
-                                     echo "<div class='item active'>
+							<div class='item active'>
 								               <div class='col-sm-12'> 
-									             <img src='assets/images/categories/phone.jpg' style='width:100%;' class='girl img-responsive' alt='' />
-				                               </div> ";
-									$v = 2;
-                                    }
-                                    else{
-                                	     echo "<div class='item'>
-								                 <div class='col-sm-6'> 
-									   <h1><span>250</span> Trade</h1>
-									   <h2>{$row['cat_name']} </div></h2>
-									   <div class='col-sm-6 slidersizing'><br>
-								<a href='category.php?id={$row['cat_id']}'>
-									<img src='assets/images/categories/{$row['cat_image']}' class='girl img-responsive' alt='' />
-				                </a>
-								</div>";
-                                    }
-                                    
-                                    echo"
-								
-							</div>";
-
-                                }
-                            ?>
-						
+									             <img src='assets/images/slider/comp.jpg' style='width:100%;' class='girl img-responsive' alt='' />
+				                               </div> 
+				             </div>
+							<div class='item'>
+								  <div class='col-sm-12'> 
+						             <img src='assets/images/slider/sport.jpg' style='width:100%;' class='girl img-responsive' alt='' />
+				                  </div>
+							</div>
+						    <div class='item'>
+								  <div class='col-sm-12'> 
+						             <img src='assets/images/slider/phone.jpg' style='width:100%;' class='girl img-responsive' alt='' />
+				                  </div>
+							</div>
 						</div>
 						<a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
 							<i class="fa fa-angle-left"></i>
