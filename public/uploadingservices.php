@@ -2,7 +2,6 @@
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
 //checkToken();
-echo "Uploading, Please wait...";
 if(checkIsStringSetPost('izina'))
 {
  $category = clearInput($_POST['subcategory']);
@@ -65,8 +64,9 @@ if(isset($_FILES['main']))
       }
       else
       {
-       echo "<script>alert(' image size must be less than 2MB ');window.location='upload.php';</script>";exit;
-      }
+        require('faild-upload.php');
+        exit;
+       }
     }
     else
     {

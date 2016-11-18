@@ -27,7 +27,7 @@ checkToken();
     <script src="js/html5shiv.js"></script> 
     <script src="js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="shortcut icon" href="assets/images/ico/favicon.ico">
+    <link rel="shortcut icon" href="assets/images/ico/icon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/ico/apple-touch-icon-72-precomposed.png">
@@ -105,6 +105,7 @@ checkToken();
             <div class="mainmenu pull-left">
               <ul class="nav navbar-nav ">
                 <li><a href="home.php" class="fon">Home</a></li>
+                <li><a href="services.php" class="fon">Services</a></li>
                 <li><a href="upload.php" class="active fon">Sell</a></li>
                 <li><a href="categories.php" class="fon">Buy</a></li>
                 <li class="dropdown"><a href="#">Odering<i class="fa fa-angle-down"></i></a>
@@ -162,13 +163,13 @@ checkToken();
                   <div id="electronics">
                     <form action="uploadingprocess.php" id="validation" novalidate="novalidate" class="upload-form row" method="post" enctype="multipart/form-data">
                         <div class="form-group col-md-12">
-                             <input type="text" name="izina" required="required" class="form-control" placeholder="Ad title">
+                             <input type="text" name="izina" value="<?php if(issset($_SESSION['izina'])){ echo $_SESSION['izina']; unset($_SESSION['izina']); } ?>" required="required" class="form-control" placeholder="Ad title">
                         </div>
                         <div class="form-group col-md-6">
-                           <input type="text" name="name" class="form-control" required="required" placeholder="Seller Name">
+                           <input type="text" name="name" class="form-control" value="<?php if(issset($_SESSION['seller'])){ echo $_SESSION['seller']; unset($_SESSION['seller']);}  ?>" required="required" placeholder="Seller Name">
                         </div> 
                         <div class="form-group col-md-6">
-                           <input type="text" name="contact" class="form-control" required="required" placeholder="Phone Number">
+                           <input type="text" name="contact" class="form-control" required="required" value="<?php if(issset($_SESSION['phonecontact'])){ echo $_SESSION['phonecontact']; unset($_SESSION['phonecontact']);} ?>" placeholder="Phone Number">
                         </div> 
                         <div class="form-group col-md-12">
                           <select class="form-control" name="location" required="required">
@@ -205,33 +206,87 @@ checkToken();
                             </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <input type="text" name="price" class="form-control"  placeholder="Price">
+                            <input type="text" name="price" class="form-control" value="<?php if(issset($_SESSION['price'])){ echo $_SESSION['price']; unset($_SESSION['price']); }?>"  placeholder="Price">
                         </div>
                         <div class="form-group col-md-12">
-                            <textarea name="details" id="message" class="form-control" rows="8" placeholder="Description of the product, Include the brand, model, warranty, guarranty, age and any other included accessories"></textarea>
+                            <textarea name="details" id="message" class="form-control" value="<?php if(issset($_SESSION['message'])){echo $_SESSION['message']; unset($_SESSION['message']);} ?>" rows="8" placeholder="Description of the product, Include the brand, model, warranty, guarranty, age and any other included accessories"></textarea>
                         </div>
                         <div class="col-sm-4"> 
                                   <input type="file" name="main" class="this" id="inp" />
+                                  <?php
+                                    if(isset($_SESSION['error1']))
+                                    {
+                                      echo "<font color='red'>";
+                                      echo $_SESSION['error1'];
+                                      echo "</font>";
+                                      unset($_SESSION['error1']);
+                                    }
+                                  ?>
                                   <img id="image" class="btn1 starting" />
                             </div>
                             <div class="col-sm-4">
                                   <input type="file" name="img1" class="this" id="inp2" />
+                                  <?php
+                                    if(isset($_SESSION['error2']))
+                                    {
+                                      echo "<font color='red'>";
+                                      echo $_SESSION['error2'];
+                                      echo "</font>";
+                                      unset($_SESSION['error2']);
+                                    }
+                                  ?>
                                   <img id="image2" class="btn2 btnlocation" />
                             </div>
                             <div class="col-sm-4">
                                   <input type="file" name="img2" class="this" id="inp3" />
+                                  <?php
+                                    if(isset($_SESSION['error3']))
+                                    {
+                                      echo "<font color='red'>";
+                                      echo $_SESSION['error3'];
+                                      echo "</font>";
+                                      unset($_SESSION['error3']);
+                                    }
+                                  ?>
                                   <img id="image3" class="btn3 btnlocation" />
                             </div>
                             <div class="col-sm-4">     
                                   <input type="file" name="img3" class="this" id="inp4" />
+                                  <?php
+                                    if(isset($_SESSION['error4']))
+                                    {
+                                      echo "<font color='red'>";
+                                      echo $_SESSION['error4'];
+                                      echo "</font>";
+                                      unset($_SESSION['error4']);
+                                    }
+                                  ?>
                                   <img id="image4" class="btn4 btnlocation" />
                             </div>
                             <div class="col-sm-4">      
                                   <input type="file" name="img4" class="this" id="inp5" />
+                                  <?php
+                                    if(isset($_SESSION['error5']))
+                                    {
+                                      echo "<font color='red'>";
+                                      echo $_SESSION['error5'];
+                                      echo "</font>";
+                                      unset($_SESSION['error5']);
+                                    }
+                                  ?>
                                   <img id="image5" class="btn5 starting" />
                             </div>
                             <div class="col-sm-4">      
                                   <input type="file" name="img5" class="this" id="inp6" />
+                                  <?php
+                                    if(isset($_SESSION['error6']))
+                                    {
+                                      echo "<font color='red'>";
+                                      echo $_SESSION['error6'];
+                                      echo "</font>";
+                                      unset($_SESSION['error6']);
+                                    }
+                                  ?>
                                   <img id="image6" class="btn6 btnlocation" />
                             </div>    
                                   <input type="file" name="img6" id="inp7" class="hide" />
