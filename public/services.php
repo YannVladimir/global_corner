@@ -101,38 +101,38 @@ require_once ('../includes/main_functions.php');
           <div class="left-sidebar">
             <h2>Services categories</h2>
             <div class="panel-group category-products" id="accordian"><!--category-productsr-->
-              <?php 
+             <?php 
                                             $c = 1;
-                                            $query = "SELECT * FROM subcategories where refcat_id= 7 ";
+                                            $query = "SELECT * FROM categories ";
                                             $res = mysqli_query($con,$query);
                                             while($row = mysqli_fetch_assoc($res))
                                             {
-                                            if($row['subcat_id']==$c)
+                                            if($row['cat_id']==$c)
                                             {
                                                echo "<div class='panel panel-default'>
                 <div class='panel-heading'>
                   <h4 class='panel-title'>
-                  <a data-toggle='collapse' data-parent='#accordian' href='#{$row['subcat_id']}'>
+                  <a data-toggle='collapse' data-parent='#accordian' href='#{$row['cat_id']}'>
                       <span class='badge pull-right'><i class='fa fa-plus'></i></span>
-                      {$row['subcat_name']}
+                      {$row['cat_name']}
                          </a></h4>
                 </div><div id='$c' class='panel-collapse collapse'>
                   <div class='panel-body'>
-                    <ul>";$a = $row['subcat_name'];
+                    <ul>";$a = $row['cat_name'];
                     $queryy = "SELECT * FROM amacategories ";
                     $re = mysqli_query($con,$queryy);
                     while($ro = mysqli_fetch_assoc($re))
                                               {
-                                              if($ro['subcat_id']==$c)
+                                              if($ro['refcat_id']==$c)
                                               {
-                                                   echo "<li><a href='sub-sub-category.php?id={$ro['subsubcat_id']}'>*   {$ro['subsubcat_name']} </a></li>";
+                                                   echo "<li><a href='sub-category.php?id={$ro['subcat_id']}'>*   {$ro['subcat_name']} </a></li>";
                                                    
                                               }
                                               }
                                               
                                             }
                                             
-                                            echo "<li><a href='sub-category.php?id={$c}'>*   All in {$a} </a></li></ul>
+                                            echo "<li><a href='category.php?id={$c}'>*   All in {$a} </a></li></ul>
                   </div>
                 </div>
               </div>";
