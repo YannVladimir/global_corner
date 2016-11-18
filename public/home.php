@@ -161,7 +161,8 @@ if(isset($_GET['var']) == "logout")
                                                 </div>
                                                 <div class='product-overlay' style='opacity:0.9'>
                                                     <div class='overlay-content'>
-                                                       <h2>{$row['place_name']} District</h2>
+                                                       <h2>{$row['contacts']}</h2>
+                                                       <p>{$row['place_name']} District</p>
                                                        <p>{$row['uploaded_date']}</p>
                                                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                                     </div>
@@ -184,7 +185,8 @@ if(isset($_GET['var']) == "logout")
                                                 </div>
                                                 <div class='product-overlay' style='opacity:0.9'>
                                                     <div class='overlay-content'>
-                                                       <h2>{$row['place_name']} District</h2>
+                                                       <h2>{$row['contacts']}</h2>
+                                                       <p>{$row['place_name']} District</p>
                                                        <p>{$row['uploaded_date']}</p>
                                                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                                     </div>
@@ -243,7 +245,8 @@ if(isset($_GET['var']) == "logout")
                                                 </div>
                                                 <div class='product-overlay' style='opacity:0.9'>
                                                     <div class='overlay-content'>
-                                                       <h2>{$row['place_name']} District</h2>
+                                                       <h2>{$row['contacts']}</h2>
+                                                       <p>{$row['place_name']} District</p>
                                                        <p>{$row['uploaded_date']}</p>
                                                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                                     </div>
@@ -266,7 +269,8 @@ if(isset($_GET['var']) == "logout")
                                                 </div>
                                                 <div class='product-overlay' style='opacity:0.9'>
                                                     <div class='overlay-content'>
-                                                       <h2>{$row['place_name']} District</h2>
+                                                       <h2>{$row['contacts']}</h2>
+                                                       <p>{$row['place_name']} District</p>
                                                        <p>{$row['uploaded_date']}</p>
                                                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                                     </div>
@@ -324,7 +328,8 @@ if(isset($_GET['var']) == "logout")
                                                 </div>
                                                 <div class='product-overlay' style='opacity:0.9'>
                                                     <div class='overlay-content'>
-                                                       <h2>{$row['place_name']} District</h2>
+                                                       <h2>{$row['contacts']}</h2>
+                                                       <p>{$row['place_name']} District</p>
                                                        <p>{$row['uploaded_date']}</p>
                                                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                                     </div>
@@ -347,7 +352,8 @@ if(isset($_GET['var']) == "logout")
                                                 </div>
                                                 <div class='product-overlay' style='opacity:0.9'>
                                                     <div class='overlay-content'>
-                                                       <h2>{$row['place_name']} District</h2>
+                                                       <h2>{$row['contacts']}</h2>
+                                                       <p>{$row['place_name']} District</p>
                                                        <p>{$row['uploaded_date']}</p>
                                                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                                     </div>
@@ -361,7 +367,7 @@ if(isset($_GET['var']) == "logout")
                                 echo "</div>";
 
                                 
-//for lelectronics
+//for elelectronics
 ?>
 
 <div class="col-sm-12">
@@ -406,7 +412,8 @@ if(isset($_GET['var']) == "logout")
                                                 </div>
                                                 <div class='product-overlay' style='opacity:0.9'>
                                                     <div class='overlay-content'>
-                                                       <h2>{$row['place_name']} District</h2>
+                                                       <h2>{$row['contacts']}</h2>
+                                                       <p>{$row['place_name']} District</p>
                                                        <p>{$row['uploaded_date']}</p>
                                                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                                     </div>
@@ -429,7 +436,8 @@ if(isset($_GET['var']) == "logout")
                                                 </div>
                                                 <div class='product-overlay' style='opacity:0.9'>
                                                     <div class='overlay-content'>
-                                                       <h2>{$row['place_name']} District</h2>
+                                                       <h2>{$row['contacts']}</h2>
+                                                       <p>{$row['place_name']} District</p>
                                                        <p>{$row['uploaded_date']}</p>
                                                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                                     </div>
@@ -487,7 +495,8 @@ if(isset($_GET['var']) == "logout")
                                                 </div>
                                                 <div class='product-overlay' style='opacity:0.9'>
                                                     <div class='overlay-content'>
-                                                       <h2>{$row['place_name']} District</h2>
+                                                       <h2>{$row['contacts']}</h2>
+                                                       <p>{$row['place_name']} District</p>
                                                        <p>{$row['uploaded_date']}</p>
                                                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                                     </div>
@@ -510,7 +519,8 @@ if(isset($_GET['var']) == "logout")
                                                 </div>
                                                 <div class='product-overlay' style='opacity:0.9'>
                                                     <div class='overlay-content'>
-                                                       <h2>{$row['place_name']} District</h2>
+                                                       <h2>{$row['contacts']}</h2>
+                                                       <p>{$row['place_name']} District</p>
                                                        <p>{$row['uploaded_date']}</p>
                                                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                                     </div>
@@ -569,7 +579,8 @@ if(isset($_GET['var']) == "logout")
                                                 </div>
                                                 <div class='product-overlay' style='opacity:0.9'>
                                                     <div class='overlay-content'>
-                                                       <h2>{$row['place_name']} District</h2>
+                                                       <h2>{$row['contacts']}</h2>
+                                                       <p>{$row['place_name']} District</p>
                                                        <p>{$row['uploaded_date']}</p>
                                                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                                     </div>
@@ -592,7 +603,8 @@ if(isset($_GET['var']) == "logout")
                                                 </div>
                                                 <div class='product-overlay' style='opacity:0.9'>
                                                     <div class='overlay-content'>
-                                                       <h2>{$row['place_name']} District</h2>
+                                                       <h2>{$row['contacts']}</h2>
+                                                       <p>{$row['place_name']} District</p>
                                                        <p>{$row['uploaded_date']}</p>
                                                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                                     </div>
@@ -652,7 +664,8 @@ if(isset($_GET['var']) == "logout")
                                                 </div>
                                                 <div class='product-overlay' style='opacity:0.9'>
                                                     <div class='overlay-content'>
-                                                       <h2>{$row['place_name']} District</h2>
+                                                       <h2>{$row['contacts']}</h2>
+                                                       <p>{$row['place_name']} District</p>
                                                        <p>{$row['uploaded_date']}</p>
                                                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                                     </div>
@@ -675,7 +688,8 @@ if(isset($_GET['var']) == "logout")
                                                 </div>
                                                 <div class='product-overlay' style='opacity:0.9'>
                                                     <div class='overlay-content'>
-                                                       <h2>{$row['place_name']} District</h2>
+                                                       <h2>{$row['contacts']}</h2>
+                                                       <p>{$row['place_name']} District</p>
                                                        <p>{$row['uploaded_date']}</p>
                                                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                                     </div>
@@ -726,13 +740,13 @@ if(isset($_GET['var']) == "logout")
                                                    <div class='sizingimages'>
                                                         <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
                                                    </div>
-                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <h2>{$row['contacts']}</h2>
                                                    <p>{$row['name']}</p>
                                                    <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                                 </div>
                                                 <div class='product-overlay' style='opacity:0.9'>
                                                     <div class='overlay-content'>
-                                                       <h2>{$row['place_name']} District</h2>
+                                                       <h2>{$row['place_name']}</h2>
                                                        <p>{$row['uploaded_date']}</p>
                                                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                                     </div>
