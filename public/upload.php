@@ -6,6 +6,7 @@ require_once ('../includes/main_functions.php');
 //checkUser();
 if(isset($_GET['id'])){
 $id = $_GET['id'];
+$_SESSION['cat_id'] = $id;
 if($id==7)
   {
     require('upload_services.php');

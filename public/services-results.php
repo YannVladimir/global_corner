@@ -26,7 +26,7 @@ require_once ('../includes/main_functions.php');
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->   
-    <link rel="shortcut icon" href="assets/images/ico/favicon.ico">
+    <link rel="shortcut icon" href="assets/images/ico/icon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/ico/apple-touch-icon-72-precomposed.png">
@@ -64,6 +64,7 @@ require_once ('../includes/main_functions.php');
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="home.php" class="fon">Home</a></li>
+                <li><a href="services.php" class="active fon">Services</a></li>
                 <li><a href="upload.php" class="fon">Sell</a></li>
                 <li><a href="categories.php" class="fon">Buy</a></li>
                 <li class="dropdown"><a href="#">Odering<i class="fa fa-angle-down"></i></a>
@@ -72,7 +73,6 @@ require_once ('../includes/main_functions.php');
                         <li><a href="orders.php" class="fon">View orders</a></li> 
                     </ul>
                 </li>
-                <li><a href="upload.php" class="fon active">Business services</a></li>
                 <li><a href="contact_us.php" class="fon">Contact us</a></li>
                 
                             </ul>
