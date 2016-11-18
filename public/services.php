@@ -94,7 +94,7 @@ require_once ('../includes/main_functions.php');
                             <ul class="nav nav-tabs">
                                 <?php 
                                 $query = "SELECT * from subcategories where refcat_id = 7";
-                                $cats = "SELECT * from items where is_accepted= 1  order by post_id desc limit 40";
+                                $cats = "SELECT * from items where is_accepted= 1 and refcat_id=7 order by post_id desc limit 40";
                                 $res = mysqli_query($con,$query);
                                 echo "<li class='active'><a href='#all' data-toggle='tab'>All Services</a></li>";
                                 while($rows = mysqli_fetch_assoc($res))
