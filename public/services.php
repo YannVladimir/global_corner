@@ -5,7 +5,6 @@ error_reporting(E_ALL);
 session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
-checkUser();
 ?>
 <!DOCTYPE html> 
 <html lang="en">
@@ -94,20 +93,20 @@ checkUser();
                         <div class="col-sm-12">
                             <ul class="nav nav-tabs">
                                 <?php 
-                                $query = "SELECT * from subcategories where refcat_id=7";
-                                $cats = "SELECT * from items where is_accepted=1 and refcat_id=7 order by post_id desc limit 40";
+                                $query = "SELECT * from subcategories where refcat_id = 7";
+                                $cats = "SELECT * from items where is_accepted= 1  order by post_id desc limit 40";
                                 $res = mysqli_query($con,$query);
                                 echo "<li class='active'><a href='#all' data-toggle='tab'>All Services</a></li>";
-                                while($row = mysqli_fetch_assoc($res))
+                                while($rows = mysqli_fetch_assoc($res))
                                 {
-                                         echo"<li><a href='#{$row['subcat_id']}' data-toggle='tab'>{$row['subcat_name']}</a></li>";
+                                         echo"<li><a href='#{$rows['subcat_id']}' data-toggle='tab'>{$rows['subcat_name']}</a></li>";
                                 } 
                                 echo "</ul>
                                         </div>
                                         <div class='tab-content'> ";
                                         echo "<div class='tab-pane fade active in' id='all' >";
-                                $res = mysqli_query($con,$cats);
-                                while($row = mysqli_fetch_assoc($res))
+                                $r = mysqli_query($con,$cats);
+                                while($row = mysqli_fetch_assoc($r))
                                 {
                                          echo "<div class='col-sm-3'>
                                          <div class='product-image-wrapper'>
@@ -131,7 +130,7 @@ checkUser();
                                 
                                          </div>
                                        </div>";
-                                    }
+                                    
                                 } 
                                 echo "</div>";
                                 $res2 = mysqli_query($con,$query);
