@@ -157,16 +157,16 @@ require_once ('../includes/main_functions.php');
             </div>
             <div class='tab-content'>
               <div class='tab-pane fade active in' id='tshirt' >
-                <img class='sizingimagesmax' style='max-width:300px;' src='assets/images/posts/{$row['main']}' alt=''/>
+                <img class='sizingimagesmax' style='width:100%;' src='assets/images/posts/{$row['main']}' alt=''/>
               </div>
                             <div class='tab-pane fade active in' id='blazers' >
-                <img class='sizingimagesmax' style='max-width:300px;' src='assets/images/posts/{$row['photo1']}' alt=''/>
+                <img class='sizingimagesmax' style='width:100%;' src='assets/images/posts/{$row['photo1']}' alt=''/>
               </div>
               <div class='tab-pane fade active in' id='sunglass' >
-                <img class='sizingimagesmax' style='max-width:300px;' src='assets/images/posts/{$row['photo2']}' alt=''/>
+                <img class='sizingimagesmax' style='width:100%;' src='assets/images/posts/{$row['photo2']}' alt=''/>
               </div>
               <div class='tab-pane fade active in' id='kids' >
-                <img class='sizingimagesmax' style='max-width:300px;' src='assets/images/posts/{$row['photo3']}' alt=''/>
+                <img class='sizingimagesmax' style='width:100%;' src='assets/images/posts/{$row['photo3']}' alt=''/>
               </div>
             </div>
           </div><!--/photo-tab-->
