@@ -41,7 +41,7 @@ if(isset($_FILES['img']))
 			    }
                 else
 			    {
-				    echo "<script>alert(' image size must be less than 1MB ');window.location='edit-scategory.php';</script>";exit;
+				    echo "<script>alert(' image size must be less than 4MB ');window.location='edit-scategory.php';</script>";exit;
 			    }
 		    }
 		    else
@@ -50,11 +50,11 @@ if(isset($_FILES['img']))
 		    }
 		
 	    }
-	    $s = "SELECT * from categories where cat_id ='{$id}'";
+	    $s = "SELECT * from service_categories where id ='{$id}'";
 	    $re = mysqli_query($con,$s);
 	    $ros = mysqli_fetch_assoc($re);
 	    $pathdelete = '../assets/images/categories/' . $ros['image'];
-		$queryy = "UPDATE categories set category='{$categoryname}',image='{$photo}' where id ='{$id}'";
+		$queryy = "UPDATE service_categories set category='{$categoryname}',cat_image='{$photo}' where id ='{$id}'";
 		$res1 = mysqli_query($con,$queryy);
 		if($res1)
 			{   
