@@ -1,4 +1,5 @@
 <?php 
+$con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 include('../../includes/main_functions.php');
 $categoryname = $_POST['name'];
 $query = "SELECT * FROM service_categories ";
@@ -53,7 +54,7 @@ if(isset($_FILES['img']))
 	}
 		
 }
-$queryy = "INSERT INTO service_categories (category,image) values ('{$categoryname}','{$photo}')";		
+$queryy = "INSERT INTO service_categories (category,cat_image) values ('{$categoryname}','{$photo}')";		
 $res1 = mysqli_query($con,$querryy);
 if($res1)
 			{
