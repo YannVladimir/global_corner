@@ -10,13 +10,13 @@ $id = $_POST['id'];
 if(isset($_FILES['img']))
 {
  $name= $_FILES['img']['name'];
-  $size= $_FILES['img']['size'];
+ $size= $_FILES['img']['size'];
  $ext1 = explode(".", $name);
 		    $ext = end($ext1);
 		    $allowed_ext = array("png", "jpeg", "jpg");
 		    if(in_array($ext, $allowed_ext))
 		    {
-			    if($size < (1024*1024))
+			    if($size < (4194304))
 			    {
                     $new_image = '';
                     $new_name = md5(rand()) . '.' . $ext;

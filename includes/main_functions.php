@@ -24,7 +24,7 @@
         $_SESSION['_token'] = bin2hex(openssl_random_pseudo_bytes(16));
     }
 	function redirectTo($loc)
-	{
+	{ 
 		header('location:'.$loc);exit;
 	}
 
