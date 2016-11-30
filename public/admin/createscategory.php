@@ -58,7 +58,7 @@ if(isset($_FILES['img']))
 		
 }
 $queryy = "INSERT INTO service_categories (category,cat_image) values ('{$categoryname}','{$photo}')";		
-$res1 = mysqli_query($con,$querryy);
+$res1 = mysqli_query($con,$queryy);
 if($res1)
 			{
                 echo "<script>alert(' Category created successfully ');window.location='dashboard.php';</script>";
