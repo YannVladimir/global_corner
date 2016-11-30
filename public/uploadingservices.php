@@ -364,7 +364,8 @@ $select = mysqli_query($con,$queryy);
  }
  else
  {
- 	 echo "<script>alert(' Error while uploading post, please try again ');window.location='upload.php';</script>";exit;
+
+ echo "<script>alert(' Error while uploading post, please try again ');window.location='upload.php';</script>";exit;
  }   
 }
 }
