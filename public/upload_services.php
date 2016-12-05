@@ -163,7 +163,7 @@ checkToken();
                                <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:14px" data-toggle="dropdown">
                                   <?php
                                        $id = $_GET['id'];
-                                       $query = "SELECT * from service_categories where id!='{$id}'";
+                                       $query = "SELECT * from service_categories where id='{$id}'";
                                        $res = mysqli_query($con,$query);
                                        $row = mysqli_fetch_assoc($res);
                                        echo $row['category'];
