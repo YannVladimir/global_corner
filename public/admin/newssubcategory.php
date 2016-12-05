@@ -58,7 +58,7 @@ include('../../includes/main_functions.php');
             }
             else
             {
-                echo "<script>alert(' invalid image file ');window.location='new-ssubcategory.php';</script>";exit;
+            $photo = "";
             }
         
         }
