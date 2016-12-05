@@ -323,17 +323,6 @@ $img4 = $cart[3];
 $img5 = $cart[4];
 $img6 = $cart[5];
 $img7 = $cart[6];*/
-if(isset($_SESSION['error1']) || isset($_SESSION['error2']) || isset($_SESSION['error3']) || isset($_SESSION['error4']) || isset($_SESSION['error5']) || isset($_SESSION['error6']))
-{
-    $id = $_SESSION['cat_id'];
-    $_SESSION['izina'] = $nam;
-    $_SESSION['seller'] = $seller;
-    $_SESSION['price'] = $price;
-    $_SESSION['phonecontact'] =  $contacts;
-    $_SESSION['message'] = $details;
-    echo "<script>alert('An error occured while uploading the images, check and submit again');window.location='upload.php?id=$id';</script>";
-    unset($_SESSION['cat_id']); exit;
-}
 $query = "INSERT INTO post_photos (main,photo1,photo2,photo3,photo4,photo5,photo6,photo7) values ('{$photo}','{$img1}','{$img2}','{$img3}','{$img4}','{$img5}','{$img6}','{$img7}')";
 $yan = mysqli_query($con,$query);
 $queryy = "SELECT * FROM post_photos ";
@@ -361,6 +350,6 @@ $select = mysqli_query($con,$queryy);
 }
 else
 {
-    echo "not working fine";
+    echo "Please go back";
 }
 ?>
