@@ -134,6 +134,30 @@ checkToken();
               <br>
               <h2 class="title text-center">Enter your service's details</h2>
               <div class="status alert alert-success" style="display: none"></div>                  
+                          <div class="btn-group pull-right">
+                            <div class="btn-group">
+                               <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:14px" data-toggle="dropdown">
+                                  <?php
+                                       $id = $_GET['id'];
+                                       $query = "SELECT * from categories where cat_id='{$id}'";
+                                       $res = mysqli_query($con,$query);
+                                       $row = mysqli_fetch_assoc($res);
+                                       echo $row['cat_name'];
+                                      echo "  <span class='caret'></span>
+                               </button>
+                               <ul class='dropdown-menu'>";
+                                       $sql = "SELECT * from categories where cat_id!='{$id}'";
+                                       $r = mysqli_query($con,$sql);
+                                       while($gow = mysqli_fetch_assoc($r))
+                                       {
+                                        echo "<li><a href='upload.php?id={$gow['cat_id']}'>{$gow['cat_name']}</a></li>";
+                                       }
+                                  ?>
+                              
+                               </ul>
+                            </div>
+                        </div>
+                  <br><br>
                           <div class="btn-group pull-left">
                             <div class="btn-group">
                                <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:14px" data-toggle="dropdown">
@@ -164,10 +188,10 @@ checkToken();
                         <div class="form-group col-md-12">
                              <input type="text" name="izina" required="required" class="form-control" placeholder="Service title">
                         </div>
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-6">
                            <input type="text" name="name" class="form-control" required="required" placeholder="Company name or Seller Name">
                         </div>
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-6">
                           <select class="form-control" name="service_category" required="required">
                              <option value="">Select category</option>
                                 <?php 
@@ -180,10 +204,10 @@ checkToken();
                                 ?>
                           </select>
                         </div> 
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-6">
                            <input type="text" name="contact" class="form-control" required="required" placeholder="Phone Number">
                         </div> 
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-6">
                            <input type="text" name="email" class="form-control" placeholder="Email">
                         </div>
                         <div class="form-group col-md-12">

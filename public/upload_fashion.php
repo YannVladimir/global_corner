@@ -214,81 +214,29 @@ checkToken();
                             <textarea name="details" id="message" class="form-control" rows="8" placeholder="Description of the product, Include the brand, model, warranty, guarranty, age and any other included accessories"></textarea>
                         </div>
                         <div class="col-sm-4"> 
-                                  <input type="file" name="main" class="this" id="inp" />
-                                  <?php
-                                    if(isset($_SESSION['error1']))
-                                    {
-                                      echo "<font color='red'>";
-                                      echo $_SESSION['error1'];
-                                      echo "</font>";
-                                      unset($_SESSION['error1']);
-                                    }
-                                  ?>
+                                  <input type="file" name="main" class="this" id="inp"/>
                                   <img id="image" class="btn1 starting" />
                             </div>
                             <div class="col-sm-4">
                                   <input type="file" name="img1" class="this" id="inp2" />
-                                  <?php
-                                    if(isset($_SESSION['error2']))
-                                    {
-                                      echo "<font color='red'>";
-                                      echo $_SESSION['error2'];
-                                      echo "</font>";
-                                      unset($_SESSION['error2']);
-                                    }
-                                  ?>
+                                  
                                   <img id="image2" class="btn2 btnlocation" />
                             </div>
                             <div class="col-sm-4">
                                   <input type="file" name="img2" class="this" id="inp3" />
-                                  <?php
-                                    if(isset($_SESSION['error3']))
-                                    {
-                                      echo "<font color='red'>";
-                                      echo $_SESSION['error3'];
-                                      echo "</font>";
-                                      unset($_SESSION['error3']);
-                                    }
-                                  ?>
+      
                                   <img id="image3" class="btn3 btnlocation" />
                             </div>
                             <div class="col-sm-4">     
-                                  <input type="file" name="img3" class="this" id="inp4" />
-                                  <?php
-                                    if(isset($_SESSION['error4']))
-                                    {
-                                      echo "<font color='red'>";
-                                      echo $_SESSION['error4'];
-                                      echo "</font>";
-                                      unset($_SESSION['error4']);
-                                    }
-                                  ?>
+                                  <input type="file" name="img3" class="this" id="inp4"/>
                                   <img id="image4" class="btn4 btnlocation" />
                             </div>
                             <div class="col-sm-4">      
-                                  <input type="file" name="img4" class="this" id="inp5" />
-                                  <?php
-                                    if(isset($_SESSION['error5']))
-                                    {
-                                      echo "<font color='red'>";
-                                      echo $_SESSION['error5'];
-                                      echo "</font>";
-                                      unset($_SESSION['error5']);
-                                    }
-                                  ?>
+                                  <input type="file" name="img4" class="this" id="inp5"/>
                                   <img id="image5" class="btn5 starting" />
                             </div>
                             <div class="col-sm-4">      
-                                  <input type="file" name="img5" class="this" id="inp6" />
-                                  <?php
-                                    if(isset($_SESSION['error6']))
-                                    {
-                                      echo "<font color='red'>";
-                                      echo $_SESSION['error6'];
-                                      echo "</font>";
-                                      unset($_SESSION['error6']);
-                                    }
-                                  ?>
+                                  <input type="file" name="img5" class="this" id="inp6"/>
                                   <img id="image6" class="btn6 btnlocation" />
                             </div>    
                                   <input type="file" name="img6" id="inp7" class="hide" />
@@ -297,8 +245,6 @@ checkToken();
                                   <img id="image8" class="btn8 btnlocation hide" />
                             </div><br>                    
                         <div class="form-group col-md-12">
-                          <input type="text" class='hidden' name="_token" value="<?php echo $_SESSION['_token']; ?>">
-              
                            <input type="submit" name="submit" class="btn btn-primary pull-right" value="Submit">
                         </div>
                         <font>
