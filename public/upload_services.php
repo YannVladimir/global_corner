@@ -195,7 +195,8 @@ checkToken();
                           <select class="form-control" name="service_category" required="required">
                              <option value="">Select category</option>
                                 <?php 
-                                   $query = "SELECT * FROM service_subcategories";
+                                   $id = $_GET['id'];
+                                   $query = "SELECT * FROM service_subcategories where  ref1='{$id}' or ref2='{$id}' or ref3='{$id}' or ref4='{$id}'";
                                    $res = mysqli_query($con,$query);
                                    while($row = mysqli_fetch_assoc($res))
                                    {
