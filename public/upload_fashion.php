@@ -163,18 +163,15 @@ checkToken();
                   <div id="electronics">
                     <form action="uploadingprocess.php" id="validation" novalidate="novalidate" class="upload-form row" method="post" enctype="multipart/form-data">
                         <div class="form-group col-md-12">
-                          <?php
-                            
-                              echo '<input type="text" name="izina" value="" required="required" class="form-control" placeholder="Ad title"> ';
-                             
-                            ?>
+                        
+                              <input type="text" name="izina" value="" required="required" class="form-control" placeholder="Ad title"> 
                              
                         </div>
-                        <div class="form-group col-md-6">
-                           <input type="text" name="name" class="form-control" value="<?php if(issset($_SESSION['seller'])){ echo $_SESSION['seller']; unset($_SESSION['seller']);}  ?>" required="required" placeholder="Seller Name">
+                        <div class="form-group col-md-12">
+                           <input type="text" name="name" class="form-control" required="required" placeholder="Seller Name">
                         </div> 
-                        <div class="form-group col-md-6">
-                           <input type="text" name="contact" class="form-control" required="required" value="<?php if(issset($_SESSION['phonecontact'])){ echo $_SESSION['phonecontact']; unset($_SESSION['phonecontact']);} ?>" placeholder="Phone Number">
+                        <div class="form-group col-md-12">
+                           <input type="text" name="contact" class="form-control" required="required" placeholder="Phone Number">
                         </div> 
                         <div class="form-group col-md-12">
                           <select class="form-control" name="location" required="required">
