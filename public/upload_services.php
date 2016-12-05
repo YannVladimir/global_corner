@@ -139,14 +139,14 @@ checkToken();
                                <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:14px" data-toggle="dropdown">
                                   <?php
                                        $id = $_GET['id'];
-                                       $query = "SELECT * from categories where cat_id='{$id}'";
+                                       $query = "SELECT * from categories where cat_id=7";
                                        $res = mysqli_query($con,$query);
                                        $row = mysqli_fetch_assoc($res);
                                        echo $row['cat_name'];
                                       echo "  <span class='caret'></span>
                                </button>
                                <ul class='dropdown-menu'>";
-                                       $sql = "SELECT * from categories where cat_id!='{$id}'";
+                                       $sql = "SELECT * from categories where cat_id!=7";
                                        $r = mysqli_query($con,$sql);
                                        while($gow = mysqli_fetch_assoc($r))
                                        {
