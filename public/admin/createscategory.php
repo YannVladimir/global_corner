@@ -46,15 +46,15 @@ if(isset($_FILES['img']))
                     imagedestroy($new_image);
                     imagedestroy($tmp_image);
 		}
-                else
+        else
 		{
 			echo "<script>alert(' image size must be less than 4MB ');window.location='new_scategory.php';</script>";exit;
 		}
 	}
 	else
 	{
-		echo "<script>alert(' invalid image file ');window.location='new_scategory.php';</script>";exit;
-	}
+	$photo = "";
+    }
 		
 }
 $queryy = "INSERT INTO service_categories (category,cat_image) values ('{$categoryname}','{$photo}')";		
