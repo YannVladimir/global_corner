@@ -4,22 +4,15 @@ require_once ('../includes/main_functions.php');
 //checkToken();
 if(checkIsStringSetPost('izina'))
 {
- $category = clearInput($_POST['subcategory']);
+ $category = clearInput($_POST['service_category']);
 $seller = clearInput($_POST['name']);
 $nam = clearInput($_POST['izina']);
-$price = clearInput($_POST['price']);
-if($price ==0)
-{
-    $price = "Negotiatable";
-}
-if(!$price)
-{
-  $price = "Negotiatable";
-}
+$email = clearInput($_POST['email']);
 $details = clearInput($_POST['details']);
-$new_second = clearInput($_POST['newsecond']);
-$place = clearInput($_POST['location']);
+$place = clearInput($_POST['place']);
+$location = clearInput($_POST['location']);
 $contacts = clearInput($_POST['contact']);
+$phone = clearInput($_POST['phone']);
 $uploaded = date("Y-m-d");
 if(isset($_SESSION['id']))
 {
@@ -36,25 +29,25 @@ if(isset($_FILES['main']))
     $size= $_FILES['main']['size'];
     $ext1 = explode(".", $name);
     $ext = end($ext1);
-    $allowed_ext = array("png", "jpeg", "jpg");
+    $allowed_ext = array("png", "PNG", "jpeg", "JPEG", "JPG", "jpg");
     if(in_array($ext, $allowed_ext))
     {
-      if($size < (2097152))
+      if($size < (4194304))
       {
         $new_image = '';
         $new_name = md5(rand()) . '.' . $ext;
         $path ='assets/images/posts/' . $new_name;
         list($width, $height) = getimagesize($_FILES['main']['tmp_name']);
-        if($ext == 'png')
+        if($ext == 'png' || $ext =='PNG')
         {
- 	      $new_image = imagecreatefrompng($_FILES['main']['tmp_name']);
+          $new_image = imagecreatefrompng($_FILES['main']['tmp_name']);
         }
-        if($ext == 'jpeg' || $ext == 'jpg')
+        if($ext == 'jpeg' || $ext == 'jpg' || $ext == 'JPEG' || $ext == 'JPG')
         {
- 	      $new_image = imagecreatefromjpeg($_FILES['main']['tmp_name']);
+          $new_image = imagecreatefromjpeg($_FILES['main']['tmp_name']);
         }
-        $new_height = 300;
-        $new_width = ($width/$height)*300;
+        $new_width = 350;
+        $new_height = ($height/$width)*350;
         $tmp_image = imagecreatetruecolor($new_width, $new_height);
         imagecopyresampled($tmp_image, $new_image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
         imagejpeg($tmp_image, $path, 100);
@@ -64,13 +57,12 @@ if(isset($_FILES['main']))
       }
       else
       {
-        require('faild-upload.php');
-        exit;
-       }
+        $_SESSION['error1'] = 'image size must be less than 4MB for the first image';
+      }
     }
     else
     {
-      $photo = "noimage.jpg";
+        $_SESSION['error1'] = 'Select only jpg,jpeg,png for the first image';
     }
 
 }
@@ -80,44 +72,40 @@ if(isset($_FILES['img1']))
     $size= $_FILES['img1']['size'];
     $ext1 = explode(".", $name);
     $ext = end($ext1);
-    $allowed_ext = array("png", "jpeg", "jpg");
+    $allowed_ext = array("png", "PNG", "jpeg", "JPEG", "JPG", "jpg");
     if(in_array($ext, $allowed_ext))
     {
-if($size < (2097152))
+if($size < (4194304))
 {
      $new_image = '';
      $new_name = md5(rand()) . '.' . $ext;
      $path ='assets/images/posts/' . $new_name;
      list($width, $height) = getimagesize($_FILES['img1']['tmp_name']);
-     if($ext == 'png')
+     if($ext == 'png' || $ext =='PNG')
      {
- 	   $new_image = imagecreatefrompng($_FILES['img1']['tmp_name']);
+       $new_image = imagecreatefrompng($_FILES['img1']['tmp_name']);
      }
-     if($ext == 'jpeg' || $ext == 'jpg')
+     if($ext == 'jpeg' || $ext == 'jpg' || $ext == 'JPEG' || $ext == 'JPG')
      {
- 	   $new_image = imagecreatefromjpeg($_FILES['img1']['tmp_name']);
+       $new_image = imagecreatefromjpeg($_FILES['img1']['tmp_name']);
      }
-     $new_height = 300;
-     $new_width = ($height/$width)*300;
+     $new_width = 350;
+     $new_height = ($width/$height)*350;
      $tmp_image = imagecreatetruecolor($new_width, $new_height);
      imagecopyresampled($tmp_image, $new_image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
      imagejpeg($tmp_image, $path, 100);
      $img1 = $new_name;
      imagedestroy($new_image);
      imagedestroy($tmp_image);
-     if ($photo=="noimage.jpg") {
-         $photo = $img1;
-         $img1 = '';
-     }
 }
  else
-{
-    $img1= '';
-}
+      {
+        $_SESSION['error2'] = 'image size must be less than 4MB for the second image';
+      }
     }
     else
     {
-$img1= '';
+        $_SESSION['error2'] = 'Select only jpg,jpeg,png for the second image';
     }
 
 }
@@ -127,44 +115,40 @@ if(isset($_FILES['img2']))
     $size= $_FILES['img2']['size'];
     $ext1 = explode(".", $name);
     $ext = end($ext1);
-    $allowed_ext = array("png", "jpeg", "jpg");
+    $allowed_ext = array("png", "PNG", "jpeg", "JPEG", "JPG", "jpg");
     if(in_array($ext, $allowed_ext))
     {
-if($size < (2097152))
+if($size < (4194304))
 {
      $new_image = '';
      $new_name = md5(rand()) . '.' . $ext;
      $path ='assets/images/posts/' . $new_name;
      list($width, $height) = getimagesize($_FILES['img2']['tmp_name']);
-     if($ext == 'png')
+     if($ext == 'png' || $ext =='PNG')
      {
- 	   $new_image = imagecreatefrompng($_FILES['img2']['tmp_name']);
+       $new_image = imagecreatefrompng($_FILES['img2']['tmp_name']);
      }
-     if($ext == 'jpeg' || $ext == 'jpg')
+     if($ext == 'jpeg' || $ext == 'jpg' || $ext == 'JPEG' || $ext == 'JPG')
      {
- 	   $new_image = imagecreatefromjpeg($_FILES['img2']['tmp_name']);
+       $new_image = imagecreatefromjpeg($_FILES['img2']['tmp_name']);
      }
-     $new_width = 300;
-     $new_height = ($height/$width)*300;
+     $new_width = 350;
+     $new_height = ($height/$width)*350;
      $tmp_image = imagecreatetruecolor($new_width, $new_height);
      imagecopyresampled($tmp_image, $new_image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
      imagejpeg($tmp_image, $path, 100);
      $img2 = $new_name;
      imagedestroy($new_image);
      imagedestroy($tmp_image);
-     if ($photo=="noimage.jpg" && $img1=='') {
-         $photo = $img2;
-         $img2 = '';
-     }
 }
- else
-{
-    $img2= '';
- }
+else
+      {
+        $_SESSION['error3'] = 'image size must be less than 4MB for the 3rd image';
+      }
     }
     else
     {
-$img2= '';
+        $_SESSION['error3'] = 'Select only jpg,jpeg,png for the 3rd image';
     }
 
 }
@@ -174,44 +158,40 @@ if(isset($_FILES['img3']))
     $size= $_FILES['img3']['size'];
     $ext1 = explode(".", $name);
     $ext = end($ext1);
-    $allowed_ext = array("png", "jpeg", "jpg");
+    $allowed_ext = array("png", "PNG", "jpeg", "JPEG", "JPG", "jpg");
     if(in_array($ext, $allowed_ext))
     {
-if($size < (2097152))
+if($size < (4194304))
 {
      $new_image = '';
      $new_name = md5(rand()) . '.' . $ext;
      $path ='assets/images/posts/' . $new_name;
      list($width, $height) = getimagesize($_FILES['img3']['tmp_name']);
-     if($ext == 'png')
+     if($ext == 'png' || $ext =='PNG')
      {
- 	   $new_image = imagecreatefrompng($_FILES['img3']['tmp_name']);
+       $new_image = imagecreatefrompng($_FILES['img3']['tmp_name']);
      }
-     if($ext == 'jpeg' || $ext == 'jpg')
+     if($ext == 'jpeg' || $ext == 'jpg' || $ext == 'JPEG' || $ext == 'JPG')
      {
- 	   $new_image = imagecreatefromjpeg($_FILES['img3']['tmp_name']);
+       $new_image = imagecreatefromjpeg($_FILES['img3']['tmp_name']);
      }
-     $new_width = 300;
-     $new_height = ($height/$width)*300;
+     $new_width = 350;
+     $new_height = ($height/$width)*350;
      $tmp_image = imagecreatetruecolor($new_width, $new_height);
      imagecopyresampled($tmp_image, $new_image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
      imagejpeg($tmp_image, $path, 100);
      $img3 = $new_name;
      imagedestroy($new_image);
      imagedestroy($tmp_image);
-     if ($photo=="noimage.jpg" && $img1=='' && $img2=='') {
-         $photo = $img3;
-         $img3 = '';
-     }
 }
  else
-{
-    $img3= '';
- }
+      {
+        $_SESSION['error4'] = 'image size must be less than 4MB for the 4th image';
+      }
     }
     else
     {
-$img3= '';
+        $_SESSION['error4'] = 'Select only jpg,jpeg,png for the 4th image';
     }
 
 }
@@ -221,25 +201,25 @@ if(isset($_FILES['img4']))
     $size= $_FILES['img4']['size'];
     $ext1 = explode(".", $name);
     $ext = end($ext1);
-    $allowed_ext = array("png", "jpeg", "jpg");
+    $allowed_ext = array("png", "PNG", "jpeg", "JPEG", "JPG", "jpg");
     if(in_array($ext, $allowed_ext))
     {
-if($size < (2097152))
+if($size < (4194304))
 {
      $new_image = '';
      $new_name = md5(rand()) . '.' . $ext;
      $path ='assets/images/posts/' . $new_name;
      list($width, $height) = getimagesize($_FILES['img4']['tmp_name']);
-     if($ext == 'png')
+     if($ext == 'png' || $ext =='PNG')
      {
- 	   $new_image = imagecreatefrompng($_FILES['img4']['tmp_name']);
+       $new_image = imagecreatefrompng($_FILES['img4']['tmp_name']);
      }
-     if($ext == 'jpeg' || $ext == 'jpg')
+     if($ext == 'jpeg' || $ext == 'jpg' || $ext == 'JPEG' || $ext == 'JPG')
      {
- 	   $new_image = imagecreatefromjpeg($_FILES['img4']['tmp_name']);
+       $new_image = imagecreatefromjpeg($_FILES['img4']['tmp_name']);
      }
-     $new_width = 300;
-     $new_height = ($height/$width)*300;
+     $new_width = 350;
+     $new_height = ($height/$width)*350;
      $tmp_image = imagecreatetruecolor($new_width, $new_height);
      imagecopyresampled($tmp_image, $new_image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
      imagejpeg($tmp_image, $path, 100);
@@ -247,14 +227,15 @@ if($size < (2097152))
      imagedestroy($new_image);
      imagedestroy($tmp_image);
 }
- else
-{
-   $img4= '';
- }
+else
+      {
+        $_SESSION['error5'] = 'image size must be less than 4MB for the 5th image ';
+      }
     }
     else
     {
-$img4= '';}
+        $_SESSION['error5'] = 'Select only jpg,jpeg,png for the 5th image ';
+    }
 
 }
 
@@ -264,25 +245,25 @@ if(isset($_FILES['img5']))
     $size= $_FILES['img5']['size'];
     $ext1 = explode(".", $name);
     $ext = end($ext1);
-    $allowed_ext = array("png", "jpeg", "jpg");
+    $allowed_ext = array("png", "PNG", "jpeg", "JPEG", "JPG", "jpg");
     if(in_array($ext, $allowed_ext))
     {
-      if($size < (2097152))
+      if($size < (4194304))
       {
         $new_image = '';
         $new_name = md5(rand()) . '.' . $ext;
         $path ='assets/images/posts/' . $new_name;
         list($width, $height) = getimagesize($_FILES['img5']['tmp_name']);
-        if($ext == 'png')
+        if($ext == 'png' || $ext =='PNG')
         {
- 	      $new_image = imagecreatefrompng($_FILES['img5']['tmp_name']);
+          $new_image = imagecreatefrompng($_FILES['img5']['tmp_name']);
         }
-     if($ext == 'jpeg' || $ext == 'jpg')
+     if($ext == 'jpeg' || $ext == 'jpg' || $ext == 'JPEG' || $ext == 'JPG')
      {
- 	   $new_image = imagecreatefromjpeg($_FILES['img5']['tmp_name']);
+       $new_image = imagecreatefromjpeg($_FILES['img5']['tmp_name']);
      }
-     $new_width = 300;
-     $new_height = ($height/$width)*300;
+     $new_width = 350;
+     $new_height = ($height/$width)*350;
      $tmp_image = imagecreatetruecolor($new_width, $new_height);
      imagecopyresampled($tmp_image, $new_image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
      imagejpeg($tmp_image, $path, 100);
@@ -291,89 +272,32 @@ if(isset($_FILES['img5']))
      imagedestroy($tmp_image);
 }
  else
-{
-    $img5= '';
- }
+      { 
+        $_SESSION['error6'] = 'image size must be less than 4MB for the 6th image ';
+      }
     }
     else
     {
-$img5= '';
+        $_SESSION['error6'] = 'Select only jpg,jpeg,png for the 6th image';
     }
 
 }
-
-if(isset($_FILES['img6']))
-{
-    $name= $_FILES['img6']['name'];
-    $size= $_FILES['img6']['size'];
-    $ext1 = explode(".", $name);
-    $ext = end($ext1);
-    $allowed_ext = array("png", "jpeg", "jpg");
-    if(in_array($ext, $allowed_ext))
-    {
-      if($size < (2097152))
-      {
-        $new_image = '';
-        $new_name = md5(rand()) . '.' . $ext;
-        $path ='assets/images/posts/' . $new_name;
-        list($width, $height) = getimagesize($_FILES['img6']['tmp_name']);
-        if($ext == 'png')
-        {
-          $new_image = imagecreatefrompng($_FILES['img6']['tmp_name']);
-        }
-     if($ext == 'jpeg' || $ext == 'jpg')
-     {
-       $new_image = imagecreatefromjpeg($_FILES['img6']['tmp_name']);
-     }
-     $new_width = 300;
-     $new_height = ($height/$width)*300;
-     $tmp_image = imagecreatetruecolor($new_width, $new_height);
-     imagecopyresampled($tmp_image, $new_image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
-     imagejpeg($tmp_image, $path, 100);
-     $img5 = $new_name;
-     imagedestroy($new_image);
-     imagedestroy($tmp_image);
-}
- else
-{
-    $img6= '';
- }
-    }
-    else
-    {
-$img6= '';
-    }
-
-}
-$img7 = '';
-$query = "INSERT INTO post_photos (main,photo1,photo2,photo3,photo4,photo5,photo6,photo7) values ('{$photo}','{$img1}','{$img2}','{$img3}','{$img4}','{$img5}','{$img6}','{$img7}')";
-$yan = mysqli_query($con,$query);
-$queryy = "SELECT * FROM post_photos ";
-$select = mysqli_query($con,$queryy);
- while($row = mysqli_fetch_assoc($select))
-{
-   if($photo==$row['main'])
-   {
- $refphoto = $row['photo_id'];
- $querry = "INSERT INTO posts (is_rent,category,user,seller,name,price,details,place,contacts,uploaded_date,photo) values ('{$new_second}','{$category}','{$user}','{$seller}','{$nam}','{$price}','{$details}','{$place}','{$contacts}','{$uploaded}','{$refphoto}')";
-            
+ $querry = "INSERT INTO services (title,company,sub_category,phone,contacts,user,location,akarere,details,uploaded_date,main,photo1,photo2,photo3,photo4,photo5) values ('{$nam}','{$seller}','{$category}','{$phone}','{$email}','{$user}','{$place}','{$location}','{$details}','{$uploaded}','{$photo}','{$img1}','{$img2}','{$img3}','{$img4}','{$img5}')";
  $res = mysqli_query($con,$querry);
- if($res)
+  if($res)
  {
- 	 echo "<script>alert(' Your post has been uploaded successfully, we thank you by the time we are looking for a customer of your product ');window.location='home.php';</script>";exit;
+     echo "<script>alert(' Your post has been uploaded successfully, we thank you by the time we are looking for a customer of your service ');window.location='home.php';</script>";exit;
  }
  else
  {
-
- echo "<script>alert(' Error while uploading post, please try again ');window.location='upload.php';</script>";exit;
+     echo "<script>alert(' Error while uploading post, please try again ');window.location='upload_services?id={$_GET['id']}.php';</script>";exit;
  }   
 }
-}
-	
-	
+    
+    
 }
 else
 {
-    echo "not working fine";
+    echo "Please go back";
 }
 ?>

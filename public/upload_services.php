@@ -183,7 +183,7 @@ checkToken();
                           </div>
                   <br><br><br>
                   <div id="electronics">
-                    <form action="uploadingprocess.php" id="validation" novalidate="novalidate" class="upload-form row" method="post" enctype="multipart/form-data">
+                    <form action="uploadingservices.php" id="validation" novalidate="novalidate" class="upload-form row" method="post" enctype="multipart/form-data">
                         
                         <div class="form-group col-md-12">
                              <input type="text" name="izina" required="required" class="form-control" placeholder="Service title">
@@ -211,9 +211,9 @@ checkToken();
                         <div class="form-group col-md-6">
                            <input type="text" name="email" class="form-control" placeholder="Email">
                         </div>
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-6">
                           <select class="form-control" name="location" required="required">
-                             <option value="">Location</option>
+                             <option value="">District</option>
                                 <?php 
                                    $query = "SELECT * FROM places order by place_name";
                                    $res = mysqli_query($con,$query);
@@ -223,6 +223,9 @@ checkToken();
                                    } 
                                 ?>
                           </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                           <input type="text" name="place" class="form-control" placeholder="place">
                         </div>
                         <div class="form-group col-md-12">
                             <textarea name="details" id="message" class="form-control" rows="8" placeholder="Give more details here"></textarea>
