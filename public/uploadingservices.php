@@ -8,14 +8,13 @@ require_once ('../includes/main_functions.php');
 //checkToken();
 if(checkIsStringSetPost('izina'))
 {
- $category = clearInput($_POST['service_category']);
+$category = clearInput($_POST['service_category']);
 $seller = clearInput($_POST['name']);
 $nam = clearInput($_POST['izina']);
 $email = clearInput($_POST['email']);
 $details = clearInput($_POST['details']);
 $place = clearInput($_POST['place']);
 $location = clearInput($_POST['location']);
-$contacts = clearInput($_POST['contact']);
 $phone = clearInput($_POST['phone']);
 $uploaded = date("Y-m-d");
 if(isset($_SESSION['id']))
@@ -61,12 +60,12 @@ if(isset($_FILES['main']))
       }
       else
       {
-        $_SESSION['error1'] = 'image size must be less than 4MB for the first image';
+        $photo = 'error';
       }
     }
     else
     {
-        $_SESSION['error1'] = 'Select only jpg,jpeg,png for the first image';
+        $photo = 'error';
     }
 
 }
@@ -104,12 +103,12 @@ if($size < (4194304))
 }
  else
       {
-        $_SESSION['error2'] = 'image size must be less than 4MB for the second image';
-      }
+        $img1 = 'error';
+     }
     }
     else
     {
-        $_SESSION['error2'] = 'Select only jpg,jpeg,png for the second image';
+        $img1 = 'error';
     }
 
 }
@@ -147,12 +146,12 @@ if($size < (4194304))
 }
 else
       {
-        $_SESSION['error3'] = 'image size must be less than 4MB for the 3rd image';
-      }
+        $img2 = 'error';
+    }
     }
     else
     {
-        $_SESSION['error3'] = 'Select only jpg,jpeg,png for the 3rd image';
+        $img2 = 'error';
     }
 
 }
@@ -190,12 +189,11 @@ if($size < (4194304))
 }
  else
       {
-        $_SESSION['error4'] = 'image size must be less than 4MB for the 4th image';
-      }
+        $img3 = 'error';}
     }
     else
     {
-        $_SESSION['error4'] = 'Select only jpg,jpeg,png for the 4th image';
+        $img3 = 'error';
     }
 
 }
@@ -233,12 +231,12 @@ if($size < (4194304))
 }
 else
       {
-        $_SESSION['error5'] = 'image size must be less than 4MB for the 5th image ';
-      }
+        $img4 = 'error';
+    }
     }
     else
     {
-        $_SESSION['error5'] = 'Select only jpg,jpeg,png for the 5th image ';
+        $img4 = 'error';
     }
 
 }
@@ -277,12 +275,12 @@ if(isset($_FILES['img5']))
 }
  else
       { 
-        $_SESSION['error6'] = 'image size must be less than 4MB for the 6th image ';
-      }
+        $img5 = 'error';
+    }
     }
     else
     {
-        $_SESSION['error6'] = 'Select only jpg,jpeg,png for the 6th image';
+        $img5 = 'error';
     }
 
 }

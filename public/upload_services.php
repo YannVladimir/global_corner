@@ -206,10 +206,10 @@ checkToken();
                           </select>
                         </div> 
                         <div class="form-group col-md-6">
-                           <input type="text" name="contact" class="form-control" required="required" placeholder="Phone Number">
+                           <input type="text" name="phone" class="form-control" required="required" placeholder="Phone Number">
                         </div> 
                         <div class="form-group col-md-6">
-                           <input type="text" name="email" class="form-control" placeholder="Email">
+                           <input type="text" name="email" email="email" class="form-control" placeholder="Email">
                         </div>
                         <div class="form-group col-md-6">
                           <select class="form-control" name="location" required="required">
