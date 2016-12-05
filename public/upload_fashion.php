@@ -208,10 +208,10 @@ checkToken();
                             </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <input type="text" name="price" class="form-control" value="<?php if(issset($_SESSION['price'])){ echo $_SESSION['price']; unset($_SESSION['price']); }?>"  placeholder="Price">
+                            <input type="text" name="price" class="form-control" placeholder="Price">
                         </div>
                         <div class="form-group col-md-12">
-                            <textarea name="details" id="message" class="form-control" value="<?php if(issset($_SESSION['message'])){echo $_SESSION['message']; unset($_SESSION['message']);} ?>" rows="8" placeholder="Description of the product, Include the brand, model, warranty, guarranty, age and any other included accessories"></textarea>
+                            <textarea name="details" id="message" class="form-control" rows="8" placeholder="Description of the product, Include the brand, model, warranty, guarranty, age and any other included accessories"></textarea>
                         </div>
                         <div class="col-sm-4"> 
                                   <input type="file" name="main" class="this" id="inp" />
