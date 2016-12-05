@@ -164,7 +164,7 @@ checkToken();
                     <form action="uploadingprocess.php" id="validation" novalidate="novalidate" class="upload-form row" method="post" enctype="multipart/form-data">
                         <div class="form-group col-md-12">
                           <?php
-                             if (issset($_SESSION['izina']))
+                             if (isset($_SESSION['izina']))
                              {
                               echo '<input type="text" name="izina" value="$_SESSION["izina"]" required="required" class="form-control" placeholder="Ad title"> ';
                               unset($_SESSION['izina']);

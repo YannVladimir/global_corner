@@ -132,26 +132,25 @@ checkToken();
         <div class="col-sm-6 padding-right">
             <div class="contact-form align-center">
               <br>
-              <h2 class="title text-center">Enter Ad's Details</h2>
-              <div class="status alert alert-success" style="display: none"></div>
-                  
-                          <div class="btn-group pull-right">
+              <h2 class="title text-center">Enter your service's details</h2>
+              <div class="status alert alert-success" style="display: none"></div>                  
+                          <div class="btn-group pull-left">
                             <div class="btn-group">
                                <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:14px" data-toggle="dropdown">
                                   <?php
                                        $id = $_GET['id'];
-                                       $query = "SELECT * from categories where cat_id='{$id}'";
+                                       $query = "SELECT * from service_categories where id!='{$id}'";
                                        $res = mysqli_query($con,$query);
                                        $row = mysqli_fetch_assoc($res);
-                                       echo $row['cat_name'];
+                                       echo $row['category'];
                                       echo "  <span class='caret'></span>
                                </button>
                                <ul class='dropdown-menu'>";
-                                       $sql = "SELECT * from categories where cat_id!='{$id}'";
+                                       $sql = "SELECT * from service_categories where id!='{$id}'";
                                        $r = mysqli_query($con,$sql);
                                        while($gow = mysqli_fetch_assoc($r))
                                        {
-                                        echo "<li><a href='upload.php?id={$gow['cat_id']}'>{$gow['cat_name']}</a></li>";
+                                        echo "<li><a href='upload_services.php?id={$gow['id']}'>{$gow['category']}</a></li>";
                                        }
                                   ?>
                               
@@ -161,18 +160,35 @@ checkToken();
                   <br><br><br>
                   <div id="electronics">
                     <form action="uploadingprocess.php" id="validation" novalidate="novalidate" class="upload-form row" method="post" enctype="multipart/form-data">
+                        
                         <div class="form-group col-md-12">
                              <input type="text" name="izina" required="required" class="form-control" placeholder="Service title">
                         </div>
-                        <div class="form-group col-md-6">
-                           <input type="text" name="name" class="form-control" required="required" placeholder="Seller Name">
+                        <div class="form-group col-md-12">
+                           <input type="text" name="name" class="form-control" required="required" placeholder="Company name or Seller Name">
+                        </div>
+                        <div class="form-group col-md-12">
+                          <select class="form-control" name="service_category" required="required">
+                             <option value="">Select category</option>
+                                <?php 
+                                   $query = "SELECT * FROM service_subcategories";
+                                   $res = mysqli_query($con,$query);
+                                   while($row = mysqli_fetch_assoc($res))
+                                   {
+                                      echo "<option value='{$row['id']}'>{$row['sub_category']}</option>";
+                                   } 
+                                ?>
+                          </select>
                         </div> 
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                            <input type="text" name="contact" class="form-control" required="required" placeholder="Phone Number">
                         </div> 
                         <div class="form-group col-md-12">
+                           <input type="text" name="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group col-md-12">
                           <select class="form-control" name="location" required="required">
-                             <option value="">Seller location</option>
+                             <option value="">Location</option>
                                 <?php 
                                    $query = "SELECT * FROM places order by place_name";
                                    $res = mysqli_query($con,$query);
@@ -184,21 +200,7 @@ checkToken();
                           </select>
                         </div>
                         <div class="form-group col-md-12">
-                            <select class="form-control" required="required" name="subcategory">
-                                 <option value="">Service sub-category</option>
-                                 <?php 
-                                    $query = "SELECT * FROM subcategories ";
-                                    $res = mysqli_query($con,$query);
-                                    while($row = mysqli_fetch_assoc($res))
-                                    {
-                                       if($row['refcat_id']==$id)
-                                       echo "<option value='{$row['subcat_id']}'>{$row['subcat_name']}</option>";
-                                    } 
-                                ?>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <textarea name="details" id="message" class="form-control" rows="8" placeholder="Description of the product, Include the brand, model, warranty, guarranty, age and any other included accessories"></textarea>
+                            <textarea name="details" id="message" class="form-control" rows="8" placeholder="Give more details here"></textarea>
                         </div>
                         <div class="col-sm-4"> 
                                   <input type="file" name="main" class="this" id="inp" />
@@ -230,7 +232,6 @@ checkToken();
                                   <img id="image8" class="btn8 btnlocation hide" />
                             </div><br>                    
                         <div class="form-group col-md-12">
-                          <input type="text" class='hidden' name="_token" value="<?php echo $_SESSION['_token']; ?>">
               
                            <input type="submit" name="submit" class="btn btn-primary pull-right" value="Submit">
                         </div>
