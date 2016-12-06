@@ -165,7 +165,7 @@ require_once ('../includes/main_functions.php');
                                           <span>{$row['reserved']}</span>
                                         </span>
                                         <p>Contact number:<b> {$row['phone']}</b></p>
-                                        <p>Place:<b> {$row['akarere']}, {$row['location']}</b></p>
+                                        <p>Place:<b> {$row['Akarere']} - {$row['location']}</b></p>
                                         <p><b></b></p>
                                         </div><!--/product-information-->
             </div>";
