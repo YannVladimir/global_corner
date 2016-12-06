@@ -141,7 +141,7 @@ require_once ('../includes/main_functions.php');
                        $res = mysqli_query($con,$query);
                        while($row = mysqli_fetch_assoc($res))
                        {
-                        echo "<br><div class='row' style='background:black'>";
+                        echo "<br><div class='row' style='border:1px'>";
                             echo "<div class='col-sm-4'>
                                      <div class='product-image-wrapper'>
                                         <div class='single-products'>
