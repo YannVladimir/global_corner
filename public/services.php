@@ -141,7 +141,7 @@ require_once ('../includes/main_functions.php');
                        $res = mysqli_query($con,$query);
                        while($row = mysqli_fetch_assoc($res))
                        {
-                        echo "<div class='row'>";
+                        echo "<br><div class='row' style='background:black'>";
                             echo "<div class='col-sm-4'>
                                      <div class='product-image-wrapper'>
                                         <div class='single-products'>
@@ -159,9 +159,9 @@ require_once ('../includes/main_functions.php');
                                      </div>
                                   </div>
                                   <div class='col-sm-4'>
-                                      <div class='product-information'><!--/product-information-->
+                                      <div class='product-information' style='border-left-style:none'><!--/product-information-->
                                         <span>
-                                          <span>{$row['reserved']}</span>
+                                          <h2>{$row['reserved']}</h2>
                                         </span>
                                         <p>Contact number:<b> {$row['phone']}</b></p>
                                         <p>Place:<b> {$row['Akarere']} - {$row['location']}</b></p>
