@@ -141,7 +141,7 @@ require_once ('../includes/main_functions.php');
                        $res = mysqli_query($con,$query);
                        while($row = mysqli_fetch_assoc($res))
                        {
-                        echo "<br><div class='row' style='border:1px'>";
+                        echo "<br><div class='row' style='border: 1px solid #F7F7F0;'>";
                             echo "<div class='col-sm-4'>
                                      <div class='product-image-wrapper'>
                                         <div class='single-products'>
@@ -159,7 +159,7 @@ require_once ('../includes/main_functions.php');
                                      </div>
                                   </div>
                                   <div class='col-sm-4'>
-                                      <div class='product-information' style='border-left-style:none'><!--/product-information-->
+                                      <div class='product-information' style='border-left-style:none;border-bottom-style:none'><!--/product-information-->
                                         <span>
                                           <h2>{$row['reserved']}</h2>
                                         </span>

@@ -1247,9 +1247,8 @@ h2.title {
 .product-information {
   border: 1px solid #F7F7F0;
   overflow: hidden;
-  padding-bottom: 60px;
-  padding-left: 60px;
-  padding-top: 60px;
+  padding-left: 40px;
+  padding-top: 40px;
   position: relative;
 }
 
@@ -1274,8 +1273,8 @@ h2.title {
 
 .product-information span {
   display: inline-block;
-  margin-bottom: 8px;
-  margin-top: 18px;
+  margin-bottom: 5px;
+  margin-top: 10px;
 }
 
 .product-information span span {
