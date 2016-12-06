@@ -134,15 +134,15 @@ require_once ('../includes/main_functions.php');
             
           </div>
         </div>
-        <div class="col-sm-9 padding-right">
+        <div class="col-sm-6 padding-right">
                     <br>
                     <?php 
                        $query = "SELECT * FROM services where is_accepted=0 order by priority desc limit 20";
                        $res = mysqli_query($con,$query);
                        while($row = mysqli_fetch_assoc($res))
                        {
-                        echo "<br><div class='row' style='border: 1px solid #F7F7F0;'>";
-                            echo "<div class='col-sm-4'>
+                        echo "<br><div class='row' style='border: 1px solid #F7F7F0; background:#f6f6f6'>";
+                            echo "<div class='col-sm-6'>
                                      <div class='product-image-wrapper'>
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
@@ -158,7 +158,7 @@ require_once ('../includes/main_functions.php');
                                         </div>
                                      </div>
                                   </div>
-                                  <div class='col-sm-4'>
+                                  <div class='col-sm-6'>
                                       <div class='product-information' style='border-left-style:none;border-bottom-style:none'><!--/product-information-->
                                         <span>
                                           <h2>{$row['reserved']}</h2>
