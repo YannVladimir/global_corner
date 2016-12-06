@@ -149,7 +149,6 @@ require_once ('../includes/main_functions.php');
                                                  <div class='sizingimages'>
                                                     <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
                                                   </div>
-                                                  <a href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
                                             </div>
                                             <div class='product-overlay' style='opacity:0.9'>
                                                  <div class='overlay-content'>
