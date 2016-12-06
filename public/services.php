@@ -137,7 +137,7 @@ require_once ('../includes/main_functions.php');
         <div class="col-sm-9 padding-right">
                     <br>
                     <?php 
-                       $query = "SELECT * FROM services where is_accepted=1 order by priority desc limit 20";
+                       $query = "SELECT * FROM services where is_accepted=0 order by priority desc limit 20";
                        $res = mysqli_query($con,$query);
                        while($row = mysqli_fetch_assoc($res))
                        {
