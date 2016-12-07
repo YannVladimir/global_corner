@@ -88,7 +88,7 @@ require_once ('../includes/main_functions.php');
       <div class="row">
         <div class="col-sm-3">
                   <div class="right-sidebar">
-            <h2 class="title text-center"></h2>
+            <h2 class="title text-center">Service categories</h2>
             <div class="panel-group category-products" id="accordian"><!--category-productsr-->
               <?php 
                                         $c = 1;
@@ -160,6 +160,7 @@ require_once ('../includes/main_functions.php');
                                   </div>
                                   <div class='col-sm-6'>
                                       <div class='product-information' style='border-left-style:none;border-bottom-style:none'><!--/product-information-->
+                                        <img src='images/product-de/rating7.png' class='newarrival' alt='' />
                                         <span>
                                           <h2>{$row['reserved']}</h2>
                                         </span>

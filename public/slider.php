@@ -3,7 +3,7 @@
 			<div class="row">
 				<div class="col-sm-3">
                   <div class="right-sidebar">
-						<h2 class="title text-center"></h2>
+						<h2 class="title text-center">Product Categories</h2>
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
 							<?php 
                                         $c = 1;
@@ -13,7 +13,7 @@
                                         {
                                             if($row['cat_id']==$c)
                                             {
-                                               echo "<div class='panel panel-default'>
+                                                echo "<div class='panel panel-default'>
                                                          <div class='panel-heading'>
                                                              <h4 class='panel-title'>
                                                                 <a data-toggle='collapse' data-parent='#accordian' href='#{$row['cat_id']}'>
