@@ -119,7 +119,7 @@ if(isset($_GET['var']) == "logout")
                   <div class="right-sidebar">
                     <br>
             <h2 class="title text-center">Service categories</h2>
-            <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+            <div class="panel-group category-products" style="background:#f6f6f6" id="accordian"><!--category-productsr-->
               <?php 
                                         $c = 1;
                                         $query = "SELECT * FROM service_categories ";
