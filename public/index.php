@@ -695,7 +695,7 @@ if(isset($_GET['var']) == "logout")
 </div><!--/category-tab-->
 </div> 
 <div class="col-sm-3">
-                  <div class="right-sidebar">
+                  <div class="left-sidebar">
             <h2 class="title text-center">Service categories</h2>
             <div class="panel-group category-products" id="accordian"><!--category-productsr-->
               <?php 
