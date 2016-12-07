@@ -117,6 +117,7 @@ if(isset($_GET['var']) == "logout")
             <div class="row">
               <div class="col-sm-3">
                   <div class="right-sidebar">
+                    <br>
             <h2 class="title text-center">Service categories</h2>
             <div class="panel-group category-products" id="accordian"><!--category-productsr-->
               <?php 
@@ -164,7 +165,7 @@ if(isset($_GET['var']) == "logout")
           </div>
         </div>
                 <div class="col-sm-9 padding-right">
-                    <br><br>
+                    <br>
                     
                     <div class="category-tab"><!--category-tab-->
                         <div class="col-sm-12">
