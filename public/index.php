@@ -115,6 +115,54 @@ if(isset($_GET['var']) == "logout")
                 
             </div>
             <div class="row">
+              <div class="col-sm-3">
+                  <div class="right-sidebar">
+            <h2 class="title text-center">Service categories</h2>
+            <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+              <?php 
+                                        $c = 1;
+                                        $query = "SELECT * FROM service_categories ";
+                                        $res = mysqli_query($con,$query);
+                                        while($row = mysqli_fetch_assoc($res))
+                                        {
+                                            if($row['id']==$c)
+                                            {
+                                               echo "<div class='panel panel-default'>
+                                                         <div class='panel-heading'>
+                                                             <h4 class='panel-title'>
+                                                                <a data-toggle='collapse' data-parent='#accordian' href='#{$row['id']}'>
+                                                                  <span class='badge pull-right'><i class='fa fa-angle-down'></i></span>
+                                                                     {$row['category']}
+                                                                </a>
+                                                             </h4>
+                                                        </div>
+                                                        <div id='$c' class='panel-collapse collapse'>
+                                                            <div class='panel-body'>
+                                                                <ul>";
+                                                                    $queryy = "SELECT * FROM service_subcategories ";
+                                                                    $re = mysqli_query($con,$queryy);
+                                                                    while($ro = mysqli_fetch_assoc($re))
+                                                                    {
+                                                                        if($ro['ref1']==$c|| $ro['ref2']==$c || $ro['ref3']==$c || $ro['ref4']==$c)
+                                                                        {
+                                                                             echo "<li><a href='service-sub-category.php?id={$ro['id']}'>*   {$ro['sub_category']} </a></li>";
+                                                   
+                                                                         }
+                                                                    }
+                                              
+                                            }
+                                            echo"</div>
+                                                  </div>
+                                                    </div>";
+                                            $c = $c+1;
+                                            
+                                        } 
+                                    ?>
+              
+            </div><!--/category-productsr-->
+            
+          </div>
+        </div>
                 <div class="col-sm-9 padding-right">
                     <br><br>
                     
