@@ -13,7 +13,7 @@
                                         {
                                             if($row['cat_id']==$c)
                                             {
-                                                echo "<div class='panel panel-default'>
+                                                echo "<div class='panel panel-default' style='background:#f6f6f6'>
                                                          <div class='panel-heading'>
                                                              <h4 class='panel-title'>
                                                                 <a data-toggle='collapse' data-parent='#accordian' href='#{$row['cat_id']}'>
