@@ -46,7 +46,43 @@ checkUser();
 	<?php  
     require('header.php');   
     ?>
-
+         
+    <div class="header-bottom"><!--header-bottom-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="mainmenu pull-left">
+                            <ul class="nav navbar-nav collapse navbar-collapse">
+                                <li><a href="home.php" class="fon">Home</a></li>
+                <li><a href="services.php" class="fon">Services</a></li>
+                <li><a href="upload.php" class="fon">Sell</a></li>
+                <li><a href="categories.php" class="fon">Buy</a></li>
+                <li class="dropdown"><a href="#">Ordering<i class="fa fa-angle-down"></a>
+                    <ul role="menu" class="sub-menu"> 
+                        <li><a href="order.php" class="fon">Make order</a></li>
+                        <li><a href="orders.php" class="fon">View orders</a></li> 
+                    </ul>
+                </li>
+                <li><a href="contact_us.php" class="fon">Contact us</a></li>       
+              </ul>
+            </div>
+          </div>
+            <?php
+              include('search.php');
+            ?>
+          </div>
+        </div>
+    </div><!--/header-bottom-->
+  </header><!--/header-->
+    
     <section>
         <div class="container">
             <div class="col-sm-3">
