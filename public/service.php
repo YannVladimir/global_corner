@@ -146,7 +146,7 @@ checkUser();
                                     <img src="assets/images/shop/rating9.png" alt="" />
                                     <label>Total votes (46)</label>
                                 <span>
-                                    <span>category, sub category</span>
+                                    <span style="color:black">category, sub category</span>
                                     
                                 </span>
                                 <p><b>Description:</b> In Stock</p>
@@ -341,14 +341,16 @@ checkUser();
                                             <input type="text" placeholder="Your Phone or Email Address"/>
                                         </span>
                                         <textarea name="" placeholder="Write a short review"></textarea>
-                                        <b>Rating: </b> <select class="form-control col-sm-4" required="required">
+                                        <b>Rating: </b> <div class="col-sm-4">
+                                                         <select class="form-control" required="required">
                                                             <option value="">Select rate</option>
                                                             <option value="1">1/5</option>
                                                             <option value="2">2/5</option>
                                                             <option value="3">3/5</option>
                                                             <option value="4">4/5</option>
                                                             <option value="5">5/5</option>
-                                                        </select>
+                                                         </select>
+                                                        </div>
                                         <button type="button" class="btn btn-default pull-right">
                                             Submit
                                         </button>
