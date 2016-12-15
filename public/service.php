@@ -55,7 +55,7 @@ checkUser();
             <h2 class="title text-center">Service categories</h2>
             <div class="panel-group category-products" id="accordian"><!--category-productsr-->
               <?php 
-                                        $c = 1;
+                                        $c = 11;
                                         $query = "SELECT * FROM service_categories ";
                                         $res = mysqli_query($con,$query);
                                         while($row = mysqli_fetch_assoc($res))

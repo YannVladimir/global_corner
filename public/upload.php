@@ -9,7 +9,7 @@ $id = $_GET['id'];
 $_SESSION['cat_id'] = $id;
 if($id==7)
   {
-    require('upload_services.php');
+    require('upload_services.php?id=11');
     exit;
   }
 elseif ($id ==5)

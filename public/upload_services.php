@@ -138,7 +138,7 @@ checkToken();
                             <div class="btn-group">
                                <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:14px" data-toggle="dropdown">
                                   <?php
-                                       $id = $_GET['id'];
+                          
                                        $query = "SELECT * from categories where cat_id=7";
                                        $res = mysqli_query($con,$query);
                                        $row = mysqli_fetch_assoc($res);
