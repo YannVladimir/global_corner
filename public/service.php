@@ -139,17 +139,20 @@ checkUser();
                         </div>
                         <div class="col-sm-7">
                             <div class="product-information"><!--/product-information-->
-                                <img src="assets/images/product-details/new.jpg" class="newarrival" alt="" />
                                 <h2>Anne Klein Sleeveless Colorblock Scuba</h2>
                                 <p><b>Seller:</b> Yann</p>
                                 <span>
                                     <img src="assets/images/shop/rating9.png" alt="" />
                                     <label>Total votes (46)</label>
                                 <span>
-                                    <span style="color:black">category, sub category</span>
+                                    <span style="color:#232323">category, sub category</span>
                                     
                                 </span>
-                                <p><b>Description:</b> In Stock</p>
+                                <p><b>Description:</b> In Stock ijgaio o aojfoaiji aoijf lajlkaj lkaj lkajflkajlkjalkjfa
+                                    ajfpao fjlak
+                                    af apojfapofja
+                                    af a[ofia[p4aa apof ao 
+                                    af aoja</p>
                                 <p><b>Location:</b> Location</p>
                                 <p><b>Contacts:</b> E-SHOPPER</p>
                                 <a href="#reviews" class="pull-right">
