@@ -10,7 +10,7 @@ if(isset($_GET['var']) == "logout")
 {
     log_user_out();
 }
-?>
+?> 
 <!DOCTYPE html>
 <html lang="en"> 
 <head> 
