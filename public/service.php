@@ -102,7 +102,7 @@ checkUser();
                     <div class="product-details"><!--product-details-->
                         <div class="col-sm-5">
                             <div class="view-product">
-                                <img src="images/product-details/1.jpg" alt="" />
+                                <img src="assets/images/product-details/1.jpg" alt="" />
                                 <h3>ZOOM</h3>
                             </div>
                             <div id="similar-product" class="carousel slide" data-ride="carousel">
@@ -110,19 +110,19 @@ checkUser();
                                   <!-- Wrapper for slides -->
                                     <div class="carousel-inner">
                                         <div class="item active">
-                                          <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
-                                          <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
-                                          <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
+                                          <a href=""><img src="assets/images/product-details/similar1.jpg" alt=""></a>
+                                          <a href=""><img src="assets/images/product-details/similar2.jpg" alt=""></a>
+                                          <a href=""><img src="assets/images/product-details/similar3.jpg" alt=""></a>
                                         </div>
                                         <div class="item">
-                                          <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
-                                          <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
-                                          <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
+                                          <a href=""><img src="assets/images/product-details/similar1.jpg" alt=""></a>
+                                          <a href=""><img src="assets/images/product-details/similar2.jpg" alt=""></a>
+                                          <a href=""><img src="assets/images/product-details/similar3.jpg" alt=""></a>
                                         </div>
                                         <div class="item">
-                                          <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
-                                          <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
-                                          <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
+                                          <a href=""><img src="assets/images/product-details/similar1.jpg" alt=""></a>
+                                          <a href=""><img src="assets/images/product-details/similar2.jpg" alt=""></a>
+                                          <a href=""><img src="assets/images/product-details/similar3.jpg" alt=""></a>
                                         </div>
                                         
                                     </div>
@@ -139,7 +139,7 @@ checkUser();
                         </div>
                         <div class="col-sm-7">
                             <div class="product-information"><!--/product-information-->
-                                <img src="images/product-details/new.jpg" class="newarrival" alt="" />
+                                <img src="assets/images/product-details/new.jpg" class="newarrival" alt="" />
                                 <h2>Anne Klein Sleeveless Colorblock Scuba</h2>
                                 <p><b>Seller:</b> Yann</p>
                                 <span>
@@ -147,15 +147,17 @@ checkUser();
                                     <label>Total votes (46)</label>
                                 <span>
                                     <span>category, sub category</span>
-                                    <button type="button" class="btn btn-fefault cart">
-                                        <i class="fa fa-shopping-cart"></i>
-                                        Add to cart
-                                    </button>
+                                    
                                 </span>
                                 <p><b>Description:</b> In Stock</p>
                                 <p><b>Location:</b> Location</p>
                                 <p><b>Contacts:</b> E-SHOPPER</p>
-                                <a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>
+                                <a href="#reviews">
+                                    <button type="button" class="btn btn-fefault cart">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        Rate it
+                                    </button>
+                                </a>
                             </div><!--/product-information-->
                         </div>
                     </div><!--/product-details-->
