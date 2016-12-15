@@ -49,8 +49,8 @@
 					<?php
                    if(isset($_SESSION['email']))
                    {
-                       echo "
-                       <div class='col-sm-5'>
+                   echo "
+                    <div class='col-sm-5'>
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a href='my_acount.php'><i class='fa fa-user'></i> My Account</a></li>
@@ -61,7 +61,7 @@
                    }
                    else
                    {
-                       echo "<div class='col-sm-5'>
+              echo "<div class='col-sm-5'>
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a></a></li>

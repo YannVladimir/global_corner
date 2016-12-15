@@ -5,8 +5,6 @@ error_reporting(E_ALL);
 session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
-checkUser();
-checkToken();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +13,7 @@ checkToken();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>250 Trade | Upload item</title>
+    <title>250 Trade | About us</title>
     <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/yann.min.css" rel="stylesheet">
     <link href="assets/css/prettyPhoto.css" rel="stylesheet">
@@ -85,10 +83,10 @@ checkToken();
 </head><!--/head-->
 
 <body>
-
   <?php  
-    require('header.php');   
-  ?>  
+    include('header.php');   
+  ?>
+    
     <div class="header-bottom"><!--header-bottom-->
       <div class="container">
         <div class="row">
@@ -102,58 +100,59 @@ checkToken();
               </button>
             </div>
             <div class="mainmenu pull-left">
-              <ul class="nav navbar-nav ">
+              <ul class="nav navbar-nav collapse navbar-collapse">
                 <li><a href="home.php" class="fon">Home</a></li>
                 <li><a href="services.php" class="fon">Services</a></li>
                 <li><a href="upload.php" class="fon">Sell</a></li>
                 <li><a href="categories.php" class="fon">Buy</a></li>
-                <li class="dropdown"><a href="#">Odering<i class="fa fa-angle-down"></i></a>
+                <li class="dropdown"><a href="#">Odering<i class="fa fa-angle-down"></a>
                     <ul role="menu" class="sub-menu"> 
                         <li><a href="order.php" class="fon">Make order</a></li>
                         <li><a href="orders.php" class="fon">View orders</a></li> 
                     </ul>
                 </li>
-                <li><a href="contact_us.php" class="fon">Contact us</a></li>
-                
-                            </ul>
-                        </div>
-                    </div>
-                    <?php
-                      include('search.php');
-                    ?>
-                </div>
+                <li><a href="contact_us.php" class="fon">Contact us</a></li>       
+              </ul>
             </div>
-        </div><!--/header-bottom-->
-    </header><!--/header-->
-  <!--/header-->
+          </div>
+            <?php
+              include('search.php');
+            ?>
+          </div>
+        </div>
+    </div><!--/header-bottom-->
+  </header><!--/header-->
 
   <section id="cart_items">
     <div class="container">
-          <div class="col-sm-3"></div>
+        <div class="col-sm-3">
+        </div>
         <div class="col-sm-6 padding-right">
             <div class="contact-form align-center">
               <br>
               <h2 class="title text-center">About Us</h2>
-              <div class="status alert alert-success" style="display: none"></div>
-                  <p class="text-center">
-                     250trade.com is a free Rwandan classifieds site. Sell anything from used cars to mobiles, furniture, laptops, houses and more.Submit ads for free and without creating an account.</p>
-                  <br><br>
-                  <p class="text-center">
-                      Make an order of something you want to buy or to rent, then the seller will come to know you as a buyer through the website and
-                      he or she will contact you through your mobile or your email address.
-                  </p>
-                  <br><br>
-                  <p class="text-center">If you want to buy something - here you will find interesting items cheaper than in the store, <br><br><br> If you want to sell something - here you will find many interesting customers than anywhere else.<br><br><br>Start buying and selling in the most easy way on 250trade.com.
-                  </p>
+              <div class="status alert alert-success" style="display: none">
+              </div>
+              <p class="text-center">
+                 250trade.com is a free Rwandan classifieds site. Sell anything from used cars to mobiles, furniture, laptops, houses and more.Submit ads for free and without creating an account.</p>
+              <br><br>
+              <p class="text-center">
+                  Make an order of something you want to buy or to rent, then the seller will come to know you as a buyer through the website and
+                  he or she will contact you through your mobile or your email address.
+              </p>
+              <br><br>
+              <p class="text-center">If you want to buy something - here you will find interesting items cheaper than in the store, <br><br><br> If you want to sell something - here you will find many interesting customers than anywhere else.<br><br><br>Start buying and selling in the most easy way on 250trade.com.
+              </p>
             </div>
           </div>
-                <div class="col-sm-3 padding-right"><!--for advertisement--></div> 
+          <div class="col-sm-3 padding-right"><!--for advertisement-->
+          </div> 
     </div>
   </section> <!--/#cart_items-->
 
   
 
-  <br><br><br><br><br><br>
+  <br><br><br><br>
    <?php  
       require('footer.php');    
   ?>
