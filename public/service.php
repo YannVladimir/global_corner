@@ -139,15 +139,15 @@ checkUser();
                         </div>
                         <div class="col-sm-7">
                             <div class="product-information"><!--/product-information-->
-                                <h2>Anne Klein Sleeveless Colorblock Scuba</h2>
-                                <p><b>Seller:</b> Yann</p>
+                                <h2>Category, sub categpry</h2>
                                 <span>
                                     <img src="assets/images/shop/rating9.png" alt="" />
                                     <label>Total votes (46)</label>
                                 <span>
-                                    <span style="color:#232323">category, sub category</span>
+                                    <span style="color:#232323">Anne Klein Sleeveless Colorblock Scuba</span>
                                     
                                 </span>
+                                <p><b>Seller:</b> Yann</p>
                                 <p><b>Description:</b> In Stock ijgaio o aojfoaiji aoijf lajlkaj lkaj lkajflkajlkjalkjfa
                                     ajfpao fjlak
                                     af apojfapofja
@@ -157,7 +157,7 @@ checkUser();
                                 <p><b>Contacts:</b> E-SHOPPER</p>
                                 <a href="#reviews" class="pull-right">
                                     <button type="button" class="btn btn-fefault cart">
-                                        <i class="fa fa-shopping-cart"></i>
+                                        <i class=""></i>
                                         Rate it
                                     </button>
                                 </a>
@@ -171,7 +171,7 @@ checkUser();
                                 <li><a href="#details" data-toggle="tab">Experience</a></li>
                                 <li><a href="#companyprofile" data-toggle="tab">Working Hours</a></li>
                                 <li><a href="#tag" data-toggle="tab">Reviews</a></li>
-                                <li class="active"><a href="#reviews" data-toggle="tab">Rate it (5)</a></li>
+                                <li class="active"><a href="#reviews" data-toggle="tab">Rate it</a></li>
                             </ul>
                         </div>
                         <div class="tab-content">
@@ -344,7 +344,8 @@ checkUser();
                                             <input type="text" placeholder="Your Phone or Email Address"/>
                                         </span>
                                         <textarea name="" placeholder="Write a short review"></textarea>
-                                        <b>Rating: </b> <div class="col-sm-4">
+                                         <div class="col-sm-4">
+                                            <b>Rating: </b>
                                                          <select class="form-control" required="required">
                                                             <option value="">Select rate</option>
                                                             <option value="1">1/5</option>
