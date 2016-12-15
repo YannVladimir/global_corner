@@ -143,7 +143,7 @@ checkUser();
                                 <h2>Anne Klein Sleeveless Colorblock Scuba</h2>
                                 <p><b>Seller:</b> Yann</p>
                                 <span>
-                                    <img src="images/shop/rating9.png" alt="" />
+                                    <img src="assets/images/shop/rating9.png" alt="" />
                                     <label>Total votes (46)</label>
                                 <span>
                                     <span>category, sub category</span>
@@ -152,7 +152,7 @@ checkUser();
                                 <p><b>Description:</b> In Stock</p>
                                 <p><b>Location:</b> Location</p>
                                 <p><b>Contacts:</b> E-SHOPPER</p>
-                                <a href="#reviews">
+                                <a href="#reviews" class="pull-right">
                                     <button type="button" class="btn btn-fefault cart">
                                         <i class="fa fa-shopping-cart"></i>
                                         Rate it
@@ -341,7 +341,7 @@ checkUser();
                                             <input type="text" placeholder="Your Phone or Email Address"/>
                                         </span>
                                         <textarea name="" placeholder="Write a short review"></textarea>
-                                        <b>Rating: </b> <select class="form-control" required="required">
+                                        <b>Rating: </b> <select class="form-control col-sm-4" required="required">
                                                             <option value="">Select rate</option>
                                                             <option value="1">1/5</option>
                                                             <option value="2">2/5</option>
