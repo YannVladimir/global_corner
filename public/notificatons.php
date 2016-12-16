@@ -100,13 +100,13 @@ require_once ('../includes/main_functions.php');
                                 //{
                                   //  if($row['cat_id']==1)
                                     //{
-                                         echo "<li class='pull-left'><a href='sub-category.php?id=1>sub_category name (16)</a></li>";
-                                         echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='sub-category.php?id=1 >View all</a></li>";
-                                   // }
+                                         echo"<li class='pull-left'><a href='sub-category.php?id=1'>sub_category name (16)</a></li>
+                                         <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='sub-category.php?id=1'>View all</a></li>";
+                                  // }
                                    
                                    
                                 //} 
-                                echo "</ul>
+                      echo "</ul>
                         </div>
                         <div class='tab-content'> ";
                                
