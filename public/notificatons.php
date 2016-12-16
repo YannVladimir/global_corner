@@ -180,8 +180,8 @@ require_once ('../includes/main_functions.php');
                                 //{
                                   //  if($row['cat_id']==1)
                                     //{
-                                         echo "<li class='pull-left'><a href='service-sub-category.php?id=1>service_sub_category name (8)</a></li>";
-                                         echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='service-sub-category.php?id=1 >View all</a></li>";
+                                         echo "<li class='pull-left'><a href='service-sub-category.php?id=1'>service_sub_category name (8)</a></li>";
+                                         echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='service-sub-category.php?id=1'>View all</a></li>";
                                    // }
                                    
                                    
