@@ -175,15 +175,95 @@ checkToken();
             </div>
         </div>
     </div>
+    <div class='row'>
+            <div class='col-md-1'></div>
+            <div class='col-md-10'>
+                <div class='panel panel-default text-center'>
+                    <div class='panel-heading'>
+                        <h2 class='panel-title'><strong>My posts</strong></h2>
+                    </div>
+                    <div class='panel-body'>
+                       <div class="dataTable_wrapper">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>Post photo</th>
+                                            <th>Post name</th>
+                                            <th>Price</th>
+                                            <th>View & Edit</th>
+                                            <th>Delete post</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                       <?php
+                                          if(isset($_SESSION['id']))
+                                          {
+                                             $id = $_SESSION['id'];
+                                             $query = "SELECT * FROM items where user = '{$id}'";
+                                             $res = mysqli_query($con,$query);
+                                             while($row = mysqli_fetch_assoc($res))
+                                             {
+                                               echo "<tr class='odd gradeX'><td><img src='assets/images/posts/{$row['main']}'/></td><td><strong>{$row['name']}</strong></td><td><strong>{$row['price']}</strong></td><td><form action='my_post.php' method='GET'><input type='text' name='id' value='{$row['post_id']}' class='hidden'/><input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'><input type='submit' value='View Details'/></form></td><td><form action='delete.php' method='POST'><input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'><input type='text' name='id' value='{$row['post_id']}' class='hidden'/><input type='submit' value='Remove'/></form></td></tr> ";
+                                             }
+                                          }
+                                       ?>  
+                                    </tbody>
+                                </table>   
+                       </div>
+  
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='row'>
+            <div class='col-md-1'></div>
+            <div class='col-md-10'>
+                <div class='panel panel-default text-center'>
+                    <div class='panel-heading'>
+                        <h2 class='panel-title'><strong>My posts</strong></h2>
+                    </div>
+                    <div class='panel-body'>
+                       <div class="dataTable_wrapper">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>Post photo</th>
+                                            <th>Post name</th>
+                                            <th>Price</th>
+                                            <th>View & Edit</th>
+                                            <th>Delete post</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                       <?php
+                                          if(isset($_SESSION['id']))
+                                          {
+                                             $id = $_SESSION['id'];
+                                             $query = "SELECT * FROM items where user = '{$id}'";
+                                             $res = mysqli_query($con,$query);
+                                             while($row = mysqli_fetch_assoc($res))
+                                             {
+                                               echo "<tr class='odd gradeX'><td><img src='assets/images/posts/{$row['main']}'/></td><td><strong>{$row['name']}</strong></td><td><strong>{$row['price']}</strong></td><td><form action='my_post.php' method='GET'><input type='text' name='id' value='{$row['post_id']}' class='hidden'/><input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'><input type='submit' value='View Details'/></form></td><td><form action='delete.php' method='POST'><input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'><input type='text' name='id' value='{$row['post_id']}' class='hidden'/><input type='submit' value='Remove'/></form></td></tr> ";
+                                             }
+                                          }
+                                       ?>  
+                                    </tbody>
+                                </table>   
+                       </div>
+  
+                </div>
+            </div>
+        </div>
+    </div>
 	</section>
 	<section id="do_action">
     <div class="container">
-      <div class="heading">
-        <h3>Which product category is interesting you to buy</h3>
-        <p>Choose a product category that you are intersted to buy a product in order to get notifications of different posts from sellers of this category type.</p>
-      </div>
       <div class="row">
         <div class="col-sm-6">
+          <div class="heading">
+            <h3>Which product category is interesting you to trade</h3>
+            <p>Choose a product category that you are interested in, in order to get notifications of different posts from sellers and customers of this category type.</p>
+          </div>
           <div class="chose_area">
             <div class="btn-group">
               <p>Wanna buy</p>
@@ -226,14 +306,71 @@ checkToken();
                </ul>
             </div>
           </div>
-        </div>
-        <div class="col-sm-6">
           <div class="total_area">
             <p>Product category to buy</p>
             <ul>
               <li>sub category for buy <span></span></li>
             </ul>
             <p>Product category to sell</p>
+            <ul>
+              <li>sub category for sell <span></span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="heading">
+            <h3>Which Service category is interesting you to trade</h3>
+            <p>Choose a Service category that you are interested in, in order to get notifications of different posts from service providers
+             and customers of this category type.</p>
+          </div>
+          <div class="chose_area">
+            <div class="btn-group">
+              <p>Wanna buy</p>
+               <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:14px" data-toggle="dropdown">
+                  <?php
+                       
+                       echo "Select Product category";
+                      echo "<span class='caret'></span>
+               </button>
+               <ul class='dropdown-menu'>";
+                       $sql = "SELECT * from categories";
+                       $r = mysqli_query($con,$sql);
+                       while($gow = mysqli_fetch_assoc($r))
+                       {
+                        echo "<li><a href='upload.php?id={$gow['cat_id']}'>{$gow['cat_name']}</a></li>";
+                       }
+                  ?>
+              
+               </ul>
+            </div>
+
+            <div class="btn-group">
+              <p>Wanna sell
+              </p>
+               <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:14px" data-toggle="dropdown">
+                  <?php
+                       
+                       echo "Select Product category";
+                      echo "<span class='caret'></span>
+               </button>
+               <ul class='dropdown-menu'>";
+                       $sql = "SELECT * from service_categories";
+                       $r = mysqli_query($con,$sql);
+                       while($gow = mysqli_fetch_assoc($r))
+                       {
+                        echo "<li><a href='upload.php?id={$gow['cat_id']}'>{$gow['cat_name']}</a></li>";
+                       }
+                  ?>
+              
+               </ul>
+            </div>
+          </div>
+          <div class="total_area">
+            <p style="padding-left:25px">Service category to buy</p>
+            <ul>
+              <li>sub category for buy <span></span></li>
+            </ul>
+            <p>Service category to sell</p>
             <ul>
               <li>sub category for sell <span></span></li>
             </ul>
