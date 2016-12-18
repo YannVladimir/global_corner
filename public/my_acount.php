@@ -176,7 +176,73 @@ checkToken();
         </div>
     </div>
 	</section>
-	
+	<section id="do_action">
+    <div class="container">
+      <div class="heading">
+        <h3>Which product category is interesting you to buy</h3>
+        <p>Choose a product category that you are intersted to buy a product in order to get notifications of different posts from sellers of this category type.</p>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="chose_area">
+            <div class="btn-group">
+              <p>Wanna buy</p>
+               <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:14px" data-toggle="dropdown">
+                  <?php
+                       
+                       echo "Select Product category";
+                      echo "<span class='caret'></span>
+               </button>
+               <ul class='dropdown-menu'>";
+                       $sql = "SELECT * from categories";
+                       $r = mysqli_query($con,$sql);
+                       while($gow = mysqli_fetch_assoc($r))
+                       {
+                        echo "<li><a href='upload.php?id={$gow['cat_id']}'>{$gow['cat_name']}</a></li>";
+                       }
+                  ?>
+              
+               </ul>
+            </div>
+
+            <div class="btn-group">
+              <p>Wanna sell
+              </p>
+               <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:14px" data-toggle="dropdown">
+                  <?php
+                       
+                       echo "Select Product category";
+                      echo "<span class='caret'></span>
+               </button>
+               <ul class='dropdown-menu'>";
+                       $sql = "SELECT * from categories";
+                       $r = mysqli_query($con,$sql);
+                       while($gow = mysqli_fetch_assoc($r))
+                       {
+                        echo "<li><a href='upload.php?id={$gow['cat_id']}'>{$gow['cat_name']}</a></li>";
+                       }
+                  ?>
+              
+               </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="total_area">
+            <p>Product category to buy</p>
+            <ul>
+              <li>sub category for buy <span></span></li>
+            </ul>
+            <p>Product category to sell</p>
+            <ul>
+              <li>sub category for sell <span></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!--/#do_action-->
+
 	<br><br><br><br>
 	<?php  
       require('footer.php');    
