@@ -180,7 +180,8 @@ checkToken();
 	<section id="do_action">
     <div class="container">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-1"</div>
+        <div class="col-sm-5">
           <div class="heading">
             <h3>Which product category is interesting you to trade</h3>
             <p>Choose a product category that you are interested in, in order to get notifications of different posts from sellers and customers of this category type.</p>
@@ -238,7 +239,7 @@ checkToken();
             </ul>
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-5">
           <div class="heading">
             <h3>Which Service category is interesting you to trade</h3>
             <p>Choose a Service category that you are interested in, in order to get notifications of different posts from service providers
