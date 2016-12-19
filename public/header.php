@@ -26,7 +26,7 @@
 		<div class="header-middle"><!--header-middle-->
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-7">
+					<div class="col-sm-8">
 						<div class="logo pull-left">
 							<a href="home.php"><img src="assets/images/home/trade250.png" style="width:148px;" alt="" /></a>
 						</div>
@@ -62,7 +62,7 @@ function CountBack(secs) {
 }
 
 function putspan(backcolor, forecolor) {
- document.write("<span id='cntdwn' style='font-size:30px; background-color:" + backcolor + 
+ document.write("<span id='cntdwn' style='font-size:25px; background-color:" + backcolor + 
                 "; color:" + forecolor + "'></span>");
 }
 
@@ -120,7 +120,7 @@ CountBack(gsecs);
                    if(isset($_SESSION['email']))
                    {
                    echo "
-                    <div class='col-sm-5'>
+                    <div class='col-sm-4'>
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a href='my_acount.php'><i class='fa fa-user'></i> My Account</a></li>
