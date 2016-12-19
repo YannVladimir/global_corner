@@ -26,11 +26,28 @@
 		<div class="header-middle"><!--header-middle-->
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-8">
+					<div class="col-sm-3">
 						<div class="logo pull-left">
 							<a href="home.php"><img src="assets/images/home/trade250.png" style="width:148px;" alt="" /></a>
 						</div>
-						<script language="JavaScript">
+						
+
+						<!--<div class="btn-group pull-right">
+							
+							<div class="btn-group">
+								<button type="button" class="btn btn-group dropdown-toggle country" data-toggle="dropdown">
+									Select Your Language
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li><a href="">English</a></li>
+									<li><a href="">Kinyarwanda</a></li>
+									<li><a href="">Kiswahili</a></li>
+								</ul>
+							</div>
+						</div>-->
+					</div>
+					<div class="col-sm-5"><script language="JavaScript">
 TargetDate = "01/31/2017 00:00 AM";
 BackColor = "white";
 ForeColor = "#3AACEB";
@@ -98,23 +115,7 @@ else
 gsecs = Math.floor(ddiff.valueOf()/1000);
 CountBack(gsecs);
 </script>
-
-
-						<!--<div class="btn-group pull-right">
-							
-							<div class="btn-group">
-								<button type="button" class="btn btn-group dropdown-toggle country" data-toggle="dropdown">
-									Select Your Language
-									<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a href="">English</a></li>
-									<li><a href="">Kinyarwanda</a></li>
-									<li><a href="">Kiswahili</a></li>
-								</ul>
-							</div>
-						</div>-->
-					</div>
+</div>
 					
 					<?php
                    if(isset($_SESSION['email']))
@@ -131,7 +132,7 @@ CountBack(gsecs);
                    }
                    else
                    {
-              echo "<div class='col-sm-5'>
+              echo "<div class='col-sm-4S'>
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a></a></li>
