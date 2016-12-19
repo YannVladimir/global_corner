@@ -188,8 +188,8 @@ checkToken();
           </div>
           <div class="chose_area">
             <div class="btn-group">
-              <p style="padding-left:30px">Wanna buy</p>
-               <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:14px; padding-left:30px" data-toggle="dropdown">
+              <p>Wanna buy</p>
+               <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:14px" data-toggle="dropdown">
                   <?php
                        
                        echo "Select Product category";
@@ -208,9 +208,9 @@ checkToken();
             </div>
 
             <div class="btn-group">
-              <p style="padding-left:30px">Wanna sell
+              <p>Wanna sell
               </p>
-               <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:14px; padding-left:30px" data-toggle="dropdown">
+               <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:14px" data-toggle="dropdown">
                   <?php
                        
                        echo "Select Product category";
@@ -229,11 +229,11 @@ checkToken();
             </div>
           </div>
           <div class="total_area">
-            <p style="padding-left:30px">Product category to buy</p>
+            <p style="padding-left:35px">Product category to buy</p>
             <ul>
               <li>sub category for buy <span></span></li>
             </ul>
-            <p style="padding-left:30px">Product category to sell</p>
+            <p style="padding-left:35px">Product category to sell</p>
             <ul>
               <li>sub category for sell <span></span></li>
             </ul>
@@ -247,8 +247,8 @@ checkToken();
           </div>
           <div class="chose_area">
             <div class="btn-group">
-              <p style="padding-left:30px">Wanna get served</p>
-               <button type="button" class="btn btn-default dropdown-toggle usa" style="padding-left:30px; height:32px; font-size:14px" data-toggle="dropdown">
+              <p>Wanna get served</p>
+               <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:14px" data-toggle="dropdown">
                   <?php
                        
                        echo "Select Product category";
@@ -267,9 +267,9 @@ checkToken();
             </div>
 
             <div class="btn-group">
-              <p style="padding-left:30px">Wanna serve
+              <p>Wanna serve
               </p>
-               <button type="button" class="btn btn-default dropdown-toggle usa" style="padding-left:30px; height:32px; font-size:14px" data-toggle="dropdown">
+               <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:14px" data-toggle="dropdown">
                   <?php
                        
                        echo "Select Product category";
@@ -288,11 +288,11 @@ checkToken();
             </div>
           </div>
           <div class="total_area">
-            <p style="padding-left:30px">Service category to buy</p>
+            <p style="padding-left:35px">Service category to buy</p>
             <ul>
               <li>sub category for buy <span></span></li>
             </ul>
-            <p style="padding-left:30px">Service category to sell</p>
+            <p style="padding-left:35px">Service category to sell</p>
             <ul>
               <li>sub category for sell <span></span></li>
             </ul>
