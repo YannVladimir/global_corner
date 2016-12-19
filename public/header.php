@@ -47,7 +47,7 @@
 							</div>
 						</div>-->
 					</div>
-					<div class="col-sm-5"><script language="JavaScript">
+					<div class="col-sm-6"><script language="JavaScript">
 TargetDate = "01/31/2017 00:00 AM";
 BackColor = "white";
 ForeColor = "#3AACEB";
@@ -121,7 +121,7 @@ CountBack(gsecs);
                    if(isset($_SESSION['email']))
                    {
                    echo "
-                    <div class='col-sm-4'>
+                    <div class='col-sm-3'>
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a href='my_acount.php'><i class='fa fa-user'></i> My Account</a></li>
@@ -132,7 +132,7 @@ CountBack(gsecs);
                    }
                    else
                    {
-              echo "<div class='col-sm-4S'>
+              echo "<div class='col-sm-3'>
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a></a></li>
