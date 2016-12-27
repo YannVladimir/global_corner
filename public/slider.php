@@ -69,6 +69,11 @@
 									             <img src='assets/images/slider/phone.jpg' style='width:100%;' class='girl img-responsive' alt='' />
 				                               </div> 
 				             </div>
+				             <div class='item'>
+								  <div class='col-sm-12'> 
+						             <img src='assets/images/slider/all.jpg' style='width:100%;' class='girl img-responsive' alt='' />
+				                  </div>
+							</div>
 							<div class='item'>
 								  <div class='col-sm-12'> 
 						             <img src='assets/images/slider/sport.jpg' style='width:100%;' class='girl img-responsive' alt='' />
