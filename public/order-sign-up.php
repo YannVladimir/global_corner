@@ -6,7 +6,7 @@ session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
 //checkUser();
-checkToken();
+//checkToken();
 if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
 {
   $firstname = clearInput($_POST['firstname']);
@@ -16,7 +16,7 @@ if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
   $password = clearInput($_POST['password']);
   if($_POST['password']!= $_POST['repassword'])
   {
-  	echo "<script>alert('the entered password and re type password must be match, please try again');window.location='order-login.php';</script>";exit;
+  	echo "<script>alert('the entered password and re type password must be same, please try again');window.location='order-login.php';</script>";exit;
   }
   $query="SELECT * from users";
   $check = mysqli_query($con,$query);

@@ -1,4 +1,4 @@
-
+ 
 	<?php
     function generateUser()
     {
@@ -87,7 +87,6 @@
     }
     function order_log_user_in($email, $password)
     {
-        $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
         $email = clearInput($email);
         $password = clearInput($password);
         $query="SELECT * from users where email ='{$email}' and password = '{$password}'";

@@ -2,6 +2,7 @@
 ini_set('display_startup_errors',1);
 ini_set('display_errors',1);
 error_reporting(E_ALL);
+session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
 //checkUser();
@@ -9,7 +10,6 @@ if (isset($_POST['done']))
 {
 	order_log_user_in($_POST['email'],$_POST['password']); 
 }
-checkToken();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +18,7 @@ checkToken();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>250 Trade/Login</title>
+    <title>250 Trade / Login</title>
     <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/yann.min.css" rel="stylesheet">
     <link href="assets/css/prettyPhoto.css" rel="stylesheet">
@@ -115,7 +115,6 @@ checkToken();
 								<input type="checkbox" class="checkbox"> 
 								Keep me signed in
 							</span>-->
-							<input type="text" class='hidden' name="_token" value="<?php echo $_SESSION['_token']; ?>">
 							<button type="submit" name="done" class="btn btn-default bton">Login</button>
 						</form>
 					</div><!--/login form-->
@@ -133,7 +132,6 @@ checkToken();
 							<input type="email" placeholder="Email Address" required="required" email="eamil" name="email"/>
 							<input type="password" placeholder="Password" required="required" name="password"/>
 							<input type="password" placeholder=" Re-type Password" required="required" equalTo="password" name="repassword"/>
-							<input type="text" class='hidden' name="_token" value="<?php echo $_SESSION['_token']; ?>">
 							<button type="submit" class="btn btn-default bton">Signup</button>
 							<br>
                             By signing-up you agree with our <a href='terms-of-use.php' target='blank' style='color=#3AACEB'>Terms of use </a>
