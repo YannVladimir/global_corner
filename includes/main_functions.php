@@ -108,6 +108,8 @@
             $details = $_SESSION['details'];
             $location = $_SESSION['location'];
             $date = $_SESSION['date'];
+            $type = $_SESSION['type'];
+            unset($_SESSION['type']);
             unset($_SESSION['title']);
             unset($_SESSION['category']);
             unset($_SESSION['details']);
@@ -115,7 +117,19 @@
             unset($_SESSION['date']);
             $_SESSION['message']= "Please login to your acount to make this order, or create your new acount";
             $user = $_SESSION['id'];
-            $sql = "INSERT INTO orders (name,category,details,user,place,up_date) values ('{$izina}','{$category}','{$details}','{$user}','{$location}','{$date}')";
+            if ($type =='service')
+            {
+               $is_product = 0;
+               $q = "UPDATE users set buy_service ='{$category}' where user_id ='{$user}'";
+               $r = mysqli_query($con,$q);
+            }
+            else
+            {
+               $is_product = 1;
+               $q = "UPDATE users set buy_product ='{$category}' where user_id ='{$user}'";
+               $r = mysqli_query($con,$q);
+            }
+            $sql = "INSERT INTO orders (name,category,details,user,place,up_date,is_product) values ('{$izina}','{$category}','{$details}','{$user}','{$location}','{$date}','{$is_product}')";
             $r = mysqli_query($con,$sql);
             if($r)
             {

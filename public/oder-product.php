@@ -123,8 +123,9 @@ require_once ('../includes/main_functions.php');
                             <div class="btn-group">
                                <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:14px" data-toggle="dropdown">
                                   <?php
-                                       $_SESSION['type'] = 'service';
-                                       $query = "SELECT * from categories where cat_id=7";
+                                       $_SESSION['type'] = 'product';
+                                       $id = $_GET['id'];
+                                       $query = "SELECT * from categories where cat_id='{$id}'";
                                        $res = mysqli_query($con,$query);
                                        $row = mysqli_fetch_assoc($res);
                                        echo $row['cat_name'];
@@ -143,37 +144,6 @@ require_once ('../includes/main_functions.php');
                             </div>
                         </div>
                   <br><br>
-                          <div class="btn-group pull-left">
-                            <div class="btn-group">
-                               <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:14px" data-toggle="dropdown">
-                                  <?php
-                                       if(isset($_GET['id']))
-                                       {
-                                          $id = $_GET['id'];
-                                       } 
-                                       else
-                                       {
-                                         $id = 11;
-                                       }
-                                       $query = "SELECT * from service_categories where id='{$id}'";
-                                       $res = mysqli_query($con,$query);
-                                       $row = mysqli_fetch_assoc($res);
-                                       echo $row['category'];
-                                      echo "  <span class='caret'></span>
-                               </button>
-                               <ul class='dropdown-menu'>";
-                                       $sql = "SELECT * from service_categories where id!='{$id}'";
-                                       $r = mysqli_query($con,$sql);
-                                       while($gow = mysqli_fetch_assoc($r))
-                                       {
-                                        echo "<li><a href='order.php?id={$gow['id']}'>{$gow['category']}</a></li>";
-                                       }
-                                  ?>
-                              
-                               </ul>
-                            </div>
-                          </div>
-                  <br><br><br>
                   <div id="electronics">
                     <form action="ordering.php" id="" class="upload-form row" name="upload-form" method="post" enctype="multipart/form-data">
                         <div class="form-group col-md-12">
@@ -183,12 +153,13 @@ require_once ('../includes/main_functions.php');
                         <div class="form-group col-md-12">
                             <select class="form-control" name="subcategory" required="required">
                                  <option value="">Select order-category</option>
-                                 <?php
-                                    $query = "SELECT * FROM service_subcategories where  ref1='{$id}' or ref2='{$id}' or ref3='{$id}' or ref4='{$id}'";
+                                 <?php 
+                                    $query = "SELECT * FROM subcategories ";
                                     $res = mysqli_query($con,$query);
                                     while($row = mysqli_fetch_assoc($res))
                                     {
-                                      echo "<option value='{$row['id']}'>{$row['sub_category']}</option>";
+                                       if($row['refcat_id']==1)
+                                       echo "<option value='{$row['subcat_id']}'>{$row['subcat_name']}</option>";
                                     } 
                                 ?>
                             </select>
