@@ -38,12 +38,12 @@ require_once ('../includes/main_functions.php');
       }
     
         
-         .sizingimagesmax{
+         /*.sizingimagesmax{
            display: block;
            width:100%;
            height:auto;
 
-        }
+        }*/
         .displaynone{
           display: none;
         }
