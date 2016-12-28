@@ -144,7 +144,7 @@ require_once ('../includes/main_functions.php');
                                </ul>
                             </div>
                         </div>
-                  <br><br><br><br>
+                  <br><br><br>
                   <div id="electronics">
                     <form action="ordering.php" id="" class="upload-form row" name="upload-form" method="post" enctype="multipart/form-data">
                         <div class="form-group col-md-12">
@@ -159,7 +159,6 @@ require_once ('../includes/main_functions.php');
                                     $res = mysqli_query($con,$query);
                                     while($row = mysqli_fetch_assoc($res))
                                     {
-                                       if($row['refcat_id']==1)
                                        echo "<option value='{$row['subcat_id']}'>{$row['subcat_name']}</option>";
                                     } 
                                 ?>
