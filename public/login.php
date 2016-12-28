@@ -10,7 +10,7 @@ if (isset($_POST['done']))
 {
 	log_user_in($_POST['email'],$_POST['password']); 
 }
-checkToken();
+checkToken(); 
 ?>
 <!DOCTYPE html>
 <html lang="en">

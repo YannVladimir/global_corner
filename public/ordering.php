@@ -17,7 +17,20 @@ if(checkIsStringSetPost('izina'))
     $location = clearInput($_POST['location']);
     $date = date("Y-m-d");
     $user = $_SESSION['id'];
-    $sql = "INSERT INTO orders (name,category,details,user,place,up_date) values ('{$izina}','{$category}','{$details}','{$user}','{$location}','{$date}')";
+    $type = $_SESSION['type'];
+    if ($type =='service')
+    {
+       $is_product = 0;
+       $q = "UPDATE users set buy_service ='{$category}' where user_id ='{$user}'";
+       $r = mysqli_query($con,$q);
+    }
+    else
+    {
+       $is_product = 1;
+       $q = "UPDATE users set buy_product ='{$category}' where user_id ='{$user}'";
+       $r = mysqli_query($con,$q);
+    }
+    $sql = "INSERT INTO orders (name,category,details,user,place,up_date,is_product) values ('{$izina}','{$category}','{$details}','{$user}','{$location}','{$date}','{$is_product}')";
     $r = mysqli_query($con,$sql);
     if($r)
     {

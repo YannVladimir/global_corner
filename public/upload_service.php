@@ -199,7 +199,7 @@ checkToken();
                                    if ($id==7)
                                    {
                                     $id = 11;
-                                   }
+                                   } 
                                    $query = "SELECT * FROM service_subcategories where  ref1='{$id}' or ref2='{$id}' or ref3='{$id}' or ref4='{$id}'";
                                    $res = mysqli_query($con,$query);
                                    while($row = mysqli_fetch_assoc($res))

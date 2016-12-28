@@ -119,6 +119,61 @@ require_once ('../includes/main_functions.php');
               <h2 class="title text-center">Enter your order Details</h2>
               <div class="status alert alert-success" style="display: none"></div>
                   <br>
+                  <div class="btn-group pull-right">
+                            <div class="btn-group">
+                               <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:14px" data-toggle="dropdown">
+                                  <?php
+                                       $_SESSION['type'] = 'service';
+                                       $query = "SELECT * from categories where cat_id=7";
+                                       $res = mysqli_query($con,$query);
+                                       $row = mysqli_fetch_assoc($res);
+                                       echo $row['cat_name'];
+                                       echo "  <span class='caret'></span>
+                               </button>
+                               <ul class='dropdown-menu'>";
+                                       $sql = "SELECT * from categories where cat_id!=7";
+                                       $r = mysqli_query($con,$sql);
+                                       while($gow = mysqli_fetch_assoc($r))
+                                       {
+                                        echo "<li><a href='make-order.php?id={$gow['cat_id']}'>{$gow['cat_name']}</a></li>";
+                                       }
+                                  ?>
+                              
+                               </ul>
+                            </div>
+                        </div>
+                  <br><br>
+                          <div class="btn-group pull-left">
+                            <div class="btn-group">
+                               <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:14px" data-toggle="dropdown">
+                                  <?php
+                                       if(isset($_GET['id']))
+                                       {
+                                          $id = $_GET['id'];
+                                       } 
+                                       else
+                                       {
+                                         $id = 11;
+                                       }
+                                       $query = "SELECT * from service_categories where id='{$id}'";
+                                       $res = mysqli_query($con,$query);
+                                       $row = mysqli_fetch_assoc($res);
+                                       echo $row['category'];
+                                      echo "  <span class='caret'></span>
+                               </button>
+                               <ul class='dropdown-menu'>";
+                                       $sql = "SELECT * from service_categories where id!='{$id}'";
+                                       $r = mysqli_query($con,$sql);
+                                       while($gow = mysqli_fetch_assoc($r))
+                                       {
+                                        echo "<li><a href='order.php?id={$gow['id']}'>{$gow['category']}</a></li>";
+                                       }
+                                  ?>
+                              
+                               </ul>
+                            </div>
+                          </div>
+                  <br><br><br>
                   <div id="electronics">
                     <form action="ordering.php" id="" class="upload-form row" name="upload-form" method="post" enctype="multipart/form-data">
                         <div class="form-group col-md-12">
@@ -128,12 +183,12 @@ require_once ('../includes/main_functions.php');
                         <div class="form-group col-md-12">
                             <select class="form-control" name="subcategory" required="required">
                                  <option value="">Select order-category</option>
-                                 <?php 
-                                    $query = "SELECT * FROM categories ";
+                                 <?php
+                                    $query = "SELECT * FROM service_subcategories where  ref1='{$id}' or ref2='{$id}' or ref3='{$id}' or ref4='{$id}'";
                                     $res = mysqli_query($con,$query);
                                     while($row = mysqli_fetch_assoc($res))
                                     {
-                                       echo "<option value='{$row['cat_id']}'>{$row['cat_name']}</option>";
+                                      echo "<option value='{$row['id']}'>{$row['sub_category']}</option>";
                                     } 
                                 ?>
                             </select>
