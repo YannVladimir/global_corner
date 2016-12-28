@@ -31,10 +31,10 @@ require_once ('../includes/main_functions.php');
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/images/ico/apple-touch-icon-57-precomposed.png">
     <style type="text/css">
-     .sizingimagesmax{
+     /*.sizingimagesmax{
         height: 190px;
 
-      }
+      }*/
       .fon{
         font-size: 20px;
       }

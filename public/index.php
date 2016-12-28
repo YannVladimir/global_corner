@@ -36,12 +36,12 @@ if(isset($_GET['var']) == "logout")
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/images/ico/apple-touch-icon-57-precomposed.png">
     <style type="text/css">
-      .sizingimages{
+      /*.sizingimages{
         height: 200px;
       }
       .sizingimagesmax{
         height: 190px;
-      }
+      }*/
       .slidersizing{
         height:320px;
       }
