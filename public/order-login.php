@@ -10,6 +10,7 @@ if (isset($_POST['done']))
 {
 	order_log_user_in($_POST['email'],$_POST['password']); 
 }
+checkToken();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -115,7 +116,8 @@ if (isset($_POST['done']))
 								<input type="checkbox" class="checkbox"> 
 								Keep me signed in
 							</span>-->
-							<button type="submit" name="done" class="btn btn-default bton">Login</button>
+              <input type="text" class='hidden' name="_token" value="<?php echo $_SESSION['_token']; ?>">
+              <button type="submit" name="done" class="btn btn-default bton">Login</button>
 						</form>
 					</div><!--/login form-->
 				</div>
