@@ -138,12 +138,13 @@ require_once ('../includes/main_functions.php');
                                        {
                                         echo "<li><a href='make-order.php?id={$gow['cat_id']}'>{$gow['cat_name']}</a></li>";
                                        }
+                                       echo "<li><a href='order.php'>Services</a></li>";
                                   ?>
                               
                                </ul>
                             </div>
                         </div>
-                  <br><br>
+                  <br><br><br><br>
                   <div id="electronics">
                     <form action="ordering.php" id="" class="upload-form row" name="upload-form" method="post" enctype="multipart/form-data">
                         <div class="form-group col-md-12">
@@ -153,8 +154,8 @@ require_once ('../includes/main_functions.php');
                         <div class="form-group col-md-12">
                             <select class="form-control" name="subcategory" required="required">
                                  <option value="">Select order-category</option>
-                                 <?php 
-                                    $query = "SELECT * FROM subcategories ";
+                                 <?php
+                                    $query = "SELECT * FROM subcategories where refcat_id = '{$id}' ";
                                     $res = mysqli_query($con,$query);
                                     while($row = mysqli_fetch_assoc($res))
                                     {
