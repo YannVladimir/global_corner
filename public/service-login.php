@@ -127,7 +127,7 @@ checkToken();
 				<div class="col-sm-4">
 					<div class="signup-form"><!--sign up form-->
 						<h2>New User Signup!</h2>
-						<form action="order-sign-up.php" method="POST">
+						<form action="servce-sign-up.php" method="POST">
 							<input type="text" placeholder="First name" required="required" name="firstname"/>
 							<input type="text" placeholder="Last name" required="required" name="lastname"/>
 							<input type="text" placeholder="Contact number" required="required" digits="true" name="phone"/>
