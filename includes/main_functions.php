@@ -85,6 +85,79 @@
         	header("location: login.php");
         }exit();    	
     }
+    function service_log_user_in($email, $password)
+    {
+        $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
+        $email = clearInput($email);
+        $password = clearInput($password);
+        $query="SELECT * from users where email ='{$email}' and password = '{$password}'";
+        $res = mysqli_query($con,$query);
+        if(mysqli_num_rows($res) >0)
+        {
+            $row = mysqli_fetch_assoc($res);
+            $_SESSION['id'] = $row['user_id'];
+            $_SESSION['username'] = $row['firstname'].' '.$row['lastname'];
+            $_SESSION['firstname'] = $row['firstname'];
+            $_SESSION['lastname'] = $row['lastname'];
+            $_SESSION['phone']=$row['phone'];
+            $_SESSION['email']=$email;
+            $_SESSION['priority']=$row['priority'];
+            $_SESSION['u'] = '0';
+            $category = $_SESSION['category'];
+            $seller = $_SESSION['seller'];
+            $nam = $_SESSION['nam'];
+            $email = $_SESSION['emails'];
+            $details = $_SESSION['details'];
+            $place = $_SESSION['place'];
+            $location = $_SESSION['location'];
+            $phone = $_SESSION['phones'];
+            $photo = $_SESSION['photo'];
+            $img1 = $_SESSION['img1'];
+            $img2 = $_SESSION['img2'];
+            $img3 = $_SESSION['img3'];
+            $img4 = $_SESSION['img4'];
+            $img5 = $_SESSION['img5'];
+            $uploaded = date("Y-m-d");
+            unset($_SESSION['phones']);
+            unset($_SESSION['category']);
+            unset($_SESSION['details']);
+            unset($_SESSION['location']);
+            unset($_SESSION['place']);
+            unset($_SESSION['emails']);
+            unset($_SESSION['nam']);
+            unset($_SESSION['seller']);
+            unset($_SESSION['category']);
+            unset($_SESSION['photo']);
+            unset($_SESSION['img1']);
+            unset($_SESSION['img2']);
+            unset($_SESSION['img3']);
+            unset($_SESSION['img4']);
+            unset($_SESSION['img5']);
+            $_SESSION['message']= "Please login to your acount to make this order, or create your new acount";
+            $user = $_SESSION['id'];
+            $querry = "INSERT INTO services (title,reserved,sub_category,phone,contacts,user,location,akarere,details,uploaded_date,main,photo1,photo2,photo3,photo4,photo5) values ('{$nam}','{$seller}','{$category}','{$phone}','{$email}','{$user}','{$place}','{$location}','{$details}','{$uploaded}','{$photo}','{$img1}','{$img2}','{$img3}','{$img4}','{$img5}')";
+            $r = mysqli_query($con,$sql);
+            if($r)
+            {
+               $q = "UPDATE users set sell_service ='{$category}' where user_id ='{$user}'";
+               $re = mysqli_query($con,$q);
+               $query = "SELECT * from orders where name = '{$izina}' and details = '{$details}' and user = '{$user}' ";
+               $b = mysqli_query($con,$query);
+               $c = mysqli_fetch_assoc($b);
+               $id = $c['id'];
+               echo "<script>alert(' Your order has been uploaded successfully');window.location='my_order.php?id=$id';</script>";exit;
+            }
+            else
+            {
+               echo "<script>alert(' Failed to post your order, please try again');window.location='order.php';</script>";exit;
+            }
+        }
+        else
+        {
+            $_SESSION['message'] = "Wrong email/password combination";
+            header("location: order-login.php");
+        }exit();        
+    }
     function order_log_user_in($email, $password)
     {
         $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
