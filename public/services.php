@@ -168,7 +168,7 @@ require_once ('../includes/main_functions.php');
                                         <p>Contact number:<b> {$row['phone']}</b></p>
                                         <p>Place:<b> {$row['Akarere']} - {$row['location']}</b></p>
                                         <p><b></b></p><br>
-                                        <p style='text-align:center;'><a style='background:#90DC60;' href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a><p>
+                                        <p style='text-align:center;'><a style='background:#90DC60; color:white;' href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a><p>
                                         </div><!--/product-information-->
             </div>";
 
