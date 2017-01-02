@@ -138,76 +138,72 @@ require_once ('../includes/main_functions.php');
                     <div class="product-details"><!--product-details-->
                         <div class="col-sm-5">
                             <div class="view-product">
-                                <img src="assets/images/product-details/1.jpg" alt="" />
-                                <h3>ZOOM</h3>
-                            </div>
-                            <div id="similar-product" class="carousel slide" data-ride="carousel">
+                        <?php
+                            $id = $_GET['id'];
+                            $query = "SELECT * FROM services where id = $id ";
+                            $res = mysqli_query($con,$query);
+                            while($row = mysqli_fetch_assoc($res))
+                            {
+                                echo"<img src='assets/images/product-details/{$row['main']}' alt='' />
+                                </div> 
+                            <div id='similar-product' class='carousel slide' data-ride='carousel'>
                                 
                                   <!-- Wrapper for slides -->
-                                    <div class="carousel-inner">
-                                        <div class="item active">
-                                          <a href=""><img src="assets/images/product-details/similar1.jpg" alt=""></a>
-                                          <a href=""><img src="assets/images/product-details/similar2.jpg" alt=""></a>
-                                          <a href=""><img src="assets/images/product-details/similar3.jpg" alt=""></a>
+                                    <div class='carousel-inner'>
+                                        <div class='item active'>
+                                          <a href=''><img src='assets/images/product-details/{$row['main']}' alt=''></a>
+                                          <a href=''><img src='assets/images/product-details/{$row['photo1']}' alt=''></a>
+                                          <a href=''><img src='assets/images/product-details/{$row['photo2']}' alt=''></a>
                                         </div>
-                                        <div class="item">
-                                          <a href=""><img src="assets/images/product-details/similar1.jpg" alt=""></a>
-                                          <a href=""><img src="assets/images/product-details/similar2.jpg" alt=""></a>
-                                          <a href=""><img src="assets/images/product-details/similar3.jpg" alt=""></a>
+                                        <div class='item'>
+                                          <a href=''><img src='assets/images/product-details/{$row['photo3']}' alt=''></a>
+                                          <a href=''><img src='assets/images/product-details/{$row['photo4']}' alt=''></a>
+                                          <a href=''><img src='assets/images/product-details/{$row['photo5']}' alt=''></a>
                                         </div>
-                                        <div class="item">
-                                          <a href=""><img src="assets/images/product-details/similar1.jpg" alt=""></a>
-                                          <a href=""><img src="assets/images/product-details/similar2.jpg" alt=""></a>
-                                          <a href=""><img src="assets/images/product-details/similar3.jpg" alt=""></a>
-                                        </div>
-                                        
                                     </div>
-
-                                  <!-- Controls -->
-                                  <a class="left item-control" href="#similar-product" data-slide="prev">
-                                    <i class="fa fa-angle-left"></i>
+                                    <a class='item-control' href='#similar-product' data-slide='prev'>
+                                    <i class='fa fa-angle-left'></i>
                                   </a>
-                                  <a class="right item-control" href="#similar-product" data-slide="next">
-                                    <i class="fa fa-angle-right"></i>
+                                  <a class='right item-control' href='#similar-product' data-slide='next'>
+                                    <i class='fa fa-angle-right'></i>
                                   </a>
                             </div>
 
                         </div>
-                        <div class="col-sm-7">
-                            <div class="product-information"><!--/product-information-->
-                                <h2>Category, sub categpry</h2>
+                        <div class='col-sm-7'>
+                            <div class='product-information'><!--/product-information-->
+                                <h2>Category, {$row['photo5']}</h2>
                                 <span>
-                                    <img src="assets/images/shop/rating9.png" alt="" />
+                                    <img src='assets/images/shop/rating9.png' alt='' />
                                     <label>Total votes (46)</label>
                                 <span>
-                                    <span style="color:#232323">Anne Klein Sleeveless Colorblock Scuba</span>
+                                    <span style='color:#232323'>{$row['title']}</span>
                                     
                                 </span>
-                                <p><b>Seller:</b> Yann</p>
-                                <p><b>Description:</b> In Stock ijgaio o aojfoaiji aoijf lajlkaj lkaj lkajflkajlkjalkjfa
-                                    ajfpao fjlak
-                                    af apojfapofja
-                                    af a[ofia[p4aa apof ao 
-                                    af aoja</p>
-                                <p><b>Location:</b> Location</p>
-                                <p><b>Contacts:</b> E-SHOPPER</p>
-                                <a href="#reviews" class="pull-right">
-                                    <button type="button" class="btn btn-fefault cart">
-                                        <i class=""></i>
+                                <p><b>Seller:</b> {$row['reserved']}</p>
+                                <p><b>Description:</b> {$row['details']}</p>
+                                <p><b>Location:</b> {$row['location']}</p>
+                                <p><b>Contacts:</b> {$row['phone']}</p>
+                                <a href='#reviews' class='pull-right'>
+                                    <button type='button' class='btn btn-fefault cart'>
+                                        <i class=''></i>
                                         Rate it
                                     </button>
                                 </a>
                             </div><!--/product-information-->
                         </div>
                     </div><!--/product-details-->
-                    
-                    <div class="category-tab shop-details-tab"><!--category-tab-->
-                        <div class="col-sm-12">
+                    ";
+                            }
+                        ?>
+            
+                    <div class='category-tab shop-details-tab'><!--category-tab-->
+                        <div class='col-sm-12'>
                             <ul class="nav nav-tabs">
-                                <li><a href="#details" data-toggle="tab">Experience</a></li>
-                                <li><a href="#companyprofile" data-toggle="tab">Working Hours</a></li>
-                                <li><a href="#tag" data-toggle="tab">Reviews</a></li>
-                                <li class="active"><a href="#reviews" data-toggle="tab">Rate it</a></li>
+                                <li><a href='#details' data-toggle='tab'>Experience</a></li>
+                                <li><a href='#companyprofile' data-toggle='tab'>Working Hours</a></li>
+                                <li><a href='#tag' data-toggle='tab'>Reviews</a></li>
+                                <li class='active'><a href='#reviews' data-toggle='tab'>Rate it</a></li>
                             </ul>
                         </div>
                         <div class="tab-content">
