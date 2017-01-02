@@ -176,7 +176,9 @@ require_once ('../includes/main_functions.php');
                                 
                                     <img src='assets/images/shop/rating9.png' alt='' />
                                     <label>Total votes (46)</label>
+                                <span>
                                     <span style='color:#232323'>{$row['title']}</span>
+                                </span>    
                                     <br>
                                 <p><b>Seller:</b> {$row['reserved']}</p>
                                 <p><b>Description:</b> {$row['details']}</p>
