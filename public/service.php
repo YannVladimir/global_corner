@@ -144,21 +144,21 @@ require_once ('../includes/main_functions.php');
                             $res = mysqli_query($con,$query);
                             while($row = mysqli_fetch_assoc($res))
                             {
-                                echo"<img src='assets/images/product-details/{$row['main']}' alt='' />
+                                echo"<img src='assets/images/posts/{$row['main']}' alt='' />
                                 </div> 
                             <div id='similar-product' class='carousel slide' data-ride='carousel'>
                                 
                                   <!-- Wrapper for slides -->
                                     <div class='carousel-inner'>
                                         <div class='item active'>
-                                          <a href=''><img src='assets/images/product-details/{$row['main']}' alt=''></a>
-                                          <a href=''><img src='assets/images/product-details/{$row['photo1']}' alt=''></a>
-                                          <a href=''><img src='assets/images/product-details/{$row['photo2']}' alt=''></a>
+                                          <a href=''><img src='assets/images/posts/{$row['main']}' alt=''></a>
+                                          <a href=''><img src='assets/images/posts/{$row['photo1']}' alt=''></a>
+                                          <a href=''><img src='assets/images/posts/{$row['photo2']}' alt=''></a>
                                         </div>
                                         <div class='item'>
-                                          <a href=''><img src='assets/images/product-details/{$row['photo3']}' alt=''></a>
-                                          <a href=''><img src='assets/images/product-details/{$row['photo4']}' alt=''></a>
-                                          <a href=''><img src='assets/images/product-details/{$row['photo5']}' alt=''></a>
+                                          <a href=''><img src='assets/images/posts/{$row['photo3']}' alt=''></a>
+                                          <a href=''><img src='assets/images/posts/{$row['photo4']}' alt=''></a>
+                                          <a href=''><img src='assets/images/posts/{$row['photo5']}' alt=''></a>
                                         </div>
                                     </div>
                                     <a class='item-control' href='#similar-product' data-slide='prev'>
@@ -172,14 +172,14 @@ require_once ('../includes/main_functions.php');
                         </div>
                         <div class='col-sm-7'>
                             <div class='product-information'><!--/product-information-->
-                                <h2>Category, {$row['photo5']}</h2>
+                                <h2>Category, {$row['sub_category']}</h2>
                                 <span>
                                     <img src='assets/images/shop/rating9.png' alt='' />
                                     <label>Total votes (46)</label>
                                 <span>
                                     <span style='color:#232323'>{$row['title']}</span>
                                     
-                                </span>
+                                </span><br>
                                 <p><b>Seller:</b> {$row['reserved']}</p>
                                 <p><b>Description:</b> {$row['details']}</p>
                                 <p><b>Location:</b> {$row['location']}</p>
