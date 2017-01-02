@@ -6,7 +6,7 @@ session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
 checkUser();
-?>
+?> 
 <!DOCTYPE html> 
 <html lang="en">
 <head>
@@ -81,10 +81,11 @@ checkUser();
           </div>
         </div>
     </div><!--/header-bottom-->
-  </header><!--/header-->
+  </header><!--/header--> 
     
     <section>
         <div class="container">
+          <div class="row">
             <div class="col-sm-3">
                   <div class="right-sidebar">
                     <br>
