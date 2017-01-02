@@ -5,8 +5,7 @@ error_reporting(E_ALL);
 session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
-checkUser();
-?> 
+?>
 <!DOCTYPE html> 
 <html lang="en">
 <head>
@@ -14,7 +13,7 @@ checkUser();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>250 Trade | Service details</title>
+    <title>250 Trade | Services</title>
     <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/yann.min.css" rel="stylesheet">
     <link href="assets/css/prettyPhoto.css" rel="stylesheet">
@@ -43,46 +42,46 @@ checkUser();
 </head><!--/head--> 
  
 <body>
-	<?php  
+  <?php  
     require('header.php');   
-    ?>
-         
+  ?>
     <div class="header-bottom"><!--header-bottom-->
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-7">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        </div>
-                        <div class="mainmenu pull-left">
-                            <ul class="nav navbar-nav collapse navbar-collapse">
-                                <li><a href="home.php" class="fon">Home</a></li>
-                <li><a href="services.php" class="fon">Services</a></li>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-7">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="mainmenu pull-left">
+              <ul class="nav navbar-nav collapse navbar-collapse">
+                <li><a href="home.php" class="fon">Home</a></li>
+                <li><a href="categories.php" class="active fon">Services</a></li>
                 <li><a href="upload.php" class="fon">Sell</a></li>
                 <li><a href="categories.php" class="fon">Buy</a></li>
-                <li class="dropdown"><a href="#">Ordering<i class="fa fa-angle-down"></a>
+                <li class="dropdown"><a href="#">Odering<i class="fa fa-angle-down"></i></a>
                     <ul role="menu" class="sub-menu"> 
                         <li><a href="order.php" class="fon">Make order</a></li>
                         <li><a href="orders.php" class="fon">View orders</a></li> 
                     </ul>
                 </li>
-                <li><a href="contact_us.php" class="fon">Contact us</a></li>       
-              </ul>
+                <li><a href="contact_us.php" class="fon">Contact us</a></li>
+                
+                            </ul>
+                        </div>
+                    </div> 
+                    <?php
+                      include('search.php');
+                    ?>
+                </div>
             </div>
-          </div>
-            <?php
-              include('search.php');
-            ?>
-          </div>
-        </div>
-    </div><!--/header-bottom-->
-  </header><!--/header--> 
-    
+        </div><!--/header-bottom-->
+    </header><!--/header-->
+  
     <section>
         <div class="container">
           <div class="row">
