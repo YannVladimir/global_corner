@@ -92,7 +92,7 @@ require_once ('../includes/main_functions.php');
             <div class="panel-group category-products" id="accordian"><!--category-productsr-->
               <?php 
                                         $c = 11;
-                                        $query = "SELECT * FROM service_categories ";
+                                        $query = "SELECT * FROM service_categories";
                                         $res = mysqli_query($con,$query);
                                         while($row = mysqli_fetch_assoc($res))
                                         {
@@ -137,11 +137,12 @@ require_once ('../includes/main_functions.php');
         <div class="col-sm-6 padding-right">
                     <br>
                     <?php 
-                       $query = "SELECT * FROM services where is_accepted=0 order by priority desc limit 20";
+                       $query = "SELECT * FROM services where is_accepted=1 order by priority limit 20";
                        $res = mysqli_query($con,$query);
                        while($row = mysqli_fetch_assoc($res))
                        {
-                        echo "<br><div class='row' style='border: 1px solid #F7F7F0; background:#f6f6f6'>";
+                        echo "<br><a href='service.php?id={$row['id']}'>
+                        <div class='row' style='border: 1px solid #F7F7F0; background:#f6f6f6'>";
                             echo "<div class='col-sm-6'>
                                      <div class='product-image-wrapper'>
                                         <div class='single-products'>
@@ -170,7 +171,7 @@ require_once ('../includes/main_functions.php');
                                         </div><!--/product-information-->
             </div>";
 
-                        echo "</div>";
+                        echo "</div></a>";
                        }
                     ?>
       </div>
