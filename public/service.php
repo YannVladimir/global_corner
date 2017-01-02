@@ -173,13 +173,11 @@ require_once ('../includes/main_functions.php');
                         <div class='col-sm-7'>
                             <div class='product-information'><!--/product-information-->
                                 <h2>Category, {$row['sub_category']}</h2>
-                                <span>
+                                
                                     <img src='assets/images/shop/rating9.png' alt='' />
                                     <label>Total votes (46)</label>
-                                <span>
                                     <span style='color:#232323'>{$row['title']}</span>
-                                    
-                                </span><br>
+                                    <br>
                                 <p><b>Seller:</b> {$row['reserved']}</p>
                                 <p><b>Description:</b> {$row['details']}</p>
                                 <p><b>Location:</b> {$row['location']}</p>
