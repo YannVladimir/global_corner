@@ -360,7 +360,7 @@ require_once ('../includes/main_functions.php');
 
                                         ?>
                                         
-                                        <textarea placeholder="Write a short review"></textarea>
+                                        <textarea placeholder="Write a short review" name="details"></textarea>
                                          <div class="col-sm-4">
                                             <b>Rating: </b>
                                                          <select class="form-control" required="required" name="marks">
