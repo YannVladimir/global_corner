@@ -32,7 +32,7 @@ if(checkIsStringSetPost('marks'))
 	if($res)
 	{
 				
-        echo "<script>alert(' Your rate and experience was successfully submited ');window.location='service.php?id=$id;</script>";
+        echo "<script>alert(' Your rate and experience was successfully submited ');window.location='service.php?id=$id';</script>";
 	}
 	else
 	{

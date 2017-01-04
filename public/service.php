@@ -347,7 +347,7 @@ require_once ('../includes/main_functions.php');
                                     <p>Help others to know very usefull information about this service provider by sharing and rating the experience you have with this service provider </p>
                                     <p><b>Write Your Review</b></p>
                                     
-                                    <form action="rating.php" method="post">
+                                    <form action="rating.php" method="POST">
                                         <?php
                                            if(!isset($_SESSION['email']))
                                            {
