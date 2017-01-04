@@ -6,7 +6,7 @@ session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
 //checkUser();
-checkToken();
+checkToken(); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -182,7 +182,51 @@ checkToken();
     <div class="container">
       <div class="row">
         <div class="col-sm-1"></div>
+        <?php 
+            $query = "SELECT * FROM users where user_id = '{$id}'";
+            $res = mysqli_query($con,$query);
+            $row = mysqli_fetch_assoc($res);
+            $pbuy = $row['buy_product'];
+            $psell = $row['sell_product'];
+            $sbuy = $row['buy_service'];
+            $ssell = $row['sell_service'];
+        ?>
         <div class="col-sm-5">
+          <div class="total_area">
+            <p style="padding-left:35px">Product category to buy</p>
+            <ul>
+              <?php
+                if($pbuy == 0)
+                {
+                   echo "<li>Not selected <span></span></li>";
+                }
+                else
+                {
+                   $sql = "SELECT * FROM subcategories where subcat_id = '{$pbuy}'";
+                   $res = mysqli_query($con,$sql);
+                   $row = mysqli_fetch_assoc($res);
+                   echo "<li>{$row['subcat_name']} <span></span></li>"; 
+                }
+              ?>
+              
+            </ul>
+            <p style="padding-left:35px">Product category to sell</p>
+            <ul>
+              <?php
+                if($psell == 0)
+                {
+                   echo "<li>Not selected <span></span></li>";
+                }
+                else
+                {
+                   $sql = "SELECT * FROM subcategories where subcat_id = '{$psell}'";
+                   $res = mysqli_query($con,$sql);
+                   $row = mysqli_fetch_assoc($res);
+                   echo "<li>{$row['subcat_name']} <span></span></li>"; 
+                }
+              ?>
+            </ul>
+          </div>
           <div class="heading">
             <h3>Which product category is interesting you to trade</h3>
             <p>Choose a product category that you are interested in, in order to get notifications of different posts from sellers and customers of this category type.</p>
@@ -229,18 +273,43 @@ checkToken();
                </ul>
             </div>
           </div>
-          <div class="total_area">
-            <p style="padding-left:35px">Product category to buy</p>
-            <ul>
-              <li>sub category for buy <span></span></li>
-            </ul>
-            <p style="padding-left:35px">Product category to sell</p>
-            <ul>
-              <li>sub category for sell <span></span></li>
-            </ul>
-          </div>
+          
         </div>
         <div class="col-sm-5">
+          <div class="total_area">
+            <p style="padding-left:35px">Service category to buy</p>
+            <ul>
+              <?php
+                if($sbuy == 0)
+                {
+                   echo "<li>Not selected <span></span></li>";
+                }
+                else
+                {
+                   $sql = "SELECT * FROM service_subcategories where id = '{$sbuy}'";
+                   $res = mysqli_query($con,$sql);
+                   $row = mysqli_fetch_assoc($res);
+                   echo "<li>{$row['sub_category']} <span></span></li>"; 
+                }
+              ?>
+            </ul>
+            <p style="padding-left:35px">Service category to sell</p>
+            <ul>
+              <?php
+                if($ssell == 0)
+                {
+                   echo "<li>Not selected <span></span></li>";
+                }
+                else
+                {
+                   $sql = "SELECT * FROM service_subcategories where id = '{$ssell}'";
+                   $res = mysqli_query($con,$sql);
+                   $row = mysqli_fetch_assoc($res);
+                   echo "<li>{$row['sub_category']} <span></span></li>"; 
+                }
+              ?>
+            </ul>
+          </div>
           <div class="heading">
             <h3>Which Service category is interesting you to trade</h3>
             <p>Choose a Service category that you are interested in, in order to get notifications of different posts from service providers
@@ -288,16 +357,7 @@ checkToken();
                </ul>
             </div>
           </div>
-          <div class="total_area">
-            <p style="padding-left:35px">Service category to buy</p>
-            <ul>
-              <li>sub category for buy <span></span></li>
-            </ul>
-            <p style="padding-left:35px">Service category to sell</p>
-            <ul>
-              <li>sub category for sell <span></span></li>
-            </ul>
-          </div>
+          
         </div>
       </div>
     </div>
