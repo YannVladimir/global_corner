@@ -180,7 +180,7 @@ checkToken();
 	</section>
 	<section id="do_action">
     <div class="container">
-      <div class="row">
+      <div class="row" id="choosing">
         <div class="col-sm-1"></div>
         <?php 
             $query = "SELECT * FROM users where user_id = '{$id}'";
@@ -193,7 +193,7 @@ checkToken();
         ?>
         <div class="col-sm-5">
           <div class="total_area">
-            <p style="padding-left:35px">Product category to buy</p>
+            <p style="padding-left:35px">Current product category to buy</p>
             <ul>
               <?php
                 if($pbuy == 0)
@@ -210,7 +210,7 @@ checkToken();
               ?>
               
             </ul>
-            <p style="padding-left:35px">Product category to sell</p>
+            <p style="padding-left:35px">current product category to sell</p>
             <ul>
               <?php
                 if($psell == 0)
@@ -237,7 +237,7 @@ checkToken();
                <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:14px" data-toggle="dropdown">
                   <?php
                        
-                       echo "Select Product category";
+                      echo "Select Product category";
                       echo "<span class='caret'></span>
                </button>
                <ul class='dropdown-menu'>";
@@ -245,7 +245,7 @@ checkToken();
                        $r = mysqli_query($con,$sql);
                        while($gow = mysqli_fetch_assoc($r))
                        {
-                        echo "<li><a href='upload.php?id={$gow['cat_id']}'>{$gow['cat_name']}</a></li>";
+                        echo "<li><a href='product-sub_categories.php?id={$gow['cat_id']}&type=0'>{$gow['cat_name']}</a></li>";
                        }
                   ?>
               
@@ -266,7 +266,7 @@ checkToken();
                        $r = mysqli_query($con,$sql);
                        while($gow = mysqli_fetch_assoc($r))
                        {
-                        echo "<li><a href='upload.php?id={$gow['cat_id']}'>{$gow['cat_name']}</a></li>";
+                        echo "<li><a href='product-sub_categories.php?id={$gow['cat_id']}&type=1'>{$gow['cat_name']}</a></li>";
                        }
                   ?>
               
@@ -277,7 +277,7 @@ checkToken();
         </div>
         <div class="col-sm-5">
           <div class="total_area">
-            <p style="padding-left:35px">Service category to buy</p>
+            <p style="padding-left:35px">Current service category to buy</p>
             <ul>
               <?php
                 if($sbuy == 0)
@@ -293,7 +293,7 @@ checkToken();
                 }
               ?>
             </ul>
-            <p style="padding-left:35px">Service category to sell</p>
+            <p style="padding-left:35px">Current service category to sell</p>
             <ul>
               <?php
                 if($ssell == 0)
