@@ -372,9 +372,8 @@ require_once ('../includes/main_functions.php');
                                                             <option value="5">5/5</option>
                                                          </select>
                                                         </div>
-                                        <button type="button" class="btn btn-default pull-right">
-                                            Submit
-                                        </button>
+                                                        <input type="submit" class="btn btn-default pull-right"/>
+                    
                                     </form>
                                 </div>
                             </div>
