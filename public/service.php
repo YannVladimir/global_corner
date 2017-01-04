@@ -146,29 +146,6 @@ require_once ('../includes/main_functions.php');
                             {
                                 echo"<img src='assets/images/posts/{$row['main']}' alt='' />
                                 </div> 
-                            <div id='similar-product' class='carousel slide' data-ride='carousel'>
-                                
-                                  <!-- Wrapper for slides -->
-                                    <div class='carousel-inner'>
-                                        <div class='item active'>
-                                          <a href=''><img src='assets/images/posts/{$row['main']}' alt=''></a>
-                                          <a href=''><img src='assets/images/posts/{$row['photo1']}' alt=''></a>
-                                          <a href=''><img src='assets/images/posts/{$row['photo2']}' alt=''></a>
-                                        </div>
-                                        <div class='item'>
-                                          <a href=''><img src='assets/images/posts/{$row['photo3']}' alt=''></a>
-                                          <a href=''><img src='assets/images/posts/{$row['photo4']}' alt=''></a>
-                                          <a href=''><img src='assets/images/posts/{$row['photo5']}' alt=''></a>
-                                        </div>
-                                    </div>
-                                    <a class='item-control' href='#similar-product' data-slide='prev'>
-                                    <i class='fa fa-angle-left'></i>
-                                  </a>
-                                  <a class='right item-control' href='#similar-product' data-slide='next'>
-                                    <i class='fa fa-angle-right'></i>
-                                  </a>
-                            </div>
-
                         </div>
                         <div class='col-sm-7'>
                             <div class='product-information'><!--/product-information-->
@@ -177,9 +154,9 @@ require_once ('../includes/main_functions.php');
                                     <img src='assets/images/shop/rating9.png' alt='' />
                                     <label>Total votes (46)</label>
                                 <span>
-                                    <span style='color:#232323'>{$row['title']}</span>
+                                    <span style='color:#232323;'>{$row['title']}</span>
                                 </span>    
-                                    <br>
+                                    <br><br>
                                 <p><b>Seller:</b> {$row['reserved']}</p>
                                 <p><b>Description:</b> {$row['details']}</p>
                                 <p><b>Location:</b> {$row['location']}</p>
@@ -370,15 +347,23 @@ require_once ('../includes/main_functions.php');
                                     <p>Help others to know very usefull information about this service provider by sharing and rating the experience you have with this service provider </p>
                                     <p><b>Write Your Review</b></p>
                                     
-                                    <form action="#">
-                                        <span>
-                                            <input type="text" placeholder="Your Name"/>
-                                            <input type="text" placeholder="Your Phone or Email Address"/>
-                                        </span>
-                                        <textarea name="" placeholder="Write a short review"></textarea>
+                                    <form action="rating.php" method="post">
+                                        <?php
+                                           if(!isset($_SESSION['email']))
+                                           {
+                                             echo'<span>
+                                            <input type="text" required="required" placeholder="Your Name" name="name"/>
+                                            <input type="text" required="required" placeholder="Your Phone or Email Address" name="conacts"/>
+                                        </span>';
+                                           }
+                                           $_SESSION['rate_id']= $_GET['id'];
+
+                                        ?>
+                                        
+                                        <textarea placeholder="Write a short review"></textarea>
                                          <div class="col-sm-4">
                                             <b>Rating: </b>
-                                                         <select class="form-control" required="required">
+                                                         <select class="form-control" required="required" name="marks">
                                                             <option value="">Select rate</option>
                                                             <option value="1">1/5</option>
                                                             <option value="2">2/5</option>
