@@ -141,19 +141,35 @@ checkToken();
                             <div class="btn-group">
                                <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:14px" data-toggle="dropdown">
                                    <?php
-                                       
-                                      echo "Select product sub-category";
-                                      echo "<span class='caret'></span>
-                               </button>
-                               <ul class='dropdown-menu'>";
+
                                        $id = $_GET['id'];
                                        $_SESSION['sell-or-buy'] = $_GET['type'];
-                                       $sql = "SELECT * from subcategories where refcat_id= '{$id}'";
-                                       $r = mysqli_query($con,$sql);
-                                       while($gow = mysqli_fetch_assoc($r))
+                                       if($_SESSION['sell-or-buy']<2)
                                        {
-                                        echo "<li><a href='product-subcategory-selecting.php?id={$gow['subcat_id']}'>{$gow['subcat_name']}</a></li>";
-                                       }
+                                          echo "Select product sub-category";
+                                          echo "<span class='caret'></span>
+                                          </button>
+                                          <ul class='dropdown-menu'>";
+                                           $sql = "SELECT * from subcategories where refcat_id= '{$id}'";
+                                           $r = mysqli_query($con,$sql);
+                                            while($gow = mysqli_fetch_assoc($r))
+                                               {
+                                                   echo "<li><a href='product-subcategory-selecting.php?id={$gow['subcat_id']}'>{$gow['subcat_name']}</a></li>";
+                                                }
+                                        }
+                                        else
+                                        {
+                                            echo "Select service sub-category";
+                                            echo "<span class='caret'></span>
+                                          </button>
+                                          <ul class='dropdown-menu'>";
+                                           $sql = "SELECT * from service_subcategories where ref1= '{$id}' or ref2= '{$id}' or ref3= '{$id}' or ref4= '{$id}'";
+                                           $r = mysqli_query($con,$sql);
+                                            while($gow = mysqli_fetch_assoc($r))
+                                               {
+                                                   echo "<li><a href='product-subcategory-selecting.php?id={$gow['id']}'>{$gow['sub_category']}</a></li>";
+                                                }
+                                        }
                                   ?>
                               
                               

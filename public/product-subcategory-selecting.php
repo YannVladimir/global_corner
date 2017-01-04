@@ -9,23 +9,45 @@ $user = $_SESSION['id'];
 $id = $_GET['id'];
 $type = $_SESSION['sell-or-buy'];
 unset($_SESSION['sell-or-buy']);
-if($type == 0)
+if ($type<2)
 {
-$query = "UPDATE users set buy_product = '{$id}' where user_id = '{$user}'";
+   if($type == 0)
+   {
+     $query = "UPDATE users set buy_product = '{$id}' where user_id = '{$user}'";
+   }
+   else 
+   {
+     $query = "UPDATE users set sell_product = '{$id}' where user_id = '{$user}'";
+   }
+   $res = mysqli_query($con,$query);
+   if($res)
+   {
+      echo "<script>alert(' Wanna trade product category updated successfuly ');window.location='my_acount.php#choosing';</script>";
+   }
+   else
+   {
+      echo "<script>alert(' An error has occured while updating wanna trade, Please try again');window.location='my_acount.php#choosing';</script>";
+    }	
 }
 else
 {
-$query = "UPDATE users set sell_product = '{$id}' where user_id = '{$user}'";
+	if($type == 3)
+   {
+     $query = "UPDATE users set buy_service = '{$id}' where user_id = '{$user}'";
+   }
+   else 
+   {
+     $query = "UPDATE users set sell_service = '{$id}' where user_id = '{$user}'";
+   }
+   $res = mysqli_query($con,$query);
+   if($res)
+   {
+      echo "<script>alert(' Wanna trade service category updated successfuly ');window.location='my_acount.php#choosing';</script>";
+   }
+   else
+   {
+      echo "<script>alert(' An error has occured while updating wanna trade, Please try again');window.location='my_acount.php#choosing';</script>";
+    }
 }
-$res = mysqli_query($con,$query);
-if($res)
-{
-  echo "<script>alert(' Wanna trade product category updated successfuly ');window.location='my_acount.php#choosing';</script>";
-}
-else
-{
-echo "<script>alert(' An error has occured while updating wanna trade, Please try again');window.location='my_acount.php#choosing';</script>";
-}
-
 
 ?>

@@ -325,11 +325,11 @@ checkToken();
                       echo "<span class='caret'></span>
                </button>
                <ul class='dropdown-menu'>";
-                       $sql = "SELECT * from categories";
+                       $sql = "SELECT * from service_categories";
                        $r = mysqli_query($con,$sql);
                        while($gow = mysqli_fetch_assoc($r))
                        {
-                        echo "<li><a href='upload.php?id={$gow['cat_id']}'>{$gow['cat_name']}</a></li>";
+                        echo "<li><a href='product-sub_categories.php?id={$gow['id']}&type=3'>{$gow['category']}</a></li>";
                        }
                   ?>
               
@@ -350,7 +350,7 @@ checkToken();
                        $r = mysqli_query($con,$sql);
                        while($gow = mysqli_fetch_assoc($r))
                        {
-                        echo "<li><a href='upload.php?id={$gow['cat_id']}'>{$gow['cat_name']}</a></li>";
+                        echo "<li><a href='product-sub_categories.php?id={$gow['id']}&type=4'>{$gow['category']}</a></li>";
                        }
                   ?>
               
