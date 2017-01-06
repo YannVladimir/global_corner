@@ -149,9 +149,10 @@ checkToken();
                                     <thead>
                                         <tr>
                                             <th>Post type</th>
-                                            <th>Post name</th>
+                                            <th>Post title</th>
                                             <th>Category</th>
                                             <th>Interested</th>
+                                            <th>Votes</th>
                                             <th>View & Edit</th>
                                             <th>Delete post</th>
                                         </tr>
@@ -165,7 +166,14 @@ checkToken();
                                              $res = mysqli_query($con,$query);
                                              while($row = mysqli_fetch_assoc($res))
                                              {
-                                               echo "<tr class='odd gradeX'><td><img src='assets/images/posts/{$row['main']}'/></td><td><strong>{$row['name']}</strong></td><td><strong>{$row['price']}</strong></td><td><form action='my_post.php' method='GET'><input type='text' name='id' value='{$row['post_id']}' class='hidden'/><input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'><input type='submit' value='View Details'/></form></td><td><form action='delete.php' method='POST'><input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'><input type='text' name='id' value='{$row['post_id']}' class='hidden'/><input type='submit' value='Remove'/></form></td></tr> ";
+                                               $sql = "SELECT * FROM users where buy_product = {$row['subcat_id']}";
+                                               $re = mysqli_query($con,$sql);
+                                               $interested = 0;
+                                               while($ro = mysqli_fetch_assoc($re))
+                                               {
+                                                 $interested = $interested + 1;
+                                               }
+                                               echo "<tr class='odd gradeX'><td>Product</td><td><strong>{$row['name']}</strong></td><td><strong>{$row['subcat_name']}</strong></td><td>{$interested}</td><td>-</td><td><form action='my_post.php' method='GET'><input type='text' name='id' value='{$row['post_id']}' class='hidden'/><input type='submit' value='View Details'/></form></td><td><form action='delete.php' method='POST'><input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'><input type='text' name='id' value='{$row['post_id']}' class='hidden'/><input type='submit' value='Remove'/></form></td></tr> ";
                                              }
                                           }
                                        ?>  
@@ -336,7 +344,7 @@ checkToken();
                </ul>
             </div>
 
-            <div class="btn-group">
+            <div class="btn-group"> 
               <p>Wanna serve
               </p>
                <button type="button" class="btn btn-default dropdown-toggle usa" style="height:32px; font-size:14px" data-toggle="dropdown">
