@@ -125,6 +125,7 @@ CountBack(gsecs);
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a href='my_acount.php'><i class='fa fa-user'></i> My Account</a></li>
+								<li><a href='contact_us.php'><i class='fa fa-envelope'></i>Contact us</a></li>
 								<li><a href='home.php?var=logout'><i class='fa fa-lock'></i> Logout</a></li>
 							</ul>
 						</div>
@@ -136,6 +137,8 @@ CountBack(gsecs);
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a></a></li>
+
+                                <li><a href='contact_us.php'><i class='fa fa-envelope'></i>Contact us</a></li>
 								<li><a href='login.php'><i class='fa fa-lock'></i> Login</a></li>
 							</ul>
 						</div>
