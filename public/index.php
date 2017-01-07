@@ -46,7 +46,7 @@ if(isset($_GET['var']) == "logout")
         height:320px;
       }
       .fon{
-        font-size: 17px;
+        font-size: 20px;
 
       }
       .sizing{

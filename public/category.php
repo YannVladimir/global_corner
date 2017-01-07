@@ -5,7 +5,6 @@ error_reporting(E_ALL);
 session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
-checkUser();
 ?>
 <!DOCTYPE html>
 <html lang="en"> 
@@ -66,17 +65,13 @@ checkUser();
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav ">
 							 
+                              
                 <li><a href="home.php" class="fon">Home</a></li>
-                <li><a href="services.php" class="fon">Services</a></li>
                 <li><a href="upload.php" class="fon">Sell</a></li>
-                <li><a href="categories.php" class="active fon">Buy</a></li>
-                <li class="dropdown"><a href="#">Odering<i class="fa fa-angle-down"></i></a>
-                    <ul role="menu" class="sub-menu"> 
-                        <li><a href="order.php" class="fon">Make order</a></li>
-                        <li><a href="orders.php" class="fon">View orders</a></li> 
-                    </ul>
-                </li>
-                <li><a href="contact_us.php" class="fon">Contact us</a></li>
+                <li><a href="order.php" class="fon">Order now</a></li>
+                <li><a href="categories.php" class="active fon">Products</a></li>
+                <li><a href="services.php" class="fon">Services</a></li>
+                <li><a href="orders.php" class="fon">Orders</a></li>
                 
                             </ul>
                         </div>
