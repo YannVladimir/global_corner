@@ -177,14 +177,14 @@ checkToken();
                                              $res = mysqli_query($con,$query);
                                              while($row = mysqli_fetch_assoc($res))
                                              {
-                                               $sql = "SELECT * FROM users where buy_service = {$row['subcat_id']}";
+                                               $sql = "SELECT * FROM users where buy_service = {$row['subcategory_id']}";
                                                $re = mysqli_query($con,$sql);
                                                $interested = 0;
                                                while($ro = mysqli_fetch_assoc($re))
                                                {
                                                  $interested = $interested + 1;
                                                }
-                                               echo "<tr class='odd gradeX'><td>Service</td><td><strong>{$row['title']}</strong></td><td><strong>{$row['sub_category']}</strong></td><td>{$interested}</td><td>-</td><td><form action='my_service.php' method='GET'><input type='text' name='id' value='{$row['service_id']}' class='hidden'/><input type='submit' value='View Details'/></form></td><td><form action='delete.php' method='POST'><input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'><input type='text' name='id' value='{$row['post_id']}' class='hidden'/><input type='submit' value='Remove'/></form></td></tr> ";
+                                               echo "<tr class='odd gradeX'><td>Service</td><td><strong>{$row['title']}</strong></td><td><strong>{$row['sub_category']}</strong></td><td>{$interested}</td><td>-</td><td><form action='my_service.php' method='GET'><input type='text' name='id' value='{$row['id']}' class='hidden'/><input type='submit' value='View Details'/></form></td><td><form action='delete.php' method='POST'><input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'><input type='text' name='id' value='{$row['id']}' class='hidden'/><input type='submit' value='Remove'/></form></td></tr> ";
                                              }
 
                                              // for orders work on view add is_product u ve forgotten it and subcategory, as well as order id
