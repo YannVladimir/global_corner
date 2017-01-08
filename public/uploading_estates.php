@@ -146,8 +146,8 @@ if($size < (4194304))
      {
  	   $new_image = imagecreatefromjpeg($_FILES['img2']['tmp_name']);
      }
-     $new_width = 300;
-     $new_height = ($height/$width)*300;
+     $new_width = 250;
+     $new_height = ($height/$width)*250;
      $tmp_image = imagecreatetruecolor($new_width, $new_height);
      imagecopyresampled($tmp_image, $new_image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
      imagejpeg($tmp_image, $path, 100);
@@ -189,8 +189,8 @@ if($size < (4194304))
      {
  	   $new_image = imagecreatefromjpeg($_FILES['img3']['tmp_name']);
      }
-     $new_width = 300;
-     $new_height = ($height/$width)*300;
+     $new_width = 250;
+     $new_height = ($height/$width)*250;
      $tmp_image = imagecreatetruecolor($new_width, $new_height);
      imagecopyresampled($tmp_image, $new_image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
      imagejpeg($tmp_image, $path, 100);
@@ -232,8 +232,8 @@ if($size < (4194304))
      {
  	   $new_image = imagecreatefromjpeg($_FILES['img4']['tmp_name']);
      }
-     $new_width = 300;
-     $new_height = ($height/$width)*300;
+     $new_width = 250;
+     $new_height = ($height/$width)*250;
      $tmp_image = imagecreatetruecolor($new_width, $new_height);
      imagecopyresampled($tmp_image, $new_image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
      imagejpeg($tmp_image, $path, 100);
@@ -275,8 +275,8 @@ if(isset($_FILES['img5']))
      {
  	   $new_image = imagecreatefromjpeg($_FILES['img5']['tmp_name']);
      }
-     $new_width = 300;
-     $new_height = ($height/$width)*300;
+     $new_width = 250;
+     $new_height = ($height/$width)*250;
      $tmp_image = imagecreatetruecolor($new_width, $new_height);
      imagecopyresampled($tmp_image, $new_image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
      imagejpeg($tmp_image, $path, 100);
@@ -319,8 +319,8 @@ if(isset($_FILES['img6']))
      {
        $new_image = imagecreatefromjpeg($_FILES['img6']['tmp_name']);
      }
-     $new_width = 300;
-     $new_height = ($height/$width)*300;
+     $new_width = 250;
+     $new_height = ($height/$width)*250;
      $tmp_image = imagecreatetruecolor($new_width, $new_height);
      imagecopyresampled($tmp_image, $new_image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
      imagejpeg($tmp_image, $path, 100);
