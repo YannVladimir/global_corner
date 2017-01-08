@@ -193,7 +193,7 @@ checkToken();
                                              $res = mysqli_query($con,$query);
                                              while($row = mysqli_fetch_assoc($res))
                                              {
-                                               if($row['is_product = 1'])
+                                               if($row['is_product']==1)
                                                {
                                                $sql = "SELECT * FROM users where sell_product = {$row['subcat_id']}";
                                                }
