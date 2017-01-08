@@ -147,7 +147,7 @@ checkToken();
                                             <th>Post title</th>
                                             <th>Category</th>
                                             <th>Interested</th>
-                                            <th>Votes</th>
+                                            <th>Reviews</th>
                                             <th>View & Edit</th>
                                             <th>Delete post</th>
                                         </tr>
@@ -184,7 +184,7 @@ checkToken();
                                                {
                                                  $interested = $interested + 1;
                                                }
-                                               echo "<tr class='odd gradeX'><td>Service</td><td><strong>{$row['title']}</strong></td><td><strong>{$row['sub_category']}</strong></td><td>{$interested}</td><td>-</td><td><form action='my_service.php' method='GET'><input type='text' name='id' value='{$row['id']}' class='hidden'/><input type='submit' value='View Details'/></form></td><td><form action='delete.php' method='POST'><input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'><input type='text' name='id' value='{$row['id']}' class='hidden'/><input type='submit' value='Remove'/></form></td></tr> ";
+                                               echo "<tr class='odd gradeX'><td>Service</td><td><strong>{$row['title']}</strong></td><td><strong>{$row['sub_category']}</strong></td><td>{$interested}</td><td>{$row['total_votes']} Reviews <br> rating: {$row['avg']} </td><td><form action='my_service.php' method='GET'><input type='text' name='id' value='{$row['id']}' class='hidden'/><input type='submit' value='View Details'/></form></td><td><form action='delete.php' method='POST'><input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'><input type='text' name='id' value='{$row['id']}' class='hidden'/><input type='submit' value='Remove'/></form></td></tr> ";
                                              }
 
                                              // for orders work on view add is_product u ve forgotten it and subcategory, as well as order id
