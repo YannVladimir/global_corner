@@ -195,20 +195,35 @@ checkToken();
                                              {
                                                if($row['is_product']==1)
                                                {
-                                               $sql = "SELECT * FROM users where sell_product = {$row['subcat_id']}";
-                                               }
-                                               else
-                                               {
-                                                $sql = "SELECT * FROM users where sell_service = {$row['subcat_id']}";
-                                               }
+                                               $sql = "SELECT * FROM users where sell_product = {$row['category']}";
+                                               $s = "SELECT * FROM subcategories where subcat_id = {$row['category']}";
+                                               $r = mysqli_query($con,$s);
+                                               $o = mysqli_fetch_assoc($r);
                                                $re = mysqli_query($con,$sql);
                                                $interested = 0;
                                                while($ro = mysqli_fetch_assoc($re))
                                                {
                                                  $interested = $interested + 1;
                                                }
-                                               echo "<tr class='odd gradeX'><td>You ordered</td><td><strong>{$row['name']}</strong></td><td><strong>{$row['subcat_name']}</strong></td><td>{$interested}</td><td>-</td><td><form action='my_order.php' method='GET'><input type='text' name='id' value='{$row['id']}' class='hidden'/><input type='submit' value='View Details'/></form></td><td><form action='delete.php' method='POST'><input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'><input type='text' name='id' value='{$row['id']}' class='hidden'/><input type='submit' value='Remove'/></form></td></tr> ";
-                                             }
+                                               echo "<tr class='odd gradeX'><td>You ordered</td><td><strong>{$row['name']}</strong></td><td><strong>{$o['subcat_name']}</strong></td><td>{$interested}</td><td>-</td><td><form action='my_order.php' method='GET'><input type='text' name='id' value='{$row['id']}' class='hidden'/><input type='submit' value='View Details'/></form></td><td><form action='delete.php' method='POST'><input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'><input type='text' name='id' value='{$row['id']}' class='hidden'/><input type='submit' value='Remove'/></form></td></tr> ";
+                                             
+                                               }
+                                               else
+                                               {
+                                                $sql = "SELECT * FROM users where sell_service = {$row['category']}";
+                                                $s = "SELECT * FROM service_subcategories where id = {$row['category']}";
+                                                $r = mysqli_query($con,$s);
+                                                $o = mysqli_fetch_assoc($r);
+                                                $re = mysqli_query($con,$sql);
+                                                $interested = 0;
+                                                while($ro = mysqli_fetch_assoc($re))
+                                                {
+                                                 $interested = $interested + 1;
+                                                }
+                                                echo "<tr class='odd gradeX'><td>You ordered</td><td><strong>{$row['name']}</strong></td><td><strong>{$o['sub_category']}</strong></td><td>{$interested}</td><td>-</td><td><form action='my_order.php' method='GET'><input type='text' name='id' value='{$row['id']}' class='hidden'/><input type='submit' value='View Details'/></form></td><td><form action='delete.php' method='POST'><input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'><input type='text' name='id' value='{$row['id']}' class='hidden'/><input type='submit' value='Remove'/></form></td></tr> ";
+                                             
+                                               }
+                                              }
                                           }
                                        ?>  
                                     </tbody>
