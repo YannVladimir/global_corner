@@ -17,6 +17,28 @@
 				<div class="row">
 					<div class="col-sm-2">
 						<div class="single-widget">
+							<h2>Policies</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="terms-of-use.php">Terms of Use</a></li>
+								<li><a href="posting-rules.php">Posting Rules</a></li>
+								<!--<li><a href="#">Privacy $ Policies</a></li>-->
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>250 Trade</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="about-us.php">About Us</a></li>
+								<li><a href="contact_us.php">Contact Us</a></li>
+								<!--<li><a href="#">Careers</a></li>-->
+								<!--<li><a href="#">Location</a></li>-->
+								<!--<li><a href="#">Copyright</a></li>-->
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
 							<h2>Top Products</h2>
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="category.php?id=1">Computer/Laptops</a></li>
@@ -42,28 +64,7 @@
 							</ul>
 						</div>
 					</div>
-					<div class="col-sm-2">
-						<div class="single-widget">
-							<h2>Policies</h2>
-							<ul class="nav nav-pills nav-stacked">
-								<li><a href="terms-of-use.php">Terms of Use</a></li>
-								<li><a href="posting-rules.php">Posting Rules</a></li>
-								<!--<li><a href="#">Privacy $ Policies</a></li>-->
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-2">
-						<div class="single-widget">
-							<h2>250 Trade</h2>
-							<ul class="nav nav-pills nav-stacked">
-								<li><a href="about-us.php">About Us</a></li>
-								<li><a href="contact_us.php">Contact Us</a></li>
-								<!--<li><a href="#">Careers</a></li>-->
-								<!--<li><a href="#">Location</a></li>-->
-								<!--<li><a href="#">Copyright</a></li>-->
-							</ul>
-						</div>
-					</div>
+					
 					<div class="col-sm-3 col-sm-offset-1">
 						<div class="single-widget">
 							<h2>Stay In TOuch</h2>
