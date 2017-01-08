@@ -17,7 +17,7 @@
 				<div class="row">
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>Top Categories</h2>
+							<h2>Top Products</h2>
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="category.php?id=1">Computer/Laptops</a></li>
 								<li><a href="category.php?id=2">Mobiles</a></li>
@@ -29,15 +29,15 @@
 					</div>
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>Services</h2>
+							<h2>Top Services</h2>
 							<ul class="nav nav-pills nav-stacked">
 								<!--<li><a href="#">Online Help</a></li>-->
-								<li><a href="upload.php">Sell</a></li>
-								<li><a href="categories.php">Buy</a></li>
-                                <li><a href="order.php">Make order</a></li>
-                                <li><a href="orders.php">Orders</a></li>
+								<li><a href="service-sub-category.php?id=4">Sonorization</a></li>
+								<li><a href="service-sub-category.php?id=40">Interior decorators</a></li>
+                                <li><a href="service-sub-category.php?id=37">Car-rentals</a></li>
+                                <li><a href="service-sub-category.php?id=29">Cooks (Abatetsi)</a></li>
                                <!-- <li><a href="#">Free shipping</a></li>-->
-								<li><a href="contact_us.php">Contact Us</a></li>
+								<li><a href="service-sub-category.php?id=21">Music bands</a></li>
 								<!--<li><a href="#">FAQ’s</a></li>-->
 							</ul>
 						</div>
