@@ -1,7 +1,6 @@
 <?php
 ini_set('display_startup_errors',1);
 ini_set('display_errors',1);
-session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
 //checkUser();
@@ -113,8 +112,8 @@ require_once ('../includes/main_functions.php');
   <section>
     <div class="container">
       <div class="row">
-           <div class="col-sm-2"></div>
-        <div class="col-sm-8">
+           <div class="col-sm-1"></div>
+        <div class="col-sm-10">
           
             <?php 
                             $id = $_GET['id'];
@@ -122,25 +121,38 @@ require_once ('../includes/main_functions.php');
                             $res = mysqli_query($con,$query);
                             while($row = mysqli_fetch_assoc($res))
                             {
+                              if($row['is_accepted']==0)
+                              {
+                                $accepted = 'The adminstration is currently verifying this post';
+                              }
+                              else
+                              {
+                                $accepted = '';
+                              }
                               $sub_id = $row['subcat_id']; 
                               echo "<div class='product-details'><!--product-details-->
-            <div class='col-sm-6'>
+            <div class='col-sm-7'>
               <div class='product-information'><!--/product-information-->
                 <!--<img src='assets/images/product-details/new.jpg' class='newarrival' alt='' />-->
                 <span>
                   <span>{$row['name']}</span>
                 </span>
-                <p>{$row['details']}</p>
-                <h2>{$row['price']} Rwf</h2>
+                <p>Category:<b>{$row['cat_name']}</b></p>
+                <p>Sub-Category:<b>{$row['subcat_name']}</b></p>
+                <p>Description: <b>{$row['details']}</b></p>
+                <p>Price: <b>{$row['price']} Rwf</b></p>
                 <p>Seller: <b>{$row['seller']}</b></p>
                 <p>Place:<b> {$row['place_name']}</b></p>
                 <p>Contact number:<b> {$row['contacts']}</b></p>
                 <p>Uploaded Date:<b>{$row['uploaded_date']}</b></p>
+                <p>Current status:<b> {$accepted}</b></p>
+                <p>Category:<b>{$row['cat_name']}</b></p>
+                <p>Sub-Category:<b>{$row['subcat_name']}</b></p>
                 <a href=''><img src='assets/images/product-details/share.png' class='share img-responsive'  alt='' /></a>
               </div><!--/product-information-->
             </div>
 
-            <div class='col-sm-6'>
+            <div class='col-sm-5'>
               <div class='category-tab'><!--photo-tab-->
             
             <div class='tab-content'>
