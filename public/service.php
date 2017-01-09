@@ -138,7 +138,46 @@ require_once ('../includes/main_functions.php');
                             $query = "SELECT * FROM services where id = $id ";
                             $res = mysqli_query($con,$query);
                             while($row = mysqli_fetch_assoc($res))
-                            {
+                            {   
+                                 if($row['is_accepted']==0)
+                              {
+                                $accepted = 'The adminstration is currently verifying this post';
+                              }
+                              else
+                              {
+                                $accepted = '';
+                              }
+                              if($row['avg']==0){
+                                $img = 'Not available <br>';
+                              }
+                              elseif($row['avg']<=1.25)
+                              {
+                                $img = '<img src="assets/images/shop/rating2.png" alt="" />';
+                              }
+                              elseif ($row['avg']>1.25 && $row['avg']<1.75) {
+                                $img = '<img src="assets/images/shop/rating3.png" alt="" />';
+                              }
+                              elseif ($row['avg']>1.75 && $row['avg']<2.25) {
+                                $img = '<img src="assets/images/shop/rating4.png" alt="" />';
+                              }
+                              elseif ($row['avg']>2.25 && $row['avg']<2.75) {
+                                $img = '<img src="assets/images/shop/rating5.png" alt="" />';
+                              }
+                              elseif ($row['avg']>2.75 && $row['avg']<3.25) {
+                                $img = '<img src="assets/images/shop/rating6.png" alt="" />';
+                              }
+                              elseif ($row['avg']>3.25 && $row['avg']<3.75) {
+                                $img = '<img src="assets/images/shop/rating7.png" alt="" />';
+                              }
+                              elseif ($row['avg']>3.75 && $row['avg']<4.25) {
+                                $img = '<img src="assets/images/shop/rating8.png" alt="" />';
+                              }
+                              elseif ($row['avg']>4.25 && $row['avg']<4.75) {
+                                $img = '<img src="assets/images/shop/rating9.png" alt="" />';
+                              }
+                              else{
+                                $img = '<img src="assets/images/shop/rating10.png" alt="" />';
+                              }
                                 echo"<img src='assets/images/posts/{$row['main']}' alt='' />
                                 </div> 
                         </div>
@@ -146,8 +185,8 @@ require_once ('../includes/main_functions.php');
                             <div class='product-information'><!--/product-information-->
                                 <h2>Category, {$row['sub_category']}</h2>
                                 
-                                    <img src='assets/images/shop/rating9.png' alt='' />
-                                    <label>Total votes (46)</label>
+                                    {$img}
+                                    <label>Total votes ({$row['total_votes']})</label>
                                 <span>
                                     <span style='color:#232323;'>{$row['title']}</span>
                                 </span>    
@@ -180,7 +219,7 @@ require_once ('../includes/main_functions.php');
                         </div>
                         <div class="tab-content">
                             <div class="tab-pane fade" id="details" >
-                                <div class="col-sm-3">
+                                <!--<div class="col-sm-3">
                                     <div class="product-image-wrapper">
                                         <div class="single-products">
                                             <div class="productinfo text-center">
@@ -227,11 +266,11 @@ require_once ('../includes/main_functions.php');
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
                             </div>
                             
                             <div class="tab-pane fade" id="companyprofile" >
-                                <div class="col-sm-3">
+                                <!--<div class="col-sm-3">
                                     <div class="product-image-wrapper">
                                         <div class="single-products">
                                             <div class="productinfo text-center">
@@ -278,11 +317,11 @@ require_once ('../includes/main_functions.php');
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
                             </div>
                             
                             <div class="tab-pane fade" id="tag" >
-                                <div class="col-sm-3">
+                                <!--<div class="col-sm-3">
                                     <div class="product-image-wrapper">
                                         <div class="single-products">
                                             <div class="productinfo text-center">
@@ -329,7 +368,7 @@ require_once ('../includes/main_functions.php');
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
                             </div>
                             
                             <div class="tab-pane fade active in" id="reviews" >
