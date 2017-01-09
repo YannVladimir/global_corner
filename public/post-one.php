@@ -146,8 +146,6 @@ require_once ('../includes/main_functions.php');
                 <p>Contact number:<b> {$row['contacts']}</b></p>
                 <p>Uploaded Date:<b>{$row['uploaded_date']}</b></p>
                 <p>Current status:<b> {$accepted}</b></p>
-                <p>Category:<b>{$row['cat_name']}</b></p>
-                <p>Sub-Category:<b>{$row['subcat_name']}</b></p>
                 <a href=''><img src='assets/images/product-details/share.png' class='share img-responsive'  alt='' /></a>
               </div><!--/product-information-->
             </div>
