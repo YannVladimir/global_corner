@@ -106,19 +106,60 @@ checkToken();
             <div class='col-md-6'>
                 <div class='panel panel-default text-center'>
                     <div class='panel-heading'>
-                        <h2 class='panel-title'><strong>Order details </strong></h2>
+                        <h2 class='panel-title'><strong>My order details </strong></h2>
                     </div>
                     
                       <?php
                         $id = $_GET['id'];
-                        $query = "SELECT * from orders where id = '{$id}' and user = '{$_SESSION['id']}'";
+                        $query = "SELECT * from vieworders where id = '{$id}' and user = '{$_SESSION['id']}'";
                         $res = mysqli_query($con,$query);
                         $row = mysqli_fetch_assoc($res);
-                        echo "<ul class='list-group'> 
+                        if($row['is_product']==1)
+                        {
+                          $sql = "SELECT * FROM users where sell_product = {$row['category']}";
+                          $s = "SELECT * FROM subcategories where subcat_id = {$row['category']}";
+                          $r = mysqli_query($con,$s);
+                          $o = mysqli_fetch_assoc($r);
+                          $re = mysqli_query($con,$sql);
+                          $interested = 0;
+                          while($ro = mysqli_fetch_assoc($re))
+                          {
+                           $interested = $interested + 1;
+                          }
+                          echo "<ul class='list-group'> 
+                           <li class='list-group-item'><strong>Title: </strong>{$row['name']}</li>
+                           <li class='list-group-item'><strong>category: </strong>{$o['subcat_name']}</li>
+                           <li class='list-group-item'><strong>Details: </strong>{$row['details']}</li>
+                           <li class='list-group-item'><strong>uploaded-date: </strong>{$row['up_date']}</li>
+                        <li class='list-group-item'><strong>Service providers: </strong>{$interested} sellers <br><a href='' target='blanck'>view details</a></li>
+                        <li class='list-group-item'><strong>Current status: </strong>{$accepted}</li>
+                          <li class='list-group-item'>
+                          <form action='order-delete.php' method='POST'>
+                            <input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'>
+                             <button type='submit' class='btn btn-default bton'>Delete Order</button>
+                          </form>
+                        </li>
+                    </ul>";
+                  }
+                        else
+                        {
+                          $sql = "SELECT * FROM users where sell_service = {$row['category']}";
+                          $s = "SELECT * FROM service_subcategories where id = {$row['category']}";
+                          $r = mysqli_query($con,$s);
+                          $o = mysqli_fetch_assoc($r);
+                          $re = mysqli_query($con,$sql);
+                          $interested = 0;
+                          while($ro = mysqli_fetch_assoc($re))
+                          {
+                           $interested = $interested + 1;
+                          }
+                          echo "<ul class='list-group'> 
                         <li class='list-group-item'><strong>Title: </strong>{$row['name']}</li>
-                        <li class='list-group-item'><strong>category: </strong>{$row['category']}</li>
+                        <li class='list-group-item'><strong>category: </strong>{$o['sub_category']}</li>
                         <li class='list-group-item'><strong>Details: </strong>{$row['details']}</li>
                         <li class='list-group-item'><strong>uploaded-date: </strong>{$row['up_date']}</li>
+                        <li class='list-group-item'><strong>Service providers: </strong>{$interested} sellers <br><a href='' target='blanck'>view details</a></li>
+                        <li class='list-group-item'><strong>Current status: </strong>{$accepted}</li>
                         <li class='list-group-item'>
                           <form action='order-delete.php' method='POST'>
                             <input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'>
@@ -126,6 +167,8 @@ checkToken();
                           </form>
                         </li>
                     </ul>";
+                        }
+                        
                       ?>
                         
                 </div>
