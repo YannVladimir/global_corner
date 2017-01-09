@@ -14,32 +14,32 @@ while($row = mysqli_fetch_assoc($res))
 {
 	if($row['photo1'] == '')
 	{
-		require('post_one.php');
+		require('post-one.php');
 		exit;
 	}
 	elseif ($row['photo2'] == '')
 	{
-		require('post_two.php');
+		require('post-two.php');
 		exit;
 	}
 	elseif ($row['photo3'] == '')
 	{
-		require('post_three.php');
+		require('post-three.php');
 		exit;
 	}
 	elseif ($row['photo4'] == '')
 	{
-		require('post_four.php');
+		require('post-four.php');
 		exit;
 	}	
 	elseif ($row['photo5'] == '')
 	{
-		require('post_five.php');
+		require('post-five.php');
 		exit;
 	}
 	elseif ($row['photo6'] == '')
 	{
-		require('post_six.php');
+		require('post-six.php');
 		exit;
 	}
 	
