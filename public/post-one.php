@@ -127,7 +127,7 @@ require_once ('../includes/main_functions.php');
                               }
                               else
                               {
-                                $accepted = '';
+                                $accepted = ''; 
                               }
                               $sub_id = $row['subcat_id']; 
                               echo "<div class='product-details'><!--product-details-->
