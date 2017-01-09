@@ -114,6 +114,14 @@ checkToken();
                         $query = "SELECT * from vieworders where id = '{$id}' and user = '{$_SESSION['id']}'";
                         $res = mysqli_query($con,$query);
                         $row = mysqli_fetch_assoc($res);
+                        if($row['is_accepted']==0)
+                              {
+                                $accepted = 'The adminstration is currently verifying this post';
+                              }
+                              else
+                              {
+                                $accepted = '';
+                              }
                         if($row['is_product']==1)
                         {
                           $sql = "SELECT * FROM users where sell_product = {$row['category']}";
