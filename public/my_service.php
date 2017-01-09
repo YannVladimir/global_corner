@@ -135,7 +135,7 @@ require_once ('../includes/main_functions.php');
                             <div class="view-product">
                         <?php
                             $id = $_GET['id'];
-                            $query = "SELECT * FROM services where id = $id ";
+                            $query = "SELECT * FROM amaservice where id = $id ";
                             $res = mysqli_query($con,$query);
                             while($row = mysqli_fetch_assoc($res))
                             {
@@ -188,10 +188,8 @@ require_once ('../includes/main_functions.php');
                                 
                                     {$img}
                                     <label>Total votes ({$row['total_votes']})</label>
-                                <span>
-                                    <span style='color:#232323;'>{$row['title']}</span>
-                                </span>    
-                                    <br>
+                                
+                                <p>Title:<b>{$row['title']}</b></p>
                                 <p>Category:<b>{$row['category']}</b></p>
                                 <p>Sub-Category:<b>{$row['sub_category']}</b></p>
                                 <p><b>Seller:</b> {$row['reserved']}</p>

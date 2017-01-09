@@ -135,7 +135,7 @@ require_once ('../includes/main_functions.php');
                             <div class="view-product">
                         <?php
                             $id = $_GET['id'];
-                            $query = "SELECT * FROM services where id = $id ";
+                            $query = "SELECT * FROM amaservice where id = $id ";
                             $res = mysqli_query($con,$query);
                             while($row = mysqli_fetch_assoc($res))
                             {   
