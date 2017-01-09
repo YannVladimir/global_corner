@@ -148,7 +148,7 @@ require_once ('../includes/main_functions.php');
                                 
                                 <p><b>Title:</b>{$row['title']}</p>
                                 <p><b>Category:</b>{$row['category']}</p>
-                                <p><b>Sub-Category:<b>{$row['sub_category']}</b></p>
+                                <p><b>Sub-Category:</b>{$row['sub_category']}</b></p>
                                 <p><b>Seller:</b> {$row['reserved']}</p>
                                 <p><b>Description:</b> {$row['details']}</p>
                                 <p><b>Location:</b> {$row['location']}</p>
