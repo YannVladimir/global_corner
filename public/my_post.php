@@ -6,9 +6,10 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
 //checkUser();
 $id = $_GET['id'];
-$query = "SELECT * FROM items where post_id = '{$id}' and user = '{$_SESSION['id']}'";
+$user = $_SESSION['id'];
+$query = "SELECT * FROM items where post_id = '{$id}' and user = '$user'";
 $res = mysqli_query($con,$query); 
-while($row = mysqli_fetch_assoc($res))
+while($row = mysqli_fetch_assoc($res)) 
 {
 	if($row['photo1'] == '')
 	{
