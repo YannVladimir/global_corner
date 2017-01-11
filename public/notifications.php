@@ -94,7 +94,9 @@ $ss = $row['sell_service'];
                     <br>
                     
                     <div class="category-tab"><!--category-tab-->
-                        
+                        <div class="col-sm-12">
+                           <h2 class="title text-center">Recomended products to buy</h2><br>
+                                    
                                 <?php
                                 $number = 0;
                                 $c = "SELECT * from notifications where target = '{$bp}' and type = 2 order by post_id";
@@ -103,11 +105,9 @@ $ss = $row['sell_service'];
                                 {
                                    $number = $number + 1;
                                 } 
-                                if($number == 0 )
+                                if($number > 0 )
                                 {
-                                  echo'<div class="col-sm-12">
-                                         <h2 class="title text-center">Recomended products to buy</h2><br>
-                                         <ul class="nav nav-tabs">';
+                                  echo'<ul class="nav nav-tabs">';
                                   echo"<li class='pull-left'><a href='sub-category.php?id=$bp'>($number) total products</a></li>
                                          <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='sub-category.php?id=$bp'>View all</a></li>";
                                   echo "</ul>
@@ -173,7 +173,7 @@ $ss = $row['sell_service'];
                                 }
                                 }
                                 }
-                               
+
                                 echo "</div></div>";
 
                                 
