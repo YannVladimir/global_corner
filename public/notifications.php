@@ -114,7 +114,9 @@ $ss = $row['sell_service'];
                                          </div>
                                      <div class='tab-content'> ";
                                   echo "<div class='tab-pane fade active in' id='1' >";
-                                 
+                                 $c = "SELECT * from notifications where target = '{$bp}' and type = 2 order by post_id";
+                                $r = mysqli_query($con,$c);
+                                
                                 while ($ro = mysqli_fetch_assoc($r))
                                 {
                                   $cats = "SELECT * from items where is_accepted =0 ";//and post_id = '{$ro['post_id']}'
