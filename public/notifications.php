@@ -103,7 +103,7 @@ $ss = $row['sell_service'];
                                 {
                                    $number = $number + 1;
                                 } 
-                                if($number > 0 )
+                                if($number == 0 )
                                 {
                                   echo'<div class="col-sm-12">
                                          <h2 class="title text-center">Recomended products to buy</h2><br>
