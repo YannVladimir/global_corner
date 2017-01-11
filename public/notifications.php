@@ -117,7 +117,7 @@ $ss = $row['sell_service'];
                                  
                                 while ($ro = mysqli_fetch_assoc($r))
                                 {
-                                  $cats = "SELECT * from items where is_accepted =1 and post_id = '{$ro['post_id']}'";
+                                  $cats = "SELECT * from items where is_accepted =1 ";
                                   $res = mysqli_query($con,$cats);
                                   while($row = mysqli_fetch_assoc($res))
                                 {
