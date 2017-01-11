@@ -105,7 +105,7 @@ $ss = $row['sell_service'];
                                 {
                                    $number = $number + 1;
                                 } 
-                                if($number)
+                                if($number>=0)
                                 {
                                   if($number == 0)
                                   {
