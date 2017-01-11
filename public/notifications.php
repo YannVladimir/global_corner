@@ -197,7 +197,7 @@ $ss = $row['sell_service'];
 <div class="col-sm-12"><br>
                         <?php
                            $number = 0;
-                                $c = "SELECT * from notifications where target = '{$bs}' and type = 3 and is_accepted = 1 order by post_id";
+                                $c = "SELECT * from notifications where target = '{$bs}' and type = 3 and is_accepted = 1";
                                 $r = mysqli_query($con,$c);
                                 while ($ro = mysqli_fetch_assoc($r))
                                 {
@@ -217,8 +217,7 @@ $ss = $row['sell_service'];
                                   }
                                   else{
                                     echo'<ul class="nav nav-tabs">';
-                                  echo"
-                                         <li class='pull-left' style='cursor:pointer'><a style='cursor:pointer' href='service-sub-category.php?id=$bs'>Total service providers ($number)</a></li>
+                                  echo"<li class='pull-left' style='cursor:pointer'><a style='cursor:pointer' href='service-sub-category.php?id=$bs'>Total service providers ($number)</a></li>
                                          <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='my_acount.php#choosing'>Change category</a></li>";
                                   echo "</ul>
                                          </div>
@@ -233,6 +232,7 @@ $ss = $row['sell_service'];
                                   $res = mysqli_query($con,$cats);
                                   while($row = mysqli_fetch_assoc($res))
                                 {
+
                                  echo "<br><a href='service.php?id={$row['id']}'>
                         <div class='row' style='border: 1px solid #F7F7F0; background:#f6f6f6'>";
                             echo "<div class='col-sm-2'></div>
