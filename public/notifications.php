@@ -196,6 +196,7 @@ $ss = $row['sell_service'];
 ?>
 <div class="col-sm-12"><br>
                         <?php
+                        /*
                            $number = 0;
                                 $c = "SELECT * from notifications where target = '{$bs}' and type = 3 and is_accepted = 1";
                                 $r = mysqli_query($con,$c);
@@ -268,7 +269,7 @@ $ss = $row['sell_service'];
                         echo "</div></div>";
                        }
 }
-                                
+                                */
 //for recomanded service to buy
 ?>
 </div><!--/category-tab-->
