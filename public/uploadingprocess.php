@@ -337,7 +337,11 @@ $select = mysqli_query($con,$queryy);
  $res = mysqli_query($con,$querry);
  if($res)
  {
- 	 echo "<script>alert(' Your post has been uploaded successfully, we thank you by the time we are looking for a customer of your product ');window.location='home.php';</script>";exit;
+        $p = "SELECT * from posts where user = '{$user}' and name = '{$nam}' and seller = '{$seller}' and details = '{$details}'";
+        $pe = mysqli_query($con,$p);
+        $pes = mysqli_fetch_assoc($pe);
+        $a = $pes['id'];
+ 	    echo "<script>alert(' Your post has been uploaded successfully, we thank you by the time we are looking for a customer of your product ');window.location='my_post.php?id=$id';</script>";exit;
  }
  else
  {

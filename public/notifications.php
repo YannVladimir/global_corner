@@ -5,6 +5,15 @@ error_reporting(E_ALL);
 session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
+$a = $_SESSION['id'];
+$query = "SELECT * from users where user_id = '{$a}'";
+$res = mysqli_query($con,$query);
+$row = mysqli_fetch_assoc($res);
+$bp = $row['buy_product'];
+$sp = $row['sell_product'];
+$bs = $row['buy_service'];
+$ss = $row['sell_service'];
+
 ?>
 <!DOCTYPE html> 
 <html lang="en">
@@ -85,30 +94,32 @@ require_once ('../includes/main_functions.php');
                     <br>
                     
                     <div class="category-tab"><!--category-tab-->
-                        <div class="col-sm-12">
-                            <h2 class="title text-center">Recomended products to buy</h2><br>
-                            <ul class="nav nav-tabs">
-                                <?php 
-                                //$query = "SELECT * from categories";
-                                //$res = mysqli_query($con,$query);
-                                //while($row = mysqli_fetch_assoc($res))
-                                //{
-                                  //  if($row['cat_id']==1)
-                                    //{
-                                         echo"<li class='pull-left'><a href='sub-category.php?id=1'>sub_category name (16)</a></li>
-                                         <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='sub-category.php?id=1'>View all</a></li>";
-                                  // }
-                                   
-                                   
-                                //} 
-                      echo "</ul>
-                        </div>
-                        <div class='tab-content'> ";
-                               
-                             echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where is_accepted=1 order by post_id desc limit 20";
-                                $res = mysqli_query($con,$cats);
-                                while($row = mysqli_fetch_assoc($res))
+                        
+                                <?php
+                                $number = 0;
+                                $c = "SELECT * from notifications where target = '{$bp}' and type = 2 order by post_id";
+                                $r = mysqli_query($con,$c);
+                                while ($ro = mysqli_fetch_assoc($r))
+                                {
+                                   $number = $number + 1;
+                                } 
+                                if($number > 0 )
+                                {
+                                  echo'<div class="col-sm-12">
+                                         <h2 class="title text-center">Recomended products to buy</h2><br>
+                                         <ul class="nav nav-tabs">';
+                                  echo"<li class='pull-left'><a href='sub-category.php?id=$bp'>($number) total products</a></li>
+                                         <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='sub-category.php?id=$bp'>View all</a></li>";
+                                  echo "</ul>
+                                         </div>
+                                     <div class='tab-content'> ";
+                                  echo "<div class='tab-pane fade active in' id='1' >";
+                                 
+                                while ($ro = mysqli_fetch_assoc($r))
+                                {
+                                  $cats = "SELECT * from items where is_accepted =1 and post_id = '{$ro['post_id']}'";
+                                  $res = mysqli_query($con,$cats);
+                                  while($row = mysqli_fetch_assoc($res))
                                 {
                                     if ($row['is_auction']==1)
                                  echo "<div class='col-sm-3'>
@@ -159,8 +170,11 @@ require_once ('../includes/main_functions.php');
                                        </div>";
 
                                    
-                                } 
-                                echo "</div>";
+                                }
+                                }
+                                }
+                                 
+                                echo "</div></div>";
 
                                 
 //for recomanded products to buy
