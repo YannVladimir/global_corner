@@ -105,15 +105,28 @@ $ss = $row['sell_service'];
                                 {
                                    $number = $number + 1;
                                 } 
-                                if($number > 0 )
+                                if($number)
                                 {
-                                  echo'<ul class="nav nav-tabs">';
+                                  if($number == 0)
+                                  {
+                                    echo'<ul class="nav nav-tabs">';
+                                  echo"<li class='pull-left'><a href='sub-category.php?id=$bp'>No products available for you</a></li>
+                                         <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='sub-category.php?id=$bp'>View all</a></li>";
+                                  echo "</ul>
+                                         </div>
+                                     <div class='tab-content'> ";
+                                  echo "<div class='tab-pane fade active in' id='1' >";
+                                  }
+                                  else{
+                                    echo'<ul class="nav nav-tabs">';
                                   echo"<li class='pull-left'><a href='sub-category.php?id=$bp'>($number) total products</a></li>
                                          <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='sub-category.php?id=$bp'>View all</a></li>";
                                   echo "</ul>
                                          </div>
                                      <div class='tab-content'> ";
                                   echo "<div class='tab-pane fade active in' id='1' >";
+                                  }
+                                  
                                  $c = "SELECT * from notifications where target = '{$bp}' and type = 2 order by post_id limit 20";
                                  $r = mysqli_query($con,$c);
                                  while ($ro = mysqli_fetch_assoc($r))
@@ -174,14 +187,7 @@ $ss = $row['sell_service'];
                                 }
                                 }
                                 }
-                                else
-                                {
-                                  echo'<ul class="nav nav-tabs">';
-                                  echo"<li class='pull-left'><a href='sub-category.php?id=$bp'>($number) total products</a></li>
-                                         <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='sub-category.php?id=$bp'>View all</a></li>";
-                                  echo "</ul>
-                                         </div> ";
-                                }
+                               
                                 echo "</div></div>";
 
                                 
