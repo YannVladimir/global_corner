@@ -138,7 +138,7 @@ require_once ('../includes/main_functions.php');
                        {
                         echo "<br><a href='service.php?id={$row['id']}'>
                         <div class='row' style='border: 1px solid #F7F7F0; background:#f6f6f6'>";
-                            echo "<div class='col-sm-6'>
+                            echo "<div class='col-sm-5'>
                                      <div class='product-image-wrapper'>
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
@@ -154,7 +154,7 @@ require_once ('../includes/main_functions.php');
                                         </div>
                                      </div>
                                   </div>
-                                  <div class='col-sm-6'>
+                                  <div class='col-sm-7'>
                                       <div class='product-information' style='border-left-style:none;border-bottom-style:none'><!--/product-information-->
                                         <img src='assets/images/shop/rating7.png' class='newarrival' alt='' />
                                         <span>
