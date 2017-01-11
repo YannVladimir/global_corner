@@ -62,12 +62,12 @@ if(checkIsStringSetPost('izina'))
          }
          else
          {
-            $photo = 'error';
+            $photo = 'noimage.jpg';
          }
         }
         else
         {
-          $photo = 'error';
+          $photo = 'noimage.jpg';
         }
     }
     if(isset($_FILES['img1']))
@@ -287,7 +287,11 @@ if(checkIsStringSetPost('izina'))
     {
         $q = "UPDATE users set sell_service ='{$category}' where user_id ='{$user}'";
         $r = mysqli_query($con,$q);
-        echo "<script>alert(' Your post has been uploaded successfully, we thank you by the time we are looking for a customer of your service ');window.location='home.php';</script>";exit;
+        $p = "SELECT * from services where user = '{$user}' and title = '{$nam}' and reserved = '{$seller}' and details = '{$details}'";
+        $pe = mysqli_query($con,$p);
+        $pes = mysqli_fetch_assoc($pe);
+        $a = $pes['id'];
+        echo "<script>alert(' Your post has been uploaded successfully, we thank you by the time we are looking for a customer of your service ');window.location='my_service.php?id=$a';</script>";exit;
     }
     else
     {
