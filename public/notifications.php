@@ -173,6 +173,10 @@ $ss = $row['sell_service'];
                                 }
                                 }
                                 }
+                                else
+                                {
+                                  echo "no post available";
+                                }
                                  
                                 echo "</div></div>";
 
