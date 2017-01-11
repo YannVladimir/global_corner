@@ -110,8 +110,8 @@ $ss = $row['sell_service'];
                                   if($number == 0)
                                   {
                                     echo'<ul class="nav nav-tabs">';
-                                  echo"<li class='pull-left'><a href='sub-category.php?id=$bp'>No products available for you</a></li>
-                                         <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='sub-category.php?id=$bp'>View all</a></li>";
+                                  echo"<li class='pull-left'><a href='my_acount.php#choosing'>Products: Not available</a></li>
+                                         <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='my_acount.php#choosing'>Choose category</a></li>";
                                   echo "</ul>
                                          </div>
                                      <div class='tab-content'> ";
@@ -120,7 +120,8 @@ $ss = $row['sell_service'];
                                   else{
                                     echo'<ul class="nav nav-tabs">';
                                   echo"<li class='pull-left'><a href='sub-category.php?id=$bp'>($number) total products</a></li>
-                                         <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='sub-category.php?id=$bp'>View all</a></li>";
+                                         <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='sub-category.php?id=$bp'>View all</a></li>
+                                         <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='my_acount.php#choosing'>Choose category</a></li>";
                                   echo "</ul>
                                          </div>
                                      <div class='tab-content'> ";
