@@ -99,7 +99,7 @@ $ss = $row['sell_service'];
                                     
                                 <?php
                                 $number = 0;
-                                $c = "SELECT * from notifications where target = '{$bp}' and type = 2 and is_accepted =1  order by post_id";
+                                $c = "SELECT * from notifications where target = '{$bp}' and type = 2 order by post_id";
                                 $r = mysqli_query($con,$c);
                                 while ($ro = mysqli_fetch_assoc($r))
                                 {
