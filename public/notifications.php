@@ -95,11 +95,11 @@ $ss = $row['sell_service'];
                     
                     <div class="category-tab"><!--category-tab-->
                         <div class="col-sm-12">
-                           <h2 class="title text-center">Recomended products and services to buy</h2><br>
+                           <h2 class="title text-center">Recomended products and services to buy</h2><br><br>
                                     
                                 <?php
                                 $number = 0;
-                                $c = "SELECT * from notifications where target = '{$bp}' and type = 2 order by post_id";
+                                $c = "SELECT * from notifications where target = '{$bp}' and type = 2 and is_accepted =1  order by post_id";
                                 $r = mysqli_query($con,$c);
                                 while ($ro = mysqli_fetch_assoc($r))
                                 {
@@ -174,7 +174,16 @@ $ss = $row['sell_service'];
                                 }
                                 }
                                 }
-
+                                else
+                                {
+                                  echo'<ul class="nav nav-tabs">';
+                                  echo"<li class='pull-left'><a href='sub-category.php?id=$bp'>($number) total products</a></li>
+                                         <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='sub-category.php?id=$bp'>View all</a></li>";
+                                  echo "</ul>
+                                         </div>
+                                     <div class='tab-content'> ";
+                                  echo "</div>";
+                                }
                                 echo "</div></div>";
 
                                 
