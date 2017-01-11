@@ -174,7 +174,7 @@ $ss = $row['sell_service'];
                                 }
                                 }
                                  
-                                echo "</div></div>";
+                                echo "</div>";
 
                                 
 //for recomanded products to buy
