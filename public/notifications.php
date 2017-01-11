@@ -180,9 +180,7 @@ $ss = $row['sell_service'];
                                   echo"<li class='pull-left'><a href='sub-category.php?id=$bp'>($number) total products</a></li>
                                          <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='sub-category.php?id=$bp'>View all</a></li>";
                                   echo "</ul>
-                                         </div>
-                                     <div class='tab-content'> ";
-                                  echo "</div>";
+                                         </div> ";
                                 }
                                 echo "</div></div>";
 
