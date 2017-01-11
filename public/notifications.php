@@ -179,8 +179,7 @@ $ss = $row['sell_service'];
                                 
 //for recomanded products to buy
 ?>
-<div class="col-sm-12">
-                            <h2 class="title text-center">Recomended service providers</h2><br>
+<div class="col-sm-12"><br><br><br>
                             <ul class="nav nav-tabs">
                                 <?php 
                                 //$query = "SELECT * from categories";
