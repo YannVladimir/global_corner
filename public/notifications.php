@@ -118,7 +118,7 @@ $ss = $row['sell_service'];
                                  $r = mysqli_query($con,$c);
                                  while ($ro = mysqli_fetch_assoc($r))
                                  {
-                                  $cats = "SELECT * from items where post_id = '{$ro['post_id']}'";//and is_accepted =1
+                                  $cats = "SELECT * from items where post_id = '{$ro['post_id']}' and is_accepted =1";
                                   $res = mysqli_query($con,$cats);
                                   while($row = mysqli_fetch_assoc($res))
                                 {
@@ -180,7 +180,7 @@ $ss = $row['sell_service'];
                                 
 //for recomanded products to buy
 ?>
-<div class="col-sm-12"><br><br><br>
+<div class="col-sm-12"><br>
                             <ul class="nav nav-tabs">
                                 <?php 
                                 //$query = "SELECT * from categories";
