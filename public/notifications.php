@@ -308,7 +308,7 @@ $ss = $row['sell_service'];
                                   echo "<div class='tab-pane fade active in' id='1' >";
                                   }
                                   
-                                 $c = "SELECT * from notifications where target = '{$sp}' and type = 3 order by post_id limit 20";
+                                 $c = "SELECT * from notifications where target = '{$sp}' and type = 1 order by post_id limit 20";
                                  $r = mysqli_query($con,$c);
                                  while ($ro = mysqli_fetch_assoc($r))
                                  {
