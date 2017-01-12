@@ -196,7 +196,7 @@ $ss = $row['sell_service'];
 ?>
 <div class="col-sm-12"><br>
                         <?php
-                        /*
+                        
                            $number = 0;
                                 $c = "SELECT * from notifications where target = '{$bs}' and type = 3 and is_accepted = 1";
                                 $r = mysqli_query($con,$c);
@@ -216,7 +216,8 @@ $ss = $row['sell_service'];
                                      <div class='tab-content'> ";
                                   echo "<div class='tab-pane fade active in' id='1' >";
                                   }
-                                  else{
+                                  else
+                                  {
                                     echo'<ul class="nav nav-tabs">';
                                   echo"<li class='pull-left' style='cursor:pointer'><a style='cursor:pointer' href='service-sub-category.php?id=$bs'>Total service providers ($number)</a></li>
                                          <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='my_acount.php#choosing'>Change category</a></li>";
@@ -268,8 +269,9 @@ $ss = $row['sell_service'];
 
                         echo "</div></div>";
                        }
+                       }
 }
-                                */
+                                
 //for recomanded service to buy
 ?>
 </div><!--/category-tab-->
