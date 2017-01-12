@@ -312,10 +312,10 @@ $ss = $row['sell_service'];
                                  $r = mysqli_query($con,$c);
                                  while ($ro = mysqli_fetch_assoc($r))
                                  {
-                                  $cats = "SELECT * from vieworders where id = '{$ro['post_id']}' and is_accepted =0 and is_product=1 ";
+                                  $cats = "SELECT * from vieworders where id = '{$ro['post_id']}' and is_accepted = 0 and is_product= 0 ";
                                   $res = mysqli_query($con,$cats);
                                   while($row = mysqli_fetch_assoc($res))
-                                {
+                                  {
                                      echo " <div class='col-sm-4'>
                         <div class='panel panel-default text-center'>
                             <div class='panel-heading'>
