@@ -274,110 +274,193 @@ $ss = $row['sell_service'];
                                 
 //for recomanded service to buy
 ?>
+<div class="col-sm-12">
+                           <h2 class="title text-center">Recomended products and services to buy</h2><br>
+                                    
+                                <?php
+                                $number = 0;
+                                $c = "SELECT * from notifications where target = '{$bp}' and type = 2 and is_accepted = 1 order by post_id";
+                                $r = mysqli_query($con,$c);
+                                while ($ro = mysqli_fetch_assoc($r))
+                                {
+                                   $number = $number + 1;
+                                } 
+                                if($number>=0)
+                                {
+                                  if($number == 0)
+                                  {
+                                    echo'<ul class="nav nav-tabs">';
+                                  echo"<li class='pull-left'><a href='my_acount.php#choosing'>Products: Not available</a></li>
+                                         <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='my_acount.php#choosing'>Choose category</a></li>";
+                                  echo "</ul>
+                                         </div>
+                                     <div class='tab-content'> ";
+                                  echo "<div class='tab-pane fade active in' id='1' >";
+                                  }
+                                  else{
+                                    echo'<ul class="nav nav-tabs">';
+                                  echo"
+                                         <li class='pull-left' style='cursor:pointer'><a style='cursor:pointer' href='sub-category.php?id=$bp'>Total products ($number)</a></li>
+                                         <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='my_acount.php#choosing'>Change category</a></li>";
+                                  echo "</ul>
+                                         </div>
+                                     <div class='tab-content'> ";
+                                  echo "<div class='tab-pane fade active in' id='1' >";
+                                  }
+                                  
+                                 $c = "SELECT * from notifications where target = '{$bp}' and type = 2 order by post_id limit 20";
+                                 $r = mysqli_query($con,$c);
+                                 while ($ro = mysqli_fetch_assoc($r))
+                                 {
+                                  $cats = "SELECT * from items where post_id = '{$ro['post_id']}' and is_accepted =1";
+                                  $res = mysqli_query($con,$cats);
+                                  while($row = mysqli_fetch_assoc($res))
+                                {
+                                    if ($row['is_auction']==1)
+                                 echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']} District</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                
+                                         </div>
+                                       </div>";
+                                       else
+                                        echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']} District</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                
+                                         </div>
+                                       </div>";
+
+                                   
+                                }
+                                }
+                                }
+                               
+                                echo "</div></div>";
+
+                                
+//for recomanded products to buy
+?>
+<div class="col-sm-12"><br>
+                        <?php
+                        
+                           $number = 0;
+                                $c = "SELECT * from notifications where target = '{$bs}' and type = 3 and is_accepted = 1";
+                                $r = mysqli_query($con,$c);
+                                while ($ro = mysqli_fetch_assoc($r))
+                                {
+                                   $number = $number + 1;
+                                } 
+                                if($number>=0)
+                                {
+                                  if($number == 0)
+                                  {
+                                    echo'<ul class="nav nav-tabs">';
+                                  echo"<li class='pull-left'><a href='my_acount.php#choosing'>Service Providers: Not available</a></li>
+                                         <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='my_acount.php#choosing'>Choose category</a></li>";
+                                  echo "</ul>
+                                         </div>
+                                     <div class='tab-content'> ";
+                                  echo "<div class='tab-pane fade active in' id='1' >";
+                                  }
+                                  else
+                                  {
+                                    echo'<ul class="nav nav-tabs">';
+                                  echo"<li class='pull-left' style='cursor:pointer'><a style='cursor:pointer' href='service-sub-category.php?id=$bs'>Total service providers ($number)</a></li>
+                                         <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='my_acount.php#choosing'>Change category</a></li>";
+                                  echo "</ul>
+                                         </div>
+                                     <div class='tab-content'> ";
+                                  echo "<div class='tab-pane fade active in' id='1' >";
+                                  }
+                                $c = "SELECT * from notifications where target = '{$bs}' and type = 3 order by post_id limit 20";
+                                 $r = mysqli_query($con,$c);
+                                 while ($ro = mysqli_fetch_assoc($r))
+                                 {
+                                  $cats = "SELECT * from amaservice where id = '{$ro['post_id']}' and is_accepted =1";
+                                  $res = mysqli_query($con,$cats);
+                                  while($row = mysqli_fetch_assoc($res))
+                                {
+
+                                 echo "<br><a href='service.php?id={$row['id']}'>
+                        <div class='row' style='border: 1px solid #F7F7F0; background:#f6f6f6'>";
+                            echo "<div class='col-sm-2'></div>
+                            <div class='col-sm-4'>
+                                     <div class='product-image-wrapper'>
+                                        <div class='single-products'>
+                                            <div class='productinfo text-center'>
+                                                 <div class='sizingimages'>
+                                                    <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                  </div>
+                                            </div>
+                                            <div class='product-overlay' style='opacity:0.9'>
+                                                 <div class='overlay-content'>
+                                                     <a href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                 </div>
+                                            </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <div class='col-sm-5'>
+                                      <div class='product-information' style='border-left-style:none;border-bottom-style:none'><!--/product-information-->
+                                        <img src='assets/images/shop/rating7.png' class='newarrival' alt='' />
+                                        <span>
+                                          <h2>{$row['reserved']}</h2>
+                                        </span>
+                                        <p>Contact number:<b> {$row['phone']}</b></p>
+                                        <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
+                                        <p><b></b></p><br>
+                                        <p style='text-align:center;'><a style='background:#90DC60; color:white;' href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a><p>
+                                        </div><!--/product-information-->
+            </div>";
+
+                        echo "</div></div>";
+                       }
+                       }
+}
+                                
+//for recomanded service to buy
+?>
 </div><!--/category-tab-->
 </div> 
-</div><!--/row-->
-<div class="row">
-    <div class="col-sm-12"><br><br><br><h2 class="title text-center">Recomended clients</h2><br>
-     <ul class="nav nav-tabs">
-  <?php
-  echo "<li class='pull-left'><a href='orders.php'>Service client</a></li>";
-  echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='orders.php'>View All</a></li>";
-  echo "</ul>";
-  ?>
-</div>
-  <!--<div class='col-sm-2'></div>-->
-                <div class='col-sm-12'>
-                           
-                                <?php 
-                              
-                
-                        echo "<div class='tab-content'> ";
-                               
-                             echo "<div class='tab-pane fade active in' id='1' >";
-                               $query = "SELECT * from vieworders where is_accepted = 1 order by id desc limit 10";
-                               $res = mysqli_query($con,$query);
-                                while($row = mysqli_fetch_assoc($res))
-                                {
-                                 echo " <div class='col-sm-4'>
-                        <div class='panel panel-default text-center'>
-                            <div class='panel-heading'>
-                                <h2 class='panel-title'><strong>{$row['name']} </strong></h2>
-                            </div>";
-                      echo "<ul class='list-group'>
-                               <li class='list-group-item'><strong></strong>{$row['details']}</li>
-                               <li class='list-group-item'><strong></strong>{$row['place']}</li>
-                               <li class='list-group-item'><strong></strong>{$row['up_date']}</li>
-                               <li class='list-group-item'>
-                                 <form action='contact-dealer.php' method='GET'>
-                                  <input type='text' name='id' value='{$row['id']}' class='hidden'>
-                                  <button type='submit' class='btn btn-default bton'>Answer me</button>
-                                 </form>
-                               </li>
-                            </ul>
-                        </div>
-                   </div>";
-                       
-                                } 
-                                
-
-                                
-//for orders
-?>
-                
-            </div>
-            <ul class="nav nav-tabs">
-  <?php
-  echo "<li class='pull-left'><a href='orders.php'>Product clients</a></li>";
-  echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='orders.php'>View All</a></li>";
-  echo "</ul>";
-  ?>
-  <!--<div class='col-sm-2'></div>-->
-                <div class='col-sm-12'>
-                           
-                                <?php 
-                              
-                
-                        echo "<div class='tab-content'> ";
-                               
-                             echo "<div class='tab-pane fade active in' id='1' >";
-                               $query = "SELECT * from vieworders where is_accepted = 1 order by id desc limit 10";
-                               $res = mysqli_query($con,$query);
-                                while($row = mysqli_fetch_assoc($res))
-                                {
-                                 echo " <div class='col-sm-4'>
-                        <div class='panel panel-default text-center'>
-                            <div class='panel-heading'>
-                                <h2 class='panel-title'><strong>{$row['name']} </strong></h2>
-                            </div>";
-                      echo "<ul class='list-group'>
-                               <li class='list-group-item'><strong></strong>{$row['details']}</li>
-                               <li class='list-group-item'><strong></strong>{$row['place']}</li>
-                               <li class='list-group-item'><strong></strong>{$row['up_date']}</li>
-                               <li class='list-group-item'>
-                                 <form action='contact-dealer.php' method='GET'>
-                                  <input type='text' name='id' value='{$row['id']}' class='hidden'>
-                                  <button type='submit' class='btn btn-default bton'>Answer me</button>
-                                 </form>
-                               </li>
-                            </ul>
-                        </div>
-                   </div>";
-                       
-                                } 
-                                
-
-                                
-//for orders
-?>
-                
-            </div>
-          <div class="col-sm-2"></div>
-</div><!--row-->   
+</div><!--/row-->  
     </div>
     </div>
   </section>
-  <br><br><br><br><br><br>
+  <br><br><br><br>
   <?php  
       require('footer.php');    
     ?>
