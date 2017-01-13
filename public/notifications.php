@@ -193,7 +193,7 @@ $ss = $row['sell_service'];
 
                                 
 //for recomanded products to buy
-?>
+?></div>
 <div class="col-sm-12"><br>
                         <?php
                         
@@ -279,7 +279,7 @@ $ss = $row['sell_service'];
                                     
                                 <?php
                                 $numbera = 0;
-                                $ca = "SELECT * from notifications where target = '{$sp}' and type = 1 and is_accepted = 0 order by post_id";
+                                $ca = "SELECT * from notifications where target = '{$sp}' and type = 1 and is_accepted = 1 and is_product = 1";
                                 $ra = mysqli_query($con,$ca);
                                 while ($roa = mysqli_fetch_assoc($ra))
                                 {
@@ -308,11 +308,11 @@ $ss = $row['sell_service'];
                                   echo "<div class='tab-pane fade active in' id='1' >";
                                   }
                                   
-                                 $ca = "SELECT * from notifications where target = '{$sp}' and type = 1 order by post_id limit 20";
+                                 $ca = "SELECT * from notifications where target = '{$sp}' and type = 1 and is_accepted = 1 and is_product = 1 order by post_id desc limit 16";
                                  $ra = mysqli_query($con,$ca);
                                  while ($roa = mysqli_fetch_assoc($ra))
                                  {
-                                  $catsa = "SELECT * from vieworders where id = '{$roa['post_id']}' ";
+                                  $catsa = "SELECT * from vieworders where id = '{$roa['post_id']}'";
                                   $resa = mysqli_query($con,$catsa);
                                   while($rowa = mysqli_fetch_assoc($resa))
                                   {
@@ -333,17 +333,6 @@ $ss = $row['sell_service'];
                                                 </li>
                                              </ul>
                                           </div>";
-                                     /*echo " 
-                           
-                                
-                            ";
-                      echo "
-                               
-                               
-                            
-                        </div>
-                   </div>"; */
-
                                    
                                 }
                                 }
@@ -355,85 +344,70 @@ $ss = $row['sell_service'];
 //for recomanded products to buy
 ?>
 <div class="col-sm-12"><br>
-                        <?php
-                        
-                           $number = 0;
-                                $c = "SELECT * from notifications where target = '{$bs}' and type = 3 and is_accepted = 1";
-                                $r = mysqli_query($con,$c);
-                                while ($ro = mysqli_fetch_assoc($r))
+                            
+                                <?php
+                                $numbera = 0;
+                                $ca = "SELECT * from notifications where target = '{$sp}' and type = 1 and is_accepted = 1 and is_product = 1";
+                                $ra = mysqli_query($con,$ca);
+                                while ($roa = mysqli_fetch_assoc($ra))
                                 {
-                                   $number = $number + 1;
+                                   $numbera = $numbera + 1;
                                 } 
-                                if($number>=0)
+                                if($numbera>=0)
                                 {
-                                  if($number == 0)
+                                  if($numbera == 0)
                                   {
                                     echo'<ul class="nav nav-tabs">';
-                                  echo"<li class='pull-left'><a href='my_acount.php#choosing'>Service Providers: Not available</a></li>
+                                  echo"<li class='pull-left'><a href='my_acount.php#choosing'>Products orders: Not available</a></li>
                                          <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='my_acount.php#choosing'>Choose category</a></li>";
                                   echo "</ul>
                                          </div>
                                      <div class='tab-content'> ";
                                   echo "<div class='tab-pane fade active in' id='1' >";
                                   }
-                                  else
-                                  {
+                                  else{
                                     echo'<ul class="nav nav-tabs">';
-                                  echo"<li class='pull-left' style='cursor:pointer'><a style='cursor:pointer' href='service-sub-category.php?id=$bs'>Total service providers ($number)</a></li>
+                                  echo"
+                                         <li class='pull-left' style='cursor:pointer'><a style='cursor:pointer' href='sub-category.php?id=$sp'>Total product orders ($numbera)</a></li>
                                          <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='my_acount.php#choosing'>Change category</a></li>";
                                   echo "</ul>
                                          </div>
                                      <div class='tab-content'> ";
                                   echo "<div class='tab-pane fade active in' id='1' >";
                                   }
-                                $c = "SELECT * from notifications where target = '{$bs}' and type = 3 order by post_id limit 20";
-                                 $r = mysqli_query($con,$c);
-                                 while ($ro = mysqli_fetch_assoc($r))
+                                  
+                                 $ca = "SELECT * from notifications where target = '{$sp}' and type = 1 and is_accepted = 1 and is_product = 1 order by post_id desc limit 16";
+                                 $ra = mysqli_query($con,$ca);
+                                 while ($roa = mysqli_fetch_assoc($ra))
                                  {
-                                  $cats = "SELECT * from amaservice where id = '{$ro['post_id']}' and is_accepted =1";
-                                  $res = mysqli_query($con,$cats);
-                                  while($row = mysqli_fetch_assoc($res))
-                                {
-
-                                 echo "<br><a href='service.php?id={$row['id']}'>
-                        <div class='row' style='border: 1px solid #F7F7F0; background:#f6f6f6'>";
-                            echo "<div class='col-sm-2'></div>
-                            <div class='col-sm-4'>
-                                     <div class='product-image-wrapper'>
-                                        <div class='single-products'>
-                                            <div class='productinfo text-center'>
-                                                 <div class='sizingimages'>
-                                                    <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
-                                                  </div>
-                                            </div>
-                                            <div class='product-overlay' style='opacity:0.9'>
-                                                 <div class='overlay-content'>
-                                                     <a href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                                 </div>
-                                            </div>
-                                        </div>
-                                     </div>
-                                  </div>
-                                  <div class='col-sm-5'>
-                                      <div class='product-information' style='border-left-style:none;border-bottom-style:none'><!--/product-information-->
-                                        <img src='assets/images/shop/rating7.png' class='newarrival' alt='' />
-                                        <span>
-                                          <h2>{$row['reserved']}</h2>
-                                        </span>
-                                        <p>Contact number:<b> {$row['phone']}</b></p>
-                                        <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
-                                        <p><b></b></p><br>
-                                        <p style='text-align:center;'><a style='background:#90DC60; color:white;' href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a><p>
-                                        </div><!--/product-information-->
-            </div>";
-
-                        echo "</div></div>";
-                       }
-                       }
-}
-                                
-//for recomanded service to buy
-?>
+                                  $catsa = "SELECT * from vieworders where id = '{$roa['post_id']}'";
+                                  $resa = mysqli_query($con,$catsa);
+                                  while($rowa = mysqli_fetch_assoc($resa))
+                                  {
+                                    echo "<div class='col-sm-6'>
+                                             <div class='panel panel-default text-center'>
+                                                 <div class='panel-heading'>
+                                                 <h2 class='panel-title'><strong>{$rowa['name']} </strong></h2>
+                                             </div>
+                                             <ul class='list-group'>
+                                                <li class='list-group-item'><strong></strong>{$rowa['details']}</li>
+                                                <li class='list-group-item'><strong></strong>{$rowa['place']}</li>
+                                                <li class='list-group-item'><strong></strong>{$rowa['up_date']}</li>
+                                                <li class='list-group-item'>
+                                                    <form action='contact-dealer.php' method='GET'>
+                                                       <input type='text' name='id' value='{$rowa['id']}' class='hidden'>
+                                                       <button type='submit' class='btn btn-default bton'>Answer me</button>
+                                                    </form>
+                                                </li>
+                                             </ul>
+                                          </div>";
+                                   
+                                }
+                                }
+                                }
+                               
+                                echo "</div></div>";
+                                ?>
 </div><!--/category-tab-->
 </div> 
 </div><!--/row-->  
