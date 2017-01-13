@@ -193,7 +193,7 @@ $ss = $row['sell_service'];
 
                                 
 //for recomanded products to buy
-?></div>
+?>
 <div class="col-sm-12"><br>
                         <?php
                         
