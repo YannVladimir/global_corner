@@ -312,7 +312,7 @@ $ss = $row['sell_service'];
                                  $ra = mysqli_query($con,$ca);
                                  while ($roa = mysqli_fetch_assoc($ra))
                                  {
-                                  $catsa = "SELECT * from vieworders ";
+                                  $catsa = "SELECT * from vieworders where id = '{$roa['post_id']}' ";
                                   $resa = mysqli_query($con,$catsa);
                                   while($rowa = mysqli_fetch_assoc($resa))
                                   {
