@@ -2,7 +2,7 @@
 
   require('header.php');
 ?>    
-        <div id="page-wrapper">
+        <div id="page-wrapper"> 
 
             <div class="container-fluid">
 
@@ -36,7 +36,7 @@
                                     </thead>
                                     <tbody>
                                        <?php 
-                                           $query = "SELECT * FROM items where refcat_id != 5 and refcat_id != 7 order by post_id desc";
+                                           $query = "SELECT * FROM items where refcat_id order by post_id desc";
                                            $res = mysqli_query($con,$query);
                                            while($row = mysqli_fetch_assoc($res))
                                            {
