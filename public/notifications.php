@@ -312,7 +312,7 @@ $ss = $row['sell_service'];
                                  $r = mysqli_query($con,$c);
                                  while ($ro = mysqli_fetch_assoc($r))
                                  {
-                                  $cats = "SELECT * from vieworders where id = '{$ro['post_id']}' and is_accepted = 0 and is_product= 0 ";
+                                  $cats = "SELECT * from vieworders ";
                                   $res = mysqli_query($con,$cats);
                                   while($row = mysqli_fetch_assoc($res))
                                   {
