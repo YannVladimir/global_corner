@@ -5,6 +5,14 @@ error_reporting(E_ALL);
 session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
+if(!isset($_SESSION['id']))
+{
+  $id = $_GET['id'];
+  $_SESSION['message'] = 'Please log in to your acount to continue';
+  $_SESSION['page'] = 'my_order'; 
+  require_once ('login.php?id=$id');
+  exit;
+}
 //checkUser();
 checkToken();
 ?>
@@ -108,7 +116,7 @@ checkToken();
                     <div class='panel-heading'>
                         <h2 class='panel-title'><strong>My order details </strong></h2>
                     </div>
-                    
+                     
                       <?php
                         $id = $_GET['id'];
                         $query = "SELECT * from vieworders where id = '{$id}' and user = '{$_SESSION['id']}'";

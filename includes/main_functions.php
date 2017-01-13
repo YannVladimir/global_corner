@@ -1,7 +1,7 @@
  
 	<?php
     function generateUser()
-    {
+    { 
         $_SESSION['u'] = '0';
     }    
     function checkAdmin()
@@ -74,8 +74,50 @@
 	        }
 	        else
 	        {
-                $_SESSION['u'] = '0';
-	        	header("location: home.php");
+                $_SESSION['u'] = '0'; 
+                if(isset($_SESSION['page']))
+                {
+                   if($_SESSION['page'] == 'my_order')
+                   {
+                    $ids = $_GET['id'];
+                    unset($_SESSION['page']);
+                    header("location: my_order.php?id=$ids");
+                   }
+                   elseif ($_SESSION['page'] == 'notifications') 
+                   {
+                    unset($_SESSION['page']);
+                    header("location: notifications.php");
+                   }
+                   elseif ($_SESSION['page'] == 'edit_my_acount') 
+                   {
+                    unset($_SESSION['page']);
+                    header("location: edit_my_acount.php");
+                   }
+                   elseif ($_SESSION['page'] == 'my_acount') 
+                   {
+                    unset($_SESSION['page']);
+                    header("location: my_acount.php");
+                   }
+
+                   elseif ($_SESSION['page'] == 'my_post') 
+                   {
+                    $ids = $_GET['id'];
+                    unset($_SESSION['page']);
+                    header("location: my_post.php?id=$ids");
+                   }
+                   elseif ($_SESSION['page'] == 'my_service') 
+                   {
+                    $ids = $_GET['id'];
+                    unset($_SESSION['page']);
+                    header("location: my_service.php?id=$ids");
+                   }
+                }
+                else
+                {
+                   header("location: home.php");    
+                }
+                
+	        	
 	        }exit();
 	         
         }

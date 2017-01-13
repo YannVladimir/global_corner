@@ -59,46 +59,6 @@
                     </div>
 
                     <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-eye fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">
-                                         <?php 
-                                           $query = "SELECT * FROM saved_emails";
-                                           $res = mysqli_query($con,$query);
-                                           $count = 0;
-                                           $a = 0;
-                                           while($row = mysqli_fetch_assoc($res))
-                                           {
-                                            $count++;
-                                            if($row['seen']==0){
-                                            $a++;}     
-                                           }
-                                           echo " $a";
-                                           echo "</div>";
-                                           echo "<div>";
-                                           echo "$count ";
-                                           echo " Total</div>"
-                                          ?>
-                                        
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="saved_emails.php">
-                                <div class="panel-footer">
-                                    <span class="pull-left">People in touch</span>
-                                    <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
                         <div class="panel panel-yellow">
                             <div class="panel-heading">
                                 <div class="row">
@@ -108,7 +68,7 @@
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">
                                          <?php 
-                                           $query = "SELECT * FROM orders";
+                                           $query = "SELECT * FROM vieworders";
                                            $res = mysqli_query($con,$query);
                                            $count = 0;
                                            $a = 0;
@@ -148,30 +108,26 @@
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">
                                          <?php 
-                                           $query = "SELECT * FROM contactus";
+                                           $query = "SELECT * FROM votes where is_new=0";
                                            $res = mysqli_query($con,$query);
                                            $count = 0;
-                                           $a = 0;
                                            while($row = mysqli_fetch_assoc($res))
                                            {
-                                            $count++;
-                                            if($row['seen']==0){
-                                            $a++;}     
+                                            $count++;    
                                            }
-                                           echo " $a";
+                                           echo " $count";
                                            echo "</div>";
                                            echo "<div>";
-                                           echo "$count ";
-                                           echo " Total</div>"
+                                           echo " New votes</div>"
                                           ?>
                                         
                                        
                                     </div>
                                 </div>
                             </div>
-                            <a href="new-messages.php">
+                            <a href="new-votes.php">
                                 <div class="panel-footer">
-                                    <span class="pull-left">Messages</span>
+                                    <span class="pull-left">New votes</span>
                                     <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
@@ -188,7 +144,7 @@
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">
                                          <?php 
-                                           $query = "SELECT * FROM items where refcat_id = 1";
+                                           $query = "SELECT * FROM items";
                                            $res = mysqli_query($con,$query);
                                            $count = 0;
                                            $a = 0;
@@ -209,9 +165,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="computer.php">
+                            <a href="posts.php">
                                 <div class="panel-footer">
-                                    <span class="pull-left">Computer/Laptops</span>
+                                    <span class="pull-left">Products</span>
                                     <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
@@ -228,7 +184,7 @@
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">
                                          <?php 
-                                           $query = "SELECT * FROM items where refcat_id = 2";
+                                           $query = "SELECT * FROM amaservice";
                                            $res = mysqli_query($con,$query);
                                            $count = 0;
                                            $a = 0;
@@ -249,256 +205,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="mobiles.php">
+                            <a href="services.php">
                                 <div class="panel-footer">
-                                    <span class="pull-left">Mobiles</span>
+                                    <span class="pull-left">Services</span>
                                     <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
                                 </div>
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-yellow">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-tasks fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">
-                                         <?php 
-                                           $query = "SELECT * FROM items where refcat_id = 3";
-                                           $res = mysqli_query($con,$query);
-                                           $count = 0;
-                                           $a = 0;
-                                           while($row = mysqli_fetch_assoc($res))
-                                           {
-                                            $count++;
-                                            if($row['is_accepted']==0){
-                                            $a++;}     
-                                           }
-                                           echo " $a";
-                                           echo "</div>";
-                                           echo "<div>";
-                                           echo "$count ";
-                                           echo " Total</div>"
-                                          ?>
-                                        
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="electronics.php">
-                                <div class="panel-footer">
-                                    <span class="pull-left">Electronics</span>
-                                    <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-green">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-tasks fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">
-                                         <?php 
-                                           $query = "SELECT * FROM items where refcat_id = 4";
-                                           $res = mysqli_query($con,$query);
-                                           $count = 0;
-                                           $a = 0;
-                                           while($row = mysqli_fetch_assoc($res))
-                                           {
-                                            $count++;
-                                            if($row['is_accepted']==0){
-                                            $a++;}     
-                                           }
-                                           echo " $a";
-                                           echo "</div>";
-                                           echo "<div>";
-                                           echo "$count ";
-                                           echo " Total</div>"
-                                          ?>
-                                        
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="furnitures.php">
-                                <div class="panel-footer">
-                                    <span class="pull-left">Furnitures</span>
-                                    <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-red">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-tasks fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">
-                                         <?php 
-                                           $query = "SELECT * FROM items where refcat_id = 5";
-                                           $res = mysqli_query($con,$query);
-                                           $count = 0;
-                                           $a = 0;
-                                           while($row = mysqli_fetch_assoc($res))
-                                           {
-                                            $count++;
-                                            if($row['is_accepted']==0){
-                                            $a++;}     
-                                           }
-                                           echo " $a";
-                                           echo "</div>";
-                                           echo "<div>";
-                                           echo "$count ";
-                                           echo " Total</div>"
-                                          ?>
-                                        
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="estates.php">
-                                <div class="panel-footer">
-                                    <span class="pull-left">Real Estates</span>
-                                    <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-tasks fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">
-                                         <?php 
-                                           $query = "SELECT * FROM items where refcat_id = 6";
-                                           $res = mysqli_query($con,$query);
-                                           $count = 0;
-                                           $a = 0;
-                                           while($row = mysqli_fetch_assoc($res))
-                                           {
-                                            $count++;
-                                            if($row['is_accepted']==0){
-                                            $a++;}     
-                                           }
-                                           echo " $a";
-                                           echo "</div>";
-                                           echo "<div>";
-                                           echo "$count ";
-                                           echo " Total</div>"
-                                          ?>
-                                        
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="cars.php">
-                                <div class="panel-footer">
-                                    <span class="pull-left">Cars/Bikes</span>
-                                    <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-yellow">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-tasks fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">
-                                         <?php 
-                                           $query = "SELECT * FROM items where refcat_id = 7";
-                                           $res = mysqli_query($con,$query);
-                                           $count = 0;
-                                           $a = 0;
-                                           while($row = mysqli_fetch_assoc($res))
-                                           {
-                                            $count++;
-                                            if($row['is_accepted']==0){
-                                            $a++;}     
-                                           }
-                                           echo " $a";
-                                           echo "</div>";
-                                           echo "<div>";
-                                           echo "$count ";
-                                           echo " Total</div>"
-                                          ?>
-                                        
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="jobs.php">
-                                <div class="panel-footer">
-                                    <span class="pull-left">Jobs</span>
-                                    <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-green">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-tasks fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">
-                                         <?php 
-                                           $query = "SELECT * FROM items where refcat_id = 8";
-                                           $res = mysqli_query($con,$query);
-                                           $count = 0;
-                                           $a = 0;
-                                           while($row = mysqli_fetch_assoc($res))
-                                           {
-                                            $count++;
-                                            if($row['is_accepted']==0){
-                                            $a++;}     
-                                           }
-                                           echo " $a";
-                                           echo "</div>";
-                                           echo "<div>";
-                                           echo "$count ";
-                                           echo " Total</div>"
-                                          ?>
-                                        
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="others.php">
-                                <div class="panel-footer">
-                                    <span class="pull-left">Others</span>
-                                    <span class="pull-right">View Details <i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
                 </div>
                 <!-- /.row -->
 

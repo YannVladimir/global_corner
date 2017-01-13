@@ -5,6 +5,13 @@ error_reporting(E_ALL);
 session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
+if(!isset($_SESSION['id']))
+{
+  $_SESSION['message'] = 'Please log in to your acount to continue';
+  $_SESSION['page'] = 'notifications'; 
+  require_once ('login.php');
+  exit;
+}
 $a = $_SESSION['id'];
 $query = "SELECT * from users where user_id = '{$a}'";
 $res = mysqli_query($con,$query);
@@ -290,7 +297,7 @@ $ss = $row['sell_service'];
                                   if($numbera == 0)
                                   {
                                     echo'<ul class="nav nav-tabs">';
-                                  echo"<li class='pull-left'><a href='my_acount.php#choosing'>Products orders: Not available</a></li>
+                                  echo"<li class='pull-left'><a href='my_acount.php#choosing'>Product orders: Not available</a></li>
                                          <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='my_acount.php#choosing'>Choose category</a></li>";
                                   echo "</ul>
                                          </div>
@@ -347,7 +354,7 @@ $ss = $row['sell_service'];
                             
                                 <?php
                                 $numbera = 0;
-                                $ca = "SELECT * from notifications where target = '{$sp}' and type = 1 and is_accepted = 1 and is_product = 1";
+                                $ca = "SELECT * from notifications where target = '{$ss}' and type = 1 and is_accepted = 1 and is_product = 0";
                                 $ra = mysqli_query($con,$ca);
                                 while ($roa = mysqli_fetch_assoc($ra))
                                 {
@@ -358,7 +365,7 @@ $ss = $row['sell_service'];
                                   if($numbera == 0)
                                   {
                                     echo'<ul class="nav nav-tabs">';
-                                  echo"<li class='pull-left'><a href='my_acount.php#choosing'>Products orders: Not available</a></li>
+                                  echo"<li class='pull-left'><a href='my_acount.php#choosing'>Service orders: Not available</a></li>
                                          <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='my_acount.php#choosing'>Choose category</a></li>";
                                   echo "</ul>
                                          </div>
@@ -368,7 +375,7 @@ $ss = $row['sell_service'];
                                   else{
                                     echo'<ul class="nav nav-tabs">';
                                   echo"
-                                         <li class='pull-left' style='cursor:pointer'><a style='cursor:pointer' href='sub-category.php?id=$sp'>Total product orders ($numbera)</a></li>
+                                         <li class='pull-left' style='cursor:pointer'><a style='cursor:pointer' href='sub-category.php?id=$ss'>Total service orders ($numbera)</a></li>
                                          <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='my_acount.php#choosing'>Change category</a></li>";
                                   echo "</ul>
                                          </div>
@@ -376,7 +383,7 @@ $ss = $row['sell_service'];
                                   echo "<div class='tab-pane fade active in' id='1' >";
                                   }
                                   
-                                 $ca = "SELECT * from notifications where target = '{$sp}' and type = 1 and is_accepted = 1 and is_product = 1 order by post_id desc limit 16";
+                                 $ca = "SELECT * from notifications where target = '{$ss}' and type = 1 and is_accepted = 1 and is_product = 0 order by post_id desc limit 16";
                                  $ra = mysqli_query($con,$ca);
                                  while ($roa = mysqli_fetch_assoc($ra))
                                  {
