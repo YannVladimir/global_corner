@@ -316,29 +316,36 @@ $ss = $row['sell_service'];
                                   $resa = mysqli_query($con,$catsa);
                                   while($rowa = mysqli_fetch_assoc($resa))
                                   {
-                                    echo "<div class='col-sm-4'>i am working fine<br></div>";
-                                     /*echo " <div class='col-sm-4'>
-                        <div class='panel panel-default text-center'>
-                            <div class='panel-heading'>
-                                <h2 class='panel-title'><strong>{$row['name']} </strong></h2>
-                            </div>";
-                      echo "<ul class='list-group'>
-                               <li class='list-group-item'><strong></strong>{$row['details']}</li>
-                               <li class='list-group-item'><strong></strong>{$row['place']}</li>
-                               <li class='list-group-item'><strong></strong>{$row['up_date']}</li>
-                               <li class='list-group-item'>
-                                 <form action='contact-dealer.php' method='GET'>
-                                  <input type='text' name='id' value='{$row['id']}' class='hidden'>
-                                  <button type='submit' class='btn btn-default bton'>Answer me</button>
-                                 </form>
-                               </li>
-                            </ul>
+                                    echo "<div class='col-sm-4'>
+                                             <div class='panel panel-default text-center'>
+                                                 <div class='panel-heading'>
+                                                 <h2 class='panel-title'><strong>{$rowa['name']} </strong></h2>
+                                             </div>
+                                             <ul class='list-group'>
+                                                <li class='list-group-item'><strong></strong>{$rowa['details']}</li>
+                                                <li class='list-group-item'><strong></strong>{$rowa['place']}</li>
+                                                <li class='list-group-item'><strong></strong>{$rowa['up_date']}</li>
+                                                <li class='list-group-item'>
+                                                    <form action='contact-dealer.php' method='GET'>
+                                                       <input type='text' name='id' value='{$rowa['id']}' class='hidden'>
+                                                       <button type='submit' class='btn btn-default bton'>Answer me</button>
+                                                    </form>
+                                                </li>
+                                             </ul>
+                                          </div>";
+                                     /*echo " 
+                           
+                                
+                            ";
+                      echo "
+                               
+                               
+                            
                         </div>
                    </div>"; */
 
                                    
                                 }
-                                echo "not fine";
                                 }
                                 }
                                
