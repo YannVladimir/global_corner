@@ -273,12 +273,12 @@ $ss = $row['sell_service'];
 }
                                 
 //for recomanded service to buy
-?><br><br><br><br>
+?><br><br><br><br></div>
 <div class="col-sm-12">
                            <h2 class="title text-center">Recomended clients</h2><br>
                                     
                                 <?php
-                                $number = 0;
+                                $numbera = 0;
                                 $ca = "SELECT * from notifications where target = '{$sp}' and type = 1 and is_accepted = 0 order by post_id";
                                 $ra = mysqli_query($con,$ca);
                                 while ($roa = mysqli_fetch_assoc($ra))
@@ -310,13 +310,13 @@ $ss = $row['sell_service'];
                                   
                                  $ca = "SELECT * from notifications where target = '{$sp}' and type = 1 order by post_id limit 20";
                                  $ra = mysqli_query($con,$ca);
-                                 while ($ro = mysqli_fetch_assoc($ra))
+                                 while ($roa = mysqli_fetch_assoc($ra))
                                  {
                                   $catsa = "SELECT * from vieworders ";
                                   $resa = mysqli_query($con,$catsa);
                                   while($rowa = mysqli_fetch_assoc($resa))
                                   {
-                                    echo "working fine<br>";
+                                    echo "<div class='col-sm-4'>i am working fine<br></div>";
                                      /*echo " <div class='col-sm-4'>
                         <div class='panel panel-default text-center'>
                             <div class='panel-heading'>
