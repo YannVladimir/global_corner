@@ -5,6 +5,13 @@ error_reporting(E_ALL);
 session_start();
 $con = mysqli_connect("127.0.0.1","root","REDACTED_DB_PASSWORD","eshopper");
 require_once ('../includes/main_functions.php');
+if(!isset($_SESSION['id']))
+{
+  $_SESSION['message'] = 'Please log in to your acount to continue';
+  $_SESSION['page'] = 'edit_my_acount'; 
+  require_once ('login.php');
+  exit;
+}
 //checkUser();
 //checkToken();
 ?>

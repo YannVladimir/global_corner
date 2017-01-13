@@ -6,7 +6,14 @@ session_start();
 $con = mysqli_connect("127.0.0.1","root","REDACTED_DB_PASSWORD","eshopper");
 require_once ('../includes/main_functions.php');
 //checkUser();
-checkToken();  
+if(!isset($_SESSION['id']))
+{
+  $_SESSION['message'] = 'Please log in to your acount to continue';
+  $_SESSION['page'] = 'my_acount'; 
+  require_once ('login.php');
+  exit;
+}
+checkToken(); 
 ?>
 <!DOCTYPE html> 
 <html lang="en">
