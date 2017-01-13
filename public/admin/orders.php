@@ -1,6 +1,6 @@
 <?php
 
-  require('header.php');
+  require('header.php'); 
 ?>    
         <div id="page-wrapper">
 
@@ -26,7 +26,7 @@
                                         <tr>
                                             <th>Uploaded date</th>
                                             <th>Title</th>
-                                            <th>Category</th>
+                                            <th>Is_Product</th>
                                             <th>Details</th>
                                             <th>User</th>
                                             <th>View Details</th>
@@ -41,10 +41,10 @@
                                            {
                                             if($row['is_accepted']== 0)
                                             {
-                                              echo "<tr class='odd gradeX'><td>{$row['up_date']}</td><td>{$row['name']}</td><td>{$row['cat_name']}</td><td>{$row['details']}</td><td class='center'>{$row['user']}</td><td class='center'><form action='order-view.php' method='GET'><input type='text' name='id' value='{$row['id']}' class='hidding'/><input type='submit' value='view'/></form></td><td><form action='order-accept.php' method='GET'><input type='text' name='id' value='{$row['id']}' class='hidding'/><input type='submit' value='Accept'/></form></td></tr>";
+                                              echo "<tr class='odd gradeX'><td>{$row['up_date']}</td><td>{$row['name']}</td><td>{$row['is_product']}</td><td>{$row['details']}</td><td class='center'>{$row['user']}</td><td class='center'><form action='order-view.php' method='GET'><input type='text' name='id' value='{$row['id']}' class='hidding'/><input type='submit' value='view'/></form></td><td><form action='order-accept.php' method='GET'><input type='text' name='id' value='{$row['id']}' class='hidding'/><input type='submit' value='Accept'/></form></td></tr>";
                                             }
                                             else{
-                                               echo "<tr class='odd gradeX'><td>{$row['up_date']}</td><td>{$row['name']}</td><td>{$row['cat_name']}</td><td>{$row['details']}</td><td class='center'>{$row['user']}</td><td class='center'><form action='order-view.php' method='GET'><input type='text' name='id' value='{$row['id']}' class='hidding'/><input type='submit' value='view'/></form></td><td>Done</td></tr>";
+                                               echo "<tr class='odd gradeX'><td>{$row['up_date']}</td><td>{$row['name']}</td><td>{$row['is_product']}</td><td>{$row['details']}</td><td class='center'>{$row['user']}</td><td class='center'><form action='order-view.php' method='GET'><input type='text' name='id' value='{$row['id']}' class='hidding'/><input type='submit' value='view'/></form></td><td>Done</td></tr>";
                                               }   
                                            }
 
