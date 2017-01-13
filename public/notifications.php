@@ -316,7 +316,7 @@ $ss = $row['sell_service'];
                                   $resa = mysqli_query($con,$catsa);
                                   while($rowa = mysqli_fetch_assoc($resa))
                                   {
-                                    echo "<div class='col-sm-4'>
+                                    echo "<div class='col-sm-6'>
                                              <div class='panel panel-default text-center'>
                                                  <div class='panel-heading'>
                                                  <h2 class='panel-title'><strong>{$rowa['name']} </strong></h2>
