@@ -300,7 +300,7 @@ $ss = $row['sell_service'];
                                   else{
                                     echo'<ul class="nav nav-tabs">';
                                   echo"
-                                         <li class='pull-left' style='cursor:pointer'><a style='cursor:pointer' href='sub-category.php?id=$bp'>Total product orders ($number)</a></li>
+                                         <li class='pull-left' style='cursor:pointer'><a style='cursor:pointer' href='sub-category.php?id=$sp'>Total product orders ($number)</a></li>
                                          <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='my_acount.php#choosing'>Change category</a></li>";
                                   echo "</ul>
                                          </div>
@@ -316,7 +316,8 @@ $ss = $row['sell_service'];
                                   $res = mysqli_query($con,$cats);
                                   while($row = mysqli_fetch_assoc($res))
                                   {
-                                     echo " <div class='col-sm-4'>
+                                    echo "working fine<br>";
+                                     /*echo " <div class='col-sm-4'>
                         <div class='panel panel-default text-center'>
                             <div class='panel-heading'>
                                 <h2 class='panel-title'><strong>{$row['name']} </strong></h2>
@@ -333,10 +334,11 @@ $ss = $row['sell_service'];
                                </li>
                             </ul>
                         </div>
-                   </div>"; 
+                   </div>"; */
 
                                    
                                 }
+                                echo "not fine";
                                 }
                                 }
                                
