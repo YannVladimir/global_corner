@@ -279,15 +279,15 @@ $ss = $row['sell_service'];
                                     
                                 <?php
                                 $number = 0;
-                                $c = "SELECT * from notifications where target = '{$sp}' and type = 1 and is_accepted = 0 order by post_id";
-                                $r = mysqli_query($con,$c);
-                                while ($ro = mysqli_fetch_assoc($r))
+                                $ca = "SELECT * from notifications where target = '{$sp}' and type = 1 and is_accepted = 0 order by post_id";
+                                $ra = mysqli_query($con,$ca);
+                                while ($roa = mysqli_fetch_assoc($ra))
                                 {
-                                   $number = $number + 1;
+                                   $numbera = $numbera + 1;
                                 } 
-                                if($number>=0)
+                                if($numbera>=0)
                                 {
-                                  if($number == 0)
+                                  if($numbera == 0)
                                   {
                                     echo'<ul class="nav nav-tabs">';
                                   echo"<li class='pull-left'><a href='my_acount.php#choosing'>Products orders: Not available</a></li>
@@ -300,7 +300,7 @@ $ss = $row['sell_service'];
                                   else{
                                     echo'<ul class="nav nav-tabs">';
                                   echo"
-                                         <li class='pull-left' style='cursor:pointer'><a style='cursor:pointer' href='sub-category.php?id=$sp'>Total product orders ($number)</a></li>
+                                         <li class='pull-left' style='cursor:pointer'><a style='cursor:pointer' href='sub-category.php?id=$sp'>Total product orders ($numbera)</a></li>
                                          <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='my_acount.php#choosing'>Change category</a></li>";
                                   echo "</ul>
                                          </div>
@@ -308,13 +308,13 @@ $ss = $row['sell_service'];
                                   echo "<div class='tab-pane fade active in' id='1' >";
                                   }
                                   
-                                 $c = "SELECT * from notifications where target = '{$sp}' and type = 1 order by post_id limit 20";
-                                 $r = mysqli_query($con,$c);
-                                 while ($ro = mysqli_fetch_assoc($r))
+                                 $ca = "SELECT * from notifications where target = '{$sp}' and type = 1 order by post_id limit 20";
+                                 $ra = mysqli_query($con,$ca);
+                                 while ($ro = mysqli_fetch_assoc($ra))
                                  {
-                                  $cats = "SELECT * from vieworders ";
-                                  $res = mysqli_query($con,$cats);
-                                  while($row = mysqli_fetch_assoc($res))
+                                  $catsa = "SELECT * from vieworders ";
+                                  $resa = mysqli_query($con,$catsa);
+                                  while($rowa = mysqli_fetch_assoc($resa))
                                   {
                                     echo "working fine<br>";
                                      /*echo " <div class='col-sm-4'>
