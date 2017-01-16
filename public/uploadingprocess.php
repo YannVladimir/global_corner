@@ -6,7 +6,14 @@ session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
 //checkToken();
-
+if(isset($_GET['id']))
+{
+$d = $_GET['id'];
+}
+else
+{
+$d = 1;
+}
 if(checkIsStringSetPost('izina'))
 {
    $category = clearInput($_POST['subcategory']);
@@ -46,7 +53,7 @@ if(isset($_FILES['main']))
     if($name == '')
     {
       $_SESSION['error'] = 'Please select the first image, it is required';
-      echo "<script>alert(' Failed to post this ad, please select the first image, it is required. click ok to proceed ');window.location='upload.php?id=1';</script>";exit;
+      echo "<script>alert(' Failed to post this ad, please select the first image, it is required. click ok to proceed ');window.location='upload.php?id=$d';</script>";exit;
     }
     if(in_array($ext, $allowed_ext))
     {
@@ -76,13 +83,13 @@ if(isset($_FILES['main']))
       else
       {
         $_SESSION['error'] = 'image size must be less than 4MB for the first image';
-        echo "<script>alert(' Failed to post this ad, image size must be less than 4MB');window.location='upload.php?id=1';</script>";exit;
+        echo "<script>alert(' Failed to post this ad, image size must be less than 4MB');window.location='upload.php?id=$d';</script>";exit;
       }
     }
     else
     {
         $_SESSION['error'] = 'Select only jpg,jpeg,png for the first image';
-        echo "<script>alert(' Failed to post this ad, please select only jpg,jpeg, and png images ');window.location='upload.php?id=1';</script>";exit;
+        echo "<script>alert(' Failed to post this ad, please select only jpg,jpeg, and png images ');window.location='upload.php?id=$d';</script>";exit;
     }
 
 }

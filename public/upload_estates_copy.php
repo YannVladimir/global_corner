@@ -259,21 +259,6 @@ checkToken();
                          By posting your post you agree with our <a href='terms-of-use.php' target='blank' style='color=#3AACEB'>Terms of use </a> and <a href='posting-rules.php' target='blank' style='color=#3AACEB'>Posting rules </a>
                         </font>
                     </form>
-                    <form action="uploading_esta.php" id="validation1" novalidate="novalidate" class="upload-form row" method="post" enctype="multipart/form-data">
-                    <div class="col-sm-4"> 
-                                  <input type="file" name="main" class="this" id="inp" />
-                                  <progress id="prog" max="100" value="0"></progress>
-                                  
-                                  <img id="image" class="btn1 starting" />
-                                  
-                            </div>
-                             <div class="form-group col-md-12">
-                           <input type="submit" name="submit" class="btn btn-primary pull-right" value="Check">
-                        </div>
-                      </form>
-                  </div>
-                  <div id="jobbs" class="notshowing">
-                    job
                   </div>
                 
             </div>
