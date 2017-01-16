@@ -104,7 +104,7 @@ require_once ('../includes/main_functions.php');
                             $res = mysqli_query($con,$query);
                             while($row = mysqli_fetch_assoc($res))
                             {
-                                if($row['main'] == 'noimage.jpg' !! $row['main'] == '' )
+                                if($row['main'] == 'noimage.jpg' || $row['main'] == '' )
                                 {
                                    if($row['is_accepted']==0)
                               {
@@ -309,7 +309,7 @@ require_once ('../includes/main_functions.php');
                                     <?php
                                        $query = "SELECT * from working_hours where service_id = '{$id}'";
                                        $r = mysqli_query($con,$query);
-                                       $row = mysqli_fetch_assoc($r);
+                                       while($row = mysqli_fetch_assoc($r)){
                                        if($row['monday'] == 'nothing')
                                        {
                                         echo"<p><b>Monday:</b>Not mentioned</p>
@@ -339,7 +339,7 @@ require_once ('../includes/main_functions.php');
                                   </form>
                                 </div>";
                                        }
-                                       
+                                       }
                                     ?>
                                     
                                 </div>
@@ -355,20 +355,6 @@ require_once ('../includes/main_functions.php');
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="images/home/gallery4.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
                             <div class="tab-pane fade" id="tag" >
                                 <!--<div class="col-sm-3">
                                     <div class="product-image-wrapper">
