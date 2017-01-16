@@ -130,7 +130,17 @@ checkToken();
             <div class="contact-form align-center">
               <br>
               <h2 class="title text-center">Enter Ad's Details</h2>
-              <div class="status alert alert-success" style="display: none"></div>
+              <div class="status alert alert-success" style="display: none">
+              </div>
+              <div class="col-sm-6 message text-center"><?php
+                        if(isset($_SESSION['message']))
+                        {
+                          echo "<div class='msg'>";
+                                 echo '<p>'.$_SESSION['message'].'</p>';
+                                 unset($_SESSION['message']);                         
+                          echo "</div>";
+                        }
+          ?></div>
                   
                           <div class="btn-group pull-right">
                             <div class="btn-group">
