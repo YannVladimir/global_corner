@@ -1,18 +1,18 @@
-<?php 
+<?php  
 ini_set('display_startup_errors',1);
 ini_set('display_errors',1);
 error_reporting(E_ALL);
 session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
-if(!isset($_SESSION['id']))
+/*if(!isset($_SESSION['id']))
 {
   $id = $_GET['id'];
   $_SESSION['message'] = 'Please log in to your acount to continue';
   $_SESSION['page'] = 'my_service'; 
   require_once ('login.php?id=$id');
   exit;
-}
+}*/
 ?>
 <!DOCTYPE html> 
 <html lang="en">

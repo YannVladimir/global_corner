@@ -6,14 +6,14 @@ session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
 //checkUser();
-if(!isset($_SESSION['id']))
+/*if(!isset($_SESSION['id']))
 {
   $id = $_GET['id'];
   $_SESSION['message'] = 'Please log in to your acount to continue';
   $_SESSION['page'] = 'my_post'; 
   require_once ('login.php?id=$id');
   exit;
-}
+} */
 $id = $_GET['id']; 
 $user = $_SESSION['id'];
 $query = "SELECT * FROM items where post_id = '{$id}' and user = '$user'";
