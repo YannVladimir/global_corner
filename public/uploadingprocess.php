@@ -14,7 +14,7 @@ if(checkIsStringSetPost('izina'))
    $nam = clearInput($_POST['izina']);
    $price = clearInput($_POST['price']);
    if($price ==0)
-   {
+   { 
     $price = "Negotiatable";
    }
    if(!$price)
@@ -33,6 +33,11 @@ if(isset($_SESSION['id']))
 else
 {
 	$user = 1;
+}
+if(!isset($_FILES['main']))
+{
+    $_SESSION['error1'] = 'Please select the first image, it is required';
+    echo "<script>alert(' Failed to post this ad, please select the first image, it is required. click ok to proceed ');window.location='upload.php?id=7';</script>";exit;
 }
 
 if(isset($_FILES['main']))
@@ -70,11 +75,13 @@ if(isset($_FILES['main']))
       else
       {
         $_SESSION['error1'] = 'image size must be less than 4MB for the first image';
+        echo "<script>alert(' Failed to post this ad, image size must be less than 4MB');window.location='upload.php?id=7';</script>";exit;
       }
     }
     else
     {
         $_SESSION['error1'] = 'Select only jpg,jpeg,png for the first image';
+        echo "<script>alert(' Failed to post this ad, please select only jpg,jpeg, and png images ');window.location='upload.php?id=7';</script>";exit;
     }
 
 }
@@ -341,7 +348,7 @@ $select = mysqli_query($con,$queryy);
         $pe = mysqli_query($con,$p);
         $pes = mysqli_fetch_assoc($pe);
         $a = $pes['id'];
- 	    echo "<script>alert(' Your post has been uploaded successfully, we thank you by the time we are looking for a customer of your product ');window.location='my_post.php?id=$id';</script>";exit;
+ 	    echo "<script>alert(' Your post has been uploaded successfully, we thank you by the time we are looking for a customer of your product ');window.location='my_post.php?id=$a';</script>";exit;
  }
  else
  {
