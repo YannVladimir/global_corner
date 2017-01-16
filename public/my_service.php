@@ -310,32 +310,32 @@ require_once ('../includes/main_functions.php');
                                        $query = "SELECT * from working_hours where service_id = '{$id}'";
                                        $r = mysqli_query($con,$query);
                                        while($row = mysqli_fetch_assoc($r)){
-                                       if($row['monday'] == 'nothing')
+                                       if($row['monday'] == 'nothing' || $row['monday'] == '' )
                                        {
-                                        echo"<p><b>Monday:</b>Not mentioned</p>
+                                        echo"<p><b>Monday:</b>Not mentioned
                                         <button id='mondaynew' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Add working hour
-                                    </button>";
+                                    </button></p>";
                                     echo" <div id='mondayo' class=''>
                                   <form action='workingnew.php' method='POST'>
                                     <textarea name='monday' rows='3' placeholder='please provide the working time for monday, leave it empty if no work on monday'></textarea>
-                                    <input type='submit' value='submit' class='btn btn-default cart'>
+                                    <input type='submit' value='submit' class='btn btn-default pull-right cart'>
                                   </form>
                                 </div>";
                                         
                                        }
                                        else
                                        {
-                                        echo"<p><b>Mondayn:</b>{$row['monday']}</p>
+                                        echo"<p><b>Monday:</b>{$row['monday']}
                                         <button id='mondayold' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Change
-                                    </button>";
+                                    </button></p>";
                                     echo" <div id='monday' class=''>
                                   <form action='working.php' method='POST'>
                                     <textarea name='monday' rows='3' placeholder='please provide the working time for monday, leave it empty if no work on monday'></textarea>
-                                    <input type='submit' value='submit' class='btn btn-default cart'>
+                                    <input type='submit' value='submit' class='btn btn-default pull-right cart'>
                                   </form>
                                 </div>";
                                        }
@@ -343,18 +343,7 @@ require_once ('../includes/main_functions.php');
                                     ?>
                                     
                                 </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="images/home/gallery2.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             <div class="tab-pane fade" id="tag" >
                                 <!--<div class="col-sm-3">
                                     <div class="product-image-wrapper">
