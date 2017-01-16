@@ -34,11 +34,7 @@ else
 {
 	$user = 1;
 }
-if(!isset($_FILES['main']))
-{
-    $_SESSION['error1'] = 'Please select the first image, it is required';
-    echo "<script>alert(' Failed to post this ad, please select the first image, it is required. click ok to proceed ');window.location='upload.php?id=1';</script>";exit;
-}
+
 
 if(isset($_FILES['main']))
 {
@@ -47,6 +43,11 @@ if(isset($_FILES['main']))
     $ext1 = explode(".", $name);
     $ext = end($ext1);
     $allowed_ext = array("png", "PNG", "jpeg", "JPEG", "JPG", "jpg");
+    if($name == '')
+    {
+      $_SESSION['error'] = 'Please select the first image, it is required';
+      echo "<script>alert(' Failed to post this ad, please select the first image, it is required. click ok to proceed ');window.location='upload.php?id=1';</script>";exit;
+    }
     if(in_array($ext, $allowed_ext))
     {
       if($size < (4194304))
@@ -74,13 +75,13 @@ if(isset($_FILES['main']))
       }
       else
       {
-        $_SESSION['error1'] = 'image size must be less than 4MB for the first image';
+        $_SESSION['error'] = 'image size must be less than 4MB for the first image';
         echo "<script>alert(' Failed to post this ad, image size must be less than 4MB');window.location='upload.php?id=1';</script>";exit;
       }
     }
     else
     {
-        $_SESSION['error1'] = 'Select only jpg,jpeg,png for the first image';
+        $_SESSION['error'] = 'Select only jpg,jpeg,png for the first image';
         echo "<script>alert(' Failed to post this ad, please select only jpg,jpeg, and png images ');window.location='upload.php?id=1';</script>";exit;
     }
 
