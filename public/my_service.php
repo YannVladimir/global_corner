@@ -244,9 +244,9 @@ require_once ('../includes/main_functions.php');
                         <div class='col-sm-12'>
                             <ul class="nav nav-tabs">
                                 <li><a href='#details' data-toggle='tab'>Experience</a></li>
-                                <li><a href='#companyprofile' data-toggle='tab'>Working Hours</a></li>
+                                <li class='active'><a href='#companyprofile' data-toggle='tab'>Working Hours</a></li>
                                 <li><a href='#tag' data-toggle='tab'>Reviews</a></li>
-                                <li class='active'><a href='#reviews' data-toggle='tab'>Rate it</a></li>
+                                <li><a href='#reviews' data-toggle='tab'>Rate it</a></li>
                             </ul>
                         </div>
                         <div class="tab-content">
@@ -302,29 +302,46 @@ require_once ('../includes/main_functions.php');
                             </div>
                             
                             <div class="tab-pane fade" id="companyprofile" >
-                                <!--<div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="images/home/gallery1.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="col-sm-2">
                                 </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="images/home/gallery3.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
+                               
+                                <div class="col-sm-8">
+                                    <?php
+                                       $query = "SELECT * from working_hours where service_id = '{$id}'";
+                                       $r = mysqli_query($con,$query);
+                                       $row = mysqli_fetch_assoc($r);
+                                       if($row['monday'] == 'nothing')
+                                       {
+                                        echo"<p><b>Monday:</b>Not mentioned</p>
+                                        <button id='mondaynew' type='button' class='btn btn-default cart'>
+                                        <i class=''></i>
+                                        Add working hour
+                                    </button>";
+                                    echo" <div id='mondayo' class=''>
+                                  <form action='workingnew.php' method='POST'>
+                                    <textarea name='monday' rows='3' placeholder='please provide the working time for monday, leave it empty if no work on monday'></textarea>
+                                    <input type='submit' value='submit' class='btn btn-default cart'>
+                                  </form>
+                                </div>";
+                                        
+                                       }
+                                       else
+                                       {
+                                        echo"<p><b>Mondayn:</b>{$row['monday']}</p>
+                                        <button id='mondayold' type='button' class='btn btn-default cart'>
+                                        <i class=''></i>
+                                        Change
+                                    </button>";
+                                    echo" <div id='monday' class=''>
+                                  <form action='working.php' method='POST'>
+                                    <textarea name='monday' rows='3' placeholder='please provide the working time for monday, leave it empty if no work on monday'></textarea>
+                                    <input type='submit' value='submit' class='btn btn-default cart'>
+                                  </form>
+                                </div>";
+                                       }
+                                       
+                                    ?>
+                                    
                                 </div>
                                 <div class="col-sm-3">
                                     <div class="product-image-wrapper">
@@ -349,7 +366,7 @@ require_once ('../includes/main_functions.php');
                                             </div>
                                         </div>
                                     </div>
-                                </div>-->
+                                </div>
                             </div>
                             
                             <div class="tab-pane fade" id="tag" >
