@@ -1,5 +1,4 @@
 <?php 
-session_start();
 require_once ('../includes/main_functions.php');
 //checkUser();
 if(isset($_GET['id'])){
