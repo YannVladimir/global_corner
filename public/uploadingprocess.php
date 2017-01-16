@@ -356,7 +356,7 @@ $select = mysqli_query($con,$queryy);
         $pe = mysqli_query($con,$p);
         $pes = mysqli_fetch_assoc($pe);
         $a = $pes['id'];
- 	    echo "<script>alert(' Your post has been uploaded successfully, we thank you by the time we are looking for a customer of your product ');window.location='my_post.php?id=$a';</script>";exit;
+ 	    echo "<script>alert(' Your post has been uploaded successfully, we thank you by the time we are looking for a customer of your product ');window.location='home.php';</script>";exit;
  }
  else
  {
