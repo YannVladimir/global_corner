@@ -131,11 +131,11 @@ checkToken();
               <h2 class="title text-center">Enter Ad's Details</h2>
               <div class="status alert alert-success" style="display: none"></div>
                           <div class="col-sm-6 message text-center"><?php
-                        if(isset($_SESSION['message']))
+                        if(isset($_SESSION['error']))
                         {
                           echo "<div class='msg'>";
-                                 echo '<p>'.$_SESSION['message'].'</p>';
-                                 unset($_SESSION['message']);                         
+                                 echo '<p>'.$_SESSION['error'].'</p>';
+                                 unset($_SESSION['error']);                         
                           echo "</div>";
                         }
           ?></div>
@@ -219,28 +219,30 @@ checkToken();
                         <div class="form-group col-md-12">
                             <textarea name="details" id="message" required="required" class="form-control" rows="8" placeholder="Descriptions, Include number of rooms, and any other usefull informations"></textarea>
                         </div>
-                        <div class="col-sm-4"> 
-                                  <input type="file" name="main" class="this" id="inp" />
-                                  <img id="image" class="btn1 starting" />
-                            </div>
+                        
                             <div class="col-sm-4">
                                   <input type="file" name="img1" class="this" id="inp2" />
+                                  <progress id="prog" max="100" value="0"></progress>
                                   <img id="image2" class="btn2 btnlocation" />
                             </div>
                             <div class="col-sm-4">
                                   <input type="file" name="img2" class="this" id="inp3" />
+                                  <progress id="prog" max="100" value="0"></progress>
                                   <img id="image3" class="btn3 btnlocation" />
                             </div>
                             <div class="col-sm-4">     
                                   <input type="file" name="img3" class="this" id="inp4" />
+                                  <progress id="prog" max="100" value="0"></progress>
                                   <img id="image4" class="btn4 btnlocation" />
                             </div>
                             <div class="col-sm-4">      
                                   <input type="file" name="img4" class="this" id="inp5" />
+                                  <progress id="prog" max="100" value="0"></progress>
                                   <img id="image5" class="btn5 starting" />
                             </div>
                             <div class="col-sm-4">      
                                   <input type="file" name="img5" class="this" id="inp6" />
+                                  <progress id="prog" max="100" value="0"></progress>
                                   <img id="image6" class="btn6 btnlocation" />
                             </div>    
                                   <input type="file" name="img6" id="inp7" class="hide" />
@@ -257,6 +259,18 @@ checkToken();
                          By posting your post you agree with our <a href='terms-of-use.php' target='blank' style='color=#3AACEB'>Terms of use </a> and <a href='posting-rules.php' target='blank' style='color=#3AACEB'>Posting rules </a>
                         </font>
                     </form>
+                    <form action="uploading_esta.php" id="validation1" novalidate="novalidate" class="upload-form row" method="post" enctype="multipart/form-data">
+                    <div class="col-sm-4"> 
+                                  <input type="file" name="main" class="this" id="inp" />
+                                  <progress id="prog" max="100" value="0"></progress>
+                                  
+                                  <img id="image" class="btn1 starting" />
+                                  
+                            </div>
+                             <div class="form-group col-md-12">
+                           <input type="submit" name="submit" class="btn btn-primary pull-right" value="Check">
+                        </div>
+                      </form>
                   </div>
                   <div id="jobbs" class="notshowing">
                     job
@@ -280,8 +294,39 @@ checkToken();
   <script src="assets/js/jquery.prettyPhoto.js"></script>
   <script src="assets/js/price-range.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/jquery.form.min.js"></script>
   <script src="assets/js/jquery.validate.js"></script>
   <script src="assets/js/uploading.js"></script>
+  <script>
+    var main = function()
+    {
+       $("#validation1").on('submit',function(e)
+       {
+          e.preventDefault();
+          $(this).ajaxSubmit(
+          {
+             beforeSend:function()
+             {
+               $("#prog").show();
+               $("#prog").attr('value','0');
+
+             },
+             uploadProgress:function(event,position,total,percentComplete)
+             {
+               $("#prog").attr('value',percentComplete);
+                $("#percent").html(percentComplete+'%');
+             },
+             success:function(data)
+             {
+              $("#here").html(data);
+             }
+          });
+       });
+    };
+    
+    $(document).ready(main);
+
+  </script>
   <script>
           $(document).ready(function()
   {
