@@ -339,6 +339,180 @@ require_once ('../includes/main_functions.php');
                                   </form>
                                 </div>";
                                        }
+                                       if($row['tuesday'] == 'nothing' || $row['tuesday'] == '' )
+                                       {
+                                        echo"<p><b>Tuesday:</b> Not mentioned
+                                        <button id='tuesdaynew' type='button' class='btn btn-default cart'>
+                                        <i class=''></i>
+                                        Add working hour
+                                    </button></p>";
+                                    echo" <div id='tuesdayn' style='display:none;'>
+                                  <form action='workingnew.php' method='POST'>
+                                    <textarea name='tuesday' rows='3' placeholder='please provide the working time for tuesday, leave it empty if no work on tuesday'></textarea>
+                                    <input type='submit' value='submit' class='btn btn-default pull-right cart'>
+                                  </form>
+                                </div>";
+                                        
+                                       }
+                                       else
+                                       {
+                                        echo"<p><b>Tuesday:</b>{$row['tuesday']}
+                                        <button id='tuesdayold' type='button' class='btn btn-default cart'>
+                                        <i class=''></i>
+                                        Change
+                                    </button></p>";
+                                    echo" <div id='tuesdayo' style='display:none;'>
+                                  <form action='working.php' method='POST'>
+                                    <textarea name='tuesday' rows='3' placeholder='please provide the working time for tuesday, leave it empty if no work on tuesday'></textarea>
+                                    <input type='submit' value='submit' class='btn btn-default pull-right cart'>
+                                  </form>
+                                </div>";
+                                       }
+                                       if($row['wednesday'] == 'nothing' || $row['wednesday'] == '' )
+                                       {
+                                        echo"<p><b>Wednesday:</b> Not mentioned
+                                        <button id='wednesdaynew' type='button' class='btn btn-default cart'>
+                                        <i class=''></i>
+                                        Add working hour
+                                    </button></p>";
+                                    echo" <div id='wednesdayn' style='display:none;'>
+                                  <form action='workingnew.php' method='POST'>
+                                    <textarea name='wednesday' rows='3' placeholder='please provide the working time for wednesday, leave it empty if no work on wednesday'></textarea>
+                                    <input type='submit' value='submit' class='btn btn-default pull-right cart'>
+                                  </form>
+                                </div>";
+                                        
+                                       }
+                                       else
+                                       {
+                                        echo"<p><b>Wednesday:</b>{$row['wednesday']}
+                                        <button id='wednesdayold' type='button' class='btn btn-default cart'>
+                                        <i class=''></i>
+                                        Change
+                                    </button></p>";
+                                    echo" <div id='wednesdayo' style='display:none;'>
+                                  <form action='working.php' method='POST'>
+                                    <textarea name='wednesday' rows='3' placeholder='please provide the working time for wednesday, leave it empty if no work on wednesday'></textarea>
+                                    <input type='submit' value='submit' class='btn btn-default pull-right cart'>
+                                  </form>
+                                </div>";
+                                       }
+                                       if($row['thursday'] == 'nothing' || $row['thursday'] == '' )
+                                       {
+                                        echo"<p><b>Thursday:</b> Not mentioned
+                                        <button id='thursdaynew' type='button' class='btn btn-default cart'>
+                                        <i class=''></i>
+                                        Add working hour
+                                    </button></p>";
+                                    echo" <div id='thursdayn' style='display:none;'>
+                                  <form action='workingnew.php' method='POST'>
+                                    <textarea name='thursday' rows='3' placeholder='please provide the working time for thursday, leave it empty if no work on thursday'></textarea>
+                                    <input type='submit' value='submit' class='btn btn-default pull-right cart'>
+                                  </form>
+                                </div>";
+                                        
+                                       }
+                                       else
+                                       {
+                                        echo"<p><b>Thursday:</b>{$row['thursday']}
+                                        <button id='thursdayold' type='button' class='btn btn-default cart'>
+                                        <i class=''></i>
+                                        Change
+                                    </button></p>";
+                                    echo" <div id='thursdayo' style='display:none;'>
+                                  <form action='working.php' method='POST'>
+                                    <textarea name='thursday' rows='3' placeholder='please provide the working time for thursday, leave it empty if no work on thursday'></textarea>
+                                    <input type='submit' value='submit' class='btn btn-default pull-right cart'>
+                                  </form>
+                                </div>";
+                                       }
+                                       if($row['friday'] == 'nothing' || $row['friday'] == '' )
+                                       {
+                                        echo"<p><b>Friday:</b> Not mentioned
+                                        <button id='fridaynew' type='button' class='btn btn-default cart'>
+                                        <i class=''></i>
+                                        Add working hour
+                                    </button></p>";
+                                    echo" <div id='fridayn' style='display:none;'>
+                                  <form action='workingnew.php' method='POST'>
+                                    <textarea name='friday' rows='3' placeholder='please provide the working time for friday, leave it empty if no work on friday'></textarea>
+                                    <input type='submit' value='submit' class='btn btn-default pull-right cart'>
+                                  </form>
+                                </div>";
+                                        
+                                       }
+                                       else
+                                       {
+                                        echo"<p><b>Friday:</b>{$row['friday']}
+                                        <button id='fridayold' type='button' class='btn btn-default cart'>
+                                        <i class=''></i>
+                                        Change
+                                    </button></p>";
+                                    echo" <div id='fridayo' style='display:none;'>
+                                  <form action='working.php' method='POST'>
+                                    <textarea name='friday' rows='3' placeholder='please provide the working time for friday, leave it empty if no work on friday'></textarea>
+                                    <input type='submit' value='submit' class='btn btn-default pull-right cart'>
+                                  </form>
+                                </div>";
+                                       }
+                                       if($row['saturday'] == 'nothing' || $row['saturday'] == '' )
+                                       {
+                                        echo"<p><b>Saturday:</b> Not mentioned
+                                        <button id='saturdaynew' type='button' class='btn btn-default cart'>
+                                        <i class=''></i>
+                                        Add working hour
+                                    </button></p>";
+                                    echo" <div id='saturdayn' style='display:none;'>
+                                  <form action='workingnew.php' method='POST'>
+                                    <textarea name='saturday' rows='3' placeholder='please provide the working time for saturday, leave it empty if no work on saturday'></textarea>
+                                    <input type='submit' value='submit' class='btn btn-default pull-right cart'>
+                                  </form>
+                                </div>";
+                                        
+                                       }
+                                       else
+                                       {
+                                        echo"<p><b>Saturday:</b>{$row['saturday']}
+                                        <button id='saturdayold' type='button' class='btn btn-default cart'>
+                                        <i class=''></i>
+                                        Change
+                                    </button></p>";
+                                    echo" <div id='saturdayo' style='display:none;'>
+                                  <form action='working.php' method='POST'>
+                                    <textarea name='saturday' rows='3' placeholder='please provide the working time for saturday, leave it empty if no work on saturday'></textarea>
+                                    <input type='submit' value='submit' class='btn btn-default pull-right cart'>
+                                  </form>
+                                </div>";
+                                       }
+                                       if($row['sunday'] == 'nothing' || $row['sunday'] == '' )
+                                       {
+                                        echo"<p><b>Sunday:</b> Not mentioned
+                                        <button id='sundaynew' type='button' class='btn btn-default cart'>
+                                        <i class=''></i>
+                                        Add working hour
+                                    </button></p>";
+                                    echo" <div id='sundayn' style='display:none;'>
+                                  <form action='workingnew.php' method='POST'>
+                                    <textarea name='sunday' rows='3' placeholder='please provide the working time for sunday, leave it empty if no work on sunday'></textarea>
+                                    <input type='submit' value='submit' class='btn btn-default pull-right cart'>
+                                  </form>
+                                </div>";
+                                        
+                                       }
+                                       else
+                                       {
+                                        echo"<p><b>Sunday:</b>{$row['sunday']}
+                                        <button id='sundayold' type='button' class='btn btn-default cart'>
+                                        <i class=''></i>
+                                        Change
+                                    </button></p>";
+                                    echo" <div id='sundayo' style='display:none;'>
+                                  <form action='working.php' method='POST'>
+                                    <textarea name='sunday' rows='3' placeholder='please provide the working time for sunday, leave it empty if no work on sunday'></textarea>
+                                    <input type='submit' value='submit' class='btn btn-default pull-right cart'>
+                                  </form>
+                                </div>";
+                                       }
                                        }
                                     ?>
                                     
@@ -423,6 +597,55 @@ require_once ('../includes/main_functions.php');
       $("#mondayold").click(function()
               {
                   $("#mondayo").slideToggle();
+              });
+      $("#tuesdaynew").click(function()
+              {
+                  $("#tuesdayn").slideToggle()
+              });
+      $("#tuesdayold").click(function()
+              {
+                  $("#tuesdayo").slideToggle();
+              });
+      $("#wednesdaynew").click(function()
+              {
+                  $("#wednesdayn").slideToggle()
+              });
+      $("#wednesdayold").click(function()
+              {
+                  $("#wednesdayo").slideToggle();
+              });
+      $("#thursdaynew").click(function()
+              {
+                  $("#thursdayn").slideToggle()
+              });
+      $("#thursdayold").click(function()
+              {
+                  $("#thursdayo").slideToggle();
+              });
+      $("#fridaynew").click(function()
+              {
+                  $("#fridayn").slideToggle()
+              });
+      $("#fridayold").click(function()
+              {
+                  $("#fridayo").slideToggle();
+              });
+      $("#saturdaynew").click(function()
+              {
+                  $("#saturdayn").slideToggle()
+              });
+      $("#saturdayold").click(function()
+              {
+                  $("#saturdayo").slideToggle();
+              });
+
+      $("#sundaynew").click(function()
+              {
+                  $("#sundayn").slideToggle()
+              });
+      $("#sundayold").click(function()
+              {
+                  $("#sundayo").slideToggle();
               });
       
   });
