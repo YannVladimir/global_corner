@@ -37,7 +37,7 @@ else
 if(!isset($_FILES['main']))
 {
     $_SESSION['error1'] = 'Please select the first image, it is required';
-    echo "<script>alert(' Failed to post this ad, please select the first image, it is required. click ok to proceed ');window.location='upload.php?id=7';</script>";exit;
+    echo "<script>alert(' Failed to post this ad, please select the first image, it is required. click ok to proceed ');window.location='upload.php?id=5';</script>";exit;
 }
 
 if(isset($_FILES['main']))
@@ -75,13 +75,13 @@ if(isset($_FILES['main']))
       else
       {
         $_SESSION['error1'] = 'image size must be less than 4MB for the first image';
-        echo "<script>alert(' Failed to post this ad, image size must be less than 4MB');window.location='upload.php?id=7';</script>";exit;
+        echo "<script>alert(' Failed to post this ad, image size must be less than 4MB');window.location='upload.php?id=5';</script>";exit;
       }
     }
     else
     {
         $_SESSION['error1'] = 'Select only jpg,jpeg,png for the first image';
-        echo "<script>alert(' Failed to post this ad, please select only jpg,jpeg, and png images ');window.location='upload.php?id=7';</script>";exit;
+        echo "<script>alert(' Failed to post this ad, please select only jpg,jpeg, and png images ');window.location='upload.php?id=5';</script>";exit;
     }
 
 }
@@ -318,11 +318,15 @@ $select = mysqli_query($con,$queryy);
  $res = mysqli_query($con,$querry);
  if($res)
  {
- 	 echo "<script>alert(' Your post has been uploaded successfully, we thank you by the time we are looking for a customer of your product ');window.location='home.php';</script>";exit;
+        $p = "SELECT * from posts where user = '{$user}' and name = '{$nam}' and seller = '{$seller}' and details = '{$details}'";
+        $pe = mysqli_query($con,$p);
+        $pes = mysqli_fetch_assoc($pe);
+        $a = $pes['id'];
+        echo "<script>alert(' Your post has been uploaded successfully, we thank you by the time we are looking for a customer of your product ');window.location='my_post.php?id=$a';</script>";exit;
  }
  else
  {
- 	 echo "<script>alert(' Error while uploading post, please try again ');window.location='upload.php';</script>";exit;
+     echo "<script>alert(' Error while uploading post, please try again ');window.location='upload.php?id=5';</script>";exit;
  }   
 }
 }
