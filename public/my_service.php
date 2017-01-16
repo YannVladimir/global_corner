@@ -104,7 +104,7 @@ require_once ('../includes/main_functions.php');
                             $res = mysqli_query($con,$query);
                             while($row = mysqli_fetch_assoc($res))
                             {
-                                if($row['main'] == 'noimage.jpg')
+                                if($row['main'] == 'noimage.jpg' !! $row['main'] == '' )
                                 {
                                    if($row['is_accepted']==0)
                               {
