@@ -312,12 +312,12 @@ require_once ('../includes/main_functions.php');
                                        while($row = mysqli_fetch_assoc($r)){
                                        if($row['monday'] == 'nothing' || $row['monday'] == '' )
                                        {
-                                        echo"<p><b>Monday:</b>Not mentioned
+                                        echo"<p><b>Monday:</b> Not mentioned
                                         <button id='mondaynew' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Add working hour
                                     </button></p>";
-                                    echo" <div id='mondayo' class=''>
+                                    echo" <div id='mondayn' style='display:none;'>
                                   <form action='workingnew.php' method='POST'>
                                     <textarea name='monday' rows='3' placeholder='please provide the working time for monday, leave it empty if no work on monday'></textarea>
                                     <input type='submit' value='submit' class='btn btn-default pull-right cart'>
@@ -332,7 +332,7 @@ require_once ('../includes/main_functions.php');
                                         <i class=''></i>
                                         Change
                                     </button></p>";
-                                    echo" <div id='monday' class=''>
+                                    echo" <div id='mondayo' style='display:none;'>
                                   <form action='working.php' method='POST'>
                                     <textarea name='monday' rows='3' placeholder='please provide the working time for monday, leave it empty if no work on monday'></textarea>
                                     <input type='submit' value='submit' class='btn btn-default pull-right cart'>
@@ -413,5 +413,19 @@ require_once ('../includes/main_functions.php');
     <script src="assets/js/price-range.js"></script>
     <script src="assets/js/jquery.prettyPhoto.js"></script>
     <script src="assets/js/main.js"></script>
+     <script type="text/javascript">
+  $(document).ready(function()
+  {
+      $("#mondaynew").click(function()
+              {
+                  $("#mondayn").slideToggle()
+              });
+      $("#mondayold").click(function()
+              {
+                  $("#mondayo").slideToggle();
+              });
+      
+  });
+   </script>
 </body>
 </html>
