@@ -183,11 +183,11 @@
             {
                $q = "UPDATE users set sell_service ='{$category}' where user_id ='{$user}'";
                $re = mysqli_query($con,$q);
-               $query = "SELECT * from orders where name = '{$izina}' and details = '{$details}' and user = '{$user}' ";
+               $query = "SELECT * from amaservice where title = '{$nam}' and reserved = '{$seller}' and details = '{$details}' and user = '{$user}' ";
                $b = mysqli_query($con,$query);
                $c = mysqli_fetch_assoc($b);
                $id = $c['id'];
-               echo "<script>alert(' Your order has been uploaded successfully');window.location='my_order.php?id=$id';</script>";exit;
+               echo "<script>alert(' Your ad has been uploaded successfully');window.location='my_service.php?id=$id';</script>";exit;
             }
             else
             {

@@ -15,8 +15,7 @@ require_once ('../includes/main_functions.php');
   exit;
 } */
 $id = $_GET['id']; 
-$user = $_SESSION['id'];
-$query = "SELECT * FROM items where post_id = '{$id}' and user = '$user'";
+$query = "SELECT * FROM items where post_id = '{$id}'";
 $res = mysqli_query($con,$query); 
 while($row = mysqli_fetch_assoc($res)) 
 {

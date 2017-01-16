@@ -19,14 +19,7 @@ if(checkIsStringSetPost('izina'))
     $location = clearInput($_POST['location']);
     $phone = clearInput($_POST['phone']);
     $uploaded = date("Y-m-d");
-    if(isset($_SESSION['id']))
-    {
-	   $user = $_SESSION['id'];
-    }
-    else
-    {
-	   $user = 1;
-    }
+    $user = $_SESSION['id'];
        
     if(isset($_FILES['main']))
     {

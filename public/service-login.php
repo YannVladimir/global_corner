@@ -104,7 +104,7 @@ checkToken();
 					
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<form action="order-login.php" method="POST">
+						<form action="service-login.php" method="POST">
 							<input type="email" placeholder="Email Address" required="required" email="email" name="email" />
 							<input type="password" placeholder="password" required="required" name="password" />
 							<!--<span>
