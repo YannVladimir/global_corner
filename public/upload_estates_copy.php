@@ -131,11 +131,11 @@ checkToken();
               <h2 class="title text-center">Enter Ad's Details</h2>
               <div class="status alert alert-success" style="display: none"></div>
                           <div class="col-sm-6 message text-center"><?php
-                        if(isset($_SESSION['message']))
+                        if(isset($_SESSION['error']))
                         {
                           echo "<div class='msg'>";
-                                 echo '<p>'.$_SESSION['message'].'</p>';
-                                 unset($_SESSION['message']);                         
+                                 echo '<p>'.$_SESSION['error'].'</p>';
+                                 unset($_SESSION['error']);                         
                           echo "</div>";
                         }
           ?></div>
