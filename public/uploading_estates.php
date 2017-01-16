@@ -312,23 +312,22 @@ $select = mysqli_query($con,$queryy);
 {
    if($photo==$row['main'])
    {
- $refphoto = $row['photo_id'];
- $querry = "INSERT INTO posts (is_rent,sector,street,category,user,seller,name,price,details,place,contacts,uploaded_date,photo) values ('{$is_rent}','{$sector}','{$road}','{$category}','{$user}','{$seller}','{$nam}','{$price}','{$details}','{$place}','{$contacts}','{$uploaded}','{$refphoto}')";
-            
- $res = mysqli_query($con,$querry);
- if($res)
- {
+     $refphoto = $row['photo_id'];
+     $querry = "INSERT INTO posts (is_rent,sector,street,category,user,seller,name,price,details,place,contacts,uploaded_date,photo) values ('{$is_rent}','{$sector}','{$road}','{$category}','{$user}','{$seller}','{$nam}','{$price}','{$details}','{$place}','{$contacts}','{$uploaded}','{$refphoto}')";
+     $res = mysqli_query($con,$querry);
+     if($res)
+     {
         $p = "SELECT * from posts where user = '{$user}' and name = '{$nam}' and seller = '{$seller}' and details = '{$details}'";
         $pe = mysqli_query($con,$p);
         $pes = mysqli_fetch_assoc($pe);
         $a = $pes['id'];
         echo "<script>alert(' Your post has been uploaded successfully, we thank you by the time we are looking for a customer of your product ');window.location='my_post.php?id=$a';</script>";exit;
- }
- else
- {
-     echo "<script>alert(' Error while uploading post, please try again ');window.location='upload.php?id=5';</script>";exit;
- }   
-}
+     }
+     else
+     {
+        echo "<script>alert(' Error while uploading post, please try again ');window.location='upload.php?id=5';</script>";exit;
+     }    
+   }
 }
 	
 	
