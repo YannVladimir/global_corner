@@ -178,7 +178,7 @@
             $_SESSION['message']= "Please login to your acount to make this order, or create your new acount";
             $user = $_SESSION['id'];
             $querry = "INSERT INTO services (title,reserved,sub_category,phone,contacts,user,location,akarere,details,uploaded_date,main,photo1,photo2,photo3,photo4,photo5) values ('{$nam}','{$seller}','{$category}','{$phone}','{$email}','{$user}','{$place}','{$location}','{$details}','{$uploaded}','{$photo}','{$img1}','{$img2}','{$img3}','{$img4}','{$img5}')";
-            $r = mysqli_query($con,$sql);
+            $r = mysqli_query($con,$querry);
             if($r)
             {
                $q = "UPDATE users set sell_service ='{$category}' where user_id ='{$user}'";
@@ -191,7 +191,7 @@
             }
             else
             {
-               echo "<script>alert(' Failed to post your order, please try again');window.location='order.php';</script>";exit;
+               echo "<script>alert(' Failed to post your ad, please try again');window.location='.php';</script>";exit;
             }
         }
         else
