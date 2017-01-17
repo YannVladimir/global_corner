@@ -129,7 +129,7 @@ require_once ('../includes/main_functions.php');
             
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-7">
           <div id="slider-carousel" class="carousel slide" data-ride="carousel">
             <!--<ol class="carousel-indicators">
               <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
@@ -174,7 +174,10 @@ require_once ('../includes/main_functions.php');
           </div>
           
         </div>
+        <div class='col-sm-2'></div>
+        <div class='col-sm-3'></div>
         <div class="col-sm-6 padding-right">
+          <h2 class="title text-center">Recomended service providers</h2>
                     <br>
                     <?php 
                        $query = "SELECT * FROM services where is_accepted=1 order by priority limit 20";
