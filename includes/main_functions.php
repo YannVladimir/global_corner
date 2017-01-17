@@ -191,7 +191,7 @@
             }
             else
             {
-               echo "<script>alert(' Failed to post your ad, please try again');window.location='.php';</script>";exit;
+               echo "<script>alert(' Failed to post your ad, please try again');window.location='upload.php';</script>";exit;
             }
         }
         else
