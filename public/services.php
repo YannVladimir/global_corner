@@ -228,6 +228,7 @@ require_once ('../includes/main_functions.php');
                                                     <img class='sizingimagesmax' src='assets/images/posts/noimage.png' alt='' class=''/>
                                                   </div>
                                             </div>
+                                            <b> {$row['category']} - {$row['sub_category']}</b>
                                             <div class='product-overlay' style='opacity:0.9'>
                                                  <div class='overlay-content'>
                                                      <a href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
@@ -296,6 +297,7 @@ require_once ('../includes/main_functions.php');
                                                     <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
                                                   </div>
                                             </div>
+                                            <b> {$row['category']} - {$row['sub_category']}</b>
                                             <div class='product-overlay' style='opacity:0.9'>
                                                  <div class='overlay-content'>
                                                      <a href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
