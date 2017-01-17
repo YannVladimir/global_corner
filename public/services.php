@@ -305,10 +305,11 @@ require_once ('../includes/main_functions.php');
                                   </div>
                                   <div class='col-sm-7'>
                                       <div class='product-information' style='border-left-style:none;border-bottom-style:none'><!--/product-information-->
-                                        {$img}
-                                        <span>
-                                          <h2>{$row['reserved']}</h2>
-                                        </span>
+                                        {$img} <b>{$row['avg']} ({$row['total_votes']} total votes)</b>
+                                        <p><span>
+                                             <h2>{$row['reserved']}</h2>
+                                          </span>
+                                        </p>
                                         <p>Contact number:<b> {$row['phone']}</b></p>
                                         <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
                                         <p><b></b></p><br>
