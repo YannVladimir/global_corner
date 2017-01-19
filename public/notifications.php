@@ -233,52 +233,53 @@ $ss = $row['sell_service'];
                                      <div class='tab-content'> ";
                                   echo "<div class='tab-pane fade active in' id='1' >";
                                   }
-                                $c = "SELECT * from notifications where target = '{$bs}' and type = 3 order by post_id limit 20";
-                                 $r = mysqli_query($con,$c);
-                                 while ($ro = mysqli_fetch_assoc($r))
-                                 {
-                                  $cats = "SELECT * from amaservice where id = '{$ro['post_id']}' and is_accepted =1";
-                                  $res = mysqli_query($con,$cats);
-                                  while($row = mysqli_fetch_assoc($res))
-                                {if($row['main'] == 'noimage.jpg' || $row['main'] == '' )
-                        {
-                              if($row['avg']==0){
-                                $img = '<b>Rank:</b> Not available <br>';
-                              }
-                              elseif($row['avg']<=1.25)
-                              {
-                                $img = '<img src="assets/images/shop/rating2.png" alt="" />';
-                              }
-                              elseif ($row['avg']>1.25 && $row['avg']<1.75) {
-                                $img = '<img src="assets/images/shop/rating3.png" alt="" />';
-                              }
-                              elseif ($row['avg']>1.75 && $row['avg']<2.25) {
-                                $img = '<img src="assets/images/shop/rating4.png" alt="" />';
-                              }
-                              elseif ($row['avg']>2.25 && $row['avg']<2.75) {
-                                $img = '<img src="assets/images/shop/rating5.png" alt="" />';
-                              }
-                              elseif ($row['avg']>2.75 && $row['avg']<3.25) {
-                                $img = '<img src="assets/images/shop/rating6.png" alt="" />';
-                              }
-                              elseif ($row['avg']>3.25 && $row['avg']<3.75) {
-                                $img = '<img src="assets/images/shop/rating7.png" alt="" />';
-                              }
-                              elseif ($row['avg']>3.75 && $row['avg']<4.25) {
-                                $img = '<img src="assets/images/shop/rating8.png" alt="" />';
-                              }
-                              elseif ($row['avg']>4.25 && $row['avg']<4.75) {
-                                $img = '<img src="assets/images/shop/rating9.png" alt="" />';
-                              }
-                              else{
-                                $img = '<img src="assets/images/shop/rating10.png" alt="" />';
-                              }
-
-                        echo "<br><a href='service.php?id={$row['id']}'>
-                        <div class='row' style='border: 1px solid #F7F7F0; background:#f6f6f6'>";
-                            echo "<div class='col-sm-5'>
-                                     <div class='product-image-wrapper'>
-                                        <div class='single-products'>
+                                  $c = "SELECT * from notifications where target = '{$bs}' and type = 3 order by post_id limit 20";
+                                  $r = mysqli_query($con,$c);
+                                  while ($ro = mysqli_fetch_assoc($r))
+                                  {
+                                    $cats = "SELECT * from amaservice where id = '{$ro['post_id']}' and is_accepted =1";
+                                    $res = mysqli_query($con,$cats);
+                                    while($row = mysqli_fetch_assoc($res))
+                                    {
+                                       if($row['main'] == 'noimage.jpg' || $row['main'] == '' )
+                                       {
+                                          if($row['avg']==0)
+                                          {
+                                            $img = '<b>Rank:</b> Not available <br>';
+                                          }
+                                          elseif($row['avg']<=1.25)
+                                          {
+                                            $img = '<img src="assets/images/shop/rating2.png" alt="" />';
+                                          }
+                                          elseif ($row['avg']>1.25 && $row['avg']<1.75) {
+                                            $img = '<img src="assets/images/shop/rating3.png" alt="" />';
+                                          }
+                                          elseif ($row['avg']>1.75 && $row['avg']<2.25) {
+                                            $img = '<img src="assets/images/shop/rating4.png" alt="" />';
+                                          } 
+                                          elseif ($row['avg']>2.25 && $row['avg']<2.75) {
+                                            $img = '<img src="assets/images/shop/rating5.png" alt="" />';
+                                          }
+                                          elseif ($row['avg']>2.75 && $row['avg']<3.25) {
+                                            $img = '<img src="assets/images/shop/rating6.png" alt="" />';
+                                          }
+                                          elseif ($row['avg']>3.25 && $row['avg']<3.75) {
+                                            $img = '<img src="assets/images/shop/rating7.png" alt="" />';
+                                          }
+                                          elseif ($row['avg']>3.75 && $row['avg']<4.25) {
+                                            $img = '<img src="assets/images/shop/rating8.png" alt="" />';
+                                          }
+                                          elseif ($row['avg']>4.25 && $row['avg']<4.75) {
+                                            $img = '<img src="assets/images/shop/rating9.png" alt="" />';
+                                          }
+                                          else{
+                                            $img = '<img src="assets/images/shop/rating10.png" alt="" />';
+                                          }
+                                          echo "<br><a href='service.php?id={$row['id']}'>
+                                           <div class='row' style='border: 1px solid #F7F7F0; background:#f6f6f6'>";
+                                          echo "<div class='col-sm-5'>
+                                            <div class='product-image-wrapper'>
+                                            <div class='single-products'>
                                             <div class='productinfo text-center'>
                                                  <div class='sizingimages'>
                                                     <img class='sizingimagesmax' src='assets/images/posts/noimage.png' alt='' class=''/>
@@ -307,8 +308,8 @@ $ss = $row['sell_service'];
                                         </div><!--/product-information-->
             </div>";
 
-                        echo "</div></a>";
-                        }
+                                 echo "</div></a>";
+                               }
                         else
                         {
                           if($row['avg']==0){
@@ -378,7 +379,9 @@ $ss = $row['sell_service'];
 
                         echo "</div></a>";
                         }
+
                        }
+}
 }
                                 
 //for recomanded service to buy
