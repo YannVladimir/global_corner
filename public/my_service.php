@@ -252,7 +252,7 @@ require_once ('../includes/main_functions.php');
                                   {
                                     $reviews = $reviews + 1;
                                   }
-                                  echo "<li class='active'><a href='#tag' data-toggle='tab'>Reviews ($reviews)</a></li>";
+                                  echo "<li><a href='#tag' data-toggle='tab'>Reviews ($reviews)</a></li>";
                                   ?>
                                 <li><a href='#details' data-toggle='tab'>Experience</a></li>
                                 <li><a href='#companyprofile' data-toggle='tab'>Working Hours</a></li>
@@ -261,7 +261,7 @@ require_once ('../includes/main_functions.php');
                             </ul>
                         </div>
                         <div class="tab-content">
-                          <div class="tab-pane fade active" id="tag" >
+                          <div class="tab-pane fade" id="tag" >
                                 <?php
                                   $user= $_SESSION['id'];
                                   $query = "SELECT * from votes where service_id = '{$id}' and user='{$user}'";
