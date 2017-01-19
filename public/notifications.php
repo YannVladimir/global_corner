@@ -251,25 +251,25 @@ $ss = $row['sell_service'];
                                           {
                                             $img = '<img src="assets/images/shop/rating2.png" alt="" />';
                                           }
-                                          elseif ($row['avg']>1.25 && $row['avg']<1.75) {
+                                          elseif ($row['avg']>=1.25 && $row['avg']<1.75) {
                                             $img = '<img src="assets/images/shop/rating3.png" alt="" />';
                                           }
-                                          elseif ($row['avg']>1.75 && $row['avg']<2.25) {
+                                          elseif ($row['avg']>=1.75 && $row['avg']<2.25) {
                                             $img = '<img src="assets/images/shop/rating4.png" alt="" />';
                                           } 
-                                          elseif ($row['avg']>2.25 && $row['avg']<2.75) {
+                                          elseif ($row['avg']>=2.25 && $row['avg']<2.75) {
                                             $img = '<img src="assets/images/shop/rating5.png" alt="" />';
                                           }
-                                          elseif ($row['avg']>2.75 && $row['avg']<3.25) {
+                                          elseif ($row['avg']>=2.75 && $row['avg']<3.25) {
                                             $img = '<img src="assets/images/shop/rating6.png" alt="" />';
                                           }
-                                          elseif ($row['avg']>3.25 && $row['avg']<3.75) {
+                                          elseif ($row['avg']>=3.25 && $row['avg']<3.75) {
                                             $img = '<img src="assets/images/shop/rating7.png" alt="" />';
                                           }
-                                          elseif ($row['avg']>3.75 && $row['avg']<4.25) {
+                                          elseif ($row['avg']>=3.75 && $row['avg']<4.25) {
                                             $img = '<img src="assets/images/shop/rating8.png" alt="" />';
                                           }
-                                          elseif ($row['avg']>4.25 && $row['avg']<4.75) {
+                                          elseif ($row['avg']>=4.25 && $row['avg']<4.75) {
                                             $img = '<img src="assets/images/shop/rating9.png" alt="" />';
                                           }
                                           else{
@@ -319,25 +319,25 @@ $ss = $row['sell_service'];
                               {
                                 $img = '<img src="assets/images/shop/rating2.png" alt="" />';
                               }
-                              elseif ($row['avg']>1.25 && $row['avg']<1.75) {
+                              elseif ($row['avg']>=1.25 && $row['avg']<1.75) {
                                 $img = '<img src="assets/images/shop/rating3.png" alt="" />';
                               }
-                              elseif ($row['avg']>1.75 && $row['avg']<2.25) {
+                              elseif ($row['avg']>=1.75 && $row['avg']<2.25) {
                                 $img = '<img src="assets/images/shop/rating4.png" alt="" />';
                               }
-                              elseif ($row['avg']>2.25 && $row['avg']<2.75) {
+                              elseif ($row['avg']>=2.25 && $row['avg']<2.75) {
                                 $img = '<img src="assets/images/shop/rating5.png" alt="" />';
                               }
-                              elseif ($row['avg']>2.75 && $row['avg']<3.25) {
+                              elseif ($row['avg']>=2.75 && $row['avg']<3.25) {
                                 $img = '<img src="assets/images/shop/rating6.png" alt="" />';
                               }
-                              elseif ($row['avg']>3.25 && $row['avg']<3.75) {
+                              elseif ($row['avg']>=3.25 && $row['avg']<3.75) {
                                 $img = '<img src="assets/images/shop/rating7.png" alt="" />';
                               }
-                              elseif ($row['avg']>3.75 && $row['avg']<4.25) {
+                              elseif ($row['avg']>=3.75 && $row['avg']<4.25) {
                                 $img = '<img src="assets/images/shop/rating8.png" alt="" />';
                               }
-                              elseif ($row['avg']>4.25 && $row['avg']<4.75) {
+                              elseif ($row['avg']>=4.25 && $row['avg']<4.75) {
                                 $img = '<img src="assets/images/shop/rating9.png" alt="" />';
                               }
                               else{

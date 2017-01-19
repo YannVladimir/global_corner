@@ -107,13 +107,13 @@ require_once ('../includes/main_functions.php');
                                 if($row['main'] == 'noimage.jpg' || $row['main'] == '' )
                                 {
                                    if($row['is_accepted']==0)
-                              {
-                                $accepted = 'The adminstration is currently verifying this post';
-                              }
-                              else
-                              {
-                                $accepted = '';
-                              }
+                                   {
+                                      $accepted = 'The adminstration is currently verifying this post';
+                                   }
+                                   else
+                                   {
+                                      $accepted = '';
+                                   }
                               if($row['avg']==0){
                                 $img = '<b>Rank:</b> Not available <br>';
                               }
@@ -245,12 +245,21 @@ require_once ('../includes/main_functions.php');
                             <ul class="nav nav-tabs">
                                 <li><a href='#details' data-toggle='tab'>Experience</a></li>
                                 <li class='active'><a href='#companyprofile' data-toggle='tab'>Working Hours</a></li>
-                                <li><a href='#tag' data-toggle='tab'>Reviews</a></li>
+                                <?php $reviews = 0; 
+                                  $query = "SELECT * from votes where service_id = '{$id}'";
+                                  $r = mysqli_query($con,$query);
+                                  while($row = mysqli_fetch_assoc($r))
+                                  {
+                                    $reviews = $reviews + 1;
+                                  }
+                                  echo "<li><a href='#tag' data-toggle='tab'>Reviews ($reviews)</a></li>";
+                                  ?>
+                                
                                 <li><a href='#reviews' data-toggle='tab'>Rate it</a></li>
                             </ul>
                         </div>
                         <div class="tab-content">
-                            <div class="tab-pane fade active" id="details" >
+                            <div class="tab-pane fade" id="details" >
                                 <!--<div class="col-sm-3">
                                     <div class="product-image-wrapper">
                                         <div class="single-products">
@@ -301,7 +310,7 @@ require_once ('../includes/main_functions.php');
                                 </div>-->
                             </div>
                             
-                            <div class="tab-pane fade" id="companyprofile" >
+                            <div class="tab-pane fade active" id="companyprofile" >
                                 <div class="col-sm-2">
                                 </div>
                                
@@ -519,54 +528,42 @@ require_once ('../includes/main_functions.php');
                                 </div>
                                 
                             <div class="tab-pane fade" id="tag" >
-                                <!--<div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="images/home/gallery1.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="images/home/gallery2.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="images/home/gallery3.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="images/home/gallery4.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>-->
+                                <?php
+                                  $query = "SELECT * from votes where service_id = '{$id}'";
+                                  $r = mysqli_query($con,$query);
+                                  while($row = mysqli_fetch_assoc($r))
+                                  {
+                                    if($row['marks']==1)
+                                    {
+                                      $img = '<img src="assets/images/shop/rating2.png" alt="" />';
+                                    }
+                                    elseif($row['marks']==2)
+                                    {
+                                      $img = '<img src="assets/images/shop/rating4.png" alt="" />';
+                                    }
+                                    elseif($row['marks']==3)
+                                    {
+                                       $img = '<img src="assets/images/shop/rating6.png" alt="" />';
+                                    }
+                                    elseif($row['marks']==4)
+                                    {
+                                      $img = '<img src="assets/images/shop/rating8.png" alt="" />';
+                                    }
+                                    else
+                                    {
+                                      $img = '<img src="assets/images/shop/rating10.png" alt="" />';
+                                    }
+                                    echo'<div class="media commnets">
+                                    <div class="media-body">';
+                                    echo "
+                                    <h4 class='media-heading'>{$row['name']}</h4>
+                                          <p>{$row['experience']}</p>
+                                          <p><b>Rank: {$img} </b> | <b>Date: {$row['vote_date']}</b></p>
+                                          ";
+                                    echo'</div></div>';
+                                    
+                                  }
+                                ?>
                             </div>
                             
                             
