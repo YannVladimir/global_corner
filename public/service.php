@@ -138,7 +138,7 @@ require_once ('../includes/main_functions.php');
                             $query = "SELECT * FROM amaservice where id = $id ";
                             $res = mysqli_query($con,$query);
                             while($row = mysqli_fetch_assoc($res))
-                            {   
+                            {   $recommended = $row['subcategory_id'];
                                  if($row['is_accepted']==0)
                               {
                                 $accepted = 'The adminstration is currently verifying this post';
@@ -178,9 +178,19 @@ require_once ('../includes/main_functions.php');
                               else{
                                 $img = '<img src="assets/images/shop/rating10.png" alt="" />';
                               }
-                                echo"<img src='assets/images/posts/{$row['main']}' alt='' />
+                              if($row['main']=='' || $row['main']=='noimage.jpg')
+                              {
+                                echo"<img src='assets/images/posts/noimage.jpg' alt='' />
                                 </div> 
-                        </div>
+                        </div>";
+                              }
+                              else
+                              {
+                                 echo"<img src='assets/images/posts/{$row['main']}' alt='' />
+                                </div> 
+                        </div>";
+                              }
+                                echo"
                         <div class='col-sm-7'>
                             <div class='product-information'><!--/product-information-->
                                 <h2>Category, {$row['sub_category']}</h2>
@@ -474,7 +484,7 @@ require_once ('../includes/main_functions.php');
                         
                       <?php
                       $b=0; 
-                       $query = "SELECT * FROM amaservice where is_accepted = 1 order by priority limit 20";
+                       $query = "SELECT * FROM amaservice where is_accepted = 1 and subcategory_id = $recommended order by total_marks desc limit 5";
                        $res = mysqli_query($con,$query);
                        while($row = mysqli_fetch_assoc($res))
                        {
