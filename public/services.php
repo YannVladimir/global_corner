@@ -180,7 +180,7 @@ require_once ('../includes/main_functions.php');
           <h2 class="title text-center">Recomended service providers</h2>
                     <br>
                     <?php 
-                       $query = "SELECT * FROM amaservice where is_accepted = 1 order by priority limit 20";
+                       $query = "SELECT * FROM amaservice where is_accepted = 1 order by total_marks desc limit 20";
                        $res = mysqli_query($con,$query);
                        while($row = mysqli_fetch_assoc($res))
                        {
