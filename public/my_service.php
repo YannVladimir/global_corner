@@ -381,9 +381,10 @@ require_once ('../includes/main_functions.php');
                                         <button id='mondaynew' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Add working hour
-                                    </button></div>";
-                                    echo" <div id='mondayn' style='display:none;'>
+                                    </button></div></div>";
+                                    echo" <div class='row'>
                                     <div class='col-sm-8'>
+                                    <div id='mondayn' style='display:none;'>
                                   <form action='workingnew.php' method='POST'>
                                     <textarea name='monday' rows='3' placeholder='please provide the working time for monday, leave it empty if no work on monday'></textarea>
                                     <input type='submit' value='submit' class='btn btn-default pull-right cart'>
@@ -402,9 +403,10 @@ require_once ('../includes/main_functions.php');
                                         <button id='mondayold' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Change
-                                    </button></div>";
-                                    echo" <div id='mondayo' style='display:none;'>
+                                    </button></div></div>";
+                                    echo" <div class='row'>
                                     <div class='col-sm-8'>
+                                    <div id='mondayn' style='display:none;'>
                                   <form action='working.php' method='POST'>
                                     <textarea name='monday' rows='3' placeholder='please update the working time for monday, leave it empty if no work on monday'></textarea>
                                     <input type='submit' value='submit' class='btn btn-default pull-right cart'>
@@ -421,9 +423,10 @@ require_once ('../includes/main_functions.php');
                                         <button id='tuesdaynew' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Add working hour
-                                    </button></div>";
-                                    echo" <div id='tuesdayn' style='display:none;'>
+                                    </button></div></div>";
+                                    echo" <div class='row'>
                                     <div class='col-sm-8'>
+                                    <div id='mondayn' style='display:none;'>
                                   <form action='workingnew.php' method='POST'>
                                     <textarea name='tuesday' rows='3' placeholder='please provide the working time for tuesday, leave it empty if no work on tuesday'></textarea>
                                     <input type='submit' value='submit' class='btn btn-default pull-right cart'>
@@ -440,9 +443,10 @@ require_once ('../includes/main_functions.php');
                                         <button id='tuesdayold' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Change
-                                    </button></div>";
-                                    echo" <div id='tuesdayo' style='display:none;'>
+                                    </button></div></div>";
+                                    echo" <div class='row'>
                                     <div class='col-sm-8'>
+                                    <div id='mondayn' style='display:none;'>
                                   <form action='working.php' method='POST'>
                                     <textarea name='tuesday' rows='3' placeholder='please provide the working time for tuesday, leave it empty if no work on tuesday'></textarea>
                                     <input type='submit' value='submit' class='btn btn-default pull-right cart'>
@@ -458,9 +462,10 @@ require_once ('../includes/main_functions.php');
                                         <button id='wednesdaynew' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Add working hour
-                                    </button></div>";
-                                    echo" <div id='wednesdayn' style='display:none;'>
+                                    </button></div></div>";
+                                    echo" <div class='row'>
                                     <div class='col-sm-8'>
+                                    <div id='mondayn' style='display:none;'>
                                   <form action='workingnew.php' method='POST'>
                                     <textarea name='wednesday' rows='3' placeholder='please provide the working time for wednesday, leave it empty if no work on wednesday'></textarea>
                                     <input type='submit' value='submit' class='btn btn-default pull-right cart'>
@@ -478,9 +483,10 @@ require_once ('../includes/main_functions.php');
                                         <button id='wednesdayold' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Change
-                                    </button></div>";
-                                    echo" <div id='wednesdayo' style='display:none;'>
+                                    </button></div></div>";
+                                    echo" <div class='row'>
                                     <div class='col-sm-8'>
+                                    <div id='mondayn' style='display:none;'>
                                   <form action='working.php' method='POST'>
                                     <textarea name='wednesday' rows='3' placeholder='please provide the working time for wednesday, leave it empty if no work on wednesday'></textarea>
                                     <input type='submit' value='submit' class='btn btn-default pull-right cart'>
@@ -497,9 +503,10 @@ require_once ('../includes/main_functions.php');
                                         <button id='thursdaynew' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Add working hour
-                                    </button></div>";
-                                    echo" <div id='thursdayn' style='display:none;'>
+                                   </button></div></div>";
+                                    echo" <div class='row'>
                                     <div class='col-sm-8'>
+                                    <div id='mondayn' style='display:none;'>
                                   <form action='workingnew.php' method='POST'>
                                     <textarea name='thursday' rows='3' placeholder='please provide the working time for thursday, leave it empty if no work on thursday'></textarea>
                                     <input type='submit' value='submit' class='btn btn-default pull-right cart'>
@@ -517,9 +524,10 @@ require_once ('../includes/main_functions.php');
                                         <button id='thursdayold' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Change
-                                    </button></div>";
-                                    echo" <div id='thursdayo' style='display:none;'>
+                                    </button></div></div>";
+                                    echo" <div class='row'>
                                     <div class='col-sm-8'>
+                                    <div id='mondayn' style='display:none;'>
                                   <form action='working.php' method='POST'>
                                     <textarea name='thursday' rows='3' placeholder='please provide the working time for thursday, leave it empty if no work on thursday'></textarea>
                                     <input type='submit' value='submit' class='btn btn-default pull-right cart'>
@@ -536,9 +544,10 @@ require_once ('../includes/main_functions.php');
                                         <button id='fridaynew' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Add working hour
-                                    </button></div>";
-                                    echo" <div id='fridayn' style='display:none;'>
+                                    </button></div></div>";
+                                    echo" <div class='row'>
                                     <div class='col-sm-8'>
+                                    <div id='mondayn' style='display:none;'>
                                   <form action='workingnew.php' method='POST'>
                                     <textarea name='friday' rows='3' placeholder='please provide the working time for friday, leave it empty if no work on friday'></textarea>
                                     <input type='submit' value='submit' class='btn btn-default pull-right cart'>
@@ -556,9 +565,10 @@ require_once ('../includes/main_functions.php');
                                         <button id='fridayold' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Change
-                                    </button></div>";
-                                    echo" <div id='fridayo' style='display:none;'>
+                                    </button></div></div>";
+                                    echo" <div class='row'>
                                     <div class='col-sm-8'>
+                                    <div id='mondayn' style='display:none;'>
                                   <form action='working.php' method='POST'>
                                     <textarea name='friday' rows='3' placeholder='please provide the working time for friday, leave it empty if no work on friday'></textarea>
                                     <input type='submit' value='submit' class='btn btn-default pull-right cart'>
@@ -575,9 +585,10 @@ require_once ('../includes/main_functions.php');
                                         <button id='saturdaynew' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Add working hour
-                                    </button></div>";
-                                    echo" <div id='saturdayn' style='display:none;'>
+                                    </button></div></div>";
+                                    echo" <div class='row'>
                                     <div class='col-sm-8'>
+                                    <div id='mondayn' style='display:none;'>
                                   <form action='workingnew.php' method='POST'>
                                     <textarea name='saturday' rows='3' placeholder='please provide the working time for saturday, leave it empty if no work on saturday'></textarea>
                                     <input type='submit' value='submit' class='btn btn-default pull-right cart'>
@@ -595,9 +606,10 @@ require_once ('../includes/main_functions.php');
                                         <button id='saturdayold' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Change
-                                    </button></div>";
-                                    echo" <div id='saturdayo' style='display:none;'>
+                                    </button></div></div>";
+                                    echo" <div class='row'>
                                     <div class='col-sm-8'>
+                                    <div id='mondayn' style='display:none;'>
                                   <form action='working.php' method='POST'>
                                     <textarea name='saturday' rows='3' placeholder='please provide the working time for saturday, leave it empty if no work on saturday'></textarea>
                                     <input type='submit' value='submit' class='btn btn-default pull-right cart'>
@@ -614,9 +626,10 @@ require_once ('../includes/main_functions.php');
                                         <button id='sundaynew' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Add working hour
-                                    </button></div>";
-                                    echo" <div id='sundayn' style='display:none;'>
+                                    </button></div></div>";
+                                    echo" <div class='row'>
                                     <div class='col-sm-8'>
+                                    <div id='mondayn' style='display:none;'>
                                   <form action='workingnew.php' method='POST'>
                                     <textarea name='sunday' rows='3' placeholder='please provide the working time for sunday, leave it empty if no work on sunday'></textarea>
                                     <input type='submit' value='submit' class='btn btn-default pull-right cart'>
@@ -634,9 +647,10 @@ require_once ('../includes/main_functions.php');
                                         <button id='sundayold' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Change
-                                    </button></div>";
-                                    echo" <div id='sundayo' style='display:none;'>
+                                   </button></div></div>";
+                                    echo" <div class='row'>
                                     <div class='col-sm-8'>
+                                    <div id='mondayn' style='display:none;'>
                                   <form action='working.php' method='POST'>
                                     <textarea name='sunday' rows='3' placeholder='please provide the working time for sunday, leave it empty if no work on sunday'></textarea>
                                     <input type='submit' value='submit' class='btn btn-default pull-right cart'>
