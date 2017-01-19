@@ -418,6 +418,14 @@ require_once ('../includes/main_functions.php');
                             
                             <div class="tab-pane fade" id="tag" >
                                 <?php
+                                 $reviews = 0; 
+                                  $user = $_SESSION['id'];
+                                  $query = "SELECT * from votes where service_id = '{$id}' and user = '{$user}'";
+                                  $r = mysqli_query($con,$query);
+                                  while($row = mysqli_fetch_assoc($r))
+                                  {
+                                    $reviews = $reviews + 1;
+                                  }
                                   if($reviews == 0)
                                   {
                                     echo 'No reviews available for this post';
