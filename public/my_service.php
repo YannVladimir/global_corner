@@ -688,7 +688,7 @@ require_once ('../includes/main_functions.php');
                                        }
                                     ?>
                                     
-                                </div>
+                                </div></div>
                                 
                             
                             

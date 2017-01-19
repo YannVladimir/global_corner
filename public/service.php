@@ -413,7 +413,7 @@ require_once ('../includes/main_functions.php');
                                        }
                                        }
                                     ?>
-                                    
+                                   </div> 
                             </div>
                             
                             <div class="tab-pane fade" id="tag" >
