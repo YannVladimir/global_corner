@@ -470,13 +470,19 @@ require_once ('../includes/main_functions.php');
                     </div><!--/category-tab-->
                     
                     <div class="recommended_items col-sm-8"><!--recommended_items-->
-                        <h2 class="title text-center">recommended sellers</h2><!--shyiramo s_cat name hagati ya recommended na sellers-->
+                        <!--shyiramo s_cat name hagati ya recommended na sellers-->
                         
-                        <?php 
+                      <?php
+                      $b=0; 
                        $query = "SELECT * FROM amaservice where is_accepted = 1 order by priority limit 20";
                        $res = mysqli_query($con,$query);
                        while($row = mysqli_fetch_assoc($res))
                        {
+                         if($b==0)
+                         {
+                            echo"<h2 class='title text-center'>recommended {$row['sub_category']} service providers</h2>";
+                            $b = $b+1;
+                         }
                         if($row['main'] == 'noimage.jpg' || $row['main'] == '' )
                         {
                               if($row['avg']==0){
