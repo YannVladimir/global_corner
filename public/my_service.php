@@ -376,15 +376,14 @@ require_once ('../includes/main_functions.php');
                                        {
                                         echo"<div class='row'>
                                         <div class='col-sm-8'>
-                                        <p><b>Monday:</b> Not mentioned</p>
+                                        <p><b>Monday:</b> Not mentioned</p></div>
                                         <div class='col-sm-2'>
-                                        <button id='mondaynew' type='button' class='btn btn-default cart pull-right'>
+                                        <button id='mondaynew' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Add working hour
-                                    </button></div></div>";
-                                    echo" <div class='row'>
+                                    </button></div>";
+                                    echo" <div id='mondayn' style='display:none;'>
                                     <div class='col-sm-8'>
-                                    <div id='mondayn' style='display:none;'>
                                   <form action='workingnew.php' method='POST'>
                                     <textarea name='monday' rows='3' placeholder='please provide the working time for monday, leave it empty if no work on monday'></textarea>
                                     <input type='submit' value='submit' class='btn btn-default pull-right cart'>
@@ -398,9 +397,9 @@ require_once ('../includes/main_functions.php');
                                        {
                                         echo"<div class='row'>
                                         <div class='col-sm-8'>";
-                                        echo"<p><b>Monday:</b>{$row['monday']} </p>
+                                        echo"<p><b>Monday:</b>{$row['monday']} </p></div>
                                         <div class='col-sm-2'>
-                                        <button id='mondayold' type='button' class='btn btn-default cart pull-right'>
+                                        <button id='mondayold' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Change
                                     </button></div>";
@@ -418,8 +417,9 @@ require_once ('../includes/main_functions.php');
                                        {
                                         echo"<div class='row'>
                                         <div class='col-sm-8'>";
-                                        echo"<p><b>Tuesday:</b> Not mentioned </p>
-                                        <button id='tuesdaynew' type='button' class='btn btn-default cart pull-right'>
+                                        echo"<p><b>Tuesday:</b> Not mentioned </p></div>
+                                        <div class='col-sm-2'>
+                                        <button id='tuesdaynew' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Add working hour
                                     </button></div>";
@@ -437,8 +437,9 @@ require_once ('../includes/main_functions.php');
                                        {
                                         echo"<div class='row'>
                                         <div class='col-sm-8'>";
-                                        echo"<p><b>Tuesday:</b>{$row['tuesday']} </p>
-                                        <button id='tuesdayold' type='button' class='btn btn-default cart pull-right'>
+                                        echo"<p><b>Tuesday:</b>{$row['tuesday']} </p></div>
+                                        <div class='col-sm-2'>
+                                        <button id='tuesdayold' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Change
                                     </button></div>";
@@ -455,8 +456,9 @@ require_once ('../includes/main_functions.php');
                                        {
                                         echo"<div class='row'>
                                         <div class='col-sm-8'>";
-                                        echo"<p><b>Wednesday:</b> Not mentioned </p>
-                                        <button id='wednesdaynew' type='button' class='btn btn-default cart pull-right'>
+                                        echo"<p><b>Wednesday:</b> Not mentioned </p></div>
+                                        <div class='col-sm-2'>
+                                        <button id='wednesdaynew' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Add working hour
                                     </button></div>";
@@ -475,8 +477,9 @@ require_once ('../includes/main_functions.php');
                                        {
                                         echo"<div class='row'>
                                         <div class='col-sm-8'>";
-                                        echo"<p><b>Wednesday:</b>{$row['wednesday']} </p>
-                                        <button id='wednesdayold' type='button' class='btn btn-default cart pull-right'>
+                                        echo"<p><b>Wednesday:</b>{$row['wednesday']} </p></div>
+                                        <div class='col-sm-2'>
+                                        <button id='wednesdayold' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Change
                                     </button></div>";
@@ -494,8 +497,9 @@ require_once ('../includes/main_functions.php');
                                        {
                                         echo"<div class='row'>
                                         <div class='col-sm-8'>";
-                                        echo"<p><b>Thursday:</b> Not mentioned </p>
-                                        <button id='thursdaynew' type='button' class='btn btn-default cart pull-right'>
+                                        echo"<p><b>Thursday:</b> Not mentioned </p></div>
+                                        <div class='col-sm-2'>
+                                        <button id='thursdaynew' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Add working hour
                                     </button></div>";
@@ -514,8 +518,9 @@ require_once ('../includes/main_functions.php');
                                        {
                                         echo"<div class='row'>
                                         <div class='col-sm-8'>";
-                                        echo"<p><b>Thursday:</b>{$row['thursday']} </p>
-                                        <button id='thursdayold' type='button' class='btn btn-default cart pull-right'>
+                                        echo"<p><b>Thursday:</b>{$row['thursday']} </p></div>
+                                        <div class='col-sm-2'>
+                                        <button id='thursdayold' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Change
                                     </button></div>";
@@ -533,8 +538,9 @@ require_once ('../includes/main_functions.php');
                                        {
                                         echo"<div class='row'>
                                         <div class='col-sm-8'>";
-                                        echo"<p><b>Friday:</b> Not mentioned </p>
-                                        <button id='fridaynew' type='button' class='btn btn-default cart pull-right'>
+                                        echo"<p><b>Friday:</b> Not mentioned </p></div>
+                                        <div class='col-sm-2'>
+                                        <button id='fridaynew' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Add working hour
                                     </button></div>";
@@ -553,8 +559,9 @@ require_once ('../includes/main_functions.php');
                                        {
                                         echo"<div class='row'>
                                         <div class='col-sm-8'>";
-                                        echo"<p><b>Friday:</b>{$row['friday']} </p>
-                                        <button id='fridayold' type='button' class='btn btn-default cart pull-right'>
+                                        echo"<p><b>Friday:</b>{$row['friday']} </p></div>
+                                        <div class='col-sm-2'>
+                                        <button id='fridayold' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Change
                                     </button></div>";
@@ -572,8 +579,9 @@ require_once ('../includes/main_functions.php');
                                        {
                                         echo"<div class='row'>
                                         <div class='col-sm-8'>";
-                                        echo"<p><b>Saturday:</b> Not mentioned </p>
-                                        <button id='saturdaynew' type='button' class='btn btn-default cart pull-right'>
+                                        echo"<p><b>Saturday:</b> Not mentioned </p></div>
+                                        <div class='col-sm-2'>
+                                        <button id='saturdaynew' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Add working hour
                                     </button></div>";
@@ -592,8 +600,9 @@ require_once ('../includes/main_functions.php');
                                        {
                                         echo"<div class='row'>
                                         <div class='col-sm-8'>";
-                                        echo"<p><b>Saturday:</b>{$row['saturday']} </p>
-                                        <button id='saturdayold' type='button' class='btn btn-default cart pull-right'>
+                                        echo"<p><b>Saturday:</b>{$row['saturday']} </p></div>
+                                        <div class='col-sm-2'>
+                                        <button id='saturdayold' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Change
                                     </button></div>";
@@ -611,8 +620,9 @@ require_once ('../includes/main_functions.php');
                                        {
                                         echo"<div class='row'>
                                         <div class='col-sm-8'>";
-                                        echo"<p><b>Sunday:</b> Not mentioned </p>
-                                        <button id='sundaynew' type='button' class='btn btn-default cart pull-right'>
+                                        echo"<p><b>Sunday:</b> Not mentioned </p></div>
+                                        <div class='col-sm-2'>
+                                        <button id='sundaynew' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Add working hour
                                     </button></div>";
@@ -631,8 +641,9 @@ require_once ('../includes/main_functions.php');
                                        {
                                         echo"<div class='row'>
                                         <div class='col-sm-8'>";
-                                        echo"<p><b>Sunday:</b>{$row['sunday']} </p>
-                                        <button id='sundayold' type='button' class='btn btn-default cart pull-right'>
+                                        echo"<p><b>Sunday:</b>{$row['sunday']} </p></div>
+                                        <div class='col-sm-2'>
+                                        <button id='sundayold' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Change
                                     </button></div>";
