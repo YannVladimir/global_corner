@@ -395,16 +395,22 @@ require_once ('../includes/main_functions.php');
                                        }
                                        else
                                        {
-                                        echo"<p><b>Monday:</b>{$row['monday']}
+                                        echo"<div class='row'>
+                                        <div class='col-sm-8'>";
+                                        echo"<p><b>Monday:</b>{$row['monday']} </p></div>
+                                        <div class='col-sm-2'>
                                         <button id='mondayold' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Change
-                                    </button></p>";
+                                    </button></div>";
                                     echo" <div id='mondayo' style='display:none;'>
+                                    <div class='col-sm-8'>
                                   <form action='working.php' method='POST'>
-                                    <textarea name='monday' rows='3' placeholder='please provide the working time for monday, leave it empty if no work on monday'></textarea>
+                                    <textarea name='monday' rows='3' placeholder='please update the working time for monday, leave it empty if no work on monday'></textarea>
                                     <input type='submit' value='submit' class='btn btn-default pull-right cart'>
                                   </form>
+                                </div>
+                                </div>
                                 </div>";
                                        }
                                        if($row['tuesday'] == 'nothing' || $row['tuesday'] == '' )
