@@ -252,7 +252,7 @@ require_once ('../includes/main_functions.php');
                                   {
                                     $reviews = $reviews + 1;
                                   }
-                                  echo "<li><a href='#tag' data-toggle='tab'>Reviews ($reviews)</a></li>";
+                                  echo "<li active><a href='#tag' data-toggle='tab'>Reviews ($reviews)</a></li>";
                                   ?>
                                 <li><a href='#details' data-toggle='tab'>Experience</a></li>
                                 <li><a href='#companyprofile' data-toggle='tab'>Working Hours</a></li>
@@ -261,7 +261,7 @@ require_once ('../includes/main_functions.php');
                             </ul>
                         </div>
                         <div class="tab-content">
-                          <div class="tab-pane fade" id="tag" >
+                          <div class="tab-pane fade active in" id="tag" >
                                 <?php
                                   $user= $_SESSION['id'];
                                   $query = "SELECT * from votes where service_id = '{$id}' and user='{$user}'";
@@ -288,6 +288,7 @@ require_once ('../includes/main_functions.php');
                                     {
                                       $img = '<img src="assets/images/shop/rating10.png" alt="" />';
                                     }
+                                    echo'<div class="row">';
                                     echo'<div class="col-sm-2"></div>
                                     <div class="col-sm-8">';
                                     echo'<div class="media commnets">
@@ -298,7 +299,7 @@ require_once ('../includes/main_functions.php');
                                           <p><b>Rank: {$img} </b> | <b>Date: {$row['vote_date']}</b></p>
                                           ";
                                     echo'</div></div></div>';
-                                    echo'<div class="col-sm-2"></div>';
+                                    echo'<div class="col-sm-2"></div></div>';
                                     
                                   }
                                 ?>
