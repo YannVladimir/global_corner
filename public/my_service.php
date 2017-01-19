@@ -243,9 +243,10 @@ require_once ('../includes/main_functions.php');
                     <div class='category-tab shop-details-tab'><!--category-tab-->
                         <div class='col-sm-12'>
                             <ul class="nav nav-tabs">
-                              <?php $reviews = 0; 
+                              <?php 
+                                 $reviews = 0; 
                                   $user = $_SESSION['id'];
-                                  $query = "SELECT * from votes where service_id = '{$id}' where user = '{$user}'";
+                                  $query = "SELECT * from votes where service_id = '{$id}' and user = '{$user}'";
                                   $r = mysqli_query($con,$query);
                                   while($row = mysqli_fetch_assoc($r))
                                   {
