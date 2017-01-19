@@ -399,33 +399,33 @@ $ss = $row['sell_service'];
                                   if($numbera == 0)
                                   {
                                     echo'<ul class="nav nav-tabs">';
-                                  echo"<li class='pull-left'><a href='my_acount.php#choosing'>Product orders: Not available</a></li>
+                                    echo"<li class='pull-left'><a href='my_acount.php#choosing'>Product orders: Not available</a></li>
                                          <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='my_acount.php#choosing'>Choose category</a></li>";
-                                  echo "</ul>
+                                    echo "</ul>
                                          </div>
                                      <div class='tab-content'> ";
-                                  echo "<div class='tab-pane fade active in' id='1' >";
+                                    echo "<div class='tab-pane fade active in' id='1' >";
                                   }
-                                  else{
+                                  else
+                                  {
                                     echo'<ul class="nav nav-tabs">';
-                                  echo"
+                                    echo"
                                          <li class='pull-left' style='cursor:pointer'><a style='cursor:pointer' href='sub-category.php?id=$sp'>Total product orders ($numbera)</a></li>
                                          <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='my_acount.php#choosing'>Change category</a></li>";
-                                  echo "</ul>
+                                    echo "</ul>
                                          </div>
                                      <div class='tab-content'> ";
-                                  echo "<div class='tab-pane fade active in' id='1' >";
+                                    echo "<div class='tab-pane fade active in' id='1' >";
                                   }
-                                  
-                                 $ca = "SELECT * from notifications where target = '{$sp}' and type = 1 and is_accepted = 1 and is_product = 1 order by post_id desc limit 16";
-                                 $ra = mysqli_query($con,$ca);
-                                 while ($roa = mysqli_fetch_assoc($ra))
-                                 {
-                                  $catsa = "SELECT * from vieworders where id = '{$roa['post_id']}'";
-                                  $resa = mysqli_query($con,$catsa);
-                                  while($rowa = mysqli_fetch_assoc($resa))
+                                  $ca = "SELECT * from notifications where target = '{$sp}' and type = 1 and is_accepted = 1 and is_product = 1 order by post_id desc limit 16";
+                                  $ra = mysqli_query($con,$ca);
+                                  while ($roa = mysqli_fetch_assoc($ra))
                                   {
-                                    echo "<div class='col-sm-6'>
+                                     $catsa = "SELECT * from vieworders where id = '{$roa['post_id']}'";
+                                     $resa = mysqli_query($con,$catsa);
+                                     while($rowa = mysqli_fetch_assoc($resa))
+                                     {
+                                        echo "<div class='col-sm-6'>
                                              <div class='panel panel-default text-center'>
                                                  <div class='panel-heading'>
                                                  <h2 class='panel-title'><strong>{$rowa['name']} </strong></h2>
@@ -443,9 +443,9 @@ $ss = $row['sell_service'];
                                              </ul>
                                           </div>";
                                    
-                                }
-                                }
-                                }
+                                      }
+                                    }
+                                  }
                                
                                 echo "</div></div>";
 
@@ -467,33 +467,34 @@ $ss = $row['sell_service'];
                                   if($numbera == 0)
                                   {
                                     echo'<ul class="nav nav-tabs">';
-                                  echo"<li class='pull-left'><a href='my_acount.php#choosing'>Service orders: Not available</a></li>
+                                    echo"<li class='pull-left'><a href='my_acount.php#choosing'>Service orders: Not available</a></li>
                                          <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='my_acount.php#choosing'>Choose category</a></li>";
-                                  echo "</ul>
+                                    echo "</ul>
                                          </div>
                                      <div class='tab-content'> ";
-                                  echo "<div class='tab-pane fade active in' id='1' >";
+                                    echo "<div class='tab-pane fade active in' id='1' >";
                                   }
-                                  else{
+                                  else
+                                  {
                                     echo'<ul class="nav nav-tabs">';
-                                  echo"
+                                    echo"
                                          <li class='pull-left' style='cursor:pointer'><a style='cursor:pointer' href='sub-category.php?id=$ss'>Total service orders ($numbera)</a></li>
                                          <li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='my_acount.php#choosing'>Change category</a></li>";
-                                  echo "</ul>
+                                    echo "</ul>
                                          </div>
                                      <div class='tab-content'> ";
-                                  echo "<div class='tab-pane fade active in' id='1' >";
+                                    echo "<div class='tab-pane fade active in' id='1' >";
                                   }
                                   
-                                 $ca = "SELECT * from notifications where target = '{$ss}' and type = 1 and is_accepted = 1 and is_product = 0 order by post_id desc limit 16";
-                                 $ra = mysqli_query($con,$ca);
-                                 while ($roa = mysqli_fetch_assoc($ra))
-                                 {
-                                  $catsa = "SELECT * from vieworders where id = '{$roa['post_id']}'";
-                                  $resa = mysqli_query($con,$catsa);
-                                  while($rowa = mysqli_fetch_assoc($resa))
+                                  $ca = "SELECT * from notifications where target = '{$ss}' and type = 1 and is_accepted = 1 and is_product = 0 order by post_id desc limit 16";
+                                  $ra = mysqli_query($con,$ca);
+                                  while ($roa = mysqli_fetch_assoc($ra))
                                   {
-                                    echo "<div class='col-sm-6'>
+                                     $catsa = "SELECT * from vieworders where id = '{$roa['post_id']}'";
+                                     $resa = mysqli_query($con,$catsa);
+                                     while($rowa = mysqli_fetch_assoc($resa))
+                                     {
+                                        echo "<div class='col-sm-6'>
                                              <div class='panel panel-default text-center'>
                                                  <div class='panel-heading'>
                                                  <h2 class='panel-title'><strong>{$rowa['name']} </strong></h2>
@@ -511,8 +512,8 @@ $ss = $row['sell_service'];
                                              </ul>
                                           </div>";
                                    
-                                }
-                                }
+                                      }
+                                  }
                                 }
                                
                                 echo "</div></div>";
