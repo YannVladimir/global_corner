@@ -211,63 +211,16 @@ require_once ('../includes/main_functions.php');
                     <div class='category-tab shop-details-tab'><!--category-tab-->
                         <div class='col-sm-12'>
                             <ul class="nav nav-tabs">
-                                <li><a href='#details' data-toggle='tab'>Experience</a></li>
+                                <!--<li><a href='#details' data-toggle='tab'>Experience</a></li>-->
                                 <li><a href='#companyprofile' data-toggle='tab'>Working Hours</a></li>
                                 <li><a href='#tag' data-toggle='tab'>Reviews</a></li>
                                 <li class='active'><a href='#reviews' data-toggle='tab'>Rate it</a></li>
                             </ul>
                         </div>
                         <div class="tab-content">
-                            <div class="tab-pane fade" id="details" >
-                                <!--<div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="images/home/gallery1.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="images/home/gallery2.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="images/home/gallery3.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="images/home/gallery4.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>-->
-                            </div>
+                            <!--<div class="tab-pane fade" id="details" >
+                                for experience
+                            </div>-->
                             
                             
                             <div class="tab-pane fade" id="companyprofile" >
@@ -419,8 +372,7 @@ require_once ('../includes/main_functions.php');
                             <div class="tab-pane fade" id="tag" >
                                 <?php
                                  $reviews = 0; 
-                                  $user = $_SESSION['id'];
-                                  $query = "SELECT * from votes where service_id = '{$id}' and user = '{$user}'";
+                                  $query = "SELECT * from votes where service_id = '{$id}'";
                                   $r = mysqli_query($con,$query);
                                   while($row = mysqli_fetch_assoc($r))
                                   {
