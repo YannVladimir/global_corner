@@ -298,6 +298,7 @@ require_once ('../includes/main_functions.php');
                                           <p><b>Rank: {$img} </b> | <b>Date: {$row['vote_date']}</b></p>
                                           ";
                                     echo'</div></div></div>';
+                                    echo'<div class="col-sm-2"></div>';
                                     
                                   }
                                 ?>
