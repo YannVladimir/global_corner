@@ -6,7 +6,7 @@ session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
 ?>
-<!DOCTYPE html> 
+<!DOCTYPE html>  
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -269,106 +269,200 @@ require_once ('../includes/main_functions.php');
                                 </div>-->
                             </div>
                             
+                            
                             <div class="tab-pane fade" id="companyprofile" >
-                                <!--<div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="images/home/gallery1.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="col-sm-2">
                                 </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="images/home/gallery3.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="images/home/gallery2.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="images/home/gallery4.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>-->
+                               
+                                <div class="col-sm-8">
+                                   
+                                    <?php
+                                       $query = "SELECT * from working_hours where service_id = '{$id}'";
+                                       $r = mysqli_query($con,$query);
+                                       while($row = mysqli_fetch_assoc($r)){
+                                       if($row['monday'] == 'nothing' || $row['monday'] == '' )
+                                       {
+                                        echo"<div class='row'>
+                                        <div class='col-sm-8'>
+                                        <p><b>Monday:</b> Not mentioned</p></div>
+                                        ";
+                                        echo"
+                                </div>";
+                                        
+                                       }
+                                       else
+                                       {
+                                        echo"<div class='row'>
+                                        <div class='col-sm-8'>";
+                                        echo"<p><b>Monday:</b>{$row['monday']} </p></div>
+                                        ";
+                                    echo"
+                                </div>";
+                                       }
+                                       if($row['tuesday'] == 'nothing' || $row['tuesday'] == '' )
+                                       {
+                                        echo"<div class='row'>
+                                        <div class='col-sm-8'>";
+                                        echo"<p><b>Tuesday:</b> Not mentioned </p></div>
+                                        ";
+                                    echo"</div>";
+                                        
+                                       }
+                                       else
+                                       {
+                                        echo"<div class='row'>
+                                        <div class='col-sm-8'>";
+                                        echo"<p><b>Tuesday:</b>{$row['tuesday']} </p></div>
+                                       ";
+                                    echo"</div>";
+                                       }
+                                       if($row['wednesday'] == 'nothing' || $row['wednesday'] == '' )
+                                       {
+                                        echo"<div class='row'>
+                                        <div class='col-sm-8'>";
+                                        echo"<p><b>Wednesday:</b> Not mentioned </p></div>
+                                        ";
+                                    echo"
+                                </div>";
+                                        
+                                       }
+                                       else
+                                       {
+                                        echo"<div class='row'>
+                                        <div class='col-sm-8'>";
+                                        echo"<p><b>Wednesday:</b>{$row['wednesday']} </p></div>
+                                        ";
+                                    echo"
+                                </div>";
+                                       }
+                                       if($row['thursday'] == 'nothing' || $row['thursday'] == '' )
+                                       {
+                                        echo"<div class='row'>
+                                        <div class='col-sm-8'>";
+                                        echo"<p><b>Thursday:</b> Not mentioned </p></div>
+                                        ";
+                                    echo"
+                                </div>";
+                                        
+                                       }
+                                       else
+                                       {
+                                        echo"<div class='row'>
+                                        <div class='col-sm-8'>";
+                                        echo"<p><b>Thursday:</b>{$row['thursday']} </p></div>
+                                        ";
+                                    echo"
+                                </div>";
+                                       }
+                                       if($row['friday'] == 'nothing' || $row['friday'] == '' )
+                                       {
+                                        echo"<div class='row'>
+                                        <div class='col-sm-8'>";
+                                        echo"<p><b>Friday:</b> Not mentioned </p></div>
+                                        ";
+                                    echo"
+                                </div>";
+                                        
+                                       }
+                                       else
+                                       {
+                                        echo"<div class='row'>
+                                        <div class='col-sm-8'>";
+                                        echo"<p><b>Friday:</b>{$row['friday']} </p></div>
+                                        ";
+                                    echo"
+                                </div>";
+                                       }
+                                       if($row['saturday'] == 'nothing' || $row['saturday'] == '' )
+                                       {
+                                        echo"<div class='row'>
+                                        <div class='col-sm-8'>";
+                                        echo"<p><b>Saturday:</b> Not mentioned </p></div>
+                                        ";
+                                    echo"
+                                </div>";
+                                        
+                                       }
+                                       else
+                                       {
+                                        echo"<div class='row'>
+                                        <div class='col-sm-8'>";
+                                        echo"<p><b>Saturday:</b>{$row['saturday']} </p></div>
+                                        ";
+                                    echo"
+                                </div>";
+                                       }
+                                       if($row['sunday'] == 'nothing' || $row['sunday'] == '' )
+                                       {
+                                        echo"<div class='row'>
+                                        <div class='col-sm-8'>";
+                                        echo"<p><b>Sunday:</b> Not mentioned </p></div>
+                                        ";
+                                    echo" 
+                                </div>";
+                                        
+                                       }
+                                       else
+                                       {
+                                        echo"<div class='row'>
+                                        <div class='col-sm-8'>";
+                                        echo"<p><b>Sunday:</b>{$row['sunday']} </p></div>
+                                        ";
+                                    echo"
+                                </div>";
+                                       }
+                                       }
+                                    ?>
+                                    
                             </div>
                             
                             <div class="tab-pane fade" id="tag" >
-                                <!--<div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="images/home/gallery1.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="images/home/gallery2.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="images/home/gallery3.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="images/home/gallery4.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>-->
+                                <?php
+                                  if($reviews == 0)
+                                  {
+                                    echo 'No reviews available for this post';
+                                  }
+                                  else{
+                                  $query = "SELECT * from votes where service_id = '{$id}'";
+                                  $r = mysqli_query($con,$query);
+                                  while($row = mysqli_fetch_assoc($r))
+                                  {
+                                    if($row['marks']==1)
+                                    {
+                                      $img = '<img src="assets/images/shop/rating2.png" alt="" />';
+                                    }
+                                    elseif($row['marks']==2)
+                                    {
+                                      $img = '<img src="assets/images/shop/rating4.png" alt="" />';
+                                    }
+                                    elseif($row['marks']==3)
+                                    {
+                                       $img = '<img src="assets/images/shop/rating6.png" alt="" />';
+                                    }
+                                    elseif($row['marks']==4)
+                                    {
+                                      $img = '<img src="assets/images/shop/rating8.png" alt="" />';
+                                    }
+                                    else
+                                    {
+                                      $img = '<img src="assets/images/shop/rating10.png" alt="" />';
+                                    }
+                                    echo'<div class="row">';
+                                    echo'<div class="col-sm-2"></div>
+                                    <div class="col-sm-8">';
+                                    echo'<div class="media commnets">
+                                    <div class="media-body">';
+                                    echo "
+                                    <h4 class='media-heading'>{$row['name']}</h4>
+                                          <p>{$row['experience']}</p>
+                                          <p><b>Rank: {$img} </b> | <b>Date: {$row['vote_date']}</b></p>
+                                          ";
+                                    echo'</div></div></div>';
+                                    echo'<div class="col-sm-2"></div></div>';
+                                    
+                                  }
+                                }
+                                ?>
                             </div>
                             
                             <div class="tab-pane fade active in" id="reviews" >
