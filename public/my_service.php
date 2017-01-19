@@ -254,8 +254,7 @@ require_once ('../includes/main_functions.php');
                                   }
                                   echo "<li><a href='#tag' data-toggle='tab'>Reviews ($reviews)</a></li>";
                                   ?>
-                                
-                                <li><a href='#reviews' data-toggle='tab'>Rate it</a></li>
+                      
                             </ul>
                         </div>
                         <div class="tab-content">
@@ -310,7 +309,7 @@ require_once ('../includes/main_functions.php');
                                 </div>-->
                             </div>
                             
-                            <div class="tab-pane fade active" id="companyprofile" >
+                            <div class="tab-pane fade" id="companyprofile" >
                                 <div class="col-sm-2">
                                 </div>
                                
@@ -527,7 +526,7 @@ require_once ('../includes/main_functions.php');
                                     
                                 </div>
                                 
-                            <div class="tab-pane fade" id="tag" >
+                            <div class="tab-pane fade active" id="tag" >
                                 <?php
                                   $query = "SELECT * from votes where service_id = '{$id}'";
                                   $r = mysqli_query($con,$query);
