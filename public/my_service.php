@@ -252,7 +252,7 @@ require_once ('../includes/main_functions.php');
                                   {
                                     $reviews = $reviews + 1;
                                   }
-                                  echo "<li active><a href='#tag' data-toggle='tab'>Reviews ($reviews)</a></li>";
+                                  echo "<li class='active'><a href='#tag' data-toggle='tab'>Reviews ($reviews)</a></li>";
                                   ?>
                                 <li><a href='#details' data-toggle='tab'>Experience</a></li>
                                 <li><a href='#companyprofile' data-toggle='tab'>Working Hours</a></li>
@@ -263,7 +263,11 @@ require_once ('../includes/main_functions.php');
                         <div class="tab-content">
                           <div class="tab-pane fade active in" id="tag" >
                                 <?php
-                                  $user= $_SESSION['id'];
+                                  if($reviews == 0)
+                                  {
+                                    echo 'No reviews available for this post';
+                                  }
+                                  else{
                                   $query = "SELECT * from votes where service_id = '{$id}' and user='{$user}'";
                                   $r = mysqli_query($con,$query);
                                   while($row = mysqli_fetch_assoc($r))
@@ -302,6 +306,7 @@ require_once ('../includes/main_functions.php');
                                     echo'<div class="col-sm-2"></div></div>';
                                     
                                   }
+                                }
                                 ?>
                             </div>
                             
@@ -362,22 +367,29 @@ require_once ('../includes/main_functions.php');
                                 </div>
                                
                                 <div class="col-sm-8">
+                                   
                                     <?php
                                        $query = "SELECT * from working_hours where service_id = '{$id}'";
                                        $r = mysqli_query($con,$query);
                                        while($row = mysqli_fetch_assoc($r)){
                                        if($row['monday'] == 'nothing' || $row['monday'] == '' )
                                        {
-                                        echo"<p><b>Monday:</b> Not mentioned
+                                        echo"<div class='row'>
+                                        <div class='col-sm-8'>
+                                        <p><b>Monday:</b> Not mentioned</p></div>
+                                        <div class='col-sm-2'>
                                         <button id='mondaynew' type='button' class='btn btn-default cart'>
                                         <i class=''></i>
                                         Add working hour
-                                    </button></p>";
+                                    </button></div>";
                                     echo" <div id='mondayn' style='display:none;'>
+                                    <div class='col-sm-8'>
                                   <form action='workingnew.php' method='POST'>
                                     <textarea name='monday' rows='3' placeholder='please provide the working time for monday, leave it empty if no work on monday'></textarea>
                                     <input type='submit' value='submit' class='btn btn-default pull-right cart'>
                                   </form>
+                                  </div>
+                                  </div>
                                 </div>";
                                         
                                        }
