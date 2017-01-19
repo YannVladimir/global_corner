@@ -243,10 +243,9 @@ require_once ('../includes/main_functions.php');
                     <div class='category-tab shop-details-tab'><!--category-tab-->
                         <div class='col-sm-12'>
                             <ul class="nav nav-tabs">
-                                <li><a href='#details' data-toggle='tab'>Experience</a></li>
-                                <li><a href='#companyprofile' data-toggle='tab'>Working Hours</a></li>
-                                <?php $reviews = 0; 
-                                  $query = "SELECT * from votes where service_id = '{$id}'";
+                              <?php $reviews = 0; 
+                                  $user = $_SESSION['id'];
+                                  $query = "SELECT * from votes where service_id = '{$id}' where user = '{$user}'";
                                   $r = mysqli_query($con,$query);
                                   while($row = mysqli_fetch_assoc($r))
                                   {
@@ -254,11 +253,57 @@ require_once ('../includes/main_functions.php');
                                   }
                                   echo "<li class='active'><a href='#tag' data-toggle='tab'>Reviews ($reviews)</a></li>";
                                   ?>
+                                <li><a href='#details' data-toggle='tab'>Experience</a></li>
+                                <li><a href='#companyprofile' data-toggle='tab'>Working Hours</a></li>
+
                       
                             </ul>
                         </div>
                         <div class="tab-content">
+                          <div class="tab-pane fade active" id="tag" >
+                                <?php
+                                  $user= $_SESSION['id'];
+                                  $query = "SELECT * from votes where service_id = '{$id}' and user='{$user}'";
+                                  $r = mysqli_query($con,$query);
+                                  while($row = mysqli_fetch_assoc($r))
+                                  {
+                                    if($row['marks']==1)
+                                    {
+                                      $img = '<img src="assets/images/shop/rating2.png" alt="" />';
+                                    }
+                                    elseif($row['marks']==2)
+                                    {
+                                      $img = '<img src="assets/images/shop/rating4.png" alt="" />';
+                                    }
+                                    elseif($row['marks']==3)
+                                    {
+                                       $img = '<img src="assets/images/shop/rating6.png" alt="" />';
+                                    }
+                                    elseif($row['marks']==4)
+                                    {
+                                      $img = '<img src="assets/images/shop/rating8.png" alt="" />';
+                                    }
+                                    else
+                                    {
+                                      $img = '<img src="assets/images/shop/rating10.png" alt="" />';
+                                    }
+                                    echo'<div class="col-sm-2"></div>
+                                    <div class="col-sm-8">';
+                                    echo'<div class="media commnets">
+                                    <div class="media-body">';
+                                    echo "
+                                    <h4 class='media-heading'>{$row['name']}</h4>
+                                          <p>{$row['experience']}</p>
+                                          <p><b>Rank: {$img} </b> | <b>Date: {$row['vote_date']}</b></p>
+                                          ";
+                                    echo'</div></div></div>';
+                                    
+                                  }
+                                ?>
+                            </div>
+                            
                             <div class="tab-pane fade" id="details" >
+                              uyoba mpari. kubaho ntagufite bimeze nk igiti kitagira amashami
                                 <!--<div class="col-sm-3">
                                     <div class="product-image-wrapper">
                                         <div class="single-products">
@@ -526,47 +571,6 @@ require_once ('../includes/main_functions.php');
                                     
                                 </div>
                                 
-                            <div class="tab-pane fade active" id="tag" >
-                                <?php
-                                  $user= $_SESSION['id'];
-                                  $query = "SELECT * from votes where service_id = '{$id}' and user='{$user}'";
-                                  $r = mysqli_query($con,$query);
-                                  while($row = mysqli_fetch_assoc($r))
-                                  {
-                                    if($row['marks']==1)
-                                    {
-                                      $img = '<img src="assets/images/shop/rating2.png" alt="" />';
-                                    }
-                                    elseif($row['marks']==2)
-                                    {
-                                      $img = '<img src="assets/images/shop/rating4.png" alt="" />';
-                                    }
-                                    elseif($row['marks']==3)
-                                    {
-                                       $img = '<img src="assets/images/shop/rating6.png" alt="" />';
-                                    }
-                                    elseif($row['marks']==4)
-                                    {
-                                      $img = '<img src="assets/images/shop/rating8.png" alt="" />';
-                                    }
-                                    else
-                                    {
-                                      $img = '<img src="assets/images/shop/rating10.png" alt="" />';
-                                    }
-                                    echo'<div class="col-sm-2"></div>
-                                    <div class="col-sm-8">';
-                                    echo'<div class="media commnets">
-                                    <div class="media-body">';
-                                    echo "
-                                    <h4 class='media-heading'>{$row['name']}</h4>
-                                          <p>{$row['experience']}</p>
-                                          <p><b>Rank: {$img} </b> | <b>Date: {$row['vote_date']}</b></p>
-                                          ";
-                                    echo'</div></div></div>';
-                                    
-                                  }
-                                ?>
-                            </div>
                             
                             
                             
