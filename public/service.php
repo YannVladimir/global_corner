@@ -180,7 +180,7 @@ require_once ('../includes/main_functions.php');
                               }
                               if($row['main']=='' || $row['main']=='noimage.jpg')
                               {
-                                echo"<img src='assets/images/posts/noimage.jpg' alt='' />
+                                echo"<img src='assets/images/posts/noimage.png' alt='' />
                                 </div> 
                         </div>";
                               }
