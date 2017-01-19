@@ -244,7 +244,7 @@ require_once ('../includes/main_functions.php');
                         <div class='col-sm-12'>
                             <ul class="nav nav-tabs">
                                 <li><a href='#details' data-toggle='tab'>Experience</a></li>
-                                <li class='active'><a href='#companyprofile' data-toggle='tab'>Working Hours</a></li>
+                                <li><a href='#companyprofile' data-toggle='tab'>Working Hours</a></li>
                                 <?php $reviews = 0; 
                                   $query = "SELECT * from votes where service_id = '{$id}'";
                                   $r = mysqli_query($con,$query);
@@ -252,7 +252,7 @@ require_once ('../includes/main_functions.php');
                                   {
                                     $reviews = $reviews + 1;
                                   }
-                                  echo "<li><a href='#tag' data-toggle='tab'>Reviews ($reviews)</a></li>";
+                                  echo "<li class='active'><a href='#tag' data-toggle='tab'>Reviews ($reviews)</a></li>";
                                   ?>
                       
                             </ul>
@@ -528,7 +528,8 @@ require_once ('../includes/main_functions.php');
                                 
                             <div class="tab-pane fade active" id="tag" >
                                 <?php
-                                  $query = "SELECT * from votes where service_id = '{$id}'";
+                                  $user= $_SESSION['id'];
+                                  $query = "SELECT * from votes where service_id = '{$id}' and user='{$user}'";
                                   $r = mysqli_query($con,$query);
                                   while($row = mysqli_fetch_assoc($r))
                                   {
@@ -552,6 +553,8 @@ require_once ('../includes/main_functions.php');
                                     {
                                       $img = '<img src="assets/images/shop/rating10.png" alt="" />';
                                     }
+                                    echo'<div class="col-sm-2"></div>
+                                    <div class="col-sm-8">';
                                     echo'<div class="media commnets">
                                     <div class="media-body">';
                                     echo "
@@ -559,7 +562,7 @@ require_once ('../includes/main_functions.php');
                                           <p>{$row['experience']}</p>
                                           <p><b>Rank: {$img} </b> | <b>Date: {$row['vote_date']}</b></p>
                                           ";
-                                    echo'</div></div>';
+                                    echo'</div></div></div>';
                                     
                                   }
                                 ?>
