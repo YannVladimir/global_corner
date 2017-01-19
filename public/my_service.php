@@ -311,7 +311,7 @@ require_once ('../includes/main_functions.php');
                             </div>
                             
                             <div class="tab-pane fade" id="details" >
-                              uyoba mpari. kubaho ntagufite bimeze nk igiti kitagira amashami
+                              We are currently working on this
                                 <!--<div class="col-sm-3">
                                     <div class="product-image-wrapper">
                                         <div class="single-products">
