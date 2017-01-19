@@ -480,7 +480,7 @@ require_once ('../includes/main_functions.php');
                        {
                          if($b==0)
                          {
-                            echo"<h2 class='title text-center'>recommended {$row['sub_category']} service providers</h2>";
+                            echo"<h2 class='title text-center'>recommended {$row['sub_category']}</h2>";
                             $b = $b+1;
                          }
                         if($row['main'] == 'noimage.jpg' || $row['main'] == '' )
