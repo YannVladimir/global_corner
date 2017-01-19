@@ -469,7 +469,7 @@ require_once ('../includes/main_functions.php');
                         </div>
                     </div><!--/category-tab-->
                     
-                    <div class="recommended_items"><!--recommended_items-->
+                    <div class="recommended_items col-sm-8"><!--recommended_items-->
                         <h2 class="title text-center">recommended sellers</h2><!--shyiramo s_cat name hagati ya recommended na sellers-->
                         
                         <?php 
