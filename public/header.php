@@ -126,9 +126,9 @@ CountBack(gsecs);
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a href='my_acount.php'><i class='fa fa-user'></i> {$_SESSION['username']}</a></li>
-								<li class='pull-right'><a href='contact_us.php'><i class='fa fa-envelope'></i>Contact us</a></li>
+								<li><a href='contact_us.php'><i class='fa fa-envelope'></i>Contact us</a></li>
 								<li><a href='notifications.php'><i class='fa fa-bell'></i>Notifications </a></li>
-								<li class='pull-right'><a href='home.php?var=logout'><i class='fa fa-lock'></i> Logout</a></li>
+								<li><a href='home.php?var=logout'><i class='fa fa-lock'></i> Logout</a></li>
 							</ul>
 						</div>
 					</div>";
