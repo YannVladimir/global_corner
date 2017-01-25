@@ -122,7 +122,7 @@ CountBack(gsecs);
                    {
 
                    echo "
-                    <div class='col-sm-4'>
+                    <div class='col-sm-3'>
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a href='my_acount.php'><i class='fa fa-user'></i> {$_SESSION['username']}</a></li>
@@ -135,7 +135,7 @@ CountBack(gsecs);
                    }
                    else
                    {
-              echo "<div class='col-sm-4'>
+              echo "<div class='col-sm-3'>
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a></a></li>
