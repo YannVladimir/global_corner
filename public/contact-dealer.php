@@ -7,6 +7,11 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
 //checkUser();
 //checkToken();
+$f = $_GET['id'];
+$_SESSION['answer']=$f;
+$_SESSION['info']="View the order details bellow, and you can contact the seller through email or phone call";
+
+/*
 
 if (isset($_SESSION['id']))
 {
@@ -17,14 +22,14 @@ if (isset($_SESSION['id']))
     }
     $_SESSION['info']="View the order details bellow, and you can contact the seller through email or phone call";
 }
-else
+else here for else part, it is not working fine when the user nta acount yari afitemo bari kuvuga ngo undefined index id on line $f = $_GET['id'];
 {
   $f = $_GET['id'];
   $_SESSION['answer']=$f;
   $_SESSION['message']="Please log in to your acount to view the post details, or you can create a new acount if you don't have one ";
   require('answer-login.php');
   exit;
-}
+}*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -149,6 +154,7 @@ else
         <div class="col-sm-12">
 
             <div class='recommended_items'><!--recommended_items-->
+              <br><Br><br>
             <h2 class='title text-center'>recommended orders</h2>
            <?php 
                            $queryyy = "SELECT * FROM vieworders where category = '{$cat}' and id !='{$id}' and is_accepted = 1 order by id desc limit 4";
