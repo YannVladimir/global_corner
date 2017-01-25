@@ -120,14 +120,48 @@ CountBack(gsecs);
 					<?php
                    if(isset($_SESSION['email']))
                    {
-
+                   	//from here
+                   $a = $_SESSION['id']; 
+                   $query = "SELECT * from users where user_id = '{$a}'";
+                   $res = mysqli_query($con,$query);
+                   $row = mysqli_fetch_assoc($res);
+                   $bp = $row['buy_product'];
+                   $sp = $row['sell_product'];
+                   $bs = $row['buy_service'];
+                   $ss = $row['sell_service'];
+                   $count = 0;
+                   $c = "SELECT * from notifications where target = '{$bp}' and type = 2 and is_accepted = 1";
+                   $r = mysqli_query($con,$c);
+                   while ($roa = mysqli_fetch_assoc($r))
+                   {
+                   	$count = $count + 1;
+                   }
+                   $ca = "SELECT * from notifications where target = '{$bs}' and type = 3 and is_accepted = 1";
+                   $ra = mysqli_query($con,$ca);
+                   while ($roa = mysqli_fetch_assoc($ra))
+                   {
+                     $count = $count + 1;
+                   }
+                   $cb = "SELECT * from notifications where target = '{$sp}' and type = 1 and is_accepted = 1 and is_product = 1";
+                   $rb = mysqli_query($con,$cb);
+                   while ($roa = mysqli_fetch_assoc($rb))
+                   {
+                     $count = $count + 1;
+                   }
+                   $cc = "SELECT * from notifications where target = '{$ss}' and type = 1 and is_accepted = 1 and is_product = 0";
+                   $rc = mysqli_query($con,$cc);
+                    while ($roa = mysqli_fetch_assoc($rc))
+                    {
+                      $count = $count + 1;
+                    }                                      
+                   //to here, if there is any change in between , please make sure to updTE NOTIFICATIONS .PHP
                    echo "
                     <div class='col-sm-3'>
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a href='my_acount.php'><i class='fa fa-user'></i> {$_SESSION['username']}</a></li>
 								<li><a href='contact_us.php'><i class='fa fa-envelope'></i>Contact us</a></li>
-								<li><a href='notifications.php'><i class='fa fa-bell'></i>Notifications </a></li>
+								<li><a href='notifications.php'><i class='fa fa-bell'></i>Notifications <font style='color:#90DC23;'>({$count})</font> </a></li>
 								<li><a href='home.php?var=logout'><i class='fa fa-lock'></i> Logout</a></li>
 							</ul>
 						</div>

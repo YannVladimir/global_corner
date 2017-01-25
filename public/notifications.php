@@ -12,7 +12,7 @@ if(!isset($_SESSION['id']))
   require_once ('login.php');
   exit;
 }
-$a = $_SESSION['id']; 
+/*$a = $_SESSION['id']; 
 $query = "SELECT * from users where user_id = '{$a}'";
 $res = mysqli_query($con,$query);
 $row = mysqli_fetch_assoc($res);
@@ -20,6 +20,8 @@ $bp = $row['buy_product'];
 $sp = $row['sell_product'];
 $bs = $row['buy_service'];
 $ss = $row['sell_service'];
+if you change in header remember to change this side
+*/
 
 ?>
 <!DOCTYPE html> 
