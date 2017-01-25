@@ -12,11 +12,11 @@ $nam = clearInput($_POST['izina']);
 $price = clearInput($_POST['price']);
 if($price ==0)
 {
-    $price = "Negotiatable";
+    $price = "Negotiable";
 }
 if(!$price)
 {
-  $price = "Negotiatable";
+  $price = "Negotiable";
 }
 $details = clearInput($_POST['details']);
 $place = clearInput($_POST['location']);

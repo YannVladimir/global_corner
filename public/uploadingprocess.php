@@ -22,11 +22,11 @@ if(checkIsStringSetPost('izina'))
    $price = clearInput($_POST['price']);
    if($price ==0)
    { 
-    $price = "Negotiatable";
+    $price = "Negotiable";
    }
    if(!$price)
    {
-    $price = "Negotiatable";
+    $price = "Negotiable";
    }
     $details = clearInput($_POST['details']);
     $new_second = clearInput($_POST['newsecond']);
