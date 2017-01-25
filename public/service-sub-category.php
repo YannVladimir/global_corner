@@ -136,7 +136,7 @@ require_once ('../includes/main_functions.php');
                     <br>
                     <?php 
                        $id = $_GET['id'];
-                       $query = "SELECT * FROM amaservice where is_accepted = 0 and category = '{$id}' order by total_marks desc limit 20";
+                       $query = "SELECT * FROM amaservice where is_accepted = 1 and subcategory_id = '{$id}' order by total_marks desc limit 20";
                        $res = mysqli_query($con,$query);
                        while($row = mysqli_fetch_assoc($res))
                        {
