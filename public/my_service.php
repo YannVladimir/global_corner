@@ -96,8 +96,7 @@ require_once ('../includes/main_functions.php');
         </div>
         <div class="col-sm-8 padding-right">
                     <div class="product-details"><!--product-details-->
-                        <div class="col-sm-3">
-                            <div class="view-product">
+                        
                         <?php
                             $id = $_GET['id'];
                             $query = "SELECT * FROM amaservice where id = $id ";
@@ -105,7 +104,10 @@ require_once ('../includes/main_functions.php');
                             while($row = mysqli_fetch_assoc($res))
                             {
                                 if($row['main'] == 'noimage.jpg' || $row['main'] == '' )
+
                                 {
+                                  echo'<div class="col-sm-3">
+                                          <div class="view-product">';
                                    if($row['is_accepted']==0)
                                    {
                                       $accepted = 'The adminstration is currently verifying this post';
@@ -153,7 +155,7 @@ require_once ('../includes/main_functions.php');
                             <div class='product-information'><!--/product-information-->
                                
                                 
-                                    {$img}
+                                    
                                     <label>Total votes ({$row['total_votes']})</label>
                                 
                                 <p><b>Title:</b>{$row['title']}</p>
@@ -172,6 +174,8 @@ require_once ('../includes/main_functions.php');
                                 }
                                 else
                                 {
+                                  echo'<div class="col-sm-5">
+                                          <div class="view-product">';
                                     if($row['is_accepted']==0)
                                     {
                                        $accepted = 'The adminstration is currently verifying this post';
@@ -215,7 +219,7 @@ require_once ('../includes/main_functions.php');
                                 echo"<img src='assets/images/posts/{$row['main']}' alt='' />
                                 </div> 
                         </div>
-                        <div class='col-sm-7'>
+                        <div class='col-sm-5'>
                             <div class='product-information'><!--/product-information-->
                                
                                 
