@@ -45,7 +45,7 @@
 								<li><a href="category.php?id=2">Mobiles</a></li>
 								<li><a href="category.php?id=3">Electronic materials</a></li>
 								<li><a href="category.php?id=5">Real estates</a></li>
-								<li><a href="category.php?id=6">Cars/Bikes</a></li>
+								<li><a href="category.php?id=6">Sports</a></li>
 							</ul>
 						</div>
 					</div>

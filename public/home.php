@@ -568,7 +568,7 @@ if(isset($_GET['var']) == "logout")
                                 echo "</div>";
 
                                 
-//for cars and bikes
+//for sports
 ?>
 
 <div class="col-sm-12">
