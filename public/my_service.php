@@ -303,7 +303,7 @@ require_once ('../includes/main_functions.php');
                                             <input type="text" name="type"  value="1" /> 
                                             <input type="file" name="main" class="this" id="inp" />
                                             <img id="image" class="btn1 starting" />
-                                            <input type="submit" value="upload image" class="btn btn-primary pull-right" name="submit" />
+                                            <input type="submit" value="upload image" class="btn btn-primary pull-right" name="submit" /></form>
                                          </div>';
                                        }
                                        else
@@ -318,7 +318,7 @@ require_once ('../includes/main_functions.php');
                                                    <input type="text" name="type" class="hide hidden" value="2" /> 
                                                    <input type="file" name="main" class="this" id="inp" />
                                                    <img id="image" class="btn1 starting" />
-                                                   <input type="submit" value="upload image" class="btn btn-primary pull-right" name="submit" />
+                                                   <input type="submit" value="upload image" class="btn btn-primary pull-right" name="submit" /></form>
                                                 </div>';
                                           }
                                           else
@@ -333,7 +333,7 @@ require_once ('../includes/main_functions.php');
                                                    <input type="text" name="type" class="hide hidden" value="3" /> 
                                                    <input type="file" name="main" class="this" id="inp" />
                                                    <img id="image" class="btn1 starting" />
-                                                   <input type="submit" value="upload image" class="btn btn-primary pull-right" name="submit" />
+                                                   <input type="submit" value="upload image" class="btn btn-primary pull-right" name="submit" /></form>
                                                 </div>';
                                             }
                                             else
@@ -348,7 +348,7 @@ require_once ('../includes/main_functions.php');
                                                    <input type="text" name="type" class="hide hidden" value="4" /> 
                                                    <input type="file" name="main" class="this" id="inp" />
                                                    <img id="image" class="btn1 starting" />
-                                                   <input type="submit" value="upload image" class="btn btn-primary pull-right" name="submit" />
+                                                   <input type="submit" value="upload image" class="btn btn-primary pull-right" name="submit" /></form>
                                                 </div>';
                                               }
                                               else
@@ -363,7 +363,7 @@ require_once ('../includes/main_functions.php');
                                                    <input type="text" name="type" class="hide hidden" value="5" /> 
                                                    <input type="file" name="main" class="this" id="inp" />
                                                    <img id="image" class="btn1 starting" />
-                                                   <input type="submit" value="upload image" class="btn btn-primary pull-right" name="submit" />
+                                                   <input type="submit" value="upload image" class="btn btn-primary pull-right" name="submit" /></form>
                                                 </div>';
                                                }
                                                else
@@ -378,7 +378,7 @@ require_once ('../includes/main_functions.php');
                                                      <input type="text" name="type" class="hide hidden" value="6" /> 
                                                      <input type="file" name="main" class="this" id="inp" />
                                                      <img id="image" class="btn1 starting" />
-                                                     <input type="submit" value="upload image" class="btn btn-primary pull-right" name="submit" />
+                                                     <input type="submit" value="upload image" class="btn btn-primary pull-right" name="submit" /></form>
                                                   </div>';
                                                 }
                                                 else
