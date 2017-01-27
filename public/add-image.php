@@ -5,9 +5,7 @@ error_reporting(E_ALL);
 session_start(); 
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
-if(checkIsStringSetPost('type'))
-{
-	$type = $_POST['type']);
+    $type = $_POST['type']);
 	$id = $_SESSION['photo_id'];
 	$user = $_SESSION['id'];
 	unset($_SESSION['photo_id']);
@@ -88,6 +86,9 @@ if(checkIsStringSetPost('type'))
 				
         echo "<script>alert(' Image uploaded successfully ');window.location='my_service.php?id=$id';</script>";
 	}
-}
+	else
+	{
+		echo'not fine';
+	}
 
 ?>  
