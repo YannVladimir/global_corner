@@ -36,7 +36,7 @@ require_once ('../includes/main_functions.php');
 
       }*/
       .ratesize{
-        height: 20px;
+        height: 25px;
       }
       .fon{
         font-size: 20px;
