@@ -175,7 +175,7 @@ checkToken();
                                                {
                                                  $interested = $interested + 1;
                                                }
-                                               echo "<tr class='odd gradeX'><td>Product</td><td><strong>{$row['name']}</strong></td><td><strong>{$row['subcat_name']}</strong></td><td>{$interested}</td><td>-</td><td><form action='my_post.php' method='GET'><input type='text' name='id' value='{$row['post_id']}' class='hidden'/><input type='submit' value='View Details'/></form></td><td><form action='delete.php' method='POST'><input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'><input type='text' name='id' value='{$row['post_id']}' class='hidden'/><input type='submit' value='Remove'/></form></td></tr> ";
+                                               echo "<tr class='odd gradeX'><td>Product</td><td><strong>{$row['name']}</strong></td><td><strong>{$row['subcat_name']}</strong></td><td>{$interested} <br> <a href='order-sub-category.php?id={$row['subcat_id']}&type=1&category={$row['subcat_name']}'>View all</a></td><td>-</td><td><form action='my_post.php' method='GET'><input type='text' name='id' value='{$row['post_id']}' class='hidden'/><input type='submit' value='View Details'/></form></td><td><form action='delete.php' method='POST'><input type='text' class='hidden' name='_token' value='{$_SESSION['_token']}'><input type='text' name='id' value='{$row['post_id']}' class='hidden'/><input type='submit' value='Remove'/></form></td></tr> ";
                                              }
 
                                              //for services then

@@ -130,8 +130,7 @@ require_once ('../includes/main_functions.php');
           </div>
         </div>
         
-        <div class="col-sm-5 padding-right">
-          <br><br><br>
+        <div class="col-sm-6 padding-right">
           <h2 class="title text-center">Recomended service providers</h2>
                     <br>
                     <?php 
