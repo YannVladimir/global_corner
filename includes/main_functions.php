@@ -50,6 +50,7 @@
     {
         return mysqli_real_escape_string(mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper"),htmlentities($input));
     }
+
     function log_user_in($email, $password)
     {
         $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
@@ -127,7 +128,42 @@
         	header("location: login.php");
         }exit();    	
     }
-    function service_log_user_in($email, $password)
+    function log_user_in($email, $password)
+    {
+        $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
+        $email = clearInput($email);
+        $password = clearInput($password);
+        $query="SELECT * from users where email ='{$email}' and password = '{$password}'";
+        $res = mysqli_query($con,$query);
+        if(mysqli_num_rows($res) >0)
+        {
+            $row = mysqli_fetch_assoc($res);
+            $_SESSION['id'] = $row['user_id'];
+            $_SESSION['username'] = $row['firstname'].' '.$row['lastname'];
+            $_SESSION['firstname'] = $row['firstname'];
+            $_SESSION['lastname'] = $row['lastname'];
+            $_SESSION['phone']=$row['phone'];
+            $_SESSION['email']=$email;
+            $_SESSION['priority']=$row['priority'];
+            if($row['is_admin']  == 1)
+            {
+                $_SESSION['u'] = '1';
+                header("location: ../admin/dashboard.php");
+            }
+            else
+            {
+                $_SESSION['u'] = '0'; 
+                header("location: upload.php?id=7");    
+            }exit();
+             
+        }
+        else
+        {
+            $_SESSION['message'] = "Wrong email/password combination";
+            header("location: login.php");
+        }exit();        
+    }
+    /*function service_log_user_in($email, $password)
     {
         $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
         $email = clearInput($email);
@@ -189,7 +225,7 @@
             $_SESSION['message'] = "Wrong email/password combination";
             header("location: order-login.php");
         }exit();        
-    }
+    } ibi ni ibyambere umuntu abanza gutanga details za service mbere yuko agiramo acount.*/
     function order_log_user_in($email, $password)
     {
         $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");

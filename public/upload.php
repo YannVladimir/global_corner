@@ -6,10 +6,20 @@ $id = $_GET['id'];
 $_SESSION['cat_id'] = $id;
 if($id==7)
   {
-    require('upload_service.php');
-    exit;
+    if(isset($_SESSION['id']))
+    {
+       require('upload_service.php');
+       exit;  
+    }
+    else
+    {
+      $_SESSION['message'] = 'Please log in or create a new acount to make your ad';
+      require('service-login.php');
+      exit;
+    }
+    
   }
-elseif ($id ==5)
+elseif ($id == 5)
   {
     require('upload_estates_copy.php');
     exit;
