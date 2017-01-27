@@ -131,7 +131,7 @@ require_once ('../includes/main_functions.php');
         </div>
         
         <div class="col-sm-6 padding-right">
-          <br><br><br>
+          
           <h2 class="title text-center">Recomended service providers</h2>
                     <br>
                     <?php 
