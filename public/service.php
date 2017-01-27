@@ -131,7 +131,7 @@ require_once ('../includes/main_functions.php');
         </div>
         <div class="col-sm-9 padding-right">
                     <div class="product-details"><!--product-details-->
-                        <div class="col-sm-5">
+                        <div class="col-sm-2">
                             <div class="view-product">
                         <?php
                             $id = $_GET['id'];
@@ -178,20 +178,14 @@ require_once ('../includes/main_functions.php');
                               else{
                                 $img = '<img src="assets/images/shop/rating10.png" alt="" />';
                               }
-                              if($row['main']=='' || $row['main']=='noimage.jpg')
-                              {
+                              
                                 echo"<img src='assets/images/posts/noimage.png' alt='' />
                                 </div> 
                         </div>";
-                              }
-                              else
-                              {
-                                 echo"<img src='assets/images/posts/{$row['main']}' alt='' />
-                                </div> 
-                        </div>";
+                              
                               }
                                 echo"
-                        <div class='col-sm-7'>
+                        <div class='col-sm-8'>
                             <div class='product-information'><!--/product-information-->
                                 <h2>Category, {$row['sub_category']}</h2>
                                 
@@ -222,9 +216,20 @@ require_once ('../includes/main_functions.php');
                         <div class='col-sm-12'>
                             <ul class="nav nav-tabs">
                                 <!--<li><a href='#details' data-toggle='tab'>Experience</a></li>-->
+                                <li><a href='#photos' data-toggle='tab'>Images</a></li>
                                 <li><a href='#companyprofile' data-toggle='tab'>Working Hours</a></li>
-                                <li><a href='#tag' data-toggle='tab'>Reviews</a></li>
-                                <li class='active'><a href='#reviews' data-toggle='tab'>Rate it</a></li>
+                                <?php 
+                                 $reviews = 0; 
+                                  $user = $_SESSION['id'];
+                                  $query = "SELECT * from votes where service_id = '{$id}'";
+                                  $r = mysqli_query($con,$query);
+                                  while($row = mysqli_fetch_assoc($r))
+                                  {
+                                    $reviews = $reviews + 1;
+                                  }
+                                  echo "<li class='active'><a href='#tag' data-toggle='tab'>Reviews ($reviews)</a></li>";
+                                  ?>
+                                  <li class='active'><a href='#reviews' data-toggle='tab'>Rate it</a></li>
                             </ul>
                         </div>
                         <div class="tab-content">
@@ -232,7 +237,70 @@ require_once ('../includes/main_functions.php');
                                 for experience
                             </div>-->
                             
-                            
+                            <div class="tab-pane fade" id="photos" >
+                             <div class="col-sm-2">
+                                </div>
+                               
+                                <div class="col-sm-8">
+                                   
+                                    <?php
+                                      $query = "SELECT * FROM amaservice where id = $id ";
+                                      $res = mysqli_query($con,$query);
+                                      while($row = mysqli_fetch_assoc($res))
+                                      {
+                                        if($row['main'] == 'noimage.jpg' || $row['main'] == '' || $row['main'] == 'error' || $row['main'] == 'noimage.png')
+                                        {
+                                          
+                                        }
+                                        else
+                                        {
+                                          echo" <img src='assets/images/posts/{$row['main']}' alt='' class=''/>' <br><br>";
+                                        }
+                                        if($row['photo1'] == 'noimage.jpg' || $row['photo1'] == '' || $row['photo1'] == 'error' || $row['photo1'] == 'noimage.png')
+                                        {
+                                          
+                                        }
+                                        else
+                                        {
+                                            echo"<img src='assets/images/posts/{$row['photo1']}' alt='' class=''/>' <br><br>";
+                                        }
+                                        if($row['photo2'] == 'noimage.jpg' || $row['photo2'] == '' || $row['photo2'] == 'error' || $row['photo2'] == 'noimage.png')
+                                        {
+                                          
+                                        }
+                                        else
+                                        {
+                                            echo" <img src='assets/images/posts/{$row['photo2']}' alt='' class=''/>' <br><br>";
+                                        }
+                                        if($row['photo3'] == 'noimage.jpg' || $row['photo3'] == '' || $row['photo3'] == 'error' || $row['photo3'] == 'noimage.png')
+                                        {
+                                          
+                                        }
+                                        else
+                                        {
+                                            echo" <img src='assets/images/posts/{$row['photo3']}' alt='' class=''/>' <br><br>";
+                                        }
+                                        if($row['photo4'] == 'noimage.jpg' || $row['photo4'] == '' || $row['photo4'] == 'error' || $row['photo4'] == 'noimage.png')
+                                        {
+                                          
+                                        }
+                                        else
+                                        {
+                                            echo" <img src='assets/images/posts/{$row['photo4']}' alt='' class=''/>' <br><br>";
+                                        }
+                                        if($row['photo5'] == 'noimage.jpg' || $row['photo5'] == '' || $row['photo5'] == 'error' || $row['photo5'] == 'noimage.png')
+                                        {
+                                          
+                                        }
+                                        else
+                                        {
+                                            echo" <img src='assets/images/posts/{$row['photo5']}' alt='' class=''/>' <br><br>";
+                                        }
+                                      }
+                                    ?>
+                                    
+                                </div>
+                          </div>
                             <div class="tab-pane fade" id="companyprofile" >
                                 <div class="col-sm-2">
                                 </div>
