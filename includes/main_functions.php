@@ -128,7 +128,7 @@
         	header("location: login.php");
         }exit();    	
     }
-    function log_user_in($email, $password)
+    function service_log_user_in($email, $password)
     {
         $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
         $email = clearInput($email);
