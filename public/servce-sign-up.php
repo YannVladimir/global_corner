@@ -8,7 +8,7 @@ require_once ('../includes/main_functions.php');
 //checkUser();
 //checkToken();
 if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
-{
+{ 
   $firstname = clearInput($_POST['firstname']);
   $lastname = clearInput($_POST['lastname']);
   $email = clearInput($_POST['email']);
@@ -37,11 +37,11 @@ if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
   } 
   else
   {
-      echo "<script>alert(' There is an error while creating the account, please try again ');window.location='order-login.php';</script>";
+      echo "<script>alert(' There is an error while creating the account, please try again ');window.location='service-login.php';</script>";
   }
 }
 else 
 {
-    echo "<script>alert(' Error, Please fill the form again ');window.location='order-login.php';</script>";
+    echo "<script>alert(' Error, Please fill the form again ');window.location='service-login.php';</script>";
 }
 ?>
