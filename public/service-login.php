@@ -9,7 +9,7 @@ require_once ('../includes/main_functions.php');
 if (isset($_POST['done']))
 {
 	service_log_user_in($_POST['email'],$_POST['password']); 
-}
+} 
 checkToken();
 ?>
 <!DOCTYPE html>

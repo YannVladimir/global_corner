@@ -172,7 +172,7 @@ require_once ('../includes/main_functions.php');
                   <div id="electronics">
                     <form action="ordering.php" id="" class="upload-form row" name="upload-form" method="post" enctype="multipart/form-data">
                         <div class="form-group col-md-12">
-                             <input type="text" name="izina" class="form-control" required="required" placeholder="Oreder Title">
+                             <input type="text" name="izina" class="form-control" required="required" placeholder="Order Title">
                         </div>
                         
                         <div class="form-group col-md-12">
