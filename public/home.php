@@ -744,7 +744,6 @@ if(isset($_GET['var']) == "logout")
 </div><!--/row-->
 </div></div>
 <div class="row">
-    <div class="col-sm-2"></div>
         <div class="col-sm-8">
           
           <h2 class="title text-center">Recomended service providers</h2>
