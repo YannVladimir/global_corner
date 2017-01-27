@@ -148,7 +148,7 @@ require_once ('../includes/main_functions.php');
                                 $accepted = '';
                               }
                               if($row['avg']==0){
-                                $img = 'Not available <br>';
+                                $img = '<img src="assets/images/shop/no.png" alt="" />';
                               }
                               elseif($row['avg']<=1.25)
                               {
@@ -188,9 +188,9 @@ require_once ('../includes/main_functions.php');
                                 
                                     {$img}
                                     <label>Total votes ({$row['total_votes']})</label>
-                                <span>
+                               
                                     <span style='color:#232323;'>{$row['title']}</span>
-                                </span>    
+                                
                                     <br><br>
                                 <p><b>Seller:</b> {$row['reserved']}</p>
                                 <p><b>Description:</b> {$row['details']}</p>
