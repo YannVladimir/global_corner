@@ -24,7 +24,7 @@ if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
   {
   	if($email==$row['email'])
   	{
-                echo "<script>alert(' The entered email arleady has an account, please try again with different email or try to login with your previous account');window.location='order-login.php';</script>";exit;
+                echo "<script>alert(' The entered email arleady has an account, please try again with different email or try to login with your previous account');window.location='service-login.php';</script>";exit;
   	}
   }
   $date = date("Y-m-d");
