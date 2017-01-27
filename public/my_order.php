@@ -142,12 +142,13 @@ checkToken();
                           {
                            $interested = $interested + 1;
                           }
+                          $cat = $row['subcat_id'];
                           echo "<ul class='list-group'> 
                            <li class='list-group-item'><strong>Title: </strong>{$row['name']}</li>
                            <li class='list-group-item'><strong>category: </strong>{$o['subcat_name']}</li>
                            <li class='list-group-item'><strong>Details: </strong>{$row['details']}</li>
                            <li class='list-group-item'><strong>uploaded-date: </strong>{$row['up_date']}</li>
-                        <li class='list-group-item'><strong>Service providers: </strong>{$interested} sellers <br><a href='' target='blanck'>view details</a></li>
+                        <li class='list-group-item'><strong>Service providers: </strong>{$interested} sellers <br><a href='sub-category.php?id=$cat'>view details</a></li>
                         <li class='list-group-item'><strong>Current status: </strong>{$accepted}</li>
                           <li class='list-group-item'>
                           <form action='order-delete.php' method='POST'>
@@ -169,12 +170,14 @@ checkToken();
                           {
                            $interested = $interested + 1;
                           }
+                          $cat = $row['subcat_id'];
+                          $category = $row['subcat_name'];
                           echo "<ul class='list-group'> 
                         <li class='list-group-item'><strong>Title: </strong>{$row['name']}</li>
                         <li class='list-group-item'><strong>category: </strong>{$o['sub_category']}</li>
                         <li class='list-group-item'><strong>Details: </strong>{$row['details']}</li>
                         <li class='list-group-item'><strong>uploaded-date: </strong>{$row['up_date']}</li>
-                        <li class='list-group-item'><strong>Service providers: </strong>{$interested} sellers <br><a href='' target='blanck'>view details</a></li>
+                        <li class='list-group-item'><strong>Service providers: </strong>{$interested} sellers <br><a href='service-sub-category.php?id=$cat&category=$cat_name'>view details</a></li>
                         <li class='list-group-item'><strong>Current status: </strong>{$accepted}</li>
                         <li class='list-group-item'>
                           <form action='order-delete.php' method='POST'>
