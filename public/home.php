@@ -895,6 +895,7 @@ if(isset($_GET['var']) == "logout")
                        }
                     ?>
       </div>
+      <div class='col-sm-4'></div>
 </div>
 <div class="row">
     <div class="col-sm-12"><br><br><br><h2 class="title text-center">Recomended orders</h2><br>
