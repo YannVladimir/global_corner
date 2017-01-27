@@ -2677,11 +2677,15 @@ ul.alert-dropdown {
 
 
 /*************************
-******* mine ********
+*******  ********
 **************************/
 .message{
       background-color: #3AACEB;
       color:white;
       font-size: 17px;
     }
+
+.ratesize{
+        height: 25px;
+      }
 

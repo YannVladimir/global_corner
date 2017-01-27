@@ -148,35 +148,35 @@ require_once ('../includes/main_functions.php');
                                 $accepted = '';
                               }
                               if($row['avg']==0){
-                                $img = '<img src="assets/images/shop/no.png" alt="" /><img src="assets/images/shop/no.png" alt="" /><img src="assets/images/shop/no.png" alt="" /><img src="assets/images/shop/no.png" alt="" /><img src="assets/images/shop/no.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/no.png" alt="" /><img class="ratesize" src="assets/images/shop/no.png" alt="" /><img class="ratesize" src="assets/images/shop/no.png" alt="" /><img class="ratesize" src="assets/images/shop/no.png" alt="" /><img class="ratesize" src="assets/images/shop/no.png" alt="" />';
                               }
                               elseif($row['avg']<=1.25)
                               {
-                                $img = '<img src="assets/images/shop/rating2.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating2.png" alt="" />';
                               }
                               elseif ($row['avg']>=1.25 && $row['avg']<1.75) {
-                                $img = '<img src="assets/images/shop/rating3.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating3.png" alt="" />';
                               }
                               elseif ($row['avg']>=1.75 && $row['avg']<2.25) {
-                                $img = '<img src="assets/images/shop/rating4.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating4.png" alt="" />';
                               }
                               elseif ($row['avg']>=2.25 && $row['avg']<2.75) {
-                                $img = '<img src="assets/images/shop/rating5.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating5.png" alt="" />';
                               }
                               elseif ($row['avg']>=2.75 && $row['avg']<3.25) {
-                                $img = '<img src="assets/images/shop/rating6.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating6.png" alt="" />';
                               }
                               elseif ($row['avg']>=3.25 && $row['avg']<3.75) {
-                                $img = '<img src="assets/images/shop/rating7.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating7.png" alt="" />';
                               }
                               elseif ($row['avg']>=3.75 && $row['avg']<4.25) {
-                                $img = '<img src="assets/images/shop/rating8.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating8.png" alt="" />';
                               }
                               elseif ($row['avg']>=4.25 && $row['avg']<4.75) {
-                                $img = '<img src="assets/images/shop/rating9.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating9.png" alt="" />';
                               }
                               else{
-                                $img = '<img src="assets/images/shop/rating10.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating10.png" alt="" />';
                               }
                               
                                 echo" 
@@ -464,23 +464,23 @@ require_once ('../includes/main_functions.php');
                                   {
                                     if($row['marks']==1)
                                     {
-                                      $img = '<img src="assets/images/shop/rating2.png" alt="" />';
+                                      $img = '<img class="ratesize" src="assets/images/shop/rating2.png" alt="" />';
                                     }
                                     elseif($row['marks']==2)
                                     {
-                                      $img = '<img src="assets/images/shop/rating4.png" alt="" />';
+                                      $img = '<img class="ratesize" src="assets/images/shop/rating4.png" alt="" />';
                                     }
                                     elseif($row['marks']==3)
                                     {
-                                       $img = '<img src="assets/images/shop/rating6.png" alt="" />';
+                                       $img = '<img class="ratesize" src="assets/images/shop/rating6.png" alt="" />';
                                     }
                                     elseif($row['marks']==4)
                                     {
-                                      $img = '<img src="assets/images/shop/rating8.png" alt="" />';
+                                      $img = '<img class="ratesize" src="assets/images/shop/rating8.png" alt="" />';
                                     }
                                     else
                                     {
-                                      $img = '<img src="assets/images/shop/rating10.png" alt="" />';
+                                      $img = '<img class="ratesize" src="assets/images/shop/rating10.png" alt="" />';
                                     }
                                     echo'<div class="row">';
                                     echo'<div class="col-sm-2"></div>
@@ -561,35 +561,35 @@ require_once ('../includes/main_functions.php');
                         if($row['main'] == 'noimage.jpg' || $row['main'] == '' )
                         {
                               if($row['avg']==0){
-                                $img = '<img src="assets/images/shop/no.png" alt="" /><img src="assets/images/shop/no.png" alt="" /><img src="assets/images/shop/no.png" alt="" /><img src="assets/images/shop/no.png" alt="" /><img src="assets/images/shop/no.png" alt="" />br>';
+                                $img = '<img class="ratesize" src="assets/images/shop/no.png" alt="" /><img class="ratesize" src="assets/images/shop/no.png" alt="" /><img class="ratesize" src="assets/images/shop/no.png" alt="" /><img class="ratesize" src="assets/images/shop/no.png" alt="" /><img class="ratesize" src="assets/images/shop/no.png" alt="" />br>';
                               }
                               elseif($row['avg']<=1.25)
                               {
-                                $img = '<img src="assets/images/shop/rating2.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating2.png" alt="" />';
                               }
                               elseif ($row['avg']>=1.25 && $row['avg']<1.75) {
-                                $img = '<img src="assets/images/shop/rating3.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating3.png" alt="" />';
                               }
                               elseif ($row['avg']>=1.75 && $row['avg']<2.25) {
-                                $img = '<img src="assets/images/shop/rating4.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating4.png" alt="" />';
                               }
                               elseif ($row['avg']>=2.25 && $row['avg']<2.75) {
-                                $img = '<img src="assets/images/shop/rating5.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating5.png" alt="" />';
                               }
                               elseif ($row['avg']>=2.75 && $row['avg']<3.25) {
-                                $img = '<img src="assets/images/shop/rating6.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating6.png" alt="" />';
                               }
                               elseif ($row['avg']>=3.25 && $row['avg']<3.75) {
-                                $img = '<img src="assets/images/shop/rating7.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating7.png" alt="" />';
                               }
                               elseif ($row['avg']>=3.75 && $row['avg']<4.25) {
-                                $img = '<img src="assets/images/shop/rating8.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating8.png" alt="" />';
                               }
                               elseif ($row['avg']>=4.25 && $row['avg']<4.75) {
-                                $img = '<img src="assets/images/shop/rating9.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating9.png" alt="" />';
                               }
                               else{
-                                $img = '<img src="assets/images/shop/rating10.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating10.png" alt="" />';
                               }
 
                         echo "<br><a href='service.php?id={$row['id']}'>
@@ -634,31 +634,31 @@ require_once ('../includes/main_functions.php');
                               }
                               elseif($row['avg']<=1.25)
                               {
-                                $img = '<img src="assets/images/shop/rating2.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating2.png" alt="" />';
                               }
                               elseif ($row['avg']>=1.25 && $row['avg']<1.75) {
-                                $img = '<img src="assets/images/shop/rating3.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating3.png" alt="" />';
                               }
                               elseif ($row['avg']>=1.75 && $row['avg']<2.25) {
-                                $img = '<img src="assets/images/shop/rating4.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating4.png" alt="" />';
                               }
                               elseif ($row['avg']>=2.25 && $row['avg']<2.75) {
-                                $img = '<img src="assets/images/shop/rating5.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating5.png" alt="" />';
                               }
                               elseif ($row['avg']>=2.75 && $row['avg']<3.25) {
-                                $img = '<img src="assets/images/shop/rating6.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating6.png" alt="" />';
                               }
                               elseif ($row['avg']>=3.25 && $row['avg']<3.75) {
-                                $img = '<img src="assets/images/shop/rating7.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating7.png" alt="" />';
                               }
                               elseif ($row['avg']>=3.75 && $row['avg']<4.25) {
-                                $img = '<img src="assets/images/shop/rating8.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating8.png" alt="" />';
                               }
                               elseif ($row['avg']>=4.25 && $row['avg']<4.75) {
-                                $img = '<img src="assets/images/shop/rating9.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating9.png" alt="" />';
                               }
                               else{
-                                $img = '<img src="assets/images/shop/rating10.png" alt="" />';
+                                $img = '<img class="ratesize" src="assets/images/shop/rating10.png" alt="" />';
                               }
 
                         echo "<br><a href='service.php?id={$row['id']}'>
