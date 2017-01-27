@@ -6,6 +6,7 @@ $id = $_GET['id'];
 $_SESSION['cat_id'] = $id;
 if($id==7)
   {
+    session_start();
     if(isset($_SESSION['id']))
     {
        require('upload_service.php');
