@@ -299,7 +299,7 @@ require_once ('../includes/main_functions.php');
                                         }
                                         else
                                         {
-                                          echo" <div class='col-sm-4'><img src='assets/images/posts/{$row['main']}' alt='' class=''/></div>'";
+                                          echo" <img src='assets/images/posts/{$row['main']}' alt='' class=''/>'";
                                         }
                                         if($row['photo1'] == 'noimage.jpg' || $row['photo1'] == '' || $row['photo1'] == 'error' || $row['photo1'] == 'noimage.png')
                                         {
@@ -307,7 +307,7 @@ require_once ('../includes/main_functions.php');
                                         }
                                         else
                                         {
-                                            echo" <div class='col-sm-4'><img src='assets/images/posts/{$row['photo1']}' alt='' class=''/></div>'";
+                                            echo"<img src='assets/images/posts/{$row['photo1']}' alt='' class=''/>'";
                                         }
                                         if($row['photo2'] == 'noimage.jpg' || $row['photo2'] == '' || $row['photo2'] == 'error' || $row['photo2'] == 'noimage.png')
                                         {
@@ -315,7 +315,7 @@ require_once ('../includes/main_functions.php');
                                         }
                                         else
                                         {
-                                            echo" <div class='col-sm-4'><img src='assets/images/posts/{$row['photo2']}' alt='' class=''/></div>'";
+                                            echo" <img src='assets/images/posts/{$row['photo2']}' alt='' class=''/>'";
                                         }
                                       }
                                     ?>
