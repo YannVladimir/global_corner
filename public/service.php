@@ -214,7 +214,7 @@ require_once ('../includes/main_functions.php');
                         <div class='col-sm-12'>
                             <ul class="nav nav-tabs">
                                 <!--<li><a href='#details' data-toggle='tab'>Experience</a></li>-->
-                                <li><a href='#photos' data-toggle='tab'>Images</a></li>
+                                <li class='active'><a href='#photos' data-toggle='tab'>Images</a></li>
                                 <li><a href='#companyprofile' data-toggle='tab'>Working Hours</a></li>
                                 <?php 
                                  $reviews = 0; 
@@ -224,9 +224,9 @@ require_once ('../includes/main_functions.php');
                                   {
                                     $reviews = $reviews + 1;
                                   }
-                                  echo "<li class='active'><a href='#tag' data-toggle='tab'>Reviews ($reviews)</a></li>";
+                                  echo "<li><a href='#tag' data-toggle='tab'>Reviews ($reviews)</a></li>";
                                   ?>
-                                  <li class='active'><a href='#reviews' data-toggle='tab'>Rate it</a></li>
+                                  <li><a href='#reviews' data-toggle='tab'>Rate it</a></li>
                             </ul>
                         </div>
                         <div class="tab-content">
