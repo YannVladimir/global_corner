@@ -188,9 +188,10 @@ require_once ('../includes/main_functions.php');
                                 
                                     {$img}
                                     <label>Total votes ({$row['total_votes']})</label>
-                               
-                                    <span style='color:#232323;'>{$row['title']}</span>
-                                
+                                    <br>
+                                    <span>
+                                      <span style='color:#232323;'>{$row['title']}</span>
+                                    </span>
                                     <br><br>
                                 <p><b>Seller:</b> {$row['reserved']}</p>
                                 <p><b>Description:</b> {$row['details']}</p>
