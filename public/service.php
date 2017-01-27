@@ -148,7 +148,7 @@ require_once ('../includes/main_functions.php');
                                 $accepted = '';
                               }
                               if($row['avg']==0){
-                                $img = '<img src="assets/images/shop/no.png" alt="" />';
+                                $img = '<img src="assets/images/shop/no.png" alt="" /><img src="assets/images/shop/no.png" alt="" /><img src="assets/images/shop/no.png" alt="" /><img src="assets/images/shop/no.png" alt="" /><img src="assets/images/shop/no.png" alt="" />';
                               }
                               elseif($row['avg']<=1.25)
                               {
@@ -561,7 +561,7 @@ require_once ('../includes/main_functions.php');
                         if($row['main'] == 'noimage.jpg' || $row['main'] == '' )
                         {
                               if($row['avg']==0){
-                                $img = '<b>Rank:</b> Not available <br>';
+                                $img = '<img src="assets/images/shop/no.png" alt="" /><img src="assets/images/shop/no.png" alt="" /><img src="assets/images/shop/no.png" alt="" /><img src="assets/images/shop/no.png" alt="" /><img src="assets/images/shop/no.png" alt="" />br>';
                               }
                               elseif($row['avg']<=1.25)
                               {

@@ -129,52 +129,7 @@ require_once ('../includes/main_functions.php');
             
           </div>
         </div>
-        <div class="col-sm-7">
-          <div id="slider-carousel" class="carousel slide" data-ride="carousel">
-            <!--<ol class="carousel-indicators">
-              <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
-              <li data-target="#slider-carousel" data-slide-to="1"></li>
-              <li data-target="#slider-carousel" data-slide-to="2"></li>
-              <li data-target="#slider-carousel" data-slide-to="3"></li>
-              <li data-target="#slider-carousel" data-slide-to="4"></li>
-                <li data-target="#slider-carousel" data-slide-to="5"></li>
-              <li data-target="#slider-carousel" data-slide-to="6"></li>
-               
-            </ol>  --> 
-             
-            <div class="carousel-inner">
-              <div class='item active'>
-                               <div class='col-sm-12'> 
-                               <img src='assets/images/slider/phone.jpg' style='width:100%;' class='girl img-responsive' alt='' />
-                                       </div> 
-                     </div>
-                     <div class='item'>
-                  <div class='col-sm-12'> 
-                         <img src='assets/images/slider/all.jpg' style='width:100%;' class='girl img-responsive' alt='' />
-                          </div>
-              </div>
-              <div class='item'>
-                  <div class='col-sm-12'> 
-                         <img src='assets/images/slider/sport.jpg' style='width:100%;' class='girl img-responsive' alt='' />
-                          </div>
-              </div>
-                <div class='item'>
-                  <div class='col-sm-12'> 
-                         <img src='assets/images/slider/comp.jpg' style='width:100%;' class='girl img-responsive' alt='' />
-                          </div>
-              </div>
-            </div>
-            <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
-              <i class="fa fa-angle-left"></i>
-            </a>
-            <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
-              <i class="fa fa-angle-right"></i>
-            </a>
-            
-          </div>
-          
-        </div>
-        <div class='col-sm-2'></div>
+        
         <div class="col-sm-6 padding-right">
           <br><br><br>
           <h2 class="title text-center">Recomended service providers</h2>
@@ -188,7 +143,7 @@ require_once ('../includes/main_functions.php');
                         {
                               if($row['avg']==0){
                                 $img = '<img src="assets/images/shop/no.png" alt="" /><img src="assets/images/shop/no.png" alt="" /><img src="assets/images/shop/no.png" alt="" /><img src="assets/images/shop/no.png" alt="" /><img src="assets/images/shop/no.png" alt="" />';
-                                
+
                               }
                               elseif($row['avg']<=1.25)
                               {
@@ -257,7 +212,7 @@ require_once ('../includes/main_functions.php');
                         else
                         {
                           if($row['avg']==0){
-                                $img = '<img src="assets/images/shop/no.png" alt="" />';
+                                $img = '<img src="assets/images/shop/no.png" alt="" /><img src="assets/images/shop/no.png" alt="" /><img src="assets/images/shop/no.png" alt="" /><img src="assets/images/shop/no.png" alt="" /><img src="assets/images/shop/no.png" alt="" />';
                               }
                               elseif($row['avg']<=1.25)
                               {
