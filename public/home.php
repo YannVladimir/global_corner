@@ -742,11 +742,12 @@ if(isset($_GET['var']) == "logout")
 </div><!--/category-tab-->
 </div> 
 </div><!--/row-->
-</div></div>
+
 <div class="row">
-        <div class="col-sm-8 pull-left">
-          
+        <div class="col-sm-12">
+          <div class="col-sm-8">
           <h2 class="title text-center">Recomended service providers</h2>
+
                     <br>
                     <?php 
                        $query = "SELECT * FROM amaservice where is_accepted = 1 order by total_marks desc limit 20";
@@ -894,7 +895,7 @@ if(isset($_GET['var']) == "logout")
                         }
                        }
                     ?>
-      </div>
+      </div><div>
       <div class='col-sm-4'></div>
 </div>
 <div class="row">
