@@ -238,6 +238,7 @@ checkToken();
                         <div class="form-group col-md-12">
                             <textarea name="details" id="message" class="form-control" rows="8" placeholder="Give more details here"></textarea>
                         </div>
+                        <!--
                         <div class="col-sm-4"> 
                                   <input type="file" name="main" class="this" id="inp" />
                                   <img id="image" class="btn1 starting" />
@@ -266,7 +267,7 @@ checkToken();
                                   <img id="image7" class="btn7 btnlocation hide" />
                                   <input type="file" name="img7"  id="inp8" class="hide" />
                                   <img id="image8" class="btn8 btnlocation hide" />
-                            </div><br>                    
+                            </div><br> -->         
                         <div class="form-group col-md-12">
               
                            <input type="submit" name="submit" class="btn btn-primary pull-right" value="Submit">
@@ -387,7 +388,7 @@ $(".btn6").bind("click" , function(){
 
     reader.onload = function (e) {
         // get loaded data and render thumbnail.
-        document.getElementById("image6").src = e.target.result;
+        document.getElementById("image6").src = e.target.result; 
     };
 
     // read the image file as a data URL.

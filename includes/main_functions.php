@@ -153,12 +153,7 @@
             $place = $_SESSION['place'];
             $location = $_SESSION['location'];
             $phone = $_SESSION['phones'];
-            $photo = $_SESSION['photo'];
-            $img1 = $_SESSION['img1'];
-            $img2 = $_SESSION['img2'];
-            $img3 = $_SESSION['img3'];
-            $img4 = $_SESSION['img4'];
-            $img5 = $_SESSION['img5'];
+            
             $uploaded = date("Y-m-d");
             unset($_SESSION['phones']);
             unset($_SESSION['category']);
@@ -169,12 +164,7 @@
             unset($_SESSION['nam']);
             unset($_SESSION['seller']);
             unset($_SESSION['category']);
-            unset($_SESSION['photo']);
-            unset($_SESSION['img1']);
-            unset($_SESSION['img2']);
-            unset($_SESSION['img3']);
-            unset($_SESSION['img4']);
-            unset($_SESSION['img5']);
+            
             $_SESSION['message']= "Please login to your acount to make this order, or create your new acount";
             $user = $_SESSION['id'];
             $querry = "INSERT INTO services (title,reserved,sub_category,phone,contacts,user,location,akarere,details,uploaded_date,main,photo1,photo2,photo3,photo4,photo5) values ('{$nam}','{$seller}','{$category}','{$phone}','{$email}','{$user}','{$place}','{$location}','{$details}','{$uploaded}','{$photo}','{$img1}','{$img2}','{$img3}','{$img4}','{$img5}')";
