@@ -5,33 +5,33 @@ error_reporting(E_ALL);
 session_start(); 
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
-    $type = $_POST['type']);
-	$id = $_SESSION['photo_id'];
-	$user = $_SESSION['id'];
-	unset($_SESSION['photo_id']);
-	if(isset($_FILES['main']))
+$type = $_POST['type']);
+$id = $_SESSION['photo_id'];
+$user = $_SESSION['id'];
+unset($_SESSION['photo_id']);
+if(isset($_FILES['main']))
+{
+    $name= $_FILES['main']['name'];
+    $size= $_FILES['main']['size'];
+    $ext1 = explode(".", $name);
+    $ext = end($ext1);
+    $allowed_ext = array("png", "PNG", "jpeg", "JPEG", "JPG", "jpg");
+    if(in_array($ext, $allowed_ext))
     {
-       $name= $_FILES['main']['name'];
-       $size= $_FILES['main']['size'];
-       $ext1 = explode(".", $name);
-       $ext = end($ext1);
-       $allowed_ext = array("png", "PNG", "jpeg", "JPEG", "JPG", "jpg");
-       if(in_array($ext, $allowed_ext))
-       {
-          if($size < (4194304))
+        if($size < (4194304))
+        {
+          $new_image = '';
+          $new_name = md5(rand()) . '.' . $ext;
+          $path ='assets/images/posts/' . $new_name;
+          list($width, $height) = getimagesize($_FILES['main']['tmp_name']);
+          if($ext == 'png' || $ext =='PNG')
           {
-            $new_image = '';
-            $new_name = md5(rand()) . '.' . $ext;
-            $path ='assets/images/posts/' . $new_name;
-            list($width, $height) = getimagesize($_FILES['main']['tmp_name']);
-             if($ext == 'png' || $ext =='PNG')
-            {
               $new_image = imagecreatefrompng($_FILES['main']['tmp_name']);
-            }
+          }
             if($ext == 'jpeg' || $ext == 'jpg' || $ext == 'JPEG' || $ext == 'JPG')
-           {
+          {
              $new_image = imagecreatefromjpeg($_FILES['main']['tmp_name']);
-            }
+           }
            $new_width = 300;
            $new_height = ($height/$width)*300;
            $tmp_image = imagecreatetruecolor($new_width, $new_height);
@@ -51,6 +51,10 @@ require_once ('../includes/main_functions.php');
         echo "<script>alert(' Failed to post this ad, please select only jpg,jpeg, and png images ');window.location='my_service.php?id=$id';</script>";exit;
       }
 
+    }
+    else
+    {
+    	echo'no image';
     }
     if ($type=='1')
     {

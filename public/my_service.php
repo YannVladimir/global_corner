@@ -12,7 +12,7 @@ require_once ('../includes/main_functions.php');
   $_SESSION['page'] = 'my_service'; 
   require_once ('login.php?id=$id');
   exit;
-}*/
+}*/ 
 ?>
 <!DOCTYPE html> 
 <html lang="en">
@@ -298,9 +298,9 @@ require_once ('../includes/main_functions.php');
                                        
                                        if ($photo1=='') 
                                        {
-                                         echo '<form action="add-image.php" name="" class="upload-form row" method="post" enctype="multipart/form-data">
+                                         echo '<form action="add-image.php" name="" class="upload-form row" method="POST" enctype="multipart/form-data">
                                          <div class="col-sm-4">
-                                            <input type="text" name="type" class="hide hidden" value="1" /> 
+                                            <input type="text" name="type"  value="1" /> 
                                             <input type="file" name="main" class="this" id="inp" />
                                             <img id="image" class="btn1 starting" />
                                             <input type="submit" value="upload image" class="btn btn-primary pull-right" name="submit" />
@@ -313,7 +313,7 @@ require_once ('../includes/main_functions.php');
                                               </div>';
                                           if ($photo2=='') 
                                           {
-                                             echo '<form action="add-image.php" name="" class="upload-form row" method="post" enctype="multipart/form-data">
+                                             echo '<form action="add-image.php" name="" class="upload-form row" method="POST" enctype="multipart/form-data">
                                                 <div class="col-sm-4">
                                                    <input type="text" name="type" class="hide hidden" value="2" /> 
                                                    <input type="file" name="main" class="this" id="inp" />
@@ -328,7 +328,7 @@ require_once ('../includes/main_functions.php');
                                               </div>';
                                             if ($photo3=='') 
                                             {
-                                             echo '<form action="add-image.php" name="" class="upload-form row" method="post" enctype="multipart/form-data">
+                                             echo '<form action="add-image.php" name="" class="upload-form row" method="POST" enctype="multipart/form-data">
                                                 <div class="col-sm-4">
                                                    <input type="text" name="type" class="hide hidden" value="3" /> 
                                                    <input type="file" name="main" class="this" id="inp" />
@@ -343,7 +343,7 @@ require_once ('../includes/main_functions.php');
                                               </div>';
                                               if ($photo4=='') 
                                               {
-                                                echo '<form action="add-image.php" name="" class="upload-form row" method="post" enctype="multipart/form-data">
+                                                echo '<form action="add-image.php" name="" class="upload-form row" method="POST" enctype="multipart/form-data">
                                                  <div class="col-sm-4">
                                                    <input type="text" name="type" class="hide hidden" value="4" /> 
                                                    <input type="file" name="main" class="this" id="inp" />
@@ -358,7 +358,7 @@ require_once ('../includes/main_functions.php');
                                               </div>';
                                                if ($photo5=='') 
                                                {
-                                                echo '<form action="add-image.php" name="" class="upload-form row" method="post" enctype="multipart/form-data">
+                                                echo '<form action="add-image.php" name="" class="upload-form row" method="POST" enctype="multipart/form-data">
                                                 <div class="col-sm-4">
                                                    <input type="text" name="type" class="hide hidden" value="5" /> 
                                                    <input type="file" name="main" class="this" id="inp" />
@@ -373,7 +373,7 @@ require_once ('../includes/main_functions.php');
                                                  </div>';
                                                 if ($photo6=='') 
                                                 {
-                                                  echo '<form action="add-image.php" name="" class="upload-form row" method="post" enctype="multipart/form-data">
+                                                  echo '<form action="add-image.php" name="" class="upload-form row" method="POST" enctype="multipart/form-data">
                                                     <div class="col-sm-4">
                                                      <input type="text" name="type" class="hide hidden" value="6" /> 
                                                      <input type="file" name="main" class="this" id="inp" />
