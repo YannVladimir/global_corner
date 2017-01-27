@@ -299,7 +299,7 @@ require_once ('../includes/main_functions.php');
                                         }
                                         else
                                         {
-                                          echo" <img src='assets/images/posts/{$row['main']}' alt='' class=''/>'";
+                                          echo" <img src='assets/images/posts/{$row['main']}' alt='' class=''/>' <br><br>";
                                         }
                                         if($row['photo1'] == 'noimage.jpg' || $row['photo1'] == '' || $row['photo1'] == 'error' || $row['photo1'] == 'noimage.png')
                                         {
@@ -307,7 +307,7 @@ require_once ('../includes/main_functions.php');
                                         }
                                         else
                                         {
-                                            echo"<img src='assets/images/posts/{$row['photo1']}' alt='' class=''/>'";
+                                            echo"<img src='assets/images/posts/{$row['photo1']}' alt='' class=''/>' <br><br>";
                                         }
                                         if($row['photo2'] == 'noimage.jpg' || $row['photo2'] == '' || $row['photo2'] == 'error' || $row['photo2'] == 'noimage.png')
                                         {
@@ -315,7 +315,31 @@ require_once ('../includes/main_functions.php');
                                         }
                                         else
                                         {
-                                            echo" <img src='assets/images/posts/{$row['photo2']}' alt='' class=''/>'";
+                                            echo" <img src='assets/images/posts/{$row['photo2']}' alt='' class=''/>' <br><br>";
+                                        }
+                                        if($row['photo3'] == 'noimage.jpg' || $row['photo3'] == '' || $row['photo3'] == 'error' || $row['photo3'] == 'noimage.png')
+                                        {
+                                          
+                                        }
+                                        else
+                                        {
+                                            echo" <img src='assets/images/posts/{$row['photo3']}' alt='' class=''/>' <br><br>";
+                                        }
+                                        if($row['phot4'] == 'noimage.jpg' || $row['photo4'] == '' || $row['photo4'] == 'error' || $row['photo4'] == 'noimage.png')
+                                        {
+                                          
+                                        }
+                                        else
+                                        {
+                                            echo" <img src='assets/images/posts/{$row['photo4']}' alt='' class=''/>' <br><br>";
+                                        }
+                                        if($row['photo5'] == 'noimage.jpg' || $row['photo5'] == '' || $row['photo5'] == 'error' || $row['photo5'] == 'noimage.png')
+                                        {
+                                          
+                                        }
+                                        else
+                                        {
+                                            echo" <img src='assets/images/posts/{$row['photo5']}' alt='' class=''/>' <br><br>";
                                         }
                                       }
                                     ?>
