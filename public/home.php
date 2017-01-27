@@ -49,6 +49,9 @@ if(isset($_GET['var']) == "logout")
         font-size: 20px;
 
       }
+      .ratesize{
+        height: 25px;
+      }
       .sizing{
         width:30px;
       }
@@ -739,6 +742,7 @@ if(isset($_GET['var']) == "logout")
 </div><!--/category-tab-->
 </div> 
 </div><!--/row-->
+</div>
 <div class="row">
 
         <div class="col-sm-6 padding-right">
