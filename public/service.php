@@ -132,14 +132,14 @@ require_once ('../includes/main_functions.php');
         <div class="col-sm-9 padding-right">
                     <div class="product-details"><!--product-details-->
                         <div class="col-sm-2">
-                            <div class="view-product">
                         <?php
                             $id = $_GET['id'];
                             $query = "SELECT * FROM amaservice where id = $id ";
                             $res = mysqli_query($con,$query);
                             while($row = mysqli_fetch_assoc($res))
-                            {   $recommended = $row['subcategory_id'];
-                                 if($row['is_accepted']==0)
+                            {   
+                              $recommended = $row['subcategory_id'];
+                              if($row['is_accepted']==0)
                               {
                                 $accepted = 'The adminstration is currently verifying this post';
                               }
@@ -179,11 +179,8 @@ require_once ('../includes/main_functions.php');
                                 $img = '<img src="assets/images/shop/rating10.png" alt="" />';
                               }
                               
-                                echo"<img src='assets/images/posts/noimage.png' alt='' />
-                                </div> 
+                                echo" 
                         </div>";
-                              
-                              }
                                 echo"
                         <div class='col-sm-8'>
                             <div class='product-information'><!--/product-information-->
