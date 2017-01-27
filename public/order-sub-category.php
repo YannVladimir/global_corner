@@ -112,7 +112,7 @@ checkToken();
                     $category_id = $_GET['id'];
                     echo "<h2 class='title text-center'>{$category_name} Orders</h2>";
                 
-                    $query = "SELECT * from vieworders where is_accepted = 1 and is_product = '{$type}' and subcategory_id = '{$category_id}' order by id desc limit 70";
+                    $query = "SELECT * from vieworders where is_accepted = 1 and is_product = '{$type}' and category = '{$category_id}' order by id desc limit 70";
                      $res = mysqli_query($con,$query);
                      while($row = mysqli_fetch_assoc($res))
                      {
