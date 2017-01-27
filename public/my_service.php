@@ -119,10 +119,7 @@ require_once ('../includes/main_functions.php');
                             while($row = mysqli_fetch_assoc($res))
                             {
                                
-                                if($row['main'] == 'noimage.jpg' || $row['main'] == '' )
-
-                                {
-                                  echo'<div class="col-sm-3">
+                                  echo'<div class="col-sm-2">
                                           <div class="view-product">';
                                    if($row['is_accepted']==0)
                                    {
@@ -167,7 +164,7 @@ require_once ('../includes/main_functions.php');
                                 echo"
                                 </div> 
                         </div>
-                        <div class='col-sm-7'>
+                        <div class='col-sm-8'>
                             <div class='product-information'><!--/product-information-->
                                
                                 
@@ -187,75 +184,8 @@ require_once ('../includes/main_functions.php');
                         </div>
                     </div><!--/product-details-->
                     ";
-                                }
-                                else
-                                {
-                                  echo'<div class="col-sm-5">
-                                          <div class="view-product">';
-                                    if($row['is_accepted']==0)
-                                    {
-                                       $accepted = 'The adminstration is currently verifying this post';
-                                    }
-                                    else
-                                    {
-                                       $accepted = '';
-                                    }
-                                    if($row['avg']==0){
-                                       $img = '<b>Rank:</b> Not available <br>';
-                                    }
-                                    elseif($row['avg']<=1.25)
-                                    {
-                                       $img = '<img src="assets/images/shop/rating2.png" alt="" />';
-                                    }
-                                    elseif ($row['avg']>=1.25 && $row['avg']<1.75) {
-                                    $img = '<img src="assets/images/shop/rating3.png" alt="" />';
-                                    }
-                                    elseif ($row['avg']>=1.75 && $row['avg']<2.25) {
-                                     $img = '<img src="assets/images/shop/rating4.png" alt="" />';
-                                    }
-                                    elseif ($row['avg']>=2.25 && $row['avg']<2.75) {
-                                     $img = '<img src="assets/images/shop/rating5.png" alt="" />';
-                                     }
-                                      elseif ($row['avg']>=2.75 && $row['avg']<3.25) {
-                                     $img = '<img src="assets/images/shop/rating6.png" alt="" />';
-                                     }
-                                     elseif ($row['avg']>=3.25 && $row['avg']<3.75) {
-                                     $img = '<img src="assets/images/shop/rating7.png" alt="" />';
-                                     }
-                                    elseif ($row['avg']>=3.75 && $row['avg']<4.25) {
-                                    $img = '<img src="assets/images/shop/rating8.png" alt="" />';
-                                    }
-                                    elseif ($row['avg']>=4.25 && $row['avg']<4.75) {
-                                    $img = '<img src="assets/images/shop/rating9.png" alt="" />';
-                                    }
-                                    else{
-                                     $img = '<img src="assets/images/shop/rating10.png" alt="" />';
-                                    }
-
-                                echo"<img src='assets/images/posts/{$row['main']}' alt='' />
-                                </div> 
-                        </div>
-                        <div class='col-sm-5'>
-                            <div class='product-information'><!--/product-information-->
-                               
                                 
-                                    {$img}
-                                    <label>Total votes ({$row['total_votes']})</label>
                                 
-                                <p><b>Title:</b>{$row['title']}</p>
-                                <p><b>Category:</b>{$row['category']}</p>
-                                <p><b>Sub-Category:</b>{$row['sub_category']}</b></p>
-                                <p><b>Seller:</b> {$row['reserved']}</p>
-                                <p><b>Description:</b> {$row['details']}</p>
-                                <p><b>Location:</b> {$row['location']}</p>
-                                <p><b>Contacts:</b> {$row['phone']}</p>
-                                <p><b>Current status:</b> {$accepted}</p>
-                                
-                            </div><!--/product-information-->
-                        </div>
-                    </div><!--/product-details-->
-                    ";
-                                }
                                 
                             }
                         ?>
@@ -325,7 +255,7 @@ require_once ('../includes/main_functions.php');
                                         {
                                             echo" <img src='assets/images/posts/{$row['photo3']}' alt='' class=''/>' <br><br>";
                                         }
-                                        if($row['phot4'] == 'noimage.jpg' || $row['photo4'] == '' || $row['photo4'] == 'error' || $row['photo4'] == 'noimage.png')
+                                        if($row['photo4'] == 'noimage.jpg' || $row['photo4'] == '' || $row['photo4'] == 'error' || $row['photo4'] == 'noimage.png')
                                         {
                                           
                                         }
