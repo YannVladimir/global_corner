@@ -234,7 +234,7 @@ require_once ('../includes/main_functions.php');
                                 for experience
                             </div>-->
                             
-                            <div class="tab-pane fade" id="photos" >
+                            <div class="tab-pane fade active in" id="photos" >
                              <div class="col-sm-2">
                                 </div>
                                
@@ -500,7 +500,7 @@ require_once ('../includes/main_functions.php');
                                 ?>
                             </div>
                             
-                            <div class="tab-pane fade active in" id="reviews" >
+                            <div class="tab-pane fade" id="reviews" >
                                 <div class="col-sm-12">
                                     <!--<ul>
                                         <li><a href=""><i class="fa fa-user"></i>EUGEN</a></li>

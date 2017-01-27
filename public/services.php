@@ -256,7 +256,7 @@ require_once ('../includes/main_functions.php');
                         else
                         {
                           if($row['avg']==0){
-                                $img = '<b>Rank:</b> Not available <br>';
+                                $img = '<img src="assets/images/shop/no.png" alt="" />';
                               }
                               elseif($row['avg']<=1.25)
                               {
@@ -294,7 +294,7 @@ require_once ('../includes/main_functions.php');
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
                                                  <div class='sizingimages'>
-                                                    <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                    <img src='assets/images/posts/{$row['main']}' alt='' class=''/>
                                                   </div>
                                             </div>
                                             <b> {$row['category']} - {$row['sub_category']}</b>
