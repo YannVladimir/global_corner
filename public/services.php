@@ -225,7 +225,7 @@ require_once ('../includes/main_functions.php');
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
                                                  <div class='sizingimages'>
-                                                    <img class='sizingimagesmax' src='assets/images/posts/noimage.png' alt='' class=''/>
+                                                    <img  src='assets/images/posts/noimage.png' alt='' class=''/>
                                                   </div>
                                             </div>
                                             <b> {$row['category']} - {$row['sub_category']}</b>
