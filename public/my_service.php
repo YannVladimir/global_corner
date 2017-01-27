@@ -103,6 +103,13 @@ require_once ('../includes/main_functions.php');
                             $res = mysqli_query($con,$query);
                             while($row = mysqli_fetch_assoc($res))
                             {
+                                $photo1 = $row['main'];
+                                $photo2 = $row['photo1'];
+                                $photo3 = $row['photo2'];
+                                $photo4 = $row['photo3'];
+                                $photo5 = $row['photo4'];
+                                $photo6 = $row['photo5'];
+                                $_SESSION['photo_id'] = $row['id'];
                                 if($row['main'] == 'noimage.jpg' || $row['main'] == '' )
 
                                 {
@@ -247,6 +254,7 @@ require_once ('../includes/main_functions.php');
                     <div class='category-tab shop-details-tab'><!--category-tab-->
                         <div class='col-sm-12'>
                             <ul class="nav nav-tabs">
+                              <li class='active'><a href='#photos' data-toggle='tab'>Image upload</a></li>
                               <?php 
                                  $reviews = 0; 
                                   $user = $_SESSION['id'];
@@ -256,7 +264,7 @@ require_once ('../includes/main_functions.php');
                                   {
                                     $reviews = $reviews + 1;
                                   }
-                                  echo "<li class='active'><a href='#tag' data-toggle='tab'>Reviews ($reviews)</a></li>";
+                                  echo "<li><a href='#tag' data-toggle='tab'>Reviews ($reviews)</a></li>";
                                   ?>
                                 <li><a href='#details' data-toggle='tab'>Experience</a></li>
                                 <li><a href='#companyprofile' data-toggle='tab'>Working Hours</a></li>
@@ -265,7 +273,109 @@ require_once ('../includes/main_functions.php');
                             </ul>
                         </div>
                         <div class="tab-content">
-                          <div class="tab-pane fade active in" id="tag" >
+                          <div class="tab-pane fade active in" id="photos" >
+                             <div class="col-sm-2">
+                                </div>
+                               
+                                <div class="col-sm-8">
+                                   
+                                    <?php
+                                       
+                                       if ($photo1=='') 
+                                       {
+                                         echo '<form action="add-image.php" name="" class="upload-form row" method="post" enctype="multipart/form-data">
+                                         <div class="col-sm-4">
+                                            <input type="text" name="type" class="hide hidden" value="1" /> 
+                                            <input type="file" name="main" class="this" id="inp" />
+                                            <img id="image" class="btn1 starting" />
+                                         </div>';
+                                       }
+                                       else
+                                       {
+                                         echo'<div class="col-sm-6">
+                                                 <img src="assets/images/posts/{$photo1}" alt="" />
+                                              </div>';
+                                          if ($photo2=='') 
+                                          {
+                                             echo '<form action="add-image.php" name="" class="upload-form row" method="post" enctype="multipart/form-data">
+                                                <div class="col-sm-4">
+                                                   <input type="text" name="type" class="hide hidden" value="2" /> 
+                                                   <input type="file" name="main" class="this" id="inp" />
+                                                   <img id="image" class="btn1 starting" />
+                                                </div>';
+                                          }
+                                          else
+                                          {
+                                            echo'<div class="col-sm-6">
+                                                 <img src="assets/images/posts/{$photo2}" alt="" />
+                                              </div>';
+                                            if ($photo3=='') 
+                                            {
+                                             echo '<form action="add-image.php" name="" class="upload-form row" method="post" enctype="multipart/form-data">
+                                                <div class="col-sm-4">
+                                                   <input type="text" name="type" class="hide hidden" value="3" /> 
+                                                   <input type="file" name="main" class="this" id="inp" />
+                                                   <img id="image" class="btn1 starting" />
+                                                </div>';
+                                            }
+                                            else
+                                            {
+                                              echo'<div class="col-sm-6">
+                                                 <img src="assets/images/posts/{$photo3}" alt="" />
+                                              </div>';
+                                              if ($photo4=='') 
+                                              {
+                                                echo '<form action="add-image.php" name="" class="upload-form row" method="post" enctype="multipart/form-data">
+                                                 <div class="col-sm-4">
+                                                   <input type="text" name="type" class="hide hidden" value="4" /> 
+                                                   <input type="file" name="main" class="this" id="inp" />
+                                                   <img id="image" class="btn1 starting" />
+                                                </div>';
+                                              }
+                                              else
+                                              {
+                                                echo'<div class="col-sm-6">
+                                                 <img src="assets/images/posts/{$photo4}" alt="" />
+                                              </div>';
+                                               if ($photo5=='') 
+                                               {
+                                                echo '<form action="add-image.php" name="" class="upload-form row" method="post" enctype="multipart/form-data">
+                                                <div class="col-sm-4">
+                                                   <input type="text" name="type" class="hide hidden" value="5" /> 
+                                                   <input type="file" name="main" class="this" id="inp" />
+                                                   <img id="image" class="btn1 starting" />
+                                                </div>';
+                                               }
+                                               else
+                                               {
+                                                echo'<div class="col-sm-6">
+                                                 <img src="assets/images/posts/{$photo5}" alt="" />
+                                                 </div>';
+                                                if ($photo6=='') 
+                                                {
+                                                  echo '<form action="add-image.php" name="" class="upload-form row" method="post" enctype="multipart/form-data">
+                                                    <div class="col-sm-4">
+                                                     <input type="text" name="type" class="hide hidden" value="6" /> 
+                                                     <input type="file" name="main" class="this" id="inp" />
+                                                     <img id="image" class="btn1 starting" />
+                                                  </div>';
+                                                }
+                                                else
+                                                {
+                                                  echo'<div class="col-sm-6">
+                                                 <img src="assets/images/posts/{$photo6}" alt="" />
+                                                 </div>';
+                                                }
+                                               }
+                                              }
+                                            }
+                                          }
+                                       }
+                                    ?>
+                                    
+                                </div>
+                          </div>
+                          <div class="tab-pane fade" id="tag" >
                                 <?php
                                   if($reviews == 0)
                                   {
@@ -773,6 +883,20 @@ require_once ('../includes/main_functions.php');
               {
                   $("#sundayo").slideToggle();
               });
+      $(".btn1").bind("click" , function(){
+        $("#inp").click();
+       });
+       document.getElementById("inp").onchange = function () {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+        // get loaded data and render thumbnail.
+        document.getElementById("image").src = e.target.result;
+    };
+
+    // read the image file as a data URL.
+    reader.readAsDataURL(this.files[0]);
+};
       
   });
    </script>
