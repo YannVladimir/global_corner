@@ -220,7 +220,6 @@ require_once ('../includes/main_functions.php');
                                 <li><a href='#companyprofile' data-toggle='tab'>Working Hours</a></li>
                                 <?php 
                                  $reviews = 0; 
-                                  $user = $_SESSION['id'];
                                   $query = "SELECT * from votes where service_id = '{$id}'";
                                   $r = mysqli_query($con,$query);
                                   while($row = mysqli_fetch_assoc($r))
