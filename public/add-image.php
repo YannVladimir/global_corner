@@ -9,11 +9,10 @@ $type = $_POST['type']);
 $id = $_SESSION['photo_id'];
 $user = $_SESSION['id'];
 unset($_SESSION['photo_id']);
-if(isset($_FILES['main']))
-{
+
     echo '$type';
     echo '$user';
     echo '$id';
-	}
+	
 
 ?>  
