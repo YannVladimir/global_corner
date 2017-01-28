@@ -2688,4 +2688,6 @@ ul.alert-dropdown {
 .ratesize{
         height: 25px;
       }
-
+.imagesize{
+  max-width: 400px;
+}
