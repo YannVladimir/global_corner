@@ -549,7 +549,7 @@ require_once ('../includes/main_functions.php');
                         
                       <?php
                       $b=0; 
-                       $query = "SELECT * FROM amaservice where is_accepted = 1 and subcategory_id = $recommended and id != order by total_marks desc limit 5";
+                       $query = "SELECT * FROM amaservice where is_accepted = 1 and subcategory_id = $recommended and id != '{$id}' order by total_marks desc limit 5";
                        $res = mysqli_query($con,$query);
                        while($row = mysqli_fetch_assoc($res))
                        {
