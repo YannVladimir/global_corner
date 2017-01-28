@@ -7,7 +7,7 @@
 						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
 							<?php 
                                         $c = 1;
-                                        $query = "SELECT * FROM categories ";
+                                        $query = "SELECT * FROM categories where cat_id !=7";
                                         $res = mysqli_query($con,$query);
                                         while($row = mysqli_fetch_assoc($res))
                                         {
