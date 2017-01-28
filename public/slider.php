@@ -11,7 +11,7 @@
                                         $res = mysqli_query($con,$query);
                                         while($row = mysqli_fetch_assoc($res))
                                         {
-                                            if($row['cat_id']==$c)
+                                            if($row['cat_id']==$c && $row['cat_id']!=7 )
                                             {
                                                 echo "<div class='panel panel-default' style='background:#f6f6f6'>
                                                          <div class='panel-heading'>
@@ -37,12 +37,17 @@
                                                                     }
                                               
                                             }
+                                            if($row['cat_id']!=7){
                                             echo "<li><a href='category.php?id={$c}'>*   All in {$a} </a></li></ul>
                                                              </div>
                                                         </div>
                                                     </div>";
                                             $c = $c+1;
-                                            
+                                            }
+                                            else
+                                            {
+                                            	$c = $c+1;
+                                            }
                                         } 
                                     ?>
 							
