@@ -796,15 +796,13 @@ if(isset($_GET['var']) == "logout")
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
                                                  <div class='sizingimages'>
-                                                    <img  src='assets/images/posts/noimage.png' alt='' class=''/>
+                                                    <a href='service.php?id={$row['id']}'>
+                                                       <img  src='assets/images/posts/noimage.png' alt='' class=''/>
+                                                    </a>
                                                   </div>
-                                            </div>
-                                            <b> {$row['category']} - {$row['sub_category']}</b>
-                                            <div class='product-overlay' style='opacity:0.9'>
-                                                 <div class='overlay-content'>
-                                                     <a href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                                 </div>
-                                            </div>
+                                            </div> <br><br>
+                                            <b> <a href='service-sub-category.php?id={$row['subcategory_id']}'>{$row['category']} <br> {$row['sub_category']}</b></a>
+                                            
                                         </div>
                                      </div>
                                   </div>
@@ -865,15 +863,13 @@ if(isset($_GET['var']) == "logout")
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
                                                  <div class='sizingimages'>
+                                                    <a href='service.php?id={$row['id']}'>
                                                     <img src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                    </a>
                                                   </div>
-                                            </div>
-                                            <b> {$row['category']} - {$row['sub_category']}</b>
-                                            <div class='product-overlay' style='opacity:0.9'>
-                                                 <div class='overlay-content'>
-                                                     <a href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                                 </div>
-                                            </div>
+                                            </div><br><br>
+                                            <b> <a href='service-sub-category.php?id={$row['subcategory_id']}'>{$row['category']} <br> {$row['sub_category']}</b></a>
+
                                         </div>
                                      </div>
                                   </div>
