@@ -26,7 +26,7 @@
 		<div class="header-middle"><!--header-middle-->
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-2">
+					<div class="col-sm-3">
 						<div class="logo pull-left">
 							<a href="home.php"><img src="assets/images/home/trade250.png" style="width:148px;" alt="" /></a>
 						</div>
@@ -47,7 +47,7 @@
 							</div>
 						</div>-->
 					</div>
-					<div class="col-sm-7"><script language="JavaScript">
+					<div class="col-sm-6"><script language="JavaScript">
 TargetDate = "01/31/2017 00:00 AM";
 BackColor = "white";
 ForeColor = "#3AACEB";
