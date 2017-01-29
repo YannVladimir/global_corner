@@ -4,7 +4,7 @@
       <div class="col-sm-1">
       </div>
       <input type="text" name='k'  required="required" class="col-sm-6" placeholder="Search"/>
-      <select class="col-sm-4" name="category" style="height:35px;
+      <select class="col-sm-4" name="category" class="col-sm-6" style="height:35px;
         border-left-style: solid;
         border-left-width:1px;
         border-left-color:#504c4c;
