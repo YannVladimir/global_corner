@@ -48,15 +48,15 @@
 						</div>-->
 					</div>
 					<div class="col-sm-6">
-            <!--<script language="JavaScript">
+            <script language="JavaScript">
               TargetDate = "01/31/2017 00:00 AM";
 BackColor = "white";
 ForeColor = "#3AACEB";
 CountActive = true;
 CountStepper = -1;
 LeadingZero = true;
-DisplayFormat = "Starting in <br>%%D%% Days, %%H%% Hours, %%M%% Minutes, %%S%% Seconds.";
-FinishMessage = "It is finally here!";
+DisplayFormat = "Starting in <br>%%D%% Day, %%H%% Hours, %%M%% Minutes, %%S%% Seconds.";
+FinishMessage = "Make rwanda know what you trade";
 function calcage(secs, num1, num2) {
   s = ((Math.floor(secs/num1))%num2).toString();
   if (LeadingZero && s.length < 2)
@@ -87,11 +87,11 @@ function putspan(backcolor, forecolor) {
 if (typeof(BackColor)=="undefined")
   BackColor = "white";
 if (typeof(ForeColor)=="undefined")
-  ForeColor= "black";
+  ForeColor= "#3AACEB";
 if (typeof(TargetDate)=="undefined")
-  TargetDate = "12/31/2020 5:00 PM";
+  TargetDate = "01/31/2017 00:00 AM";
 if (typeof(DisplayFormat)=="undefined")
-  DisplayFormat = "%%D%% Day, %%H%% Hours, %%M%% Minutes, %%S%% Seconds.";
+  DisplayFormat = "Starting in <br>%%D%% Day, %%H%% Hours, %%M%% Minutes, %%S%% Seconds.";
 if (typeof(CountActive)=="undefined")
   CountActive = true;
 if (typeof(FinishMessage)=="undefined")
@@ -116,7 +116,7 @@ else
 gsecs = Math.floor(ddiff.valueOf()/1000);
 CountBack(gsecs);
 </script>
-          -->
+         
 </div>
 					
 					<?php
