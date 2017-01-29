@@ -47,7 +47,7 @@
 							</div>
 						</div>-->
 					</div>
-					<div class="col-sm-6"><script language="JavaScript">
+					<div class="col-sm-7"><script language="JavaScript">
 TargetDate = "01/31/2017 00:00 AM";
 BackColor = "white";
 ForeColor = "#3AACEB";
