@@ -801,7 +801,7 @@ if(isset($_GET['var']) == "logout")
                                                     </a>
                                                   </div>
                                             </div> <br><br>
-                                            <b> {$row['category']} - {$row['sub_category']}</b>
+                                            <b> <a href='service-sub-category.php?id={$row['subcategory_id']}'>{$row['category']} <br> {$row['sub_category']}</b></a>
                                             
                                         </div>
                                      </div>
@@ -868,7 +868,7 @@ if(isset($_GET['var']) == "logout")
                                                     </a>
                                                   </div>
                                             </div><br><br>
-                                            <b> {$row['category']} - {$row['sub_category']}</b>
+                                            <b> <a href='service-sub-category.php?id={$row['subcategory_id']}'>{$row['category']} <br> {$row['sub_category']}</b></a>
 
                                         </div>
                                      </div>
