@@ -5,7 +5,21 @@
 					<div class="col-sm-12">
 						<div class="companyinfo" style="text-align:center">
 							<h2><span> 250</span> Trade</h2>
-							<p>Make Rwanda Know what you trade</p>
+							<p>250trade.com is a free Rwandan classifieds site. Sell anything from used cars to mobiles, furniture, laptops, houses and more.Submit ads for free and without creating an account.
+Meet customers by uploading an ad of your service, get reviews from them and see how your service is ranked by clients on the market.
+
+
+
+Make an order of something you want to buy or to rent, then the seller will come to know you as a buyer through the website and he or she will contact you through your mobile or your email address.
+
+
+
+If you want to buy any product or service - here you will find interesting service providers and items cheaper than in the store, 
+
+
+If you want to sell any product or service - here you will find many interesting customers than anywhere else. MAKE RWANDA KNOW WHAT YOU TRADE
+
+</p>
 						</div>
 					</div>
 				</div>
