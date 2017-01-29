@@ -47,8 +47,9 @@
 							</div>
 						</div>-->
 					</div>
-					<div class="col-sm-6"><script language="JavaScript">
-TargetDate = "01/31/2017 00:00 AM";
+					<div class="col-sm-6">
+            <!--<script language="JavaScript">
+              TargetDate = "01/31/2017 00:00 AM";
 BackColor = "white";
 ForeColor = "#3AACEB";
 CountActive = true;
@@ -98,7 +99,7 @@ if (typeof(FinishMessage)=="undefined")
 if (typeof(CountStepper)!="number")
   CountStepper = -1;
 if (typeof(LeadingZero)=="undefined")
-  LeadingZero = true;
+  LeadingZero = true; 
 
 
 CountStepper = Math.ceil(CountStepper);
@@ -115,6 +116,7 @@ else
 gsecs = Math.floor(ddiff.valueOf()/1000);
 CountBack(gsecs);
 </script>
+          -->
 </div>
 					
 					<?php
