@@ -8,7 +8,7 @@ require_once ('../includes/main_functions.php');
 if (isset($_POST['done']))
 {
 	answer_log_user_in($_POST['email'],$_POST['password']); 
-}
+} 
 //checkToken();
 ?>
 <!DOCTYPE html>
@@ -67,7 +67,7 @@ if (isset($_POST['done']))
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="home.php" class="fon">Home</a></li>
-                <li><a href="upload.php" class="fon">Sell</a></li>
+                <li><a href="upload.php" class="fon">Post your ad</a></li>
                 <li><a href="order.php" class="fon">Order now</a></li>
                 <li><a href="categories.php" class="fon">Products</a></li>
                 <li><a href="services.php" class="fon">Services</a></li>

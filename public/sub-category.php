@@ -67,7 +67,7 @@ require_once ('../includes/main_functions.php');
 							<ul class="nav navbar-nav ">
 							 
                 <li><a href="home.php" class="fon">Home</a></li>
-                <li><a href="upload.php" class="fon">Sell</a></li>
+                <li><a href="upload.php" class="fon">Post your ad</a></li>
                 <li><a href="order.php" class="fon">Order now</a></li>
                 <li><a href="categories.php" class="active fon">Products</a></li>
                 <li><a href="services.php" class="fon">Services</a></li>
