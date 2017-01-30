@@ -68,7 +68,7 @@ checkToken();
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								 <li><a href="home.php" class="fon">Home</a></li>
-                <li><a href="upload.php" class="fon">Sell</a></li>
+                <li><a href="upload.php" class="fon">Post your ad</a></li>
                 <li><a href="order.php" class="fon">Order now</a></li>
                 <li><a href="categories.php" class="fon">Products</a></li>
                 <li><a href="services.php" class="fon">Services</a></li>
@@ -111,7 +111,6 @@ checkToken();
 								<input type="checkbox" class="checkbox"> 
 								Keep me signed in
 							</span>-->
-              <input type="text" class='hidden' name="_token" value="<?php echo $_SESSION['_token']; ?>">
               <button type="submit" name="done" class="btn btn-default bton">Login</button>
 						</form>
 					</div><!--/login form-->
