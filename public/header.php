@@ -55,7 +55,7 @@ ForeColor = "#3AACEB";
 CountActive = true;
 CountStepper = -1;
 LeadingZero = true;
-DisplayFormat = "Starting in <br>%%D%% Day, %%H%% Hours, %%M%% Minutes, %%S%% Seconds.";
+DisplayFormat = "Starting in <br> %%H%% Hours, %%M%% Minutes, %%S%% Seconds.";
 FinishMessage = "Make rwanda know what you trade";
 function calcage(secs, num1, num2) {
   s = ((Math.floor(secs/num1))%num2).toString();
@@ -91,7 +91,7 @@ if (typeof(ForeColor)=="undefined")
 if (typeof(TargetDate)=="undefined")
   TargetDate = "01/31/2017 00:00 AM";
 if (typeof(DisplayFormat)=="undefined")
-  DisplayFormat = "Starting in <br>%%D%% Day, %%H%% Hours, %%M%% Minutes, %%S%% Seconds.";
+  DisplayFormat = "Starting in <br> %%H%% Hours, %%M%% Minutes, %%S%% Seconds.";
 if (typeof(CountActive)=="undefined")
   CountActive = true;
 if (typeof(FinishMessage)=="undefined")
