@@ -5,7 +5,7 @@
 					<div class="col-sm-12">
 						<div class="companyinfo" style="text-align:center">
 							<h2><span> 250</span> Trade</h2>
-							<p style="background:#666663;">250trade.com is a free Rwandan classifieds site. Sell anything from used cars to mobiles, furniture, laptops, houses and more.Submit ads for free and without creating an account.
+							<p style="color:#666663;">250trade.com is a free Rwandan classifieds site. Sell anything from used cars to mobiles, furniture, laptops, houses and more.Submit ads for free and without creating an account.
 Meet customers by uploading an ad of your service, get reviews from them and see how your service is ranked by clients on the market.
 
 
