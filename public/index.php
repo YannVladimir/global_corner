@@ -271,7 +271,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=8 and is_accepted=1 order by main desc limit 8";
+                                $cats = "SELECT * from items where refcat_id=8 and is_accepted=1 order by photo1 desc limit 4";
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
@@ -914,8 +914,13 @@ if(isset($_GET['var']) == "logout")
                              echo "<div class='tab-pane fade active in' id='1' >";
                                $query = "SELECT * from vieworders where is_accepted = 1 order by id desc limit 10";
                                $res = mysqli_query($con,$query);
+                              // $d = 0;
                                 while($row = mysqli_fetch_assoc($res))
-                                {
+                                { 
+                                 /* if ($d%4 != 0)
+                                  {
+
+                                  }*/
                                  echo " <div class='col-sm-4'>
                         <div class='panel panel-default text-center'>
                             <div class='panel-heading'>
