@@ -173,7 +173,7 @@ if(isset($_GET['var']) == "logout")
                                 $res = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
-                                    if($row['cat_id']==1)
+                                    if($row['cat_id']==2)
                                     {
                                          echo "<li class='pull-left'><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
                                          echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='category.php?id={$row['cat_id']}' >Visit Category</a></li>";
@@ -255,7 +255,7 @@ if(isset($_GET['var']) == "logout")
                                 $res = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
-                                    if($row['cat_id']==3)
+                                    if($row['cat_id']==8)
                                     {
                                          echo "<li class='pull-left'><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
                                          echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='category.php?id={$row['cat_id']}'>Visit Category</a></li>";
@@ -337,7 +337,7 @@ if(isset($_GET['var']) == "logout")
                                 $res = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
-                                    if($row['cat_id']==8)
+                                    if($row['cat_id']==3)
                                     {
                                          echo "<li class='pull-left'><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
                                          echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='category.php?id={$row['cat_id']}'>Visit Category</a></li>";
@@ -418,7 +418,7 @@ if(isset($_GET['var']) == "logout")
                                 $res = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
-                                    if($row['cat_id']==2)
+                                    if($row['cat_id']==1)
                                     {
                                          echo "<li class='pull-left'><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
                                          echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='category.php?id={$row['cat_id']}'>Visit Category</a></li>";
@@ -500,7 +500,7 @@ if(isset($_GET['var']) == "logout")
                                 $res = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
-                                    if($row['cat_id']==6)
+                                    if($row['cat_id']==4)
                                     {
                                          echo "<li class='pull-left'><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
                                          echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='category.php?id={$row['cat_id']}'>Visit Category</a></li>";
@@ -665,7 +665,7 @@ if(isset($_GET['var']) == "logout")
                                 $res = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
-                                    if($row['cat_id']==4)
+                                    if($row['cat_id']==6)
                                     {
                                          echo "<li class='pull-left'><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
                                          echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='category.php?id={$row['cat_id']}'>Visit Category</a></li>";
