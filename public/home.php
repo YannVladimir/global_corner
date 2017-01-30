@@ -189,7 +189,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=1 and is_accepted=1 order by post_id desc limit 4";
+                                $cats = "SELECT * from items where refcat_id=2 and is_accepted=1 order by post_id desc limit 8";
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
@@ -246,7 +246,7 @@ if(isset($_GET['var']) == "logout")
                                 echo "</div>";
 
                                 
-//for laptops
+//for mobiles
 ?>
 <div class="col-sm-12">
                             <ul class="nav nav-tabs">
@@ -271,89 +271,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=3 and is_accepted=1 order by post_id desc limit 4";
-                                $res = mysqli_query($con,$cats);
-                                while($row = mysqli_fetch_assoc($res))
-                                {
-                                 if ($row['is_auction']==1)
-                                 echo "<div class='col-sm-3'>
-                                         <div class='product-image-wrapper'>
-                                             <div class='single-products'>
-                                                <div class='productinfo text-center'>
-                                                   <div class='sizingimages'>
-                                                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
-                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
-                                                   </div>
-                                                   <h2>{$row['price']} Rwf</h2>
-                                                   <p>{$row['name']}</p>
-                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                                </div>
-                                                <div class='product-overlay' style='opacity:0.9'>
-                                                    <div class='overlay-content'>
-                                                       <h2>{$row['place_name']} District</h2>
-                                                       <p>{$row['uploaded_date']}</p>
-                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                                    </div>
-                                                </div>
-                                             </div>
-                                
-                                         </div>
-                                       </div>";
-                                       else
-                                        echo "<div class='col-sm-3'>
-                                         <div class='product-image-wrapper'>
-                                             <div class='single-products'>
-                                                <div class='productinfo text-center'>
-                                                   <div class='sizingimages'>
-                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
-                                                   </div>
-                                                   <h2>{$row['price']} Rwf</h2>
-                                                   <p>{$row['name']}</p>
-                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                                </div>
-                                                <div class='product-overlay' style='opacity:0.9'>
-                                                    <div class='overlay-content'>
-                                                       <h2>{$row['place_name']} District</h2>
-                                                       <p>{$row['uploaded_date']}</p>
-                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                                    </div>
-                                                </div>
-                                             </div>
-                                
-                                         </div>
-                                       </div>";
-                                   
-                                } 
-                                echo "</div>";
-
-                                
-//for lelectronics
-?>
-
-<div class="col-sm-12">
-                            <ul class="nav nav-tabs">
-                                <?php 
-                                $query = "SELECT * from categories";
-                                $res = mysqli_query($con,$query);
-                                while($row = mysqli_fetch_assoc($res))
-                                {
-                                    if($row['cat_id']==8)
-                                    {
-                                         echo "<li class='pull-left'><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
-                                         echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='category.php?id={$row['cat_id']}'>Visit Category</a></li>";
-                                    }
-                                   // else
-                                    //{
-                                    //     echo"<li><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
-                                    //}
-                                   
-                                } 
-                                echo "</ul>
-                        </div>
-                        <div class='tab-content'> ";
-                               
-                             echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=8 and is_accepted=1 order by post_id limit 4";
+                                $cats = "SELECT * from items where refcat_id=8 and is_accepted=1 order by main desc limit 8";
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
@@ -411,6 +329,7 @@ if(isset($_GET['var']) == "logout")
                                 
 //for fashion
 ?>
+
 <div class="col-sm-12">
                             <ul class="nav nav-tabs">
                                 <?php 
@@ -418,7 +337,7 @@ if(isset($_GET['var']) == "logout")
                                 $res = mysqli_query($con,$query);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
-                                    if($row['cat_id']==2)
+                                    if($row['cat_id']==8)
                                     {
                                          echo "<li class='pull-left'><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
                                          echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='category.php?id={$row['cat_id']}'>Visit Category</a></li>";
@@ -434,7 +353,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=2 and is_accepted=1 order by post_id desc limit 4";
+                                $cats = "SELECT * from items where refcat_id=3 and is_accepted=1 order by main limit 4";
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
@@ -490,7 +409,88 @@ if(isset($_GET['var']) == "logout")
                                 echo "</div>";
 
                                 
-//for mobiles
+//for electronics
+?>
+<div class="col-sm-12">
+                            <ul class="nav nav-tabs">
+                                <?php 
+                                $query = "SELECT * from categories";
+                                $res = mysqli_query($con,$query);
+                                while($row = mysqli_fetch_assoc($res))
+                                {
+                                    if($row['cat_id']==2)
+                                    {
+                                         echo "<li class='pull-left'><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
+                                         echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='category.php?id={$row['cat_id']}'>Visit Category</a></li>";
+                                    }
+                                   // else
+                                    //{
+                                    //     echo"<li><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
+                                    //}
+                                   
+                                } 
+                                echo "</ul>
+                        </div>
+                        <div class='tab-content'> ";
+                               
+                             echo "<div class='tab-pane fade active in' id='1' >";
+                                $cats = "SELECT * from items where refcat_id=1 and is_accepted=1 order by post_id desc limit 4";
+                                $res = mysqli_query($con,$cats);
+                                while($row = mysqli_fetch_assoc($res))
+                                {
+                                 if ($row['is_auction']==1)
+                                 echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']} District</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                
+                                         </div>
+                                       </div>";
+                                       else
+                                        echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']} District</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                
+                                         </div>
+                                       </div>";
+                                   
+                                } 
+                                echo "</div>";
+
+                                
+//for laptops
 ?>
 
 <div class="col-sm-12">
@@ -516,7 +516,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=6 and is_accepted=1 order by post_id desc limit 4";
+                                $cats = "SELECT * from items where refcat_id=4 and is_accepted=1 order by post_id desc limit 4";
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
@@ -572,7 +572,7 @@ if(isset($_GET['var']) == "logout")
                                 echo "</div>";
 
                                 
-//for sports
+//for furnitures
 ?>
 
 <div class="col-sm-12">
@@ -681,7 +681,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=4 and is_accepted=1 order by post_id desc limit 4";
+                                $cats = "SELECT * from items where refcat_id=6 and is_accepted=1 order by post_id desc limit 4";
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
@@ -737,7 +737,7 @@ if(isset($_GET['var']) == "logout")
                                 echo "</div>";
 
                                 
-//for furnitures
+//for sports
 ?>
 </div><!--/category-tab-->
 </div> 
