@@ -847,7 +847,7 @@ if(isset($_GET['var']) == "logout")
                                 $img = '<img class="ratesize" src="assets/images/shop/rating10.png" alt="" />';
                               }
 
-                        echo "<div class='col-sm-6 pull-left'>
+                        echo "<div class='col-sm-6'>
                         <br><a href='service.php?id={$row['id']}'>
                         <div class='row' style='border: 1px solid #F7F7F0; background:#f6f6f6'>";
                             echo "<div class='col-sm-4'>
