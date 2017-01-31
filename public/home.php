@@ -811,7 +811,8 @@ if(isset($_GET['var']) == "logout")
                                       </div><!--/product-information-->
                                  </div>";
 
-                        echo "</div></a></div>";
+                        echo "</div></a></div>
+                        <div class='col-sm-1'</div>";
                         }
                         else
                         {
@@ -879,7 +880,8 @@ if(isset($_GET['var']) == "logout")
                                         </div><!--/product-information-->
             </div>";
 
-                        echo "</div></a></div>";
+                        echo "</div></a></div>
+                        <div class='col-sm-1'</div>";
                         }
                        }
                     ?>
