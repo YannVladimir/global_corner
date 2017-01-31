@@ -892,8 +892,7 @@ if(isset($_GET['var']) == "logout")
     <div class="col-sm-12"><br><br><br><h2 class="title text-center">Recomended orders</h2><br>
      <ul class="nav nav-tabs">
   <?php
-  echo "<li class='pull-left'><a href='orders.php'>Orders</a></li>";
-  echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='orders.php'>View All</a></li>";
+  echo "<li class='active pull-left' style='cursor:pointer;padding-right:-5px;'><a style='cursor:pointer' href='orders.php'>View All</a></li>";
   echo "</ul>";
   ?>
 </div>
@@ -906,7 +905,7 @@ if(isset($_GET['var']) == "logout")
                         echo "<div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                               $query = "SELECT * from vieworders where is_accepted = 1 order by id desc limit 10";
+                               $query = "SELECT * from vieworders where is_accepted = 1 order by id desc limit 12";
                                $res = mysqli_query($con,$query);
                               // $d = 0;
                                 while($row = mysqli_fetch_assoc($res))
