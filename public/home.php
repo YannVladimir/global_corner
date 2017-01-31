@@ -681,7 +681,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=6 and is_accepted=1 order by post_id desc limit 4";
+                                $cats = "SELECT * from items where refcat_id=2 and is_accepted=1 order by post_id desc limit 4";
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
