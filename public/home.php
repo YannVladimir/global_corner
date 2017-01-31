@@ -892,7 +892,7 @@ if(isset($_GET['var']) == "logout")
     <div class="col-sm-12"><br><br><br><h2 class="title text-center">Recomended orders</h2><br>
      <ul class="nav nav-tabs">
   <?php
-  echo "<li class='active pull-left' style='cursor:pointer;padding-right:-5px;'><a style='cursor:pointer' href='orders.php'>View All</a></li>";
+  echo "<li class='active pull-left' style='cursor:pointer;padding-right:10px;'><a style='cursor:pointer' href='orders.php'>View All</a></li>";
   echo "</ul>";
   ?>
 </div>
