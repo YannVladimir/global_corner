@@ -735,7 +735,7 @@ if(isset($_GET['var']) == "logout")
 </div> 
 </div><!--/row--><br><br>
 <div class="row">
-        <div class="col-sm-12 pull-left">
+        <div class="col-sm-12">
           <h2 class="title text-center">Recomended service providers</h2>
             
                     <br>
@@ -779,7 +779,7 @@ if(isset($_GET['var']) == "logout")
                                 $img = '<img class="ratesize" src="assets/images/shop/rating10.png" alt="" />';
                               }
 
-                        echo "<div class='col-sm-6'>
+                echo "<div class='col-sm-5'>
                         <br><a href='service.php?id={$row['id']}'>
                         <div class='row' style='border: 1px solid #F7F7F0; background:#f6f6f6'>";
                             echo "<div class='col-sm-4'>
@@ -808,8 +808,8 @@ if(isset($_GET['var']) == "logout")
                                         <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
                                         <p><b></b></p><br>
                                         <p style='text-align:center;'><a style='background:#90DC60; color:white;' href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a><p>
-                                        </div><!--/product-information-->
-            </div>";
+                                      </div><!--/product-information-->
+                                 </div>";
 
                         echo "</div></a></div>";
                         }
@@ -847,7 +847,7 @@ if(isset($_GET['var']) == "logout")
                                 $img = '<img class="ratesize" src="assets/images/shop/rating10.png" alt="" />';
                               }
 
-                        echo "<div class='col-sm-6'>
+                        echo "<div class='col-sm-5'>
                         <br><a href='service.php?id={$row['id']}'>
                         <div class='row' style='border: 1px solid #F7F7F0; background:#f6f6f6'>";
                             echo "<div class='col-sm-4'>
