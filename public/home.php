@@ -739,7 +739,7 @@ if(isset($_GET['var']) == "logout")
           <h2 class="title text-center">Recomended service providers</h2>
              <ul class="nav nav-tabs">
   <?php
-  echo "<li class='active' style='cursor:pointer; padding-left:13px;'><a style='cursor:pointer' href='services.php'>View All</a></li>";
+  echo "<li class='active' style='cursor:pointer;'><a style='cursor:pointer' href='services.php'>View All</a></li>";
   echo "</ul>";
   ?>
                     <?php 
@@ -895,9 +895,9 @@ if(isset($_GET['var']) == "logout")
     <div class="col-sm-12"><br><br><br><h2 class="title text-center">Recomended orders</h2><br>
      <ul class="nav nav-tabs">
   <?php
-  echo "<li class='active' style='cursor:pointer; padding-left:13px;'><a style='cursor:pointer' href='orders.php'>View All</a></li>";
+  echo "<li class='active' style='cursor:pointer;'><a style='cursor:pointer' href='orders.php'>View All</a></li>";
   echo "</ul>";
-  ?>
+  ?><br>
 </div>
   <!--<div class='col-sm-2'></div>-->
                 <div class='col-sm-12'>
