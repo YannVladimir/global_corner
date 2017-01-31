@@ -733,12 +733,11 @@ if(isset($_GET['var']) == "logout")
 ?>
 </div><!--/category-tab-->
 </div> 
-</div><!--/row-->
+</div><!--/row--><br><br>
 <div class="row">
         <div class="col-sm-12 pull-left">
-          <div class="col-sm-6 pull-left">
           <h2 class="title text-center">Recomended service providers</h2>
-
+            
                     <br>
                     <?php 
                        $query = "SELECT * FROM amaservice where is_accepted = 1 order by total_marks desc limit 20";
@@ -780,7 +779,8 @@ if(isset($_GET['var']) == "logout")
                                 $img = '<img class="ratesize" src="assets/images/shop/rating10.png" alt="" />';
                               }
 
-                        echo "<br><a href='service.php?id={$row['id']}'>
+                        echo "<div class='col-sm-6'>
+                        <br><a href='service.php?id={$row['id']}'>
                         <div class='row' style='border: 1px solid #F7F7F0; background:#f6f6f6'>";
                             echo "<div class='col-sm-4'>
                                      <div class='product-image-wrapper'>
@@ -811,7 +811,7 @@ if(isset($_GET['var']) == "logout")
                                         </div><!--/product-information-->
             </div>";
 
-                        echo "</div></a>";
+                        echo "</div></a></div>";
                         }
                         else
                         {
@@ -847,7 +847,8 @@ if(isset($_GET['var']) == "logout")
                                 $img = '<img class="ratesize" src="assets/images/shop/rating10.png" alt="" />';
                               }
 
-                        echo "<br><a href='service.php?id={$row['id']}'>
+                        echo "<div class='col-sm-6 pull-left'>
+                        <br><a href='service.php?id={$row['id']}'>
                         <div class='row' style='border: 1px solid #F7F7F0; background:#f6f6f6'>";
                             echo "<div class='col-sm-4'>
                                      <div class='product-image-wrapper'>
@@ -878,13 +879,13 @@ if(isset($_GET['var']) == "logout")
                                         </div><!--/product-information-->
             </div>";
 
-                        echo "</div></a>";
+                        echo "</div></a></div>";
                         }
                        }
                     ?>
-      </div><div>
-      <div class='col-sm-4'></div>
-</div>
+      </div>
+      
+</div><!--row-->
 <div class="row">
     <div class="col-sm-12"><br><br><br><h2 class="title text-center">Recomended orders</h2><br>
      <ul class="nav nav-tabs">
