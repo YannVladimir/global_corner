@@ -160,6 +160,7 @@ if(isset($_GET['var']) == "logout")
             </div><!--/category-productsr-->
             
           </div>
+        </div>
         
                 <div class="col-sm-9 padding-right">
                     <br>
