@@ -160,7 +160,7 @@ if(isset($_GET['var']) == "logout")
             </div><!--/category-productsr-->
             
           </div>
-        </div>
+        
                 <div class="col-sm-9 padding-right">
                     <br>
                     
@@ -248,7 +248,7 @@ if(isset($_GET['var']) == "logout")
                                 
 //for mobiles
 ?>
-<div class="col-sm-12">
+<div class="col-sm-9">
                             <ul class="nav nav-tabs">
                                 <?php 
                                 $query = "SELECT * from categories";
@@ -330,7 +330,7 @@ if(isset($_GET['var']) == "logout")
 //for fashion
 ?>
 
-<div class="col-sm-12">
+<div class="col-sm-9">
                             <ul class="nav nav-tabs">
                                 <?php 
                                 $query = "SELECT * from categories";
@@ -411,7 +411,7 @@ if(isset($_GET['var']) == "logout")
                                 
 //for electronics
 ?>
-<div class="col-sm-12">
+<div class="col-sm-9">
                             <ul class="nav nav-tabs">
                                 <?php 
                                 $query = "SELECT * from categories";
@@ -493,7 +493,7 @@ if(isset($_GET['var']) == "logout")
 //for laptops
 ?>
 
-<div class="col-sm-12">
+<div class="col-sm-9">
                             <ul class="nav nav-tabs">
                                 <?php 
                                 $query = "SELECT * from categories";
@@ -575,7 +575,7 @@ if(isset($_GET['var']) == "logout")
 //for furnitures
 ?>
 
-<div class="col-sm-12">
+<div class="col-sm-9">
                             <ul class="nav nav-tabs">
                                 <?php 
                                 $query = "SELECT * from categories";
@@ -658,7 +658,7 @@ if(isset($_GET['var']) == "logout")
 ?>
 
 
-<div class="col-sm-12">
+<div class="col-sm-9">
                             <ul class="nav nav-tabs">
                                 <?php 
                                 $query = "SELECT * from categories";
@@ -745,7 +745,7 @@ if(isset($_GET['var']) == "logout")
 
 <div class="row">
         <div class="col-sm-12">
-          <div class="col-sm-8">
+          <div class="col-sm-6">
           <h2 class="title text-center">Recomended service providers</h2>
 
                     <br>
