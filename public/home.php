@@ -742,7 +742,6 @@ if(isset($_GET['var']) == "logout")
   echo "<li class='active' style='cursor:pointer; padding-left:13px;'><a style='cursor:pointer' href='services.php'>View All</a></li>";
   echo "</ul>";
   ?>
-                    <br>
                     <?php 
                        $query = "SELECT * FROM amaservice where is_accepted = 1 order by total_marks desc limit 20";
                        $res = mysqli_query($con,$query);
