@@ -301,7 +301,7 @@ if(checkIsStringSetPost('izina'))
     $location = clearInput($_POST['location']);
     $phone = clearInput($_POST['phone']);
     $uploaded = date("Y-m-d");*/
-      $_SESSION['message'] = "Please login to your acount to make this service post, or create your new acount";  
+      $_SESSION['message'] = "Please enter in your store to make this ad, or create your new store";  
       $_SESSION['nam'] = clearInput($_POST['izina']);
       $_SESSION['category'] = clearInput($_POST['service_category']);
       $_SESSION['details'] = clearInput($_POST['details']);
@@ -316,7 +316,7 @@ if(checkIsStringSetPost('izina'))
       $_SESSION['img3'] = $img3;
       $_SESSION['img4'] = $img4;
       $_SESSION['img5'] = $img5; 
-      echo "<script>alert('To make this post you need an acount with us, click ok to proceed');window.location='service-login.php';</script>";exit;
+      echo "<script>alert('To make this post you need an store with us, click ok to proceed');window.location='service-login.php';</script>";exit;
    }
 }
 else

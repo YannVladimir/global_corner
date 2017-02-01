@@ -26,7 +26,7 @@ if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
   {
   	if($email==$row['email'] && $email<>$_SESSION['email'])
   	{
-                echo "<script>alert(' The entered email arleady has an account, please try again with different email or try to login with your previous account');window.location='edit_my_acount.php';</script>";exit;
+                echo "<script>alert(' The entered email arleady has a store, please try again with different email or try to login with your previous store');window.location='edit_my_acount.php';</script>";exit;
   	}
   }
 
@@ -47,7 +47,7 @@ if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
   } 
   else
   {
-      echo "<script>alert(' There is an error while editing the account, please try again ');window.location='edit_my_acount.php';</script>";
+      echo "<script>alert(' There is an error while editing the store, please try again ');window.location='edit_my_acount.php';</script>";
   }
 }
 else 

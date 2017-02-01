@@ -24,7 +24,7 @@ if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
   {
   	if($email==$row['email'])
   	{
-                echo "<script>alert(' The entered email arleady has an account, please try again with different email or try to login with your previous account');window.location='login.php';</script>";exit;
+                echo "<script>alert(' The entered email arleady has a store, please try again with different email or try to login with your previous store');window.location='login.php';</script>";exit;
   	}
   }
   $date = date("Y-m-d");
@@ -44,7 +44,7 @@ if(checkIsStringSetPost('firstname') && checkIsStringSetPost('email'))
   } 
   else
   {
-      echo "<script>alert(' There is an error while creating the account, please try again ');window.location='login.php';</script>";
+      echo "<script>alert(' There is an error while creating the store, please try again ');window.location='login.php';</script>";
   }
 }
 else 

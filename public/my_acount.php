@@ -8,7 +8,7 @@ require_once ('../includes/main_functions.php');
 //checkUser();
 if(!isset($_SESSION['id']))
 {
-  $_SESSION['message'] = 'Please log in to your acount to continue';
+  $_SESSION['message'] = 'Please enter in your store to continue';
   $_SESSION['page'] = 'my_acount'; 
   require_once ('login.php');
   exit;
@@ -22,7 +22,7 @@ checkToken();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>250 Trade | My acount</title>
+    <title>250 Trade | My store</title>
     <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/yann.min.css" rel="stylesheet">
     <link href="assets/css/prettyPhoto.css" rel="stylesheet">

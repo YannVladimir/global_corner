@@ -309,7 +309,7 @@ checkToken();
                               17. Any Content uploaded by you shall be subject to relevant laws and may disabled, 
                               or and may be subject to investigation under appropriate laws. Furthermore, if you a
                               re found to be in non-compliance with the laws and regulations, these terms, or the 
-                              privacy policy of the Site, we may terminate your account/block your access to the 
+                              privacy policy of the Site, we may terminate your store/block your access to the 
                               Site and we reserve the right to remove any non-compliant Content uploaded by you.
                             </p>
                             <h3 class="title text-center">Paid serivces</h3>
@@ -402,11 +402,11 @@ checkToken();
                               that Content will be maintained or retained by the Service, the maximum number and 
                               size of postings, e-mail messages, or other Content that may be transmitted or 
                               stored by the Service, and the frequency and the manner in which you may access the 
-                              Service or the Platform. You acknowledge that your account is identified and linked 
-                              through your mobile number, Facebook account or email address through which you have 
-                              registered. In the event you have more than one account linked through your mobile 
-                              number, Facebook account or email address, 250Trade reserves the right to remove or 
-                              restrict the usage of such duplicate accounts. You acknowledge and agree that 250Trade 
+                              Service or the Platform. You acknowledge that your store is identified and linked 
+                              through your mobile number, Facebook store or email address through which you have 
+                              registered. In the event you have more than one store linked through your mobile 
+                              number, Facebook store or email address, 250Trade reserves the right to remove or 
+                              restrict the usage of such duplicate stores. You acknowledge and agree that 250Trade 
                               has no responsibility or liability for the deletion or failure to store any Content 
                               maintained or transmitted by the Platform or the Service. You acknowledge and agree 
                               that 250Trade reserves the right at any time to modify, limit or discontinue the 
@@ -414,7 +414,7 @@ checkToken();
                               liable to you or to any third party for any such modification, suspension or 
                               discontinuance of the Service. You acknowledge and agree that 250Trade, in its sole and 
                               absolute discretion, has the right (but not the obligation) to delete or deactivate your 
-                              account, block your e-mail or IP address, or otherwise terminate your access to or use of 
+                              store, block your e-mail or IP address, or otherwise terminate your access to or use of 
                               the Service (or any part thereof), immediately and without notice, and remove and discard 
                               any Content within the Service, for any reason or no reason at all, including, without 
                               limitation, if 250Trade believes that you have violated these Terms. Further, you agree 
