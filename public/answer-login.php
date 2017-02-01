@@ -103,7 +103,7 @@ if (isset($_POST['done']))
         </div>
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
-						<h2>Login to your account</h2>
+						<h2>Enter in your store</h2>
 						<form action="answer-login.php" method="POST">
 							<input type="email" placeholder="Email Address" required="required" email="email" name="email" />
 							<input type="password" placeholder="password" required="required" name="password" />
@@ -120,7 +120,7 @@ if (isset($_POST['done']))
 				</div>
 				<div class="col-sm-4">
 				  <div class="signup-form"><!--sign up form-->
-				  	<h2>New User Signup!</h2>
+				  	<h2>Create your new store!</h2>
 						<form action="answer-sign-up.php" method="POST">
 							<input type="text" placeholder="First name" required="required" name="firstname"/>
 							<input type="text" placeholder="Last name" required="required" name="lastname"/>
@@ -129,9 +129,9 @@ if (isset($_POST['done']))
 							<input type="password" placeholder="Password" required="required" name="password"/>
 							<input type="password" placeholder=" Re-type Password" required="required" equalTo="password" name="repassword"/>
 							<input type="text" class='hidden' name="_token" value="<?php echo $_SESSION['_token']; ?>">
-							<button type="submit" class="btn btn-default bton">Signup</button>
+							<button type="submit" class="btn btn-default bton">Create</button>
 						  <br>
-              By signing-up you agree with our <a href='terms-of-use.php' target='blank' style='color=#3AACEB'>Terms of use </a>
+              By creating your store you agree with our <a href='terms-of-use.php' target='blank' style='color=#3AACEB'>Terms of use </a>
             </form>
           </div><!--/sign up form-->
 				</div>

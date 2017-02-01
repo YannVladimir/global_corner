@@ -14,7 +14,7 @@ if($id==7)
     }
     else
     {
-      $_SESSION['message'] = 'Please log in or create a new acount to make your ad';
+      $_SESSION['message'] = 'Please enter in your store or create a new store to make your ad';
       require('service-login.php');
       exit;
     }
