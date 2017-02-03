@@ -353,7 +353,7 @@ if(isset($_GET['var']) == "logout")
 
                                    
                                 } 
-                                if($check % 4 != 0)
+                                if($check % 4 != 1)
                                 {
                                   echo"</div>";
                                 }
@@ -555,7 +555,7 @@ if(isset($_GET['var']) == "logout")
                                        </div>";}
             }
                                 }
-                                if($check % 4 != 0)
+                                if($check % 4 != 1)
                                 {
                                   echo"</div>";
                                 } 
@@ -758,7 +758,7 @@ if(isset($_GET['var']) == "logout")
                                        </div>";}
             }    
                                 } 
-                                if($check % 4 != 0)
+                                if($check % 4 != 1)
                                 {
                                   echo"</div>";
                                 }
@@ -958,7 +958,7 @@ if(isset($_GET['var']) == "logout")
                                          </div>
                                        </div>";}
             } } 
-            if($check % 4 != 0)
+            if($check % 4 != 1)
                                 {
                                   echo"</div>";
                                 }
@@ -1159,7 +1159,7 @@ if(isset($_GET['var']) == "logout")
                                          </div>
                                        </div>";}
             }} 
-            if($check % 4 != 0)
+            if($check % 4 != 1)
                                 {
                                   echo"</div>";
                                 }
@@ -1359,7 +1359,7 @@ if(isset($_GET['var']) == "logout")
                                 
                                          </div>
                                        </div>";}
-            } } if($check % 4 != 0)
+            } } if($check % 4 != 1)
                                 {
                                   echo"</div>";
                                 }
@@ -1560,7 +1560,7 @@ if(isset($_GET['var']) == "logout")
                                 
                                          </div>
                                        </div>";}
-            } } if($check % 4 != 0)
+            } } if($check % 4 != 1)
                                 {
                                   echo"</div>";
                                 }
