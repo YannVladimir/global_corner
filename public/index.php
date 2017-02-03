@@ -180,12 +180,18 @@ if(isset($_GET['var']) == "logout")
         </div>
         <div class='tab-content'> ";
       echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=2 and is_accepted=1 order by post_id desc limit 8";
+                                
+                                $cats = "SELECT * from items where refcat_id=2 and is_accepted=1 order by main desc limit 8";
+                                $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
                                     if ($row['is_auction']==1)
-        echo "<div class='col-sm-3'>
+                                    { if($check % 4 ==1 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "<div class='row'>
+                                        <div class='col-sm-3'>
                 <div class='product-image-wrapper'>
                   <div class='single-products'>
                     <div class='productinfo text-center'>
@@ -207,8 +213,66 @@ if(isset($_GET['var']) == "logout")
                   </div>
                 </div>
               </div>";
+                                      }
+                                      elseif($check % 4 ==0 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "
+                                        <div class='col-sm-3'>
+                <div class='product-image-wrapper'>
+                  <div class='single-products'>
+                    <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
+                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                      </div>
+                      <h2>{$row['price']} Rwf</h2>
+                      <p>{$row['name']}</p>
+                      <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                    </div>
+                    <div class='product-overlay' style='opacity:0.9'>
+                      <div class='overlay-content'>
+                        <h2>{$row['place_name']} District</h2>
+                        <p>{$row['uploaded_date']}</p>
+                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>";
+                                      }
+        else{
+          $check = $check + 1;
+        echo "<div class='col-sm-3'>
+                <div class='product-image-wrapper'>
+                  <div class='single-products'>
+                    <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
+                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                      </div>
+                      <h2>{$row['price']} Rwf</h2>
+                      <p>{$row['name']}</p>
+                      <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                    </div>
+                    <div class='product-overlay' style='opacity:0.9'>
+                      <div class='overlay-content'>
+                        <h2>{$row['place_name']} District</h2>
+                        <p>{$row['uploaded_date']}</p>
+                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>";}
+            }
                                        else
-                                 echo "<div class='col-sm-3'>
+                                        { if($check % 4 ==1 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "<div class='row'>
+                                         <div class='col-sm-3'>
                                          <div class='product-image-wrapper'>
                                              <div class='single-products'>
                                                 <div class='productinfo text-center'>
@@ -230,9 +294,69 @@ if(isset($_GET['var']) == "logout")
                                 
                                          </div>
                                        </div>";
+                                      }
+                                      elseif($check % 4 ==0 )
+                                      {
+                                        $check = $check + 1;
+                                      
+                                         echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']} District</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                
+                                         </div>
+                                       </div>
+                                       </div>";
+            
+                                      }
+        else{
+          $check = $check + 1;
+         echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']} District</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                
+                                         </div>
+                                       </div>";}
+            }
+                                
 
                                    
                                 } 
+                                if($check % 4 != 1)
+                                {
+                                  echo"</div>";
+                                }
                                 echo "</div>";
                                 echo "</div>";
 
@@ -262,36 +386,98 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=8 and is_accepted=1 order by main limit 4";
+                                $cats = "SELECT * from items where refcat_id=8 and is_accepted=1 order by photo2 limit 8";
+                                $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
-                                 if ($row['is_auction']==1)
-                                 echo "<div class='col-sm-3'>
-                                         <div class='product-image-wrapper'>
-                                             <div class='single-products'>
-                                                <div class='productinfo text-center'>
-                                                   <div class='sizingimages'>
-                                                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
-                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
-                                                   </div>
-                                                   <h2>{$row['price']} Rwf</h2>
-                                                   <p>{$row['name']}</p>
-                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                                </div>
-                                                <div class='product-overlay' style='opacity:0.9'>
-                                                    <div class='overlay-content'>
-                                                       <h2>{$row['place_name']} District</h2>
-                                                       <p>{$row['uploaded_date']}</p>
-                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                                    </div>
-                                                </div>
-                                             </div>
-                                
-                                         </div>
-                                       </div>";
+                                    if ($row['is_auction']==1)
+                                    { if($check % 4 ==1 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "<div class='row'>
+                                        <div class='col-sm-3'>
+                <div class='product-image-wrapper'>
+                  <div class='single-products'>
+                    <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
+                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                      </div>
+                      <h2>{$row['price']} Rwf</h2>
+                      <p>{$row['name']}</p>
+                      <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                    </div>
+                    <div class='product-overlay' style='opacity:0.9'>
+                      <div class='overlay-content'>
+                        <h2>{$row['place_name']} District</h2>
+                        <p>{$row['uploaded_date']}</p>
+                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>";
+                                      }
+                                      elseif($check % 4 ==0 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "
+                                        <div class='col-sm-3'>
+                <div class='product-image-wrapper'>
+                  <div class='single-products'>
+                    <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
+                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                      </div>
+                      <h2>{$row['price']} Rwf</h2>
+                      <p>{$row['name']}</p>
+                      <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                    </div>
+                    <div class='product-overlay' style='opacity:0.9'>
+                      <div class='overlay-content'>
+                        <h2>{$row['place_name']} District</h2>
+                        <p>{$row['uploaded_date']}</p>
+                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>";
+                                      }
+        else{
+          $check = $check + 1;
+        echo "<div class='col-sm-3'>
+                <div class='product-image-wrapper'>
+                  <div class='single-products'>
+                    <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
+                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                      </div>
+                      <h2>{$row['price']} Rwf</h2>
+                      <p>{$row['name']}</p>
+                      <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                    </div>
+                    <div class='product-overlay' style='opacity:0.9'>
+                      <div class='overlay-content'>
+                        <h2>{$row['place_name']} District</h2>
+                        <p>{$row['uploaded_date']}</p>
+                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>";}
+            }
                                        else
-                                        echo "<div class='col-sm-3'>
+                                        { if($check % 4 ==1 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "<div class='row'>
+                                         <div class='col-sm-3'>
                                          <div class='product-image-wrapper'>
                                              <div class='single-products'>
                                                 <div class='productinfo text-center'>
@@ -313,7 +499,65 @@ if(isset($_GET['var']) == "logout")
                                 
                                          </div>
                                        </div>";
-                                   
+                                      }
+                                      elseif($check % 4 ==0 )
+                                      {
+                                        $check = $check + 1;
+                                      
+                                         echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']} District</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                
+                                         </div>
+                                       </div>
+                                       </div>";
+            
+                                      }
+        else{
+          $check = $check + 1;
+         echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']} District</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                
+                                         </div>
+                                       </div>";}
+            }
+                                }
+                                if($check % 4 != 1)
+                                {
+                                  echo"</div>";
                                 } 
                                 echo "</div>";
                                 echo "</div>";
@@ -345,36 +589,98 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=3 and is_accepted=1 order by photo1 limit 4";
+                                $cats = "SELECT * from items where refcat_id=3 and is_accepted=1 order by details limit 8";
+                                $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
-                                 if ($row['is_auction']==1)
-                                 echo "<div class='col-sm-3'>
-                                         <div class='product-image-wrapper'>
-                                             <div class='single-products'>
-                                                <div class='productinfo text-center'>
-                                                   <div class='sizingimages'>
-                                                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
-                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
-                                                   </div>
-                                                   <h2>{$row['price']} Rwf</h2>
-                                                   <p>{$row['name']}</p>
-                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                                </div>
-                                                <div class='product-overlay' style='opacity:0.9'>
-                                                    <div class='overlay-content'>
-                                                       <h2>{$row['place_name']} District</h2>
-                                                       <p>{$row['uploaded_date']}</p>
-                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                                    </div>
-                                                </div>
-                                             </div>
-                                
-                                         </div>
-                                       </div>";
+                                    if ($row['is_auction']==1)
+                                    { if($check % 4 ==1 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "<div class='row'>
+                                        <div class='col-sm-3'>
+                <div class='product-image-wrapper'>
+                  <div class='single-products'>
+                    <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
+                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                      </div>
+                      <h2>{$row['price']} Rwf</h2>
+                      <p>{$row['name']}</p>
+                      <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                    </div>
+                    <div class='product-overlay' style='opacity:0.9'>
+                      <div class='overlay-content'>
+                        <h2>{$row['place_name']} District</h2>
+                        <p>{$row['uploaded_date']}</p>
+                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>";
+                                      }
+                                      elseif($check % 4 ==0 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "
+                                        <div class='col-sm-3'>
+                <div class='product-image-wrapper'>
+                  <div class='single-products'>
+                    <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
+                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                      </div>
+                      <h2>{$row['price']} Rwf</h2>
+                      <p>{$row['name']}</p>
+                      <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                    </div>
+                    <div class='product-overlay' style='opacity:0.9'>
+                      <div class='overlay-content'>
+                        <h2>{$row['place_name']} District</h2>
+                        <p>{$row['uploaded_date']}</p>
+                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>";
+                                      }
+        else{
+          $check = $check + 1;
+        echo "<div class='col-sm-3'>
+                <div class='product-image-wrapper'>
+                  <div class='single-products'>
+                    <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
+                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                      </div>
+                      <h2>{$row['price']} Rwf</h2>
+                      <p>{$row['name']}</p>
+                      <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                    </div>
+                    <div class='product-overlay' style='opacity:0.9'>
+                      <div class='overlay-content'>
+                        <h2>{$row['place_name']} District</h2>
+                        <p>{$row['uploaded_date']}</p>
+                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>";}
+            }
                                        else
-                                        echo "<div class='col-sm-3'>
+                                        { if($check % 4 ==1 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "<div class='row'>
+                                         <div class='col-sm-3'>
                                          <div class='product-image-wrapper'>
                                              <div class='single-products'>
                                                 <div class='productinfo text-center'>
@@ -396,8 +702,66 @@ if(isset($_GET['var']) == "logout")
                                 
                                          </div>
                                        </div>";
-                                   
+                                      }
+                                      elseif($check % 4 ==0 )
+                                      {
+                                        $check = $check + 1;
+                                      
+                                         echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']} District</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                
+                                         </div>
+                                       </div>
+                                       </div>";
+            
+                                      }
+        else{
+          $check = $check + 1;
+         echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']} District</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                
+                                         </div>
+                                       </div>";}
+            }    
                                 } 
+                                if($check % 4 != 1)
+                                {
+                                  echo"</div>";
+                                }
                                 echo "</div>";echo "</div>";
 
                                 
@@ -426,36 +790,98 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=1 and is_accepted=1 order by main desc limit 4";
+                                $cats = "SELECT * from items where refcat_id=1 and is_accepted=1 order by photo2 desc limit 8";
+                                $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
-                                 if ($row['is_auction']==1)
-                                 echo "<div class='col-sm-3'>
-                                         <div class='product-image-wrapper'>
-                                             <div class='single-products'>
-                                                <div class='productinfo text-center'>
-                                                   <div class='sizingimages'>
-                                                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
-                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
-                                                   </div>
-                                                   <h2>{$row['price']} Rwf</h2>
-                                                   <p>{$row['name']}</p>
-                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                                </div>
-                                                <div class='product-overlay' style='opacity:0.9'>
-                                                    <div class='overlay-content'>
-                                                       <h2>{$row['place_name']} District</h2>
-                                                       <p>{$row['uploaded_date']}</p>
-                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                                    </div>
-                                                </div>
-                                             </div>
-                                
-                                         </div>
-                                       </div>";
+                                    if ($row['is_auction']==1)
+                                    { if($check % 4 ==1 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "<div class='row'>
+                                        <div class='col-sm-3'>
+                <div class='product-image-wrapper'>
+                  <div class='single-products'>
+                    <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
+                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                      </div>
+                      <h2>{$row['price']} Rwf</h2>
+                      <p>{$row['name']}</p>
+                      <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                    </div>
+                    <div class='product-overlay' style='opacity:0.9'>
+                      <div class='overlay-content'>
+                        <h2>{$row['place_name']} District</h2>
+                        <p>{$row['uploaded_date']}</p>
+                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>";
+                                      }
+                                      elseif($check % 4 ==0 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "
+                                        <div class='col-sm-3'>
+                <div class='product-image-wrapper'>
+                  <div class='single-products'>
+                    <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
+                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                      </div>
+                      <h2>{$row['price']} Rwf</h2>
+                      <p>{$row['name']}</p>
+                      <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                    </div>
+                    <div class='product-overlay' style='opacity:0.9'>
+                      <div class='overlay-content'>
+                        <h2>{$row['place_name']} District</h2>
+                        <p>{$row['uploaded_date']}</p>
+                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>";
+                                      }
+        else{
+          $check = $check + 1;
+        echo "<div class='col-sm-3'>
+                <div class='product-image-wrapper'>
+                  <div class='single-products'>
+                    <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
+                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                      </div>
+                      <h2>{$row['price']} Rwf</h2>
+                      <p>{$row['name']}</p>
+                      <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                    </div>
+                    <div class='product-overlay' style='opacity:0.9'>
+                      <div class='overlay-content'>
+                        <h2>{$row['place_name']} District</h2>
+                        <p>{$row['uploaded_date']}</p>
+                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>";}
+            }
                                        else
-                                        echo "<div class='col-sm-3'>
+                                        { if($check % 4 ==1 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "<div class='row'>
+                                         <div class='col-sm-3'>
                                          <div class='product-image-wrapper'>
                                              <div class='single-products'>
                                                 <div class='productinfo text-center'>
@@ -477,8 +903,65 @@ if(isset($_GET['var']) == "logout")
                                 
                                          </div>
                                        </div>";
-                                   
-                                } 
+                                      }
+                                      elseif($check % 4 ==0 )
+                                      {
+                                        $check = $check + 1;
+                                      
+                                         echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']} District</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                
+                                         </div>
+                                       </div>
+                                       </div>";
+            
+                                      }
+        else{
+          $check = $check + 1;
+         echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']} District</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                
+                                         </div>
+                                       </div>";}
+            } } 
+            if($check % 4 != 1)
+                                {
+                                  echo"</div>";
+                                }
                                 echo "</div>";echo "</div>";
 
                                 
@@ -508,36 +991,98 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=4 and is_accepted=1 order by photo1 desc limit 4";
+                                $cats = "SELECT * from items where refcat_id=4 and is_accepted=1 order by main desc limit 8";
+                                $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
-                                 if ($row['is_auction']==1)
-                                 echo "<div class='col-sm-3'>
-                                         <div class='product-image-wrapper'>
-                                             <div class='single-products'>
-                                                <div class='productinfo text-center'>
-                                                   <div class='sizingimages'>
-                                                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
-                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
-                                                   </div>
-                                                   <h2>{$row['price']} Rwf</h2>
-                                                   <p>{$row['name']}</p>
-                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                                </div>
-                                                <div class='product-overlay' style='opacity:0.9'>
-                                                    <div class='overlay-content'>
-                                                       <h2>{$row['place_name']} District</h2>
-                                                       <p>{$row['uploaded_date']}</p>
-                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                                    </div>
-                                                </div>
-                                             </div>
-                                
-                                         </div>
-                                       </div>";
+                                    if ($row['is_auction']==1)
+                                    { if($check % 4 ==1 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "<div class='row'>
+                                        <div class='col-sm-3'>
+                <div class='product-image-wrapper'>
+                  <div class='single-products'>
+                    <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
+                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                      </div>
+                      <h2>{$row['price']} Rwf</h2>
+                      <p>{$row['name']}</p>
+                      <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                    </div>
+                    <div class='product-overlay' style='opacity:0.9'>
+                      <div class='overlay-content'>
+                        <h2>{$row['place_name']} District</h2>
+                        <p>{$row['uploaded_date']}</p>
+                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>";
+                                      }
+                                      elseif($check % 4 ==0 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "
+                                        <div class='col-sm-3'>
+                <div class='product-image-wrapper'>
+                  <div class='single-products'>
+                    <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
+                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                      </div>
+                      <h2>{$row['price']} Rwf</h2>
+                      <p>{$row['name']}</p>
+                      <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                    </div>
+                    <div class='product-overlay' style='opacity:0.9'>
+                      <div class='overlay-content'>
+                        <h2>{$row['place_name']} District</h2>
+                        <p>{$row['uploaded_date']}</p>
+                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>";
+                                      }
+        else{
+          $check = $check + 1;
+        echo "<div class='col-sm-3'>
+                <div class='product-image-wrapper'>
+                  <div class='single-products'>
+                    <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
+                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                      </div>
+                      <h2>{$row['price']} Rwf</h2>
+                      <p>{$row['name']}</p>
+                      <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                    </div>
+                    <div class='product-overlay' style='opacity:0.9'>
+                      <div class='overlay-content'>
+                        <h2>{$row['place_name']} District</h2>
+                        <p>{$row['uploaded_date']}</p>
+                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>";}
+            }
                                        else
-                                        echo "<div class='col-sm-3'>
+                                        { if($check % 4 ==1 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "<div class='row'>
+                                         <div class='col-sm-3'>
                                          <div class='product-image-wrapper'>
                                              <div class='single-products'>
                                                 <div class='productinfo text-center'>
@@ -559,8 +1104,65 @@ if(isset($_GET['var']) == "logout")
                                 
                                          </div>
                                        </div>";
-                                   
-                                } 
+                                      }
+                                      elseif($check % 4 ==0 )
+                                      {
+                                        $check = $check + 1;
+                                      
+                                         echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']} District</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                
+                                         </div>
+                                       </div>
+                                       </div>";
+            
+                                      }
+        else{
+          $check = $check + 1;
+         echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']} District</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                
+                                         </div>
+                                       </div>";}
+            }} 
+            if($check % 4 != 1)
+                                {
+                                  echo"</div>";
+                                }
                                 echo "</div>";echo "</div>";
 
                                 
@@ -590,36 +1192,98 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=5 and is_accepted=1 order by main desc limit 4";
+                                $cats = "SELECT * from items where refcat_id=5 and is_accepted=1 order by post_id desc limit 8";
+                                $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
-                                 if ($row['is_auction']==1)
-                                 echo "<div class='col-sm-3'>
-                                         <div class='product-image-wrapper'>
-                                             <div class='single-products'>
-                                                <div class='productinfo text-center'>
-                                                   <div class='sizingimages'>
-                                                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
-                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
-                                                   </div>
-                                                   <h2>{$row['price']} Rwf</h2>
-                                                   <p>{$row['name']}</p>
-                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                                </div>
-                                                <div class='product-overlay' style='opacity:0.9'>
-                                                    <div class='overlay-content'>
-                                                       <h2>{$row['place_name']} District</h2>
-                                                       <p>{$row['uploaded_date']}</p>
-                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                                    </div>
-                                                </div>
-                                             </div>
-                                
-                                         </div>
-                                       </div>";
+                                    if ($row['is_auction']==1)
+                                    { if($check % 4 ==1 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "<div class='row'>
+                                        <div class='col-sm-3'>
+                <div class='product-image-wrapper'>
+                  <div class='single-products'>
+                    <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
+                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                      </div>
+                      <h2>{$row['price']} Rwf</h2>
+                      <p>{$row['name']}</p>
+                      <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                    </div>
+                    <div class='product-overlay' style='opacity:0.9'>
+                      <div class='overlay-content'>
+                        <h2>{$row['place_name']} District</h2>
+                        <p>{$row['uploaded_date']}</p>
+                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>";
+                                      }
+                                      elseif($check % 4 ==0 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "
+                                        <div class='col-sm-3'>
+                <div class='product-image-wrapper'>
+                  <div class='single-products'>
+                    <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
+                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                      </div>
+                      <h2>{$row['price']} Rwf</h2>
+                      <p>{$row['name']}</p>
+                      <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                    </div>
+                    <div class='product-overlay' style='opacity:0.9'>
+                      <div class='overlay-content'>
+                        <h2>{$row['place_name']} District</h2>
+                        <p>{$row['uploaded_date']}</p>
+                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>";
+                                      }
+        else{
+          $check = $check + 1;
+        echo "<div class='col-sm-3'>
+                <div class='product-image-wrapper'>
+                  <div class='single-products'>
+                    <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
+                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                      </div>
+                      <h2>{$row['price']} Rwf</h2>
+                      <p>{$row['name']}</p>
+                      <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                    </div>
+                    <div class='product-overlay' style='opacity:0.9'>
+                      <div class='overlay-content'>
+                        <h2>{$row['place_name']} District</h2>
+                        <p>{$row['uploaded_date']}</p>
+                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>";}
+            }
                                        else
-                                        echo "<div class='col-sm-3'>
+                                        { if($check % 4 ==1 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "<div class='row'>
+                                         <div class='col-sm-3'>
                                          <div class='product-image-wrapper'>
                                              <div class='single-products'>
                                                 <div class='productinfo text-center'>
@@ -641,8 +1305,64 @@ if(isset($_GET['var']) == "logout")
                                 
                                          </div>
                                        </div>";
-                                   
-                                } 
+                                      }
+                                      elseif($check % 4 ==0 )
+                                      {
+                                        $check = $check + 1;
+                                      
+                                         echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']} District</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                
+                                         </div>
+                                       </div>
+                                       </div>";
+            
+                                      }
+        else{
+          $check = $check + 1;
+         echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']} District</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                
+                                         </div>
+                                       </div>";}
+            } } if($check % 4 != 1)
+                                {
+                                  echo"</div>";
+                                }
                                 echo "</div>";echo "</div>";
 
                                 
@@ -673,36 +1393,98 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=6 and is_accepted=1 order by photo1 desc limit 4";
+                                $cats = "SELECT * from items where refcat_id=6 and is_accepted=1 order by main desc limit 8";
+                                $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
                                 {
-                                 if ($row['is_auction']==1)
-                                 echo "<div class='col-sm-3'>
-                                         <div class='product-image-wrapper'>
-                                             <div class='single-products'>
-                                                <div class='productinfo text-center'>
-                                                   <div class='sizingimages'>
-                                                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
-                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
-                                                   </div>
-                                                   <h2>{$row['price']} Rwf</h2>
-                                                   <p>{$row['name']}</p>
-                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                                </div>
-                                                <div class='product-overlay' style='opacity:0.9'>
-                                                    <div class='overlay-content'>
-                                                       <h2>{$row['place_name']} District</h2>
-                                                       <p>{$row['uploaded_date']}</p>
-                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                                                    </div>
-                                                </div>
-                                             </div>
-                                
-                                         </div>
-                                       </div>";
+                                    if ($row['is_auction']==1)
+                                    { if($check % 4 ==1 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "<div class='row'>
+                                        <div class='col-sm-3'>
+                <div class='product-image-wrapper'>
+                  <div class='single-products'>
+                    <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
+                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                      </div>
+                      <h2>{$row['price']} Rwf</h2>
+                      <p>{$row['name']}</p>
+                      <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                    </div>
+                    <div class='product-overlay' style='opacity:0.9'>
+                      <div class='overlay-content'>
+                        <h2>{$row['place_name']} District</h2>
+                        <p>{$row['uploaded_date']}</p>
+                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>";
+                                      }
+                                      elseif($check % 4 ==0 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "
+                                        <div class='col-sm-3'>
+                <div class='product-image-wrapper'>
+                  <div class='single-products'>
+                    <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
+                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                      </div>
+                      <h2>{$row['price']} Rwf</h2>
+                      <p>{$row['name']}</p>
+                      <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                    </div>
+                    <div class='product-overlay' style='opacity:0.9'>
+                      <div class='overlay-content'>
+                        <h2>{$row['place_name']} District</h2>
+                        <p>{$row['uploaded_date']}</p>
+                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>";
+                                      }
+        else{
+          $check = $check + 1;
+        echo "<div class='col-sm-3'>
+                <div class='product-image-wrapper'>
+                  <div class='single-products'>
+                    <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                        <img src='assets/images/shop/logo.png' style='width:70px' class='newarrival sizing' alt='' />
+                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                      </div>
+                      <h2>{$row['price']} Rwf</h2>
+                      <p>{$row['name']}</p>
+                      <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                    </div>
+                    <div class='product-overlay' style='opacity:0.9'>
+                      <div class='overlay-content'>
+                        <h2>{$row['place_name']} District</h2>
+                        <p>{$row['uploaded_date']}</p>
+                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>";}
+            }
                                        else
-                                        echo "<div class='col-sm-3'>
+                                        { if($check % 4 ==1 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "<div class='row'>
+                                         <div class='col-sm-3'>
                                          <div class='product-image-wrapper'>
                                              <div class='single-products'>
                                                 <div class='productinfo text-center'>
@@ -724,8 +1506,64 @@ if(isset($_GET['var']) == "logout")
                                 
                                          </div>
                                        </div>";
-                                   
-                                } 
+                                      }
+                                      elseif($check % 4 ==0 )
+                                      {
+                                        $check = $check + 1;
+                                      
+                                         echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']} District</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                
+                                         </div>
+                                       </div>
+                                       </div>";
+            
+                                      }
+        else{
+          $check = $check + 1;
+         echo "<div class='col-sm-3'>
+                                         <div class='product-image-wrapper'>
+                                             <div class='single-products'>
+                                                <div class='productinfo text-center'>
+                                                   <div class='sizingimages'>
+                                                        <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                   </div>
+                                                   <h2>{$row['price']} Rwf</h2>
+                                                   <p>{$row['name']}</p>
+                                                   <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                </div>
+                                                <div class='product-overlay' style='opacity:0.9'>
+                                                    <div class='overlay-content'>
+                                                       <h2>{$row['place_name']} District</h2>
+                                                       <p>{$row['uploaded_date']}</p>
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                
+                                         </div>
+                                       </div>";}
+            } } if($check % 4 != 1)
+                                {
+                                  echo"</div>";
+                                }
                                 echo "</div>";echo "</div>";
 
                                 
