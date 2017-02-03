@@ -61,7 +61,11 @@ if(isset($_GET['var']) == "logout")
       .right-image{
        position: absolute;
        z-index: 5;
-}
+     }
+       .nav-justified{
+         border-right: #B3AFA8
+       }
+
     </style>
 </head><!--/head-->
 
