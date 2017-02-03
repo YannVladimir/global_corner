@@ -1582,6 +1582,7 @@ if(isset($_GET['var']) == "logout")
   ?>
                     <?php 
                        $query = "SELECT * FROM amaservice where is_accepted = 1 order by details desc limit 20";
+                      $check = 1;
                        $res = mysqli_query($con,$query);
                        while($row = mysqli_fetch_assoc($res))
                        {
@@ -1619,8 +1620,9 @@ if(isset($_GET['var']) == "logout")
                               else{
                                 $img = '<img class="ratesize" src="assets/images/shop/rating10.png" alt="" />';
                               }
-
-                echo "<div class='col-sm-1'></div><div class='col-sm-5'>
+                        if($check%2==1)
+                        {
+                echo "<div class='row'><div class='col-sm-6'>
                         <br><a href='service.php?id={$row['id']}'>
                         <div class='row' style='border: 1px solid #F7F7F0; background:#f6f6f6'>";
                             echo "<div class='col-sm-4'>
@@ -1653,7 +1655,48 @@ if(isset($_GET['var']) == "logout")
                                  </div>";
 
                         echo "</div></a></div>
+                      
+
                         ";
+                      }
+                      else
+                        echo "<div class='col-sm-6'>
+                        <br><a href='service.php?id={$row['id']}'>
+                        <div class='row' style='border: 1px solid #F7F7F0; background:#f6f6f6'>";
+                            echo "<div class='col-sm-4'>
+                                     <div class='product-image-wrapper'>
+                                        <div class='single-products'>
+                                            <div class='productinfo text-center'>
+                                                 <div class='sizingimages'>
+                                                    <a href='service.php?id={$row['id']}'>
+                                                       <img  src='assets/images/posts/noimage.png' alt='' class=''/>
+                                                    </a>
+                                                  </div>
+                                            </div> <br><br>
+                                            <b> <a href='service-sub-category.php?id={$row['subcategory_id']}'>{$row['category']} <br> {$row['sub_category']}</b></a>
+                                            
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <div class='col-sm-8'>
+                                      <div class='product-information' style='border-left-style:none;border-bottom-style:none'><!--/product-information-->
+                                        {$img}<br> <b>{$row['avg']} stars | </b>
+                                        <b>Total votes: {$row['total_votes']}</b><br>
+                                        <span>
+                                             <h2>{$row['reserved']}</h2>
+                                        </span>
+                                        <p>Contact number:<b> {$row['phone']}</b></p>
+                                        <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
+                                        <p><b></b></p><br>
+                                        <p style='text-align:center;'><a style='background:#90DC60; color:white;' href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a><p>
+                                      </div><!--/product-information-->
+                                 </div>";
+
+                        echo "</div></a></div>
+                      </div>
+
+                        ";
+                      }
                         }
                         else
                         {
@@ -1688,8 +1731,8 @@ if(isset($_GET['var']) == "logout")
                               else{
                                 $img = '<img class="ratesize" src="assets/images/shop/rating10.png" alt="" />';
                               }
-
-                        echo "<div class='col-sm-1'></div><div class='col-sm-5'>
+                             if($check%2==1){
+                        echo "<div class='row'><div class='col-sm-6'>
                         <br><a href='service.php?id={$row['id']}'>
                         <div class='row' style='border: 1px solid #F7F7F0; background:#f6f6f6'>";
                             echo "<div class='col-sm-4'>
@@ -1723,6 +1766,44 @@ if(isset($_GET['var']) == "logout")
 
                         echo "</div></a></div>
                         ";
+                      }
+                      else
+                      {
+                        echo "<div class='col-sm-6'>
+                        <br><a href='service.php?id={$row['id']}'>
+                        <div class='row' style='border: 1px solid #F7F7F0; background:#f6f6f6'>";
+                            echo "<div class='col-sm-4'>
+                                     <div class='product-image-wrapper'>
+                                        <div class='single-products'>
+                                            <div class='productinfo text-center'>
+                                                 <div class='sizingimages'>
+                                                    <a href='service.php?id={$row['id']}'>
+                                                    <img src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                                                    </a>
+                                                  </div>
+                                            </div><br><br>
+                                            <b> <a href='service-sub-category.php?id={$row['subcategory_id']}'>{$row['category']} <br> {$row['sub_category']}</b></a>
+
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <div class='col-sm-8'>
+                                      <div class='product-information' style='border-left-style:none;border-bottom-style:none'><!--/product-information-->
+                                        {$img}<br> <b>{$row['avg']} stars | </b>
+                                        <b>Total votes: {$row['total_votes']}</b><br>
+                                        <span>
+                                             <h2>{$row['reserved']}</h2>
+                                        </span>
+                                        <p>Contact number:<b> {$row['phone']}</b></p>
+                                        <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
+                                        <p><b></b></p><br>
+                                        <p style='text-align:center;'><a style='background:#90DC60; color:white;' href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a><p>
+                                        </div><!--/product-information-->
+            </div>";
+
+                        echo "</div></a></div></div>
+                        ";
+                      }
                         }
                        }
                     ?>
