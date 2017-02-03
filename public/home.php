@@ -1623,7 +1623,7 @@ if(isset($_GET['var']) == "logout")
                         if($check%2==1)
                         {
                           $check = $check + 1;
-                echo "<div class='row'><div class='col-sm-6'>
+                echo "<div class='row'><div class='col-sm-5'>
                         <br><a href='service.php?id={$row['id']}'>
                         <div class='row' style='border: 1px solid #F7F7F0; background:#f6f6f6'>";
                             echo "<div class='col-sm-4'>
@@ -1663,7 +1663,7 @@ if(isset($_GET['var']) == "logout")
                       else
                       {
                         $check = $check+1;
-                        echo "<div class='col-sm-6'>
+                        echo "<div class='col-sm-1'></div><div class='col-sm-5'>
                         <br><a href='service.php?id={$row['id']}'>
                         <div class='row' style='border: 1px solid #F7F7F0; background:#f6f6f6'>";
                             echo "<div class='col-sm-4'>
@@ -1736,7 +1736,7 @@ if(isset($_GET['var']) == "logout")
                               }
                              if($check%2==1){
                               $check = $check+1;
-                        echo "<div class='row'><div class='col-sm-6'>
+                        echo "<div class='row'><div class='col-sm-5'>
                         <br><a href='service.php?id={$row['id']}'>
                         <div class='row' style='border: 1px solid #F7F7F0; background:#f6f6f6'>";
                             echo "<div class='col-sm-4'>
@@ -1774,7 +1774,7 @@ if(isset($_GET['var']) == "logout")
                       else
                       {
                         $check = $check+1;
-                        echo "<div class='col-sm-6'>
+                        echo "<div class='col-sm-1'></div><div class='col-sm-5'>
                         <br><a href='service.php?id={$row['id']}'>
                         <div class='row' style='border: 1px solid #F7F7F0; background:#f6f6f6'>";
                             echo "<div class='col-sm-4'>
