@@ -100,86 +100,228 @@ require_once ('../includes/main_functions.php');
 						<h2 class="title text-center">Features Items</h2>
 						<?php 
                             $id = $_GET['id'];
-                            $a = 0;
                             $query = "SELECT * FROM items where subcat_id = '{$id}' and is_accepted = 1 order by uploaded_date desc";
-                            $res = mysqli_query($con,$query);
-                            while($row = mysqli_fetch_assoc($res))
-                            {
-                              if($row['is_accepted'] == 1){
-                                if($row['is_auction']==0)
-                              echo "<div class='col-sm-3'>
-							<div class='product-image-wrapper'>
-								<div class='single-products'>
-									<div class='productinfo text-center'>
-                      <div class='sizingimages'>
-										<img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
-										</div>
-										<h2>{$row['price']} Rwf</h2>
-										<p>{$row['name']}</p>
-										<a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-									</div>
-									<div class='product-overlay' style='opacity:0.9'>
-										<div class='overlay-content'>
-											<h2>{$row['price']} Rwf</h2>
-									     	<p>{$row['name']}</p>
-										    <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-								        </div>
-									</div>
-								</div>
-								<div class='choose'>
-									<ul class='nav nav-pills nav-justified'>
-										<li><a href='#'>{$row['place_name']}</a></li>
-										<li><a href='#'>{$row['uploaded_date']}</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>";
-            else
-              echo "<div class='col-sm-3'>
+                            $check = 1;
+                                $res = mysqli_query($con,$query);
+                                while($row = mysqli_fetch_assoc($res))
+                                {
+                                    if ($row['is_auction']==1)
+                                    { if($check % 4 ==1 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "<div class='row'>
+                                        <div class='col-sm-3'>
               <div class='product-image-wrapper'>
                 <div class='single-products'>
                   <div class='productinfo text-center'>
                       <div class='sizingimages'>
-                   <img src='assets/images/shop/logo.png' style='width:60px' class='newarrival sizing' alt='' />
-                      <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                    <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
                     </div>
                     <h2>{$row['price']} Rwf</h2>
                     <p>{$row['name']}</p>
-                    <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                  </div>
-                  <div class='product-overlay' style='opacity:0.9'>
-                    <div class='overlay-content'>
-                      <h2>{$row['price']} Rwf</h2>
-                        <p>{$row['name']}</p>
-                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
-                        </div>
-                  </div>
+                    </div>
+                    
+                  <div class='product-overlay' style='opacity:0.1;background:white'>
+                                                    <div class='overlay-content'>
+
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
                 </div>
                 <div class='choose'>
                   <ul class='nav nav-pills nav-justified'>
-                    <li><a href='#'>{$row['place_name']}</a></li>
-                    <li><a href='#'>{$row['uploaded_date']}</a></li>
+                    <li><a href='#'>{$row['contacts']}</a></li>
+                    <li><a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart deta'><i class='fa fa-shopping-cart'></i>View Details</a>
+                  </li>
                   </ul>
                 </div>
               </div>
             </div>";
-                              $a = $a+1;
-                            }}
-                            if($a==0)
+                                      }
+                                      elseif($check % 4 ==0 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "
+                                        <div class='col-sm-3'>
+              <div class='product-image-wrapper'>
+                <div class='single-products'>
+                  <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                    <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                    </div>
+                    <h2>{$row['price']} Rwf</h2>
+                    <p>{$row['name']}</p>
+                    </div>
+                    <div class='product-overlay' style='opacity:0.1;background:white'>
+                                                    <div class='overlay-content'>
+
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                  
+                </div>
+                <div class='choose'>
+                  <ul class='nav nav-pills nav-justified'>
+                    <li><a href='#'>{$row['contacts']}</a></li>
+                    <li><a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart deta'><i class='fa fa-shopping-cart'></i>View Details</a>
+                  </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            </div>";
+                                      }
+        else{
+          $check = $check + 1;
+        echo "<div class='col-sm-3'>
+              <div class='product-image-wrapper'>
+                <div class='single-products'>
+                  <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                    <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                    </div>
+                    <h2>{$row['price']} Rwf</h2>
+                    <p>{$row['name']}</p>
+                    </div>
+                    <div class='product-overlay' style='opacity:0.1;background:white'>
+                                                    <div class='overlay-content'>
+
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                  
+                </div>
+                <div class='choose'>
+                  <ul class='nav nav-pills nav-justified'>
+                    <li><a href='#'>{$row['contacts']}</a></li>
+                    <li><a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart deta'><i class='fa fa-shopping-cart'></i>View Details</a>
+                  </li>
+                  </ul>
+                </div>
+              </div>
+            </div>";}
+            }
+                                       else
+                                        { if($check % 4 ==1 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "<div class='row'>
+                                         <div class='col-sm-3'>
+              <div class='product-image-wrapper'>
+                <div class='single-products'>
+                  <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                    <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                    </div>
+                    <h2>{$row['price']} Rwf</h2>
+                    <p>{$row['name']}</p>
+                    </div>
+                    <div class='product-overlay' style='opacity:0.1;background:white'>
+                                                    <div class='overlay-content'>
+
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                  
+                </div>
+                <div class='choose'>
+                  <ul class='nav nav-pills nav-justified'>
+                    <li><a href='#'>{$row['contacts']}</a></li>
+                    <li><a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart deta'><i class='fa fa-shopping-cart'></i>View Details</a>
+                  </li>
+                  </ul>
+                </div>
+              </div>
+            </div>";
+                                      }
+                                      elseif($check % 4 ==0 )
+                                      {
+                                        $check = $check + 1;
+                                      
+                                         echo "<div class='col-sm-3'>
+              <div class='product-image-wrapper'>
+                <div class='single-products'>
+                  <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                    <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                    </div>
+                    <h2>{$row['price']} Rwf</h2>
+                    <p>{$row['name']}</p>
+                    </div>
+                   <div class='product-overlay' style='opacity:0.1;background:white'>
+                                                    <div class='overlay-content'>
+
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div> 
+                  
+                </div>
+                <div class='choose'>
+                  <ul class='nav nav-pills nav-justified'>
+                    <li><a href='#'>{$row['contacts']}</a></li>
+                    <li><a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart deta'><i class='fa fa-shopping-cart'></i>View Details</a>
+                  </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+                                       </div>";
+            
+                                      }
+        else{
+          $check = $check + 1;
+         echo "<div class='col-sm-3'>
+              <div class='product-image-wrapper'>
+                <div class='single-products'>
+                  <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                    <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                    </div>
+                    <h2>{$row['price']} Rwf</h2>
+                    <p>{$row['name']}</p>
+                    </div>
+                    
+                  <div class='product-overlay' style='opacity:0.1;background:white'>
+                                                    <div class='overlay-content'>
+
+                                                       <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                                                    </div>
+                                                </div>
+                </div>
+                <div class='choose'>
+                  <ul class='nav nav-pills nav-justified'>
+                    <li><a href='#'>{$row['contacts']}</a></li>
+                    <li><a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart deta'><i class='fa fa-shopping-cart'></i>View Details</a>
+                  </li>
+                  </ul>
+                </div>
+              </div>
+            </div>";}
+            }
+                                
+
+                                   
+                                } 
+                                if($check % 4 != 1)
+                                {
+                                  echo"</div>";
+                                }
+                            
+                            if($check==1)
                             {
-                            	echo "<h2>No posts found in this category</h2>";
+                              echo "<h2>No posts found in this category</h2>";
                             } 
                                
                         ?>
 
-						
-					</div>
+            
+          </div>
                   </div>
-				<div class="col-sm-3">
-					<div class="left-sidebar">
-						<h2>Categories</h2>
-						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
-							<?php 
+        <div class="col-sm-3">
+          <div class="left-sidebar">
+            <h2>Categories</h2>
+            <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+              <?php 
                                             $c = 1;
                                             $query = "SELECT * FROM categories ";
                                             $res = mysqli_query($con,$query);
