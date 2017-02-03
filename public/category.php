@@ -104,48 +104,27 @@ require_once ('../includes/main_functions.php');
 						<h2 class="title text-center">Features Items</h2>
 						<?php 
             $id = $_GET['id'];
-                            $a = 0;
                             $query = "SELECT * FROM items where refcat_id = '{$id}' and is_accepted =1 order by uploaded_date desc";
-                            $res = mysqli_query($con,$query);
-                            while($row = mysqli_fetch_assoc($res))
-                            {
-                              
-                                if ($row['is_auction']==0 ){
-                              echo "<div class='col-sm-3'>
-							<div class='product-image-wrapper'>
-								<div class='single-products'>
-									<div class='productinfo text-center'>
-                      <div class='sizingimages'>
-										<img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
-										</div>
-										<h2>{$row['price']} Rwf</h2>
-										<p>{$row['name']}</p>
-										</div>
-									
-								</div>
-								<div class='choose'>
-									<ul class='nav nav-pills nav-justified'>
-										<li><a href='#'>{$row['contacts']}</a></li>
-										<li><a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart deta'><i class='fa fa-shopping-cart'></i>View Details</a>
-                  </li>
-									</ul>
-								</div>
-							</div>
-						</div>";
-          }
-          else
-          {
-             echo "<div class='col-sm-3'>
+                            
+          $check = 1;
+                                $res = mysqli_query($con,$query);
+                                while($row = mysqli_fetch_assoc($res))
+                                {
+                                    if ($row['is_auction']==1)
+                                    { if($check % 4 ==1 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "<div class='row'>
+                                        <div class='col-sm-3'>
               <div class='product-image-wrapper'>
                 <div class='single-products'>
                   <div class='productinfo text-center'>
                       <div class='sizingimages'>
-                    <img src='assets/images/shop/logo.png' style='width:60px' class='newarrival sizing' alt='' />
-                     <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                    <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
                     </div>
                     <h2>{$row['price']} Rwf</h2>
                     <p>{$row['name']}</p>
-                  </div>
+                    </div>
                   
                 </div>
                 <div class='choose'>
@@ -157,10 +136,148 @@ require_once ('../includes/main_functions.php');
                 </div>
               </div>
             </div>";
-          }
-                            $a = $a+1;
+                                      }
+                                      elseif($check % 4 ==0 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "
+                                        <div class='col-sm-3'>
+              <div class='product-image-wrapper'>
+                <div class='single-products'>
+                  <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                    <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                    </div>
+                    <h2>{$row['price']} Rwf</h2>
+                    <p>{$row['name']}</p>
+                    </div>
+                  
+                </div>
+                <div class='choose'>
+                  <ul class='nav nav-pills nav-justified'>
+                    <li><a href='#'>{$row['contacts']}</a></li>
+                    <li><a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart deta'><i class='fa fa-shopping-cart'></i>View Details</a>
+                  </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            </div>";
+                                      }
+        else{
+          $check = $check + 1;
+        echo "<div class='col-sm-3'>
+              <div class='product-image-wrapper'>
+                <div class='single-products'>
+                  <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                    <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                    </div>
+                    <h2>{$row['price']} Rwf</h2>
+                    <p>{$row['name']}</p>
+                    </div>
+                  
+                </div>
+                <div class='choose'>
+                  <ul class='nav nav-pills nav-justified'>
+                    <li><a href='#'>{$row['contacts']}</a></li>
+                    <li><a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart deta'><i class='fa fa-shopping-cart'></i>View Details</a>
+                  </li>
+                  </ul>
+                </div>
+              </div>
+            </div>";}
+            }
+                                       else
+                                        { if($check % 4 ==1 )
+                                      {
+                                        $check = $check + 1;
+                                        echo "<div class='row'>
+                                         <div class='col-sm-3'>
+              <div class='product-image-wrapper'>
+                <div class='single-products'>
+                  <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                    <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                    </div>
+                    <h2>{$row['price']} Rwf</h2>
+                    <p>{$row['name']}</p>
+                    </div>
+                  
+                </div>
+                <div class='choose'>
+                  <ul class='nav nav-pills nav-justified'>
+                    <li><a href='#'>{$row['contacts']}</a></li>
+                    <li><a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart deta'><i class='fa fa-shopping-cart'></i>View Details</a>
+                  </li>
+                  </ul>
+                </div>
+              </div>
+            </div>";
+                                      }
+                                      elseif($check % 4 ==0 )
+                                      {
+                                        $check = $check + 1;
+                                      
+                                         echo "<div class='col-sm-3'>
+              <div class='product-image-wrapper'>
+                <div class='single-products'>
+                  <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                    <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                    </div>
+                    <h2>{$row['price']} Rwf</h2>
+                    <p>{$row['name']}</p>
+                    </div>
+                  
+                </div>
+                <div class='choose'>
+                  <ul class='nav nav-pills nav-justified'>
+                    <li><a href='#'>{$row['contacts']}</a></li>
+                    <li><a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart deta'><i class='fa fa-shopping-cart'></i>View Details</a>
+                  </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+                                       </div>";
+            
+                                      }
+        else{
+          $check = $check + 1;
+         echo "<div class='col-sm-3'>
+              <div class='product-image-wrapper'>
+                <div class='single-products'>
+                  <div class='productinfo text-center'>
+                      <div class='sizingimages'>
+                    <img class='sizingimagesmax' src='assets/images/posts/{$row['main']}' alt='' class=''/>
+                    </div>
+                    <h2>{$row['price']} Rwf</h2>
+                    <p>{$row['name']}</p>
+                    </div>
+                  
+                </div>
+                <div class='choose'>
+                  <ul class='nav nav-pills nav-justified'>
+                    <li><a href='#'>{$row['contacts']}</a></li>
+                    <li><a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart deta'><i class='fa fa-shopping-cart'></i>View Details</a>
+                  </li>
+                  </ul>
+                </div>
+              </div>
+            </div>";}
+            }
+                                
+
+                                   
+                                } 
+                                if($check % 4 != 1)
+                                {
+                                  echo"</div>";
+                                }
+                            
                             }
-                            if($a==0)
+                            if($check==1)
                             {
                             	echo "<h2>No posts found in this category</h2>";
                             } 
