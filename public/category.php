@@ -43,6 +43,10 @@ require_once ('../includes/main_functions.php');
       .fon{
       	font-size: 20px;
       }
+      .deta{
+        color:white;
+        background-color: #90dc23;
+      }
     </style>
 </head><!--/head-->
 
@@ -121,14 +125,14 @@ require_once ('../includes/main_functions.php');
 										<div class='overlay-content'>
 											<h2>{$row['price']} Rwf</h2>
 									     	<p>{$row['name']}</p>
-										    <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+										    <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart deta'><i class='fa fa-shopping-cart'></i>View Details</a>
 								        </div>
 									</div>
 								</div>
 								<div class='choose'>
 									<ul class='nav nav-pills nav-justified'>
 										<li><a href='#'>{$row['place_name']}</a></li>
-										<li><a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+										<li><a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart deta'><i class='fa fa-shopping-cart'></i>View Details</a>
                   </li>
 									</ul>
 								</div>
@@ -152,14 +156,14 @@ require_once ('../includes/main_functions.php');
                     <div class='overlay-content'>
                       <h2>{$row['price']} Rwf</h2>
                         <p>{$row['name']}</p>
-                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart deta'><i class='fa fa-shopping-cart'></i>View Details</a>
                         </div>
                   </div>
                 </div>
                 <div class='choose'>
                   <ul class='nav nav-pills nav-justified'>
                     <li><a href='#'>{$row['place_name']}</a></li>
-                    <li><a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a>
+                    <li><a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart deta'><i class='fa fa-shopping-cart'></i>View Details</a>
                   </li>
                   </ul>
                 </div>
