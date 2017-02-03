@@ -121,17 +121,11 @@ require_once ('../includes/main_functions.php');
 										<h2>{$row['price']} Rwf</h2>
 										<p>{$row['name']}</p>
 										</div>
-									<div class='product-overlay' style='opacity:0.9'>
-										<div class='overlay-content'>
-											<h2>{$row['price']} Rwf</h2>
-									     	<p>{$row['name']}</p>
-										    <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart deta'><i class='fa fa-shopping-cart'></i>View Details</a>
-								        </div>
-									</div>
+									
 								</div>
 								<div class='choose'>
 									<ul class='nav nav-pills nav-justified'>
-										<li><a href='#'>{$row['place_name']}</a></li>
+										<li><a href='#'>{$row['contacts']}</a></li>
 										<li><a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart deta'><i class='fa fa-shopping-cart'></i>View Details</a>
                   </li>
 									</ul>
@@ -152,17 +146,11 @@ require_once ('../includes/main_functions.php');
                     <h2>{$row['price']} Rwf</h2>
                     <p>{$row['name']}</p>
                   </div>
-                  <div class='product-overlay' style='opacity:0.9'>
-                    <div class='overlay-content'>
-                      <h2>{$row['price']} Rwf</h2>
-                        <p>{$row['name']}</p>
-                        <a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart deta'><i class='fa fa-shopping-cart'></i>View Details</a>
-                        </div>
-                  </div>
+                  
                 </div>
                 <div class='choose'>
                   <ul class='nav nav-pills nav-justified'>
-                    <li><a href='#'>{$row['place_name']}</a></li>
+                    <li><a href='#'>{$row['contacts']}</a></li>
                     <li><a href='product.php?id={$row['post_id']}' class='btn btn-default add-to-cart deta'><i class='fa fa-shopping-cart'></i>View Details</a>
                   </li>
                   </ul>
