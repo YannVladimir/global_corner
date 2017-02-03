@@ -276,7 +276,6 @@ require_once ('../includes/main_functions.php');
                                   echo"</div>";
                                 }
                             
-                            }
                             if($check==1)
                             {
                             	echo "<h2>No posts found in this category</h2>";
