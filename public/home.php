@@ -353,6 +353,10 @@ if(isset($_GET['var']) == "logout")
 
                                    
                                 } 
+                                if($check % 4 != 0)
+                                {
+                                  echo"</div>";
+                                }
                                 echo "</div>";
                                 echo "</div>";
 
@@ -550,6 +554,10 @@ if(isset($_GET['var']) == "logout")
                                          </div>
                                        </div>";}
             }
+                                }
+                                if($check % 4 != 0)
+                                {
+                                  echo"</div>";
                                 } 
                                 echo "</div>";
                                 echo "</div>";
@@ -750,6 +758,10 @@ if(isset($_GET['var']) == "logout")
                                        </div>";}
             }    
                                 } 
+                                if($check % 4 != 0)
+                                {
+                                  echo"</div>";
+                                }
                                 echo "</div>";echo "</div>";
 
                                 
@@ -946,6 +958,10 @@ if(isset($_GET['var']) == "logout")
                                          </div>
                                        </div>";}
             } } 
+            if($check % 4 != 0)
+                                {
+                                  echo"</div>";
+                                }
                                 echo "</div>";echo "</div>";
 
                                 
@@ -1143,6 +1159,10 @@ if(isset($_GET['var']) == "logout")
                                          </div>
                                        </div>";}
             }} 
+            if($check % 4 != 0)
+                                {
+                                  echo"</div>";
+                                }
                                 echo "</div>";echo "</div>";
 
                                 
@@ -1339,7 +1359,10 @@ if(isset($_GET['var']) == "logout")
                                 
                                          </div>
                                        </div>";}
-            } } 
+            } } if($check % 4 != 0)
+                                {
+                                  echo"</div>";
+                                }
                                 echo "</div>";echo "</div>";
 
                                 
@@ -1537,7 +1560,10 @@ if(isset($_GET['var']) == "logout")
                                 
                                          </div>
                                        </div>";}
-            } } 
+            } } if($check % 4 != 0)
+                                {
+                                  echo"</div>";
+                                }
                                 echo "</div>";echo "</div>";
 
                                 
