@@ -44,8 +44,8 @@ require_once ('../includes/main_functions.php');
       	font-size: 20px;
       }
       .deta{
-        color:white;
-        background-color: #90dc23;
+        color:#90dc23;
+        background-color: white;
       }
     </style>
 </head><!--/head-->
