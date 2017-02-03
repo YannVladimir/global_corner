@@ -47,7 +47,7 @@
 							</div>
 						</div>-->
 					</div>
-					<div class="col-sm-6">
+					<div class="col-sm-5">
             <script language="JavaScript">
               TargetDate = "01/31/2017 00:00 AM";
 BackColor = "white";
@@ -158,20 +158,20 @@ CountBack(gsecs);
                     }                                      
                    //to here, if there is any change in between , please make sure to updTE NOTIFICATIONS .PHP
                    echo "
-                    <div class='col-sm-3'>
+                    <div class='col-sm-4'>
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
-								<li><a href='my_acount.php'><i class='fa fa-user'></i> {$_SESSION['username']}</a></li>
-								<li><a href='contact_us.php'><i class='fa fa-envelope'></i>Contact us</a></li>
+								<li><a href='my_acount.php'><i class='fa fa-user'></i> My store</a></li>  
+                <li><a href='contact_us.php'><i class='fa fa-envelope'></i>Contact us</a></li>
 								<li><a href='notifications.php'><i class='fa fa-bell'></i>Notifications <font style='color:#90DC23;'>({$count})</font> </a></li>
-								<li><a href='home.php?var=logout'><i class='fa fa-lock'></i> Logout</a></li>
+                <li><a href='home.php?var=logout'><i class='fa fa-lock'></i> Logout</a></li>
 							</ul>
 						</div>
 					</div>";
                    }
                    else
                    {
-              echo "<div class='col-sm-3'>
+              echo "<div class='col-sm-4'>
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a></a></li>
