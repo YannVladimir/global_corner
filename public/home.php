@@ -57,6 +57,7 @@ if(isset($_GET['var']) == "logout")
       }
       .left-image{
        position: absolute;
+       
       }
       .right-image{
        position: absolute;
