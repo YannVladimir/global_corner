@@ -124,7 +124,7 @@ require_once ('../includes/main_functions.php');
         <div class="col-sm-3">
         </div>
         <div class="col-sm-6 padding-right">
-            <div class="contact-form align-center">
+            <div class="contact-form align-center"> 
               <br>
               <h2 class="title text-center">About Us</h2>
               <div class="status alert alert-success" style="display: none">
