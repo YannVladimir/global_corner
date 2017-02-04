@@ -47,7 +47,8 @@
 							</div>
 						</div>-->
 					</div>
-					<div class="col-sm-5">
+					<div class="col-sm-5" style="background:url(assets/images/pub/secondwin.jpg);">
+            <!--
             <script language="JavaScript">
               TargetDate = "01/31/2017 00:00 AM";
 BackColor = "white";
@@ -115,7 +116,7 @@ else
   ddiff = new Date(dthen-dnow);
 gsecs = Math.floor(ddiff.valueOf()/1000);
 CountBack(gsecs);
-</script>
+</script>-->
          
 </div>
 					
