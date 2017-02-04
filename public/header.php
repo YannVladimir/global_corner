@@ -51,7 +51,7 @@
             <img src="assets/images/pub/thirdwin.jpg" style="height:80px;" />
             
             <script language="JavaScript">
-              TargetDate = "02/31/2017 00:00 AM";
+              TargetDate = "02/15/2017 00:00 AM";
 BackColor = "white";
 ForeColor = "#3AACEB";
 CountActive = true;
@@ -91,7 +91,7 @@ if (typeof(BackColor)=="undefined")
 if (typeof(ForeColor)=="undefined")
   ForeColor= "#3AACEB";
 if (typeof(TargetDate)=="undefined")
-  TargetDate = "02/31/2017 00:00 AM";
+  TargetDate = "02/15/2017 00:00 AM";
 if (typeof(DisplayFormat)=="undefined")
   DisplayFormat = "<br>Time left: %%D%% Days, %%H%% Hours, %%M%% Minutes, %%S%% Seconds.";
 if (typeof(CountActive)=="undefined")
