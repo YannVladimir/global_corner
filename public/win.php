@@ -145,12 +145,7 @@ require_once ('../includes/main_functions.php');
                   <li>Publish any service you provide (eg: Sonorization, Plumbing, car-rent, etc..) for free </li>
                </ol> </p>
               <br><br>
-              <p class="text-left">
-               <b>Closing date:</b> 
-                <ul>
-                  <li>02/15/2017 00:00 AM</li>
-                </ul> </p>
-              <br><br>
+              
               <p class="text-left">
                <b>Hints:</b> 
                 <ol>
@@ -159,7 +154,12 @@ require_once ('../includes/main_functions.php');
                   <li>Hurry up, others are increasing their chance to win</li>
                </ol> </p>
               <br><br>
-              
+              <p class="text-left">
+               <b>Closing date:</b> 
+                <ul>
+                  <li>02/15/2017 00:00 AM</li>
+                </ul> </p>
+              <br><br>
             </div>
           </div>
           <div class="col-sm-3 padding-right"><!--for advertisement-->
