@@ -131,22 +131,22 @@ require_once ('../includes/main_functions.php');
               <p class="text-center">
                  Win a new LGK smartphone with 250trade.com, the best free Rwandan classifieds site. </p>
               <br><br>
-              <p class="text-center">
-               <b>How to win:<b> 
+              <p class="text-left">
+               <b>Steps to win:</b> 
                 <ol>
                   <li>Create your own store</li>
                   <li>Post an ad for free to get your first chance </li>
                </ol> </p>
               <br><br>
-              <p class="text-center">
-               <b>What can be posted:<b> 
+              <p class="text-left">
+               <b>What can be posted:</b> 
                 <ol>
                   <li>Sell anything from used mobiles, furniture, laptops, houses and more by submitting ads for free</li>
                   <li>Publish any service you provide (eg: Sonorization, Plumbing, car-rent, etc..) for free </li>
                </ol> </p>
               <br><br>
-              <p class="text-center">
-               <b>Time left for first prizes:<b> 
+              <p class="text-left">
+               <b>Time left for first prizes:</b> 
                 <script language="JavaScript">
               TargetDate = "02/15/2017 00:00 AM";
 BackColor = "white";
@@ -186,7 +186,7 @@ function putspan(backcolor, forecolor) {
 if (typeof(BackColor)=="undefined")
   BackColor = "white";
 if (typeof(ForeColor)=="undefined")
-  ForeColor= "#232323";
+  ForeColor= "#black";
 if (typeof(TargetDate)=="undefined")
   TargetDate = "02/15/2017 00:00 AM";
 if (typeof(DisplayFormat)=="undefined")
@@ -217,16 +217,15 @@ CountBack(gsecs);
 </script>
           </p>
               <br><br>
-              <p class="text-center">
-               <b>Hints:<b> 
+              <p class="text-left">
+               <b>Hints:<b/> 
                 <ol>
                   <li>The more ads you upload, the more you increase your chance to win</li>
                   <li>After posting your ad, share the link of your post and get more chance to win </li>
-                  <li>Hurry up, others are increasing their chance to win<li>
+                  <li>Hurry up, others are increasing their chance to win</li>
                </ol> </p>
               <br><br>
-              <p class="text-center">If you want to buy something - here you will find interesting items cheaper than in the store, <br><br><br> If you want to sell something - here you will find many interesting customers than anywhere else.<br><br><br>Start buying and selling in the most easy way on 250trade.com.
-              </p>
+              
             </div>
           </div>
           <div class="col-sm-3 padding-right"><!--for advertisement-->
