@@ -48,16 +48,16 @@
 						</div>-->
 					</div>
 					<div class="col-sm-5">
-            <img src="assets/images/pub/thirdwin.jpg" />
-            <!--
+            <img src="assets/images/pub/thirdwin.jpg" style="height:80px;" />
+            
             <script language="JavaScript">
-              TargetDate = "01/31/2017 00:00 AM";
+              TargetDate = "02/31/2017 00:00 AM";
 BackColor = "white";
 ForeColor = "#3AACEB";
 CountActive = true;
 CountStepper = -1;
 LeadingZero = true;
-DisplayFormat = "Starting in <br> %%H%% Hours, %%M%% Minutes, %%S%% Seconds.";
+DisplayFormat = "<br> %%H%% Hours, %%M%% Minutes, %%S%% Seconds.";
 FinishMessage = "Make rwanda know what you trade";
 function calcage(secs, num1, num2) {
   s = ((Math.floor(secs/num1))%num2).toString();
@@ -82,7 +82,7 @@ function CountBack(secs) {
 }
 
 function putspan(backcolor, forecolor) {
- document.write("<span id='cntdwn' style='font-size:25px; background-color:" + backcolor + 
+ document.write("<span id='cntdwn' style='font-size:18px; background-color:" + backcolor + 
                 "; color:" + forecolor + "'></span>");
 }
 
@@ -91,9 +91,9 @@ if (typeof(BackColor)=="undefined")
 if (typeof(ForeColor)=="undefined")
   ForeColor= "#3AACEB";
 if (typeof(TargetDate)=="undefined")
-  TargetDate = "01/31/2017 00:00 AM";
+  TargetDate = "02/31/2017 00:00 AM";
 if (typeof(DisplayFormat)=="undefined")
-  DisplayFormat = "Starting in <br> %%H%% Hours, %%M%% Minutes, %%S%% Seconds.";
+  DisplayFormat = "<br> %%H%% Hours, %%M%% Minutes, %%S%% Seconds.";
 if (typeof(CountActive)=="undefined")
   CountActive = true;
 if (typeof(FinishMessage)=="undefined")
