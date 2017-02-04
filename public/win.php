@@ -146,13 +146,13 @@ require_once ('../includes/main_functions.php');
                </ol> </p>
               <br><br>
               <p class="text-left">
-               <b>Close date:</b> 
+               <b>Closing date:</b> 
                 <ul>
                   <li>02/15/2017 00:00 AM</li>
                 </ul> </p>
               <br><br>
               <p class="text-left">
-               <b>Hints:<b/> 
+               <b>Hints:</b> 
                 <ol>
                   <li>The more ads you upload, the more you increase your chance to win</li>
                   <li>After posting your ad, share the link of your post and get more chance to win </li>
