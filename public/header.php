@@ -48,7 +48,7 @@
 						</div>-->
 					</div>
 					<div class="col-sm-5">
-            <img src="assets/images/pub/secondwin.jpg" />
+            <img src="assets/images/pub/thirdwin.jpg" />
             <!--
             <script language="JavaScript">
               TargetDate = "01/31/2017 00:00 AM";
