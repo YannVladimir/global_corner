@@ -48,7 +48,7 @@
 						</div>-->
 					</div>
 					<div class="col-sm-5">
-            <div class="col-sm-12">
+           <!-- <div class="col-sm-12">
            <a href='win.php'> <img src="assets/images/pub/thirdwin.jpg" class="col-sm-12" style="height:80px;" /></a>
             </div>
             <script language="JavaScript">
@@ -118,7 +118,7 @@ else
   ddiff = new Date(dthen-dnow);
 gsecs = Math.floor(ddiff.valueOf()/1000);
 CountBack(gsecs);
-</script>
+</script>-->
          
 </div>
 					
