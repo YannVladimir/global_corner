@@ -48,7 +48,7 @@
 						</div>-->
 					</div>
 					<div class="col-sm-5">
-           <a href='win.php'> <img src="assets/images/pub/thirdwin.jpg" style="height:80px;" /></a>
+           <a href='win.php'> <img src="assets/images/pub/thirdwin.jpg" class="col-sm-12" style="height:80px;" /></a>
             
             <script language="JavaScript">
               TargetDate = "02/15/2017 00:00 AM";
