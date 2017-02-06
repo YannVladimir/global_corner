@@ -104,10 +104,8 @@ checkToken();
 					
 					<!--/login form-->
 				</div>
-				<div class="col-sm-1">
-					<h2 class="or">OR</h2>
-				</div>
-				<div class="col-sm-4">
+				
+				<div class="col-sm-6">
 					<div class="signup-form"><!--sign up form-->
 						<h2>Create your new store!</h2>
 						<form action="sign_up.php" id="signup" method="POST">
