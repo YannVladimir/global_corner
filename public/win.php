@@ -166,8 +166,12 @@ require_once ('../includes/main_functions.php');
               <p class="text-left">
                <b>Closing date:</b> 
                 <ul>
-                  <li>02/15/2017 00:00 AM</li>
+                  <li>15/02/2017 00:00 AM</li>
                 </ul> </p>
+              <br><br>
+            </div>
+            <p class="text-center">
+              <a href='login.php'><button type="submit" class="btn btn-default bton pull-center">Click here to start</button></a> </p>
               <br><br>
             </div>
           </div>
