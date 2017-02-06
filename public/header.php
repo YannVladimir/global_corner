@@ -47,7 +47,7 @@
 							</div>
 						</div>-->
 					</div>
-					<div class="col-sm-6">
+					<div class="col-sm-6 text-center">
             <div class='item'>
                 <div class='col-sm-12'> 
                   <a href="win.php"><img src='assets/images/pub/sixth.jpg' style='width:100%;' class='girl img-responsive' alt='' /></a>
