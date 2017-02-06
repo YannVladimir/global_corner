@@ -61,7 +61,7 @@ ForeColor = "#3AACEB";
 CountActive = true;
 CountStepper = -1;
 LeadingZero = true;
-DisplayFormat = "<br>Time left: %%D%% Days, %%H%% Hours, %%M%% Minutes, %%S%% Seconds.";
+DisplayFormat = "<br>Win LGK7's time left: %%D%% Days, %%H%% Hrs, %%M%% Mins, %%S%% Secs.";
 FinishMessage = "Make rwanda know what you trade";
 function calcage(secs, num1, num2) {
   s = ((Math.floor(secs/num1))%num2).toString();
@@ -97,7 +97,7 @@ if (typeof(ForeColor)=="undefined")
 if (typeof(TargetDate)=="undefined")
   TargetDate = "02/15/2017 00:00 AM";
 if (typeof(DisplayFormat)=="undefined")
-  DisplayFormat = "<br>Time left: %%D%% Days, %%H%% Hours, %%M%% Minutes, %%S%% Seconds.";
+  DisplayFormat = "<br>Win LGK7's time left: %%D%% Days, %%H%% Hrs, %%M%% Mins, %%S%% Secs.";
 if (typeof(CountActive)=="undefined")
   CountActive = true;
 if (typeof(FinishMessage)=="undefined")
