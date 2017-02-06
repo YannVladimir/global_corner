@@ -171,7 +171,7 @@ require_once ('../includes/main_functions.php');
               <br>
             </div>
             <p class="text-center">
-              <a href='login.php'><button type="submit" class="btn btn-default bton pull-center" style="background:#90DC23;">Click here to start</button></a> </p>
+              <a href='login.php'><button type="submit" class="btn btn-default bton pull-center" >Click here to start</button></a> </p>
               <br><br>
             </div>
           </div>
