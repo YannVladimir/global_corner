@@ -48,6 +48,11 @@
 						</div>-->
 					</div>
 					<div class="col-sm-5">
+            <div class='item'>
+                <div class='col-sm-12'> 
+                  <a href="win.php"><img src='assets/images/pub/sixth.jpg' style='width:100%;' class='girl img-responsive' alt='' /></a>
+                </div>
+            </div>
            <!-- <div class="col-sm-12">
            <a href='win.php'> <img src="assets/images/pub/thirdwin.jpg" class="col-sm-12" style="height:80px;" /></a>
             </div>
