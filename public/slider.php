@@ -71,7 +71,7 @@
 						<div class="carousel-inner">
 							<div class='item active'>
 								               <div class='col-sm-12'> 
-									            <a href="win.php"> <img src='assets/images/slider/pub.jpg' style='width:100%;' class='girl img-responsive' alt='' /></a>
+									            <a href="win.php"> <img src='assets/images/slider/pub1.jpg' style='width:100%;' class='girl img-responsive' alt='' /></a>
 				                               </div> 
 				             </div>
 				             <div class='item'>
@@ -86,7 +86,7 @@
 							</div>
 						    <div class='item'>
 								  <div class='col-sm-12'> 
-						             <a href="win.php"><img src='assets/images/slider/pub.jpg' style='width:100%;' class='girl img-responsive' alt='' /></a>
+						             <a href="win.php"><img src='assets/images/slider/pub1.jpg' style='width:100%;' class='girl img-responsive' alt='' /></a>
 				                  </div>
 							</div>
 							<div class='item'>

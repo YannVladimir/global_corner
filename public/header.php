@@ -47,13 +47,13 @@
 							</div>
 						</div>-->
 					</div>
-					<div class="col-sm-5">
+					<div class="col-sm-6">
             <div class='item'>
                 <div class='col-sm-12'> 
                   <a href="win.php"><img src='assets/images/pub/sixth.jpg' style='width:100%;' class='girl img-responsive' alt='' /></a>
                 </div>
             </div>
-           <!-- <div class="col-sm-12">
+           <div class="col-sm-12">
            <a href='win.php'> <img src="assets/images/pub/thirdwin.jpg" class="col-sm-12" style="height:80px;" /></a>
             </div>
             <script language="JavaScript">
@@ -123,7 +123,7 @@ else
   ddiff = new Date(dthen-dnow);
 gsecs = Math.floor(ddiff.valueOf()/1000);
 CountBack(gsecs);
-</script>-->
+</script>
          
 </div>
 					
@@ -166,7 +166,7 @@ CountBack(gsecs);
                     }                                      
                    //to here, if there is any change in between , please make sure to updTE NOTIFICATIONS .PHP
                    echo "
-                    <div class='col-sm-4'>
+                    <div class='col-sm-3'>
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a href='my_acount.php'><i class='fa fa-user'></i> My store</a></li>  
@@ -179,7 +179,7 @@ CountBack(gsecs);
                    }
                    else
                    {
-              echo "<div class='col-sm-4'>
+              echo "<div class='col-sm-3s'>
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a></a></li>
