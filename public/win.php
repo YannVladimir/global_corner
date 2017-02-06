@@ -143,7 +143,7 @@ require_once ('../includes/main_functions.php');
               <p class="text-left">
                <b>Steps to win:</b> 
                 <ol>
-                  <li>Create your own store</li>
+                  <li>Create your own store (<a href='login.php'>Click here to create</a>)</li>
                   <li>Post an ad for free to get your first chance </li>
                </ol> </p>
               <br><br>
@@ -151,16 +151,16 @@ require_once ('../includes/main_functions.php');
                <b>What can be posted:</b> 
                 <ol>
                   <li>Sell anything from used mobiles, furniture, laptops, houses and more by submitting ads for free</li>
-                  <li>Publish any service you provide (eg: Sonorization, Plumbing, car-rent, etc..) for free </li>
+                  <li>Or publish any service you provide (eg: Sonorization, Plumbing, car-rent, etc..) for free </li>
                </ol> </p>
               <br><br>
               
               <p class="text-left">
                <b>Hints:</b> 
                 <ol>
-                  <li>The more ads you upload, the more you increase your chance to win</li>
-                  <li>After posting your ad, share the link of your post and get more chance to win </li>
-                  <li>Hurry up, others are increasing their chance to win</li>
+                  <li>The more ads you upload, the more you increase your chances of winning</li>
+                  <li>After posting your ad, share the link of your post and get more chances of winning </li>
+                  <li>Hurry up, others are increasing their chances</li>
                </ol> </p>
               <br><br>
               <p class="text-left">
