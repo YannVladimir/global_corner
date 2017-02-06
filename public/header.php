@@ -182,7 +182,7 @@ CountBack(gsecs);
 								<li><a></a></li>
 
                                 <li><a href='contact_us.php'><i class='fa fa-envelope'></i>Contact us</a></li>
-								<li><a href='login.php'><i class='fa fa-lock'></i> Login</a></li>
+								<li><a href='login.php'><i class='fa fa-lock'></i> My store</a></li>
 							</ul>
 						</div>
 					</div>";
