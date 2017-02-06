@@ -182,7 +182,7 @@ if(isset($_GET['var']) == "logout")
         <div class='tab-content'> ";
       echo "<div class='tab-pane fade active in' id='1' >";
                                 
-                                $cats = "SELECT * from items where refcat_id=2 and is_accepted=1 order by main desc limit 8";
+                                $cats = "SELECT * from items where refcat_id=2 and is_accepted=1 order by post_id desc limit 8";
                                 $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
@@ -387,7 +387,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=8 and is_accepted=1 order by photo2 limit 8";
+                                $cats = "SELECT * from items where refcat_id=8 and is_accepted=1 order by post_id desc limit 8";
                                 $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
@@ -590,7 +590,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=3 and is_accepted=1 order by details limit 8";
+                                $cats = "SELECT * from items where refcat_id=3 and is_accepted=1 order by post_id desc limit 8";
                                 $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
@@ -791,7 +791,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=1 and is_accepted=1 order by photo2 desc limit 8";
+                                $cats = "SELECT * from items where refcat_id=1 and is_accepted=1 order by post_id desc limit 8";
                                 $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
@@ -992,7 +992,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=4 and is_accepted=1 order by main desc limit 8";
+                                $cats = "SELECT * from items where refcat_id=4 and is_accepted=1 order by post_id desc limit 8";
                                 $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
@@ -1394,7 +1394,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=6 and is_accepted=1 order by main desc limit 8";
+                                $cats = "SELECT * from items where refcat_id=6 and is_accepted=1 order by post_id desc limit 8";
                                 $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
@@ -1582,7 +1582,7 @@ if(isset($_GET['var']) == "logout")
   echo "</ul>";
   ?>
                     <?php 
-                       $query = "SELECT * FROM amaservice where is_accepted = 1 order by details desc limit 20";
+                       $query = "SELECT * FROM amaservice where is_accepted = 1 order by id desc limit 20";
                       $check = 1;
                        $res = mysqli_query($con,$query);
                        while($row = mysqli_fetch_assoc($res))
