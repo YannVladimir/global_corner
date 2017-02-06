@@ -53,7 +53,6 @@
                   <a href="win.php"><img src='assets/images/pub/sixth.jpg' style='width:100%;' class='girl img-responsive' alt='' /></a>
                 </div>
             </div>
-           <div class="col-sm-12">
            
             <script language="JavaScript">
               TargetDate = "02/15/2017 00:00 AM";
@@ -122,8 +121,7 @@ else
   ddiff = new Date(dthen-dnow);
 gsecs = Math.floor(ddiff.valueOf()/1000);
 CountBack(gsecs);
-</script>
- </div>        
+</script>       
 </div>
 					
 					<?php
