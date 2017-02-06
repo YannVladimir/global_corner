@@ -126,10 +126,19 @@ require_once ('../includes/main_functions.php');
         <div class="col-sm-6 padding-right">
             <div class="contact-form align-center">
               <br>
-              <h2 class="title text-center">Win LGK</h2>
+              <h2 class="title text-center">Win a new LGK 7</h2>
               
               <p class="text-center">
-                 Win a new LGK smartphone with 250trade.com, the best free Rwandan classifieds site. </p>
+                 Win a new LGK 7 smartphone with 250trade.com, the best free Rwandan classifieds site. </p>
+              <br>
+              <div class='item'>
+                  <div class='col-sm-12'> 
+                    <div class='col-sm-2'></div>
+                    <div class='col-sm-8'>
+                      <img src='assets/images/pub/lg.png' style='width:100%;' class='girl img-responsive' alt='' />
+                    </div>
+                  </div>
+              </div>
               <br><br>
               <p class="text-left">
                <b>Steps to win:</b> 
