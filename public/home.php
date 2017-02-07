@@ -1646,13 +1646,13 @@ if(isset($_GET['var']) == "logout")
                                       <div class='product-information' style='border-left-style:none;border-bottom-style:none'><!--/product-information-->
                                         {$img}<br> <b>{$row['avg']} stars | </b>
                                         <b>Total votes: {$row['total_votes']}</b><br>
-                                        <span style='color:#90dc23 style='color:#90dc23'>
-                                             <b style='color:#90dc23'>{$row['title']}</b>
+                                        <span style='color:blue'>
+                                             <b style='color:blue'><a href='service.php?id={$row['id']}'>{$row['title']}</a></b>
                                         </span>
                                         <p>Contact number:<b> {$row['phone']}</b></p>
                                         <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
                                         <p><b></b></p><br>
-                                        <p style='text-align:center;'><a style='background:#90DC60; color:white;' href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a><p>
+                                        <p style='text-align:center;'><a style='background:#90DC23; color:white;' href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a><p>
                                       </div><!--/product-information-->
                                  </div>";
 
@@ -1686,13 +1686,13 @@ if(isset($_GET['var']) == "logout")
                                       <div class='product-information' style='border-left-style:none;border-bottom-style:none'><!--/product-information-->
                                         {$img}<br> <b>{$row['avg']} stars | </b>
                                         <b>Total votes: {$row['total_votes']}</b><br>
-                                        <span style='color:#90dc23'>
-                                             <b style='color:#90dc23'>{$row['title']}</b>
+                                        <span style='color:blue'>
+                                             <b style='color:blue'><a href='service.php?id={$row['id']}'>{$row['title']}</a></b>
                                         </span>
                                         <p>Contact number:<b> {$row['phone']}</b></p>
                                         <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
                                         <p><b></b></p><br>
-                                        <p style='text-align:center;'><a style='background:#90DC60; color:white;' href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a><p>
+                                        <p style='text-align:center;'><a style='background:#90DC23; color:white;' href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a><p>
                                       </div><!--/product-information-->
                                  </div>";
 
@@ -1759,13 +1759,13 @@ if(isset($_GET['var']) == "logout")
                                       <div class='product-information' style='border-left-style:none;border-bottom-style:none'><!--/product-information-->
                                         {$img}<br> <b>{$row['avg']} stars | </b>
                                         <b>Total votes: {$row['total_votes']}</b><br>
-                                        <span style='color:#90dc23'>
-                                             <b style='color:#90dc23'>{$row['title']}</b>
+                                        <span style='color:blue'>
+                                             <b style='color:blue'><a href='service.php?id={$row['id']}'>{$row['title']}</a></b>
                                         </span>
                                         <p>Contact number:<b> {$row['phone']}</b></p>
                                         <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
                                         <p><b></b></p><br>
-                                        <p style='text-align:center;'><a style='background:#90DC60; color:white;' href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a><p>
+                                        <p style='text-align:center;'><a style='background:#90DC23; color:white;' href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a><p>
                                         </div><!--/product-information-->
             </div>";
 
@@ -1797,13 +1797,13 @@ if(isset($_GET['var']) == "logout")
                                       <div class='product-information' style='border-left-style:none;border-bottom-style:none'><!--/product-information-->
                                         {$img}<br> <b>{$row['avg']} stars | </b>
                                         <b>Total votes: {$row['total_votes']}</b><br>
-                                        <span style='color:#90dc23'>
-                                             <b style='color:#90dc23'>{$row['title']}</b>
+                                        <span style='color:blue'>
+                                             <b style='color:blue'><a href='service.php?id={$row['id']}'>{$row['title']}</a></b>
                                         </span>
                                         <p>Contact number:<b> {$row['phone']}</b></p>
                                         <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
                                         <p><b></b></p><br>
-                                        <p style='text-align:center;'><a style='background:#90DC60; color:white;' href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a><p>
+                                        <p style='text-align:center;'><a style='background:#90DC23; color:white;' href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a><p>
                                         </div><!--/product-information-->
             </div>";
 
