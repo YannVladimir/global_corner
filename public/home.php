@@ -1646,8 +1646,8 @@ if(isset($_GET['var']) == "logout")
                                       <div class='product-information' style='border-left-style:none;border-bottom-style:none'><!--/product-information-->
                                         {$img}<br> <b>{$row['avg']} stars | </b>
                                         <b>Total votes: {$row['total_votes']}</b><br>
-                                        <span>
-                                             <b>{$row['title']}</b>
+                                        <span style='color:#90dc23 style='color:#90dc23'>
+                                             <b style='color:#90dc23'>{$row['title']}</b>
                                         </span>
                                         <p>Contact number:<b> {$row['phone']}</b></p>
                                         <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
@@ -1686,8 +1686,8 @@ if(isset($_GET['var']) == "logout")
                                       <div class='product-information' style='border-left-style:none;border-bottom-style:none'><!--/product-information-->
                                         {$img}<br> <b>{$row['avg']} stars | </b>
                                         <b>Total votes: {$row['total_votes']}</b><br>
-                                        <span>
-                                             <b>{$row['title']}</b>
+                                        <span style='color:#90dc23'>
+                                             <b style='color:#90dc23'>{$row['title']}</b>
                                         </span>
                                         <p>Contact number:<b> {$row['phone']}</b></p>
                                         <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
@@ -1759,8 +1759,8 @@ if(isset($_GET['var']) == "logout")
                                       <div class='product-information' style='border-left-style:none;border-bottom-style:none'><!--/product-information-->
                                         {$img}<br> <b>{$row['avg']} stars | </b>
                                         <b>Total votes: {$row['total_votes']}</b><br>
-                                        <span>
-                                             <b>{$row['title']}</b>
+                                        <span style='color:#90dc23'>
+                                             <b style='color:#90dc23'>{$row['title']}</b>
                                         </span>
                                         <p>Contact number:<b> {$row['phone']}</b></p>
                                         <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
@@ -1797,8 +1797,8 @@ if(isset($_GET['var']) == "logout")
                                       <div class='product-information' style='border-left-style:none;border-bottom-style:none'><!--/product-information-->
                                         {$img}<br> <b>{$row['avg']} stars | </b>
                                         <b>Total votes: {$row['total_votes']}</b><br>
-                                        <span>
-                                             <b>{$row['title']}</b>
+                                        <span style='color:#90dc23'>
+                                             <b style='color:#90dc23'>{$row['title']}</b>
                                         </span>
                                         <p>Contact number:<b> {$row['phone']}</b></p>
                                         <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
