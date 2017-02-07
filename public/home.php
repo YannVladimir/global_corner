@@ -1647,7 +1647,7 @@ if(isset($_GET['var']) == "logout")
                                         {$img}<br> <b>{$row['avg']} stars | </b>
                                         <b>Total votes: {$row['total_votes']}</b><br>
                                         <span>
-                                             <h2>{$row['reserved']}</h2>
+                                             <b>{$row['title']}</b>
                                         </span>
                                         <p>Contact number:<b> {$row['phone']}</b></p>
                                         <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
@@ -1687,7 +1687,7 @@ if(isset($_GET['var']) == "logout")
                                         {$img}<br> <b>{$row['avg']} stars | </b>
                                         <b>Total votes: {$row['total_votes']}</b><br>
                                         <span>
-                                             <h2>{$row['reserved']}</h2>
+                                             <b>{$row['title']}</b>
                                         </span>
                                         <p>Contact number:<b> {$row['phone']}</b></p>
                                         <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
@@ -1760,7 +1760,7 @@ if(isset($_GET['var']) == "logout")
                                         {$img}<br> <b>{$row['avg']} stars | </b>
                                         <b>Total votes: {$row['total_votes']}</b><br>
                                         <span>
-                                             <h2>{$row['reserved']}</h2>
+                                             <b>{$row['title']}</b>
                                         </span>
                                         <p>Contact number:<b> {$row['phone']}</b></p>
                                         <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
@@ -1798,7 +1798,7 @@ if(isset($_GET['var']) == "logout")
                                         {$img}<br> <b>{$row['avg']} stars | </b>
                                         <b>Total votes: {$row['total_votes']}</b><br>
                                         <span>
-                                             <h2>{$row['reserved']}</h2>
+                                             <b>{$row['title']}</b>
                                         </span>
                                         <p>Contact number:<b> {$row['phone']}</b></p>
                                         <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
