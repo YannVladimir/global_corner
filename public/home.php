@@ -1637,8 +1637,7 @@ if(isset($_GET['var']) == "logout")
                                                     </a>
                                                   </div>
                                             </div> <br><br>
-                                            <b> <a href='service-sub-category.php?id={$row['subcategory_id']}'>{$row['category']} <br> {$row['sub_category']}</b></a>
-                                            
+                                               <b style='color:blue'><a href='service.php?id={$row['id']}'>{$row['title']}</a></b>                                            
                                         </div>
                                      </div>
                                   </div>
@@ -1646,9 +1645,9 @@ if(isset($_GET['var']) == "logout")
                                       <div class='product-information' style='border-left-style:none;border-bottom-style:none'><!--/product-information-->
                                         {$img}<br> <b>{$row['avg']} stars | </b>
                                         <b>Total votes: {$row['total_votes']}</b><br>
-                                        <span style='color:blue'>
-                                             <b style='color:blue'><a href='service.php?id={$row['id']}'>{$row['title']}</a></b>
-                                        </span>
+                                        <span>
+                                        <b> <a href='service-sub-category.php?id={$row['subcategory_id']}'>{$row['category']} <br> {$row['sub_category']}</b></a>
+                                              </span>
                                         <p>Contact number:<b> {$row['phone']}</b></p>
                                         <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
                                         <p><b></b></p><br>
@@ -1677,8 +1676,7 @@ if(isset($_GET['var']) == "logout")
                                                     </a>
                                                   </div>
                                             </div> <br><br>
-                                            <b> <a href='service-sub-category.php?id={$row['subcategory_id']}'>{$row['category']} <br> {$row['sub_category']}</b></a>
-                                            
+                                               <b style='color:blue'><a href='service.php?id={$row['id']}'>{$row['title']}</a></b>                                            
                                         </div>
                                      </div>
                                   </div>
@@ -1686,9 +1684,9 @@ if(isset($_GET['var']) == "logout")
                                       <div class='product-information' style='border-left-style:none;border-bottom-style:none'><!--/product-information-->
                                         {$img}<br> <b>{$row['avg']} stars | </b>
                                         <b>Total votes: {$row['total_votes']}</b><br>
-                                        <span style='color:blue'>
-                                             <b style='color:blue'><a href='service.php?id={$row['id']}'>{$row['title']}</a></b>
-                                        </span>
+                                        <span>
+                                        <b> <a href='service-sub-category.php?id={$row['subcategory_id']}'>{$row['category']} <br> {$row['sub_category']}</b></a>
+                                              </span>
                                         <p>Contact number:<b> {$row['phone']}</b></p>
                                         <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
                                         <p><b></b></p><br>
@@ -1750,8 +1748,7 @@ if(isset($_GET['var']) == "logout")
                                                     </a>
                                                   </div>
                                             </div><br><br>
-                                            <b> <a href='service-sub-category.php?id={$row['subcategory_id']}'>{$row['category']} <br> {$row['sub_category']}</b></a>
-
+                                               <b style='color:blue'><a href='service.php?id={$row['id']}'>{$row['title']}</a></b>
                                         </div>
                                      </div>
                                   </div>
@@ -1759,9 +1756,9 @@ if(isset($_GET['var']) == "logout")
                                       <div class='product-information' style='border-left-style:none;border-bottom-style:none'><!--/product-information-->
                                         {$img}<br> <b>{$row['avg']} stars | </b>
                                         <b>Total votes: {$row['total_votes']}</b><br>
-                                        <span style='color:blue'>
-                                             <b style='color:blue'><a href='service.php?id={$row['id']}'>{$row['title']}</a></b>
-                                        </span>
+                                        <span>
+                                        <b> <a href='service-sub-category.php?id={$row['subcategory_id']}'>{$row['category']} <br> {$row['sub_category']}</b></a>
+                                              </span>
                                         <p>Contact number:<b> {$row['phone']}</b></p>
                                         <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
                                         <p><b></b></p><br>
@@ -1788,8 +1785,7 @@ if(isset($_GET['var']) == "logout")
                                                     </a>
                                                   </div>
                                             </div><br><br>
-                                            <b> <a href='service-sub-category.php?id={$row['subcategory_id']}'>{$row['category']} <br> {$row['sub_category']}</b></a>
-
+                                               <b style='color:blue'><a href='service.php?id={$row['id']}'>{$row['title']}</a></b>
                                         </div>
                                      </div>
                                   </div>
@@ -1797,9 +1793,9 @@ if(isset($_GET['var']) == "logout")
                                       <div class='product-information' style='border-left-style:none;border-bottom-style:none'><!--/product-information-->
                                         {$img}<br> <b>{$row['avg']} stars | </b>
                                         <b>Total votes: {$row['total_votes']}</b><br>
-                                        <span style='color:blue'>
-                                             <b style='color:blue'><a href='service.php?id={$row['id']}'>{$row['title']}</a></b>
-                                        </span>
+                                        <span>
+                                        <b> <a href='service-sub-category.php?id={$row['subcategory_id']}'>{$row['category']} <br> {$row['sub_category']}</b></a>
+                                              </span>
                                         <p>Contact number:<b> {$row['phone']}</b></p>
                                         <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
                                         <p><b></b></p><br>
