@@ -164,7 +164,7 @@ require_once ('../includes/main_functions.php');
                 <img class='sizingimagesmax' style='width:100%;' src='assets/images/posts/{$row['main']}' alt=''/>
               </div>
                             <div class='tab-pane fade ' id='blazers' >
-                <img class='sizingimagesmax' style='height:25%; width:100%;' src='assets/images/posts/{$row['photo1']}' alt=''/>
+                <img class='sizingimagesmax' style='max-height:25%; width:100%;' src='assets/images/posts/{$row['photo1']}' alt=''/>
               </div>
               <div class='tab-pane fade ' id='sunglass' >
                 <img class='sizingimagesmax' style='width:100%;' src='assets/images/posts/{$row['photo2']}' alt=''/>
