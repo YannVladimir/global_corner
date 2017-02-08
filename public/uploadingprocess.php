@@ -108,7 +108,7 @@ if(isset($_FILES['main']))
             }
             $new_width = 220;
             $new_height = ($width/$height)*220;
-            $new_height = $new_height/4;
+            $new_height = $new_height;
             $tmp_image = imagecreatetruecolor($new_width, $new_height);
             imagecopyresampled($tmp_image, $new_image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
             imagejpeg($tmp_image, $path, 100);
