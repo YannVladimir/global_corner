@@ -18,6 +18,23 @@ if(isset($_GET['var']) == "logout")
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta property="og:site_name" content="250trade.com"/>
+    <meta property="og:title" content="Buy and sell for free"/>
+      <meta property="og:description" content="Search Engine Optimization (SEO) is a great, low cost way to get found online through search engines. With SEO, comes adding keywords, the words or phrases people search for on Google in order to f"/>
+    
+    <meta property="og:url" content="http://250trade.com/"/>
+    
+    <meta property="og:image" content="assets/images/home/trade250.png"/>
+    <meta property="fb:admins" content="" />
+    <meta property="fb:app_id" content="" />
+    <meta property="og:type" content="article" /><!--End Facebook OpenGraph Settings -->
+    
+<!-- All in One SEO Pack 2.2.6.2 by Michael Torbert of Semper Fi Web Design[234,299] -->
+<link rel="author"/>
+<meta name="description"  content="In order to get found online, you must add website keywords on each page of your site. However, there's a certain art and science to it. Here are three easy" />
+
+<meta name="keywords"  content="250trade,250trades,250 trade,250 trad,buy online rwanda, online shopping rwanda, rwanda shopping, rwanda online shopping, online shopping websites in rwanda, online shopping websites, online shopping, sell in rwanda, rwanda, 250, 250 rwanda, trade, trade online, trades, trading online" />
+
     <title>250 Trade | Home</title>
     <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/yann.min.css" rel="stylesheet">
