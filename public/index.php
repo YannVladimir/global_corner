@@ -1590,7 +1590,7 @@ if(isset($_GET['var']) == "logout")
 </div><!--/category-tab-->
 </div> 
 </div><!--/row--><br><br>
-<div class="row">
+<div class="row"> 
         <div class="col-sm-12">
           <h2 class="title text-center">Recomended service providers</h2>
              <ul class="nav nav-tabs">
@@ -1649,9 +1649,9 @@ if(isset($_GET['var']) == "logout")
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
                                                  <div class='sizingimages'>
-                                                    <a href='service.php?id={$row['id']}'>
+                                                    <!--<a href='service.php?id={$row['id']}'>
                                                        <img  src='assets/images/posts/noimage.png' alt='' class=''/>
-                                                    </a>
+                                                    </a>-->
                                                   </div>
                                             </div> <br><br>
                                             <b> <a href='service-sub-category.php?id={$row['subcategory_id']}'>{$row['category']} <br> {$row['sub_category']}</b></a>
@@ -1689,9 +1689,9 @@ if(isset($_GET['var']) == "logout")
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
                                                  <div class='sizingimages'>
-                                                    <a href='service.php?id={$row['id']}'>
+                                                    <!--<a href='service.php?id={$row['id']}'>
                                                        <img  src='assets/images/posts/noimage.png' alt='' class=''/>
-                                                    </a>
+                                                    </a>-->
                                                   </div>
                                             </div> <br><br>
                                             <b> <a href='service-sub-category.php?id={$row['subcategory_id']}'>{$row['category']} <br> {$row['sub_category']}</b></a>
