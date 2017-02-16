@@ -1,7 +1,4 @@
 <?php 
-ini_set('display_startup_errors',1);
-ini_set('display_errors',1);
-error_reporting(E_ALL);
 session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
@@ -18,6 +15,23 @@ if(isset($_GET['var']) == "logout")
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta property="og:site_name" content="250trade.com"/>
+    <meta property="og:title" content="Buy and sell for free"/>
+      <meta property="og:description" content="Search Engine Optimization (SEO) is a great, low cost way to get found online through search engines. With SEO, comes adding keywords, the words or phrases people search for on Google in order to f"/>
+    
+    <meta property="og:url" content="http://250trade.com/"/>
+    
+    <meta property="og:image" content="assets/images/home/trade250.png"/>
+    <meta property="fb:admins" content="" />
+    <meta property="fb:app_id" content="" />
+    <meta property="og:type" content="article" /><!--End Facebook OpenGraph Settings -->
+    
+<!-- All in One SEO Pack 2.2.6.2 by Michael Torbert of Semper Fi Web Design[234,299] -->
+<link rel="author"/>
+<meta name="description"  content="In order to get found online, you must add website keywords on each page of your site. However, there's a certain art and science to it. Here are three easy" />
+
+<meta name="keywords"  content="250trade,250trades,250 trade,250 trad,buy online rwanda, online shopping rwanda, rwanda shopping, rwanda online shopping, online shopping websites in rwanda, online shopping websites, online shopping, sell in rwanda, rwanda, 250, 250 rwanda, trade, trade online, trades, trading online" />
+
     <title>250 Trade | Home</title>
     <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/yann.min.css" rel="stylesheet">
@@ -387,7 +401,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=8 and is_accepted=1 order by post_id desc limit 8";
+                                $cats = "SELECT * from items where refcat_id=8 and is_accepted=1 order by post_id limit 8";
                                 $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
@@ -1193,7 +1207,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=5 and is_accepted=1 order by post_id desc limit 8";
+                                $cats = "SELECT * from items where refcat_id=5 and is_accepted=1 order by main desc limit 8";
                                 $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
@@ -1394,7 +1408,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=6 and is_accepted=1 order by post_id desc limit 8";
+                                $cats = "SELECT * from items where refcat_id=6 and is_accepted=1 order by main desc limit 8";
                                 $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
@@ -1573,7 +1587,7 @@ if(isset($_GET['var']) == "logout")
 </div><!--/category-tab-->
 </div> 
 </div><!--/row--><br><br>
-<div class="row">
+<div class="row"> 
         <div class="col-sm-12">
           <h2 class="title text-center">Recomended service providers</h2>
              <ul class="nav nav-tabs">
@@ -1632,12 +1646,13 @@ if(isset($_GET['var']) == "logout")
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
                                                  <div class='sizingimages'>
-                                                    <a href='service.php?id={$row['id']}'>
+                                                    <!--<a href='service.php?id={$row['id']}'>
                                                        <img  src='assets/images/posts/noimage.png' alt='' class=''/>
-                                                    </a>
+                                                    </a>-->
                                                   </div>
                                             </div> <br><br>
-                                               <b style='color:blue'><a href='service.php?id={$row['id']}'>{$row['title']}</a></b>                                            
+                                            <b> <a href='service-sub-category.php?id={$row['subcategory_id']}'>{$row['category']} <br> {$row['sub_category']}</b></a>
+                                            
                                         </div>
                                      </div>
                                   </div>
@@ -1646,12 +1661,12 @@ if(isset($_GET['var']) == "logout")
                                         {$img}<br> <b>{$row['avg']} stars | </b>
                                         <b>Total votes: {$row['total_votes']}</b><br>
                                         <span>
-                                        <b> <a href='service-sub-category.php?id={$row['subcategory_id']}'>{$row['category']} <br> {$row['sub_category']}</b></a>
-                                              </span>
+                                             <h2>{$row['reserved']}</h2>
+                                        </span>
                                         <p>Contact number:<b> {$row['phone']}</b></p>
                                         <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
                                         <p><b></b></p><br>
-                                        <p style='text-align:center;'><a style='background:#90DC23; color:white;' href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a><p>
+                                        <p style='text-align:center;'><a style='background:#90DC60; color:white;' href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a><p>
                                       </div><!--/product-information-->
                                  </div>";
 
@@ -1671,12 +1686,13 @@ if(isset($_GET['var']) == "logout")
                                         <div class='single-products'>
                                             <div class='productinfo text-center'>
                                                  <div class='sizingimages'>
-                                                    <a href='service.php?id={$row['id']}'>
+                                                    <!--<a href='service.php?id={$row['id']}'>
                                                        <img  src='assets/images/posts/noimage.png' alt='' class=''/>
-                                                    </a>
+                                                    </a>-->
                                                   </div>
                                             </div> <br><br>
-                                               <b style='color:blue'><a href='service.php?id={$row['id']}'>{$row['title']}</a></b>                                            
+                                            <b> <a href='service-sub-category.php?id={$row['subcategory_id']}'>{$row['category']} <br> {$row['sub_category']}</b></a>
+                                            
                                         </div>
                                      </div>
                                   </div>
@@ -1685,12 +1701,12 @@ if(isset($_GET['var']) == "logout")
                                         {$img}<br> <b>{$row['avg']} stars | </b>
                                         <b>Total votes: {$row['total_votes']}</b><br>
                                         <span>
-                                        <b> <a href='service-sub-category.php?id={$row['subcategory_id']}'>{$row['category']} <br> {$row['sub_category']}</b></a>
-                                              </span>
+                                             <h2>{$row['reserved']}</h2>
+                                        </span>
                                         <p>Contact number:<b> {$row['phone']}</b></p>
                                         <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
                                         <p><b></b></p><br>
-                                        <p style='text-align:center;'><a style='background:#90DC23; color:white;' href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a><p>
+                                        <p style='text-align:center;'><a style='background:#90DC60; color:white;' href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a><p>
                                       </div><!--/product-information-->
                                  </div>";
 
@@ -1748,7 +1764,8 @@ if(isset($_GET['var']) == "logout")
                                                     </a>
                                                   </div>
                                             </div><br><br>
-                                               <b style='color:blue'><a href='service.php?id={$row['id']}'>{$row['title']}</a></b>
+                                            <b> <a href='service-sub-category.php?id={$row['subcategory_id']}'>{$row['category']} <br> {$row['sub_category']}</b></a>
+
                                         </div>
                                      </div>
                                   </div>
@@ -1757,12 +1774,12 @@ if(isset($_GET['var']) == "logout")
                                         {$img}<br> <b>{$row['avg']} stars | </b>
                                         <b>Total votes: {$row['total_votes']}</b><br>
                                         <span>
-                                        <b> <a href='service-sub-category.php?id={$row['subcategory_id']}'>{$row['category']} <br> {$row['sub_category']}</b></a>
-                                              </span>
+                                             <h2>{$row['reserved']}</h2>
+                                        </span>
                                         <p>Contact number:<b> {$row['phone']}</b></p>
                                         <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
                                         <p><b></b></p><br>
-                                        <p style='text-align:center;'><a style='background:#90DC23; color:white;' href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a><p>
+                                        <p style='text-align:center;'><a style='background:#90DC60; color:white;' href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a><p>
                                         </div><!--/product-information-->
             </div>";
 
@@ -1785,7 +1802,8 @@ if(isset($_GET['var']) == "logout")
                                                     </a>
                                                   </div>
                                             </div><br><br>
-                                               <b style='color:blue'><a href='service.php?id={$row['id']}'>{$row['title']}</a></b>
+                                            <b> <a href='service-sub-category.php?id={$row['subcategory_id']}'>{$row['category']} <br> {$row['sub_category']}</b></a>
+
                                         </div>
                                      </div>
                                   </div>
@@ -1794,12 +1812,12 @@ if(isset($_GET['var']) == "logout")
                                         {$img}<br> <b>{$row['avg']} stars | </b>
                                         <b>Total votes: {$row['total_votes']}</b><br>
                                         <span>
-                                        <b> <a href='service-sub-category.php?id={$row['subcategory_id']}'>{$row['category']} <br> {$row['sub_category']}</b></a>
-                                              </span>
+                                             <h2>{$row['reserved']}</h2>
+                                        </span>
                                         <p>Contact number:<b> {$row['phone']}</b></p>
                                         <p>Place:<b> {$row['place_name']} - {$row['location']}</b></p>
                                         <p><b></b></p><br>
-                                        <p style='text-align:center;'><a style='background:#90DC23; color:white;' href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a><p>
+                                        <p style='text-align:center;'><a style='background:#90DC60; color:white;' href='service.php?id={$row['id']}' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>View Details</a><p>
                                         </div><!--/product-information-->
             </div>";
 
@@ -1924,5 +1942,24 @@ if(isset($_GET['var']) == "logout")
     <script src="assets/js/price-range.js"></script>
     <script src="assets/js/jquery.prettyPhoto.js"></script>
     <script src="assets/js/main.js"></script>
+    <!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=11249642; 
+var sc_invisible=0; 
+var sc_security="c45ac3dd"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script><!--
+<noscript><div class="statcounter"><a title="site stats"
+href="http://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="//c.statcounter.com/11249642/0/c45ac3dd/0/" alt="site
+stats"></a></div></noscript>
+ End of StatCounter Code for Default Guide -->
+<!--<a href="http://statcounter.com/p11249642/?guest=1">View My
+Stats</a>-->
 </body>
 </html>
