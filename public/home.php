@@ -196,7 +196,7 @@ if(isset($_GET['var']) == "logout")
         <div class='tab-content'> ";
       echo "<div class='tab-pane fade active in' id='1' >";
                                 
-                                $cats = "SELECT * from items where refcat_id=2 and is_accepted=1 order by post_id desc limit 8";
+                                $cats = "SELECT * from items where refcat_id=2 and is_accepted=1 order by main desc limit 8";
                                 $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
@@ -401,7 +401,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=8 and is_accepted=1 order by post_id limit 8";
+                                $cats = "SELECT * from items where refcat_id=8 and is_accepted=1 order by main limit 8";
                                 $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
@@ -604,7 +604,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=3 and is_accepted=1 order by post_id desc limit 8";
+                                $cats = "SELECT * from items where refcat_id=3 and is_accepted=1 order by main desc limit 8";
                                 $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
@@ -805,7 +805,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=1 and is_accepted=1 order by post_id desc limit 8";
+                                $cats = "SELECT * from items where refcat_id=1 and is_accepted=1 order by main desc limit 8";
                                 $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
@@ -1006,7 +1006,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=4 and is_accepted=1 order by post_id desc limit 8";
+                                $cats = "SELECT * from items where refcat_id=4 and is_accepted=1 order by main desc limit 8";
                                 $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
@@ -1596,7 +1596,7 @@ if(isset($_GET['var']) == "logout")
   echo "</ul>";
   ?>
                     <?php 
-                       $query = "SELECT * FROM amaservice where is_accepted = 1 order by id desc limit 20";
+                       $query = "SELECT * FROM amaservice where is_accepted = 1 order by avg limit 20";
                       $check = 1;
                        $res = mysqli_query($con,$query);
                        while($row = mysqli_fetch_assoc($res))
@@ -1847,7 +1847,7 @@ if(isset($_GET['var']) == "logout")
                         echo "<div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                               $query = "SELECT * from vieworders where is_accepted = 1 order by id desc limit 12";
+                               $query = "SELECT * from vieworders where is_accepted = 1 order by id limit 12";
                                $check = 1;
                                $res = mysqli_query($con,$query);
                               
@@ -1943,23 +1943,6 @@ if(isset($_GET['var']) == "logout")
     <script src="assets/js/jquery.prettyPhoto.js"></script>
     <script src="assets/js/main.js"></script>
     <!-- Start of StatCounter Code for Default Guide -->
-<script type="text/javascript">
-var sc_project=11249642; 
-var sc_invisible=0; 
-var sc_security="c45ac3dd"; 
-var scJsHost = (("https:" == document.location.protocol) ?
-"https://secure." : "http://www.");
-document.write("<sc"+"ript type='text/javascript' src='" +
-scJsHost+
-"statcounter.com/counter/counter.js'></"+"script>");
-</script><!--
-<noscript><div class="statcounter"><a title="site stats"
-href="http://statcounter.com/" target="_blank"><img
-class="statcounter"
-src="//c.statcounter.com/11249642/0/c45ac3dd/0/" alt="site
-stats"></a></div></noscript>
- End of StatCounter Code for Default Guide -->
-<!--<a href="http://statcounter.com/p11249642/?guest=1">View My
-Stats</a>-->
+
 </body>
 </html>
