@@ -78,7 +78,7 @@ if(isset($_GET['var']) == "logout")
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="dashboard.php">Sell It</a>
+                <a class="navbar-brand" href="dashboard.php">250 trade</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -116,10 +116,7 @@ if(isset($_GET['var']) == "logout")
                         echo '</li>';
                         echo '<li>';
                            echo "<a href='viewcategory.php'><i class='fa fa-fw fa-tasks'></i> Categories</a>";
-                        echo '</li>';
-                       }
-                    ?>
-                    <li>
+                        echo '</li><li>
                         <a href="users.php"><i class="fa fa-fw fa-user"></i> Users</a>
                     </li>
                    
@@ -129,7 +126,10 @@ if(isset($_GET['var']) == "logout")
                     
                     <li>
                         <a href="messages.php"><i class="fa fa-fw fa-envelope"></i> Messages</a>
-                    </li>
+                    </li>';
+                       }
+                    ?>
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

@@ -163,11 +163,7 @@ require_once ('../includes/main_functions.php');
                   <li>Hurry up, others are increasing their chances</li>
                </ol> </p>
               <br><br>
-              <p class="text-left">
-               <b>Closing date:</b> 
-                <ul>
-                  <li>15/02/2017 00:00 AM</li>
-                </ul> </p>
+              
               <br>
             </div>
             <p class="text-center">
