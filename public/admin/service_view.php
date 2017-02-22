@@ -8,7 +8,7 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                
+                 
                         
                 <div class="row">
                 
@@ -27,36 +27,35 @@
                     <ul class='list-group'>
                       <?php 
                            $id = $_GET['id'];
-                           $query = "SELECT * FROM items where post_id = '{$id}'";
+                           $query = "SELECT * FROM amaservice where id = '{$id}'";
                            $res = mysqli_query($con,$query);
                            $row = mysqli_fetch_assoc($res);
 
                            echo"
-                           <li class='list-group-item'><strong>Id: </strong>{$row['post_id']}</li>
+                           <li class='list-group-item'><strong>Id: </strong>{$row['id']}</li>
                            <li class='list-group-item'><strong>User: </strong>{$row['user']}</li>
-                        <li class='list-group-item'><strong>Ad title: </strong>{$row['name']}</li>
+                        <li class='list-group-item'><strong>Ad title: </strong>{$row['title']}</li>
                         <li class='list-group-item'><strong>Details: </strong>{$row['details']}</li>
-                        <li class='list-group-item'><strong>Price: </strong>{$row['price']}</li>
-                        <li class='list-group-item'><strong>Category: </strong>{$row['subcat_name']}</li>";
+                        <li class='list-group-item'><strong>Category: </strong>{$row['sub_category']}</li>";
                         
                        echo " 
-                        <li class='list-group-item'><strong>District: </strong>{$row['place_name']}</li>
-                        <li class='list-group-item'><strong>Seller: </strong>{$row['seller']}</li>
-                        <li class='list-group-item'><strong>Contacts: </strong>{$row['contacts']}</li>
+                        <li class='list-group-item'><strong>District: </strong>{$row['akarere']}</li>
+                        <li class='list-group-item'><strong>Location </strong>{$row['location']}</li>
+                        <li class='list-group-item'><strong>Seller: </strong>{$row['reserved']}</li>
                         <li class='list-group-item'><strong>Phone: </strong>{$row['phone']}</li>
                         <li class='list-group-item'><strong>Uploaded date: </strong>{$row['uploaded_date']}</li>";
 
                         if($row['is_accepted']==0)
                         {
                             echo "<li class='list-group-item'>
-                          <form action='service-accept.php' method='GET'>
+                          <form action='service_accept.php' method='GET'>
                             <input type='text' class='hidden' name='id' value='{$row['id']}'>
                              <button type='submit' class='btn btn-default bton'>Accept Post</button>
                           </form>
                         </li>";
                         } 
                         echo"<li class='list-group-item'>
-                          <form action='service-delete.php' method='GET'>
+                          <form action='service_delete.php' method='GET'>
                             <input type='text' class='hidden' name='id' value='{$row['id']}'>
                              <button type='submit' class='btn btn-default bton'>Delete Post</button>
                           </form>
