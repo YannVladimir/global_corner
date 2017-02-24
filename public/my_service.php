@@ -217,8 +217,20 @@ require_once ('../includes/main_functions.php');
                                 </div>
                                
                                 <div class="col-sm-8">
-                                   
+                                   <form action="more_images.php" method="GET" enctype="multipart/form-data">
+                                    Upload more images:
                                     <?php
+                                      echo '<input type="text" name="id" class="hidden" value="{$id}" />';
+                                    ?>  
+                                    <input type="file" name="main" class="btn btn-primary" /><br><br>
+                                   </form>
+                                    <?php
+                                      $query = "SELECT * FROM more_images where service_id = $id order by id desc";
+                                      $res = mysqli_query($con,$query);
+                                      while($row = mysqli_fetch_assoc($res))
+                                      {
+                                          echo" <img src='assets/images/posts/{$row['image']}' alt='' class='imagesize'/>' <br><br>";
+                                      }
                                       $query = "SELECT * FROM amaservice where id = $id ";
                                       $res = mysqli_query($con,$query);
                                       while($row = mysqli_fetch_assoc($res))
@@ -272,7 +284,9 @@ require_once ('../includes/main_functions.php');
                                             echo" <img src='assets/images/posts/{$row['photo5']}' alt='' class='imagesize'/>' <br><br>";
                                         }
                                       }
+                                        
                                     ?>
+
                                     
                                 </div>
                           </div>
@@ -326,7 +340,7 @@ require_once ('../includes/main_functions.php');
                             </div>
                             
                             <div class="tab-pane fade" id="details" >
-                              We are currently working on this
+                              
                                 <!--<div class="col-sm-3">
                                     <div class="product-image-wrapper">
                                         <div class="single-products">
