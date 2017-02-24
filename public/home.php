@@ -217,7 +217,7 @@ if(isset($_GET['var']) == "logout")
                                 
 //for orders
 ?>
-                
+                <br><br>
             </div>
 </div><!--row-->
 <!--aha niho order kugeza container hejuru-->
