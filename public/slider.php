@@ -71,13 +71,15 @@
 						<div class="carousel-inner">
 							<div class='item active'>
 								               <div class='col-sm-12'> 
-									            <img src='assets/images/slider/comp.jpg' style='width:100%;' class='girl img-responsive' alt='' />
+									            <a href="category.php?id=1"> <img src='assets/images/slider/comp.jpg' style='width:100%;' class='girl img-responsive' alt='' />
+				                                </a>
 				                               </div> 
 				             </div>
 				             
 							<div class='item'>
 								  <div class='col-sm-12'> 
-						             <img src='assets/images/slider/phone.jpg' style='width:100%;' class='girl img-responsive' alt='' />
+						              <a href="category.php?id=2"><img src='assets/images/slider/phone.jpg' style='width:100%;' class='girl img-responsive' alt='' />
+				                      </a>
 				                  </div>
 							</div>
 						    <div class='item'>
@@ -87,7 +89,7 @@
 							</div>
 							<div class='item'>
 								  <div class='col-sm-12'> 
-						             <img src='assets/images/slider/sport.jpg' style='width:100%;' class='girl img-responsive' alt='' />
+						             <a href="category.php?id=6" ><img src='assets/images/slider/sport.jpg' style='width:100%;' class='girl img-responsive' alt='' /></a>
 				                  </div>
 							</div>
 						</div>
