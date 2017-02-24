@@ -220,7 +220,8 @@ require_once ('../includes/main_functions.php');
                                    <form action="more_images.php" method="GET" enctype="multipart/form-data">
                                     Upload more images:
                                     <?php
-                                      echo '<input type="text" name="id" class="hidden" value="{$id}" />';
+                                      $id = $_GET['id'];
+                                      echo '<input type="text" name="id" class="" value="{$id}" />';
                                     ?>  
                                     <input type="file" name="main" /><input type="submit" class="btn btn-primary" /><br><br>
                                    </form>
