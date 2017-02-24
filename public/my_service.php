@@ -222,7 +222,7 @@ require_once ('../includes/main_functions.php');
                                     <?php
                                       echo '<input type="text" name="id" class="hidden" value="{$id}" />';
                                     ?>  
-                                    <input type="file" name="main" class="btn btn-primary" /><br><br>
+                                    <input type="file" name="main" /><input type="submit" class="btn btn-primary" /><br><br>
                                    </form>
                                     <?php
                                       $query = "SELECT * FROM more_images where service_id = $id order by id desc";
