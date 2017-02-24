@@ -89,54 +89,14 @@ checkToken();
 		<div class="container">
 			<div class="row">
         <div class="col-sm-12">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-6 message text-center"><?php
-                        if(isset($_SESSION['message']))
-                        {
-                          echo "<div class='msg'>";
-                                 echo '<p>'.$_SESSION['message'].'</p>';
-                                 unset($_SESSION['message']);                         
-                          echo "</div>";
-                        }
-          ?></div>
+           <div class="col-sm-3"></div>
+           <div class="col-sm-6 message text-center">
+                 <p>Dear user, In case one forgets the password of his/her store, He/She has to contact 250trade's administration to recorver his/her password.</p>
+                 <p>2500trade's administration can be contacted through "<a href='contact_us.php' target='blank' style='color=#3AACEB'>Contact us </a>" as well as +250 782 767 289 or +250 783 629 499 (whatsapp, phone calls, or text messages ).<p>
+                  
+           </div>
         </div>
-				<div class="col-sm-4 col-sm-offset-1">
-					
-					<div class="login-form"><!--login form-->
-						<h2>Enter in your store</h2>
-						<form action="login.php" method="POST">
-							<input type="email" placeholder="Email Address" required="required" email="email" name="email" />
-							<input type="password" placeholder="password" required="required" name="password" />
-							<!--<span>
-								<input type="checkbox" class="checkbox"> 
-								Keep me signed in
-							</span>-->
-							<input type="text" class='hidden' name="_token" value="<?php echo $_SESSION['_token']; ?>">
-							<button type="submit" name="done" class="btn btn-default bton">Login</button><a href='terms-of-use.php' target='blank' class="pull-right" style='color=#3AACEB'>Forgot password? </a>
-						</form>
-					</div><!--/login form-->
-				</div>
-				<div class="col-sm-1">
-					<h2 class="or">OR</h2>
-				</div>
-				<div class="col-sm-4">
-					<div class="signup-form"><!--sign up form-->
-						<h2>Create your new store!</h2>
-						<form action="sign_up.php" id="signup" method="POST">
-							<input type="text" placeholder="First name" required="required" name="firstname"/>
-							<input type="text" placeholder="Last name" required="required" name="lastname"/>
-							<input type="text" placeholder="Contact number" required="required" name="phone"/>
-							<input type="email" placeholder="Email Address" required="required" email="email" name="email"/>
-							<input type="password" placeholder="Password" required="required" name="password"/>
-							<input type="password" placeholder=" Re-type Password" required="required" name="repassword"/>
-							<input type="text" class='hidden' name="_token" value="<?php echo $_SESSION['_token']; ?>">
-							<button type="submit" class="btn btn-default bton">Create</button>
-						    <br>
-                              By creating your store you agree with our <a href='terms-of-use.php' target='blank' style='color=#3AACEB'>Terms of use </a>
-              
-						</form>
-					</div><!--/sign up form-->
-				</div>
+    
 			</div>
 		</div>
 	</section><!--/form-->
