@@ -221,7 +221,7 @@ require_once ('../includes/main_functions.php');
                                     Upload more images:
                                     <?php
                                       $id = $_GET['id'];
-                                      echo '<input type="text" name="id" class="" value="$id" />';
+                                      echo "<input type='text' name='id' class='' value='$id' />";
                                     ?>  
                                     <input type="file" name="main" /><input type="submit" class="btn btn-primary" /><br><br>
                                    </form>
