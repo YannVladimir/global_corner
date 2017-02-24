@@ -217,7 +217,7 @@ require_once ('../includes/main_functions.php');
                                 </div>
                                
                                 <div class="col-sm-8">
-                                   <form action="more_images.php" method="GET" enctype="multipart/form-data">
+                                   <form action="more_images.php" method="post" enctype="multipart/form-data">
                                     Upload more images:
                                     <?php
                                       $id = $_GET['id'];
