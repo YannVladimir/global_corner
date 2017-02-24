@@ -90,8 +90,8 @@ checkToken();
 			<div class="row">
         <div class="col-sm-12">
            <div class="col-sm-4"></div>
-           <div class="col-sm-4">
-                 <p>Dear user, In case one forgets the password of his/her store, He/She has to contact 250trade's administration to recorver his/her password.</p>
+           <div class="col-sm-6">
+                 <p style="font-size:15px">Dear user, In case one forgets the password of his/her store, He/She has to contact 250trade's administration to recorver his/her password.</p>
                  <p>2500trade's administration can be contacted through "<a href='contact_us.php' target='blank' style='color=#3AACEB'>Contact us </a>" as well as +250 782 767 289 or +250 783 629 499 (whatsapp, phone calls, or text messages ).<p>
 
            </div>
