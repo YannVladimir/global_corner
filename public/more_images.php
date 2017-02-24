@@ -6,7 +6,7 @@ session_start();
 $con = mysqli_connect("127.0.0.1","root","REDACTED_DB_PASSWORD","eshopper");
 require_once ('../includes/main_functions.php');
 //checkToken();
-if(isset($_GET['id']))
+if(isset($_POST['id']))
 {
 $d = $_GET['id'];
 if(isset($_FILES['main']))
