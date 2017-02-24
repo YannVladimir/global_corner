@@ -7,7 +7,7 @@ $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
 ?>
 <!DOCTYPE html>  
-<html lang="en">
+<html lang="en"> 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -241,6 +241,12 @@ require_once ('../includes/main_functions.php');
                                 <div class="col-sm-8">
                                    
                                     <?php
+                                      $query = "SELECT * FROM more_images where service_id = $id order by id desc";
+                                      $res = mysqli_query($con,$query);
+                                      while($row = mysqli_fetch_assoc($res))
+                                      {
+                                          echo" <img src='assets/images/posts/{$row['image']}' alt='' class='imagesize'/>' <br><br>";
+                                      }
                                       $query = "SELECT * FROM amaservice where id = $id ";
                                       $res = mysqli_query($con,$query);
                                       while($row = mysqli_fetch_assoc($res))
