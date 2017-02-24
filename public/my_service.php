@@ -221,9 +221,9 @@ require_once ('../includes/main_functions.php');
                                     Upload more images:
                                     <?php
                                       $id = $_GET['id'];
-                                      echo "<input type='text' name='id' class='' value='$id' />";
+                                      echo "<input type='text' name='id' class='hidden' value='$id' />";
                                     ?>  
-                                    <input type="file" name="main" /><input type="submit" class="btn btn-primary" /><br><br>
+                                    <input type="file" name="main" /><input type="submit" value="Upload Image" class="btn btn-primary" /><br><br>
                                    </form>
                                     <?php
                                       $query = "SELECT * FROM more_images where service_id = $id order by id desc";
