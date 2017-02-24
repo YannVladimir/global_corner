@@ -92,7 +92,7 @@ checkToken();
            <div class="col-sm-3"></div>
            <div class="col-sm-6">
                  <p style="size:20px">Dear user, In case one forgets the password of his/her store, <br>He/She has to contact 250trade's administration to recorver his/her password.</p>
-                 <p>2500trade's administration can be contacted through "<a href='contact_us.php' target='blank' style='color=#3AACEB'>Contact us </a>" as well as +250782767289 or +250783629499 (whatsapp, phone calls, or text messages ).<p>
+                 <p>2500trade's administration can be contacted through " <a href='contact_us.php' target='blank' style='color=#3AACEB'>Contact us </a>" as well as +250782767289 or +250783629499 (whatsapp, phone calls, or text messages ).<p>
 
            </div>
         </div>
