@@ -219,7 +219,6 @@ if(isset($_GET['var']) == "logout")
 ?>
                 
             </div>
-          <div class="col-sm-2"></div>
 </div><!--row-->
 <!--aha niho order kugeza container hejuru-->
   <div class="row">
