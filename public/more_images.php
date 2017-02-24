@@ -1,5 +1,7 @@
 <?php 
-
+ini_set('display_startup_errors',1);
+ini_set('display_errors',1);
+error_reporting(E_ALL);
 session_start();
 $con = mysqli_connect("127.0.0.1","root","uIk3fDIL9q","eshopper");
 require_once ('../includes/main_functions.php');
@@ -42,11 +44,11 @@ if(isset($_FILES['main']))
             $res =  mysqli_query($con,$query);
             if($res)
             {
-              echo "<script>alert(' Image uploade successfully ');window.location='my_service.php?id=$d';</script>";exit;
+              echo "<script>alert(' Image uploaded successfully ');window.location='my_service.php?id=$d';</script>";exit;
             }
             else
             {
-              echo "<script>alert(' Erro, Please try again ');window.location='my_service.php?id=$d';</script>";exit;
+              echo "<script>alert(' Error, Please try again ');window.location='my_service.php?id=$d';</script>";exit;
             }
          }
          else
