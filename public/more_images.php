@@ -8,7 +8,7 @@ require_once ('../includes/main_functions.php');
 //checkToken();
 if(isset($_POST['id']))
 {
-$d = $_GET['id'];
+$d = $_POST['id'];
 if(isset($_FILES['main']))
     {
         $name= $_FILES['main']['name'];
@@ -40,7 +40,7 @@ if(isset($_FILES['main']))
             $photo = $new_name;
             imagedestroy($new_image);
             imagedestroy($tmp_image);
-            $query = "INSERT INTO more_images (service_id,image) values ('{$id}','{$photo}')";
+            $query = "INSERT INTO more_images (service_id,image) values ('{$d}','{$photo}')";
             $res =  mysqli_query($con,$query);
             if($res)
             {
