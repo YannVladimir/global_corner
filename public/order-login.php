@@ -111,7 +111,8 @@ checkToken();
 								<input type="checkbox" class="checkbox"> 
 								Keep me signed in
 							</span>-->
-              <button type="submit" name="done" class="btn btn-default bton">Login</button>
+              <button type="submit" name="done" class="btn btn-default bton">Login</button><a href='forgot-password.php' target='blank' class="pull-right" style='color=#3AACEB'>Forgot password? </a>
+            
 						</form>
 					</div><!--/login form-->
 				</div>
