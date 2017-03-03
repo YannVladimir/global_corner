@@ -111,6 +111,8 @@ checkToken();
 							</span>-->
               <input type="text" class='hidden' name="_token" value="<?php echo $_SESSION['_token']; ?>">
               <button type="submit" name="done" class="btn btn-default bton">Login</button>
+              <a href='forgot-password.php' target='blank' class="pull-right" style='color=#3AACEB'>Forgot password? </a>
+            
 						</form>
 					</div><!--/login form-->
 				</div>
