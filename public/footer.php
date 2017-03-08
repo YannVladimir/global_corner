@@ -96,8 +96,8 @@ If you want to sell any product or service - here you will find many interesting
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
-					<p style="text-align:center">Copyright © 250 Trade Inc. All rights reserved.</p>
-					<!--<p class="pull-right">Developed by <span><a target="_blank" href="https://www.linkedin.com/in/bajeneza-yann-vladimir-257a58131?trk=nav_responsive_tab_profile" style="color:#3AACEB">Yann Vladimir</a></span></p>-->
+					<!--<p style="text-align:center">Copyright © 250 Trade Inc. All rights reserved.</p>-->
+					<p style="text-align:center">Developed by <span><a target="_blank" href="../Flatty V3/Flatty V3" style="color:#3AACEB">250trade's global corner</a> (click link for more details)</span></p>-->
 				</div>
 			</div>
 		</div>
