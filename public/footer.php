@@ -97,7 +97,7 @@ If you want to sell any product or service - here you will find many interesting
 			<div class="container">
 				<div class="row">
 					<!--<p style="text-align:center">Copyright © 250 Trade Inc. All rights reserved.</p>-->
-					<p style="text-align:center">Developed by <span><a target="_blank" href="../Flatty V3/Flatty V3/index.html" style="color:#3AACEB">250trade's global corner</a> (click link for more details)</span></p>-->
+					<p style="text-align:center">Developers: <span><a target="_blank" href="" style="color:#3AACEB"> Fabrice Irakoze</a> & <a target="_blank" href="https://www.linkedin.com/in/jules-mugabe-a3980113a/" style="color:#3AACEB"> Jules Mugabe</a></span></p>-->
 				</div>
 			</div>
 		</div>
