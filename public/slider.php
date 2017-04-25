@@ -82,11 +82,7 @@
 				                      </a>
 				                  </div>
 							</div>
-						    <div class='item'>
-								  <div class='col-sm-12'> 
-						             <a href="win.php"><img src='assets/images/slider/pub1.jpg' style='width:100%;' class='girl img-responsive' alt='' /></a>
-				                  </div>
-							</div>
+						    
 							<div class='item'>
 								  <div class='col-sm-12'> 
 						             <a href="category.php?id=6" ><img src='assets/images/slider/sport.jpg' style='width:100%;' class='girl img-responsive' alt='' /></a>
