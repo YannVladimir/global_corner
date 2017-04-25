@@ -26,7 +26,7 @@
 		<div class="header-middle"><!--header-middle-->
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-3">
+					<div class="col-sm-4">
 						<div class="logo pull-left">
 							<a href="home.php"><img src="assets/images/home/trade250.png" style="width:148px;" alt="" /></a>
 						</div>
@@ -47,10 +47,10 @@
 							</div>
 						</div>-->
 					</div>
-					<div class="col-sm-6 text-center">
+		 <!-- 			<div class="col-sm-2 text-center">
             <div class='item'>
                 <div class='col-sm-12'> 
-                  <a href="win.php"><img src='assets/images/pub/sixth.jpg' style='width:100%;' class='girl img-responsive' alt='' /></a>
+                <a href="win.php"><img src='assets/images/pub/sixth.jpg' style='width:100%;' class='girl img-responsive' alt='' /></a>
                 </div>
             </div>
            
@@ -122,7 +122,7 @@ else
 gsecs = Math.floor(ddiff.valueOf()/1000);
 CountBack(gsecs);
 </script>       
-</div>
+</div>-->
 					
 					<?php
                    if(isset($_SESSION['email']))
@@ -163,7 +163,7 @@ CountBack(gsecs);
                     }                                      
                    //to here, if there is any change in between , please make sure to updTE NOTIFICATIONS .PHP
                    echo "
-                    <div class='col-sm-3'>
+                    <div class='col-sm-6'>
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a href='my_acount.php'><i class='fa fa-user'></i> My store</a></li>  
