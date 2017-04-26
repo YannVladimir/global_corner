@@ -1,4 +1,4 @@
-<div class="search_box col-sm-4">
+<div class="col-sm-4">
     <form action='search_results.php' method='GET'>
       
       <input type="text" name='k'  required="required" class="col-sm-6 form-control" placeholder="Search"/>
