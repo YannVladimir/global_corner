@@ -1,4 +1,4 @@
-<div class="col-sm-5">
+<div class="col-sm-4">
   <div class="search_box">
     <form action='search_results.php' method='GET'>
       <div class="col-sm-1">
