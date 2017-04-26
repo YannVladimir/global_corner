@@ -78,7 +78,7 @@ require_once ('../includes/main_functions.php');
         float: right;
       }
       .fon{
-        font-size: 17px;
+        font-size: 15px;
       }
   </style>
 </head><!--/head-->
