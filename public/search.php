@@ -1,8 +1,7 @@
 <div class="col-sm-4">
   <div class="search_box">
     <form action='search_results.php' method='GET'>
-      <div class="col-sm-1">
-      </div>
+      
       <input type="text" name='k'  required="required" class="col-sm-6" placeholder="Search"/>
       <select class="col-sm-4" name="category" class="col-sm-6" style="height:35px;
         border-left-style: solid;
