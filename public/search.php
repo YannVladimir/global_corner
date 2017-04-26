@@ -1,12 +1,8 @@
 <div class="search_box col-sm-4">
     <form action='search_results.php' method='GET'>
       
-      <input type="text" name='k'  required="required" class="col-sm-6" placeholder="Search"/>
-      <select class="col-sm-5" name="category"  style="height:35px;
-        border-left-style: solid;
-        border-left-width:1px;
-        border-left-color:#504c4c;
-        ">
+      <input type="text" name='k'  required="required" class="col-sm-6 form-control" placeholder="Search"/>
+      <select class="col-sm-5 form-control" name="category"  style="border-left-style: solid; border-left-width:1px; border-left-color:#504c4c;">
           <option value="0">in all categories</option>
           <?php
             $q = "SELECT * from categories";
@@ -17,6 +13,6 @@
             }
           ?>
         </select>
-        <button type="submit" class="btn btn-default col-sm-1 bton"><i class="fa fa-search"></i></button>
+        <button type="submit" class="btn btn-default col-sm-1 bton form-control"><i class="fa fa-search"></i></button>
       </form>
 </div>
