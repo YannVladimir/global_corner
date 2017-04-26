@@ -17,7 +17,7 @@ if(isset($_GET['var']) == "logout")
     <meta name="author" content="">
     <meta property="og:site_name" content="250trade.com"/>
     <meta property="og:title" content="Buy and sell for free"/>
-      <meta property="og:description" content="Search Engine Optimization (SEO) is a great, low cost way to get found online through search engines. With SEO, comes adding keywords, the words or phrases people search for on Google in order to f"/>
+      <meta property="og:description" content="A free Rwandan classifieds site. Sell anything from used cars to mobiles, services, furniture, laptops, houses and more.Submit ads for free and without creating an account."/>
     
     <meta property="og:url" content="http://250trade.com/"/>
     
@@ -28,7 +28,7 @@ if(isset($_GET['var']) == "logout")
     
 <!-- All in One SEO Pack 2.2.6.2 by Michael Torbert of Semper Fi Web Design[234,299] -->
 <link rel="author"/>
-<meta name="description"  content="In order to get found online, you must add website keywords on each page of your site. However, there's a certain art and science to it. Here are three easy" />
+<meta name="description"  content="A free Rwandan classifieds site. Sell anything from used cars to mobiles, services, furniture, laptops, houses and more.Submit ads for free and without creating an account." />
 
 <meta name="keywords"  content="250trade,250trades,250 trade,250 trad,buy online rwanda, online shopping rwanda, rwanda shopping, rwanda online shopping, online shopping websites in rwanda, online shopping websites, online shopping, sell in rwanda, rwanda, 250, 250 rwanda, trade, trade online, trades, trading online" />
 
