@@ -12,7 +12,7 @@ require_once ('../includes/main_functions.php');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A free Rwandan classifieds site. Sell anything from used cars to mobiles, services, furniture, laptops, houses and more.Submit ads for free and without creating an account.">
-    <meta name="keywords" content="250trade rwanda, free Rwandan classifieds site">
+    <meta name="keywords" content="250trade, free Rwandan classifieds site">
     <meta name="author" content="Yann Vladimir">
     <title>250trade | About us</title>
     <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -84,6 +84,7 @@ require_once ('../includes/main_functions.php');
 </head><!--/head-->
 
 <body>
+    <?php include_once("analyticstracking.php") ?>
   <?php  
     include('header.php');   
   ?>
