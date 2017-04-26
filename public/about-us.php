@@ -109,7 +109,7 @@ require_once ('../includes/main_functions.php');
                 <li><a href="categories.php" class="fon">Products</a></li>
                 <li><a href="services.php" class="fon">Services</a></li>
                 <li><a href="orders.php" class="fon">Orders</a></li>
-                       
+                <li><a href="orders.php" class="fon">Job Vacancies</a></li>       
               </ul>
             </div>
           </div>
