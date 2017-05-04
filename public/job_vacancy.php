@@ -142,7 +142,7 @@ checkToken();
                       </ol>
                     </p>
                     <p class="text-center">
-                      <a href="https://jobs-fhi360.icims.com/jobs/18491/business-support-advisor/job"><button class="form-btn primary">More information and Application details</button></a>
+                      <a href="https://jobs-fhi360.icims.com/jobs/18491/business-support-advisor/job" target="_blank"><button class="form-btn primary">More information and Application details</button></a>
                     </p>
             </div>
             <div class="col-sm-1"></div>
