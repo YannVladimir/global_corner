@@ -114,7 +114,7 @@ checkToken();
                     FHI 360 seeks Business Support Advisor for a USAID/Rwanda Activity that seeks to increase off-farm employment opportunities through enhanced access to finance, increased private investment, expanded reach of entrepreneurship support organizations, increased capacity of firms to attract and use finance, and deepened finance sector capacity to assess risk and increase return. The Business Support Advisor will work with public and private sector stakeholders on capacity building and product and service development for growing enterprises.</p>
 
                     <p><h3>Job Summary / Responsibilities</h3>
-                     <ul>
+                     <ol>
                        <li>Provide technical guidance to business support organizations servicing enterprises and work with stakeholders to identify gaps and devise solutions for enterprises, particularly those preparing themselves for growth through financing/investment;
                        </li>
                        <li>Develop and deliver training to BDS providers on financial management, business practices and skills; business plan development; and more, to strengthen and/or expand BDS providers' portfolios of products and services;
@@ -129,17 +129,17 @@ checkToken();
                        <li>Provide overall technical guidance, monitoring and oversight of directed technical assistance and capacity building activities.
                        </li>
 
-                     </ul>
+                     </ol>
                     </p>
                     <p><h3>Qualifications</h3>
-                      <ul>
+                      <ol>
                         <li>Minimum of 8 years' experience in international development or private sector/value chain development, enterprise development or business support experience</li>
                         <li>Knowledge of small, medium and large enterprises operating in off-farm activities in Rwanda, the agricultural sector, and the business and investment climate in Rwanda</li>
                         <li>Experience in training, capacity building, product/service development and outreach</li>
                         <li>USAID experience preferred</li>
                         <li>University degree in finance, economics, business, international relations or related</li>
                         <li>Excellent oral and written English communication skills</li>
-                      </ul>
+                      </ol>
                     </p>
                     <p class="text-center">
                       <a href="https://jobs-fhi360.icims.com/jobs/18491/business-support-advisor/job"><button class="form-btn primary">More information and Application details</button></a>
