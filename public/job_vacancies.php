@@ -294,6 +294,3 @@ checkToken();
 
 </body>
 </html>
-
-
-
