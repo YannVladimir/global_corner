@@ -108,7 +108,7 @@ checkToken();
             <div class='col-sm-8'>
               <br><br>
                     <h2 class="title text-center">Job vacancies</h2>
-                    <div class="col-sm-6 col-xs-12 well" style="background:#E8E8E8">
+                    <div class="col-sm-6 col-xs-12 well" style="background:#E2FFE3">
                       <a href="job_vacancy.php">
                         <b>Business Support Advisor, Kigali, Rwanda</b><br>
                         Organization: FHI 360<br>
