@@ -108,7 +108,7 @@ checkToken();
             <div class='col-sm-8'>
               <br><br>
                     <h2 class="title text-center">Job vacancies</h2>
-                    <div class="col-sm-6 col-xs-12 well" style="background:#E0FFF0">
+                    <div class="col-sm-5 col-xs-12 well" style="background:#E0FFF0">
                       <a href="job_vacancy.php">
                         <b>Business Support Advisor, Kigali, Rwanda</b><br>
                         Organization: FHI 360<br>
@@ -116,8 +116,9 @@ checkToken();
 
                       </a>
                     </div>
-                    <div class="col-sm-6 col-xs-12 well" style="background:#E0FFF0">
-                      <a href="job_vacancyy.php">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-5 col-xs-12 well" style="background:#E0FFF0">
+                      <a href="job_vacancy.php">
                         <b>Research Development Officer</b><br>
                         University of Global Health Equity (UGHE) <br>
                         Announced: 3<sup>rd</sup> May, 2017
