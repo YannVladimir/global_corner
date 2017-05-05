@@ -119,7 +119,7 @@ checkToken();
                     <div class="col-sm-6 col-xs-12 well" style="background:#E0FFF0">
                       <a href="job_vacancyy.php">
                         <b>Research Development Officer</b><br>
-                        Organization: University of Global Health Equity (UGHE) <br>
+                        University of Global Health Equity (UGHE) <br>
                         Announced: 3<sup>rd</sup> May, 2017
 
                       </a>
