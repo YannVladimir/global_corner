@@ -108,11 +108,19 @@ checkToken();
             <div class='col-sm-8'>
               <br><br>
                     <h2 class="title text-center">Job vacancies</h2>
-                    <div class="col-sm-6 col-xs-12 well" style="background:#E2FFE3">
+                    <div class="col-sm-6 col-xs-12 well" style="background:#E0FFF0">
                       <a href="job_vacancy.php">
                         <b>Business Support Advisor, Kigali, Rwanda</b><br>
                         Organization: FHI 360<br>
                         Announced: 25<sup>th</sup> April, 2017
+
+                      </a>
+                    </div>
+                    <div class="col-sm-6 col-xs-12 well" style="background:#E0FFF0">
+                      <a href="job_vacancyy.php">
+                        <b>Research Development Officer</b><br>
+                        Organization: University of Global Health Equity (UGHE) <br>
+                        Announced: 3<sup>rd</sup> May, 2017
 
                       </a>
                     </div>
