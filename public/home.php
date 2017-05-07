@@ -141,7 +141,7 @@ if(isset($_GET['var']) == "logout")
                         echo "<div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                               $query = "SELECT * from vieworders where is_accepted = 1 order by post_id limit 12";
+                               $query = "SELECT * from vieworders where is_accepted = 1";
                                $check = 1;
                                $res = mysqli_query($con,$query);
                               
