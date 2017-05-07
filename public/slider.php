@@ -55,7 +55,7 @@
 						
 					</div>
 				</div>
-				<div class="col-sm-7">
+				<div class="col-sm-6">
 					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
 						<!--<ol class="carousel-indicators">
 							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
@@ -99,13 +99,12 @@
 					</div>
 					
 				</div>
-				<div class="col-sm-2">
+				<div class="col-sm-3">
 				<h2 class="title text-center">Job vacancies</h2>
                     <div class="col-sm-12 well" style="background:#f4f9f7">
                       <a href="job_vacancy.php">
                         <b>Business Support Advisor, Kigali, Rwanda</b><br>
                         Organization: FHI 360<br>
-                        Announced: 25<sup>th</sup> April, 2017
 
                       </a>
                     </div>
@@ -113,7 +112,6 @@
                       <a href="job_vacancyy.php">
                         <b>Research Development Officer</b><br>
                         University of Global Health Equity (UGHE) <br>
-                        Announced: 3<sup>rd</sup> May, 2017
 
                       </a>
                     </div>
