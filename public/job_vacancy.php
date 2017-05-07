@@ -78,7 +78,8 @@ checkToken();
                 <li><a href="order.php" class="fon">Order now</a></li>
                 <li><a href="categories.php" class="fon">Products</a></li>
                 <li><a href="services.php" class="fon">Services</a></li>
-                <li><a href="job_vacancies.php" class="active fon">Job vacancies</a></li>
+                <li><a href="orders.php" class="fon">Orders</a></li>
+                <!--<li><a href="job_vacancies.php" class="active fon">Job vacancies</a></li>-->
                 
                             </ul>
                         </div>
