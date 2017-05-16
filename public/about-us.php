@@ -100,7 +100,7 @@ require_once ('../includes/main_functions.php');
             </div>
             <div class="mainmenu pull-left">
               <ul class="nav navbar-nav collapse navbar-collapse">
-                <li><a href="home.php" class="fon">Home</a></li>
+                <li><a href="home.php" class="active fon">Home</a></li>
                 <?php
                     if(isset($_GET['active']))
                     {
@@ -118,7 +118,8 @@ require_once ('../includes/main_functions.php');
                        echo"<li><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}' class='fon'>{$row['cat_name']}</a> ";
                       
                     }
-                ?>       
+                ?>
+                <li><a href="job_vacancies.php" class="fon">Job Vacancies</a></li>      
               </ul>
             </div>
           </div>
