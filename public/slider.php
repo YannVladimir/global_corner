@@ -45,7 +45,7 @@
         </div><!--/category-productsr-->
       </div>
     </div>
-				<div class="col-sm-7">
+				<div class="col-sm-7"><br><br>
 					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
 						<!--<ol class="carousel-indicators">
 							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
