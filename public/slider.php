@@ -45,7 +45,7 @@
         </div><!--/category-productsr-->
       </div>
     </div>
-				<div class="col-sm-7"><br><br><br>
+				<div class="col-sm-7"><br><br>
 					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
 						<!--<ol class="carousel-indicators">
 							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
@@ -88,6 +88,9 @@
 						
 					</div>
 					
+				</div>
+				<div class="col-sm-2">
+					<img src="assets/images/home/advertise.png">
 				</div>
 				<!--<div class="col-sm-3">
 				<h2 class="title text-center">Job vacancies</h2>
