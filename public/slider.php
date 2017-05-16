@@ -3,59 +3,49 @@
 			<div class="row">
 				<div class="col-sm-3">
                   <div class="right-sidebar">
-						<h2 class="title text-center">Product Categories</h2>
-						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
-							<?php 
-                                        $c = 1;
-                                        $query = "SELECT * FROM categories";
-                                        $res = mysqli_query($con,$query);
-                                        while($row = mysqli_fetch_assoc($res))
-                                        {
-                                            if($row['cat_id']==$c && $row['cat_id']!=7 )
-                                            {
-                                                echo "<div class='panel panel-default' style='background:#f6f6f6'>
-                                                         <div class='panel-heading'>
-                                                             <h4 class='panel-title'>
-                                                                <a data-toggle='collapse' data-parent='#accordian' href='#{$row['cat_id']}'>
-                                                                  <span class='badge pull-right'><i class='fa fa-angle-down'></i></span>
-                                                                     {$row['cat_name']}
-                                                                </a>
-                                                             </h4>
-                                                        </div>
-                                                        <div id='$c' class='panel-collapse collapse'>
-                                                            <div class='panel-body'>
-                                                                <ul>";$a = $row['cat_name'];
-                                                                    $queryy = "SELECT * FROM amacategories ";
-                                                                    $re = mysqli_query($con,$queryy);
-                                                                    while($ro = mysqli_fetch_assoc($re))
-                                                                    {
-                                                                        if($ro['refcat_id']==$c)
-                                                                        {
-                                                                             echo "<li><a href='sub-category.php?id={$ro['subcat_id']}'>*   {$ro['subcat_name']} </a></li>";
-                                                   
-                                                                         }
-                                                                    }
-                                              
-                                            }
-                                            if($row['cat_id']!=7){
-                                            echo "<li><a href='category.php?id={$c}'>*   All in {$a} </a></li></ul>
-                                                             </div>
-                                                        </div>
-                                                    </div>";
-                                            $c = $c+1;
-                                            }
-                                            else
-                                            {
-                                            	$c = $c+1;
-                                            }
-                                        } 
-                                    ?>
-							
-						</div><!--/category-productsr-->
-						
-					</div>
-				</div>
-				<div class="col-sm-6">
+						<h2 class="title text-center">Service categories</h2>
+        <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+        <?php 
+          $c = 11;
+          $query = "SELECT * FROM service_categories ";
+          $res = mysqli_query($con,$query);
+          while($row = mysqli_fetch_assoc($res))
+          {
+            if($row['id']==$c)
+            {
+              echo "<div class='panel panel-default'>
+                        <div class='panel-heading'>
+                          <h4 class='panel-title'>
+                           <a data-toggle='collapse' data-parent='#accordian' href='#{$row['id']}'>
+                            <span class='badge pull-right'><i class='fa fa-angle-down'></i></span>
+                            {$row['category']}
+                           </a>
+                          </h4>
+                        </div>
+                        <div id='$c' class='panel-collapse collapse'>
+                          <div class='panel-body'>
+                            <ul>";
+                              $queryy = "SELECT * FROM service_subcategories ";
+                              $re = mysqli_query($con,$queryy);
+                              while($ro = mysqli_fetch_assoc($re))
+                              {
+                                if($ro['ref1']==$c|| $ro['ref2']==$c || $ro['ref3']==$c || $ro['ref4']==$c)
+                                {
+                                  echo "<li><a href='service-sub-category.php?id={$ro['id']}'>*   {$ro['sub_category']} </a></li>";
+                                }
+                              }
+            }
+                     echo"</div>
+                        </div>
+                    </div>";
+                   $c = $c+1;
+                                            
+          } 
+      ?>
+        </div><!--/category-productsr-->
+      </div>
+    </div>
+				<div class="col-sm-7">
 					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
 						<!--<ol class="carousel-indicators">
 							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
@@ -99,7 +89,7 @@
 					</div>
 					
 				</div>
-				<div class="col-sm-3">
+				<!--<div class="col-sm-3">
 				<h2 class="title text-center">Job vacancies</h2>
                     <div class="col-sm-12 well" style="background:#f4f9f7">
                       <a href="job_vacancy.php">
@@ -116,7 +106,7 @@
                       </a>
                     </div>
 
-				</div>
+				</div>-->
 
 			</div>
 		</div>
