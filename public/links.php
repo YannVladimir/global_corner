@@ -4,7 +4,7 @@
                     while($row = mysqli_fetch_assoc($res))
                     {
               
-                       echo"<li><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}' class=''>{$row['cat_name']}</a> ";
+                       echo"<li><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}' class=''>{$row['cat_name']}</a></li> ";
                       
                     }
                 ?>
