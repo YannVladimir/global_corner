@@ -86,8 +86,8 @@ if(isset($_GET['var']) == "logout")
     ?>
     <div class="header-bottom"><!--header-bottom-->
             <div class="container">
-                <div class="row"><div class="col-sm-1"></div>
-                    <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-12">
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                                 <span class="sr-only">Toggle navigation</span>
