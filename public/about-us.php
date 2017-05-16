@@ -115,7 +115,7 @@ require_once ('../includes/main_functions.php');
                     {
                       if($active == $row['cat_id'])
                       {
-                        echo "<li><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}' class='active fon'>{$row['cat_name']}</a>"
+                        echo "<li><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}' class='active fon'>{$row['cat_name']}</a>";
                       }
                       else
                        echo"<li><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}' class='fon'>{$row['cat_name']}</a> ";
