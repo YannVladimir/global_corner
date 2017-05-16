@@ -98,7 +98,7 @@ require_once ('../includes/main_functions.php');
                 <span class="icon-bar"></span>
               </button>
             </div>
-            <div class="mainmenu pull-left">
+            <div class="mainmenu pull-center">
               <ul class="nav navbar-nav collapse navbar-collapse">
                 <li><a href="home.php" class="active">Home</a></li>
                 <?php
