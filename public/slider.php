@@ -3,8 +3,8 @@
 			<div class="row">
 				<div class="col-sm-3">
                   <div class="right-sidebar">
-						<h2 class="title text-center">Service categories</h2>
-        <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+						<h2 class="title text-center">Services</h2>
+        <div class="panel-group category-products" id="accordian" style="padding-top:5px;"><!--category-productsr-->
         <?php 
           $c = 11;
           $query = "SELECT * FROM service_categories ";
