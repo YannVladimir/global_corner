@@ -102,7 +102,7 @@ if(isset($_GET['var']) == "logout")
                 <?php  
       include('links.php');    
     ?>
-                <li><a href="job_vacancies.php">Job vacancies</a></li>
+                
                <!-- <li><a href="job_vacancies.php" class="fon">Job vacancies</a></li>-->
                 
                             </ul>
