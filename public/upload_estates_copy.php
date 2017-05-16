@@ -92,7 +92,7 @@ checkToken();
     <div class="header-bottom"><!--header-bottom-->
       <div class="container">
         <div class="row">
-          <div class="col-sm-7">
+          <div class="col-sm-12">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -103,19 +103,15 @@ checkToken();
             </div>
             <div class="mainmenu pull-left">
               <ul class="nav navbar-nav ">
-                <li><a href="home.php" class="fon">Home</a></li>
-                <li><a href="upload.php" class="active fon">Post your ad</a></li>
-                <li><a href="order.php" class="fon">Order now</a></li>
-                <li><a href="categories.php" class="fon">Products</a></li>
-                <li><a href="services.php" class="fon">Services</a></li>
-                <li><a href="orders.php" class="fon">Orders</a></li>
+                <li><a href="home.php">Home</a></li>
+                <?php  
+      include('links.php');    
+    ?>
                 
                             </ul>
                         </div>
                     </div>
-                    <?php
-                      include('search.php');
-                    ?>
+                   
                 </div>
             </div>
         </div><!--/header-bottom-->
