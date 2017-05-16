@@ -57,7 +57,7 @@ require_once ('../includes/main_functions.php');
     <div class="header-bottom"><!--header-bottom-->
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-7">
+					<div class="col-sm-12">
 						<div class="navbar-header">
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 								<span class="sr-only">Toggle navigation</span>
@@ -68,21 +68,31 @@ require_once ('../includes/main_functions.php');
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav ">
-							 
-                              
-                <li><a href="home.php" class="fon">Home</a></li>
-                <li><a href="upload.php" class="fon">Post your ad</a></li>
-                <li><a href="order.php" class="fon">Order now</a></li>
-                <li><a href="categories.php" class="active fon">Products</a></li>
-                <li><a href="services.php" class="fon">Services</a></li>
-                <li><a href="orders.php" class="fon">Orders</a></li>
+							  <li><a href="home.php" class="fon">Home</a></li>
+               <?php
+                    if(isset($_GET['active']))
+                    {
+                      $active = $_GET['active'];
+                    }
+                    $query = "SELECT * from categories where cat_id !=7";
+                    $res = mysqli_query($con,$query);
+                    while($row = mysqli_fetch_assoc($res))
+                    {
+                      if($active == $row['cat_id'])
+                      {
+                        echo "<li><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}' class='active'>{$row['cat_name']}</a>";
+                      }
+                      else
+                       echo"<li><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}' class=''>{$row['cat_name']}</a> ";
+                      
+                    }
+                ?>
+                <li><a href="job_vacancies.php" class="">Job Vacancies</a></li>
                 
                             </ul>
                         </div>
                     </div>
-                    <?php
-                      include('search.php');
-                    ?>
+                  
                 </div>
             </div>
         </div><!--/header-bottom-->
