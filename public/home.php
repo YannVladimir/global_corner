@@ -121,7 +121,7 @@ if(isset($_GET['var']) == "logout")
     <section>
 <div class="container">
   <div class="row">
-    <div class="col-sm-12"><br><br><br><h2 class="title text-center">Featured orders</h2><br>
+    <div class="col-sm-12"><h2 class="title text-center">Featured orders</h2><br>
      <ul class="nav nav-tabs">
   <?php
   echo "<li class='active pull-right' style='cursor:pointer;'><a style='cursor:pointer' href='orders.php'>View All</a></li>";
@@ -219,8 +219,7 @@ if(isset($_GET['var']) == "logout")
 </div><!--row-->
 <!--aha niho order kugeza container hejuru-->
   <div class="row">
-    <div class="col-sm-1"></div>
-    <div class="col-sm-10 padding-right">
+    <div class="col-sm-12 padding-right">
       <br>
       <div class="category-tab"><!--category-tab-->
         <div class="col-sm-12">
