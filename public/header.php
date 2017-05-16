@@ -123,6 +123,12 @@ gsecs = Math.floor(ddiff.valueOf()/1000);
 CountBack(gsecs);
 </script>       
 </div>-->
+<div class="col-sm-2">
+  <button class="btn btn-group" style="background: #90DC23">Post your ad for free</button>
+</div>
+<div class="col-sm-2">
+  <button class="btn btn-group" style="background: #90DC23">Make an order for free</button>
+</div>
 					
 					<?php
                    if(isset($_SESSION['email']))
@@ -163,7 +169,7 @@ CountBack(gsecs);
                     }                                      
                    //to here, if there is any change in between , please make sure to updTE NOTIFICATIONS .PHP
                    echo "
-                    <div class='col-sm-6'>
+                    <div class='col-sm-4'>
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a href='my_acount.php'><i class='fa fa-user'></i> My store</a></li>  
@@ -176,7 +182,7 @@ CountBack(gsecs);
                    }
                    else
                    {
-              echo "<div class='col-sm-3s'>
+              echo "<div class='col-sm-4'>
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a></a></li>
