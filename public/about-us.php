@@ -100,7 +100,7 @@ require_once ('../includes/main_functions.php');
             </div>
             <div class="mainmenu pull-left">
               <ul class="nav navbar-nav collapse navbar-collapse">
-                <li><a href="home.php" class="active fon">Home</a></li>
+                <li><a href="home.php" class="active">Home</a></li>
                 <?php
                     if(isset($_GET['active']))
                     {
@@ -112,14 +112,14 @@ require_once ('../includes/main_functions.php');
                     {
                       if($active == $row['cat_id'])
                       {
-                        echo "<li><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}' class='active fon'>{$row['cat_name']}</a>";
+                        echo "<li><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}' class='active'>{$row['cat_name']}</a>";
                       }
                       else
-                       echo"<li><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}' class='fon'>{$row['cat_name']}</a> ";
+                       echo"<li><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}' class=''>{$row['cat_name']}</a> ";
                       
                     }
                 ?>
-                <li><a href="job_vacancies.php" class="fon">Job Vacancies</a></li>      
+                <li><a href="job_vacancies.php" class="">Job Vacancies</a></li>      
               </ul>
             </div>
           </div>
