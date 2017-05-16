@@ -106,7 +106,7 @@ require_once ('../includes/main_functions.php');
                     {
                       $active = $_GET['active'];
                     }
-                    $query = "SELECT * from categories";
+                    $query = "SELECT * from categories where cat_id !=7";
                     $res = mysqli_query($con,$query);
                     while($row = mysqli_fetch_assoc($res))
                     {
