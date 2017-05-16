@@ -32,10 +32,10 @@
 						</div>
 						
 
-						<!--<div class="btn-group pull-right">
+						<!--<div class="btn-default bton pull-right">
 							
-							<div class="btn-group">
-								<button type="button" class="btn btn-group dropdown-toggle country" data-toggle="dropdown">
+							<div class="btn-default bton">
+								<button type="button" class="btn btn-default bton dropdown-toggle country" data-toggle="dropdown">
 									Select Your Language
 									<span class="caret"></span>
 								</button>
@@ -123,11 +123,11 @@ gsecs = Math.floor(ddiff.valueOf()/1000);
 CountBack(gsecs);
 </script>       
 </div>-->
-<div class="col-sm-2">
-  <button class="btn btn-group">Post your ad for free</button>
+<div class="col-sm-2"><br>
+  <button class="btn btn-default bton" type="submit">Post your ad for free</button>
 </div>
-<div class="col-sm-2">
-  <button class="btn btn-group">Make an order for free</button>
+<div class="col-sm-2"><br>
+  <button class="btn btn-default bton" type="submit">Make an order for free</button>
 </div>
 					
 					<?php
