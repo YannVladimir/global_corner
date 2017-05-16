@@ -26,7 +26,7 @@
 		<div class="header-middle"><!--header-middle-->
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-4">
+					<div class="col-sm-4 col-md-4 col-lg-4">
 						<div class="logo pull-left">
 							<a href="home.php"><img src="assets/images/home/trade250.png" style="width:148px;" alt="" /></a>
 						</div>
@@ -123,10 +123,10 @@ gsecs = Math.floor(ddiff.valueOf()/1000);
 CountBack(gsecs);
 </script>       
 </div>-->
-<div class="col-sm-2"><br>
+<div class="col-sm-2 col-md-2 col-lg-2"><br>
   <button class="btn btn-default bton" type="submit">Post your ad for free</button>
 </div>
-<div class="col-sm-2"><br>
+<div class="col-sm-2 col-md-2 col-lg-2"><br>
   <button class="btn btn-default bton" type="submit">Make an order for free</button>
 </div>
 					
@@ -169,7 +169,7 @@ CountBack(gsecs);
                     }                                      
                    //to here, if there is any change in between , please make sure to updTE NOTIFICATIONS .PHP
                    echo "
-                    <div class='col-sm-4'>
+                    <div class='col-sm-4 col-md-4 col-lg-4'>
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a href='my_acount.php'><i class='fa fa-user'></i> My store</a></li>  
@@ -182,7 +182,7 @@ CountBack(gsecs);
                    }
                    else
                    {
-              echo "<div class='col-sm-4'>
+              echo "<div class='col-sm-4 col-md-4 col-lg-4'>
 						<div class='shop-menu pull-right'>
 							<ul class='nav navbar-nav'>
 								<li><a></a></li>
