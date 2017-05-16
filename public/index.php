@@ -87,7 +87,7 @@ if(isset($_GET['var']) == "logout")
     <div class="header-bottom"><!--header-bottom-->
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-7">
+                    <div class="col-sm-12">
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                                 <span class="sr-only">Toggle navigation</span>
@@ -98,20 +98,16 @@ if(isset($_GET['var']) == "logout")
                         </div>
                         <div class="mainmenu pull-left">
                             <ul class="nav navbar-nav ">
-                       <li><a href="home.php" class="active fon">Home</a></li>
-                <li><a href="upload.php" class="fon">Post your ad</a></li>
-                <li><a href="order.php" class="fon">Order now</a></li>
-                <li><a href="categories.php" class="fon">Products</a></li>
-                <li><a href="services.php" class="fon">Services</a></li>
-                <li><a href="orders.php" class="fon">Orders</a></li>
+                       <li><a href="home.php" class="active">Home</a></li>
+                <?php  
+      include('links.php');    
+    ?>
+                <li><a href="job_vacancies.php">Job vacancies</a></li>
                <!-- <li><a href="job_vacancies.php" class="fon">Job vacancies</a></li>-->
                 
                             </ul>
                         </div>
                     </div>
-                    <?php
-                      include('search.php');
-                    ?>
                 </div>
             </div>
         </div><!--/header-bottom-->
@@ -125,7 +121,7 @@ if(isset($_GET['var']) == "logout")
     <section>
 <div class="container">
   <div class="row">
-    <div class="col-sm-12"><br><br><br><h2 class="title text-center">Recomended orders</h2><br>
+    <div class="col-sm-12"><h2 class="title text-center">Featured orders</h2><br>
      <ul class="nav nav-tabs">
   <?php
   echo "<li class='active pull-right' style='cursor:pointer;'><a style='cursor:pointer' href='orders.php'>View All</a></li>";
@@ -223,56 +219,11 @@ if(isset($_GET['var']) == "logout")
 </div><!--row-->
 <!--aha niho order kugeza container hejuru-->
   <div class="row">
-    <div class="col-sm-3">
-      <div class="right-sidebar">
-        <br>
-        <h2 class="title text-center">Service categories</h2>
-        <div class="panel-group category-products" id="accordian"><!--category-productsr-->
-        <?php 
-          $c = 11;
-          $query = "SELECT * FROM service_categories ";
-          $res = mysqli_query($con,$query);
-          while($row = mysqli_fetch_assoc($res))
-          {
-            if($row['id']==$c)
-            {
-              echo "<div class='panel panel-default'>
-                        <div class='panel-heading'>
-                          <h4 class='panel-title'>
-                           <a data-toggle='collapse' data-parent='#accordian' href='#{$row['id']}'>
-                            <span class='badge pull-right'><i class='fa fa-angle-down'></i></span>
-                            {$row['category']}
-                           </a>
-                          </h4>
-                        </div>
-                        <div id='$c' class='panel-collapse collapse'>
-                          <div class='panel-body'>
-                            <ul>";
-                              $queryy = "SELECT * FROM service_subcategories ";
-                              $re = mysqli_query($con,$queryy);
-                              while($ro = mysqli_fetch_assoc($re))
-                              {
-                                if($ro['ref1']==$c|| $ro['ref2']==$c || $ro['ref3']==$c || $ro['ref4']==$c)
-                                {
-                                  echo "<li><a href='service-sub-category.php?id={$ro['id']}'>*   {$ro['sub_category']} </a></li>";
-                                }
-                              }
-            }
-                     echo"</div>
-                        </div>
-                    </div>";
-                   $c = $c+1;
-                                            
-          } 
-      ?>
-        </div><!--/category-productsr-->
-      </div>
-    </div>
-    <div class="col-sm-9 padding-right">
+    <div class="col-sm-12 padding-right">
       <br>
       <div class="category-tab"><!--category-tab-->
         <div class="col-sm-12">
-          <h2 class="title text-center">Recomended products</h2><br>
+          <h2 class="title text-center">Featured products</h2><br>
           <ul class="nav nav-tabs">
                                 <?php 
                                 $query = "SELECT * from categories";
