@@ -104,12 +104,10 @@ checkToken();
             </div>
             <div class="mainmenu pull-left">
               <ul class="nav navbar-nav ">
-                <li><a href="home.php" class="fon">Home</a></li>
-                <li><a href="upload.php" class="active fon">Post your ad</a></li>
-                <li><a href="order.php" class="fon">Order now</a></li>
-                <li><a href="categories.php" class="fon">Products</a></li>
-                <li><a href="services.php" class="fon">Services</a></li>
-                <li><a href="orders.php" class="fon">Orders</a></li>
+                <li><a href="home.php">Home</a></li>
+                <?php  
+      include('links.php');    
+    ?>
                 
                             </ul>
                         </div>
