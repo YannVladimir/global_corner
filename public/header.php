@@ -124,10 +124,10 @@ CountBack(gsecs);
 </script>       
 </div>-->
 <div class="col-sm-2">
-  <button class="btn btn-group" style="background: #90DC23">Post your ad for free</button>
+  <button class="btn btn-group">Post your ad for free</button>
 </div>
 <div class="col-sm-2">
-  <button class="btn btn-group" style="background: #90DC23">Make an order for free</button>
+  <button class="btn btn-group">Make an order for free</button>
 </div>
 					
 					<?php
