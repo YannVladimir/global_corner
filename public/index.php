@@ -102,7 +102,7 @@ if(isset($_GET['var']) == "logout")
                 <?php  
       include('links.php');    
     ?>
-                
+
                <!-- <li><a href="job_vacancies.php" class="fon">Job vacancies</a></li>-->
                 
                             </ul>
@@ -232,12 +232,12 @@ if(isset($_GET['var']) == "logout")
                                 {
                                     if($row['cat_id']==2)
                                     {
-                                         echo "<li class='pull-left'><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
-                                         echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='category.php?id={$row['cat_id']}' >Visit Category</a></li>";
+                                         echo "<li class='pull-left'><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}'>{$row['cat_name']}</a></li>";
+                                         echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='category.php?id={$row['cat_id']}&active={$row['cat_id']}' >Visit Category</a></li>";
                                     }
                                    // else
                                     //{
-                                    //     echo"<li><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
+                                    //     echo"<li><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}'>{$row['cat_name']}</a></li>";
                                     //}
                                    
                                 } 
@@ -246,7 +246,7 @@ if(isset($_GET['var']) == "logout")
         <div class='tab-content'> ";
       echo "<div class='tab-pane fade active in' id='1' >";
                                 
-                                $cats = "SELECT * from items where refcat_id=2 and is_accepted=1 order by post_id desc limit 8";
+                                $cats = "SELECT * from items where refcat_id=2 and is_accepted=1 order by rand() desc limit 8";
                                 $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
@@ -437,12 +437,12 @@ if(isset($_GET['var']) == "logout")
                                 {
                                     if($row['cat_id']==8)
                                     {
-                                         echo "<li class='pull-left'><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
-                                         echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='category.php?id={$row['cat_id']}'>Visit Category</a></li>";
+                                         echo "<li class='pull-left'><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}'>{$row['cat_name']}</a></li>";
+                                         echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='category.php?id={$row['cat_id']}&active={$row['cat_id']}'>Visit Category</a></li>";
                                     }
                                    // else
                                     //{
-                                    //     echo"<li><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
+                                    //     echo"<li><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}'>{$row['cat_name']}</a></li>";
                                     //}
                                    
                                 } 
@@ -451,7 +451,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=8 and is_accepted=1 order by post_id limit 8";
+                                $cats = "SELECT * from items where refcat_id=8 and is_accepted=1 order by rand() limit 8";
                                 $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
@@ -640,12 +640,12 @@ if(isset($_GET['var']) == "logout")
                                 {
                                     if($row['cat_id']==3)
                                     {
-                                         echo "<li class='pull-left'><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
-                                         echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='category.php?id={$row['cat_id']}'>Visit Category</a></li>";
+                                         echo "<li class='pull-left'><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}'>{$row['cat_name']}</a></li>";
+                                         echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='category.php?id={$row['cat_id']}&active={$row['cat_id']}'>Visit Category</a></li>";
                                     }
                                    // else
                                     //{
-                                    //     echo"<li><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
+                                    //     echo"<li><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}'>{$row['cat_name']}</a></li>";
                                     //}
                                    
                                 } 
@@ -654,7 +654,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=3 and is_accepted=1 order by post_id desc limit 8";
+                                $cats = "SELECT * from items where refcat_id=3 and is_accepted=1 order by rand() desc limit 8";
                                 $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
@@ -841,12 +841,12 @@ if(isset($_GET['var']) == "logout")
                                 {
                                     if($row['cat_id']==1)
                                     {
-                                         echo "<li class='pull-left'><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
-                                         echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='category.php?id={$row['cat_id']}'>Visit Category</a></li>";
+                                         echo "<li class='pull-left'><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}'>{$row['cat_name']}</a></li>";
+                                         echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='category.php?id={$row['cat_id']}&active={$row['cat_id']}'>Visit Category</a></li>";
                                     }
                                    // else
                                     //{
-                                    //     echo"<li><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
+                                    //     echo"<li><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}'>{$row['cat_name']}</a></li>";
                                     //}
                                    
                                 } 
@@ -855,7 +855,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=1 and is_accepted=1 order by post_id desc limit 8";
+                                $cats = "SELECT * from items where refcat_id=1 and is_accepted=1 order by rand() desc limit 8";
                                 $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
@@ -1042,12 +1042,12 @@ if(isset($_GET['var']) == "logout")
                                 {
                                     if($row['cat_id']==4)
                                     {
-                                         echo "<li class='pull-left'><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
-                                         echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='category.php?id={$row['cat_id']}'>Visit Category</a></li>";
+                                         echo "<li class='pull-left'><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}'>{$row['cat_name']}</a></li>";
+                                         echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='category.php?id={$row['cat_id']}&active={$row['cat_id']}'>Visit Category</a></li>";
                                     }
                                    // else
                                     //{
-                                    //     echo"<li><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
+                                    //     echo"<li><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}'>{$row['cat_name']}</a></li>";
                                     //}
                                    
                                 } 
@@ -1056,7 +1056,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=4 and is_accepted=1 order by post_id desc limit 8";
+                                $cats = "SELECT * from items where refcat_id=4 and is_accepted=1 order by rand() desc limit 8";
                                 $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
@@ -1243,12 +1243,12 @@ if(isset($_GET['var']) == "logout")
                                 {
                                     if($row['cat_id']==5)
                                     {
-                                         echo "<li class='pull-left'><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
-                                         echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='category.php?id={$row['cat_id']}'>Visit Category</a></li>";
+                                         echo "<li class='pull-left'><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}'>{$row['cat_name']}</a></li>";
+                                         echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='category.php?id={$row['cat_id']}&active={$row['cat_id']}'>Visit Category</a></li>";
                                     }
                                    // else
                                     //{
-                                    //     echo"<li><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
+                                    //     echo"<li><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}'>{$row['cat_name']}</a></li>";
                                     //}
                                    
                                 } 
@@ -1257,7 +1257,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=5 and is_accepted=1 order by post_id desc limit 8";
+                                $cats = "SELECT * from items where refcat_id=5 and is_accepted=1 order by rand() desc limit 8";
                                 $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
@@ -1444,12 +1444,12 @@ if(isset($_GET['var']) == "logout")
                                 {
                                     if($row['cat_id']==6)
                                     {
-                                         echo "<li class='pull-left'><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
-                                         echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='category.php?id={$row['cat_id']}'>Visit Category</a></li>";
+                                         echo "<li class='pull-left'><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}'>{$row['cat_name']}</a></li>";
+                                         echo "<li class='active pull-right' style='cursor:pointer'><a style='cursor:pointer' href='category.php?id={$row['cat_id']}&active={$row['cat_id']}'>Visit Category</a></li>";
                                     }
                                    // else
                                     //{
-                                    //     echo"<li><a href='category.php?id={$row['cat_id']}'>{$row['cat_name']}</a></li>";
+                                    //     echo"<li><a href='category.php?id={$row['cat_id']}&active={$row['cat_id']}'>{$row['cat_name']}</a></li>";
                                     //}
                                    
                                 } 
@@ -1458,7 +1458,7 @@ if(isset($_GET['var']) == "logout")
                         <div class='tab-content'> ";
                                
                              echo "<div class='tab-pane fade active in' id='1' >";
-                                $cats = "SELECT * from items where refcat_id=6 and is_accepted=1 and post_id > 137 and post_id < 147 and post_id != 139  order by post_id desc limit 8";
+                                $cats = "SELECT * from items where refcat_id=6 and is_accepted=1 order by rand() desc limit 8";
                                 $check = 1;
                                 $res = mysqli_query($con,$cats);
                                 while($row = mysqli_fetch_assoc($res))
@@ -1639,14 +1639,14 @@ if(isset($_GET['var']) == "logout")
 </div><!--/row--><br><br>
 <div class="row"> 
         <div class="col-sm-12">
-          <h2 class="title text-center">Recomended service providers</h2>
+          <h2 class="title text-center">Featured service providers</h2>
              <ul class="nav nav-tabs">
   <?php
   echo "<li class='active pull-right' style='cursor:pointer;'><a style='cursor:pointer' href='services.php'>View All</a></li>";
   echo "</ul>";
   ?>
                     <?php 
-                       $query = "SELECT * FROM amaservice where is_accepted = 1 order by avg limit 20";
+                       $query = "SELECT * FROM amaservice where is_accepted = 1 order by rand() limit 20";
                       $check = 1;
                        $res = mysqli_query($con,$query);
                        while($row = mysqli_fetch_assoc($res))
