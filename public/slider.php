@@ -90,7 +90,7 @@
 					
 				</div>
 				<div class="col-sm-2"><br>
-					<img src="assets/images/home/global.jpg" style="min-width: 130px; max-width: 180px; width: 170px; ">
+					<a href="service.php?id=58"><img src="assets/images/home/global.jpg" style="min-width: 130px; max-width: 180px; width: 175px; "></a> 
 				</div>
 				<!--<div class="col-sm-3">
 				<h2 class="title text-center">Job vacancies</h2>
