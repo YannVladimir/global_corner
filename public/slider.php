@@ -90,7 +90,7 @@
 					
 				</div>
 				<div class="col-sm-2">
-					<img src="assets/images/home/global.jpg">
+					<img src="assets/images/home/global.jpg" style="max-width: 200px;">
 				</div>
 				<!--<div class="col-sm-3">
 				<h2 class="title text-center">Job vacancies</h2>
