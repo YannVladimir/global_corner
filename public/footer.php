@@ -97,7 +97,7 @@ If you want to sell any product or service - here you will find many interesting
 			<div class="container">
 				<div class="row">
 					<!--<p style="text-align:center">Copyright © 250 Trade Inc. All rights reserved.</p>-->
-					<p style="text-align:center">Powered By: <span><a href="" style="color:#01B0E7"> <strong>Gloabl Corner</strong></a></span></p>
+					<p style="text-align:center">Powered By: <span><a href="" style="color:#01B0E7"> <strong>Global Corner</strong></a></span></p>
 				</div>
 			</div>
 		</div>
