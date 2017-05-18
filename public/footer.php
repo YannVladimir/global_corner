@@ -95,10 +95,10 @@ If you want to sell any product or service - here you will find many interesting
 		</div>
 		<div class="footer-bottom">
 			<div class="container">
-				<!--<div class="row">
-					<p style="text-align:center">Copyright © 250 Trade Inc. All rights reserved.</p>
-					<p style="text-align:center">Developers: <span><a target="_blank" href="" style="color:#3AACEB"> Fabrice Irakoze</a> & <a target="_blank" href="https://www.linkedin.com/in/jules-mugabe-a3980113a/" style="color:#3AACEB"> Jules Mugabe</a></span></p>
-				</div>-->
+				<div class="row">
+					<!--<p style="text-align:center">Copyright © 250 Trade Inc. All rights reserved.</p>-->
+					<p style="text-align:center">Powered By: <span><a href="" style="color:#01B0E7"> <strong>Gloabl Corner</strong></a></span></p>
+				</div>
 			</div>
 		</div>
 		
