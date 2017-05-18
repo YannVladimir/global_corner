@@ -55,11 +55,8 @@ If you want to sell any product or service - here you will find many interesting
 						<div class="single-widget">
 							<h2>Top Products</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="category.php?id=1">Computer/Laptops</a></li>
-								<li><a href="category.php?id=2">Mobiles</a></li>
-								<li><a href="category.php?id=3">Electronic materials</a></li>
-								<li><a href="category.php?id=5">Real estates</a></li>
-								<li><a href="category.php?id=6">Sports</a></li>
+								<li><a href="category.php?id=2&active=2">Mobiles</a></li>
+								<li><a href="category.php?id=5&active=5">Real estates</a></li>
 							</ul>
 						</div>
 					</div>
@@ -70,10 +67,7 @@ If you want to sell any product or service - here you will find many interesting
 								<!--<li><a href="#">Online Help</a></li>-->
 								<li><a href="service-sub-category.php?id=4">Sonorization</a></li>
 								<li><a href="service-sub-category.php?id=40">Interior decorators</a></li>
-                                <li><a href="service-sub-category.php?id=37">Car-rentals</a></li>
-                                <li><a href="service-sub-category.php?id=29">Cooks (Abatetsi)</a></li>
                                <!-- <li><a href="#">Free shipping</a></li>-->
-								<li><a href="service-sub-category.php?id=21">Music bands</a></li>
 								<!--<li><a href="#">FAQ’s</a></li>-->
 							</ul>
 						</div>
