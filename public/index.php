@@ -120,103 +120,7 @@ if(isset($_GET['var']) == "logout")
     
     <section>
 <div class="container">
-  <div class="row">
-    <div class="col-sm-12"><h2 class="title text-center">Featured orders</h2><br>
-     <ul class="nav nav-tabs">
-  <?php
-  echo "<li class='active pull-right' style='cursor:pointer;'><a style='cursor:pointer' href='orders.php'>View All</a></li>";
-  echo "</ul>";
-  ?><br>
-</div>
-  <!--<div class='col-sm-2'></div>-->
-                <div class='col-sm-12'>
-                           
-                                <?php 
-                              
-                
-                        echo "<div class='tab-content'> ";
-                               
-                             echo "<div class='tab-pane fade active in' id='1' >";
-                               $query = "SELECT * from vieworders where is_accepted = 1";
-                               $check = 1;
-                               $res = mysqli_query($con,$query);
-                              
-                                while($row = mysqli_fetch_assoc($res))
-                                { 
-                                if($check%3==1)
-                                {
-                                  $check = $check+1;
-                                 echo " <div class='row'><div class='col-sm-4'>
-                        <div class='panel panel-default text-center'>
-                            <div class='panel-heading'>
-                                <h2 class='panel-title'><strong>{$row['name']} </strong></h2>
-                            </div>";
-                      echo "<ul class='list-group'>
-                               <li class='list-group-item'><strong></strong>{$row['details']}</li>
-                               <li class='list-group-item'><strong></strong>{$row['place']}</li>
-                               <li class='list-group-item'><strong></strong>{$row['up_date']}</li>
-                               <li class='list-group-item'>
-                                 <form action='contact-dealer.php' method='GET'>
-                                  <input type='text' name='id' value='{$row['id']}' class='hidden'>
-                                  <button type='submit' class='btn btn-default bton'>Answer me</button>
-                                 </form>
-                               </li>
-                            </ul>
-                        </div>
-                   </div>";
-                       }
-                       elseif ($check%3==2) {
-                        $check = $check+1;
-                        echo" <div class='col-sm-4'>
-                        <div class='panel panel-default text-center'>
-                            <div class='panel-heading'>
-                                <h2 class='panel-title'><strong>{$row['name']} </strong></h2>
-                            </div>";
-                      echo "<ul class='list-group'>
-                               <li class='list-group-item'><strong></strong>{$row['details']}</li>
-                               <li class='list-group-item'><strong></strong>{$row['place']}</li>
-                               <li class='list-group-item'><strong></strong>{$row['up_date']}</li>
-                               <li class='list-group-item'>
-                                 <form action='contact-dealer.php' method='GET'>
-                                  <input type='text' name='id' value='{$row['id']}' class='hidden'>
-                                  <button type='submit' class='btn btn-default bton'>Answer me</button>
-                                 </form>
-                               </li>
-                            </ul>
-                        </div>
-                   </div>";
-                       }
-                       else
-                       {
-                        $check = $check+1;
-                        echo"<div class='col-sm-4'>
-                        <div class='panel panel-default text-center'>
-                            <div class='panel-heading'>
-                                <h2 class='panel-title'><strong>{$row['name']} </strong></h2>
-                            </div>";
-                      echo "<ul class='list-group'>
-                               <li class='list-group-item'><strong></strong>{$row['details']}</li>
-                               <li class='list-group-item'><strong></strong>{$row['place']}</li>
-                               <li class='list-group-item'><strong></strong>{$row['up_date']}</li>
-                               <li class='list-group-item'>
-                                 <form action='contact-dealer.php' method='GET'>
-                                  <input type='text' name='id' value='{$row['id']}' class='hidden'>
-                                  <button type='submit' class='btn btn-default bton'>Answer me</button>
-                                 </form>
-                               </li>
-                            </ul>
-                        </div>
-                   </div></div>";
-                       }
-                                } 
-                                
-
-                                
-//for orders
-?>
-                <br><br>
-            </div>
-</div><!--row-->
+  
 <!--aha niho order kugeza container hejuru-->
   <div class="row">
     <div class="col-sm-12 padding-right">
@@ -1637,6 +1541,103 @@ if(isset($_GET['var']) == "logout")
 </div><!--/category-tab-->
 </div> 
 </div><!--/row--><br><br>
+<div class="row">
+    <div class="col-sm-12"><h2 class="title text-center">Featured orders</h2><br>
+     <ul class="nav nav-tabs">
+  <?php
+  echo "<li class='active pull-right' style='cursor:pointer;'><a style='cursor:pointer' href='orders.php'>View All</a></li>";
+  echo "</ul>";
+  ?><br>
+</div>
+  <!--<div class='col-sm-2'></div>-->
+                <div class='col-sm-12'>
+                           
+                                <?php 
+                              
+                
+                        echo "<div class='tab-content'> ";
+                               
+                             echo "<div class='tab-pane fade active in' id='1' >";
+                               $query = "SELECT * from vieworders where is_accepted = 1";
+                               $check = 1;
+                               $res = mysqli_query($con,$query);
+                              
+                                while($row = mysqli_fetch_assoc($res))
+                                { 
+                                if($check%3==1)
+                                {
+                                  $check = $check+1;
+                                 echo " <div class='row'><div class='col-sm-4'>
+                        <div class='panel panel-default text-center'>
+                            <div class='panel-heading'>
+                                <h2 class='panel-title'><strong>{$row['name']} </strong></h2>
+                            </div>";
+                      echo "<ul class='list-group'>
+                               <li class='list-group-item'><strong></strong>{$row['details']}</li>
+                               <li class='list-group-item'><strong></strong>{$row['place']}</li>
+                               <li class='list-group-item'><strong></strong>{$row['up_date']}</li>
+                               <li class='list-group-item'>
+                                 <form action='contact-dealer.php' method='GET'>
+                                  <input type='text' name='id' value='{$row['id']}' class='hidden'>
+                                  <button type='submit' class='btn btn-default bton'>Answer me</button>
+                                 </form>
+                               </li>
+                            </ul>
+                        </div>
+                   </div>";
+                       }
+                       elseif ($check%3==2) {
+                        $check = $check+1;
+                        echo" <div class='col-sm-4'>
+                        <div class='panel panel-default text-center'>
+                            <div class='panel-heading'>
+                                <h2 class='panel-title'><strong>{$row['name']} </strong></h2>
+                            </div>";
+                      echo "<ul class='list-group'>
+                               <li class='list-group-item'><strong></strong>{$row['details']}</li>
+                               <li class='list-group-item'><strong></strong>{$row['place']}</li>
+                               <li class='list-group-item'><strong></strong>{$row['up_date']}</li>
+                               <li class='list-group-item'>
+                                 <form action='contact-dealer.php' method='GET'>
+                                  <input type='text' name='id' value='{$row['id']}' class='hidden'>
+                                  <button type='submit' class='btn btn-default bton'>Answer me</button>
+                                 </form>
+                               </li>
+                            </ul>
+                        </div>
+                   </div>";
+                       }
+                       else
+                       {
+                        $check = $check+1;
+                        echo"<div class='col-sm-4'>
+                        <div class='panel panel-default text-center'>
+                            <div class='panel-heading'>
+                                <h2 class='panel-title'><strong>{$row['name']} </strong></h2>
+                            </div>";
+                      echo "<ul class='list-group'>
+                               <li class='list-group-item'><strong></strong>{$row['details']}</li>
+                               <li class='list-group-item'><strong></strong>{$row['place']}</li>
+                               <li class='list-group-item'><strong></strong>{$row['up_date']}</li>
+                               <li class='list-group-item'>
+                                 <form action='contact-dealer.php' method='GET'>
+                                  <input type='text' name='id' value='{$row['id']}' class='hidden'>
+                                  <button type='submit' class='btn btn-default bton'>Answer me</button>
+                                 </form>
+                               </li>
+                            </ul>
+                        </div>
+                   </div></div>";
+                       }
+                                } 
+                                
+
+                                
+//for orders
+?>
+                <br><br>
+            </div>
+</div><!--row-->
 <div class="row"> 
         <div class="col-sm-12">
           <h2 class="title text-center">Featured service providers</h2>
