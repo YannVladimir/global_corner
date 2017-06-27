@@ -32,7 +32,7 @@ if(isset($_GET['var']) == "logout")
 
 <meta name="keywords"  content="250trade,250trades,250 trade,250 trad,buy online rwanda, online shopping rwanda, rwanda shopping, rwanda online shopping, online shopping websites in rwanda, online shopping websites, online shopping, sell in rwanda, rwanda, 250, 250 rwanda, trade, trade online, trades, trading online" />
 
-    <title>250 Trade | Home</title>
+    <title>250 Trade: Online shopping | Buy and Sell mobiles, laptops, cars, shoes, house in Rwanda</title>
     <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/yann.min.css" rel="stylesheet">
     <link href="assets/css/prettyPhoto.css" rel="stylesheet">
