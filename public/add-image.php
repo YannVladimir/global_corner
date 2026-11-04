@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 session_start(); 
 $con = mysqli_connect("127.0.0.1","root","REDACTED_DB_PASSWORD","eshopper");
 require_once ('../includes/main_functions.php');
-$type = $_POST['type']);
+$type = $_POST['type'];
 $id = $_SESSION['photo_id'];
 $user = $_SESSION['id'];
 unset($_SESSION['photo_id']);

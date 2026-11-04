@@ -30,7 +30,11 @@
 
 	function encodeUrl($url='')
 	{
-		if(!empty($url)) return encodeUrl($url);
+		// Was `return encodeUrl($url)` -- calling itself with the same
+		// argument, which recurses forever on any non-empty input until PHP
+		// runs out of memory. Not currently called from anywhere else in the
+		// app, but a landmine for whoever reaches for it next.
+		if(!empty($url)) return urlencode($url);
 		return false;
 	}
 

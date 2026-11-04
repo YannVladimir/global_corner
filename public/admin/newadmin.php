@@ -23,5 +23,5 @@ if(checkIsStringSetPost('firstname'))
 	   echo "<script>alert(' Error ');window.location='new-admin.php';</script>";
 }
 else
-echo echo "<script>alert(' Error, please provide inputs');window.location='new-admin.php';</script>";
+echo "<script>alert(' Error, please provide inputs');window.location='new-admin.php';</script>";
 ?>
