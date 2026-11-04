@@ -111,7 +111,7 @@ checkToken();
                             http://www.104.131.171.3/confirmation.php?email=$email&code=$confirm
          
                       ";
-                      mail($email,"250 Trade, Confirm your email", $message,"From: bavlaya549@gmail.com")
+                      mail($email,"250 Trade, Confirm your email", $message,"From: bavlaya549@gmail.com");
                       echo "\n Registration complete";
 
                                    ?>
